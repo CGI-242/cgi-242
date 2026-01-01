@@ -1,0 +1,134 @@
+import { Request, Response } from 'express';
+import { OrganizationService } from '../services/organization.service.js';
+import { MemberService } from '../services/member.service.js';
+import { InvitationService } from '../services/invitation.service.js';
+import { asyncHandler } from '../middleware/error.middleware.js';
+import { sendSuccess } from '../utils/helpers.js';
+import { SUCCESS_MESSAGES } from '../utils/constants.js';
+
+const orgService = new OrganizationService();
+const memberService = new MemberService();
+const invitationService = new InvitationService();
+
+// === Organisation CRUD ===
+
+export const create = asyncHandler(async (req: Request, res: Response) => {
+  const userId = req.user!.id;
+  const { name, slug, website, phone, address } = req.body;
+
+  const organization = await orgService.create(userId, {
+    name,
+    slug,
+    website,
+    phone,
+    address,
+  });
+
+  sendSuccess(res, organization, SUCCESS_MESSAGES.ORG_CREATED, 201);
+});
+
+export const getDetails = asyncHandler(async (req: Request, res: Response) => {
+  const { orgId } = req.params;
+
+  const organization = await orgService.getById(orgId);
+
+  sendSuccess(res, organization);
+});
+
+export const update = asyncHandler(async (req: Request, res: Response) => {
+  const { orgId } = req.params;
+  const { name, website, phone, address, logo, settings } = req.body;
+
+  const organization = await orgService.update(orgId, {
+    name,
+    website,
+    phone,
+    address,
+    logo,
+    settings,
+  });
+
+  sendSuccess(res, organization, SUCCESS_MESSAGES.ORG_UPDATED);
+});
+
+export const deleteOrg = asyncHandler(async (req: Request, res: Response) => {
+  const { orgId } = req.params;
+
+  await orgService.delete(orgId);
+
+  sendSuccess(res, null, SUCCESS_MESSAGES.ORG_DELETED);
+});
+
+export const listUserOrganizations = asyncHandler(async (req: Request, res: Response) => {
+  const userId = req.user!.id;
+
+  const memberships = await orgService.getByUserId(userId);
+
+  sendSuccess(res, memberships);
+});
+
+// === Membres ===
+
+export const listMembers = asyncHandler(async (req: Request, res: Response) => {
+  const { orgId } = req.params;
+
+  const members = await memberService.getByOrganization(orgId);
+
+  sendSuccess(res, members);
+});
+
+export const updateMemberRole = asyncHandler(async (req: Request, res: Response) => {
+  const { orgId, userId: memberId } = req.params;
+  const { role } = req.body;
+  const requesterId = req.user!.id;
+
+  const member = await memberService.updateRole(orgId, memberId, role, requesterId);
+
+  sendSuccess(res, member);
+});
+
+export const removeMember = asyncHandler(async (req: Request, res: Response) => {
+  const { orgId, userId: memberId } = req.params;
+  const requesterId = req.user!.id;
+
+  await memberService.remove(orgId, memberId, requesterId);
+
+  sendSuccess(res, null, SUCCESS_MESSAGES.MEMBER_REMOVED);
+});
+
+// === Invitations ===
+
+export const inviteMember = asyncHandler(async (req: Request, res: Response) => {
+  const { orgId } = req.params;
+  const { email, role } = req.body;
+  const invitedById = req.user!.id;
+
+  const invitation = await invitationService.create(orgId, invitedById, email, role);
+
+  sendSuccess(res, invitation, SUCCESS_MESSAGES.INVITATION_SENT, 201);
+});
+
+export const acceptInvitation = asyncHandler(async (req: Request, res: Response) => {
+  const { token } = req.body;
+  const userId = req.user!.id;
+
+  const member = await invitationService.accept(token, userId);
+
+  sendSuccess(res, member, SUCCESS_MESSAGES.INVITATION_ACCEPTED);
+});
+
+export const listInvitations = asyncHandler(async (req: Request, res: Response) => {
+  const { orgId } = req.params;
+
+  const invitations = await invitationService.getPending(orgId);
+
+  sendSuccess(res, invitations);
+});
+
+export const cancelInvitation = asyncHandler(async (req: Request, res: Response) => {
+  const { invitationId } = req.params;
+
+  await invitationService.cancel(invitationId);
+
+  sendSuccess(res, null, 'Invitation annulée');
+});

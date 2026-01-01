@@ -1,0 +1,22 @@
+{
+  "name": "cgi-242",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Application SaaS d'intelligence artificielle pour le Code Général des Impôts du Congo-Brazzaville 2026",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && ng serve",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && ng build --configuration=production",
+    "db:migrate": "cd server && npx prisma migrate dev",
+    "db:push": "cd server && npx prisma db push",
+    "db:seed": "cd server && npx prisma db seed",
+    "db:studio": "cd server && npx prisma studio",
+    "ingest": "cd server && ts-node scripts/ingest-cgi.ts"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

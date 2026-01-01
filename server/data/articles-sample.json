@@ -1,0 +1,38 @@
+[
+  {
+    "numero": "1",
+    "titre": "Définition des impôts et taxes",
+    "contenu": "Les impôts, droits et taxes perçus au profit du budget de l'État sont établis et recouvrés conformément aux dispositions du présent Code.",
+    "tome": "1",
+    "partie": "Première Partie",
+    "livre": "Livre Premier",
+    "chapitre": "Chapitre 1",
+    "section": "Section A",
+    "version": "2025",
+    "keywords": ["impôt", "taxe", "budget", "état"]
+  },
+  {
+    "numero": "2",
+    "titre": "Champ d'application territorial",
+    "contenu": "Les dispositions du présent Code s'appliquent sur l'ensemble du territoire de la République du Congo.",
+    "tome": "1",
+    "partie": "Première Partie",
+    "livre": "Livre Premier",
+    "chapitre": "Chapitre 1",
+    "section": "Section A",
+    "version": "2025",
+    "keywords": ["territoire", "congo", "application"]
+  },
+  {
+    "numero": "3",
+    "titre": "Personnes imposables",
+    "contenu": "Sont soumises à l'impôt toutes les personnes physiques ou morales qui réalisent des revenus ou détiennent des biens sur le territoire national.",
+    "tome": "1",
+    "partie": "Première Partie",
+    "livre": "Livre Premier",
+    "chapitre": "Chapitre 2",
+    "section": "Section B",
+    "version": "2025",
+    "keywords": ["personne physique", "personne morale", "revenu", "bien"]
+  }
+]

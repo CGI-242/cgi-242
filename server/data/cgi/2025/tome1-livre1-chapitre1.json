@@ -1,0 +1,2617 @@
+{
+  "meta": {
+    "document": "Code général des impôts",
+    "pays": "République du Congo",
+    "edition": "2025",
+    "tome": 1,
+    "partie": 1,
+    "livre": 1,
+    "chapitre": 1,
+    "chapitre_titre": "Impôt sur le revenu des personnes physiques (IRPP)",
+    "section": 1,
+    "section_titre": "Dispositions générales",
+    "page_source": 9
+  },
+  "articles": [
+    {
+      "article": "Art. 1",
+      "titre": "Principe de l'impôt sur le revenu",
+      "texte": [
+        "Il est établi un impôt annuel sur le revenu des personnes physiques.",
+        "Cet impôt frappe le revenu net global du contribuable déterminé conformément aux dispositions des articles 1 à 101 du présent Code.",
+        "Ce revenu net global est constitué par le total des revenus nets des catégories suivantes :",
+        "- revenus fonciers ;",
+        "- bénéfices des activités industrielles, commerciales et artisanales ;",
+        "- traitements, salaires, indemnités, émoluments, pensions et rentes viagères ;",
+        "- bénéfices des professions non commerciales et revenus assimilés ;",
+        "- revenus des capitaux mobiliers ;",
+        "- plus-values réalisées par les personnes physiques et assimilées ;",
+        "- bénéfices de l'exploitation agricole."
+      ],
+      "mots_cles": [
+        "IRPP",
+        "revenu net global",
+        "personnes physiques",
+        "catégories de revenus"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 2",
+      "titre": "Personnes imposables",
+      "texte": [
+        "Sous réserve des dispositions des conventions internationales, sont imposables :",
+        "1) a) Les personnes physiques de nationalité congolaise ou étrangère ayant leur domicile fiscal au Congo ou y résidant habituellement.",
+        "",
+        "Sont considérées comme ayant au Congo une résidence habituelle :",
+        "1° les personnes qui y possèdent une habitation à leur disposition à titre de propriétaire, d'usufruitier ou de locataire lorsque, dans ce dernier cas, la location est conclue, soit par convention unique, soit par conventions successives pour une période continue d'au moins une année ;",
+        "2° les personnes qui, sans disposer d'une habitation dans les conditions définies à l'alinéa précédent, y ont néanmoins le lieu de leur séjour principal ;",
+        "3° les personnes se trouvant hors du Congo au 1er janvier de l'année d'imposition qui, à cette date, continuent à être rétribuées par les administrations ou les entreprises auxquelles elles appartenaient avant leur départ du Congo ;",
+        "4° les fonctionnaires congolais ou étrangers payés par un budget autre que l'un des budgets du Congo pendant toute la durée de la période au cours de laquelle ils restent affectés au Congo. Cette période qui n'est pas interrompue par les congés des fonctionnaires en cause commence le jour de l'affectation au Congo et se termine la veille du jour où les intéressés reçoivent une affectation hors du Congo ;",
+        "5° les personnes ayant quitté le Congo avant le 31 décembre de l'année d'imposition, qui y conservent des intérêts et n'ont pas fait connaître que leur départ était définitif.",
+        "",
+        "Dans tous les cas, une absence continue d'une durée supérieure à vingt-quatre mois entraîne la perte de la résidence du contribuable au Congo.",
+        "",
+        "b) Les personnes physiques de nationalité congolaise ou étrangère n'ayant ni domicile, ni résidence au Congo, pour autant qu'elles ont des revenus réalisés dans l'État du Congo ou en provenance, et à raison desdits revenus.",
+        "",
+        "2) Les fonctionnaires ou agents de l'État exerçant leurs fonctions ou chargés de mission dans un pays étranger sont passibles de l'IRPP au Congo à raison de leurs revenus de source congolaise.",
+        "S'ils sont exonérés, dans le pays considéré, de l'impôt personnel sur l'ensemble des revenus, ils sont redevables au Congo de l'IRPP, sur l'ensemble de leurs revenus même en l'absence de résidence habituelle sur le territoire congolais.",
+        "",
+        "3) Les personnes visées au paragraphe 1-b du présent article, percevant d'entreprises installées au Congo des droits d'auteur ou des produits à titre, soit de la concession de licences d'exploitation de brevets, soit de la cession ou de la concession de marques de fabrique, procédés ou formules de fabrication, que le bénéficiaire de ces droits ou produits soit l'écrivain, le compositeur ou l'inventeur lui-même ou qu'il les ait acquis à titre gratuit ou onéreux, ainsi que les revenus visés à l'article 42 ci-après.",
+        "La présente disposition s'applique également lorsque le bénéficiaire des droits ou produits est une société quelle qu'en soit la forme.",
+        "",
+        "4) Les personnes physiques de nationalité congolaise ou étrangère disposant ou non d'une résidence habituelle au Congo, qui recueillent des bénéfices ou revenus dont l'imposition est attribuée au Congo par une convention internationale relative aux doubles impositions.",
+        "",
+        "5) Les personnes physiques qui sont désignées comme occupant les fonctions de directeurs, représentants, fondés de pouvoir, gérants de succursales des sociétés étrangères, immatriculées en République du Congo, sont présumées avoir leur résidence fiscale au Congo quand bien même elles habiteraient hors du Congo."
+      ],
+      "mots_cles": [
+        "personnes imposables",
+        "domicile fiscal",
+        "résidence habituelle",
+        "habitation",
+        "séjour principal",
+        "fonctionnaires",
+        "intérêts économiques",
+        "absence prolongée",
+        "revenus de source congolaise",
+        "droits d'auteur",
+        "conventions fiscales",
+        "résidence fiscale présumée"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 3",
+      "titre": "Personnes affranchies de l'impôt",
+      "texte": [
+        "Sont affranchis de l'impôt :",
+        "1° les personnes physiques dont le revenu net imposable n'excède pas le minimum fixé à l'article 95 du présent Code ;",
+        "2° les ambassadeurs et agents diplomatiques, les consuls et agents consulaires de nationalité étrangère en ce qui concerne les sommes qui leur sont versées en cette qualité, mais seulement dans la mesure où le pays qu'ils représentent concède des avantages analogues aux agents diplomatiques et consulaires congolais."
+      ],
+      "mots_cles": [
+        "exonération",
+        "minimum imposable",
+        "diplomates",
+        "réciprocité diplomatique"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 4",
+      "titre": "Imposition par chef de famille et imposition distincte",
+      "texte": [
+        "Chaque chef de famille est imposable tant en raison de ses revenus personnels que de ceux de sa femme et des enfants considérés comme étant à sa charge au sens de l'article 93 ci-après.",
+        "Par dérogation au paragraphe précédent, le contribuable peut réclamer des impositions distinctes pour ses enfants lorsqu'ils tirent un revenu de leur propre travail ou d'une fortune indépendante de la sienne.",
+        "La femme mariée fait l'objet d'une imposition distincte :",
+        "1° lorsqu'elle est bénéficiaire des revenus non salariaux uniquement ; en ce cas, elle est considérée comme mariée avec les enfants dont elle a la charge ;",
+        "2° lorsqu'elle est séparée de biens et ne vit pas avec son mari ;",
+        "3° lorsqu'étant en instance de séparation de corps ou de divorce, elle réside séparément de son mari dans les conditions prévues à l'article 236 du Code civil ;",
+        "4° lorsqu'ayant été abandonnée par son mari ou ayant abandonné elle-même le domicile conjugal, elle dispose de revenus distincts de ceux de son mari ; dans ces cas, chaque époux est considéré comme un célibataire ayant à sa charge les enfants dont il a la garde ;",
+        "5° lorsqu'en vertu des conventions internationales, les revenus de son mari ne sont pas imposables au Congo.",
+        "",
+        "Ne sont pas imposables au Congo et que ses revenus propres ne sont pas compris dans les revenus globaux dans l'autre État contractant. En ce cas, l'intéressée est considérée comme célibataire sans enfant.",
+        "La femme mariée bénéficiaire de revenus autres que salariaux est, en outre, personnellement imposable sur les revenus dont elle a disposé pendant l'année de son mariage jusqu'à la date de celui-ci."
+      ],
+      "mots_cles": [
+        "chef de famille",
+        "foyer fiscal",
+        "imposition distincte",
+        "femme mariée",
+        "enfants à charge",
+        "conventions internationales"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 5",
+      "titre": "Décès du contribuable ou du conjoint",
+      "texte": [
+        "1) En cas de décès du contribuable, l'impôt afférent aux bénéfices ou revenus non encore taxés est établi au nom du défunt.",
+        "La veuve est personnellement imposable dans les conditions prévues au premier alinéa du précédent article, pour la période postérieure au décès de son mari.",
+        "2) En cas de décès de la femme du contribuable, les revenus perçus par l'un ou l'autre époux sont compris en totalité dans le revenu imposable."
+      ],
+      "mots_cles": [
+        "décès",
+        "veuve",
+        "revenus non taxés",
+        "foyer fiscal"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 6",
+      "titre": "Imposition des associés et assimilés",
+      "texte": [
+        "Sous réserve des dispositions de l'article 4, les associés de sociétés en nom collectif et les commandités des sociétés en commandite simple sont personnellement soumis à l'IRPP pour la part des bénéfices sociaux correspondant à leurs droits dans la société.",
+        "Il en est de même, sous les mêmes conditions :",
+        "1° des membres de sociétés civiles qui ne revêtent pas, en droit ou en fait, l'une des formes des sociétés visées au paragraphe 1 de l'article 107 du présent Code et qui ne se livrent pas à une exploitation ou à des opérations visées aux articles 14 et 15 ci-après ;",
+        "2° des membres des associations en participation y compris les syndicats financiers ou des sociétés de copropriétaires de navires, qui sont indéfiniment responsables et dont les noms et adresses ont été indiqués à l'administration ;",
+        "3° des membres des GIE pour la part des bénéfices éventuels correspondant à leurs droits dans le groupement."
+      ],
+      "mots_cles": [
+        "associés",
+        "sociétés de personnes",
+        "GIE",
+        "bénéfices sociaux"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 7",
+      "titre": "Imposition à la source par les sociétés",
+      "texte": [
+        "Les sociétés par actions ou autres personnes morales sont assujetties à l'IRPP à raison du montant global des sommes comptabilisées dans les frais des entreprises qu'elles versent directement ou indirectement, sous quelque forme ou dénomination que ce soit, à des personnes dont elles ne révèlent pas l'identité.",
+        "La taxation est établie sous une cote unique et porte chaque année sur les sommes payées au cours de la période retenue pour l'assiette de l'impôt sur les sociétés dû au titre de la même année.",
+        "L'application des dispositions du présent article ne met pas obstacle à l'imposition des sommes visées ci-dessus au nom de leur bénéficiaire réel lorsque ce dernier peut être identifié par l'administration."
+      ],
+      "mots_cles": [
+        "rémunérations occultes",
+        "retenue à la source",
+        "sociétés",
+        "identification bénéficiaire"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 8",
+      "titre": "Lieu d'imposition",
+      "texte": [
+        "Si le contribuable a une résidence unique au Congo, l'impôt est établi au lieu de cette résidence.",
+        "Si le contribuable possède plusieurs résidences au Congo, il est assujetti à l'impôt dans la Commune ou le District où est réputé posséder sa résidence principale.",
+        "Les personnes domiciliées à l'étranger, les fonctionnaires ou agents de la République du Congo exerçant leurs fonctions ou chargés de mission dans un de ces pays sont, lorsqu'ils sont redevables du présent impôt et lorsqu'ils ne possèdent pas de résidence au Congo, imposables, les premiers au lieu de leurs principaux intérêts au Congo et les seconds au siège du service qui les administre."
+      ],
+      "mots_cles": [
+        "lieu d'imposition",
+        "résidence principale",
+        "contribuables à l'étranger"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 9",
+      "titre": "Changement de situation du contribuable",
+      "texte": [
+        "Lorsque le contribuable a déplacé soit sa résidence, soit le lieu de son principal établissement, les cotisations dont il est redevable au titre de l'IRPP, tant pour l'année au cours de laquelle s'est produit le changement que pour les années antérieures non atteintes par la prescription, peuvent valablement être établies au lieu d'imposition qui correspond à sa nouvelle situation."
+      ],
+      "mots_cles": [
+        "changement de résidence",
+        "changement d'établissement",
+        "prescription"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 10",
+      "titre": "Principe d'imposition annuelle des revenus",
+      "texte": [
+        "L'impôt est dû chaque année à raison des bénéfices ou revenus, produits ou profits de toute nature que le contribuable réalise ou dont il dispose au cours de la même année."
+      ],
+      "mots_cles": [
+        "imposition annuelle",
+        "revenus réalisés",
+        "revenus disponibles"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 11",
+      "titre": "Détermination du revenu global net imposable",
+      "texte": [
+        "1) Le bénéfice ou revenu imposable est constitué par l'excédent du produit brut, y compris la valeur des profits et avantages dont le contribuable a joui en nature, sur les dépenses effectuées en vue de l'acquisition et de la conservation du revenu.",
+        "2) Le revenu global net annuel servant de base à l'IRPP est déterminé en totalisant les bénéfices ou revenus nets visés au paragraphe I-VII de la première sous-section de la présente section, compte tenu, le cas échéant, du montant des déficits visés à l'article 66-I et en retranchant les charges énumérées au paragraphe II dudit article.",
+        "3) Le bénéfice ou revenu net de chacune des catégories de revenus visées au paragraphe précédent est déterminé distinctement suivant les règles propres à chacune d'elles. Le résultat d'ensemble de chaque catégorie de revenus est obtenu en totalisant, s'il y a lieu, le bénéfice ou revenu afférent à chacune des entreprises, exploitations ou professions ressortissant à cette catégorie et déterminé dans les conditions prévues pour cette dernière.",
+        "4) Pour l'application du paragraphe 3 ci-dessus, il est fait état, le cas échéant, du montant des bénéfices correspondant aux droits que le contribuable ou les personnes définies au premier alinéa de l'article 4, possèdent en tant qu'associés ou membres de sociétés ou associations visées à l'article 6 ci-dessus."
+      ],
+      "mots_cles": [
+        "revenu global net",
+        "produit brut",
+        "charges déductibles",
+        "déficits",
+        "catégories de revenus"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 12",
+      "titre": "Revenus fonciers – définition",
+      "texte": [
+        "Sous réserve des dispositions de l'article 13 ci-après, sont compris dans les revenus fonciers, lorsqu'ils ne sont pas inclus dans les bénéfices d'une entreprise industrielle, commerciale, artisanale ou d'une profession non commerciale :",
+        "1) Les revenus des propriétés bâties telles que maisons et usines ainsi que les revenus :",
+        "a) de l'outillage des établissements industriels attaché au fonds à perpétuelle demeure dans les conditions indiquées au premier paragraphe de l'article 525 du Code civil ou reposant sur des fondations spéciales faisant corps avec l'ensemble ;",
+        "b) de toutes installations commerciales ou industrielles assimilables à des constructions ;",
+        "c) des revenus provenant de la location du droit d'affichage, de la concession du droit d'exploitation des carrières, de redevances tréfoncières ou autres redevances analogues ayant leur origine dans le droit de propriété ou d'usufruit.",
+        "2) Les revenus des propriétés non bâties de toute nature y compris ceux des terrains occupés par des carrières, mines, étangs."
+      ],
+      "mots_cles": [
+        "revenus fonciers",
+        "propriétés bâties",
+        "propriétés non bâties",
+        "location",
+        "carrières",
+        "usufruit"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 13",
+      "titre": "Détermination du revenu net foncier",
+      "texte": [
+        "Le revenu net foncier est égal à la différence entre le montant du revenu brut et le total des charges de la propriété."
+      ],
+      "mots_cles": [
+        "revenu net foncier",
+        "revenu brut",
+        "charges de propriété"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 13 bis",
+      "titre": "Détermination du revenu brut foncier",
+      "texte": [
+        "Le revenu brut des immeubles ou parties d'immeubles donnés en location est constitué par le montant des recettes brutes perçues par le propriétaire augmenté du montant des dépenses incombant normalement à ce dernier et mises par les conventions à la charge des locataires et diminué du montant des dépenses supportées par le propriétaire pour le compte des locataires."
+      ],
+      "mots_cles": [
+        "revenu brut",
+        "location",
+        "charges locatives",
+        "propriétaire",
+        "locataire"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 13 ter",
+      "titre": "Revenu brut foncier – loyers et prestations",
+      "texte": [
+        "Pour les immeubles dont la finition ou l'achèvement est confié aux futurs locataires, le revenu brut foncier est constitué par les loyers et prestations de toute nature figurant dans le contrat de bail."
+      ],
+      "mots_cles": [
+        "revenu brut foncier",
+        "immeubles en finition",
+        "prestations",
+        "contrat de bail"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 13 quater",
+      "titre": "Charges déductibles pour la détermination du revenu net foncier",
+      "texte": [
+        "Les charges de la propriété déductibles pour la détermination du revenu net comprennent :",
+        "- les intérêts des dettes contractées pour la conservation, l'acquisition, la construction, la réparation ou l'amélioration desdites propriétés ;",
+        "- les impositions autres que celles incombant normalement à l'occupant perçues à raison desdites propriétés ;",
+        "- une déduction forfaitaire de 30 % des revenus bruts et représentant les frais de gestion, d'assurance, d'entretien et d'amortissement.",
+        "Quant aux revenus énumérés au paragraphe 1-c de l'article 12, ils sont retenus dans les bases de l'impôt pour leur montant brut sous déduction d'un abattement forfaitaire de 5 %.",
+        "Toutefois le contribuable peut opter pour la prise en considération des frais réels justifiés par factures, mais cette option est irrévocablement valable pour trois années consécutives."
+      ],
+      "mots_cles": [
+        "charges déductibles",
+        "revenu net foncier",
+        "déduction forfaitaire",
+        "frais réels",
+        "option irrévocable"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 14",
+      "titre": "Définition des bénéfices industriels, commerciaux et artisanaux",
+      "texte": [
+        "Sont considérés comme bénéfices industriels, commerciaux et artisanaux pour l'application de l'IRPP, les bénéfices réalisés par des personnes physiques et provenant de l'exercice d'une profession commerciale, industrielle et artisanale.",
+        "Il en est ainsi des bénéfices réalisés par les concessionnaires des mines et des carrières, les amodiataires et sous-amodiataires de concessions minières, les titulaires de permis d'exploration et d'exploitation des mines et des carrières, des hydrocarbures et des forêts."
+      ],
+      "mots_cles": [
+        "BICA",
+        "activité commerciale",
+        "activité industrielle",
+        "activité artisanale",
+        "mines",
+        "hydrocarbures"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 15",
+      "titre": "Assimilation à des bénéfices industriels et commerciaux",
+      "texte": [
+        "Présentent également le caractère de bénéfices commerciaux et industriels pour l'application du présent impôt, les bénéfices réalisés par les personnes physiques désignées ci-après :",
+        "1° personnes qui, habituellement, achètent en leur nom ou en vue de revendre, des actions ou parts créées ou émises par les mêmes sociétés ;",
+        "2° personnes se livrant à des opérations d'intermédiaire pour l'achat, la souscription ou la vente de biens visés à l'alinéa 1 ci-dessus ;",
+        "3° personnes qui procèdent à l'outillage et à la vente après exécution des travaux d'aménagement et de viabilité de terrains leur appartenant ;",
+        "4° personnes bénéficiaires d'une promesse unilatérale de vente portant sur un immeuble qui est vendu par fractions ou par lots à la diligence de ces personnes ;",
+        "5° personnes donnant en location un établissement commercial ou industriel du mobilier et du matériel nécessaires à son exploitation ou lorsque la location comprend non tout ou partie du fonds de commerce ou d'industrie ;",
+        "6° adjudicataires, concessionnaires et fermiers de droits communaux ;",
+        "7° personnes se livrant à la location en meublé d'immeubles leur appartenant."
+      ],
+      "mots_cles": [
+        "assimilation BIC",
+        "intermédiation",
+        "location meublée",
+        "fonds de commerce",
+        "lotissement"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 15 bis",
+      "titre": "Déclaration d'existence",
+      "texte": [
+        "Les contribuables visés aux articles 14 et 15 ci-dessus doivent, dans les quinze jours du début de leurs opérations, souscrire une déclaration d'existence auprès de l'inspection divisionnaire des contributions directes et indirectes dont ils dépendent."
+      ],
+      "mots_cles": [
+        "déclaration d'existence",
+        "obligations déclaratives",
+        "début d'activité"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 16",
+      "titre": "Exonération",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 17",
+      "titre": "Détermination des bénéfices imposables",
+      "texte": [
+        "Sous réserve des dispositions ci-après, les règles de détermination du résultat sont définies par les articles 107 à 121 du présent Code.",
+        "",
+        "Toutefois, en ce qui concerne les bénéfices commerciaux, industriels, artisanaux et agricoles, le bénéfice net imposable est égal à la différence entre les produits réalisés et les charges engagées par l'entreprise.",
+        "Le bénéfice net est constitué par la différence entre les valeurs de l'actif net à la clôture et à l'ouverture de la période dont les résultats doivent servir de base à l'impôt, diminuée des suppléments d'apport et augmentée des prélèvements effectués au cours de cette période par l'exploitant.",
+        "L'actif net s'entend de l'excédent des valeurs d'actif sur le total formé au passif par les créances des tiers, les amortissements et les provisions justifiées."
+      ],
+      "mots_cles": [
+        "résultat fiscal",
+        "bénéfices imposables",
+        "règles de détermination",
+        "bénéfice net",
+        "BICA",
+        "actif net",
+        "passif",
+        "amortissements",
+        "provisions"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 18",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 19",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 20",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 21",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 22",
+      "titre": "Imposition des plus-values en cas de décès de l'exploitant",
+      "texte": [
+        "Dans le cas de décès de l'exploitant, la taxation de la plus-value de fonds de commerce (éléments corporels et incorporels) réalisée par le successeur exploitant en ligne directe ou par le conjoint, est reportée au moment de la cession ou de la cessation de l'exploitation par ces derniers, à condition qu'aucune augmentation ne soit apportée aux évaluations des éléments d'actif figurant au dernier bilan dressé par le défunt.",
+        "Cette disposition reste applicable lorsque, à la suite du partage de la succession, l'exploitation est poursuivie par les seuls héritiers en ligne directe ou par le conjoint attributaire du fonds, de même que dans le cas où les héritiers en ligne directe et le conjoint constituent exclusivement entre eux une société en nom collectif ou en commandite simple ou à responsabilité limitée, à condition que les évaluations des éléments d'actif existant au décès ne soient pas augmentées à l'occasion du partage ou de la transformation de l'entreprise en société."
+      ],
+      "mots_cles": [
+        "plus-value",
+        "décès",
+        "fonds de commerce",
+        "succession",
+        "report d'imposition"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 23",
+      "titre": "",
+      "texte": [
+        "Sans objet."
+      ],
+      "mots_cles": [],
+      "statut": "sans objet"
+    },
+    {
+      "article": "Art. 24",
+      "titre": "",
+      "texte": [
+        "Sans objet."
+      ],
+      "mots_cles": [],
+      "statut": "sans objet"
+    },
+    {
+      "article": "Art. 25",
+      "titre": "",
+      "texte": [
+        "Sans objet."
+      ],
+      "mots_cles": [],
+      "statut": "sans objet"
+    },
+    {
+      "article": "Art. 26",
+      "titre": "Fixation du bénéfice imposable – régime du forfait",
+      "texte": [
+        "1) a) Les contribuables dont le chiffre d'affaires hors taxes est inférieur à 100 000 000 FCFA sont soumis au régime du forfait.",
+        "b) Supprimé.",
+        "c) Supprimé.",
+        "d) Toutefois, les contribuables imposés selon le régime du réel, dont le chiffre d'affaires baissé pour se situer en dessous de la limite de 100 000 000 FCFA prévue à l'article 30 du présent Code, ne sont soumis au régime du forfait que lorsque leur chiffre d'affaires est resté inférieur à cette limite pendant deux exercices successifs.",
+        "e) L'impôt global forfaitaire cesse d'être appliqué dès le premier exercice qui suit celui au cours duquel les limites du chiffre d'affaires fixées au paragraphe 1-a sont dépassées.",
+        "",
+        "2) Par dérogation aux dispositions du paragraphe 1-a ci-dessus, les contribuables qui sont en mesure de satisfaire aux prescriptions de l'article 31 ci-après ont la faculté d'être soumis au régime du réel.",
+        "À cet effet, ils doivent notifier leur option au responsable de l'unité dont dépend leur résidence fiscale avant le 1er février de l'année suivant celle au titre de laquelle l'imposition est établie.",
+        "L'option est valable pour ladite année et les deux années suivantes. Pendant cette période, elle est irrévocable.",
+        "",
+        "3) Supprimé.",
+        "",
+        "4) Sont exclus de l'imposition selon le régime du forfait :",
+        "- les sociétés, quelle que soit leur forme juridique ;",
+        "- les personnes exerçant des professions réglementées ;",
+        "- les boulangers ;",
+        "- les entrepreneurs de travaux ;",
+        "- les exploitants de quincailleries ;",
+        "- les grossistes ;",
+        "- les importateurs.",
+        "",
+        "5) Les très petites entreprises sont tenues de présenter leurs états financiers selon le Système minimal de trésorerie en abrégé (SMT).",
+        "",
+        "Les états financiers sont constitués des documents suivants :",
+        "- le bilan ;",
+        "- le compte de résultat ;",
+        "- les notes annexes.",
+        "",
+        "Les notes annexes sont composées de :",
+        "- table SMT du suivi du matériel, du mobilier et des cautions ;",
+        "- état des stocks ;",
+        "- état des créances et des dettes non échues."
+      ],
+      "mots_cles": [
+        "régime du forfait",
+        "chiffre d'affaires",
+        "option pour le réel",
+        "deux exercices successifs",
+        "SMT",
+        "exclusions forfait",
+        "états financiers",
+        "bilan",
+        "compte de résultat",
+        "notes annexes"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 27",
+      "titre": "Évaluation administrative du chiffre d'affaires et du bénéfice",
+      "texte": [
+        "Les montants du chiffre d'affaires et du bénéfice sont évalués par l'administration d'après les résultats obtenus par le contribuable au cours de l'année de l'imposition.",
+        "Ils doivent correspondre au bénéfice que l'entreprise peut produire normalement.",
+        "L'évaluation est notifiée au contribuable qui dispose d'un délai de 20 jours à partir de la réception de la notification pour faire parvenir son acceptation ou formuler ses observations en indiquant le chiffre qu'il serait disposé à accepter ; le défaut de réponse dans le délai prévu est considéré comme une acceptation.",
+        "Si le contribuable n'accepte pas le chiffre qui lui a été notifié et si de son côté, le chef de l'unité dont dépend la résidence fiscale du contribuable n'admet pas celui qui est proposé par l'intéressé, l'évaluation du bénéfice forfaitaire est faite par la commission des impôts prévue à l'article 40 du présent Code.",
+        "Le chiffre arrêté par cette commission sert de base à l'imposition.",
+        "Toutefois, le contribuable peut demander par voie contentieuse après mise en recouvrement du rôle et dans les délais, formes et conditions prévus par les articles 423 et suivants du présent Code, une réduction de la base qui lui a été assignée, à condition de prouver celle-ci est supérieure au bénéfice réalisé dans son entreprise au cours de l'année de l'imposition."
+      ],
+      "mots_cles": [
+        "évaluation administrative",
+        "bénéfice normal",
+        "notification",
+        "commission des impôts",
+        "recours contentieux"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 28",
+      "titre": "Régime du forfait – dispositions générales",
+      "texte": [
+        "1) à 3) Abrogés.",
+        "4) La base de calcul de l'impôt global forfaitaire est fixée pour une année civile.",
+        "",
+        "5) Cette base de calcul est connue chaque année, au plus tard le 20 février après le dépôt de la déclaration n°294 accompagnée des états financiers visés aux articles 26 et 28 du présent Code.",
+        "",
+        "6) Le montant qui sert de base de calcul de l'impôt global forfaitaire est redressé unilatéralement, sans préavis, par l'administration, en cas de manœuvre frauduleuse ou de dissimulation.",
+        "",
+        "7) Au cours de la première année d'exploitation, l'impôt global forfaitaire est fixé à partir d'un chiffre d'affaires estimé selon la procédure contradictoire, déterminé sur la base du chiffre d'affaires prévisionnel fixé au montant de la déclaration fiscale d'existence à condition de justifier d'une déclaration d'existence et de faire parapher par le service compétent de l'administration fiscale les registres comptables cités ci-dessous, dans les quinze jours du début d'activité et à la fin de chaque trimestre de l'année.",
+        "",
+        "8) Les contribuables relevant du régime de forfait doivent :",
+        "a) tenir une comptabilité selon le système minimal de trésorerie défini par le droit comptable OHADA ;",
+        "b) tenir un registre chronologique de toutes les factures d'achats et de dépenses ;",
+        "c) tenir un registre chronologique de toutes les factures de ventes ou des prestations ;",
+        "d) souscrire chaque mois la déclaration visée à l'article 176 du CGI, tome 1 ;",
+        "e) effectuer, le cas échéant, pour le compte du Trésor, la retenue de l'IRPP ou la retenue à la source ;",
+        "f) produire : le bilan ; le compte de résultat ; et les notes annexes.",
+        "",
+        "Les notes annexes sont composées de :",
+        "- tableau SMT de suivi du matériel, du mobilier et des cautions ;",
+        "- état des stocks ;",
+        "- état des créances et des dettes non échues.",
+        "",
+        "9) Les deux registres comptables visés à l'alinéa 8 ci-dessus doivent être conservés dans les conditions prévues à l'article 31 du CGI, tome 1 et présentés à toute réquisition de l'administration fiscale, en particulier à des fins de contrôle pour la détermination du chiffre d'affaires annuel. Lesdits registres doivent être présentés chaque trimestre auprès de l'administration fiscale pour paraphe.",
+        "",
+        "10) Abrogé.",
+        "",
+        "11) Le défaut de la déclaration, du paraphe et de la tenue des registres, des factures et tous documents comptables ou leur non-production, est sanctionné par une taxation d'office et une amende de 500 000 FCFA."
+      ],
+      "mots_cles": [
+        "impôt global forfaitaire",
+        "base de calcul",
+        "année civile",
+        "déclaration 294",
+        "redressement unilatéral",
+        "fraude",
+        "SMT",
+        "obligations comptables",
+        "OHADA",
+        "registres comptables",
+        "paraphe",
+        "contrôle fiscal",
+        "taxation d'office",
+        "amende"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 28 bis",
+      "titre": "Déclaration des fournisseurs",
+      "texte": [
+        "Le contribuable soumis au régime du forfait est tenu de déclarer, au plus tard le 20 du mois suivant la fin de chaque trimestre, la liste de ses fournisseurs, de ses sources d'approvisionnement de marchandises auprès de sa résidence fiscale, selon le modèle d'imprimé prescrit par l'administration fiscale.",
+        "L'inobservation de cette obligation est sanctionnée par une amende de 500 000 FCFA."
+      ],
+      "mots_cles": [
+        "régime du forfait",
+        "déclaration fournisseurs",
+        "obligation trimestrielle",
+        "amende"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 29",
+      "titre": "Défaut de production des déclarations et documents",
+      "texte": [
+        "Le défaut de production de la déclaration spéciale visée à l'article 28 ainsi que la non-présentation des documents dont la production est exigée par ledit article et l'article 26 du CGI entraînent la fixation d'office, par l'administration fiscale, des bases d'imposition."
+      ],
+      "mots_cles": [
+        "défaut de production",
+        "fixation d'office",
+        "bases d'imposition"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 30",
+      "titre": "Imposition selon le bénéfice réel",
+      "texte": [
+        "Les contribuables dont le chiffre d'affaires est supérieur à 100 000 000 FCFA sont assujettis au régime de l'imposition assis sur le bénéfice réel.",
+        "Ces contribuables sont tenus de souscrire une déclaration du montant de leur résultat à l'unité des moyennes entreprises de la circonscription dans laquelle est situé le siège de l'entreprise ou son principal établissement.",
+        "",
+        "Les contribuables dont le chiffre d'affaires est inférieur ou égal à 2 000 000 000 FCFA doivent déposer leur déclaration à l'unité des moyennes entreprises de la circonscription dans laquelle est situé le siège de l'entreprise ou son principal établissement, dans les conditions et délais prévus par les articles 78 à 80 du CGI.",
+        "En l'absence d'une unité des moyennes entreprises dans le département, l'unité territorialement compétente est celle chargée de la gestion des petites entreprises.",
+        "Pour les contribuables dont le chiffre d'affaires est supérieur ou égal à 2 000 000 000 FCFA, la déclaration susvisée est déposée à l'unité des grandes entreprises de la circonscription dans laquelle est situé le siège de l'entreprise ou son principal établissement.",
+        "Les dispositions des alinéas 2, 3 et 4 du présent article ne s'appliquent pas aux sous-traitants pétroliers.",
+        "À l'appui de la déclaration du bénéfice ou déficit, les contribuables sont tenus de faire connaître leur chiffre d'affaires, c'est-à-dire : le montant brut total des ventes, des travaux effectivement et définitivement réalisés, des avantages, commissions, remises, prix de location, intérêts, escomptes, agios encaissés et, d'une façon générale, tous les produits définitivement acquis dans l'exercice de la profession.",
+        "Lorsque la profession comporte plusieurs activités distinctes, la déclaration doit faire état du chiffre d'affaires par nature d'activité.",
+        "Ces derniers doivent justifier d'un certificat de moralité fiscale de l'année en cours.",
+        "En cas de conflit sur ces états financiers, l'administration fiscale se référera à ceux déposés auprès d'elle ou à ceux de la centrale des bilans auprès de la BEAC."
+      ],
+      "mots_cles": [
+        "bénéfice réel",
+        "chiffre d'affaires",
+        "régime réel",
+        "PME",
+        "grandes entreprises",
+        "déclaration fiscale",
+        "certificat de moralité fiscale",
+        "états financiers",
+        "centrale des bilans",
+        "BEAC"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 30 bis",
+      "titre": "Télé-déclaration et télépaiement",
+      "texte": [
+        "Les contribuables soumis au régime de l'imposition d'après le bénéfice réel doivent, dans le cadre de leurs obligations fiscales, procéder à la télé-déclaration et au télépaiement des impôts, droits et taxes dont ils sont redevables, en application des dispositions légales en vigueur.",
+        "Le non-respect des dispositions de l'alinéa ci-dessus est sanctionné par une pénalité de 10 % du montant à déclarer.",
+        "Sous peine d'irrecevabilité, les états financiers doivent être attestés et certifiés par un expert-comptable en l'absence d'un commissaire aux comptes en leur entité."
+      ],
+      "mots_cles": [
+        "télé-déclaration",
+        "télépaiement",
+        "pénalité",
+        "expert-comptable",
+        "états financiers"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 31",
+      "titre": "États financiers annuels et déclaration statistique et fiscale",
+      "texte": [
+        "1) Les contribuables visés à l'article 30 du présent Code doivent déclarer leur résultat fiscal annuel à l'appui de trois jeux complets d'états financiers tels que prévus par l'Acte uniforme de l'OHADA relatif au droit comptable et à l'information financière des entités.",
+        "Les états financiers annuels doivent également être produits sur support électronique.",
+        "",
+        "2) Le jeu complet d'états financiers annuels comprend :",
+        "- le bilan ;",
+        "- le compte de résultat ;",
+        "- le tableau de flux de trésorerie ;",
+        "- les notes annexes.",
+        "",
+        "3) La déclaration du résultat fiscal se fait au moyen d'un modèle prescrit par l'administration fiscale dit « déclaration statistique et fiscale ».",
+        "Tout déclarant visé à l'article 30 du présent Code est tenu de respecter ce modèle.",
+        "",
+        "4) Ils doivent également indiquer dans leur déclaration le nom et l'adresse du ou des comptables chargés de tenir leur comptabilité ou d'en déterminer ou d'en contrôler les résultats généraux, en précisant si ces techniciens font ou non partie du personnel salarié de leur entreprise.",
+        "",
+        "5) La déclaration statistique et fiscale comprend :",
+        "- une page de garde normalisée indiquant la désignation de l'entité et tous renseignements d'identification de celle-ci ;",
+        "- le système comptable appliqué ;",
+        "- les mentions de dépôt des états financiers auprès de l'administration fiscale.",
+        "",
+        "6) Le déclarant est tenu de présenter à l'administration fiscale, les documents comptables (livre-journal, grand-livre, tous autres livres et documents annexes conformes au plan comptable OHADA), les inventaires précis et détaillés, les copies de lettres, pièces de recettes-dépenses et autres de nature à justifier de l'exactitude des résultats indiqués dans sa déclaration.",
+        "",
+        "7) Les entreprises établies en dehors des centres du territoire doivent, sur demande de l'administration fiscale, transporter leur comptabilité accompagnée de tous documents annexes, au chef-lieu du District dont elles relèvent aux fins de vérification ou d'examen dans les conditions prévues par le présent article.",
+        "",
+        "8) Les sociétés doivent remettre à l'administration fiscale en même temps que la déclaration, une copie de tous actes constitutifs ou modificatifs intervenus au cours de l'année d'imposition.",
+        "",
+        "9) Si les documents comptables ou autres, notamment ceux visés au présent article et à l'article 126 quinquies, dont la tenue et la production sont exigées, sont rédigés en langue étrangère, une traduction doit être présentée à l'administration fiscale.",
+        "",
+        "10) Il est fait obligation à toute entreprise installée au Congo d'y faire tenir sa comptabilité. Toute comptabilité tenue à l'extérieur du pays ne sera prise en considération par la DGID et l'entreprise encourra de ce fait la sanction de taxation d'office.",
+        "Toute entreprise soumise au contrôle fiscal et qui ne l'aura pas exhibée dans le délai de huit jours francs sera également taxée d'office.",
+        "",
+        "11) Lorsque l'organisation comptable repose sur une gestion informatisée, le déclarant est tenu de présenter à toute réquisition de l'administration tous supports de sauvegarde (disque dur, disquette, etc.), y compris la remise de ces supports aux fins de vérification, conformément à l'article 22 de l'Acte uniforme de l'OHADA relatif au droit comptable.",
+        "",
+        "12) L'administration est en outre fondée à procéder ou à faire procéder à des tests de contrôle sur le matériel utilisé afin de s'assurer de la fiabilité des procédures de traitement de la comptabilité.",
+        "",
+        "13) Les livres, registres, documents ou pièces quelconques sur lesquels peut s'exercer le droit de contrôle de l'administration doivent être conservés dans leur forme originale pendant dix ans à compter de la date de la dernière opération mentionnée sur lesdits livres ou registres ou de laquelle les documents ou pièces ont été établis, quel que soit le support utilisé."
+      ],
+      "mots_cles": [
+        "états financiers",
+        "OHADA",
+        "déclaration statistique et fiscale",
+        "support électronique",
+        "résultat fiscal",
+        "bilan",
+        "compte de résultat",
+        "tableau de flux de trésorerie",
+        "documents comptables",
+        "contrôle fiscal",
+        "taxation d'office",
+        "DGID",
+        "gestion informatisée",
+        "supports de sauvegarde",
+        "conservation dix ans"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 31 bis",
+      "titre": "Siège social",
+      "texte": [
+        "Toute entreprise industrielle, commerciale ou agricole installée au Congo doit y posséder son siège social.",
+        "Cette disposition entre en vigueur le 1er janvier 1982."
+      ],
+      "mots_cles": [
+        "siège social",
+        "entreprise au Congo"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 31 ter",
+      "titre": "Clôture de l'exercice comptable",
+      "texte": [
+        "La date de clôture de l'exercice comptable est fixée au 31 décembre de chaque année.",
+        "Cette disposition s'applique aux exercices clos après le 31 décembre 1974."
+      ],
+      "mots_cles": [
+        "clôture de l'exercice",
+        "31 décembre"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 31 quater",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 31 quinquies",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 31 sexies",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 31 septies",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 31 octies",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 31 nonies",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 32",
+      "titre": "Vérification des déclarations et rectifications",
+      "texte": [
+        "L'inspecteur divisionnaire ou l'inspecteur vérificateur vérifie les déclarations ; il entend les intéressés lorsque leur auditeur lui paraît utile ou lorsqu'ils demandent à fournir des explications orales.",
+        "Il peut rectifier les déclarations, mais il fait alors connaître au contribuable la rectification qu'il envisage et lui indique les motifs.",
+        "Il invite en même temps l'intéressé à faire parvenir ses observations.",
+        "L'intéressé est tenu de faire parvenir son acceptation ou ses observations dans un délai qui ne pourra excéder trente jours.",
+        "À défaut de réponse dans ce délai, l'inspection fixe la base de l'imposition, sous réserve du droit de réclamation de l'intéressé après l'établissement du rôle, la charge de la preuve incombant dans ce cas au contribuable.",
+        "Si des observations ayant été présentées dans le même délai, le désaccord persiste, l'imposition est établie d'après le chiffre arrêté par l'administration et notifié au contribuable.",
+        "Toutefois, le contribuable peut demander, après mise en recouvrement du rôle, une réduction de son imposition par voie de réclamation devant la juridiction contentieuse, la charge de la preuve incombant à l'administration."
+      ],
+      "mots_cles": [
+        "vérification fiscale",
+        "rectification",
+        "droit de réponse",
+        "inspecteur",
+        "procédure contradictoire",
+        "délais",
+        "charge de la preuve",
+        "réclamation contentieuse"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 33",
+      "titre": "Taxation d'office et rectification d'office",
+      "texte": [
+        "Les contribuables qui ne déposent pas la déclaration visée aux articles 30 et 31 ci-dessus sont taxés d'office après mise en demeure d'un délai de huit jours.",
+        "Les contribuables visés à l'article 30 ci-dessus qui ne fournissent pas, à l'appui de leurs déclarations, les documents prévus à l'article 31 quater peuvent faire l'objet de rectification d'office.",
+        "Il en est de même lorsque les livres, registres et documents comptables ne permettent pas de déterminer avec précision les résultats de l'entreprise ou de la profession.",
+        "Lorsque la déclaration a été rectifiée dans les conditions prévues à l'alinéa précédent, le contribuable ne peut obtenir une réduction par voie contentieuse qu'en apportant la preuve du chiffre exact des bénéfices."
+      ],
+      "mots_cles": [
+        "taxation d'office",
+        "rectification d'office",
+        "mise en demeure",
+        "preuve",
+        "documents comptables"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 34",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 34 bis",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 34 ter",
+      "titre": "Abattement pour l'enseignement privé et la microfinance",
+      "texte": [
+        "Les contribuables soumis à l'IRPP, qui tirent des revenus de l'activité de microentrepreneur ou de l'exploitation d'une école privée, bénéficient d'un abattement de 30 % pour la détermination du bénéfice imposable.",
+        "",
+        "Les établissements de microfinance à structure individuelle bénéficient d'un abattement dégressif temporaire de la base imposable à l'IRPP, catégorie des bénéfices industriels, commerciaux et artisanaux, suivant le tableau ci-dessous :",
+        "- 2012 : 80 % ;",
+        "- 2013 : 60 % ;",
+        "- 2014 : 40 % ;",
+        "- 2015 : 20 % ;",
+        "- 2016 : 0 %."
+      ],
+      "mots_cles": [
+        "IRPP",
+        "abattement",
+        "enseignement privé",
+        "microentrepreneur",
+        "microfinance",
+        "abattement dégressif",
+        "BICA"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 35",
+      "titre": "Détermination du bénéfice des sociétés et associations",
+      "texte": [
+        "Le bénéfice des sociétés et associations visées à l'article 6 ci-dessus est déterminé dans tous les cas dans les conditions prévues pour les exploitants individuels imposables d'après le montant de leur bénéfice réel.",
+        "Les sociétés et associations sont soumises aux obligations qui incombent normalement aux exploitants individuels et la procédure de vérification est suivie directement entre l'inspecteur et lesdites sociétés ou associations."
+      ],
+      "mots_cles": [
+        "sociétés",
+        "associations",
+        "bénéfice réel",
+        "procédure de vérification"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 36-A",
+      "titre": "Définition des bénéfices de l'exploitation agricole",
+      "texte": [
+        "Sont considérés comme bénéfices de l'exploitation agricole pour l'application de l'IRPP, les revenus réalisés par des personnes physiques et provenant de l'exercice d'une profession agricole telle que fermier, métayer, colon partiaire ou par les propriétaires exploitant eux-mêmes.",
+        "Ces bénéfices comprennent notamment tous ceux qui proviennent de l'agriculture, de l'élevage, de l'aviculture, de la pêche, de la pisciculture et de l'ostréiculture."
+      ],
+      "mots_cles": [
+        "bénéfices agricoles",
+        "agriculture",
+        "élevage",
+        "pêche",
+        "pisciculture",
+        "ostréiculture"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 36-B",
+      "titre": "Exonération des revenus agricoles",
+      "texte": [
+        "Sont exonérés de l'impôt sur le revenu des personnes physiques, les revenus provenant de l'exploitation agricole, agropastorale, piscicole et de la pêche continentale."
+      ],
+      "mots_cles": [
+        "exonération",
+        "revenus agricoles",
+        "agropastoral",
+        "pêche continentale"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 36-C",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 37",
+      "titre": "Définition des traitements, salaires, pensions et rentes viagères imposables",
+      "texte": [
+        "Les traitements, indemnités, remises, gratifications, salaires, primes et émoluments de toute nature ainsi que les pensions et rentes viagères concourent à la formation du revenu global servant de base à l'IRPP.",
+        "Les traitements, indemnités, remises, gratifications, salaires, primes et émoluments sont imposables :",
+        "1° lorsque le bénéficiaire est domicilié au Congo alors même que l'activité rémunérée s'exercerait hors du Congo ou que l'employeur serait domicilié hors du Congo ;",
+        "2° lorsque le bénéficiaire est domicilié hors du Congo dès lors que l'activité rétribuée s'exerce dans le Congo quand bien même l'employeur n'y serait ni domicilié ni établi.",
+        "Les pensions et rentes viagères sont imposables :",
+        "1° lorsque le bénéficiaire est domicilié au Congo alors même que le débiteur serait domicilié hors du Congo ;",
+        "2° lorsque le bénéficiaire est domicilié hors du Congo à la condition que le débiteur soit domicilié ou établi au Congo.",
+        "Les primes d'intéressement et autres rémunérations analogues sont soumises à l'impôt sous réserve des cas prévus à l'article 38-14 et dans les conditions de l'article 66 du présent Code.",
+        "L'application des dispositions du présent article est subordonnée aux accords susceptibles d'intervenir entre le Congo d'une part, et les autres États d'autre part.",
+        "Dans le cadre de la CEMAC, l'impôt est dû dans l'État où est domicilié le bénéficiaire des traitements, émoluments salariaux, pensions ou des rentes viagères."
+      ],
+      "mots_cles": [
+        "traitements et salaires",
+        "IRPP",
+        "domicile fiscal",
+        "pensions",
+        "rentes viagères",
+        "CEMAC",
+        "revenu global"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 38",
+      "titre": "Exonérations applicables aux traitements, salaires, pensions et rentes viagères",
+      "texte": [
+        "Sont affranchis de l'impôt :",
+        "",
+        "1° Les allocations spéciales destinées à couvrir les frais inhérents à la fonction ou à l'emploi et effectivement utilisées conformément à leur objet.",
+        "Le montant des allocations affranchies de l'impôt ne pourra excéder un pourcentage fixé par arrêté du Ministre des finances et calculé sur la masse globale des salaires, non compris les allocations à caractère familial, et destinées auxdites allocations.",
+        "",
+        "2° Les allocations familiales, allocations d'assistance à la famille, les majorations d'indemnité ou de pension attribuées en considération de la situation de famille ou des charges de famille.",
+        "Ces allocations ne sont prises en considération pour l'établissement de l'impôt que dans la mesure où elles ne font pas double emploi avec des allocations de même nature versées par des caisses ou organismes de l'État ou privés.",
+        "En tout état de cause, le montant total des allocations versées par l'employeur autre que l'État, les Communes ou les organismes para-administratifs ne peut excéder mensuellement par enfant la somme de 5 000 FCFA, sur lequel viennent le cas échéant, s'imputer les allocations versées par la Caisse Nationale de Sécurité Sociale ou par un organisme privé quelconque.",
+        "",
+        "3° Le coût du voyage s'il est à la charge du contribuable, tant pour lui-même que pour son conjoint et les membres de sa famille visés à l'article 4 ci-dessus.",
+        "",
+        "4° Les pensions ou rentes viagères d'invalidité résultant de faits de guerre ou d'accident du travail.",
+        "",
+        "5° Les pensions mixtes servies par l'État français en vertu de la loi du 31 mars 1919 pour la seule pension d'invalidité aux taux du simple soldat comprise dans lesdites pensions.",
+        "",
+        "6° Les pensions de veuves et orphelins de guerre.",
+        "",
+        "7° Les pensions de retraite.",
+        "",
+        "8° Les allocations de chômage.",
+        "",
+        "9° Les rentes viagères servies en représentation de dommages et intérêts en vertu d'une condamnation prononcée judiciairement pour la réparation d'un préjudice corporel ayant entraîné pour la victime une incapacité permanente totale l'obligeant à avoir recours à l'assistance d'une tierce personne pour effectuer les actes ordinaires de la vie.",
+        "",
+        "10° L'indemnité de licenciement ou de départ volontaire et l'indemnité de préavis versée dans le cadre d'un plan social global.",
+        "",
+        "11° Les indemnités ayant le caractère de remboursement telles que définies par arrêté du Ministre des finances.",
+        "",
+        "12° Les allocations versées aux élèves et étudiants effectuant un stage de vacances.",
+        "",
+        "13° Les indemnités kilométriques dans les limites fixées par arrêté du Ministre des finances.",
+        "",
+        "14° Les sommes placées par l'entreprise au titre de la prime d'intéressement, dans une institution financière nationale, à l'exclusion des placements hors du territoire national, en application d'un plan d'épargne au profit des travailleurs.",
+        "",
+        "15° La prime de départ à la retraite dans la limite du montant prévu par le statut du personnel ou la convention collective d'entreprise.",
+        "",
+        "NB : Frais d'emploi susceptibles d'être affranchis de l'IRPP (Arrêté n°359/MFCD du 25 janvier 1963, Art. 1er) : Les allocations spéciales destinées à couvrir les frais inhérents à la fonction ou à l'emploi et effectivement utilisées conformément à leur objet, sont, en application des dispositions de l'article 38 du Code général des impôts, affranchies de l'IRPP par chaque bénéficiaire dans la limite maximale de 15 % du total formé par les salaires perçus par l'intéressé (non compris les allocations à caractère familial) et le montant des allocations de l'espèce.",
+        "",
+        "L'application des dispositions du présent Code ne met pas obstacle à toute demande de justification concernant l'emploi des allocations, de la part du service des contributions directes qui peut procéder, sous réserve du droit de réclamation du contribuable, à toute réintégration estimée nécessaire dans les conditions réglementaires.",
+        "",
+        "NB2 : Allocations forfaitaires pour frais d'emploi (Lettre circulaire n°032/DGI du 17 janvier 1989) :",
+        "Il m'a été donné de constater que les allocations forfaitaires pour frais professionnels sont portées en franchise d'IRPP sans pour autant que les bénéficiaires soient toujours en droit de valoir en franchise d'impôt les frais en cause.",
+        "En vous rappelant les dispositions de l'arrêté n°359/MF du 25 novembre 1963 fixant la limite des allocations pour frais d'emploi susceptibles d'être portées en franchise d'IRPP, je me dois de vous rappeler que les allocations destinées à couvrir les frais inhérents à la fonction ou à l'emploi et effectivement utilisées conformément à leur objet sont, en application de l'article 38 du CGI, affranchies de l'IRPP dans la limite de 15 % du total formé par les salaires perçus et le montant des allocations en cause.",
+        "Les allocations forfaitaires pour frais d'emploi perçues par les salariés sont exonérées de l'IRPP de la taxe forfaitaire lorsqu'elles remplissent les conditions suivantes :",
+        "- correspondre à des dépenses se rapportant à la fonction ou à l'emploi ;",
+        "- être utilisées conformément à leur objet.",
+        "L'application de cette dernière condition soulève souvent d'importantes difficultés pratiques. On peut cependant présumer que les primes de panier, les indemnités de déplacement et de transport sont utilisées conformément à leur objet lorsque leur montant ne présente pas de caractère d'exagération.",
+        "Lorsque les allocations forfaitaires pour frais d'emploi n'excèdent pas les limites fixées, elles sont présumées avoir été utilisées conformément à leur objet."
+      ],
+      "mots_cles": [
+        "exonérations",
+        "traitements et salaires",
+        "IRPP",
+        "allocations familiales",
+        "pensions",
+        "rentes viagères",
+        "invalidité",
+        "retraite",
+        "chômage",
+        "indemnité licenciement",
+        "prime d'intéressement",
+        "indemnités kilométriques"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 39",
+      "titre": "Détermination de la base d'imposition des traitements, salaires et assimilés",
+      "texte": [
+        "Pour la détermination de la base d'imposition, il est tenu compte du montant des traitements, indemnités, allocations et émoluments, salaires, pensions et rentes viagères ainsi que de tous les avantages en argent et en nature accordés aux intéressés.",
+        "Les avantages en nature sont évalués comme suit :",
+        "- logement : 20 % du salaire plafonné pour la sécurité sociale ;",
+        "- domestique, gardiennage : 7 % du salaire brut ;",
+        "- eau, éclairage, gaz : 5 % du salaire brut ;",
+        "- téléphone : 2 % du salaire brut ;",
+        "- voiture : 3 % du salaire brut ;",
+        "- nourriture : 20 % du salaire brut.",
+        "Toutefois, chaque avantage en nature, à l'exception du logement, est retenu pour son montant réel, lorsque celui-ci est connu.",
+        "",
+        "Pour le calcul des avantages en nature, la base de référence est constituée par le montant brut du salaire de présence et celui de congé, après déduction des retenues faites par l'employeur au titre de la retraite et de la sécurité sociale."
+      ],
+      "mots_cles": [
+        "avantages en nature",
+        "base imposable",
+        "traitements et salaires",
+        "IRPP",
+        "logement",
+        "domestique",
+        "voiture",
+        "salaire brut",
+        "retenues sociales"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 40",
+      "titre": "Détermination du montant net du revenu imposable",
+      "texte": [
+        "Le montant net du revenu imposable est déterminé en déduisant du montant brut des sommes payées et des avantages accordés :",
+        "1° les retenues faites par l'employeur en vue de la constitution des pensions ou de retraites à capital aliéné dans la limite de 6 % des appointements ;",
+        "2° les retenues faites au titre de la sécurité sociale."
+      ],
+      "mots_cles": [
+        "déductions",
+        "retraite",
+        "sécurité sociale",
+        "revenu net imposable"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 41",
+      "titre": "Déduction forfaitaire pour l'assiette de l'impôt",
+      "texte": [
+        "Pour l'assiette de l'impôt, une déduction de 20 % est appliquée au montant net déterminé comme il est dit aux articles 39 et 40 ci-dessus."
+      ],
+      "mots_cles": [
+        "déduction forfaitaire",
+        "20 %",
+        "assiette de l'impôt"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 42",
+      "titre": "Définition des bénéfices des professions non commerciales",
+      "texte": [
+        "Sont considérés comme provenant de l'exercice d'une profession non commerciale ou comme revenus assimilés aux bénéfices non commerciaux, les bénéfices des professions libérales, des charges et offices dont les titulaires n'ont pas la qualité de commerçants et de toutes occupations, exploitations lucratives et sources de profits ne se rattachant pas à une catégorie de bénéfices ou revenus.",
+        "Ces bénéfices comprennent notamment :",
+        "- les produits des opérations de bourse effectuées à titre habituel par les particuliers ;",
+        "- les produits des droits d'auteur perçus par les écrivains ou compositeurs et par leurs héritiers ou légataires ;",
+        "- les produits perçus par les inventeurs au titre, soit de la concession de licences d'exploitation de leurs brevets, soit de la cession de marques de fabrique, procédés ou formules de fabrication.",
+        "",
+        "Sont également compris dans les bénéfices non commerciaux :",
+        "- les commissions perçues par les mandataires des sociétés de Pari Mutuel Urbain et/ou de jeux de hasard ;",
+        "- les commissions, honoraires et toutes sommes payées par les entreprises aux personnes exerçant des professions non commerciales ;",
+        "- les revenus issus de l'exercice des activités de l'enseignement privé par les personnes physiques ou morales.",
+        "",
+        "Les régimes d'imposition définis aux articles 26 à 33 du CGI, tome 1, sont applicables aux bénéfices ou revenus visés au présent article."
+      ],
+      "mots_cles": [
+        "BNC",
+        "professions libérales",
+        "droits d'auteur",
+        "brevets",
+        "opérations de bourse",
+        "commissions",
+        "honoraires",
+        "enseignement privé"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 43",
+      "titre": "Détermination des bénéfices imposables des professions non commerciales",
+      "texte": [
+        "1) Le bénéfice à retenir dans les bases de l'IRPP est constitué par l'excédent des recettes totales sur les dépenses nécessitées par l'exercice de la profession.",
+        "Il tient compte des gains ou des pertes provenant soit de la réalisation des éléments d'actif affectés à l'exercice de la profession, soit des cessions à charge ou d'office, ainsi que de toutes indemnités reçues en contrepartie de la cessation de l'exercice de la profession ou du transfert de la clientèle.",
+        "",
+        "Les dépenses déductibles comprennent notamment :",
+        "a) le loyer des locaux professionnels. Toutefois, si le contribuable est propriétaire des locaux affectés à l'exercice de la profession, aucune déduction n'est apportée de ce chef au bénéfice imposable ;",
+        "b) les amortissements effectués suivant les règles applicables en matière de BICA ;",
+        "c) les frais généraux de toute nature, les dépenses du personnel et de main-d'œuvre.",
+        "",
+        "2) Les bénéfices provenant de la production littéraire, scientifique ou artistique relèvent de la catégorie des BNC. Toutefois, lorsqu'ils sont intégralement déclarés par les tiers, les produits de droits d'auteur perçus par les écrivains et compositeurs sont soumis à l'impôt sur le revenu selon les règles prévues en matière de traitements et salaires."
+      ],
+      "mots_cles": [
+        "BNC",
+        "détermination du bénéfice",
+        "charges déductibles",
+        "droits d'auteur",
+        "amortissements",
+        "frais généraux"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 44",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 44 bis",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 45",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 46",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 46 bis",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 47",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 47 bis",
+      "titre": "",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 47 ter",
+      "titre": "Rémunérations versées aux étrangers",
+      "texte": [
+        "Les rémunérations versées aux écrivains, artistes, auteurs compositeurs et assimilés, au titre de droits d'auteur ou autres pour leurs prestations effectuées au Congo ou en raison de leur domiciliation au Congo sont imposables."
+      ],
+      "mots_cles": [
+        "droits d'auteur",
+        "artistes étrangers",
+        "imposition",
+        "prestations au Congo"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 48",
+      "titre": "Imposition des non-résidents sans installation permanente",
+      "texte": [
+        "Sont imposables les sommes payées en rémunération de l'activité déployée au Congo dans l'exercice des professions définies à l'article 42 ci-dessus, à des personnes visées à l'article 2 paragraphe 1 b du présent Code ou à des sociétés ainsi que les bénéfices, revenus, produits ou redevances énumérés audit article 42 qui sont réalisés au Congo par ces mêmes personnes ou sociétés.",
+        "La présente disposition n'est cependant pas applicable lorsque la personne physique est domiciliée dans un des autres États de l'UDEAC."
+      ],
+      "mots_cles": [
+        "non-résidents",
+        "BNC",
+        "UDEAC",
+        "installation permanente"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 49",
+      "titre": "Détermination du montant net imposable",
+      "texte": [
+        "Le montant net des sommes imposables est déterminé en retenant la totalité des sommes payées sans aucune déduction.",
+        "En ce qui concerne les artistes de théâtre ou de music-hall, musiciens et autres non domiciliés au Congo, l'imposition est établie conformément aux dispositions de l'article 185 ter A.",
+        "Les artistes de théâtre ou de music-hall, musiciens et autres, organisant eux-mêmes et pour leur propre compte des représentations ou des concerts sont tenus de désigner un représentant légal au Congo."
+      ],
+      "mots_cles": [
+        "non-résidents",
+        "artistes",
+        "retenue à la source",
+        "représentant légal"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 50",
+      "titre": "Définition des revenus des capitaux mobiliers",
+      "texte": [
+        "Sont considérés comme revenus des capitaux mobiliers et passibles de l'IRPP, les revenus distribués par :",
+        "1° les personnes morales passibles de l'impôt sur les sociétés ;",
+        "2° les revenus distribués aux commanditaires des sociétés en commandite simple et des associés autres que ceux indéfiniment responsables dans les associations en participation ;",
+        "3° les revenus distribués par les personnes morales visées à l'article 107 du présent Code."
+      ],
+      "mots_cles": [
+        "revenus des capitaux mobiliers",
+        "dividendes",
+        "parts sociales",
+        "IRPP"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 51",
+      "titre": "Définition des revenus distribués",
+      "texte": [
+        "Sont considérés comme revenus distribués :",
+        "1° tous les bénéfices ou produits qui ne sont pas mis en réserve ou incorporés au capital ;",
+        "2° toutes les sommes ou valeurs mises à la disposition des associés, actionnaires ou porteurs de parts et non prélevées sur les bénéfices, notamment celles visées à l'article 1 du Code de l'IRVM du Congo.",
+        "",
+        "Pour l'application du paragraphe 1 du présent article, les bénéfices s'entendent de ceux qui sont retenus pour l'assiette de l'impôt sur les sociétés augmenté de l'impôt sur les sociétés acquitté et diminué des produits légalement exonérés dudit impôt, y compris les produits visés à l'article 123, paragraphe 1 et 2 du présent Code, ainsi que les bénéfices réalisés dans les entreprises exploitées hors du Congo et diminués des sommes payées au titre de l'IRPP dont la personne morale peut être personnellement redevable en application des dispositions de l'article 56 du présent Code et 8 du Code de l'IRVM."
+      ],
+      "mots_cles": [
+        "revenus distribués",
+        "dividendes",
+        "réserves",
+        "IRVM",
+        "IRPP"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 52",
+      "titre": "Revenus non considérés comme distribués",
+      "texte": [
+        "1) Ne sont pas considérées comme revenus distribués les répartitions présentant pour les associés ou actionnaires le caractère de remboursement d'apport ou de primes d'émission, lorsque la répartition n'est réputée présenter ce caractère que si tous les bénéfices et les réserves autres que la réserve légale ont été auparavant répartis.",
+        "",
+        "Sous réserve des dispositions du paragraphe 4 ci-après, ne sont pas considérées comme des apports pour l'application du présent article :",
+        "a) les réserves incorporées au capital ;",
+        "b) les sommes incorporées au capital ou aux réserves (primes de fusion) à l'occasion d'une fusion de sociétés.",
+        "",
+        "2) Les amortissements de tout ou partie de leur capital social, parts d'intérêt ou commandite effectués par les sociétés concessionnaires de l'État, des Communes ou autres collectivités publiques lorsque ces amortissements sont justifiés par la caducité de tout ou partie de l'actif social notamment par dépérissement progressif ou par obligation de remise de concession à l'autorité concédante.",
+        "",
+        "3) Les sommes mises à la disposition des associés dès lors qu'elles constituent la rémunération d'un prêt à la condition d'en justifier par un service ou une fonction et sont valablement comprises dans les charges déductibles pour l'assiette de l'impôt sur les sociétés.",
+        "",
+        "4) Les remboursements consécutifs à la liquidation de la société et portant sur la partie du capital ayant déjà supporté le présent impôt général sur le revenu."
+      ],
+      "mots_cles": [
+        "revenus non distribués",
+        "remboursement d'apport",
+        "primes d'émission",
+        "fusion",
+        "liquidation"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 53",
+      "titre": "Incorporation directe des bénéfices au capital",
+      "texte": [
+        "L'incorporation directe des bénéfices au capital est assimilée à une incorporation de réserves."
+      ],
+      "mots_cles": [
+        "incorporation des bénéfices",
+        "capital",
+        "réserves"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 54",
+      "titre": "Distributions gratuites d'actions",
+      "texte": [
+        "Les distributions gratuites d'actions consécutives à l'augmentation de capital par incorporation des réserves ou des plus-values résultant de ces attributions sont exonérées du présent impôt à la condition qu'elles ne soient pas passibles de l'IRVM.",
+        "Le même régime est applicable en cas d'apport entrant dans les prévisions de l'article 111-2 [NB – Voir article 118-c] du présent Code."
+      ],
+      "mots_cles": [
+        "actions gratuites",
+        "augmentation de capital",
+        "exonération",
+        "IRVM",
+        "apports"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 55",
+      "titre": "Répartition de la masse des revenus distribués",
+      "texte": [
+        "Pour chaque période d'imposition, la masse des revenus distribués déterminée conformément aux dispositions des articles 51 et 52 ci-dessus est considérée comme répartie aux bénéficiaires pour l'évaluation du revenu de chacun d'eux, à concurrence des chiffres indiqués dans les déclarations fournies par la personne morale dans les conditions prévues à l'article 126 paragraphe 2-2° ci-après."
+      ],
+      "mots_cles": [
+        "revenus distribués",
+        "répartition",
+        "bénéficiaires",
+        "déclarations"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 56",
+      "titre": "Imposition des distributions excédentaires ou non déclarées",
+      "texte": [
+        "Au cas où la masse des revenus distribués excède le montant total des distributions tel qu'il résulte de sa déclaration, les sommes correspondantes sont soumises au nom de la personne morale à l'IRPP au taux le plus élevé sans aucun abattement ni fractionnement.",
+        "Cette disposition ne met pas obstacle à l'imposition des bénéficiaires des distributions non déclarées lorsque ces derniers peuvent être identifiés par l'administration."
+      ],
+      "mots_cles": [
+        "distributions excédentaires",
+        "distributions non déclarées",
+        "taux maximum IRPP",
+        "personne morale"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 57",
+      "titre": "Tantièmes et jetons de présence",
+      "texte": [
+        "Les tantièmes, jetons de présence et autres rémunérations allouées aux membres des conseils d'administration des sociétés anonymes sont imposables à l'IRPP.",
+        "Toutefois, demeurent assujettis au régime d'imposition des salaires, les émoluments qui sont attribués aux administrateurs exerçant un emploi salarié pour les rétribuer de cet emploi."
+      ],
+      "mots_cles": [
+        "tantièmes",
+        "jetons de présence",
+        "conseil d'administration",
+        "sociétés anonymes"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 58",
+      "titre": "Revenus des obligations",
+      "texte": [
+        "Sont considérés comme revenus au sens des présentes dispositions :",
+        "1° les intérêts, arrérages et tous autres produits des obligations, effets publics et tous autres titres d'emprunt négociables de Communes, établissements publics, ainsi que des sociétés, compagnies et entreprises quelconques financières, industrielles, commerciales ou civiles congolaises ;",
+        "2° les lots et primes de remboursement payés aux porteurs des mêmes titres."
+      ],
+      "mots_cles": [
+        "obligations",
+        "intérêts",
+        "arrérages",
+        "titres d'emprunt",
+        "effets publics",
+        "primes de remboursement"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 59",
+      "titre": "Détermination du revenu des obligations",
+      "texte": [
+        "Le revenu est déterminé :",
+        "1° pour les obligations, effets publics et emprunts par les intérêts, arrérages, revenus et tous autres produits distribués dans l'année ;",
+        "2° pour les lots et primes de remboursement par la différence entre la somme remboursée et le taux d'émission à retenir pour la liquidation de l'IRVM sur ces primes.",
+        "Les dispositions de l'article 12 du CGI sur les revenus des valeurs mobilières sont applicables aux revenus visés par le présent article."
+      ],
+      "mots_cles": [
+        "revenus des obligations",
+        "primes de remboursement",
+        "IRVM",
+        "taux d'émission"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 60",
+      "titre": "Revenus des valeurs mobilières émis hors du Congo",
+      "texte": [
+        "Pour l'établissement de l'IRPP visées à l'article 2 du présent Code, à l'exception de celles visées au paragraphe 1 b dudit article, sont considérés comme revenus au sens du présent paragraphe :",
+        "1° les dividendes, intérêts, arrérages et tous autres produits des actions de toute nature et des parts de fondateur des sociétés, compagnies ou entreprises financières, industrielles, commerciales, civiles et généralement quelconques dont le siège social est situé à l'étranger, quelle que soit l'époque de leur création ;",
+        "2° les intérêts, produits et bénéfices des parts d'intérêt et commandites dans les sociétés, compagnies ou entreprises ayant leur siège social à l'étranger et dont le capital n'est pas divisé en actions, à l'exception toutefois :",
+        "a) des produits de parts dans les sociétés commerciales en nom collectif ;",
+        "b) des produits de sociétés en commandite simple revenant aux associés en nom.",
+        "",
+        "3° Les répartitions faites aux associés, aux actionnaires et porteurs de parts de fondateur des mêmes sociétés, à un titre autre que celui de remboursements d'apports ou de primes d'émission. Une répartition n'est réputée présenter le caractère d'un remboursement d'apport ou de prime que si tous les bénéfices ou réserves ont été auparavant répartis.",
+        "",
+        "4° Le montant des tantièmes, jetons de présence, remboursements forfaitaires de frais et toutes autres rémunérations, y compris les jetons de présence attribués au seul administrateur unique ou aux membres des conseils d'administration des sociétés visées au 1 du présent article.",
+        "",
+        "5° Les jetons de présence payés aux actionnaires des sociétés visées à l'occasion des assemblées générales.",
+        "",
+        "6° Les intérêts, arrérages et tous produits des obligations des sociétés, compagnies et entreprises désignées aux 1 et 2 ci-dessus.",
+        "",
+        "7° Les intérêts, arrérages et tous autres produits des rentes, obligations et autres effets publics des gouvernements étrangers ainsi que des corporations, villes, provinces étrangères et de tout autre établissement public étranger.",
+        "",
+        "8° Les lots et primes de remboursement payés aux créanciers et aux porteurs des titres visés aux 6 et 7 du présent article.",
+        "",
+        "9° Les produits des « trusts » quelle que soit la consistance des biens composant ces trusts.",
+        "",
+        "10° Les redevances (royalties) ou fractions de redevances dues pour l'exploitation des nappes de pétrole ou de gaz naturel.",
+        "",
+        "Le revenu est déterminé par la valeur brute en monnaie courante au Congo des produits encaissés, d'après le cours ou change au jour des paiements, sans autre déduction que des impôts établis dans le pays d'origine et dont le paiement incombe au bénéficiaire.",
+        "",
+        "Le montant des lots est fixé par le montant même du lot en monnaie ayant cours au Congo.",
+        "Pour les primes de remboursement, le revenu net est calculé suivant les règles prévues par l'article 56 ci-dessus."
+      ],
+      "mots_cles": [
+        "revenus étrangers",
+        "dividendes",
+        "parts sociales",
+        "sociétés étrangères",
+        "obligations",
+        "trusts",
+        "royalties",
+        "lots",
+        "primes de remboursement"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 61",
+      "titre": "Revenus des créances, dépôts et cautionnements",
+      "texte": [
+        "I. Sont considérés comme revenus au sens du présent article lorsqu'ils ne sont pas déjà inclus dans les recettes des entreprises prises visées aux articles 14 et 15 du présent Code, les intérêts, arrérages et tous autres produits :",
+        "1° des créances hypothécaires, privilégiées et chirographaires à l'exclusion de celles représentées par des obligations, effets publics et autres titres d'emprunts négociables entrant dans les prévisions des articles 59 et 60 ci-dessus ;",
+        "2° des dépôts de sommes d'argent à vue ou à échéance fixe, quel que soit le dépositaire et quelle soit l'affectation du dépôt ;",
+        "3° des cautionnements en numéraire ;",
+        "4° des comptes courants ;",
+        "5° des bons nominatifs ou à ordre visés à l'article 171 sexies ci-après et ayant donné lieu au précompte de l'impôt spécial sur les bons de caisse au taux de 15 %.",
+        "",
+        "II. L'impôt est dû par le seul fait, soit du paiement des intérêts de quelque manière qu'il soit effectué, soit de leur inscription au débit ou au crédit du compte.",
+        "En cas de capitalisation des intérêts d'un prix de vente, d'un fonds de commerce ou des indemnités dues en contrepartie de la cessation de l'exercice de la profession ou du transfert d'une clientèle, le fait générateur de l'impôt est reporté à la date du paiement effectif des intérêts."
+      ],
+      "mots_cles": [
+        "créances",
+        "dépôts",
+        "cautionnements",
+        "intérêts",
+        "bons de caisse",
+        "comptes courants"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 62",
+      "titre": "Exemptions relatives aux revenus des créances",
+      "texte": [
+        "Ne sont pas compris dans le revenu global soumis à l'IRPP :",
+        "1° les revenus provenant des caisses sociales de crédit agricole, associations agricoles et sociétés de coopératives agricoles ;",
+        "2° les revenus des sociétés de toute nature dites de coopération ainsi que les sociétés coopératives de production, de consommation ou de crédit et les sociétés de secours mutuel ;",
+        "3° les intérêts des bons émis par le Trésor à échéance de 5 ans au plus ;",
+        "4° les lots et primes de remboursement émis avec l'autorisation du Ministre des finances ;",
+        "5° les intérêts des bons, obligations ou titres d'emprunts émis par certains États avec l'autorisation des Ministres des Finances des États intéressés ;",
+        "6° les intérêts des sommes inscrites sur les livrets de caisse d'épargne."
+      ],
+      "mots_cles": [
+        "exemptions",
+        "crédit agricole",
+        "coopératives agricoles",
+        "bons du Trésor",
+        "coopératives",
+        "livrets d'épargne"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 63",
+      "titre": "Imposition des plus-values de cession",
+      "texte": [
+        "Sous réserve des dispositions de l'article 22 du présent Code, les plus-values de cession d'éléments d'actif immobilisé à l'exception des immeubles bâtis et non bâtis appartenant à des personnes physiques dans le cadre de la gestion de leur patrimoine privé, en fin d'exploitation ou en cas de cession partielle d'entreprise, les indemnités reçues en contrepartie de la cessation de l'exercice de la profession ou du transfert d'une clientèle, sont comptées dans les bénéfices imposables pour la moitié de leur montant.",
+        "Toutefois, lorsque la cession, le transfert ou la cessation intervient plus de cinq années après la création ou l'achat du fonds de commerce, de l'office ou de la clientèle, la plus-value n'est retenue dans les bénéfices imposables que pour le tiers de son montant.",
+        "Le délai fixé à l'alinéa qui précède n'est pas opposable au conjoint survivant, ni aux héritiers en ligne directe, lorsque la cession, le transfert ou la cessation de l'exercice de la profession est la conséquence du décès de l'exploitant.",
+        "",
+        "b) Par dérogation aux dispositions du paragraphe a) du présent article, sont exonérées lesdites plus-values, autres que celles résultant de la cession des immeubles bâtis ou non bâtis, réalisées par les contribuables imposés d'après le régime du forfait à la condition que la cession ou la cessation intervienne plus de cinq ans après la création ou l'achat du fonds de commerce, de l'office ou de la clientèle."
+      ],
+      "mots_cles": [
+        "plus-values",
+        "cession",
+        "actif immobilisé",
+        "cessation d'activité",
+        "fonds de commerce",
+        "régime du forfait",
+        "exonération"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 63 bis",
+      "titre": "Imposition des plus-values lors de la cessation d'activité",
+      "texte": [
+        "Les plus-values visées à l'article 63-a et b ci-dessus sont imposables pour leur montant total lorsqu'elles sont réalisées par des contribuables qui cessent d'exercer toute activité commerciale, industrielle ou professionnelle au Congo."
+      ],
+      "mots_cles": [
+        "cessation d'activité",
+        "plus-values",
+        "imposition intégrale"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 63 ter",
+      "titre": "Imposition des plus-values du patrimoine privé",
+      "texte": [
+        "a) Les plus-values réalisées par les personnes physiques dans le cadre de la gestion de leur patrimoine privé à l'occasion de la vente, de l'échange, du partage, de l'expropriation, de l'apport en société ou de la liquidation d'une société, des propriétés bâties ou non bâties, quelle que soit l'origine de l'acquisition sont soumises à une taxe dont le taux est fixé à 10 % au profit du budget de l'État.",
+        "",
+        "b) Le mode de détermination de la plus-value varie selon que les mises à jour de la valeur de l'immeuble cédé ont été faites ou non dans le registre foncier.",
+        "",
+        "c) Lorsque les mises à jour n'ont pas été faites dans le registre foncier, la plus-value imposable est constituée par la différence entre :",
+        "- d'une part, le prix de cession ou la valeur vénale du bien considéré et, éventuellement, l'indemnité d'expropriation ;",
+        "- d'autre part, le prix d'acquisition de l'immeuble ou le coût de construction, le prix d'acquisition est augmenté des frais d'acquisition et des impenses et majoré de 3 % par année entière écoulée depuis l'acquisition du terrain, en ce qui concerne le prix de celui-ci, ou depuis l'achèvement de la construction en ce qui concerne le coût de la construction.",
+        "",
+        "d) Lorsque les mises à jour ont été faites dans le registre foncier, la plus-value imposable est constituée par la différence entre la valeur révisée inscrite au registre foncier et le prix de cession ou la valeur vénale du bien.",
+        "La plus-value imposable est constituée par la différence entre :",
+        "- d'une part, le prix de cession ou la valeur vénale du bien considéré et, éventuellement, l'indemnité d'expropriation ;",
+        "- d'autre part, la dernière valeur déclarée dans le registre foncier.",
+        "",
+        "e) La valeur de mise à jour n'est prise en compte dans la détermination de la plus-value que lorsqu'elle date de deux ans au minimum.",
+        "",
+        "f) La valeur de construction des immeubles bâtis est déterminée sur présentation des factures d'entrepreneurs acquittées. À défaut de factures acquittées ou en cas de contestation, l'estimation sera effectuée par le Service des domaines.",
+        "",
+        "g) Lorsque le bien a été possédé depuis plus de dix ans, le taux d'imposition de la plus-value est réduit à : 7 % pour les propriétés non bâties ; 5 % pour les propriétés bâties.",
+        "Pour bénéficier de cette réduction, le propriétaire doit justifier du paiement des impôts fonciers sur la période fiscale non prescrite.",
+        "",
+        "h) La taxe est assise au vu d'une déclaration souscrite par les redevables ou par le notaire qui a réalisé la transaction. Cette déclaration devra être déposée à l'inspection divisionnaire de la conservation foncière dans les trois mois suivant l'acte de vente.",
+        "",
+        "i) Toutefois, lorsque les plus-values sont réalisées par un contribuable passible de l'IRPP, elles sont déterminées pour l'assiette dudit impôt, sous déduction de la taxe présente. En cas de non-imposition ou d'imposition pour une somme inférieure au montant de la taxe, le solde de celle-ci n'est pas restitué.",
+        "",
+        "j) La liquidation, le recouvrement de la taxe et le contentieux sont effectués comme en matière d'IRPP.",
+        "",
+        "k) La taxe est retenue à la source par le notaire ou l'acquéreur lors de la réalisation des transactions immobilières. Elle est reversée au receveur de la conservation foncière du lieu de situation de l'immeuble pour le compte du vendeur.",
+        "",
+        "l) En cas de non-paiement de la taxe dans les trois mois, le notaire ou l'acquéreur ainsi que le vendeur sont solidairement responsables du paiement de la taxe et des pénalités.",
+        "",
+        "m) Tant que le paiement de la taxe sur la plus-value n'a pas été effectué, la transcription dans le registre foncier ne peut avoir lieu."
+      ],
+      "mots_cles": [
+        "plus-values immobilières",
+        "patrimoine privé",
+        "registre foncier",
+        "taux 10 %",
+        "retenue à la source",
+        "notaire",
+        "recouvrement"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 64",
+      "titre": "Déduction du salaire du conjoint de l'exploitant",
+      "texte": [
+        "Le conjoint de l'exploitant individuel travaillant effectivement en permanence dans l'entreprise pourra être appointé. Toutefois, ces appointements ne pourront excéder en tout état de cause la somme de 1.200.000 FCFA par an. Ce salaire admis en déduction du bénéfice est imposable conformément aux dispositions des articles 39 à 41 du présent Code.",
+        "Le bénéfice de ces dispositions ne peut être accordé que dans la mesure où le conjoint séjourne au Congo. Si au cours d'un exercice, le séjour du conjoint est inférieur à douze mois, le salaire autorisé est alors calculé « prorata temporis ». Toutefois, sont considérés comme temps de présence au Congo, les congés passés hors des limites territoriales de l'État dès l'instant qu'ils n'excèdent pas les minima fixés par le Code du travail congolais.",
+        "Les dispositions du présent article s'appliquent également pour la détermination des bénéfices réalisés par les sociétés et associations visées à l'article 6 du présent Code."
+      ],
+      "mots_cles": [
+        "salaire du conjoint",
+        "exploitant individuel",
+        "déduction",
+        "1 200 000 FCFA",
+        "prorata temporis"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 65",
+      "titre": "Revenus professionnels de catégories différentes",
+      "texte": [
+        "Lorsque les contribuables visés aux articles 14 et 15 du présent Code étendent leur activité à des opérations dont les résultats entrent dans la catégorie des bénéfices non commerciaux, il est tenu compte des résultats pour la détermination des BICA à comprendre dans la base de l'IRPP."
+      ],
+      "mots_cles": [
+        "revenus professionnels",
+        "catégories différentes",
+        "BNC",
+        "BICA",
+        "IRPP"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 65 bis",
+      "titre": "Charges à caractère mixte",
+      "texte": [
+        "Les charges à caractère mixte ne sont admises en déduction pour la détermination du bénéfice imposable qu'à concurrence de la limite de 2/3 des charges engagées par les contribuables relevant des revenus catégoriels des bénéfices industriels, commerciaux et artisanaux, des bénéfices des professions non commerciales et des bénéfices de l'exploitation agricole."
+      ],
+      "mots_cles": [
+        "charges mixtes",
+        "plafond 2/3",
+        "BICA",
+        "BNC",
+        "bénéfices agricoles"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 66",
+      "titre": "Revenu global imposable",
+      "texte": [
+        "1. Le revenu global imposable est établi suivant le montant total du revenu net annuel dont dispose le contribuable, que le revenu soit de source congolaise ou non, conformément à l'article 2 du CGI.",
+        "",
+        "2. Le revenu est déterminé en égard aux propriétés et aux capitaux que possède le contribuable, aux traitements, pensions et rentes viagères dont il jouit, aux revenus de toute nature qu'il perçoit, ainsi qu'aux bénéfices de toutes opérations lucratives auxquelles il se livre sous déduction :",
+        "",
+        "2.1 Déficits",
+        "Du déficit constaté pour une année dans une catégorie de revenus :",
+        "1° si le revenu global n'est pas suffisant pour que l'imputation puisse être intégralement opérée, l'excédent est reporté successivement sur le revenu global des années suivantes jusqu'à la troisième année inclusivement ;",
+        "2° toutefois, n'est pas autorisée l'imputation des déficits provenant d'immeubles de plaisance ou servant de villégiature. Les déficits encore susceptibles d'être reportés sur les années successives dans les conditions antérieurement prévues par les dispositions du CGI, relatives à chaque catégorie de revenus, sont imputés sur le revenu global devant servir de base à l'IRPP.",
+        "3° Lorsque cette imputation ne pourra être intégralement opérée, l'excédent sera reporté successivement sur le revenu global des années suivantes dans les limites des délais de reports appréciées lors de la constatation des déficits.",
+        "",
+        "2.2 Charges déductibles",
+        "Des charges ci-après lorsqu'elles n'entrent pas en compte pour l'évaluation des revenus des différentes catégories :",
+        "",
+        "1° Intérêts d'emprunts",
+        "Intérêts afférents aux six premières annuités de prêts contractés pour la construction, l'acquisition des immeubles dont le propriétaire se réserve la jouissance.",
+        "Le montant global des intérêts à retenir annuellement est limité à 1.000.000 FCFA.",
+        "Ces dispositions ne s'appliquent qu'en ce qui concerne les immeubles affectés à l'habitation principale des redevables.",
+        "",
+        "2° Arrérages de rente",
+        "Arrérages de rente payés par lui à titre obligatoire et gratuit.",
+        "",
+        "3° Pensions alimentaires",
+        "a) pensions alimentaires versées en vertu d'une décision de justice en cas de séparation de corps ou de divorce ou en cas d'instance de séparation de corps ou de divorce, lorsque le conjoint fait l'objet d'une imposition séparée ;",
+        "b) pensions alimentaires versées dans les conditions fixées par les articles 307, 314 à 316 du Code de la famille dont le versement aux ascendants et descendants doit être justifié par une décision de justice. Le montant global de la pension à retenir annuellement est limité à 1.200.000 FCFA par bénéficiaire ;",
+        "c) les pensions alimentaires versées par l'intermédiaire des notaires sont déductibles.",
+        "",
+        "4° Honoraires médicaux",
+        "a) honoraires médicaux effectivement supportés par le contribuable et les personnes à sa charge, à l'exclusion des frais de soins, prothèses, hospitalisation et des frais pharmaceutiques dans la limite de 10 % du revenu net avec un maximum de 200.000 FCFA ;",
+        "b) les honoraires perçus par les praticiens font l'objet d'une quittance numérotée issue d'un registre à souches mentionnant les références ;",
+        "c) des frais médicaux supportés au profit du bénéficiaire et de la partie versante, la date et le montant de la somme perçue.",
+        "",
+        "5° Primes d'assurance-vie",
+        "Des sommes payées au titre des primes d'assurance-vie.",
+        "",
+        "6° Cotisations retraite complémentaire",
+        "De la quote-part supportée par l'assuré au titre des cotisations du régime de retraite complémentaire."
+      ],
+      "mots_cles": [
+        "revenu global",
+        "revenu imposable",
+        "déficits",
+        "report de déficit",
+        "charges déductibles",
+        "intérêts emprunts",
+        "pensions alimentaires",
+        "honoraires médicaux",
+        "assurance-vie",
+        "retraite complémentaire"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 67",
+      "titre": "Évaluation des revenus nets catégoriels",
+      "texte": [
+        "Les revenus nets des diverses catégories entrant dans la composition du revenu global sont évalués d'après les règles fixées aux articles 10 à 65 ci-dessus, sans qu'il y ait lieu de distinguer suivant que ces revenus ont leur source au Congo ou hors du Congo.",
+        "Toutefois, en ce qui concerne les entreprises et exploitations situées hors de l'UDEAC, les règles fixées par le présent Code pour la détermination forfaitaire des bénéfices imposables ne sont pas applicables."
+      ],
+      "mots_cles": [
+        "revenu global",
+        "revenus catégoriels",
+        "source congolaise",
+        "UDEAC",
+        "bénéfices forfaitaires"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 68",
+      "titre": "Imposition des plus-values de cession de droits sociaux",
+      "texte": [
+        "Lorsqu'un associé, actionnaire, commanditaire ou porteur de parts bénéficiaires cède à un tiers, pendant la durée de la société, tout ou partie de ses droits sociaux, l'excédent du prix de cession sur le prix d'acquisition ou la valeur au 1er janvier 1962 s'il est supérieure à ces droits est compris dans la base de l'IRPP pour un tiers de son montant.",
+        "Toutefois, l'imposition de la plus-value ainsi réalisée est subordonnée à la condition que l'intéressé ou son conjoint, ses ascendants ou descendants exercent ou aient exercé au cours des cinq dernières années des fonctions d'administrateur ou de gérant dans la société et que les droits sociaux aient dépassé ensemble 25 % de ces bénéfices au cours de la même période.",
+        "Ces dispositions ne sont pas applicables aux associés en nom collectif et aux gérants des sociétés en commandite simple visés à l'article 6 du présent Code qui sont imposables chaque année à raison de la quote-part des bénéfices sociaux correspondant à leurs droits dans la société.",
+        "Lorsque les contribuables visés au présent article ont procédé à des cessions échelonnées de leurs parts sociales, l'ensemble de ces cessions est à considérer pour déterminer la plus-value imposable sous déduction des plus-values qui auraient été déjà imposées au cours de la même période."
+      ],
+      "mots_cles": [
+        "plus-values",
+        "cession droits sociaux",
+        "actionnaire",
+        "associé",
+        "IRPP",
+        "parts bénéficiaires",
+        "cessions échelonnées"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 69",
+      "titre": "Imposition des bons attribués lors des liquidations",
+      "texte": [
+        "Dans la mesure où il est passible de l'IRVM, le bon attribué lors de la liquidation d'une société aux titulaires de droits sociaux en sus de leur apport n'est compris, le cas échéant, dans la base de l'IRPP que jusqu'à concurrence de l'excédent du remboursement des droits sociaux annulés sur le prix d'acquisition de ces droits dans le cas où ce dernier est supérieur au montant de l'apport.",
+        "La même règle est applicable dans le cas où la société rachète au cours de son existence les droits de certains associés, actionnaires ou porteurs de parts bénéficiaires."
+      ],
+      "mots_cles": [
+        "liquidation",
+        "bons",
+        "droits sociaux",
+        "IRVM",
+        "IRPP",
+        "rachat parts"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 70",
+      "titre": "Réserves des sociétés en commandite par actions",
+      "texte": [
+        "Les associés gérants des sociétés en commandite par actions sont réputés disposer de la quote-part leur revenant dans les bénéfices sociaux affectés à la constitution de réserves qu'au moment de la mise en distribution desdites réserves."
+      ],
+      "mots_cles": [
+        "réserves",
+        "sociétés en commandite par actions",
+        "distribution",
+        "associés gérants",
+        "bénéfices sociaux"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 71",
+      "titre": "Revenus exceptionnels",
+      "texte": [
+        "Lorsqu'au cours de l'année, un contribuable a réalisé un revenu exceptionnel tel que la plus-value d'un fonds de commerce ou la distribution de réserves d'une société, et que le montant de ce revenu exceptionnel dépasse la moyenne des revenus nets d'après lesquels ce contribuable a été soumis à l'impôt général ou au présent impôt au titre des trois dernières années, l'intéressé peut demander qu'il soit réparti, pour l'établissement de l'IRPP, sur l'année de sa réalisation et les années antérieures non couvertes par la prescription.",
+        "Cette disposition est applicable pour l'imposition de la plus-value d'un fonds de commerce à la suite du décès de l'exploitant.",
+        "La même faculté est accordée au contribuable qui, par suite de circonstances indépendantes de sa volonté, a eu, au cours d'une même année, la disposition de revenus correspondant à la période normale de perception de plusieurs années.",
+        "En aucun cas, les revenus visés au présent article ne peuvent être répartis sur la période antérieure à leur échéance normale ou à la date à laquelle le contribuable a acquis les biens ou exploitations ou entreprises générateurs desdits revenus."
+      ],
+      "mots_cles": [
+        "revenu exceptionnel",
+        "étalement",
+        "plus-value",
+        "fonds de commerce",
+        "distribution réserves",
+        "IRPP"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 72",
+      "titre": "Imposition des étrangers et non-domiciliés",
+      "texte": [
+        "Les contribuables visés à l'article 2 paragraphe 1 b sont imposables à raison des bénéfices ou revenus perçus ou réalisés au Congo.",
+        "Ces contribuables sont tenus, dans les vingt jours de la demande de l'administration fiscale, de constituer des garanties ou de désigner un représentant au Congo autorisé à recevoir les communications relatives à l'assiette, au recouvrement et au contentieux de l'impôt."
+      ],
+      "mots_cles": [
+        "non-résidents",
+        "revenus de source congolaise",
+        "représentant fiscal",
+        "étrangers",
+        "garanties fiscales"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 73",
+      "titre": "Revenu imposable forfaitaire des étrangers",
+      "texte": [
+        "Pour les contribuables de nationalité congolaise ou étrangère n'ayant pas leur domicile réel au Congo mais y possédant une ou plusieurs résidences, le revenu imposable est fixé à une somme égale à cinq fois la valeur locative de la ou des résidences qu'ils possèdent au Congo à moins que les revenus de source congolaise des intéressés n'atteignent un chiffre plus élevé, auquel cas ce dernier chiffre sert de base à l'impôt."
+      ],
+      "mots_cles": [
+        "revenu forfaitaire",
+        "résidences",
+        "valeur locative",
+        "non-domiciliés",
+        "base imposable"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 74",
+      "titre": "Revenus de l'année d'acquisition d'un domicile au Congo",
+      "texte": [
+        "Lorsqu'un contribuable précédemment domicilié hors du Congo y transfère son domicile, les revenus dont l'imposition est entraînée par l'établissement du domicile au Congo ne sont comptés que du jour de cet établissement.",
+        "La même règle est applicable dans le cas du contribuable qui, n'ayant pas antérieurement de résidence habituelle au Congo, y acquiert la disposition d'une telle résidence."
+      ],
+      "mots_cles": [
+        "domicile fiscal",
+        "transfert de résidence",
+        "année d'imposition",
+        "établissement domicile",
+        "prorata temporis"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 75",
+      "titre": "Revenus de l'année de transfert du domicile hors du Congo ou d'abandon de résidence",
+      "texte": [
+        "1. Le contribuable qui transfère son domicile hors du Congo est passible de l'IRPP à raison des revenus dont il a disposé pendant l'année de son départ jusqu'à la date de celui-ci, des bénéfices qu'il a réalisés depuis la fin du dernier exercice taxé, et de tous revenus qu'il a acquis sans en avoir la disposition antérieurement à son départ.",
+        "Les revenus visés au présent article sont imposés d'après les règles applicables au 1er janvier de l'année de départ.",
+        "",
+        "2. Une déclaration provisoire des revenus imposables, en vertu du présent article, est produite au moins trente jours avant la date probable du départ du contribuable du lieu de sa résidence. Elle est soumise aux règles et sanctions prévues à l'égard des déclarations annuelles.",
+        "Elle peut être complétée, s'il y a lieu, jusqu'à l'expiration des deux premiers mois de l'année suivant celle du départ.",
+        "À défaut de cette déclaration rectificative souscrite dans ce délai, la déclaration provisoire est considérée comme confirmée par l'intéressé.",
+        "",
+        "3. Les mêmes règles sont applicables dans le cas d'abandon de toute résidence au Congo.",
+        "",
+        "4. Tout contribuable quittant définitivement le Congo ne peut obtenir son visa de départ que sur justification du paiement des impositions dues tant en raison des revenus acquis au cours de l'année antérieure que sur ceux acquis en vertu des dispositions du présent article.",
+        "",
+        "5. Tout contribuable ne relevant pas d'une administration publique et quittant le Congo pour une absence temporaire devra fournir avant son départ soit le cas échéant une garantie de son employeur ou d'un établissement bancaire, s'il s'agit d'un contribuable autre qu'un salarié, d'acquitter pour son compte les impositions dont il pourrait être redevable dans le cas où il ne rejoindrait pas le Congo ou, à défaut, laisser des garanties suffisantes pour assurer le recouvrement desdites impositions.",
+        "Le Ministre des finances aura toutefois la faculté de relever le contribuable de cette obligation sur demande justifiée de l'intéressé."
+      ],
+      "mots_cles": [
+        "transfert de domicile",
+        "départ du Congo",
+        "déclaration provisoire",
+        "visa de départ",
+        "garanties fiscales",
+        "IRPP",
+        "abandon résidence"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 76",
+      "titre": "Obligation de déclaration du revenu global",
+      "section": "Section 3 - Déclaration des contribuables",
+      "texte": [
+        "1. En vue de l'établissement de l'IRPP, les contribuables passibles dudit impôt sont tenus de déclarer, sous la foi du serment, le montant de leur revenu global avec l'indication, par nature de revenus, des éléments qui le composent, suivant les distinctions ci-après :",
+        "- revenus des propriétés bâties et non bâties lorsqu'ils ne sont pas compris dans les bénéfices d'une entreprise industrielle ou commerciale, d'une exploitation agricole ou d'une profession non commerciale ;",
+        "- bénéfices des professions industrielles, commerciales, artisanales ou de l'exploitation minière ;",
+        "- bénéfices des exploitations agricoles ;",
+        "- rémunérations des gérants majoritaires des sociétés à responsabilité limitée, des gérants des sociétés en commandite par actions ;",
+        "- traitements publics et privés, indemnités et émoluments, salaires ;",
+        "- pensions et rentes viagères ;",
+        "- bénéfices des professions non commerciales et revenus assimilés ;",
+        "- revenus des valeurs et capitaux mobiliers provenant de :",
+        "  • valeurs mobilières, actions, parts de fondateur, obligations, titres de rente ;",
+        "  • tantièmes et jetons de présence ;",
+        "  • parts de commandite simple ou de parts de société à responsabilité limitée ;",
+        "  • créances, dépôts, cautionnements et autres placements.",
+        "Les déclarations mentionnent séparément le montant des revenus, de quelque nature qu'ils soient, encaissés directement ou indirectement à l'étranger.",
+        "L'obligation de déclaration des revenus édictée au paragraphe 1 ci-dessus concerne tous les contribuables, que les revenus réalisés soient soumis à l'impôt ou qu'ils en soient exonérés.",
+        "Les contribuables doivent joindre à leur déclaration une note indiquant, avec toutes les justifications utiles, le total des revenus dont l'échelonnement est demandé, l'origine des revenus, leur répartition et la période d'échelonnement.",
+        "",
+        "2. Les personnes, sociétés ou autres collectivités ayant leur domicile, leur résidence habituelle ou leur siège au Congo qui font envoyer de l'étranger ou encaissent à l'étranger, soit directement, soit par un intermédiaire quelconque, des produits visés à l'article 60 ci-dessus, sont tenues, en vue de l'établissement de l'IRPP, de comprendre ces revenus dans la déclaration prévue au paragraphe précédent.",
+        "",
+        "3. Sont assujettis à la déclaration prévue au paragraphe 1 du présent article, quel que soit le montant de leur revenu, les contribuables visés à l'article 73 du présent Code.",
+        "",
+        "4. Les contribuables qui entendent bénéficier des dispositions de l'article 71 du CGI doivent en faire la demande dans leur déclaration.",
+        "Déclaration des éléments du train de vie :",
+        "- Logements : loyer ou valeur locative de l'habitation principale, des résidences secondaires, des autres propriétés immobilières ;",
+        "- Personnel de maison : nombre, fonction, rémunération ;",
+        "- Véhicules : nombre, date d'acquisition, date de première mise en circulation, puissance ;",
+        "- Aéronefs : avions de tourisme, puissance de chacun d'eux ;",
+        "- Nautisme : yachts, bateaux de plaisance.",
+        "Les éléments à retenir sont ceux dont le contribuable et les membres de sa famille visés à l'article 4 du CGI ont disposé pendant l'année précédente.",
+        "",
+        "5. Le cas échéant, ils doivent déclarer dans une note annexe les éléments permettant de déterminer la plus-value de cessions des droits sociaux visée à l'article 68 ci-dessus."
+      ],
+      "mots_cles": [
+        "déclaration revenus",
+        "revenu global",
+        "IRPP",
+        "catégories de revenus",
+        "revenus fonciers",
+        "BICA",
+        "salaires",
+        "valeurs mobilières",
+        "revenus étrangers",
+        "revenus exonérés",
+        "train de vie",
+        "plus-values",
+        "droits sociaux"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 77",
+      "titre": "Justification de la situation de famille et des charges déductibles",
+      "texte": [
+        "Les déclarants doivent fournir toutes indications nécessaires au sujet de leur situation et de leurs charges de famille.",
+        "",
+        "Ils doivent également, pour avoir droit au bénéfice des déductions prévues à l'article 66 ci-dessus, produire l'état des charges à retrancher du revenu global en vertu dudit article.",
+        "",
+        "Cet état doit mentionner :",
+        "a) Au sujet des dettes contractées et des rentes payées à titre obligatoire : nom et domicile du créancier, nature et date du titre constatant la créance, et, s'il y a lieu, nom et résidence de l'officier public ayant dressé l'acte ou de la juridiction dont émane le jugement, enfin le chiffre des intérêts ou arrérages annuels.",
+        "b) Au sujet des impôts directs et taxes assimilées : la nature de chaque contribution, le lieu de l'imposition, l'article du rôle et le montant de la cotisation."
+      ],
+      "mots_cles": [
+        "situation de famille",
+        "charges déductibles",
+        "état des charges",
+        "dettes",
+        "rentes obligatoires",
+        "impôts directs",
+        "justificatifs"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 78",
+      "titre": "Forme et dépôt des déclarations",
+      "texte": [
+        "Les déclarations sont rédigées sur des formules tenues à la disposition des contribuables et dont le modèle est arrêté par le Ministre des finances.",
+        "Les déclarations dûment signées doivent être adressées sous pli affranchi à l'inspection divisionnaire des contributions directes et indirectes de la résidence de l'intéressé.",
+        "C'est la date d'arrivée à l'inspection divisionnaire qui seule pourra être retenue pour l'application de la pénalité dont sont passibles les contribuables ayant souscrit tardivement leur déclaration."
+      ],
+      "mots_cles": [
+        "formulaires déclaration",
+        "dépôt déclaration",
+        "inspection divisionnaire",
+        "pénalité retard",
+        "contributions directes"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 79",
+      "titre": "Déclaration des contribuables imposés d'après le bénéfice réel",
+      "texte": [
+        "Les contribuables visés au premier alinéa de l'article 31 du CGI, qui sont responsables d'après leur bénéfice réel, sont tenus de souscrire chaque année, dans le délai fixé à l'article 80 dudit Code, une déclaration indiquant pour l'année ou l'exercice précédent :",
+        "a) le montant du bénéfice imposable ou du déficit ;",
+        "b) le montant de leur chiffre d'affaires selon les dispositions de l'article 30 ci-dessus ;",
+        "c) le montant des prélèvements, salaires, indemnités et rétributions quelconques payés ou disposés ;",
+        "d) le nom et l'adresse ou des comptables chargés de tenir la comptabilité ou contrôler les résultats généraux en précisant si ces techniciens font partie ou non du personnel salarié de leur entreprise.",
+        "",
+        "Ils peuvent le cas échéant joindre à cette déclaration les observations essentielles et les conclusions générales qui ont pu être remises par les experts comptables ou les comptables agréés chargés pour eux, dans les limites de leur compétence, d'établir, contrôler ou apprécier leur bilan et leur compte de pertes et profits.",
+        "",
+        "La déclaration visée au présent article doit être remise à l'inspecteur divisionnaire des contributions directes et indirectes du siège de la direction de l'entreprise ou, à défaut, du lieu du principal établissement."
+      ],
+      "mots_cles": [
+        "bénéfice réel",
+        "déclaration annuelle",
+        "chiffre d'affaires",
+        "bénéfice imposable",
+        "déficit",
+        "experts comptables",
+        "comptables agréés",
+        "inspecteur divisionnaire"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 80",
+      "titre": "Délais de dépôt des déclarations",
+      "texte": [
+        "Les déclarations de revenus des personnes physiques bénéficiaires notamment des revenus fonciers, des traitements, salaires, indemnités, émoluments, pensions et rentes viagères, des revenus des capitaux mobiliers ainsi que des plus-values de cession passibles de l'IRPP sont effectuées au plus tard le 20 mars de l'année qui suit celle de la perception desdits revenus, auprès de la fiscalité des particuliers du lieu de la résidence du contribuable.",
+        "",
+        "Les déclarations spéciales de revenus d'exploitation des personnes physiques relevant de la catégorie des bénéfices industriels et commerciaux et artisanaux et agricoles (BICA) et/ou de la catégorie des bénéfices non commerciaux et autres catégories assimilées (BNC), présentent et détaillent conformément à l'Acte uniforme OHADA relatif au droit comptable et à l'information financière, ainsi que le paiement éventuel, du solde de liquidation y afférent, sont effectués au plus tard le 20 mars de l'année qui suit celle de l'acquisition desdits revenus auprès de l'unité des entreprises (grandes, moyennes, petites entreprises) compétente.",
+        "",
+        "Les déclarations de revenus des personnes physiques relevant à la fois de l'une ou l'autre catégorie visées aux alinéas 1 et 2 ci-dessus, sont effectuées auprès de l'unité de la fiscalité des particuliers du lieu de la résidence du contribuable, au plus tard le 20 mars de l'année qui suit celle de l'acquisition desdits revenus, après déduction des acomptes de l'IRPP, BICA ou BNC acquittés auprès de l'unité des entreprises compétente.",
+        "",
+        "Le solde de liquidation de l'IRPP résultant des déclarations souscrites dans les conditions du présent alinéa est payé à l'unité de la fiscalité des particuliers.",
+        "",
+        "Au cas où ce solde se traduit par un crédit d'impôt, le contribuable est autorisé à le faire valoir auprès de l'unité de la fiscalité des particuliers, sur ses déclarations ultérieures."
+      ],
+      "modifications": ["LF.2022", "LF.2023"],
+      "mots_cles": [
+        "délai déclaration",
+        "20 mars",
+        "revenus fonciers",
+        "salaires",
+        "pensions",
+        "capitaux mobiliers",
+        "plus-values",
+        "fiscalité des particuliers",
+        "BICA",
+        "BNC",
+        "OHADA",
+        "solde de liquidation",
+        "crédit d'impôt",
+        "acomptes IRPP",
+        "unité des entreprises"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 81",
+      "titre": "Déclaration des biens mobiliers détenus hors du Congo",
+      "section": "Section 4 - Vérification des déclarations",
+      "texte": [
+        "Toutes personnes domiciliées ou résidant habituellement au Congo, conservant hors du Congo des biens mobiliers, doivent fournir obligatoirement dans le délai prévu à l'article 80, à l'inspecteur divisionnaire des contributions directes et indirectes, une déclaration détaillée indiquant la nature, la valeur de ces biens et le revenu y attaché.",
+        "La déclaration, tant des différents éléments d'actif que du revenu est faite sous la foi du serment."
+      ],
+      "mots_cles": [
+        "biens mobiliers",
+        "hors du Congo",
+        "déclaration obligatoire",
+        "foi du serment",
+        "actif étranger",
+        "inspecteur divisionnaire"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 82",
+      "titre": "Vérification des déclarations",
+      "texte": [
+        "L'inspecteur divisionnaire des contributions directes et indirectes vérifie les déclarations.",
+        "Elle peut demander au contribuable des éclaircissements.",
+        "",
+        "Elle peut, en outre, lui demander des justifications :",
+        "a) au sujet de sa situation et de ses charges de famille ;",
+        "b) au sujet des charges retranchées du revenu global par application de l'article 66 ci-dessus.",
+        "",
+        "Il peut également lui demander des justifications lorsqu'il a réuni des éléments permettant d'établir que le contribuable peut avoir des revenus plus importants que ceux qui font l'objet de sa déclaration.",
+        "",
+        "En particulier, si le contribuable allègue la possession de bons ou de titres dont les intérêts ou arrérages sont exclus du décompte des revenus imposables en vertu de l'article 62 ci-dessus, l'inspection divisionnaire des contributions directes et indirectes peut exiger la production de ces bons ou titres et celle de la date à laquelle ils sont entrés dans le patrimoine de l'intéressé."
+      ],
+      "mots_cles": [
+        "vérification",
+        "inspecteur divisionnaire",
+        "éclaircissements",
+        "contrôle fiscal",
+        "justifications",
+        "charges de famille",
+        "bons et titres"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 83",
+      "titre": "Modalités des demandes d'éclaircissements et justifications",
+      "texte": [
+        "Les éclaircissements et justifications visés à l'article précédent peuvent être demandés verbalement ou par écrit.",
+        "Lorsque le contribuable a refusé de répondre verbalement ou lorsque la réponse faite à cette demande est considérée par l'inspection divisionnaire des contributions directes et indirectes comme équivalente à un refus de réponse sur tout ou partie des points à éclaircir, elle doit être renouvelée par écrit.",
+        "Toutes les demandes écrites doivent indiquer explicitement les points sur lesquels l'inspection divisionnaire des contributions directes et indirectes juge nécessaire d'obtenir des éclaircissements ou des justifications ainsi que le délai assigné au contribuable pour fournir sa réponse."
+      ],
+      "mots_cles": [
+        "demande verbale",
+        "demande écrite",
+        "refus de réponse",
+        "délai de réponse",
+        "éclaircissements",
+        "justifications"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 84",
+      "titre": "Rectification des déclarations",
+      "texte": [
+        "L'inspection divisionnaire des contributions directes et indirectes a le droit de rectifier les déclarations, mais elle doit au préalable adresser au contribuable l'indication des éléments qu'elle se propose de retenir comme base d'imposition et fixer le délai maximum qui lui est accordé pour faire entendre ou faire parvenir son acceptation ou ses observations."
+      ],
+      "mots_cles": [
+        "rectification",
+        "base d'imposition",
+        "notification préalable",
+        "acceptation",
+        "observations",
+        "délai"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 85",
+      "titre": "Vérification des déclarations BICA et BNC",
+      "texte": [
+        "Les déclarations spéciales aux BICA et aux BNC sont vérifiées dans les conditions prévues par les articles 32 et 47 du présent Code."
+      ],
+      "mots_cles": [
+        "BICA",
+        "BNC",
+        "vérification",
+        "article 32",
+        "article 47"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 86",
+      "section": "Section 5 - Taxation d'office",
+      "titre": "Taxation d'office",
+      "texte": [
+        "1) les contribuables qui n'ont pas produit leurs déclarations dans les délais prescrits par les articles 78, 79, 80 et 81 du présent Code ;",
+        "2) ceux qui se sont abstenus de répondre aux demandes d'éclaircissements et de justifications dans les conditions prévues à l'article 83 ci-dessus ;",
+        "3) ceux dont les déclarations, dûment rectifiées dans les conditions prévues à l'article 84, n'ont pas été, dans le délai fixé par l'administration, acceptées de façon expresse ou tacite.",
+        "L'impôt établi dans ces conditions ne peut être contesté qu'à charge par le contribuable de prouver l'exactitude de ses déclarations ou le caractère exagéré des bases fixées par l'Administration.",
+        "La taxation d'office ne peut être prononcée qu'après envoi d'une lettre de mise en demeure, avec accusé de réception, fixant un délai de 20 jours au contribuable pour fournir ou compléter ses déclarations ou pour répondre à la demande d'éclaircissements ou de justifications."
+      ],
+      "mots_cles": [
+        "taxation d'office",
+        "défaut de déclaration",
+        "délai",
+        "mise en demeure",
+        "charge de la preuve",
+        "rectification",
+        "éclaircissements",
+        "justifications"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 87",
+      "titre": "Taxation d'office - Représentant au Congo",
+      "texte": [
+        "Est taxé d'office le contribuable qui, passible de l'IRPP, dans les conditions prévues à l'article 72 ci-dessus, s'est abstenu de répondre à la demande du service l'invitant à désigner un représentant au Congo."
+      ],
+      "mots_cles": [
+        "taxation d'office",
+        "IRPP",
+        "représentant",
+        "article 72",
+        "non-résident"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 88",
+      "titre": "Contestation de la taxation d'office",
+      "texte": [
+        "Le contribuable taxé d'office ne peut obtenir, par la voie contentieuse, la décharge ou la réduction de la cotisation qui lui a été assignée qu'en apportant toutes justifications de nature à faire la preuve du chiffre exact de son revenu. Il supporte les frais de l'expertise, s'il y a lieu.",
+        "De même, le montant d'un impôt payé à la suite d'une taxation d'office ne peut être considéré comme charge déductible du bénéfice imposable de l'exercice en cause."
+      ],
+      "mots_cles": [
+        "taxation d'office",
+        "contentieux",
+        "décharge",
+        "réduction",
+        "charge de la preuve",
+        "expertise",
+        "charge non déductible"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 89",
+      "section": "Section 6 - Calcul de l'impôt",
+      "titre": "Mécanisme de calcul de l'IRPP",
+      "texte": [
+        "Pour le calcul de l'IRPP, le revenu imposable, arrondi au millier de francs inférieur, est divisé en un certain nombre de parts fixées conformément à l'article 91 ci-après, d'après la situation et les charges de famille du contribuable.",
+        "Le revenu correspondant est taxé par application du tarif prévu à l'article 95.",
+        "L'impôt brut est égal au produit de la cotisation ainsi obtenue par le nombre de parts.",
+        "L'impôt dû par le contribuable est calculé à partir de l'impôt brut sous déduction, s'il y a lieu, de l'IRVM perçu par la direction de l'enregistrement de l'un des États membres de l'UDEAC sous application, le cas échéant, de la limite d'exonération.",
+        "La taxe immobilière sur les loyers payée est déductible de l'IRPP. Toutefois, cette déduction n'est opérée que si le contribuable déclare ses revenus fonciers. Lorsque la taxe immobilière déduite est supérieure au montant de l'IRPP dû, l'excédent constitue un crédit d'impôt reportable."
+      ],
+      "mots_cles": [
+        "calcul IRPP",
+        "revenu imposable",
+        "parts",
+        "quotient familial",
+        "article 91",
+        "article 95",
+        "IRVM",
+        "UDEAC",
+        "taxe immobilière",
+        "crédit d'impôt"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 89 bis",
+      "titre": "Barème d'évaluation du train de vie",
+      "texte": [
+        "Les éléments du train de vie indiqués à l'article 76-4 du présent Code font l'objet d'une évaluation de la base d'imposition à l'IRPP en fonction du barème ci-dessous :",
+        "- valeur locative de la résidence principale : trois fois la valeur locative cadastrale ;",
+        "- valeur locative de la résidence secondaire : trois fois la valeur locative cadastrale ;",
+        "- employé de maison : 300.000 FCFA par employé par an ;",
+        "- véhicules : valeur d'acquisition ;",
+        "- avion de tourisme : 10.000 FCFA par cheval-vapeur ;",
+        "- yachts ou bateaux de plaisance : 50.000 FCFA par tonneau.",
+        "La base imposable déterminée en fonction du barème ci-dessus n'est retenue pour la détermination de l'impôt que lorsque son montant est supérieur ou égal à 1,5 fois le revenu déclaré."
+      ],
+      "mots_cles": [
+        "train de vie",
+        "article 76-4",
+        "barème",
+        "évaluation",
+        "valeur locative",
+        "résidence principale",
+        "résidence secondaire",
+        "employé de maison",
+        "véhicules",
+        "avion de tourisme",
+        "yachts",
+        "bateaux de plaisance"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 89 ter",
+      "titre": "Article abrogé",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 89 quater",
+      "titre": "Imputation de la retenue sur les BNC",
+      "texte": [
+        "La retenue visée à l'article 127 quater est imputée sur l'impôt sur le revenu dû au titre de l'année au cours de laquelle la retenue a été opérée.",
+        "L'imputation s'effectue sur l'impôt dû au titre des BNC, l'excédent étant reporté dans la limite des cinq années suivantes."
+      ],
+      "mots_cles": [
+        "retenue",
+        "article 127 quater",
+        "imputation",
+        "BNC",
+        "report",
+        "cinq ans"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 90",
+      "titre": "Fonctionnaires congolais des organisations internationales",
+      "texte": [
+        "Lorsque les fonctionnaires de nationalité congolaise des organisations internationales disposent de revenus autres que la rémunération officielle qu'ils perçoivent en cette qualité, cette rémunération, lorsqu'elle est exonérée de l'IRPP, est néanmoins prise en considération, pour autant qu'elle ait été imposable, en vue de déterminer si les contribuables intéressés sont passibles de l'IRPP, à raison de ces autres revenus, sous réserve, le cas échéant, de l'application des conventions internationales relatives aux doubles impositions.",
+        "Dans l'affirmative, l'impôt est calculé en ajoutant la rémunération aux revenus imposables et en opérant sur le chiffre obtenu, une déduction proportionnelle au montant de cette rémunération."
+      ],
+      "mots_cles": [
+        "fonctionnaires",
+        "organisations internationales",
+        "nationalité congolaise",
+        "exonération",
+        "revenus annexes",
+        "conventions internationales",
+        "double imposition",
+        "déduction proportionnelle"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 91",
+      "titre": "Nombre de parts - Quotient familial",
+      "texte": [
+        "Le nombre de parts à prendre en considération pour la détermination du revenu imposable prévue à l'article 89 est fixé comme suit :",
+        "- célibataire, divorcé ou veuf (sans enfant à charge) : 1",
+        "- marié sans enfant à charge : 2",
+        "- célibataire ou divorcé ayant un enfant à charge : 2",
+        "- marié ou veuf ayant un enfant à charge : 2,5",
+        "- célibataire, divorcé ayant 2 enfants à charge : 2,5",
+        "- marié ou veuf ayant 2 enfants à charge : 3",
+        "- célibataire ou divorcé ayant 3 enfants à charge : 3",
+        "- marié ou veuf ayant 3 enfants à charge : 3,5",
+        "- célibataire ou divorcé ayant 4 enfants à charge : 3,5",
+        "ainsi de suite en augmentant d'une demi-part par enfant à charge du contribuable, jusqu'à un maximum de 6,5 parts.",
+        "En cas d'imposition séparée des deux époux et sauf le cas où les deux époux sont salariés, chaque époux est considéré comme célibataire ayant à sa charge les enfants dont il a la garde.",
+        "Le contribuable veuf sans enfant à charge est considéré, pour le calcul de l'impôt, comme marié sans enfant à charge pendant les deux années qui suivent le décès du conjoint. Il peut ultérieurement bénéficier des dispositions de l'article 92 ci-après.",
+        "Le veuf qui a à sa charge un ou plusieurs enfants non issus de son mariage avec le conjoint décédé est traité comme célibataire ayant à charge le même nombre d'enfants."
+      ],
+      "mots_cles": [
+        "nombre de parts",
+        "parts fiscales",
+        "quotient familial",
+        "foyer fiscal",
+        "IRPP",
+        "célibataire",
+        "divorcé",
+        "veuf",
+        "marié",
+        "enfants à charge",
+        "situation familiale",
+        "barème parts",
+        "calcul parts"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 92-1",
+      "titre": "Demi-part supplémentaire - Cas particuliers",
+      "texte": [
+        "Par dérogation aux dispositions qui précèdent, le revenu imposable des contribuables célibataires, divorcés ou veufs n'ayant pas d'enfants à leur charge est divisé par 1,5 lorsque ces contribuables :",
+        "a) ont un ou plusieurs enfants majeurs ou faisant l'objet d'une imposition distincte ;",
+        "b) ont un ou plusieurs enfants qui sont morts à la condition que l'un d'eux au moins ait atteint l'âge de 16 ans ou que l'un d'eux au moins soit décédé par suite de fait de guerre ;",
+        "c) sont titulaires d'une pension prévue par la loi du 31 mars 1919 pour une invalidité de 40 % et au-dessus ou d'une pension de veuve prévue par les lois des 31 mars et 24 juin 1919, ou d'une pension d'invalidité pour accident du travail de 40 % et au-dessus ;",
+        "d) ont adopté un enfant à la condition que, si l'adoption a eu lieu alors que l'enfant était âgé de plus de 10 ans, cet enfant ait été à la charge de l'adoptant depuis l'âge de 10 ans. Cette disposition n'est pas applicable si l'enfant adopté est décédé avant d'avoir atteint l'âge de 16 ans.",
+        "2) Le quotient familial prévu à l'article 89 ci-dessus est augmenté d'une part pour l'enfant infirme majeur au lieu d'une demi-part.",
+        "3) Les agents de l'État et du secteur parapublic dont le poste d'affectation est situé en dehors des communes de plein exercice bénéficient d'une demi-part en plus dans la détermination de leur quotient familial, dès lors qu'ils résident dans leurs lieux d'affectation depuis plus d'un an."
+      ],
+      "mots_cles": [
+        "demi-part",
+        "célibataire",
+        "divorcé",
+        "veuf",
+        "enfants majeurs",
+        "enfants décédés",
+        "fait de guerre",
+        "invalidité",
+        "pension",
+        "accident du travail",
+        "adoption",
+        "enfant infirme",
+        "agents de l'État",
+        "secteur parapublic"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 93",
+      "titre": "Personnes à charge du contribuable",
+      "texte": [
+        "Sont considérés comme étant à la charge du contribuable à condition de n'avoir pas de revenus distincts de ceux qui servent de base à l'imposition de ce dernier :",
+        "1° ses enfants légitimes, légalement reconnus ou légalement adoptés, s'ils sont âgés de moins de 21 ans ou s'ils sont infirmes. La limite d'âge est, sous réserve de justification, portée à 25 ans pour les enfants poursuivant leurs études ;",
+        "2° sous la même condition et sous réserve de justification, les enfants recueillis par lui à son propre foyer et, dans la limite de deux, les enfants placés sous sa protection dans le cadre familial."
+      ],
+      "mots_cles": [
+        "enfants à charge",
+        "enfants légitimes",
+        "enfants reconnus",
+        "enfants adoptés",
+        "moins de 21 ans",
+        "infirmes",
+        "études",
+        "25 ans",
+        "enfants recueillis"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 93 bis",
+      "titre": "Garde fiscale des enfants - Femmes",
+      "texte": [
+        "Pour la garde ou la prise en charge fiscale des enfants, les femmes mariées bénéficiaires des revenus uniquement salariaux et les femmes célibataires, divorcées ou veuves doivent justifier d'une décision du tribunal."
+      ],
+      "mots_cles": [
+        "garde fiscale",
+        "enfants",
+        "femmes mariées",
+        "femmes célibataires",
+        "femmes divorcées",
+        "femmes veuves",
+        "décision du tribunal",
+        "revenus salariaux"
+      ],
+      "modifications": ["LF.2022", "LF.R.2022"],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 94",
+      "titre": "Date d'appréciation de la situation familiale",
+      "texte": [
+        "La situation et les charges de famille dont il doit être tenu compte sont celles existant le 1er janvier de l'année de l'imposition.",
+        "Toutefois, en cas de mariage du contribuable en cours d'année ou d'augmentation de ses charges de famille en cours d'année, il est fait de la situation au 31 décembre de ladite année ou à la date du décès s'il s'agit d'une imposition établie en vertu de l'article 101 ci-après."
+      ],
+      "mots_cles": [
+        "situation familiale",
+        "charges de famille",
+        "1er janvier",
+        "31 décembre",
+        "mariage",
+        "article 101",
+        "décès"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 95",
+      "titre": "Barème de l'IRPP",
+      "texte": [
+        "Le revenu net imposable correspondant à une part est taxé en appliquant le taux de :",
+        "- 1 % pour la fraction de revenu n'excédant pas 464.000 FCFA ;",
+        "- 10 % pour la fraction comprise entre 464.001 et 1.000.000 FCFA ;",
+        "- 25 % pour la fraction comprise entre 1.000.001 et 3.000.000 FCFA ;",
+        "- 40 % pour la fraction au-dessus de 3.000.000 FCFA.",
+        "Lorsque le revenu global est inférieur au salaire minimum garanti fixé par les textes en vigueur, la cotisation n'est pas mise en recouvrement.",
+        "Les dispositions du paragraphe 1 ci-dessus s'appliquent aux contribuables visés aux paragraphes 1, 2 et 4 de l'article 2.",
+        "Les mêmes règles sont applicables pour le calcul de l'IRPP dû par les personnes de nationalité congolaise n'entrant pas dans les prévisions du premier alinéa du présent paragraphe, domiciliées hors du Congo, disposant de revenus de propriétés, exploitations ou professions exercées au Congo.",
+        "Sous réserve des dispositions de l'article 96 ci-après, les contribuables n'entrant pas dans les cas visés au paragraphe II ci-dessus sont considérés comme des contribuables mariés sans enfant à charge, s'ils sont de nationalité française ou ressortissants d'un État de l'UAMAC et célibataires sans enfant à charge dans les autres cas ; toutefois le montant de l'impôt résultant de l'application du barème ci-dessus ne peut être inférieur à 20 % du revenu net imposable.",
+        "Le revenu imposable des sociétés et autres personnes morales visées à l'article 7 est constitué par le total formé d'une part, par le montant global des sommes que, directement ou par l'entremise de tiers, ces sociétés ont versées de quelque retenue pour l'établissement de l'impôt sur les sociétés à des personnes dont elles ne relèvent pas de l'identité et, d'autre part, par l'avantage qui résulte pour ces personnes de la prise en charge de l'impôt par la personne morale versante.",
+        "La déclaration des sommes taxables est souscrite en même temps que celle relative à l'impôt sur les sociétés.",
+        "Le taux maximum de l'IRPP sans abattement est appliqué aux sommes imposables."
+      ],
+      "mots_cles": [
+        "barème IRPP",
+        "taux",
+        "1 %",
+        "10 %",
+        "25 %",
+        "40 %",
+        "tranches",
+        "salaire minimum",
+        "article 2",
+        "nationalité congolaise",
+        "UAMAC",
+        "minimum 20 %",
+        "sociétés",
+        "personnes morales",
+        "article 7",
+        "impôt sur les sociétés"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 96",
+      "titre": "Retenue à la source - 20%",
+      "texte": [
+        "L'IRPP dont sont passibles les personnes visées aux articles 2 paragraphe 4 et 48 du présent Code est perçu par voie de retenue à la source.",
+        "Cette retenue, dont le taux est fixé à 20 %, est opérée suivant les sanctions prévues aux articles 172 et suivants et 379 ci-après et se substitue au tarif fixé par l'article 95.",
+        "Ces personnes ne sont pas astreintes à la déclaration prévue par l'article 76 ci-dessus."
+      ],
+      "mots_cles": [
+        "retenue à la source",
+        "20 %",
+        "article 2",
+        "article 48",
+        "article 172",
+        "article 379",
+        "dispense de déclaration"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 97",
+      "titre": "Imputation de l'IRVM sur l'IRPP",
+      "texte": [
+        "Lorsque les bénéficiaires des revenus de capitaux mobiliers sont imposables à l'IRPP et que lesdits revenus ont donné lieu à la perception de l'IRVM établi par l'un des États de l'UDEAC, le montant de cet impôt imputé à la cotisation due au titre de l'IRPP.",
+        "Le fait que le montant de l'IRVM acquitté au cours de l'année d'imposition serait supérieur au montant de l'IRPP dû par le contribuable ne peut donner lieu à restitution.",
+        "Les dispositions de l'alinéa précédent sont applicables aux revenus visés à l'article 61-1-5° ci-dessus."
+      ],
+      "mots_cles": [
+        "IRVM",
+        "imputation",
+        "capitaux mobiliers",
+        "UDEAC",
+        "pas de restitution",
+        "article 61-1-5°"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 98-1",
+      "section": "Section 7 - Cession, cessation ou décès",
+      "titre": "Cession, cessation ou décès - Obligations déclaratives",
+      "texte": [
+        "Dans le cas de cession, de cessation ou de décès, en totalité ou en partie, d'une entreprise industrielle, commerciale, artisanale, minière ou agricole est assujetti à l'IRPP à raison des bénéfices réalisés dans cette entreprise et qui n'ont pas encore été imposés est immédiatement établi.",
+        "Les contribuables doivent, dans un délai de quinze jours déterminé comme il est indiqué ci-après, aviser l'inspecteur divisionnaire de la cession ou de la cessation et lui faire connaître la date à laquelle elle a été ou sera effectuée ainsi que, s'il y a lieu, les noms, prénoms et adresse du cessionnaire.",
+        "Le délai de 15 jours commence à courir :",
+        "- lorsqu'il s'agit de la vente ou de la cession d'un fonds de commerce, du jour où la vente ou la cession a été publiée dans un journal d'annonces légales ;",
+        "- lorsqu'il s'agit de la vente ou de la cession d'autres entreprises, du jour où l'acquéreur ou le cessionnaire a pris effectivement la direction des exploitations ;",
+        "- lorsqu'il s'agit de la cessation d'entreprises, du jour de la fermeture définitive des établissements.",
+        "Pour les contribuables soumis au régime du forfait, le bénéfice imposable de l'année en cours est fixé au montant du bénéfice forfaitaire retenu pour l'année précédente et ajusté au prorata du temps écoulé du 1er janvier jusqu'au jour de la cessation effective, tout mois commencé étant compté pour un mois entier.",
+        "Toutefois, s'il n'a pas encore été fixé de forfait, le bénéfice imposable est évalué suivant la procédure instituée à l'article 27 du présent Code d'après les résultats obtenus depuis le 1er janvier.",
+        "En cas de cession ou de cessation d'entreprise prise dans un délai de cinq ans après la création ou l'achat de celle-ci, le bénéfice imposable est augmenté du montant des plus-values provenant de la cession des stocks et des éléments de l'actif immobilisé, dans les conditions prévues au premier alinéa du paragraphe a de l'article 63.",
+        "Pour l'application de cette disposition, les redevables de cette catégorie sont tenus de faire parvenir à l'inspecteur divisionnaire des contributions directes et indirectes, dans le délai de quinze jours prévu au paragraphe 1, outre les renseignements visés audit paragraphe, une déclaration indiquant le montant net des plus-values visées à l'alinéa précédent et de produire à l'appui de cette déclaration, toutes justifications utiles.",
+        "Ils peuvent, dans le même délai, opter pour l'imposition d'après le bénéfice réel en ce qui concerne la période écoulée entre le 1er janvier et la date de la cession ou de la cessation de l'entreprise.",
+        "Dans tous les cas, les contribuables assujettis au forfait peuvent, dans le délai prévu au paragraphe 1 ci-dessus, dénoncer en vue de l'imposition des bénéfices réalisés au cours de l'année de la cession ou de la cessation, le bénéfice forfaitaire retenu pour l'année précédente et reconduit en conformité du deuxième alinéa du présent paragraphe. Le même droit de dénonciation peut être exercé par l'inspecteur divisionnaire des contributions directes et indirectes jusqu'à la fin du mois suivant l'expiration dudit délai.",
+        "3) Les contribuables non assujettis au forfait sont tenus de faire parvenir à l'inspecteur divisionnaire des contributions directes et indirectes, dans le délai de quinze jours prévu au paragraphe 1, outre les renseignements visés audit paragraphe, la déclaration de leur bénéfice réel accompagnée de leur compte de résultat.",
+        "Pour la détermination du bénéfice, il est fait application des dispositions des articles 30 à 34.",
+        "Si les contribuables imposés d'après leur bénéfice réel normal ou leur bénéfice réel simplifié ne produisent pas les déclarations ou renseignements visés au paragraphe 1 du présent article et au premier alinéa du présent paragraphe ou, invités à fournir à l'appui de la déclaration de leur bénéfice réel les justifications nécessaires, ils s'abstiennent de les donner dans les quinze jours suivant la réception de l'avis qui leur est adressé à cet effet, les bases d'imposition sont arrêtées d'office et il est fait application de la majoration des droits prévue à l'article 372."
+      ],
+      "mots_cles": [
+        "cession",
+        "cessation",
+        "décès",
+        "délai 15 jours",
+        "fonds de commerce",
+        "journal d'annonces légales",
+        "forfait",
+        "prorata",
+        "plus-values",
+        "article 27",
+        "article 63",
+        "bénéfice réel",
+        "compte de résultat",
+        "articles 30 à 34",
+        "taxation d'office",
+        "article 372"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 98-2",
+      "titre": "Décès de l'exploitant",
+      "texte": [
+        "À l'exception des deuxième et troisième alinéas du paragraphe 2, les dispositions du présent article sont applicables dans le cas du décès de l'exploitant. Dans ce cas les ayants droits du défunt doivent produire les renseignements nécessaires pour l'établissement de l'impôt dans les six mois de la date du décès."
+      ],
+      "mots_cles": [
+        "décès",
+        "exploitant",
+        "ayants droits",
+        "délai 6 mois",
+        "succession"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 99",
+      "titre": "Cessation d'une profession non commerciale",
+      "texte": [
+        "Dans le cas de cessation de l'exercice d'une profession non commerciale, l'IRPP dû en raison des bénéfices provenant de l'exercice de cette profession, y compris ceux qui proviennent des créances acquises et non encore recouvrées, et qui n'ont pas encore été imposés, est immédiatement établi.",
+        "Les contribuables doivent, dans un délai de 15 jours de la cessation effective, aviser l'inspecteur divisionnaire territorialement compétent de la cessation et de lui faire connaître la date à laquelle elle a été effective ainsi que, s'il y a lieu, les nom, prénoms et adresse du successeur.",
+        "Ils doivent également, dans ce même délai, satisfaire aux obligations prévues par l'article 46 ci-dessus. En cas de non-production ou production tardive de la déclaration prévue au présent article, les bases d'imposition sont arrêtées d'office, et il est fait application des sanctions prévues par l'article 372 ci-après.",
+        "En cas de décès du contribuable, les renseignements nécessaires pour l'établissement de l'impôt sont produits par les ayants droits du défunt dans les six mois de la date du décès."
+      ],
+      "mots_cles": [
+        "profession non commerciale",
+        "BNC",
+        "cessation",
+        "créances acquises",
+        "délai 15 jours",
+        "article 46",
+        "article 372",
+        "taxation d'office",
+        "décès",
+        "ayants droits"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 100",
+      "titre": "Déduction des impositions antérieures",
+      "texte": [
+        "Les impositions mises à la charge d'un contribuable en cas de cession, de cessation ou décès, par application des dispositions des articles 98 et 99 ci-dessus, viennent, le cas échéant, en déduction du montant de l'IRPP ultérieurement établi, conformément aux dispositions des articles 66 à 75 ci-dessus, à raison de l'ensemble des bénéfices et revenus visés auxdits articles et réalisés ou perçus par ce contribuable au cours de l'année de la cession, la cessation ou du décès."
+      ],
+      "mots_cles": [
+        "déduction",
+        "impôt",
+        "cession",
+        "cessation",
+        "décès",
+        "articles 98 et 99",
+        "articles 66 à 75"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 101",
+      "titre": "Imposition en cas de décès du contribuable",
+      "texte": [
+        "1) Dans le cas du décès du contribuable, l'IRPP est établi à raison des revenus dont ce dernier a disposé pendant l'année de son décès et des BICA qu'il a réalisés depuis la fin du dernier exercice taxé.",
+        "Il porte également sur les revenus dont la disposition ou le versement résulte du décès du contribuable s'ils n'ont pas été précédemment imposés et sur ceux qu'il a acquis en avoir la disposition antérieurement à son décès.",
+        "En ce qui concerne les revenus évalués forfaitairement, il est fait état, s'il y a lieu, du montant du forfait fixé pour l'année précédente, ajusté à la durée de la période écoulée entre le 1er janvier et la date du décès.",
+        "Toutefois, les revenus dont la disposition résulte du décès du contribuable ou que ce dernier a acquis en avoir la disposition avant son décès, font l'objet d'une imposition distincte lorsqu'il se devait écheoir normalement qu'au cours d'une année postérieure à celle du décès.",
+        "Pour l'établissement de l'IRPP dû en vertu des dispositions du présent article, sont admis en déduction, les impôts visés à l'article 66 du présent Code qui ont été acquittés au cours de l'année de l'imposition ou qui se rapportent à des déclarations souscrites soit par le défunt dans les délais légaux, soit par les héritiers du chef du défunt à l'occasion du décès.",
+        "2) La déclaration des revenus imposables en vertu du présent article est produite par les ayants droits du défunt dans les six mois de la date du décès.",
+        "Elle est soumise aux règles des déclarations annuelles.",
+        "Les demandes d'éclaircissements ou de justifications ainsi que les notifications prévues aux articles 32, 47, 83 et 84 ci-dessus peuvent être valablement adressées à l'un quelconque des ayants droits ou des signataires de la déclaration de succession."
+      ],
+      "mots_cles": [
+        "décès",
+        "IRPP",
+        "BICA",
+        "revenus",
+        "forfait",
+        "imposition distincte",
+        "article 66",
+        "ayants droits",
+        "délai 6 mois",
+        "déclaration de succession",
+        "articles 32, 47, 83, 84"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Chapitre 2",
+      "titre": "Impôt complémentaire",
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [
+        "impôt complémentaire"
+      ],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 102 à 105",
+      "titre": "Articles abrogés",
+      "texte": [
+        "Abrogés."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    }
+  ]
+}

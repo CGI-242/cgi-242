@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "document": "Code général des impôts",
+    "pays": "République du Congo",
+    "edition": "2025",
+    "tome": 1,
+    "partie": 1,
+    "livre": 2,
+    "livre_titre": "Impôt sur le chiffre d'affaires intérieur",
+    "page_source": null,
+    "note": "Livre entièrement abrogé - Voir TFNC 6 pour les dispositions relatives à la TVA"
+  },
+  "articles": [
+    {
+      "article": "Art. 186 à 249",
+      "titre": "Impôt sur le chiffre d'affaires intérieur",
+      "section": "Livre 2 : Impôt sur le chiffre d'affaires intérieur",
+      "texte": [],
+      "mots_cles": [
+        "chiffre d'affaires",
+        "TVA",
+        "TFNC 6"
+      ],
+      "statut": "abrogé",
+      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+    }
+  ]
+}

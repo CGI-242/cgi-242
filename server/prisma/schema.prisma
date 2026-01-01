@@ -1,0 +1,415 @@
+// ==========================================
+// CGI ENGINE - Schéma Prisma Multi-Tenant
+// ==========================================
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==================== ORGANIZATIONS (TENANTS) ====================
+
+model Organization {
+  id        String   @id @default(uuid())
+  name      String
+  slug      String   @unique // URL-friendly identifier
+  logo      String?
+  website   String?
+  address   String?
+  phone     String?
+
+  // Paramètres
+  settings Json? @default("{}")
+
+  // Relations
+  members       OrganizationMember[]
+  invitations   Invitation[]
+  subscription  Subscription?
+  conversations Conversation[]
+  usageStats    UsageStats[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("organizations")
+}
+
+// ==================== USERS ====================
+
+model User {
+  id                   String    @id @default(uuid())
+  email                String    @unique
+  password             String
+  firstName            String?
+  lastName             String?
+  phone                String?
+  avatar               String?
+  profession           String? // fiscaliste, expert-comptable, avocat, DAF, etc.
+
+  isEmailVerified      Boolean   @default(false)
+  emailVerifyToken     String?
+  resetPasswordToken   String?
+  resetPasswordExpires DateTime?
+
+  // Abonnement personnel (si pas dans une orga)
+  personalSubscription Subscription? @relation("PersonalSubscription")
+
+  // Organisations
+  memberships     OrganizationMember[]
+  invitationsSent Invitation[]         @relation("InvitationSender")
+
+  // Conversations personnelles (hors orga)
+  personalConversations Conversation[] @relation("PersonalConversations")
+
+  // Messages
+  messages Message[]
+
+  // Analytics personnelles
+  searchHistory SearchHistory[]
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  lastLoginAt DateTime?
+
+  @@map("users")
+}
+
+// ==================== ORGANIZATION MEMBERS ====================
+
+enum OrganizationRole {
+  OWNER  // Propriétaire - tous les droits
+  ADMIN  // Admin - gestion membres, facturation
+  MEMBER // Membre - utilisation standard
+  VIEWER // Lecteur - lecture seule
+}
+
+model OrganizationMember {
+  id String @id @default(uuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  role OrganizationRole @default(MEMBER)
+
+  // Permissions granulaires (optionnel, override du rôle)
+  permissions Json? @default("{}")
+
+  // Stats individuelles dans l'orga
+  questionsUsed Int @default(0)
+
+  joinedAt  DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, organizationId])
+  @@map("organization_members")
+}
+
+// ==================== INVITATIONS ====================
+
+enum InvitationStatus {
+  PENDING
+  ACCEPTED
+  EXPIRED
+  CANCELLED
+}
+
+model Invitation {
+  id String @id @default(uuid())
+
+  email String
+  role  OrganizationRole @default(MEMBER)
+
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  invitedById String
+  invitedBy   User   @relation("InvitationSender", fields: [invitedById], references: [id])
+
+  token  String           @unique @default(uuid())
+  status InvitationStatus @default(PENDING)
+
+  expiresAt  DateTime
+  acceptedAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  @@unique([email, organizationId])
+  @@map("invitations")
+}
+
+// ==================== SUBSCRIPTIONS ====================
+
+enum SubscriptionPlan {
+  FREE
+  STARTER
+  PROFESSIONAL
+  TEAM
+  ENTERPRISE
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELLED
+  EXPIRED
+  PAST_DUE
+  TRIALING
+}
+
+enum SubscriptionType {
+  PERSONAL     // Abonnement individuel
+  ORGANIZATION // Abonnement organisation
+}
+
+model Subscription {
+  id String @id @default(uuid())
+
+  type SubscriptionType
+
+  // Lien vers User OU Organization (un seul des deux)
+  userId String? @unique
+  user   User?   @relation("PersonalSubscription", fields: [userId], references: [id], onDelete: Cascade)
+
+  organizationId String?       @unique
+  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  plan   SubscriptionPlan   @default(FREE)
+  status SubscriptionStatus @default(ACTIVE)
+
+  // Limites
+  questionsPerMonth Int @default(10)
+  questionsUsed     Int @default(0)
+  maxMembers        Int @default(1) // Pour les orgas
+
+  // Paiement
+  stripeCustomerId     String?
+  stripeSubscriptionId String?
+
+  // Dates
+  currentPeriodStart DateTime  @default(now())
+  currentPeriodEnd   DateTime?
+  trialEndsAt        DateTime?
+  cancelledAt        DateTime?
+
+  // Historique paiements
+  payments Payment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("subscriptions")
+}
+
+model Payment {
+  id             String       @id @default(uuid())
+  subscriptionId String
+  subscription   Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+
+  amount          Decimal @db.Decimal(10, 2)
+  currency        String  @default("XAF")
+  status          String // succeeded, pending, failed
+  paymentMethod   String?
+  stripePaymentId String?
+
+  createdAt DateTime @default(now())
+
+  @@map("payments")
+}
+
+// ==================== CONVERSATIONS ====================
+
+enum ConversationVisibility {
+  PRIVATE    // Visible uniquement par le créateur
+  TEAM       // Visible par toute l'organisation
+  RESTRICTED // Visible par membres spécifiques
+}
+
+model Conversation {
+  id String @id @default(uuid())
+
+  title String?
+
+  // Propriétaire
+  creatorId String
+  creator   User   @relation("PersonalConversations", fields: [creatorId], references: [id], onDelete: Cascade)
+
+  // Organisation (null si conversation personnelle)
+  organizationId String?
+  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  // Visibilité (pour les conversations d'orga)
+  visibility ConversationVisibility @default(PRIVATE)
+
+  // Messages
+  messages Message[]
+
+  // Accès restreint (si visibility = RESTRICTED)
+  sharedWith ConversationAccess[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([creatorId])
+  @@index([organizationId])
+  @@map("conversations")
+}
+
+model ConversationAccess {
+  id String @id @default(uuid())
+
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  userId String
+
+  canEdit Boolean @default(false)
+
+  grantedAt DateTime @default(now())
+
+  @@unique([conversationId, userId])
+  @@map("conversation_access")
+}
+
+enum MessageRole {
+  USER
+  ASSISTANT
+  SYSTEM
+}
+
+model Message {
+  id             String       @id @default(uuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  // Auteur (pour les messages USER)
+  authorId String?
+  author   User?   @relation(fields: [authorId], references: [id], onDelete: SetNull)
+
+  role    MessageRole
+  content String      @db.Text
+
+  // Métadonnées IA
+  citations    Json?
+  confidence   Float?
+  tokensUsed   Int?
+  responseTime Int? // en millisecondes
+
+  createdAt DateTime @default(now())
+
+  @@index([conversationId])
+  @@map("messages")
+}
+
+// ==================== CGI ARTICLES ====================
+
+enum ArticleStatut {
+  EN_VIGUEUR
+  ABROGE
+  MODIFIE
+}
+
+model Article {
+  id String @id @default(uuid())
+
+  numero  String
+  titre   String?
+  chapeau String?  @db.Text
+  contenu String   @db.Text
+
+  // Localisation hiérarchique
+  tome          String?
+  partie        String?
+  livre         String?
+  chapitre      String?
+  section       String?
+
+  // Métadonnées
+  version          String        @default("2025")
+  statut           ArticleStatut @default(EN_VIGUEUR)
+  dateEffet        DateTime?
+  dateModification DateTime?
+  source           String?
+  pageDebut        Int?
+  pageFin          Int?
+
+  // Recherche
+  keywords    String[] @default([])
+  embeddingId String?  // ID dans Qdrant
+
+  references    ArticleReference[] @relation("ArticleFrom")
+  referencedBy  ArticleReference[] @relation("ArticleTo")
+  searchHistory SearchHistory[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Contrainte unique sur numero + version (permet même numéro dans différentes versions)
+  @@unique([numero, version])
+  @@index([numero])
+  @@index([tome, livre, chapitre])
+  @@index([statut])
+  @@map("articles")
+}
+
+model ArticleReference {
+  id            String  @id @default(uuid())
+  fromArticleId String
+  toArticleId   String
+  fromArticle   Article @relation("ArticleFrom", fields: [fromArticleId], references: [id])
+  toArticle     Article @relation("ArticleTo", fields: [toArticleId], references: [id])
+
+  @@unique([fromArticleId, toArticleId])
+  @@map("article_references")
+}
+
+// ==================== ANALYTICS ====================
+
+model SearchHistory {
+  id     String @id @default(uuid())
+  userId String?
+  user   User?  @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  query     String
+  articleId String?
+  article   Article? @relation(fields: [articleId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+
+  @@map("search_history")
+}
+
+model UsageStats {
+  id String @id @default(uuid())
+
+  // Stats par user OU par orga
+  userId         String?
+  organizationId String?
+  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  date           DateTime @db.Date
+  questionsAsked Int      @default(0)
+  articlesViewed Int      @default(0)
+  tokensUsed     Int      @default(0)
+
+  @@unique([userId, date])
+  @@unique([organizationId, date])
+  @@map("usage_stats")
+}
+
+// ==================== SYSTEM ====================
+
+model SystemConfig {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  value     String   @db.Text
+  updatedAt DateTime @updatedAt
+
+  @@map("system_config")
+}
