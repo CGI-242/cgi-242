@@ -1,0 +1,159 @@
+{
+  "rag_config": {
+    "version": "2.0",
+    "chapitre": "Chapitre 5 - Taxes diverses",
+    "code": "CGI Congo 2025"
+  },
+  "chunking_strategy": {
+    "method": "semantic_hierarchical",
+    "description": "Découpage par section avec exclusion des articles abrogés",
+    "parameters": {
+      "primary_split": "article",
+      "secondary_split": "alinea",
+      "max_chunk_tokens": 800,
+      "min_chunk_tokens": 100,
+      "overlap_tokens": 50,
+      "preserve_structure": true
+    },
+    "regroupements_recommandes": [
+      {
+        "groupe": "taxes_terrains_definitions",
+        "articles": ["Art. 157", "Art. 158", "Art. 159", "Art. 160"],
+        "raison": "Champ et définitions des taxes sur terrains"
+      },
+      {
+        "groupe": "taxes_terrains_exemptions",
+        "articles": ["Art. 161", "Art. 162", "Art. 167", "Art. 167 bis"],
+        "raison": "Exemptions permanentes et temporaires"
+      },
+      {
+        "groupe": "taxes_terrains_modalites",
+        "articles": ["Art. 163", "Art. 164", "Art. 165", "Art. 166"],
+        "raison": "Redevable, fait générateur, tarifs et déclarations"
+      },
+      {
+        "groupe": "taxe_speciale_societes",
+        "articles": ["Art. 168", "Art. 169", "Art. 170", "Art. 171"],
+        "raison": "TSS complète"
+      },
+      {
+        "groupe": "bons_de_caisse",
+        "articles": ["Art. 171 sexies", "Art. 171 septies", "Art. 171 octies", "Art. 171 novies", "Art. 171 decies", "Art. 171 undecies"],
+        "raison": "Impôt sur les bons de caisse complet"
+      },
+      {
+        "groupe": "taxe_vehicules_tourisme",
+        "articles": ["Art. 171 A", "Art. 171 B", "Art. 171 C", "Art. 171 D", "Art. 171 E", "Art. 171 F", "Art. 171 G", "Art. 171 I", "Art. 171 J", "Art. 171 K", "Art. 171 L"],
+        "raison": "TVS complète (hors Art. 171 H abrogé)"
+      }
+    ],
+    "articles_abroges_a_exclure": [
+      "Art. 141", "Art. 142", "Art. 143", "Art. 144", "Art. 145", "Art. 146", "Art. 147", "Art. 148", "Art. 149", "Art. 150", "Art. 151", "Art. 152", "Art. 153", "Art. 154", "Art. 155", "Art. 156",
+      "Art. 171 bis", "Art. 171 quinquies",
+      "Art. 171 H",
+      "Art. 171 M", "Art. 171 N",
+      "Art. 171 P-1", "Art. 171 P-2", "Art. 171 P-3"
+    ]
+  },
+  "metadata_enrichment": {
+    "per_chunk_metadata": {
+      "article_id": "identifiant unique",
+      "titre_article": "titre officiel",
+      "section": "section du chapitre",
+      "mots_cles": "liste mots-clés",
+      "valeurs_numeriques": "taux, tarifs, seuils",
+      "references_croisees": "articles liés",
+      "theme_principal": "terrains | TSS | bons_caisse | TVS",
+      "type_disposition": "champ | taux | exemption | obligation | sanction",
+      "statut": "en_vigueur | abroge"
+    }
+  },
+  "embedding_optimization": {
+    "model_recommande": "text-embedding-3-large",
+    "dimensions": 1536,
+    "preprocessing": {
+      "normalisation_juridique": true,
+      "expansion_acronymes": {
+        "TSS": "Taxe Spéciale sur les Sociétés",
+        "TVS": "Taxe sur les Véhicules de tourisme des Sociétés",
+        "TUS": "Taxe Unique sur les Salaires",
+        "DGID": "Direction Générale des Impôts et des Domaines",
+        "SA": "Société Anonyme",
+        "SARL": "Société à Responsabilité Limitée",
+        "SCA": "Société en Commandite par Actions",
+        "SNC": "Société en Nom Collectif",
+        "IS": "Impôt sur les Sociétés",
+        "IRPP": "Impôt sur le Revenu des Personnes Physiques",
+        "CA": "Chiffre d'Affaires",
+        "CEMAC": "Communauté Économique et Monétaire de l'Afrique Centrale"
+      },
+      "normalisation_communes": {
+        "Brazzaville": ["BZV", "capitale"],
+        "Pointe-Noire": ["PNR", "port"],
+        "Loubomo": ["Dolisie"]
+      }
+    }
+  },
+  "retrieval_config": {
+    "strategie": "hybrid",
+    "parametres": {
+      "semantic_weight": 0.6,
+      "keyword_weight": 0.4,
+      "top_k": 10,
+      "rerank": true,
+      "rerank_model": "cross-encoder"
+    },
+    "filtres_contextuels": {
+      "par_taxe": ["terrains", "TSS", "bons_caisse", "TVS"],
+      "par_type_question": {
+        "taux": ["Art. 165", "Art. 170", "Art. 171 novies", "Art. 171 F"],
+        "exonerations": ["Art. 161", "Art. 162", "Art. 169", "Art. 171 D"],
+        "declarations": ["Art. 166", "Art. 171", "Art. 171 octies", "Art. 171 I"],
+        "sanctions": ["Art. 162", "Art. 171", "Art. 171 J", "Art. 171 undecies"]
+      }
+    }
+  },
+  "query_expansion": {
+    "synonymes_automatiques": true,
+    "mappings_taxes": {
+      "terrain vide": "terrain à bâtir",
+      "terrain nu": "terrain à bâtir",
+      "jardin": "terrain d'agrément",
+      "minimum société": "TSS",
+      "taxe minimum": "TSS",
+      "voiture société": "TVS",
+      "véhicule entreprise": "TVS"
+    },
+    "questions_types": {
+      "taux_patterns": ["quel est le taux", "tarif", "combien", "montant"],
+      "exoneration_patterns": ["exonéré", "exemption", "dispense"],
+      "declaration_patterns": ["déclarer", "déclaration", "date limite"],
+      "redevable_patterns": ["qui paie", "redevable", "doit payer"]
+    }
+  },
+  "quality_metrics": {
+    "cibles": {
+      "precision_at_5": 0.90,
+      "recall_at_10": 0.95,
+      "mrr": 0.85
+    },
+    "tests_validation": {
+      "fichier": "cgi_2025_taxes_diverses_tests.json",
+      "nombre_questions": 40,
+      "seuil_reussite": 0.90
+    }
+  },
+  "prompt_template": {
+    "system": "Tu es un expert en fiscalité congolaise, spécialiste du CGI 2025. Tu réponds aux questions sur les taxes diverses : taxes sur les terrains, taxe spéciale sur les sociétés (TSS), impôt sur les bons de caisse, et taxe sur les véhicules de tourisme (TVS). Tu cites précisément les articles et donnes les tarifs/taux applicables.",
+    "context_prefix": "Voici les dispositions pertinentes du CGI Congo 2025 (Chapitre 5 - Taxes diverses) :",
+    "answer_format": {
+      "structure": [
+        "Identification de la taxe concernée",
+        "Réponse directe à la question",
+        "Article(s) de référence",
+        "Valeurs chiffrées (taux, tarifs, délais)"
+      ],
+      "style": "professionnel_pratique"
+    }
+  }
+}

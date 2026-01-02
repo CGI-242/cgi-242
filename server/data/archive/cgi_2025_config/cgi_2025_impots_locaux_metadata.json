@@ -1,0 +1,225 @@
+{
+  "metadata_version": "2.0",
+  "source": {
+    "document": "Code Général des Impôts",
+    "pays": "République du Congo",
+    "edition": "2025",
+    "tome": 1,
+    "partie": 2,
+    "partie_titre": "Impositions perçues au profit des collectivités et de divers organismes",
+    "titre": 1,
+    "titre_titre": "Impôts perçus au profit des collectivités",
+    "chapitre": 1,
+    "chapitre_titre": "Impôts et taxes obligatoires"
+  },
+  "index": {
+    "chapitre_titre": "Impôts locaux obligatoires - CFPB, CFPNB, Patente, Taxe régionale, Spectacles",
+    "sections": [
+      {
+        "section": 1,
+        "titre": "Généralités",
+        "articles": ["Art. 250"],
+        "themes": ["répartition produit impôts locaux", "85% collectivités", "10% administration", "5% chambres commerce"]
+      },
+      {
+        "section": 2,
+        "titre": "Contribution foncière des propriétés bâties (CFPB)",
+        "articles": ["Art. 251", "Art. 252", "Art. 252 bis", "Art. 253", "Art. 254", "Art. 255", "Art. 256", "Art. 257", "Art. 257 bis", "Art. 258", "Art. 258 bis", "Art. 258 ter", "Art. 259", "Art. 260", "Art. 261", "Art. 262"],
+        "articles_abroges": ["Art. 255", "Art. 256", "Art. 259"],
+        "themes": ["propriétés bâties", "valeur locative cadastrale", "déduction 75%", "zones tarifaires", "exemptions"]
+      },
+      {
+        "section": 3,
+        "titre": "Contribution foncière des propriétés non bâties (CFPNB)",
+        "articles": ["Art. 263", "Art. 264", "Art. 265", "Art. 266", "Art. 267", "Art. 268", "Art. 269", "Art. 270", "Art. 270 bis", "Art. 270 ter", "Art. 271", "Art. 272", "Art. 273", "Art. 274", "Art. 275"],
+        "articles_abroges": ["Art. 269", "Art. 270 ter", "Art. 271"],
+        "themes": ["propriétés non bâties", "urbaines", "rurales", "valeur cadastrale", "tarifs par hectare"]
+      },
+      {
+        "section": 4,
+        "titre": "Dispositions communes aux sections 2 et 3",
+        "articles": ["Art. 276"],
+        "themes": ["déclaration locataires", "valeur locative"]
+      },
+      {
+        "section": 5,
+        "titre": "Contribution des patentes",
+        "articles": ["Art. 277", "Art. 278", "Art. 279", "Art. 279 bis", "Art. 280", "Art. 281", "Art. 282", "Art. 283", "Art. 284", "Art. 285", "Art. 286", "Art. 287", "Art. 288", "Art. 289", "Art. 290", "Art. 291", "Art. 292", "Art. 293", "Art. 294", "Art. 295", "Art. 296", "Art. 297", "Art. 298", "Art. 299", "Art. 300", "Art. 301", "Art. 302", "Art. 303", "Art. 304", "Art. 305", "Art. 306", "Art. 307", "Art. 308", "Art. 309", "Art. 310", "Art. 311", "Art. 312", "Art. 313", "Art. 314", "Art. 314 bis"],
+        "articles_abroges": ["Art. 279 bis", "Art. 280", "Art. 283", "Art. 284", "Art. 286", "Art. 288", "Art. 298", "Art. 299", "Art. 300", "Art. 314 bis"],
+        "themes": ["patente", "chiffre d'affaires", "barème progressif", "exemptions", "matrices", "sociétés pétrolières"]
+      },
+      {
+        "section": 6,
+        "titre": "Contribution des licences",
+        "articles": ["Art. 315", "Art. 316", "Art. 317", "Art. 318", "Art. 319", "Art. 320"],
+        "statut": "entierement_abroge"
+      },
+      {
+        "section": 7,
+        "titre": "Taxe régionale",
+        "articles": ["Art. 321", "Art. 322", "Art. 323", "Art. 324", "Art. 325", "Art. 326", "Art. 327"],
+        "themes": ["personnes physiques", "18 ans", "résidence", "précompte employeur", "120 000 FCFA"]
+      },
+      {
+        "section": 8,
+        "titre": "Taxe additionnelle au chiffre d'affaires",
+        "articles": ["Art. 328", "Art. 329", "Art. 330"],
+        "statut": "entierement_abroge"
+      },
+      {
+        "section": 9,
+        "titre": "Taxe sur les spectacles, jeux et divertissements",
+        "articles": ["Art. 331", "Art. 332", "Art. 333", "Art. 334", "Art. 335", "Art. 336", "Art. 337", "Art. 338", "Art. 339", "Art. 340", "Art. 340 bis"],
+        "themes": ["spectacles", "bars dancings", "cercles privés", "jeux", "tarifs"]
+      }
+    ],
+    "total_articles": 92,
+    "articles_en_vigueur": 68,
+    "articles_abroges": 24
+  },
+  "valeurs_cles": {
+    "repartition_impots_locaux": {
+      "collectivites": "85%",
+      "administration_fiscale": "10%",
+      "chambres_commerce": "5%"
+    },
+    "cfpb": {
+      "deduction_frais": "75%",
+      "taux_maximum": "20%",
+      "seuil_minimum": "1 000 FCFA",
+      "prix_m2_zone1": "250 FCFA",
+      "prix_m2_zone2": "150 FCFA",
+      "prix_m2_zone3": "25 FCFA",
+      "prix_m2_zone4": "12,5 FCFA",
+      "reduction_etage": "50% par étage",
+      "exemption_constructions_nouvelles": "5 ans",
+      "exemption_habitation": "10 ans",
+      "exemption_logement_personnel": "25 ans"
+    },
+    "cfpnb": {
+      "base_imposable": "50% valeur cadastrale",
+      "taux_maximum": "40%",
+      "seuil_minimum": "1 000 FCFA",
+      "prix_m2_zone1": "125 FCFA",
+      "prix_m2_zone2": "75 FCFA",
+      "prix_m2_zone3": "12,5 FCFA",
+      "prix_m2_zone4": "6,25 FCFA",
+      "tarif_cafe_palmiers_caoutchouc": "2 000 FCFA/ha",
+      "tarif_autres_cultures": "1 000 FCFA/ha",
+      "tarif_non_mis_valeur": "600 FCFA/ha",
+      "tarif_elevage": "600 FCFA/ha",
+      "tarif_foret": "2 000 FCFA/ha",
+      "exemption_elevage": "6 ans",
+      "exemption_heveas_palmiers": "10 ans",
+      "exemption_arbres_fruitiers": "8 ans",
+      "exemption_cafe_cacao": "7 ans",
+      "exemption_autres_cultures": "3 ans",
+      "cultures_maraicheres_exonerees": "< 5 ha dans 25 km agglomeration"
+    },
+    "patente": {
+      "minimum_forfaitaires": "10 000 FCFA",
+      "taux_1_20M": "0,750%",
+      "taux_20_40M": "0,650%",
+      "taux_40_100M": "0,450%",
+      "taux_100_300M": "0,200%",
+      "taux_300_500M": "0,150%",
+      "taux_500M_1Md": "0,140%",
+      "taux_1_3Md": "0,135%",
+      "taux_3_20Md": "0,125%",
+      "taux_plus_20Md": "0,045%",
+      "societes_petrolieres": "50% des droits",
+      "stand_by": "25% dernière patente",
+      "penalite_defaut_paiement": "100%",
+      "amende_entrepot_non_declare": "500 000 FCFA",
+      "paiement_normal": "10-20 avril",
+      "paiement_fractionne_seuil": "100 000 FCFA",
+      "delai_societes_etrangeres": "15 jours début activité",
+      "delai_declaration_nouvelle_activite": "15 jours"
+    },
+    "taxe_regionale": {
+      "age_minimum": "18 ans",
+      "seuil_role_nominatif": "120 000 FCFA",
+      "precompte": "janvier"
+    },
+    "taxe_spectacles": {
+      "taux_0_200": "15%",
+      "taux_plus_200": "30%",
+      "bar_dancing_permanent_musiciens": "240 000 FCFA",
+      "bar_dancing_permanent_pickup": "100 000 FCFA",
+      "bar_dancing_non_permanent_musiciens": "120 000 FCFA",
+      "bar_dancing_non_permanent_pickup": "50 000 FCFA",
+      "salle_bal": "4 000 FCFA/bal",
+      "cercles_prives": "10% recettes",
+      "declaration_prealable": "24h avant ouverture",
+      "releve_recettes": "15 premiers jours du mois",
+      "spectacle_occasionnel": "3 jours après"
+    }
+  },
+  "delais": {
+    "cfpb_cfpnb": {
+      "declaration_valeur_locative": "avant 1er octobre",
+      "fait_generateur": "1er janvier"
+    },
+    "cfpnb_rural": {
+      "declaration_exoneration": "avant 1er octobre"
+    },
+    "patente": {
+      "paiement": "10-20 avril",
+      "declaration_nouvelle_activite": "15 jours",
+      "declaration_cessation": "avant 1er décembre",
+      "declaration_ca_is_forfaitaire": "30 avril",
+      "societes_etrangeres": "15 jours début activité"
+    },
+    "taxe_spectacles": {
+      "declaration_ouverture": "24h avant",
+      "releve_recettes": "15 premiers jours du mois",
+      "spectacle_occasionnel": "3 jours après",
+      "demande_partage_cession": "10 jours"
+    }
+  },
+  "exemptions_cfpb": {
+    "permanentes": [
+      "Immeubles de l'État, collectivités, organismes internationaux",
+      "Installations portuaires concédées aux Chambres de Commerce",
+      "Ouvrages distribution eau/électricité (sociétés nationales)",
+      "Édifices scolaires, sportifs, humanitaires, sociaux",
+      "Bâtiments agricoles (granges, hangars, écuries...)",
+      "Abris défense passive",
+      "Ambassades étrangères (réciprocité)"
+    ],
+    "temporaires": {
+      "constructions_nouvelles": "5 ans",
+      "habitation": "10 ans",
+      "logement_personnel_entreprise": "25 ans"
+    }
+  },
+  "exemptions_patente": [
+    "État, collectivités, établissements publics (activités culturelles, éducatives, sanitaires, sportives)",
+    "Artistes (peintres, sculpteurs, dessinateurs, graveurs)",
+    "Artistes lyriques et dramatiques",
+    "Pêcheurs et piroguiers artisanaux ménagers",
+    "Associés de sociétés (SNC, SARL, SA)",
+    "Caisses d'épargne et prévoyance gratuites",
+    "Assurances mutuelles autorisées",
+    "Établissements d'enfants pauvres",
+    "Ouvriers/couturiers seuls avec une machine",
+    "Planteurs vendant bois de débroussaillement",
+    "Chasseurs non professionnels",
+    "Économats et coopératives (sans magasin de vente)",
+    "Buffets chemin de fer"
+  ],
+  "zones_tarifaires": {
+    "cfpb": {
+      "zone_1": "Centre-ville communes plein exercice - 250 FCFA/m²",
+      "zone_2": "Arrondissements et chefs-lieux départements - 150 FCFA/m²",
+      "zone_3": "Chefs-lieux de districts - 25 FCFA/m²",
+      "zone_4": "Autres localités - 12,5 FCFA/m²"
+    },
+    "cfpnb": {
+      "zone_1": "Centre-ville communes plein exercice - 125 FCFA/m²",
+      "zone_2": "Arrondissements et chefs-lieux départements - 75 FCFA/m²",
+      "zone_3": "Chefs-lieux de districts - 12,5 FCFA/m²",
+      "zone_4": "Autres localités - 6,25 FCFA/m²"
+    }
+  }
+}

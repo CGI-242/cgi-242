@@ -1,0 +1,502 @@
+{
+  "test_suite": {
+    "version": "1.0",
+    "chapitre": "Impôt sur les sociétés (IS)",
+    "code": "CGI Congo 2026",
+    "date_creation": "2025-01-01",
+    "total_questions": 50
+  },
+  "questions": [
+    {
+      "id": 1,
+      "categorie": "Généralités",
+      "question": "Quel est le taux normal de l'impôt sur les sociétés au Congo en 2026 ?",
+      "reponse_attendue": "Le taux normal de l'IS est de 25%. Ce taux est porté à 33% pour les entreprises non résidentes fiscales de l'espace CEMAC implantées au Congo.",
+      "articles_source": ["Art. 86A"],
+      "mots_cles": ["taux IS", "25%", "33%"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 2,
+      "categorie": "Personnes imposables",
+      "question": "Quelles sont les sociétés imposables à l'IS en raison de leur forme ?",
+      "reponse_attendue": "Sont imposables en raison de leur forme : les sociétés de capitaux (SA, SAS, SARL y compris unipersonnelles), quel que soit leur objet, et toute autre personne morale que le Congo choisit d'imposer d'office.",
+      "articles_source": ["Art. 2"],
+      "mots_cles": ["personnes imposables", "SA", "SAS", "SARL", "sociétés de capitaux"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 3,
+      "categorie": "Option IS",
+      "question": "Une SNC peut-elle opter pour l'IS ? Quelle est la date limite pour cette option ?",
+      "reponse_attendue": "Oui, les sociétés en nom collectif (SNC) peuvent opter pour l'IS. L'option est irrévocable et doit être notifiée à l'administration fiscale au plus tard le 30 octobre de l'année en cours.",
+      "articles_source": ["Art. 2"],
+      "mots_cles": ["option IS", "SNC", "30 octobre", "irrévocable"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 4,
+      "categorie": "Exonérations",
+      "question": "Les coopératives agricoles sont-elles exonérées d'IS ?",
+      "reponse_attendue": "Oui, les sociétés coopératives de production, transformation, conservation et vente de produits agricoles sont exonérées d'IS, à condition qu'elles fonctionnent conformément aux dispositions qui les régissent et qu'elles revêtent la forme civile.",
+      "articles_source": ["Art. 3"],
+      "mots_cles": ["exonérations", "coopératives agricoles", "forme civile"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 5,
+      "categorie": "Exonérations",
+      "question": "Les exonérations conventionnelles d'IS sont-elles encore possibles à partir de 2026 ?",
+      "reponse_attendue": "Non. À compter du 1er janvier 2026, les exonérations conventionnelles d'IS ne peuvent être ni octroyées ni renouvelées. L'État est invité à renégocier les conventions prévoyant de telles exonérations.",
+      "articles_source": ["Art. 3"],
+      "mots_cles": ["exonérations conventionnelles", "suppression", "2026"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 6,
+      "categorie": "Crédit d'impôt",
+      "question": "Quel est le taux maximum du crédit d'impôt pour investissement ?",
+      "reponse_attendue": "Le crédit d'impôt pour investissement ne peut excéder 15% des dépenses réellement encourues pour l'acquisition de matériels, outillages et/ou bâtiments commerciaux ou industriels auprès d'une société sans lien de dépendance.",
+      "articles_source": ["Art. 3A"],
+      "mots_cles": ["crédit d'impôt", "investissement", "15%"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 7,
+      "categorie": "Crédit d'impôt",
+      "question": "Le crédit d'impôt investissement non utilisé est-il reportable ou remboursable ?",
+      "reponse_attendue": "L'excédent du crédit d'impôt est reportable sur les 5 années suivantes. L'excédent qui n'a pas pu être imputé pendant 5 ans n'est pas remboursable.",
+      "articles_source": ["Art. 3A"],
+      "mots_cles": ["crédit d'impôt", "report", "5 ans", "non remboursable"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 8,
+      "categorie": "Territorialité",
+      "question": "Qu'est-ce qu'un établissement stable selon le CGI 2026 ?",
+      "reponse_attendue": "L'établissement stable désigne une installation fixe d'affaires par l'intermédiaire de laquelle l'entreprise exerce tout ou partie de son activité. Cela comprend notamment : siège de direction, succursale, entrepôt, bureau, usine, atelier, mine, puits de pétrole ou gaz, carrière.",
+      "articles_source": ["Art. 4A"],
+      "mots_cles": ["établissement stable", "installation fixe", "définition"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 9,
+      "categorie": "Territorialité",
+      "question": "Quelle est la durée minimale d'un chantier de construction pour qu'il constitue un établissement stable ?",
+      "reponse_attendue": "Un chantier de construction, projet de montage ou d'installation, ou des activités de surveillance s'y exerçant, constituent un établissement stable lorsque leur durée est supérieure à 3 mois.",
+      "articles_source": ["Art. 4A"],
+      "mots_cles": ["établissement stable", "chantier", "3 mois"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 10,
+      "categorie": "Territorialité",
+      "question": "En cas de fourniture de services, quelle est la durée qui qualifie un établissement stable ?",
+      "reponse_attendue": "La fourniture de services par une entreprise constitue un établissement stable si les activités se poursuivent pour le même projet ou un projet connexe pendant une ou des périodes représentant un total de plus de 183 jours dans les limites d'une période de 12 mois.",
+      "articles_source": ["Art. 4A"],
+      "mots_cles": ["établissement stable", "services", "183 jours", "12 mois"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 11,
+      "categorie": "Bénéfice imposable",
+      "question": "Comment est défini le bénéfice imposable à l'IS ?",
+      "reponse_attendue": "Le bénéfice imposable est le bénéfice net déterminé d'après les résultats d'ensemble des opérations. Il est égal à la différence entre les produits imposables et les charges déductibles, conformément au droit comptable OHADA.",
+      "articles_source": ["Art. 8"],
+      "mots_cles": ["bénéfice imposable", "bénéfice net", "OHADA"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 12,
+      "categorie": "Période d'imposition",
+      "question": "Quelle est la date obligatoire de clôture des comptes ?",
+      "reponse_attendue": "Les contribuables sont tenus d'arrêter chaque année leurs comptes à la date du 31 décembre, sauf en cas de cessation d'activité en cours d'année.",
+      "articles_source": ["Art. 11"],
+      "mots_cles": ["clôture", "31 décembre", "exercice"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 13,
+      "categorie": "Produits imposables",
+      "question": "Comment sont traités les écarts de conversion des devises pour la détermination du résultat imposable ?",
+      "reponse_attendue": "Les écarts de conversion des devises ainsi que des créances et dettes libellées en monnaies étrangères sont déterminés à la clôture de chaque exercice en fonction du dernier cours de change et pris en compte pour la détermination du résultat imposable de l'exercice.",
+      "articles_source": ["Art. 10"],
+      "mots_cles": ["écarts de conversion", "devises", "cours de change"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 14,
+      "categorie": "Double imposition",
+      "question": "Comment sont éliminées les doubles impositions sur les revenus de source étrangère ?",
+      "reponse_attendue": "Les doubles impositions peuvent être éliminées soit par la déduction de l'impôt effectivement acquitté à l'étranger, soit par un crédit d'impôt égal au montant de l'impôt acquitté à l'étranger, dans la limite de l'impôt qui aurait été dû au Congo sur les mêmes revenus.",
+      "articles_source": ["Art. 13"],
+      "mots_cles": ["double imposition", "crédit d'impôt", "revenus étrangers"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 15,
+      "categorie": "Plus-values",
+      "question": "Quel est le régime d'imposition des plus-values de cession d'éléments d'actif immobilisé ?",
+      "reponse_attendue": "Les plus-values de cession d'éléments d'actif immobilisé sont soumises au taux normal de l'IS. Les plus-values constatées à l'occasion de la réévaluation d'un bilan sont immédiatement imposables.",
+      "articles_source": ["Art. 17"],
+      "mots_cles": ["plus-values", "cession", "actif immobilisé"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 16,
+      "categorie": "Plus-values",
+      "question": "Quelles sont les conditions pour bénéficier du régime de remploi des plus-values ?",
+      "reponse_attendue": "Le contribuable doit porter les plus-values à un compte spécial « plus-values à réemployer » et s'engager à réinvestir en immobilisations nouvelles, dans un délai de 3 ans à partir de la clôture de l'exercice, une somme égale aux plus-values ajoutées au prix de revient des éléments cédés. Le remploi ne peut pas être effectué en actions ou titres de participation.",
+      "articles_source": ["Art. 17 A"],
+      "mots_cles": ["remploi", "plus-values", "3 ans", "réinvestissement"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 17,
+      "categorie": "Régime mère-fille",
+      "question": "Quelles sont les conditions pour bénéficier du régime mère-fille ?",
+      "reponse_attendue": "Le régime nécessite : 1) détention d'au moins 25% du capital de la filiale pendant les 365 jours précédents, 2) sociétés mères et filiales immatriculées dans le même État membre ou y ayant leur direction effective, 3) titres restés sous forme nominative avec engagement de conservation de 2 ans minimum.",
+      "articles_source": ["Art. 20"],
+      "mots_cles": ["régime mère-fille", "25%", "365 jours", "2 ans"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 18,
+      "categorie": "Régime mère-fille",
+      "question": "Quelle est la quote-part de frais et charges pour le régime mère-fille ?",
+      "reponse_attendue": "La quote-part de frais et charges est fixée à 5% du montant des produits de participation. Seuls les produits correspondant à des bénéfices non exonérés d'IS peuvent bénéficier du régime.",
+      "articles_source": ["Art. 20"],
+      "mots_cles": ["quote-part", "5%", "frais et charges"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 19,
+      "categorie": "Restructurations",
+      "question": "Les plus-values de fusion sont-elles imposables ?",
+      "reponse_attendue": "Les plus-values (autres que sur marchandises) résultant de fusions, scissions ou apports partiels d'actifs sont exonérées d'IS au moment de leur réalisation, à condition que les opérations profitent à des personnes morales passibles de l'IS et ayant leur siège social au Congo.",
+      "articles_source": ["Art. 21"],
+      "mots_cles": ["fusion", "plus-values", "exonération", "restructuration"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 20,
+      "categorie": "Charges déductibles",
+      "question": "Quelles sont les conditions générales de déductibilité des charges ?",
+      "reponse_attendue": "Les charges doivent : être rattachées à l'exercice, être exposées dans l'intérêt direct de l'exploitation, correspondre à une charge effective, être appuyées de justifications suffisantes, ne pas concourir à un produit exonéré, ne pas être payées en espèces pour un montant ≥ 200.000 FCFA, se traduire par une diminution de l'actif net, ne pas être exclues par la loi, ne pas être un acte anormal de gestion.",
+      "articles_source": ["Art. 26"],
+      "mots_cles": ["conditions déductibilité", "200.000 FCFA", "acte anormal de gestion"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 21,
+      "categorie": "Charges déductibles",
+      "question": "Quel est le plafond de déductibilité pour les rémunérations versées à l'étranger ?",
+      "reponse_attendue": "Le plafond est de 20% du bénéfice imposable avant déduction des frais en cause. Par dérogation, pour le secteur BTP, cabinets d'expertise et bureaux d'études, la limite est de 2% du chiffre d'affaires HT.",
+      "articles_source": ["Art. 38"],
+      "mots_cles": ["rémunérations étranger", "20%", "2%", "BTP"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 22,
+      "categorie": "Charges déductibles",
+      "question": "Quelle est la limite de déductibilité des commissions sur achats ?",
+      "reponse_attendue": "Les commissions ou courtages sur marchandises achetées sont déductibles dans la limite de 5% du montant des achats effectués par les centrales d'achats, le siège ou les intermédiaires.",
+      "articles_source": ["Art. 41"],
+      "mots_cles": ["commissions", "courtages", "5%"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 23,
+      "categorie": "Charges financières",
+      "question": "Quelle est la limite de déductibilité des intérêts entre sociétés liées ?",
+      "reponse_attendue": "Les intérêts versés à des associés ou sociétés du même groupe sont déductibles dans la limite du taux BEAC majoré de 3 points, et à condition que le capital social soit entièrement libéré. Le montant total des intérêts nets déductibles est limité à 20% de l'excédent brut d'exploitation (EBE).",
+      "articles_source": ["Art. 49"],
+      "mots_cles": ["intérêts", "sous-capitalisation", "20%", "EBE", "BEAC"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 24,
+      "categorie": "Charges financières",
+      "question": "La fraction d'intérêts non déductibles est-elle perdue définitivement ?",
+      "reponse_attendue": "Non. La fraction d'intérêts non déductibles immédiatement est reportée et peut être déduite au titre des exercices suivants dans le respect des conditions de l'article, dans la limite de 5 ans.",
+      "articles_source": ["Art. 49"],
+      "mots_cles": ["intérêts", "report", "5 ans"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 25,
+      "categorie": "Dons",
+      "question": "Dans quelle limite les dons sont-ils déductibles ?",
+      "reponse_attendue": "Les versements aux organismes d'intérêt général situés au Congo sont déductibles dans la limite de 0,5‰ du CA HT. Ce taux est porté à 0,3% pour les dons au sport et les calamités naturelles. Les dons lors de calamités naturelles sont déductibles à hauteur de 50% de leur montant.",
+      "articles_source": ["Art. 45"],
+      "mots_cles": ["dons", "libéralités", "0,5‰", "0,3%", "sport"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 26,
+      "categorie": "Amortissements",
+      "question": "Quel est le taux d'amortissement des logiciels informatiques ?",
+      "reponse_attendue": "Les logiciels informatiques sont amortissables au taux de 50%.",
+      "articles_source": ["Art. 52"],
+      "mots_cles": ["logiciels", "amortissement", "50%"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 27,
+      "categorie": "Amortissements",
+      "question": "Quel est le plafond d'amortissement des véhicules de tourisme ?",
+      "reponse_attendue": "L'amortissement des véhicules de tourisme n'est pas admis pour la fraction du prix d'acquisition supérieure à 40.000.000 FCFA. Cette fraction exclue est néanmoins retenue pour le calcul de la plus-value lors de la cession ultérieure.",
+      "articles_source": ["Art. 59"],
+      "mots_cles": ["véhicules tourisme", "40 millions", "plafond"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 28,
+      "categorie": "Amortissements",
+      "question": "Quelles sont les conditions pour bénéficier de l'amortissement accéléré ?",
+      "reponse_attendue": "Conditions : matériels/outillage lourd acquis à l'état neuf pour une valeur > 40 millions FCFA, durée d'utilisation > 3 ans, destinés aux opérations industrielles de fabrication/transformation/transport/manutention, soumis à utilisation intensive. Le taux est de 40%. L'option doit être demandée au DGID dans les 3 mois suivant l'acquisition.",
+      "articles_source": ["Art. 58"],
+      "mots_cles": ["amortissement accéléré", "40%", "40 millions"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 29,
+      "categorie": "Amortissements",
+      "question": "Les biens de faible valeur peuvent-ils être amortis en totalité la première année ?",
+      "reponse_attendue": "Oui. Les biens dont la valeur unitaire est inférieure à 500.000 FCFA HT sont amortissables à 100% au cours de l'année d'acquisition, quelle que soit leur durée d'utilisation.",
+      "articles_source": ["Art. 60"],
+      "mots_cles": ["faible valeur", "500.000 FCFA", "100%"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 30,
+      "categorie": "SFEC",
+      "question": "Quel est le régime d'amortissement du matériel SFEC ?",
+      "reponse_attendue": "Le matériel acquis dans le cadre du système de facturation électronique certifié (SFEC) est amortissable à 100% dès l'année d'acquisition, quelle que soit sa durée d'utilisation.",
+      "articles_source": ["Art. 61"],
+      "mots_cles": ["SFEC", "facturation électronique", "100%"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 31,
+      "categorie": "Provisions",
+      "question": "Les provisions pour congés payés sont-elles déductibles ?",
+      "reponse_attendue": "Non. Les provisions pour congés payés ne sont jamais déductibles.",
+      "articles_source": ["Art. 69", "Art. 74"],
+      "mots_cles": ["provisions", "congés payés", "non déductibles"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 32,
+      "categorie": "Déficits",
+      "question": "Pendant combien de temps les déficits sont-ils reportables ?",
+      "reponse_attendue": "Le déficit d'un exercice est reportable sur les bénéfices des 5 exercices suivants. Les amortissements différés sont assimilés à des déficits ordinaires. Les déficits d'exercices exonérés ne sont pas reportables.",
+      "articles_source": ["Art. 75"],
+      "mots_cles": ["déficits", "report", "5 ans"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 33,
+      "categorie": "Prix de transfert",
+      "question": "Quel est le seuil d'obligation de documentation des prix de transfert ?",
+      "reponse_attendue": "Les personnes morales dont le CA annuel HT ou l'actif brut au bilan est supérieur ou égal à 500.000.000 FCFA doivent tenir à disposition de l'administration une documentation justifiant leur politique de prix de transfert.",
+      "articles_source": ["Art. 81"],
+      "mots_cles": ["prix de transfert", "documentation", "500 millions"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 34,
+      "categorie": "Prix de transfert",
+      "question": "Quelles sont les sanctions en cas de défaut de documentation des prix de transfert ?",
+      "reponse_attendue": "Le défaut de production de la documentation/déclaration : amende de 5.000.000 FCFA après mise en demeure de 8 jours. Le défaut de mise à disposition de la documentation complète à la date de contrôle : amende de 25.000.000 FCFA. Production tardive de la déclaration pays par pays : amende de 5.000.000 FCFA.",
+      "articles_source": ["Art. 81"],
+      "mots_cles": ["sanctions", "documentation PT", "5 millions", "25 millions"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 35,
+      "categorie": "Prix de transfert",
+      "question": "Quelles sont les 5 méthodes de détermination du prix de pleine concurrence ?",
+      "reponse_attendue": "1) Méthode du prix comparable sur le marché libre (CUP), 2) Méthode du prix de revente, 3) Méthode du coût majoré, 4) Méthode transactionnelle de la marge nette (MTMN), 5) Méthode transactionnelle du partage des bénéfices.",
+      "articles_source": ["Art. 85"],
+      "mots_cles": ["méthodes", "prix de transfert", "CUP", "MTMN"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 36,
+      "categorie": "Accords préalables",
+      "question": "Quel est le coût d'un accord préalable de prix (APP) ?",
+      "reponse_attendue": "La conclusion d'un APP est subordonnée au paiement d'une somme de 10.000.000 FCFA. Les APP sont conclus pour une durée maximale de 3 ans renouvelable et peuvent être bilatéraux ou unilatéraux.",
+      "articles_source": ["Art. 84"],
+      "mots_cles": ["APP", "10 millions", "3 ans"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 37,
+      "categorie": "Minimum de perception",
+      "question": "Comment est calculé le minimum de perception de l'IS ?",
+      "reponse_attendue": "Le minimum de perception est calculé au taux de 1% sur la base des produits d'exploitation, produits financiers et produits HAO, à l'exception des produits ayant fait l'objet d'une retenue à la source libératoire. Le taux est majoré à 2% si le résultat fiscal est déficitaire durant 2 exercices consécutifs.",
+      "articles_source": ["Art. 86B"],
+      "mots_cles": ["minimum perception", "1%", "2%"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 38,
+      "categorie": "Minimum de perception",
+      "question": "Quelles sont les échéances de paiement du minimum de perception ?",
+      "reponse_attendue": "Le minimum de perception est payé en 4 acomptes, au plus tard le 15 mars, le 15 juin, le 15 septembre et le 15 décembre.",
+      "articles_source": ["Art. 86B"],
+      "mots_cles": ["minimum perception", "échéances", "4 acomptes"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 39,
+      "categorie": "Retenue à la source",
+      "question": "Quel est le taux de retenue à la source sur les prestations de services rendues par des non-résidents ?",
+      "reponse_attendue": "Le taux de retenue d'IS sur les prestations de services et redevances versées à des non-résidents est de 20%.",
+      "articles_source": ["Art. 86C"],
+      "mots_cles": ["retenue à la source", "20%", "non-résidents", "services"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 40,
+      "categorie": "Acomptes IS",
+      "question": "Quelles sont les dates de versement des acomptes d'IS ?",
+      "reponse_attendue": "Les acomptes d'IS sont versés sans avertissement dans les 15 premiers jours des mois de février, mai, août et novembre. Chaque acompte est égal au quart de l'IS calculé sur les 4/5 du bénéfice imposable du dernier exercice clos.",
+      "articles_source": ["Art. 124 B"],
+      "mots_cles": ["acomptes IS", "février", "mai", "août", "novembre"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 41,
+      "categorie": "Sociétés mères-filiales",
+      "question": "Quelle est la quote-part de frais et charges dans le régime des sociétés mères (Art. 87) ?",
+      "reponse_attendue": "Dans le régime général des sociétés mères (Art. 87), la quote-part de frais et charges est fixée à 10% du montant des produits de participation. Les conditions sont : 25% du capital de la filiale, sièges dans la CEMAC, titres nominatifs conservés 2 ans.",
+      "articles_source": ["Art. 87"],
+      "mots_cles": ["quote-part", "10%", "sociétés mères", "CEMAC"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 42,
+      "categorie": "Holdings",
+      "question": "Quelles sont les conditions pour bénéficier du régime fiscal des holdings ?",
+      "reponse_attendue": "Conditions : 1) détenir un portefeuille de titres représentant au moins les deux tiers de l'actif immobilisé, 2) maintenir cette proportion pendant au moins 5 ans, 3) exercer exclusivement : gestion de participations, prestations de direction/gestion/coordination/contrôle du groupe, R&D au profit exclusif du groupe, gestion de la trésorerie du groupe.",
+      "articles_source": ["Art. 90"],
+      "mots_cles": ["holdings", "deux tiers", "5 ans"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 43,
+      "categorie": "Holdings",
+      "question": "Quel est le taux de l'IRVM sur les dividendes distribués par les holdings ?",
+      "reponse_attendue": "Les dividendes distribués par les sociétés holding à leurs associés sont soumis à l'IRVM au taux égal à la moitié du taux de droit commun.",
+      "articles_source": ["Art. 90E"],
+      "mots_cles": ["holdings", "dividendes", "IRVM", "moitié"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 44,
+      "categorie": "Intégration fiscale",
+      "question": "Quel est le seuil de détention pour l'intégration fiscale ?",
+      "reponse_attendue": "Pour l'intégration fiscale, la société mère doit détenir 95% au moins du capital des sociétés du groupe, directement ou indirectement, de manière continue au cours de l'exercice. L'option est valable pour 5 exercices et renouvelée par tacite reconduction.",
+      "articles_source": ["Art. 91"],
+      "mots_cles": ["intégration fiscale", "95%", "5 exercices"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 45,
+      "categorie": "Intégration fiscale",
+      "question": "Comment sont traités les déficits dans l'intégration fiscale ?",
+      "reponse_attendue": "Si une société du groupe est déficitaire, le déficit est reporté sur le résultat d'ensemble pour une période de 3 ans à hauteur d'un tiers (1/3) par an. Après 3 ans, le montant non absorbé n'est plus reportable. Les déficits antérieurs à l'entrée dans le groupe suivent les mêmes règles (3 ans, 1/3 par an).",
+      "articles_source": ["Art. 91D", "Art. 91H"],
+      "mots_cles": ["intégration fiscale", "déficits", "3 ans", "1/3"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 46,
+      "categorie": "Personnes morales étrangères",
+      "question": "Quel est le taux forfaitaire d'assiette pour les personnes morales étrangères ?",
+      "reponse_attendue": "L'IS des personnes morales étrangères exerçant au Congo de manière intermittente est assis sur une base forfaitaire de 22% du chiffre d'affaires HT réalisé au Congo.",
+      "articles_source": ["Art. 92A"],
+      "mots_cles": ["personnes morales étrangères", "22%", "forfaitaire"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 47,
+      "categorie": "Sous-traitants pétroliers",
+      "question": "Quel est le taux de retenue à la source pour la zone d'unification pétrolière avec l'Angola ?",
+      "reponse_attendue": "Le taux de retenue à la source est de 5,75% pour les personnes physiques ou morales ayant des revenus provenant des contrats liés à la zone d'unification pétrolière avec l'Angola.",
+      "articles_source": ["Art. 92B"],
+      "mots_cles": ["zone Angola", "5,75%", "pétroliers"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 48,
+      "categorie": "Sous-traitants pétroliers",
+      "question": "Quel est le seuil de CA pétrolier pour bénéficier du régime dérogatoire ?",
+      "reponse_attendue": "Les sociétés à activité non exclusive sont soumises au régime dérogatoire si le chiffre d'affaires pétrolier représente au moins 70% du chiffre d'affaires global. Le retour au droit commun s'effectue dès la deuxième année suivant l'abaissement sous 70%.",
+      "articles_source": ["Art. 92J"],
+      "mots_cles": ["régime dérogatoire", "70%", "pétroliers"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 49,
+      "categorie": "Quitus fiscal",
+      "question": "Quel est le seuil de CA pour l'obtention du quitus fiscal auprès du Ministre des Finances ?",
+      "reponse_attendue": "Le quitus fiscal est délivré par le Ministre des Finances lorsque le CA global du requérant est supérieur à 100 milliards FCFA. En dessous de ce seuil, le quitus est délivré par le DGID.",
+      "articles_source": ["Art. 92G"],
+      "mots_cles": ["quitus fiscal", "100 milliards", "Ministre Finances"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 50,
+      "categorie": "Enregistrement contrats",
+      "question": "Quel est le droit d'enregistrement des contrats pétroliers ?",
+      "reponse_attendue": "Les contrats pétroliers doivent être enregistrés moyennant un droit fixe de 1.000.000 FCFA avant leur exécution. Les bons de commandes passés dans le cadre d'un contrat pétrolier de base sont enregistrés au droit proportionnel de 1%.",
+      "articles_source": ["Art. 92I"],
+      "mots_cles": ["contrats pétroliers", "enregistrement", "1 million", "1%"],
+      "difficulte": "moyen"
+    }
+  ],
+  "statistiques": {
+    "par_difficulte": {
+      "facile": 12,
+      "moyen": 22,
+      "difficile": 16
+    },
+    "par_categorie": {
+      "Généralités": 1,
+      "Personnes imposables": 1,
+      "Option IS": 1,
+      "Exonérations": 2,
+      "Crédit d'impôt": 2,
+      "Territorialité": 3,
+      "Bénéfice imposable": 1,
+      "Période d'imposition": 1,
+      "Produits imposables": 1,
+      "Double imposition": 1,
+      "Plus-values": 3,
+      "Régime mère-fille": 2,
+      "Restructurations": 1,
+      "Charges déductibles": 3,
+      "Charges financières": 2,
+      "Dons": 1,
+      "Amortissements": 5,
+      "SFEC": 1,
+      "Provisions": 1,
+      "Déficits": 1,
+      "Prix de transfert": 3,
+      "Accords préalables": 1,
+      "Minimum de perception": 2,
+      "Retenue à la source": 1,
+      "Acomptes IS": 1,
+      "Sociétés mères-filiales": 1,
+      "Holdings": 2,
+      "Intégration fiscale": 2,
+      "Personnes morales étrangères": 1,
+      "Sous-traitants pétroliers": 2,
+      "Quitus fiscal": 1,
+      "Enregistrement contrats": 1
+    }
+  }
+}

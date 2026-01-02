@@ -1,0 +1,251 @@
+{
+  "test_suite": {
+    "version": "1.0",
+    "chapitre": "Chapitre 4 - Dispositions communes",
+    "code": "CGI Congo 2025",
+    "date_creation": "2026-01-01",
+    "total_questions": 25,
+    "note": "Chapitre court avec 8 articles en vigueur, principalement sur le régime minier"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "categorie": "Révision des bilans",
+      "question": "Les plus-values de réévaluation de bilan sont-elles imposables ?",
+      "reponse_attendue": "Les plus-values dégagées lors de révisions de bilans clos après le 31 décembre 1964 sont taxées selon le régime du droit commun. Les entreprises ne peuvent plus bénéficier des avantages prévus par les délibérations antérieures.",
+      "articles_source": ["Art. 127"],
+      "mots_cles": ["révision bilans", "réévaluation", "plus-values", "31 décembre 1964"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 2,
+      "categorie": "Régimes dérogatoires",
+      "question": "Une société sous contrat de partage de production peut-elle bénéficier d'un autre régime privilégié ?",
+      "reponse_attendue": "Non, depuis le 1er janvier 2021, toute société admise à un régime dérogatoire (CPP ou convention d'établissement) ne peut plus bénéficier d'un autre régime privilégié.",
+      "articles_source": ["Art. 127 quinquies"],
+      "mots_cles": ["CPP", "contrat partage production", "convention établissement", "régime privilégié", "2021"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 3,
+      "categorie": "Provisions minières - Principe",
+      "question": "Qu'est-ce que la provision pour reconstitution des gisements ?",
+      "reponse_attendue": "C'est une provision spéciale que les entreprises de recherche et d'exploitation de substances minérales concessibles au Congo sont autorisées à constituer. Ces provisions sont admises en franchise d'impôt.",
+      "articles_source": ["Art. 133"],
+      "mots_cles": ["provision reconstitution gisements", "franchise d'impôt", "substances minérales"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 4,
+      "categorie": "Hydrocarbures - Limites",
+      "question": "Quelles sont les deux limites de la provision pour reconstitution des gisements d'hydrocarbures ?",
+      "reponse_attendue": "La provision ne peut excéder : 1) 27,50% du montant des ventes de produits marchands (pétrole brut, gaz naturel), et 2) 50% du bénéfice net imposable provenant de la vente des produits extraits des gisements d'hydrocarbures au Congo.",
+      "articles_source": ["Art. 134"],
+      "mots_cles": ["27,50%", "50%", "provision", "hydrocarbures", "ventes", "bénéfice net"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 5,
+      "categorie": "Hydrocarbures - Base de calcul",
+      "question": "Comment est calculé le montant des ventes pour la limite de 27,50% ?",
+      "reponse_attendue": "Le montant des ventes comprend le pétrole brut, gaz naturel et produits extraits du gaz, déduction faite des transports facturés et taxes (TVA, droit de sortie), à l'exception des redevances minières. S'ajoutent les subventions calculées sur les quantités extraites et les fournitures gratuites exigées par l'autorité concédante.",
+      "articles_source": ["Art. 134"],
+      "mots_cles": ["ventes", "pétrole brut", "gaz naturel", "déductions", "redevances minières"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 6,
+      "categorie": "Hydrocarbures - Déficits",
+      "question": "Comment sont traités les déficits d'exploitation pour le calcul de la provision hydrocarbures ?",
+      "reponse_attendue": "Le déficit d'un exercice provenant de la vente de produits d'hydrocarbures au Congo est déductible du bénéfice de l'exercice suivant provenant des mêmes opérations. Si insuffisant, l'excédent est reporté jusqu'au 5ème exercice suivant l'exercice déficitaire.",
+      "articles_source": ["Art. 134"],
+      "mots_cles": ["déficit", "report", "5 exercices", "hydrocarbures"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 7,
+      "categorie": "Hydrocarbures - Inscription bilan",
+      "question": "Comment la provision pour reconstitution des gisements doit-elle être inscrite au bilan ?",
+      "reponse_attendue": "La provision est inscrite au passif du bilan sous une rubrique spéciale faisant ressortir le montant des dotations de chaque exercice.",
+      "articles_source": ["Art. 135"],
+      "mots_cles": ["passif", "bilan", "rubrique spéciale", "dotations"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 8,
+      "categorie": "Hydrocarbures - Utilisation",
+      "question": "Dans quel délai la provision pour reconstitution des gisements doit-elle être utilisée ?",
+      "reponse_attendue": "La provision doit être utilisée dans un délai de 5 ans à partir de la clôture de l'exercice de constitution.",
+      "articles_source": ["Art. 136"],
+      "mots_cles": ["délai", "5 ans", "utilisation", "provision"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 9,
+      "categorie": "Hydrocarbures - Emplois autorisés",
+      "question": "À quoi peut être utilisée la provision pour reconstitution des gisements d'hydrocarbures ?",
+      "reponse_attendue": "Elle peut être utilisée pour : a) travaux ou immobilisations de recherche d'hydrocarbures au Congo (hors gisements reconnus ayant un titre d'exploitation), b) acquisition de participations (actions, parts, avances) dans des sociétés de recherche et exploitation d'hydrocarbures au Congo.",
+      "articles_source": ["Art. 136"],
+      "mots_cles": ["utilisation", "travaux recherche", "immobilisations", "participations", "actions"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 10,
+      "categorie": "Hydrocarbures - Remploi conforme",
+      "question": "Que se passe-t-il si la provision est utilisée conformément aux règles ?",
+      "reponse_attendue": "L'exonération est définitivement acquise à l'entreprise. La provision peut être virée à un compte de réserve au passif du bilan. Les sommes utilisées peuvent être comptabilisées en dépenses annuelles si elles font l'objet d'amortissement.",
+      "articles_source": ["Art. 137"],
+      "mots_cles": ["exonération définitive", "réserve", "virement"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 11,
+      "categorie": "Hydrocarbures - Défaut de remploi",
+      "question": "Quelle est la sanction en cas de non-utilisation de la provision dans les délais ?",
+      "reponse_attendue": "Une imposition complémentaire égale au montant de l'exonération accordée est établie au titre de l'année suivant celle de l'expiration du délai de 5 ans.",
+      "articles_source": ["Art. 137"],
+      "mots_cles": ["imposition complémentaire", "défaut remploi", "sanction"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 12,
+      "categorie": "Hydrocarbures - Cession",
+      "question": "Que devient la provision en cas de cession d'entreprise ?",
+      "reponse_attendue": "La provision figurant au dernier bilan est considérée comme immédiatement imposable (Art. 98 et 101). Toutefois, si l'exploitation est continuée (Art. 22 et 111), l'exonération n'est pas reprise à condition que le délai ne soit pas expiré et que le nouvel exploitant inscrive la provision au passif et l'utilise dans le délai restant.",
+      "articles_source": ["Art. 138"],
+      "mots_cles": ["cession", "cessation", "provision", "continuation exploitation", "fusion"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 13,
+      "categorie": "Hydrocarbures - Décès",
+      "question": "La provision est-elle imposable en cas de décès de l'exploitant ?",
+      "reponse_attendue": "Oui, la provision est considérée comme immédiatement imposable. Toutefois, si l'exploitation est continuée par les héritiers ou le conjoint dans les conditions légales, l'exonération n'est pas reprise.",
+      "articles_source": ["Art. 138"],
+      "mots_cles": ["décès", "provision", "imposition", "héritiers"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 14,
+      "categorie": "Hydrocarbures - Obligations déclaratives",
+      "question": "Quels renseignements les entreprises pétrolières doivent-elles fournir à l'administration ?",
+      "reponse_attendue": "À l'appui de la déclaration des résultats : le montant net des ventes de produits marchands, le montant du bénéfice net d'exploitation, et le cas échéant le montant des sommes utilisées conformément à l'Art. 136.",
+      "articles_source": ["Art. 139"],
+      "mots_cles": ["obligations déclaratives", "renseignements", "ventes", "bénéfice net"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 15,
+      "categorie": "Substances minérales - Taux",
+      "question": "Quel est le taux limite de la provision pour les substances minérales autres que les hydrocarbures ?",
+      "reponse_attendue": "Le taux limite basé sur les ventes est de 15% (au lieu de 27,50% pour les hydrocarbures). La limite de 50% du bénéfice net reste applicable.",
+      "articles_source": ["Art. 140"],
+      "mots_cles": ["15%", "substances minérales", "minerais", "provision"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 16,
+      "categorie": "Substances minérales - Produits",
+      "question": "Quels produits sont pris en compte pour le calcul de la provision sur substances minérales ?",
+      "reponse_attendue": "Les minerais marchands et tous produits vendus à l'état de mattes, speiss, métaux ou alliages élaborés à partir des minerais extraits.",
+      "articles_source": ["Art. 140"],
+      "mots_cles": ["minerais", "mattes", "speiss", "métaux", "alliages"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 17,
+      "categorie": "Substances minérales - Utilisation élargie",
+      "question": "La provision pour substances minérales peut-elle être utilisée pour des travaux sur gisements existants ?",
+      "reponse_attendue": "Oui, contrairement aux hydrocarbures, la provision peut aussi être utilisée pour : recherches sur parties non reconnues des gisements existants (à l'intérieur des titres d'exploitation), mise en exploitation des gisements, et amélioration de la récupération des minerais.",
+      "articles_source": ["Art. 140"],
+      "mots_cles": ["utilisation", "gisements existants", "mise en exploitation", "récupération"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 18,
+      "categorie": "Non-cumul",
+      "question": "Les provisions minières sont-elles cumulables avec les réductions pour investissement ?",
+      "reponse_attendue": "Non, le bénéfice des provisions pour reconstitution de gisements ne peut en aucun cas se cumuler, pour un même objet, avec les avantages de la Section 2 (réductions pour investissement).",
+      "articles_source": ["Art. 140 bis"],
+      "mots_cles": ["non-cumul", "réductions investissement", "provisions minières"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 19,
+      "categorie": "Hydrocarbures - Participations",
+      "question": "Qu'entend-on par 'participations' pour l'utilisation de la provision hydrocarbures ?",
+      "reponse_attendue": "Les participations comprennent : les actions, les parts d'intérêts, ainsi que les sommes avancées aux sociétés de recherche/exploitation d'hydrocarbures, effectivement destinées à être investies dans des travaux de recherches.",
+      "articles_source": ["Art. 136"],
+      "mots_cles": ["participations", "actions", "parts d'intérêts", "avances"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 20,
+      "categorie": "Hydrocarbures - Exclusion gisements reconnus",
+      "question": "La provision peut-elle financer des travaux sur un gisement reconnu ?",
+      "reponse_attendue": "Non, pour les hydrocarbures, la provision ne peut être utilisée que pour des recherches à l'exclusion des travaux ou immobilisations portant sur un gisement reconnu ayant donné lieu à attribution d'un titre d'exploitation.",
+      "articles_source": ["Art. 136"],
+      "mots_cles": ["gisement reconnu", "titre d'exploitation", "exclusion"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 21,
+      "categorie": "Hydrocarbures - Bénéfice net",
+      "question": "Le bénéfice net servant au calcul de la provision inclut-il les provisions antérieures reprises ?",
+      "reponse_attendue": "Non, le bénéfice net d'exploitation pour le calcul de la limite de 50% ne comprend pas la fraction des provisions antérieurement constituées qui sera rapportée aux bases de l'impôt selon l'Art. 137.",
+      "articles_source": ["Art. 134"],
+      "mots_cles": ["bénéfice net", "provisions antérieures", "réintégration"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 22,
+      "categorie": "Fusion - Provision",
+      "question": "Lors d'une fusion, que doit faire la société absorbante concernant la provision ?",
+      "reponse_attendue": "La société absorbante doit inscrire immédiatement au passif la provision figurant dans les écritures de la société absorbée et l'utiliser avant l'expiration du délai initial, sous les sanctions prévues.",
+      "articles_source": ["Art. 138"],
+      "mots_cles": ["fusion", "société absorbante", "passif", "délai"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 23,
+      "categorie": "Section 2 - Réductions investissement",
+      "question": "La section sur les réductions pour investissement est-elle encore applicable ?",
+      "reponse_attendue": "Non, les articles 128 à 132 relatifs aux réductions pour investissement sont tous abrogés.",
+      "articles_source": ["Art. 128", "Art. 129", "Art. 130", "Art. 131", "Art. 132"],
+      "mots_cles": ["abrogé", "réductions investissement"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 24,
+      "categorie": "Hydrocarbures - Subventions",
+      "question": "Les subventions liées à la production sont-elles incluses dans la base de calcul de la provision ?",
+      "reponse_attendue": "Oui, au montant des ventes s'ajoutent toutes sommes allouées à titre de subvention ou protection, calculées en fonction des quantités de produits extraits.",
+      "articles_source": ["Art. 134"],
+      "mots_cles": ["subventions", "protection", "quantités extraites"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 25,
+      "categorie": "Redevances minières",
+      "question": "Les redevances minières sont-elles déduites pour le calcul de la provision ?",
+      "reponse_attendue": "Non, les redevances minières ne sont pas déduites du montant des ventes pour le calcul de la limite de 27,50%. Seuls sont déduits les transports facturés et les taxes (TVA, droit de sortie, etc.).",
+      "articles_source": ["Art. 134"],
+      "mots_cles": ["redevances minières", "non déduites", "exception"],
+      "difficulte": "moyen"
+    }
+  ],
+  "statistiques": {
+    "par_difficulte": {
+      "facile": 7,
+      "moyen": 12,
+      "difficile": 6
+    },
+    "par_section": {
+      "Révision des bilans": 2,
+      "Régimes dérogatoires": 1,
+      "Hydrocarbures": 17,
+      "Substances minérales": 4,
+      "Non-cumul": 1
+    }
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "metadata_version": "2.0",
+  "source": {
+    "document": "Code Général des Impôts",
+    "pays": "République du Congo",
+    "edition": "2025",
+    "tome": 1,
+    "partie": 1,
+    "livre": 1,
+    "chapitre": 6,
+    "chapitre_titre": "Dispositions diverses"
+  },
+  "index": {
+    "chapitre_titre": "Dispositions diverses - Obligations déclaratives et retenues à la source",
+    "sections": [
+      {
+        "section": 1,
+        "titre": "Obligations des employeurs et débirentiers",
+        "articles": ["Art. 172", "Art. 173", "Art. 174", "Art. 175", "Art. 176", "Art. 177", "Art. 177 bis", "Art. 178", "Art. 179", "Art. 180", "Art. 181", "Art. 182"],
+        "themes": ["retenue à la source", "employeurs", "versements", "déclarations", "état annuel salaires"]
+      },
+      {
+        "section": 2,
+        "titre": "Obligations des personnes versant commissions, courtages, ristournes, honoraires et droits d'auteurs",
+        "articles": ["Art. 183", "Art. 183 bis", "Art. 183 ter"],
+        "themes": ["retenue 10%", "commissions", "honoraires", "droits d'auteur", "commissionnaires douanes"]
+      },
+      {
+        "section": 3,
+        "titre": "Déclaration des rémunérations d'associés et parts de bénéfices",
+        "articles": ["Art. 184"],
+        "themes": ["SNC", "commandite simple", "répartition bénéfices"]
+      },
+      {
+        "section": 4,
+        "titre": "Renseignements à fournir par les bénéficiaires de revenus de source étrangère",
+        "articles": ["Art. 185"],
+        "themes": ["source étrangère", "salaires", "pensions"]
+      },
+      {
+        "section": 5,
+        "titre": "Dispositions particulières applicables aux sociétés visées à l'article 126 ter",
+        "articles": ["Art. 185 bis"],
+        "themes": ["sociétés étrangères", "sous-traitants pétroliers", "126 ter"]
+      },
+      {
+        "section": 6,
+        "titre": "Dispositions particulières applicables aux non-résidents",
+        "articles": ["Art. 185 ter-A", "Art. 185 ter-B", "Art. 185 ter-C", "Art. 185 ter-D", "Art. 185 ter-E", "Art. 185 ter-F", "Art. 185 quater"],
+        "themes": ["non-résidents", "retenue à la source", "redevances", "prestations", "20%", "10%", "5,75%", "5%"],
+        "articles_abroges": ["Art. 185 quater"]
+      }
+    ],
+    "total_articles": 23,
+    "articles_en_vigueur": 22,
+    "articles_abroges": 1
+  },
+  "synonymes_concepts": {
+    "retenue à la source": ["RAS", "prélèvement", "withholding tax"],
+    "employeur": ["débirentier", "payeur"],
+    "commissions": ["courtages", "ristournes", "honoraires"],
+    "non-résidents": ["personnes étrangères", "sans domicile fiscal"],
+    "redevances": ["royalties", "licences", "droits d'usage"]
+  },
+  "valeurs_cles": {
+    "taux_retenues": {
+      "commissions_honoraires": "10%",
+      "non_residents_general": "20%",
+      "non_residents_moyen": "10%",
+      "non_residents_reduit": "5,75%",
+      "non_residents_specifique": "5%"
+    },
+    "seuils": {
+      "declaration_salaire_annuel": "120 000 FCFA",
+      "declaration_remunerations_diverses": "5 000 FCFA/an",
+      "droits_auteur_declaration": "5 000 FCFA/an"
+    },
+    "delais": {
+      "versement_retenues_mensuel": "20 jours du mois suivant",
+      "versement_retenues_trimestriel": "20 premiers jours du mois suivant le trimestre",
+      "versement_deces": "15 premiers jours du mois suivant",
+      "etat_annuel_salaires": "janvier",
+      "droits_auteur_spectacles": "15 jours",
+      "commissionnaires_douanes": "avant le 15 du mois suivant",
+      "cession_cessation": "10 jours",
+      "deces_employeur_declaration": "6 mois (max 31 janvier suivant)",
+      "reclamation_trop_percu": "avant le 1er avril",
+      "conservation_documents": "4 ans"
+    },
+    "sanctions": {
+      "defaut_retenue": "amende égale au prélèvement non effectué",
+      "defaut_reversement": "amende égale au prélèvement + intérêt 5%/mois",
+      "defaut_declaration_commissionnaires": "500 000 FCFA"
+    },
+    "seuils_personnel": {
+      "declaration_mensuelle": "plus de 3 personnes",
+      "versement_trimestriel": "5 personnes maximum"
+    }
+  },
+  "relations_articles": {
+    "renvois_internes": {
+      "Art. 172": ["Art. 36", "Art. 37", "Art. 185 ter", "Art. 126 quater B-1", "Art. 183", "Art. 39", "Art. 174"],
+      "Art. 173": ["Art. 172"],
+      "Art. 174": ["Art. 171 bis", "Art. 185"],
+      "Art. 176": ["Art. 39"],
+      "Art. 177": ["Art. 176"],
+      "Art. 177 bis": ["Art. 176"],
+      "Art. 178": ["Art. 176"],
+      "Art. 179": ["Art. 14", "Art. 15", "Art. 42", "Art. 107"],
+      "Art. 180": ["Art. 176"],
+      "Art. 181": ["Art. 176"],
+      "Art. 182": ["Art. 382"],
+      "Art. 183": ["Art. 76-80", "Art. 173-176", "Art. 379"],
+      "Art. 183 bis": ["Art. 47"],
+      "Art. 185 bis": ["Art. 126 ter", "Art. 172", "Art. 75"],
+      "Art. 185 ter-A": ["Art. 185 ter", "Art. 49"],
+      "Art. 185 ter-C": ["Art. 185 ter-A"],
+      "Art. 185 ter-E": ["Art. 185 ter-A"]
+    },
+    "references_croisees_artistes": {
+      "Art. 49": ["Art. 185 ter-A", "Art. 331", "Art. 183 bis"],
+      "contexte": "Artiste = BNC (Art. 49) + Retenue non-résident (Art. 185 ter-A) + Taxe spectacles (Art. 331)"
+    }
+  },
+  "retenue_non_residents": {
+    "taux_general_20pct": {
+      "description": "Taux par défaut pour toutes rémunérations",
+      "application": "Art. 185 ter-A"
+    },
+    "taux_moyen_10pct": {
+      "description": "Prestations ponctuelles, audiovisuel numérique, CEMAC",
+      "application": [
+        "Prestations ponctuelles entreprises non résidentes",
+        "Redevances audiovisuelles (TV, radio, streaming)",
+        "Paiements à résidents CEMAC"
+      ]
+    },
+    "taux_reduit_5_75pct": {
+      "description": "Zone Angola et transport maritime/aérien",
+      "application": [
+        "Contrats zone utilisation Angola",
+        "Location/affrètement navires et aéronefs",
+        "Commissions agents portuaires étranger"
+      ]
+    },
+    "taux_specifique_5pct": {
+      "description": "Intérêts emprunts sociétés pétrolières",
+      "application": "Emprunts pour études, recherche, exploration, développement, exploitation pétrolière"
+    }
+  },
+  "categories_revenus_non_residents": [
+    "Activité indépendante au Congo",
+    "Droits d'auteur et propriété intellectuelle",
+    "Brevets, marques, procédés secrets",
+    "Intérêts et placements (hors obligations)",
+    "Assistance technique, financière, comptable",
+    "Location équipements industriels/scientifiques",
+    "Prestations aux compagnies pétrolières",
+    "Frais commercialisation hydrocarbures (trading)"
+  ],
+  "artistes_etrangers_non_residents": {
+    "article_principal": "Art. 49",
+    "articles_acceptables": ["Art. 48", "Art. 96"],
+    "articles_lies": ["Art. 185 ter-A", "Art. 183 bis", "Art. 331", "Art. 340"],
+    "mots_cles_declencheurs": [
+      "artiste étranger",
+      "artiste non résident",
+      "concert",
+      "spectacle",
+      "musicien étranger",
+      "music-hall",
+      "cachets artistes",
+      "représentation artistique",
+      "organisateur concert"
+    ],
+    "reponse_type": "L'artiste étranger non résident est soumis à retenue à la source (Art. 185 ter-A - 20%). Comme organisateur de son propre concert, il doit désigner un représentant légal au Congo et déclarer la taxe sur les spectacles (Art. 331-340).",
+    "note": "Art. 49 dans Ch.1 IRPP - catégorie BNC artistes - référence croisée avec Art. 185 ter-A"
+  },
+  "obligations_employeurs": {
+    "livre_paie": {
+      "mentions_obligatoires": [
+        "Date, nature et montant du paiement",
+        "Évaluation avantages en nature",
+        "Montant des retenues",
+        "Nombre d'enfants à charge",
+        "Référence bordereau de versement"
+      ]
+    },
+    "etat_annuel": {
+      "delai": "janvier",
+      "contenu": [
+        "Nom, prénom, emploi, adresse",
+        "Montant des rémunérations après retenues retraite",
+        "Avantages en nature",
+        "Retenues IRPP effectuées",
+        "Période des paiements",
+        "Nombre d'enfants à charge",
+        "Indemnités non imposables",
+        "NIU"
+      ],
+      "fiche_individuelle": "obligatoire pour chaque employé"
+    }
+  }
+}

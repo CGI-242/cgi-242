@@ -1,0 +1,567 @@
+{
+  "test_suite": {
+    "version": "1.0",
+    "chapitre": "Partie 2 Titre 1 Chapitre 1 - Impôts et taxes obligatoires (Impôts locaux)",
+    "code": "CGI Congo 2025",
+    "date_creation": "2026-01-01",
+    "total_questions": 60,
+    "note": "Focus sur CFPB, CFPNB, Patente, Taxe régionale, Spectacles"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "categorie": "Généralités",
+      "question": "Comment est réparti le produit des impôts locaux ?",
+      "reponse_attendue": "85% au profit des collectivités décentralisées, 10% à l'administration fiscale (assiette, liquidation, émission), 5% aux chambres de commerce et organisations professionnelles.",
+      "articles_source": ["Art. 250"],
+      "mots_cles": ["répartition", "85%", "10%", "5%", "collectivités"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 2,
+      "categorie": "Généralités",
+      "question": "Quels sont les impôts locaux obligatoires au Congo ?",
+      "reponse_attendue": "Contribution foncière des propriétés bâties (CFPB), contribution foncière des propriétés non bâties (CFPNB), contribution de la patente, taxe départementale ou communale, taxe d'occupation des locaux, taxe sur les spectacles/jeux/divertissements.",
+      "articles_source": ["Art. 250"],
+      "mots_cles": ["impôts locaux", "CFPB", "CFPNB", "patente", "spectacles"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 3,
+      "categorie": "CFPB - Champ",
+      "question": "Quelles propriétés sont soumises à la CFPB ?",
+      "reponse_attendue": "Les propriétés bâties reposant sur des fondations en maçonnerie (maisons, fabriques, boutiques, hangars, usines), ainsi que les terrains non cultivés à usage commercial/industriel et l'outillage industriel attaché au fonds.",
+      "articles_source": ["Art. 251", "Art. 252"],
+      "mots_cles": ["CFPB", "propriétés bâties", "fondations", "outillage industriel"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 4,
+      "categorie": "CFPB - Redevable",
+      "question": "Qui est redevable de la CFPB en cas de crédit-bail ?",
+      "reponse_attendue": "Le preneur est imposable, non le bailleur.",
+      "articles_source": ["Art. 252 bis"],
+      "mots_cles": ["crédit-bail", "preneur", "redevable"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 5,
+      "categorie": "CFPB - Exemptions permanentes",
+      "question": "Quels immeubles bénéficient d'une exemption permanente de CFPB ?",
+      "reponse_attendue": "Immeubles de l'État/collectivités/organismes internationaux, installations portuaires concédées, ouvrages de distribution d'eau/électricité (sociétés nationales), édifices scolaires/sportifs/humanitaires, bâtiments agricoles, abris défense passive, ambassades (réciprocité).",
+      "articles_source": ["Art. 253"],
+      "mots_cles": ["exemption permanente", "État", "ambassades", "édifices scolaires"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 6,
+      "categorie": "CFPB - Exemptions temporaires",
+      "question": "Quelle est la durée d'exemption pour une construction nouvelle ?",
+      "reponse_attendue": "5 ans pour les constructions nouvelles en général, 10 ans pour les habitations, 25 ans pour les logements du personnel d'entreprise ou habitations à bon marché.",
+      "articles_source": ["Art. 254"],
+      "mots_cles": ["exemption temporaire", "5 ans", "10 ans", "25 ans", "habitation"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 7,
+      "categorie": "CFPB - Base",
+      "question": "Quelle déduction est appliquée à la valeur locative cadastrale pour la CFPB ?",
+      "reponse_attendue": "Une déduction de 75% de la valeur locative cadastrale, en considération des frais de gestion, assurance, amortissement, entretien et réparation.",
+      "articles_source": ["Art. 257 bis"],
+      "mots_cles": ["déduction", "75%", "valeur locative", "frais de gestion"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 8,
+      "categorie": "CFPB - Zones",
+      "question": "Quel est le prix du m² en zone 1 pour la CFPB ?",
+      "reponse_attendue": "250 FCFA/m² en zone 1 (centre-ville des communes de plein exercice). Le prix est diminué de moitié pour chaque étage des bâtiments à niveau.",
+      "articles_source": ["Art. 258 ter"],
+      "mots_cles": ["zone 1", "250 FCFA", "prix m²", "réduction étage"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 9,
+      "categorie": "CFPB - Taux",
+      "question": "Quel est le taux maximum de la CFPB ?",
+      "reponse_attendue": "20% maximum, fixé par délibération des Conseils Populaires. Toute cote n'excédant pas 1 000 FCFA est négligée.",
+      "articles_source": ["Art. 262"],
+      "mots_cles": ["taux maximum", "20%", "1 000 FCFA"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 10,
+      "categorie": "CFPNB - Champ",
+      "question": "Comment sont définies les propriétés urbaines et rurales pour la CFPNB ?",
+      "reponse_attendue": "Propriétés urbaines : terrains à l'intérieur du périmètre des centres urbains. Propriétés rurales : terrains situés en dehors de ces limites.",
+      "articles_source": ["Art. 264"],
+      "mots_cles": ["urbaines", "rurales", "périmètre", "centre urbain"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 11,
+      "categorie": "CFPNB - Exemptions permanentes",
+      "question": "Les terrains autour des constructions sont-ils imposables ?",
+      "reponse_attendue": "Partiellement. Est exonérée une fraction égale à 3 fois la surface bâtie (dans le périmètre commercial/industriel) ou 5 fois la surface bâtie (hors périmètre ou hors commune).",
+      "articles_source": ["Art. 265"],
+      "mots_cles": ["fraction exonérée", "3 fois", "5 fois", "surface bâtie"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 12,
+      "categorie": "CFPNB - Exemptions temporaires",
+      "question": "Quelle exemption pour les terrains plantés en hévéas ou palmiers à huile ?",
+      "reponse_attendue": "Exemption de 10 ans à compter du 1er janvier de l'année suivant la plantation.",
+      "articles_source": ["Art. 266"],
+      "mots_cles": ["hévéas", "palmiers à huile", "10 ans", "exemption"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 13,
+      "categorie": "CFPNB - Exemptions temporaires",
+      "question": "Quelles sont les durées d'exemption pour les différentes cultures ?",
+      "reponse_attendue": "Élevage gros bétail : 6 ans, hévéas/palmiers : 10 ans, arbres fruitiers : 8 ans, caféiers/cacaoyers : 7 ans, autres cultures : 3 ans.",
+      "articles_source": ["Art. 266"],
+      "mots_cles": ["6 ans", "10 ans", "8 ans", "7 ans", "3 ans", "cultures"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 14,
+      "categorie": "CFPNB - Déclaration",
+      "question": "Quel est le délai pour déclarer une exemption de CFPNB rurale ?",
+      "reponse_attendue": "Avant le 1er octobre de chaque année. L'exonération pour l'élevage nécessite l'avis du Service de l'Élevage, et pour les cultures l'avis du Service de l'Agriculture.",
+      "articles_source": ["Art. 267"],
+      "mots_cles": ["déclaration", "1er octobre", "Service Élevage", "Service Agriculture"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 15,
+      "categorie": "CFPNB - Base",
+      "question": "Quelle est la base imposable de la CFPNB ?",
+      "reponse_attendue": "50% de la valeur cadastrale pour les propriétés urbaines. Pour les propriétés rurales, un tarif forfaitaire par hectare selon la nature des cultures.",
+      "articles_source": ["Art. 270", "Art. 272"],
+      "mots_cles": ["base imposable", "50%", "valeur cadastrale", "tarif hectare"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 16,
+      "categorie": "CFPNB - Tarifs ruraux",
+      "question": "Quel est le tarif par hectare pour les terrains cultivés en café ou palmiers ?",
+      "reponse_attendue": "2 000 FCFA/ha pour café, palmiers à huile, caoutchouc et terrains à vocation forestière.",
+      "articles_source": ["Art. 272"],
+      "mots_cles": ["tarif hectare", "café", "palmiers", "2 000 FCFA"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 17,
+      "categorie": "CFPNB - Taux",
+      "question": "Quel est le taux maximum de la CFPNB ?",
+      "reponse_attendue": "40% maximum. Toute cote n'excédant pas 1 000 FCFA est négligée.",
+      "articles_source": ["Art. 275"],
+      "mots_cles": ["taux maximum", "40%", "1 000 FCFA"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 18,
+      "categorie": "Patente - Principe",
+      "question": "Qui est assujetti à la contribution de la patente ?",
+      "reponse_attendue": "Toute personne physique ou morale exerçant au Congo un commerce, une industrie, ou une autre activité à but lucratif, y compris les sociétés pétrolières (nonobstant les conventions antérieures).",
+      "articles_source": ["Art. 277"],
+      "mots_cles": ["patente", "commerce", "industrie", "activité lucrative", "pétrolières"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 19,
+      "categorie": "Patente - Assiette",
+      "question": "Sur quelle base est calculée la patente ?",
+      "reponse_attendue": "Le chiffre d'affaires annuel HT de l'exercice précédent pour le régime réel. Pour les très petites et petites entreprises, le CA servant de base à l'IGF. Pour les entreprises sans CA, les dépenses de fonctionnement au Congo.",
+      "articles_source": ["Art. 278"],
+      "mots_cles": ["assiette", "chiffre d'affaires", "régime réel", "IGF", "dépenses"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 20,
+      "categorie": "Patente - Exemptions",
+      "question": "Les associés de sociétés sont-ils exemptés de patente ?",
+      "reponse_attendue": "Oui, les associés des SNC, commandites, SARL ou SA sont exemptés de patente (c'est la société qui paie).",
+      "articles_source": ["Art. 279"],
+      "mots_cles": ["associés", "exemption", "SNC", "SARL", "SA"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 21,
+      "categorie": "Patente - Exemptions",
+      "question": "Les pêcheurs artisanaux paient-ils la patente ?",
+      "reponse_attendue": "Non, les pêcheurs et piroguiers artisanaux ménagers sont exemptés de la patente.",
+      "articles_source": ["Art. 279"],
+      "mots_cles": ["pêcheurs", "piroguiers", "artisanaux", "exemption"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 22,
+      "categorie": "Patente - Entités",
+      "question": "Combien de patentes sont dues pour plusieurs activités dans une même localité ?",
+      "reponse_attendue": "Autant de patentes qu'il y a d'entités fiscales distinctes : immeubles séparés, chantiers, ou véhicules (pour les transporteurs).",
+      "articles_source": ["Art. 281", "Art. 282"],
+      "mots_cles": ["entités fiscales", "localité", "chantiers", "véhicules"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 23,
+      "categorie": "Patente - Titre",
+      "question": "Que doit contenir le titre de patente ?",
+      "reponse_attendue": "Photo de l'exploitant (entreprise individuelle), activité exercée, nom et adresse de l'entité, nom de l'exploitant, NIU, montant de la patente. Délivré sur présentation d'une pièce d'identité valide.",
+      "articles_source": ["Art. 285"],
+      "mots_cles": ["titre de patente", "photo", "NIU", "pièce d'identité"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 24,
+      "categorie": "Patente - Annuité",
+      "question": "La patente est-elle remboursable en cas de fermeture d'entreprise ?",
+      "reponse_attendue": "Non, la patente est due pour l'année entière même en cas de cession ou fermeture. Elle est acquise au Trésor et n'est pas remboursable.",
+      "articles_source": ["Art. 287", "Art. 289", "Art. 290"],
+      "mots_cles": ["annuité", "non remboursable", "fermeture", "cession"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 25,
+      "categorie": "Patente - Sanctions",
+      "question": "Quelle pénalité pour défaut de justification du paiement de la patente ?",
+      "reponse_attendue": "Pénalité de 100% du montant dû si le contribuable ne peut justifier le paiement dans les 3 premiers mois de l'année.",
+      "articles_source": ["Art. 293"],
+      "mots_cles": ["pénalité", "100%", "3 mois", "justification"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 26,
+      "categorie": "Patente - Sociétés étrangères",
+      "question": "Quel régime pour les sociétés étrangères sous ATE ?",
+      "reponse_attendue": "Patente due pour l'année entière même si activité < 1 an. Base = valeur prévisionnelle annuelle du contrat (prorata temporis si plusieurs années). Complément dû si valeur réelle dépasse la déclaration.",
+      "articles_source": ["Art. 294"],
+      "mots_cles": ["ATE", "sociétés étrangères", "prorata temporis", "valeur prévisionnelle"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 27,
+      "categorie": "Patente - Ambulants",
+      "question": "Qu'est-ce qu'un marchand ambulant ?",
+      "reponse_attendue": "Celui qui exerce son activité de façon mobile, transportant des marchandises d'un lieu à un autre. Le titre de patente de marchand ambulant est valable sur tout le territoire national.",
+      "articles_source": ["Art. 295"],
+      "mots_cles": ["marchand ambulant", "mobile", "territoire national"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 28,
+      "categorie": "Patente - Transport",
+      "question": "Combien de titres de patente pour un transporteur avec plusieurs véhicules ?",
+      "reponse_attendue": "Autant de titres que de véhicules en service. Chaque titre mentionne expressément le véhicule concerné.",
+      "articles_source": ["Art. 296"],
+      "mots_cles": ["transporteur", "véhicules", "titres de patente"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 29,
+      "categorie": "Patente - Sanctions saisie",
+      "question": "Les marchandises peuvent-elles être saisies pour défaut de patente ?",
+      "reponse_attendue": "Oui, pour les contribuables au forfait. Saisie ou séquestre des marchandises et véhicules/instruments de travail. Vente après 1 mois si non-paiement (immédiate pour denrées périssables).",
+      "articles_source": ["Art. 297"],
+      "mots_cles": ["saisie", "marchandises", "véhicules", "1 mois", "périssables"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 30,
+      "categorie": "Patente - Paiement",
+      "question": "Quand la patente est-elle exigible ?",
+      "reponse_attendue": "Entre le 10 et le 20 avril de chaque année. Paiement fractionné possible en 2 fois (2ème trimestre) si montant > 100 000 FCFA pour les forfaitaires.",
+      "articles_source": ["Art. 310"],
+      "mots_cles": ["10-20 avril", "paiement fractionné", "100 000 FCFA"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 31,
+      "categorie": "Patente - Délai sociétés étrangères",
+      "question": "Quel délai de paiement pour les sociétés étrangères ?",
+      "reponse_attendue": "15 jours suivant le début d'activité.",
+      "articles_source": ["Art. 311"],
+      "mots_cles": ["15 jours", "début activité", "sociétés étrangères"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 32,
+      "categorie": "Patente - Déclarations",
+      "question": "Quel délai pour déclarer une nouvelle activité soumise à patente ?",
+      "reponse_attendue": "15 jours suivant l'ouverture de l'activité, au lieu de la résidence fiscale.",
+      "articles_source": ["Art. 312"],
+      "mots_cles": ["déclaration", "15 jours", "nouvelle activité"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 33,
+      "categorie": "Patente - Entrepôts",
+      "question": "Quelle sanction pour un entrepôt de marchandises non déclaré ?",
+      "reponse_attendue": "Amende de 500 000 FCFA par entrepôt découvert, plus revalorisation du CA soumis à l'IGF.",
+      "articles_source": ["Art. 312"],
+      "mots_cles": ["entrepôt", "amende", "500 000 FCFA"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 34,
+      "categorie": "Patente - Tarifs",
+      "question": "Quel est le montant de la patente pour un CA < 1 million ?",
+      "reponse_attendue": "10 000 FCFA forfaitaire pour les contribuables dont le CA forfaitaire n'atteint pas 1 000 000 FCFA, ainsi que pour les exploitations agricoles au sens large.",
+      "articles_source": ["Art. 314"],
+      "mots_cles": ["10 000 FCFA", "forfait", "1 million", "agriculture"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 35,
+      "categorie": "Patente - Tarifs",
+      "question": "Quel taux de patente pour un CA de 50 millions ?",
+      "reponse_attendue": "Calcul par tranches : 0,750% sur 1-20M + 0,650% sur 20-40M + 0,450% sur 40-50M = 142 500 + 130 000 + 45 000 = 317 500 FCFA.",
+      "articles_source": ["Art. 314"],
+      "mots_cles": ["barème", "tranches", "0,750%", "0,650%", "0,450%"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 36,
+      "categorie": "Patente - Pétrolières",
+      "question": "Quel régime de patente pour les sociétés pétrolières ?",
+      "reponse_attendue": "Conditions de droit commun mais la contribution n'est exigible qu'à hauteur de 50% du montant des droits liquidés.",
+      "articles_source": ["Art. 314"],
+      "mots_cles": ["sociétés pétrolières", "50%", "droits liquidés"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 37,
+      "categorie": "Patente - Stand-by",
+      "question": "Quelle patente pour une société en stand-by ?",
+      "reponse_attendue": "25% de la dernière patente normalement payée, si aucune dépense de fonctionnement au Congo.",
+      "articles_source": ["Art. 278"],
+      "mots_cles": ["stand-by", "25%", "dernière patente"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 38,
+      "categorie": "Taxe régionale - Champ",
+      "question": "Qui est assujetti à la taxe régionale ?",
+      "reponse_attendue": "Toutes les personnes physiques âgées de 18 ans révolus ayant leur résidence habituelle au Congo au 1er janvier de l'année d'imposition.",
+      "articles_source": ["Art. 321"],
+      "mots_cles": ["taxe régionale", "18 ans", "résidence", "1er janvier"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 39,
+      "categorie": "Taxe régionale - Exemptions",
+      "question": "Les étudiants de 18 à 25 ans sont-ils exemptés de la taxe régionale ?",
+      "reponse_attendue": "Oui, s'ils fréquentent régulièrement une école officielle ou autorisée et n'ont aucun revenu propre. Certificat de scolarité requis.",
+      "articles_source": ["Art. 323"],
+      "mots_cles": ["étudiants", "18-25 ans", "exemption", "certificat scolarité"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 40,
+      "categorie": "Taxe régionale - Exemptions",
+      "question": "Les mères de famille nombreuse sont-elles exemptées ?",
+      "reponse_attendue": "Oui, les mères d'au moins 5 enfants vivants sont exemptées, à condition de ne pas être assujetties à l'IRPP.",
+      "articles_source": ["Art. 323"],
+      "mots_cles": ["mères", "5 enfants", "exemption", "IRPP"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 41,
+      "categorie": "Taxe régionale - Recouvrement",
+      "question": "Comment est recouvrée la taxe régionale pour les salariés ?",
+      "reponse_attendue": "Par précompte sur les salaires du mois de janvier, effectué par l'employeur. Pour les revenus > 120 000 FCFA : rôles nominatifs. Pour les revenus < 120 000 FCFA : rôles numériques avec ticket de paiement.",
+      "articles_source": ["Art. 327"],
+      "mots_cles": ["précompte", "janvier", "employeur", "120 000 FCFA", "rôles"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 42,
+      "categorie": "Spectacles - Champ",
+      "question": "Qui est soumis à la taxe sur les spectacles ?",
+      "reponse_attendue": "Tous les spectacles, jeux, divertissements organisés dans un but commercial ou financier, ainsi que les cercles privés organisant des spectacles, servant des repas ou vendant des boissons.",
+      "articles_source": ["Art. 331"],
+      "mots_cles": ["spectacles", "jeux", "divertissements", "cercles privés"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 43,
+      "categorie": "Spectacles - Exemptions",
+      "question": "Les foires subventionnées sont-elles taxées ?",
+      "reponse_attendue": "Non, les foires agricoles, commerciales ou industrielles subventionnées par une collectivité publique sont exemptées, à condition qu'il n'y ait aucune attraction payante.",
+      "articles_source": ["Art. 332"],
+      "mots_cles": ["foires", "exemption", "subventionnées", "collectivité"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 44,
+      "categorie": "Spectacles - Tarifs",
+      "question": "Quel est le taux de taxe sur les spectacles ?",
+      "reponse_attendue": "15% pour les places de 0 à 200 FCFA, 30% au-dessus de 200 FCFA.",
+      "articles_source": ["Art. 333"],
+      "mots_cles": ["15%", "30%", "200 FCFA", "spectacles"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 45,
+      "categorie": "Spectacles - Bars dancings",
+      "question": "Quel est le tarif pour un bar-dancing permanent avec musiciens ?",
+      "reponse_attendue": "240 000 FCFA/an. 100 000 FCFA si pick-up uniquement. 120 000 FCFA pour non permanent avec musiciens, 50 000 FCFA non permanent avec pick-up.",
+      "articles_source": ["Art. 333"],
+      "mots_cles": ["bar-dancing", "240 000 FCFA", "musiciens", "pick-up"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 46,
+      "categorie": "Spectacles - Cercles privés",
+      "question": "Quel taux pour les cercles privés et maisons de jeu ?",
+      "reponse_attendue": "10% des recettes annuelles, y compris les cotisations des membres.",
+      "articles_source": ["Art. 333", "Art. 338"],
+      "mots_cles": ["cercles privés", "10%", "recettes", "cotisations"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 47,
+      "categorie": "Spectacles - Obligations",
+      "question": "Quel délai pour déclarer l'ouverture d'un spectacle ?",
+      "reponse_attendue": "24 heures avant l'ouverture, déclaration au Président du Comité Exécutif Communal.",
+      "articles_source": ["Art. 340"],
+      "mots_cles": ["24 heures", "déclaration", "ouverture"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 48,
+      "categorie": "Spectacles - Obligations",
+      "question": "Quand déposer le relevé des recettes pour les spectacles ?",
+      "reponse_attendue": "Dans les 15 premiers jours du mois pour les recettes du mois précédent. Pour les spectacles occasionnels : dans les 3 jours suivant la représentation.",
+      "articles_source": ["Art. 340"],
+      "mots_cles": ["relevé recettes", "15 jours", "3 jours", "spectacle occasionnel"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 49,
+      "categorie": "CFPB - Valeur locative",
+      "question": "Comment est déterminée la valeur locative des propriétés bâties ?",
+      "reponse_attendue": "Soit par le bail authentique ou sous signature privée, soit par comparaison avec d'autres locaux, soit par appréciation directe si les deux premiers procédés sont inapplicables.",
+      "articles_source": ["Art. 258 bis"],
+      "mots_cles": ["valeur locative", "bail", "comparaison", "appréciation directe"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 50,
+      "categorie": "CFPB - Déclaration",
+      "question": "Quand déclarer les locataires pour la CFPB/CFPNB ?",
+      "reponse_attendue": "Avant le 1er octobre de chaque année, en indiquant les noms des locataires, la consistance des locaux, le montant des loyers, les occupants à titre gratuit et les locaux vacants.",
+      "articles_source": ["Art. 276"],
+      "mots_cles": ["déclaration", "1er octobre", "locataires", "valeur locative"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 51,
+      "categorie": "CFPNB - Cultures maraîchères",
+      "question": "Les terrains maraîchers sont-ils exonérés de CFPNB ?",
+      "reponse_attendue": "Oui, les terrains < 5 hectares exploités dans un rayon de 25 km des agglomérations urbaines et destinés exclusivement aux cultures maraîchères sont exonérés.",
+      "articles_source": ["Art. 265"],
+      "mots_cles": ["cultures maraîchères", "5 hectares", "25 km", "exonération"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 52,
+      "categorie": "CFPNB - Retrait exonération",
+      "question": "Peut-on perdre une exonération temporaire de CFPNB ?",
+      "reponse_attendue": "Oui, l'exonération peut être retirée sur proposition du Service de l'élevage ou de l'agriculture si l'exploitation n'est pas conforme à la déclaration ou n'a pas été entreprise rationnellement.",
+      "articles_source": ["Art. 268"],
+      "mots_cles": ["retrait", "exonération", "non-conformité", "rationnel"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 53,
+      "categorie": "Patente - Matrices",
+      "question": "Quand sont établies les matrices supplémentaires de patente ?",
+      "reponse_attendue": "Au début de chaque trimestre, pour les personnes entreprenant une activité en cours d'année ou non inscrites sur la matrice primitive.",
+      "articles_source": ["Art. 304", "Art. 306"],
+      "mots_cles": ["matrices supplémentaires", "trimestre", "nouvelle activité"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 54,
+      "categorie": "Patente - Cessation",
+      "question": "Quel délai pour déclarer une cessation d'activité ?",
+      "reponse_attendue": "Avant le 1er décembre de l'année en cours pour ne pas figurer sur les matrices primitives de l'année suivante.",
+      "articles_source": ["Art. 305"],
+      "mots_cles": ["cessation", "1er décembre", "matrices primitives"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 55,
+      "categorie": "Patente - Magasins auxiliaires",
+      "question": "Quelle sanction pour des magasins auxiliaires non déclarés ?",
+      "reponse_attendue": "Supplément de droit égal au montant des droits éludés.",
+      "articles_source": ["Art. 313"],
+      "mots_cles": ["magasins auxiliaires", "supplément", "droits éludés"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 56,
+      "categorie": "CFPB - Changement destination",
+      "question": "Que se passe-t-il si un immeuble d'habitation change de destination ?",
+      "reponse_attendue": "L'exonération de 5 ans se substitue à celle de 10 ou 25 ans pour la fraction du bâtiment ayant changé d'usage, calculée depuis l'achèvement de la construction.",
+      "articles_source": ["Art. 254"],
+      "mots_cles": ["changement destination", "substitution", "5 ans", "10 ans"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 57,
+      "categorie": "Taxe régionale - Oisifs",
+      "question": "Les personnes sans ressources définies sont-elles taxées ?",
+      "reponse_attendue": "Oui, les contribuables dont les ressources sont inconnues ou mal définies sont considérés comme oisifs et soumis à la taxe régionale.",
+      "articles_source": ["Art. 325"],
+      "mots_cles": ["oisifs", "ressources inconnues", "taxe régionale"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 58,
+      "categorie": "Spectacles - Caution",
+      "question": "Les exploitants de bars-dancings doivent-ils fournir une caution ?",
+      "reponse_attendue": "Oui, ils doivent présenter une caution solvable engagée solidairement pour le paiement des droits et pénalités, sauf s'ils justifient de ressources suffisantes.",
+      "articles_source": ["Art. 340"],
+      "mots_cles": ["caution", "bars-dancings", "solidairement"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 59,
+      "categorie": "Spectacles - Cession",
+      "question": "La taxe peut-elle être partagée en cas de cession d'un bar-dancing ?",
+      "reponse_attendue": "Oui, prorata temporis entre cédant et cessionnaire, si demande dans les 10 jours de la cession et si le cédant présente le récépissé des droits échus.",
+      "articles_source": ["Art. 337"],
+      "mots_cles": ["cession", "prorata temporis", "10 jours", "partage"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 60,
+      "categorie": "Patente - Répartition",
+      "question": "Comment répartir la patente d'une entreprise multi-établissements ?",
+      "reponse_attendue": "La patente est calculée sur le CA global puis répartie entre les entités fiscales selon une clé de répartition définie par l'entreprise. Chaque entité paie auprès de sa résidence fiscale.",
+      "articles_source": ["Art. 278", "Art. 281"],
+      "mots_cles": ["répartition", "multi-établissements", "clé", "entités fiscales"],
+      "difficulte": "difficile"
+    }
+  ],
+  "statistiques": {
+    "par_difficulte": {
+      "facile": 25,
+      "moyen": 27,
+      "difficile": 8
+    },
+    "par_section": {
+      "Généralités": 2,
+      "CFPB": 12,
+      "CFPNB": 10,
+      "Patente": 24,
+      "Taxe régionale": 5,
+      "Spectacles": 7
+    }
+  }
+}

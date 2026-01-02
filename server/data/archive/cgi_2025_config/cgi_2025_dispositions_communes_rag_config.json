@@ -1,0 +1,135 @@
+{
+  "rag_config": {
+    "version": "2.0",
+    "chapitre": "Chapitre 4 - Dispositions communes",
+    "code": "CGI Congo 2025"
+  },
+  "chunking_strategy": {
+    "method": "semantic_hierarchical",
+    "description": "Découpage par section et sous-section avec focus sur le régime minier",
+    "parameters": {
+      "primary_split": "article",
+      "secondary_split": "alinea",
+      "max_chunk_tokens": 800,
+      "min_chunk_tokens": 100,
+      "overlap_tokens": 50,
+      "preserve_structure": true
+    },
+    "regroupements_recommandes": [
+      {
+        "groupe": "revision_bilans",
+        "articles": ["Art. 127", "Art. 127 quinquies"],
+        "raison": "Révision des bilans et exclusion des régimes dérogatoires multiples"
+      },
+      {
+        "groupe": "provisions_hydrocarbures",
+        "articles": ["Art. 133", "Art. 134", "Art. 135", "Art. 136", "Art. 137", "Art. 138", "Art. 139"],
+        "raison": "Régime complet des provisions pour hydrocarbures"
+      },
+      {
+        "groupe": "provisions_mineraux",
+        "articles": ["Art. 140", "Art. 140 bis"],
+        "raison": "Régime des substances minérales autres que hydrocarbures"
+      }
+    ],
+    "articles_abroges_a_exclure": ["Art. 127 bis", "Art. 127 quater", "Art. 128", "Art. 129", "Art. 130", "Art. 131", "Art. 132"]
+  },
+  "metadata_enrichment": {
+    "per_chunk_metadata": {
+      "article_id": "identifiant unique",
+      "titre_article": "titre officiel",
+      "section": "section du chapitre",
+      "sous_section": "sous-section le cas échéant",
+      "mots_cles": "liste mots-clés",
+      "valeurs_numeriques": "taux, délais extraits",
+      "references_croisees": "articles liés",
+      "theme_principal": "hydrocarbures | substances_minerales | revision_bilans | regimes_derogatoires",
+      "type_disposition": "principe | calcul | obligation | sanction | exception",
+      "statut": "en_vigueur | abroge"
+    }
+  },
+  "embedding_optimization": {
+    "model_recommande": "text-embedding-3-large",
+    "dimensions": 1536,
+    "preprocessing": {
+      "normalisation_juridique": true,
+      "expansion_acronymes": {
+        "PRG": "Provision pour Reconstitution des Gisements",
+        "CPP": "Contrat de Partage de Production",
+        "IRPP": "Impôt sur le Revenu des Personnes Physiques",
+        "IS": "Impôt sur les Sociétés",
+        "TVA": "Taxe sur la Valeur Ajoutée"
+      },
+      "synonymes_sectoriels": {
+        "hydrocarbures": ["pétrole", "gaz", "huile", "brut"],
+        "substances minérales": ["minerais", "mines", "métaux", "extraction"],
+        "gisement": ["gîte", "réserves", "ressources"],
+        "provision": ["dotation", "réserve fiscale"]
+      }
+    }
+  },
+  "retrieval_config": {
+    "strategie": "hybrid",
+    "parametres": {
+      "semantic_weight": 0.6,
+      "keyword_weight": 0.4,
+      "top_k": 8,
+      "rerank": true,
+      "rerank_model": "cross-encoder"
+    },
+    "filtres_contextuels": {
+      "par_secteur": ["hydrocarbures", "substances_minerales"],
+      "par_type_question": {
+        "taux": ["Art. 134", "Art. 140"],
+        "delais": ["Art. 136", "Art. 134"],
+        "utilisation": ["Art. 136", "Art. 140"],
+        "sanctions": ["Art. 137"],
+        "cession_fusion": ["Art. 138"],
+        "obligations": ["Art. 139"]
+      }
+    }
+  },
+  "query_expansion": {
+    "synonymes_automatiques": true,
+    "mappings_secteurs": {
+      "pétrole": "hydrocarbures",
+      "gaz": "hydrocarbures",
+      "mines": "substances_minerales",
+      "minerais": "substances_minerales",
+      "or": "substances_minerales",
+      "fer": "substances_minerales",
+      "cuivre": "substances_minerales"
+    },
+    "questions_types": {
+      "taux_patterns": ["quel est le taux", "pourcentage", "limite", "plafond"],
+      "delai_patterns": ["délai", "combien de temps", "avant", "dans quel délai"],
+      "utilisation_patterns": ["utiliser", "employer", "affecter", "financer"],
+      "sanction_patterns": ["sanction", "défaut", "non-respect", "pénalité"]
+    }
+  },
+  "quality_metrics": {
+    "cibles": {
+      "precision_at_5": 0.90,
+      "recall_at_10": 0.95,
+      "mrr": 0.85
+    },
+    "tests_validation": {
+      "fichier": "cgi_2025_dispositions_communes_tests.json",
+      "nombre_questions": 25,
+      "seuil_reussite": 0.90
+    }
+  },
+  "prompt_template": {
+    "system": "Tu es un expert en fiscalité minière et pétrolière congolaise, spécialiste du CGI 2025. Tu réponds aux questions sur les provisions pour reconstitution de gisements (hydrocarbures et substances minérales) en citant les articles pertinents. Tu distingues clairement les régimes hydrocarbures vs autres substances minérales.",
+    "context_prefix": "Voici les dispositions pertinentes du CGI Congo 2025 (Chapitre 4 - Dispositions communes) :",
+    "answer_format": {
+      "structure": [
+        "Identification du secteur (hydrocarbures ou substances minérales)",
+        "Réponse directe à la question",
+        "Article(s) de référence",
+        "Valeurs chiffrées (taux, délais)"
+      ],
+      "style": "professionnel_technique"
+    }
+  }
+}

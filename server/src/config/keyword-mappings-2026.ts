@@ -1,0 +1,263 @@
+/**
+ * Mapping des mots-cles vers les articles du CGI 2026
+ * Chapitre IS - Impot sur les Societes (Art. 1 a 92K)
+ *
+ * REGLE : Le premier article de chaque liste est la SOURCE PRIMAIRE
+ *
+ * @author NORMX AI - CGI 242
+ * @version 2026
+ * @base Directive CEMAC n0119/25-UEAC-177-CM-42 du 09 janvier 2025
+ */
+
+export const KEYWORD_ARTICLE_MAP_2026: Record<string, string[]> = {
+
+  // ========== GENERALITES - TAUX IS ==========
+  'taux is': ['Art. 86A'],
+  'taux impot societes': ['Art. 86A'],
+  '25%': ['Art. 86A'],
+  '33%': ['Art. 86A'],
+  'taux normal is': ['Art. 86A'],
+  'taux non residents': ['Art. 86A'],
+
+  // ========== ART. 2 - PERSONNES IMPOSABLES ==========
+  'personnes imposables is': ['Art. 2'],
+  'societes de capitaux': ['Art. 2'],
+  'sa': ['Art. 2'],
+  'sas': ['Art. 2'],
+  'sarl': ['Art. 2'],
+  'option is': ['Art. 2'],
+  'snc option': ['Art. 2'],
+  '30 octobre': ['Art. 2'],
+
+  // ========== ART. 3 - EXONERATIONS ==========
+  'exonerations is': ['Art. 3'],
+  'cooperatives agricoles': ['Art. 3'],
+  'exonerations conventionnelles': ['Art. 3'],
+  'suppression exonerations': ['Art. 3'],
+
+  // ========== ART. 3A - CREDIT D'IMPOT ==========
+  'credit impot investissement': ['Art. 3A'],
+  'credit impot': ['Art. 3A'],
+  '15% credit': ['Art. 3A'],
+  'report credit impot': ['Art. 3A'],
+
+  // ========== ART. 4, 4A, 7 - TERRITORIALITE ==========
+  'territorialite is': ['Art. 4'],
+  'etablissement stable': ['Art. 4A'],
+  'installation fixe': ['Art. 4A'],
+  'chantier construction': ['Art. 4A'],
+  '3 mois chantier': ['Art. 4A'],
+  '183 jours': ['Art. 4A'],
+  'services etablissement stable': ['Art. 4A'],
+  'residence fiscale societe': ['Art. 7'],
+
+  // ========== ART. 8-11 - BENEFICE IMPOSABLE ==========
+  'benefice imposable': ['Art. 8'],
+  'benefice net': ['Art. 8'],
+  'actif net': ['Art. 9'],
+  'stocks': ['Art. 10'],
+  'periode imposition': ['Art. 11'],
+
+  // ========== ART. 12-16 - PRODUITS IMPOSABLES ==========
+  'produits imposables': ['Art. 12'],
+  'revenus etrangers': ['Art. 13'],
+  'cessions actif': ['Art. 14', 'Art. 15', 'Art. 16'],
+
+  // ========== ART. 17-25 - PLUS-VALUES ==========
+  'plus-values': ['Art. 17'],
+  'moins-values': ['Art. 17'],
+  'regime plus-values': ['Art. 17'],
+  'remploi plus-values': ['Art. 17 A'],
+  '3 ans remploi': ['Art. 17 A'],
+  'regime mere-fille': ['Art. 20', 'Art. 21'],
+  'dividendes intragroupe': ['Art. 20'],
+  'restructurations': ['Art. 22', 'Art. 23', 'Art. 24', 'Art. 25'],
+  'fusion': ['Art. 22'],
+  'scission': ['Art. 23'],
+  'apport partiel actif': ['Art. 24'],
+
+  // ========== ART. 26 - CONDITIONS DEDUCTIBILITE ==========
+  'conditions deductibilite': ['Art. 26'],
+  'charges deductibles': ['Art. 26'],
+  'acte anormal gestion': ['Art. 26'],
+  '200 000 fcfa': ['Art. 26'],
+  'paiement especes': ['Art. 26'],
+
+  // ========== ART. 27-37 - CHARGES PERSONNEL ==========
+  'charges personnel': ['Art. 27'],
+  'remunerations': ['Art. 27'],
+  'salaires deductibles': ['Art. 27'],
+  'gerants': ['Art. 28', 'Art. 29'],
+  'administrateurs': ['Art. 30', 'Art. 31', 'Art. 32'],
+  'jetons presence': ['Art. 30'],
+  'frais transport': ['Art. 35', 'Art. 36'],
+  'voyages conges': ['Art. 37'],
+
+  // ========== ART. 38-41 - FRAIS SIEGE REDEVANCES ==========
+  'frais de siege': ['Art. 38'],
+  'redevances': ['Art. 39', 'Art. 40'],
+  'commissions': ['Art. 39'],
+  '20% redevances': ['Art. 39'],
+  'pret main oeuvre': ['Art. 41'],
+
+  // ========== ART. 42 - LOYERS ==========
+  'loyers': ['Art. 42'],
+  'credit-bail': ['Art. 42', 'Art. 55', 'Art. 56'],
+  'leasing': ['Art. 42', 'Art. 55'],
+
+  // ========== ART. 43 - IMPOTS DEDUCTIBLES ==========
+  'impots deductibles': ['Art. 43'],
+  'amendes non deductibles': ['Art. 43'],
+
+  // ========== ART. 44 - ASSURANCES ==========
+  'assurances deductibles': ['Art. 44'],
+  'primes assurance': ['Art. 44'],
+  'captives assurance': ['Art. 44 A'],
+
+  // ========== ART. 45-46 - DONS LIBERALITES ==========
+  'dons': ['Art. 45'],
+  'liberalites': ['Art. 45'],
+  'subventions': ['Art. 45'],
+  'aides non deductibles': ['Art. 46'],
+  'sfec': ['Art. 46', 'Art. 61'],
+
+  // ========== ART. 47 - DEPENSES SOMPTUAIRES ==========
+  'depenses somptuaires': ['Art. 47'],
+  'chasse': ['Art. 47'],
+  'plaisance': ['Art. 47'],
+
+  // ========== ART. 48 - REMUNERATIONS OCCULTES ==========
+  'remunerations occultes': ['Art. 48'],
+
+  // ========== ART. 49 - CHARGES FINANCIERES ==========
+  'charges financieres': ['Art. 49'],
+  'interets': ['Art. 49'],
+  'sous-capitalisation': ['Art. 49'],
+  '20% ebe': ['Art. 49'],
+  'limitation interets': ['Art. 49'],
+  'beac': ['Art. 49'],
+
+  // ========== ART. 51-61 - AMORTISSEMENTS ==========
+  'amortissements': ['Art. 51'],
+  'taux amortissement': ['Art. 52'],
+  'amortissement lineaire': ['Art. 53'],
+  'amortissement degressif': ['Art. 54'],
+  'amortissement accelere': ['Art. 57'],
+  '40 000 000 fcfa': ['Art. 57', 'Art. 58'],
+  'vehicules tourisme': ['Art. 58'],
+  '500 000 fcfa': ['Art. 59'],
+  'amortissement 100%': ['Art. 59', 'Art. 61'],
+
+  // ========== ART. 63-74 - PROVISIONS ==========
+  'provisions': ['Art. 63'],
+  'creances douteuses': ['Art. 64'],
+  'provision stock': ['Art. 65'],
+  'cobac': ['Art. 66'],
+  'provisions reglementees': ['Art. 67'],
+
+  // ========== ART. 75 - REPORT DEFICITS ==========
+  'report deficits': ['Art. 75'],
+  'deficits reportables': ['Art. 75'],
+  '5 ans deficit': ['Art. 75'],
+  'pertes reportables': ['Art. 75'],
+
+  // ========== ART. 77-85 - PRIX DE TRANSFERT ==========
+  'prix de transfert': ['Art. 77'],
+  'prix transfert': ['Art. 77'],
+  'parties liees': ['Art. 77'],
+  'entreprises liees': ['Art. 77'],
+  'documentation prix transfert': ['Art. 78'],
+  '500 000 000 fcfa': ['Art. 78'],
+  'methodes prix transfert': ['Art. 79'],
+  'cup': ['Art. 79'],
+  'mtmn': ['Art. 79'],
+  'app': ['Art. 80'],
+  'accord prealable prix': ['Art. 80'],
+  'sanctions prix transfert': ['Art. 81'],
+  '5 000 000 amende': ['Art. 81'],
+  '25 000 000 amende': ['Art. 81'],
+  'declaration pays par pays': ['Art. 82', 'Art. 83', 'Art. 84', 'Art. 85'],
+
+  // ========== ART. 86-86C - ASSIETTE ET TAUX ==========
+  'assiette is': ['Art. 86'],
+  'minimum perception': ['Art. 86B'],
+  'minimum is': ['Art. 86B'],
+  '1% minimum': ['Art. 86B'],
+  '2% minimum': ['Art. 86B'],
+  'deficit consecutif': ['Art. 86B'],
+  'acomptes minimum perception': ['Art. 86B'],
+  '15 mars': ['Art. 86B'],
+  '15 juin': ['Art. 86B'],
+  '15 septembre': ['Art. 86B'],
+  '15 decembre': ['Art. 86B'],
+  'retenue source': ['Art. 86C'],
+  '20% retenue': ['Art. 86C'],
+  'prestations non residents': ['Art. 86C'],
+  'acomptes is': ['Art. 124'],
+  '15 fevrier': ['Art. 124'],
+  '15 mai': ['Art. 124'],
+  '15 aout': ['Art. 124'],
+  '15 novembre': ['Art. 124'],
+
+  // ========== ART. 87 - REGIME MERE-FILLE ==========
+  'societes meres': ['Art. 87'],
+  'filiales': ['Art. 87'],
+  'dividendes mere-fille': ['Art. 87'],
+  '25% participation': ['Art. 87'],
+  'quote-part 10%': ['Art. 87A'],
+  '2 ans conservation': ['Art. 87A'],
+
+  // ========== ART. 88 - SUCCURSALES ==========
+  'succursales': ['Art. 88'],
+  'conventions internationales': ['Art. 88'],
+
+  // ========== ART. 89 - QUARTIERS GENERAUX ==========
+  'quartiers generaux': ['Art. 89'],
+  'qg cemac': ['Art. 89'],
+  'base forfaitaire qg': ['Art. 89A'],
+
+  // ========== ART. 90 - HOLDINGS ==========
+  'holdings': ['Art. 90'],
+  'societe holding': ['Art. 90'],
+  'deux tiers actif': ['Art. 90'],
+  'regime holding': ['Art. 90A', 'Art. 90B'],
+  'plus-values cession holding': ['Art. 90D'],
+
+  // ========== ART. 91 - INTEGRATION FISCALE ==========
+  'integration fiscale': ['Art. 91'],
+  'groupe fiscal': ['Art. 91'],
+  '95% participation': ['Art. 91'],
+  'resultat ensemble': ['Art. 91A'],
+  'neutralisation': ['Art. 91B'],
+  'option integration': ['Art. 91C'],
+  '5 exercices': ['Art. 91C'],
+
+  // ========== ART. 92 - PERSONNES MORALES ETRANGERES ==========
+  'personnes morales etrangeres': ['Art. 92'],
+  'non residents is': ['Art. 92'],
+  'forfaitaire 22%': ['Art. 92'],
+  'sous-traitants petroliers': ['Art. 92A', 'Art. 92B'],
+  'quitus fiscal': ['Art. 92E'],
+  'ate': ['Art. 92F'],
+  'autorisation temporaire exercer': ['Art. 92F'],
+  'zone angola': ['Art. 92J'],
+  '5.75%': ['Art. 92J'],
+};
+
+/**
+ * Synonymes pour expansion de requetes CGI 2026
+ */
+export const SYNONYMS_2026: Record<string, string[]> = {
+  'is': ['impot sur les societes', 'impot societes', 'corporate tax'],
+  'etablissement stable': ['es', 'succursale', 'presence permanente', 'installation fixe'],
+  'prix de transfert': ['pt', 'transfer pricing', 'transactions intragroupe'],
+  'minimum de perception': ['minimum is', 'impot minimum', 'plancher fiscal'],
+  'regime mere-fille': ['dividendes intragroupe', 'participation qualifiee'],
+  'integration fiscale': ['groupe fiscal', 'consolidation fiscale'],
+  'holding': ['societe de participation', 'societe portefeuille'],
+  'credit-bail': ['leasing', 'location financiere', 'loa'],
+  'amortissement': ['dotation aux amortissements', 'depreciation'],
+  'provisions': ['dotation aux provisions', 'charges a venir'],
+  'retenue a la source': ['ras', 'withholding tax', 'prelevement a la source'],
+  'redevances': ['royalties', 'droits auteur', 'licences'],
+};

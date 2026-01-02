@@ -1,0 +1,386 @@
+{
+  "test_suite": {
+    "version": "1.0",
+    "chapitre": "Chapitre 5 - Taxes diverses",
+    "code": "CGI Congo 2025",
+    "date_creation": "2026-01-01",
+    "total_questions": 40,
+    "note": "27 articles en vigueur sur 52 - Focus sur TSS, taxes terrains, bons de caisse et TVS"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "categorie": "Taxes terrains - Principe",
+      "question": "Quelles taxes sur les terrains existent au Congo ?",
+      "reponse_attendue": "Il existe des taxes annuelles sur : les terrains d'agrément, les terrains non mis ou insuffisamment mis en valeur, les terrains à bâtir, et les terrains inexploités ou insuffisamment exploités.",
+      "articles_source": ["Art. 157"],
+      "mots_cles": ["taxes terrains", "agrément", "non mis en valeur", "à bâtir", "inexploités"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 2,
+      "categorie": "Taxes terrains - Champ",
+      "question": "Dans quelles communes s'appliquent les taxes sur les terrains urbains ?",
+      "reponse_attendue": "Les taxes sur terrains d'agrément, insuffisamment mis en valeur et à bâtir s'appliquent dans les communes de Brazzaville, Pointe-Noire, Loudima et les terrains urbains définis par le régime domanial.",
+      "articles_source": ["Art. 158"],
+      "mots_cles": ["Brazzaville", "Pointe-Noire", "Loudima", "terrains urbains"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 3,
+      "categorie": "Taxes terrains - Définitions",
+      "question": "Qu'est-ce qu'un terrain d'agrément ?",
+      "reponse_attendue": "Un terrain entourant une construction soumise à la contribution foncière et excédant une superficie égale à 5 fois la superficie bâtie (excluant les chantiers et dépôts d'entreprises). Pour les étages, la superficie bâtie = somme des surfaces de tous les niveaux (hors grenier).",
+      "articles_source": ["Art. 159"],
+      "mots_cles": ["terrain d'agrément", "5 fois", "superficie bâtie", "construction"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 4,
+      "categorie": "Taxes terrains - Définitions",
+      "question": "Qu'est-ce qu'un terrain insuffisamment mis en valeur ?",
+      "reponse_attendue": "Un terrain comportant des constructions d'une valeur inférieure à celle fixée par les cahiers des charges en vigueur pour des terrains identiques (excluant chantiers et dépôts d'entreprises). La valeur est évaluée par la commission d'adjudication.",
+      "articles_source": ["Art. 159"],
+      "mots_cles": ["insuffisamment mis en valeur", "cahier des charges", "commission d'adjudication"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 5,
+      "categorie": "Taxes terrains - Définitions",
+      "question": "Qu'est-ce qu'un terrain à bâtir ?",
+      "reponse_attendue": "Tout terrain sans aucune construction, même clôturé et entretenu (excluant chantiers et dépôts d'entreprises). Chaque titre de propriété est examiné séparément.",
+      "articles_source": ["Art. 159"],
+      "mots_cles": ["terrain à bâtir", "sans construction", "titre de propriété"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 6,
+      "categorie": "Taxes terrains - Exploitation",
+      "question": "Un terrain en jachère est-il considéré comme exploité ?",
+      "reponse_attendue": "Oui, les terrains en jachère pour régénération du sol sont considérés comme exploités, à condition d'avoir été déjà exploités ou d'entrer dans un assolement de longue durée en rapport avec les exigences techniques de la culture.",
+      "articles_source": ["Art. 160"],
+      "mots_cles": ["jachère", "exploité", "régénération", "assolement"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 7,
+      "categorie": "Taxes terrains - Exploitation",
+      "question": "Quand une plantation est-elle considérée comme inexploitée ?",
+      "reponse_attendue": "Une plantation est considérée comme inexploitée si elle n'est pas entretenue depuis plus de 3 ans.",
+      "articles_source": ["Art. 160"],
+      "mots_cles": ["plantation", "inexploitée", "3 ans", "non entretenue"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 8,
+      "categorie": "Taxes terrains - Exploitation",
+      "question": "Quand une concession est-elle insuffisamment exploitée ?",
+      "reponse_attendue": "Lorsque plus de 51% de la superficie totale (après déduction des parcelles exonérées) n'est ni mise en culture, ni plantée.",
+      "articles_source": ["Art. 160"],
+      "mots_cles": ["insuffisamment exploitée", "51%", "concession"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 9,
+      "categorie": "Taxes terrains - Exemptions permanentes",
+      "question": "Quels terrains à bâtir sont exemptés de taxe ?",
+      "reponse_attendue": "Sont exemptés : terrains ayant un plan de lotissement approuvé avec cession gratuite des superficies libres et travaux de viabilité effectués ; terrains non desservis par voie carrossable (>100m) ; terrains inaccessibles en raison de la configuration des lotissements.",
+      "articles_source": ["Art. 161"],
+      "mots_cles": ["exemption", "lotissement", "voie carrossable", "100 mètres"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 10,
+      "categorie": "Taxes terrains - Exemptions temporaires",
+      "question": "Comment obtenir une exemption temporaire pour un terrain ?",
+      "reponse_attendue": "En déposant un programme d'investissement à la DGID permettant une mise en valeur conforme aux cahiers des charges. L'exonération court à partir des premières opérations d'investissement. Si mise en valeur insuffisante après 3 ans (sauf force majeure), la taxe est due avec majoration de 25%.",
+      "articles_source": ["Art. 162"],
+      "mots_cles": ["exemption temporaire", "programme investissement", "DGID", "3 ans", "25%"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 11,
+      "categorie": "Taxes terrains - Redevable",
+      "question": "Qui est redevable de la taxe sur les terrains ?",
+      "reponse_attendue": "Le propriétaire au 1er janvier de l'année d'imposition. En cas d'usufruit ou bail emphytéotique, la taxe est établie au nom de l'usufruitier ou emphytéote (Art. 608 Code civil).",
+      "articles_source": ["Art. 163"],
+      "mots_cles": ["redevable", "propriétaire", "usufruitier", "emphytéote"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 12,
+      "categorie": "Taxes terrains - Tarifs",
+      "question": "Quel est le tarif de la taxe sur les terrains d'agrément à Brazzaville ?",
+      "reponse_attendue": "15 F/m² à Brazzaville, Pointe-Noire et Loubomo. 5 F/m² dans les autres centres.",
+      "articles_source": ["Art. 165"],
+      "mots_cles": ["tarif", "terrain d'agrément", "15 F/m²", "5 F/m²"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 13,
+      "categorie": "Taxes terrains - Tarifs",
+      "question": "Quel est le tarif de la taxe sur les terrains à bâtir ?",
+      "reponse_attendue": "3 catégories : 1ère (voie + eau + électricité) = 30 F/m² ; 2ème (voie + eau OU voie + électricité) = 20 F/m² ; 3ème (voie seule) = 10 F/m².",
+      "articles_source": ["Art. 165"],
+      "mots_cles": ["terrain à bâtir", "30 F/m²", "20 F/m²", "10 F/m²", "catégories"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 14,
+      "categorie": "Taxes terrains - Tarifs",
+      "question": "Quel est le tarif de la taxe sur les terrains inexploités ?",
+      "reponse_attendue": "250 F/ha pour les terrains inexploités ou insuffisamment exploités.",
+      "articles_source": ["Art. 165"],
+      "mots_cles": ["terrains inexploités", "250 F/ha"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 15,
+      "categorie": "Taxes terrains - Classes superficie",
+      "question": "Comment est comptée la superficie des terrains marécageux ?",
+      "reponse_attendue": "Les terrains marécageux (3ème classe) sont comptés pour 1/4 de leur superficie. Les terrains nécessitant déblais/remblais >2m³/m² (2ème classe) sont comptés pour 1/2.",
+      "articles_source": ["Art. 165"],
+      "mots_cles": ["marécageux", "un quart", "classe", "déblais"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 16,
+      "categorie": "Taxes terrains - Déclarations",
+      "question": "Quelle est la date limite de déclaration des terrains ?",
+      "reponse_attendue": "Avant le 1er avril de chaque année. Les nouveaux propriétaires ont jusqu'au 1er avril de l'année suivant leur acquisition ou la remise du titre définitif.",
+      "articles_source": ["Art. 166"],
+      "mots_cles": ["déclaration", "1er avril", "propriétaire"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 17,
+      "categorie": "Taxes terrains - Minimum",
+      "question": "Existe-t-il un minimum de perception pour les taxes sur les terrains ?",
+      "reponse_attendue": "Oui, toute cote n'excédant pas 500 FCFA est négligée. Le montant est arrondi à la dizaine de francs la plus proche.",
+      "articles_source": ["Art. 165"],
+      "mots_cles": ["minimum", "500 FCFA", "arrondi"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 18,
+      "categorie": "TSS - Champ",
+      "question": "Quelles sociétés sont soumises à la taxe spéciale sur les sociétés ?",
+      "reponse_attendue": "Les SA, SARL, SCA, SNC formées de sociétés par actions ou SARL, ainsi que les sociétés civiles se livrant à des activités commerciales ou industrielles (Art. 14 et 15).",
+      "articles_source": ["Art. 168"],
+      "mots_cles": ["TSS", "SA", "SARL", "SCA", "SNC", "sociétés civiles"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 19,
+      "categorie": "TSS - Exonérations",
+      "question": "Quelles sociétés sont exonérées de la taxe spéciale ?",
+      "reponse_attendue": "Les entités d'exploitation agricole au sens large (agriculture, pêche continentale, élevage) et les sociétés nouvelles au titre de leur premier exercice. Aucune autre exonération ne peut être accordée depuis le 1er janvier 2010.",
+      "articles_source": ["Art. 169"],
+      "mots_cles": ["exonération", "agriculture", "pêche", "élevage", "premier exercice"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 20,
+      "categorie": "TSS - Taux",
+      "question": "Quel est le taux de la taxe spéciale sur les sociétés ?",
+      "reponse_attendue": "1% du CA global et produits/profits divers. Le taux est porté à 2% pour les contribuables déficitaires durant 2 exercices consécutifs.",
+      "articles_source": ["Art. 170"],
+      "mots_cles": ["taux TSS", "1%", "2%", "déficitaire", "2 exercices"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 21,
+      "categorie": "TSS - Minimum",
+      "question": "Quel est le minimum de la taxe spéciale sur les sociétés ?",
+      "reponse_attendue": "1 000 000 FCFA minimum. Ce minimum est ramené à 500 000 FCFA pour les sociétés dont le CA annuel est inférieur à 10 000 000 FCFA.",
+      "articles_source": ["Art. 170"],
+      "mots_cles": ["minimum", "1 000 000 FCFA", "500 000 FCFA", "10 000 000 FCFA"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 22,
+      "categorie": "TSS - CA sociétés forestières",
+      "question": "Comment est calculé le CA des sociétés forestières pour la TSS ?",
+      "reponse_attendue": "Le CA est calculé après déduction des frais de transport de la frontière Congo/CEMAC au port d'embarquement.",
+      "articles_source": ["Art. 170"],
+      "mots_cles": ["sociétés forestières", "déduction transport", "CEMAC", "port embarquement"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 23,
+      "categorie": "TSS - Paiement",
+      "question": "Quand doit-on payer la taxe spéciale sur les sociétés ?",
+      "reponse_attendue": "Entre le 10 et le 20 mars de chaque année, sans avertissement préalable. Le complément (taux 2%) est dû au moment du dépôt de la déclaration de résultat.",
+      "articles_source": ["Art. 171"],
+      "mots_cles": ["paiement", "10-20 mars", "spontané"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 24,
+      "categorie": "TSS - Imputation",
+      "question": "La TSS est-elle imputable sur l'IS ?",
+      "reponse_attendue": "Oui, le montant de la TSS (hors majorations) vient en déduction de l'IS de la même année. Si l'IS est nul ou inférieur à la TSS, celle-ci reste acquise au Trésor. La TSS au taux de 2% n'est pas déductible (sauf 50% au premier exercice bénéficiaire).",
+      "articles_source": ["Art. 171"],
+      "mots_cles": ["imputation", "déduction IS", "Trésor", "2%"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 25,
+      "categorie": "TSS - Sanctions",
+      "question": "Quelle sanction en cas de non-paiement de la TSS dans les délais ?",
+      "reponse_attendue": "Le montant de la taxe est doublé.",
+      "articles_source": ["Art. 171"],
+      "mots_cles": ["sanction", "doublement", "défaut paiement"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 26,
+      "categorie": "Bons de caisse - Champ",
+      "question": "Quels bons sont soumis à l'impôt spécial sur les bons de caisse ?",
+      "reponse_attendue": "Les intérêts des bons nominatifs, à ordre ou au porteur, comportant engagement de payer, délivrés en contrepartie d'un prêt par les personnes physiques (activités Art. 14, 15, 42-1) et les personnes morales (Art. 107).",
+      "articles_source": ["Art. 171 sexies"],
+      "mots_cles": ["bons de caisse", "nominatifs", "au porteur", "prêt"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 27,
+      "categorie": "Bons de caisse - Exclusions",
+      "question": "Quels bons sont exclus de l'impôt sur les bons de caisse ?",
+      "reponse_attendue": "Les écrits créés à seule fin de faciliter le recouvrement ou la mobilisation de fonds, ou si le prêt a fait l'objet d'un contrat préalable régulièrement enregistré.",
+      "articles_source": ["Art. 171 sexies"],
+      "mots_cles": ["exclusion", "recouvrement", "contrat enregistré"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 28,
+      "categorie": "Bons de caisse - Taux",
+      "question": "Quels sont les taux de l'impôt sur les bons de caisse ?",
+      "reponse_attendue": "15% des intérêts pour les bons nominatifs ou à ordre. 30% de la valeur nominale pour les bons au porteur.",
+      "articles_source": ["Art. 171 novies"],
+      "mots_cles": ["taux", "15%", "30%", "nominatifs", "au porteur"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 29,
+      "categorie": "Bons de caisse - Versement",
+      "question": "Quand doit-on verser l'impôt sur les bons de caisse ?",
+      "reponse_attendue": "Dans les 15 premiers jours de chaque mois, pour les bons émis au cours du mois précédent, à la caisse du Percepteur du lieu d'établissement ou de résidence.",
+      "articles_source": ["Art. 171 octies"],
+      "mots_cles": ["versement", "15 premiers jours", "mensuel", "Percepteur"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 30,
+      "categorie": "Bons de caisse - Déductibilité",
+      "question": "L'impôt sur les bons de caisse est-il déductible ?",
+      "reponse_attendue": "Non, lorsqu'il est pris en charge par l'émetteur, il ne peut en aucun cas être déduit des bénéfices ou revenus pour l'IRPP ou l'IS.",
+      "articles_source": ["Art. 171 decies"],
+      "mots_cles": ["non-déductibilité", "IRPP", "IS"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 31,
+      "categorie": "TVS - Principe",
+      "question": "Qu'est-ce que la taxe sur les véhicules de tourisme des sociétés ?",
+      "reponse_attendue": "Une taxe spécifique sur les véhicules de tourisme servant au transport de personnes, appartenant aux sociétés (quelle qu'en soit la forme ou l'objet).",
+      "articles_source": ["Art. 171 A"],
+      "mots_cles": ["TVS", "véhicules tourisme", "sociétés"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 32,
+      "categorie": "TVS - Champ",
+      "question": "Qui est redevable de la taxe sur les véhicules de tourisme ?",
+      "reponse_attendue": "Les sociétés, établissements publics à caractère industriel/commercial, organismes d'État et collectivités locales ayant l'autonomie financière, possédant des voitures de tourisme immatriculées au Congo. En crédit-bail, le crédit-preneur est redevable.",
+      "articles_source": ["Art. 171 B"],
+      "mots_cles": ["redevable", "sociétés", "établissements publics", "crédit-bail"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 33,
+      "categorie": "TVS - Véhicules concernés",
+      "question": "Quels véhicules sont soumis à la TVS ?",
+      "reponse_attendue": "Les véhicules de tourisme (voitures particulières hors voitures commerciales) possédés par la société au 1er jour de la période d'imposition.",
+      "articles_source": ["Art. 171 C"],
+      "mots_cles": ["véhicules tourisme", "voitures particulières", "carte grise"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 34,
+      "categorie": "TVS - Exonération",
+      "question": "Quels véhicules sont exonérés de la TVS ?",
+      "reponse_attendue": "Les véhicules dont la première mise en circulation remonte à plus de 10 ans au 1er jour de la période d'imposition.",
+      "articles_source": ["Art. 171 D"],
+      "mots_cles": ["exonération", "10 ans", "ancienneté"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 35,
+      "categorie": "TVS - Montant",
+      "question": "Quel est le montant de la taxe sur les véhicules de tourisme ?",
+      "reponse_attendue": "200 000 FCFA par voiture imposable.",
+      "articles_source": ["Art. 171 F"],
+      "mots_cles": ["montant", "200 000 FCFA", "par véhicule"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 36,
+      "categorie": "TVS - Déclaration",
+      "question": "Quand doit-on déclarer et payer la TVS ?",
+      "reponse_attendue": "Au plus tard le 1er mars de l'année suivant la période d'imposition. La déclaration est unique pour tous les véhicules, souscrite au siège social ou principal établissement.",
+      "articles_source": ["Art. 171 I"],
+      "mots_cles": ["déclaration", "1er mars", "siège social"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 37,
+      "categorie": "TVS - Déductibilité",
+      "question": "La TVS est-elle déductible de l'IS ?",
+      "reponse_attendue": "Non, la taxe n'est pas admise en déduction pour l'assiette de l'IS.",
+      "articles_source": ["Art. 171 K"],
+      "mots_cles": ["non-déductibilité", "IS"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 38,
+      "categorie": "TSS - Marketeurs pétroliers",
+      "question": "Comment est calculé le CA des distributeurs de produits pétroliers pour la TSS ?",
+      "reponse_attendue": "Pour les produits pétroliers à prix contrôlés, le CA à retenir est uniquement le poste 'frais et marge de distribution', à l'exclusion de tous autres postes de la structure des prix.",
+      "articles_source": ["Art. 170"],
+      "mots_cles": ["marketeurs", "produits pétroliers", "marge distribution"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 39,
+      "categorie": "Bons de caisse - Territorialité",
+      "question": "Des bons émis pour le compte d'une société étrangère sont-ils imposables au Congo ?",
+      "reponse_attendue": "Oui, sont considérés comme émis au Congo les bons souscrits par l'intermédiaire de personnes établies ou résidant au Congo, ou payables au Congo, même s'ils sont émis pour le compte de personnes hors du Congo.",
+      "articles_source": ["Art. 171 septies"],
+      "mots_cles": ["territorialité", "émis au Congo", "intermédiaire", "étranger"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 40,
+      "categorie": "Taxes diverses - Abrogations",
+      "question": "La taxe d'apprentissage existe-t-elle encore ?",
+      "reponse_attendue": "Non, les articles 141 à 156 sur la taxe d'apprentissage sont tous abrogés. Elle a été remplacée par la Taxe Unique sur les Salaires (TUS) - voir TFNC 4.6.",
+      "articles_source": ["Art. 141 à 156"],
+      "mots_cles": ["taxe d'apprentissage", "abrogé", "TUS"],
+      "difficulte": "facile"
+    }
+  ],
+  "statistiques": {
+    "par_difficulte": {
+      "facile": 17,
+      "moyen": 17,
+      "difficile": 6
+    },
+    "par_section": {
+      "Taxes terrains": 17,
+      "TSS": 9,
+      "Bons de caisse": 6,
+      "TVS": 7,
+      "Abrogations": 1
+    }
+  }
+}

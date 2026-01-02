@@ -1,0 +1,150 @@
+{
+  "rag_config": {
+    "version": "2.0",
+    "chapitre": "Chapitre 6 - Dispositions diverses",
+    "code": "CGI Congo 2025"
+  },
+  "chunking_strategy": {
+    "method": "semantic_hierarchical",
+    "description": "Découpage par section avec focus sur les retenues à la source",
+    "parameters": {
+      "primary_split": "article",
+      "secondary_split": "alinea",
+      "max_chunk_tokens": 800,
+      "min_chunk_tokens": 100,
+      "overlap_tokens": 50,
+      "preserve_structure": true
+    },
+    "regroupements_recommandes": [
+      {
+        "groupe": "obligations_employeurs_retenues",
+        "articles": ["Art. 172", "Art. 173", "Art. 174", "Art. 175"],
+        "raison": "Retenue source et versements employeurs"
+      },
+      {
+        "groupe": "declarations_annuelles_salaires",
+        "articles": ["Art. 176", "Art. 177", "Art. 177 bis", "Art. 178"],
+        "raison": "État annuel des salaires et déclarations"
+      },
+      {
+        "groupe": "declarations_remunerations_diverses",
+        "articles": ["Art. 179", "Art. 180", "Art. 181", "Art. 182"],
+        "raison": "Rémunérations diverses et régularisation"
+      },
+      {
+        "groupe": "retenue_commissions_honoraires",
+        "articles": ["Art. 183", "Art. 183 bis", "Art. 183 ter"],
+        "raison": "Retenue 10% sur commissions, honoraires, droits d'auteur"
+      },
+      {
+        "groupe": "societes_etrangeres_126ter",
+        "articles": ["Art. 185 bis"],
+        "raison": "Obligations sociétés étrangères pétrolières"
+      },
+      {
+        "groupe": "non_residents_complet",
+        "articles": ["Art. 185 ter-A", "Art. 185 ter-B", "Art. 185 ter-C", "Art. 185 ter-D", "Art. 185 ter-E", "Art. 185 ter-F"],
+        "raison": "Régime complet retenue non-résidents"
+      }
+    ],
+    "articles_abroges_a_exclure": ["Art. 185 quater"]
+  },
+  "metadata_enrichment": {
+    "per_chunk_metadata": {
+      "article_id": "identifiant unique",
+      "titre_article": "titre officiel",
+      "section": "section du chapitre",
+      "mots_cles": "liste mots-clés",
+      "valeurs_numeriques": "taux, délais, seuils",
+      "references_croisees": "articles liés",
+      "theme_principal": "employeurs | commissions | non_residents | societes_etrangeres",
+      "type_disposition": "obligation | taux | délai | sanction | exonération",
+      "reference_lf": "loi de finances si applicable"
+    }
+  },
+  "embedding_optimization": {
+    "model_recommande": "text-embedding-3-large",
+    "dimensions": 1536,
+    "preprocessing": {
+      "normalisation_juridique": true,
+      "expansion_acronymes": {
+        "IRPP": "Impôt sur le Revenu des Personnes Physiques",
+        "IS": "Impôt sur les Sociétés",
+        "TSS": "Taxe Spéciale sur les Sociétés",
+        "TVA": "Taxe sur la Valeur Ajoutée",
+        "NIU": "Numéro d'Identification Unique",
+        "DGI": "Direction Générale des Impôts",
+        "UCC": "Unité de Contrôle des Contributions",
+        "CEMAC": "Communauté Économique et Monétaire de l'Afrique Centrale",
+        "OCAM": "Organisation Commune Africaine et Malgache",
+        "RAS": "Retenue À la Source",
+        "SNC": "Société en Nom Collectif"
+      },
+      "synonymes_fiscaux": {
+        "retenue à la source": ["RAS", "prélèvement", "withholding"],
+        "non-résident": ["étranger", "sans domicile fiscal"],
+        "redevances": ["royalties", "licences"]
+      }
+    }
+  },
+  "retrieval_config": {
+    "strategie": "hybrid",
+    "parametres": {
+      "semantic_weight": 0.6,
+      "keyword_weight": 0.4,
+      "top_k": 10,
+      "rerank": true,
+      "rerank_model": "cross-encoder"
+    },
+    "filtres_contextuels": {
+      "par_theme": ["employeurs", "commissions", "non_residents", "societes_etrangeres"],
+      "par_type_question": {
+        "taux": ["Art. 183", "Art. 185 ter-C"],
+        "delais": ["Art. 173", "Art. 176", "Art. 181", "Art. 183 bis", "Art. 183 ter"],
+        "obligations": ["Art. 172", "Art. 176", "Art. 179", "Art. 185 bis"],
+        "sanctions": ["Art. 183", "Art. 183 ter"]
+      }
+    }
+  },
+  "query_expansion": {
+    "synonymes_automatiques": true,
+    "mappings_themes": {
+      "salaires": "employeurs",
+      "honoraires": "commissions",
+      "étranger": "non_residents",
+      "pétrolier": "societes_etrangeres",
+      "sous-traitant": "societes_etrangeres"
+    },
+    "questions_types": {
+      "taux_patterns": ["quel est le taux", "pourcentage", "retenue"],
+      "delai_patterns": ["délai", "quand", "combien de temps", "date limite"],
+      "obligation_patterns": ["obligation", "doit", "tenir", "déclarer"],
+      "sanction_patterns": ["sanction", "amende", "pénalité", "défaut"]
+    }
+  },
+  "quality_metrics": {
+    "cibles": {
+      "precision_at_5": 0.90,
+      "recall_at_10": 0.95,
+      "mrr": 0.85
+    },
+    "tests_validation": {
+      "fichier": "cgi_2025_dispositions_diverses_ch6_tests.json",
+      "nombre_questions": 40,
+      "seuil_reussite": 0.90
+    }
+  },
+  "prompt_template": {
+    "system": "Tu es un expert en fiscalité congolaise, spécialiste du CGI 2025. Tu réponds aux questions sur les obligations déclaratives des employeurs, les retenues à la source (10% commissions, 5-20% non-résidents), et les régimes spéciaux (sociétés pétrolières, zone Angola). Tu cites précisément les articles et donnes les taux et délais applicables.",
+    "context_prefix": "Voici les dispositions pertinentes du CGI Congo 2025 (Chapitre 6 - Dispositions diverses) :",
+    "answer_format": {
+      "structure": [
+        "Identification du régime (employeurs / commissions / non-résidents)",
+        "Réponse directe à la question",
+        "Article(s) de référence",
+        "Taux et délais applicables"
+      ],
+      "style": "professionnel_pratique"
+    }
+  }
+}

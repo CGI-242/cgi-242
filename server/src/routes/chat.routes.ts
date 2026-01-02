@@ -31,4 +31,7 @@ router.get('/conversations', chatController.getConversations);
 // Obtenir une conversation
 router.get('/conversations/:id', chatController.getConversation);
 
+// Supprimer une conversation
+router.delete('/conversations/:id', chatController.deleteConversation);
+
 export default router;

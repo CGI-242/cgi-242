@@ -1,0 +1,136 @@
+{
+  "metadata_version": "2.0",
+  "source": {
+    "document": "Code Général des Impôts",
+    "pays": "République du Congo",
+    "edition": "2025",
+    "tome": 1,
+    "partie": 1,
+    "livre": 1,
+    "chapitre": 4,
+    "chapitre_titre": "Dispositions communes"
+  },
+  "index": {
+    "chapitre_titre": "Dispositions communes (IRPP et IS)",
+    "sections": [
+      {
+        "section": 1,
+        "titre": "Révision des bilans",
+        "articles": ["Art. 127", "Art. 127 bis", "Art. 127 quater", "Art. 127 quinquies"],
+        "themes": ["réévaluation", "plus-values", "régimes dérogatoires", "conventions d'établissement"],
+        "articles_abroges": ["Art. 127 bis", "Art. 127 quater"]
+      },
+      {
+        "section": 2,
+        "titre": "Réductions pour investissement",
+        "articles": ["Art. 128", "Art. 129", "Art. 130", "Art. 131", "Art. 132"],
+        "themes": ["investissement"],
+        "articles_abroges": ["Art. 128", "Art. 129", "Art. 130", "Art. 131", "Art. 132"],
+        "note": "Section entièrement abrogée"
+      },
+      {
+        "section": 3,
+        "titre": "Régime spécial des exploitations minières",
+        "sous_sections": [
+          {
+            "sous_section": 1,
+            "titre": "Hydrocarbures liquides ou gazeux",
+            "articles": ["Art. 133", "Art. 134", "Art. 135", "Art. 136", "Art. 137", "Art. 138", "Art. 139"],
+            "themes": ["hydrocarbures", "pétrole", "gaz", "provision reconstitution gisements", "27,5%", "50%"]
+          },
+          {
+            "sous_section": 2,
+            "titre": "Substances minérales concessibles autres que les hydrocarbures",
+            "articles": ["Art. 140", "Art. 140 bis"],
+            "themes": ["mines", "minerais", "substances minérales", "15%"]
+          }
+        ]
+      }
+    ],
+    "total_articles": 14,
+    "articles_en_vigueur": 8,
+    "articles_abroges": 6
+  },
+  "synonymes_concepts": {
+    "provision reconstitution gisements": ["PRG", "provision minière", "provision pétrolière"],
+    "hydrocarbures": ["pétrole", "gaz naturel", "pétrole brut", "huile"],
+    "substances minérales": ["minerais", "mines", "exploitation minière", "métaux"],
+    "régimes dérogatoires": ["CPP", "contrat de partage de production", "conventions d'établissement"],
+    "réévaluation": ["révision des bilans", "plus-values de réévaluation"]
+  },
+  "valeurs_cles": {
+    "taux_provisions": {
+      "hydrocarbures_ventes": "27,50%",
+      "hydrocarbures_benefice": "50%",
+      "substances_minerales_ventes": "15%",
+      "substances_minerales_benefice": "50%"
+    },
+    "delais": {
+      "utilisation_provision": "5 ans",
+      "report_deficit_hydrocarbures": "5 exercices"
+    },
+    "dates_cles": {
+      "revision_bilans_limite": "31 décembre 1964",
+      "exclusion_regimes_multiples": "1er janvier 2021"
+    }
+  },
+  "relations_articles": {
+    "renvois_internes": {
+      "Art. 134": ["Art. 137"],
+      "Art. 136": ["Art. 137"],
+      "Art. 137": ["Art. 136"],
+      "Art. 138": ["Art. 98", "Art. 101", "Art. 22", "Art. 111", "Art. 136", "Art. 137"],
+      "Art. 139": ["Art. 134", "Art. 133", "Art. 136"],
+      "Art. 140": ["Art. 133 et suivants", "Art. 134"],
+      "Art. 140 bis": ["Section 2"]
+    },
+    "articles_complementaires": {
+      "hydrocarbures": ["Art. 133", "Art. 134", "Art. 135", "Art. 136", "Art. 137", "Art. 138", "Art. 139"],
+      "substances_minerales": ["Art. 140", "Art. 140 bis"]
+    }
+  },
+  "regime_provisions_minières": {
+    "hydrocarbures": {
+      "limite_1": {
+        "taux": "27,50%",
+        "base": "ventes produits marchands (pétrole brut, gaz naturel)",
+        "deductions": "transports facturés, taxes CA, droit de sortie (sauf redevances minières)"
+      },
+      "limite_2": {
+        "taux": "50%",
+        "base": "bénéfice net imposable de la vente des produits extraits"
+      },
+      "utilisation": {
+        "delai": "5 ans",
+        "emplois_autorises": [
+          "Travaux/immobilisations de recherche d'hydrocarbures au Congo (hors gisements reconnus)",
+          "Participations dans sociétés de recherche/exploitation d'hydrocarbures au Congo"
+        ]
+      },
+      "consequences": {
+        "remploi_conforme": "Exonération définitive, virement en réserve",
+        "defaut_remploi": "Imposition complémentaire égale à l'exonération"
+      }
+    },
+    "substances_minerales": {
+      "limite_1": {
+        "taux": "15%",
+        "base": "ventes minerais marchands, mattes, speiss, métaux, alliages"
+      },
+      "limite_2": {
+        "taux": "50%",
+        "base": "bénéfice net imposable"
+      },
+      "utilisation_supplementaire": [
+        "Recherches sur parties non reconnues des gisements existants",
+        "Mise en exploitation des gisements",
+        "Amélioration de la récupération des minerais"
+      ]
+    }
+  },
+  "exclusions_et_restrictions": {
+    "revision_bilans": "Plus-values taxées au droit commun si bilan clos après le 31/12/1964",
+    "regimes_derogatoires": "Depuis le 01/01/2021, une société sous CPP ou convention d'établissement ne peut bénéficier d'un autre régime privilégié",
+    "non_cumul": "Provisions minières non cumulables avec avantages Section 2 (réductions investissement)"
+  }
+}

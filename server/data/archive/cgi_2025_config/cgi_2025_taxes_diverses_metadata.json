@@ -1,0 +1,195 @@
+{
+  "metadata_version": "2.0",
+  "source": {
+    "document": "Code Général des Impôts",
+    "pays": "République du Congo",
+    "edition": "2025",
+    "tome": 1,
+    "partie": 1,
+    "livre": 1,
+    "chapitre": 5,
+    "chapitre_titre": "Taxes diverses"
+  },
+  "index": {
+    "chapitre_titre": "Taxes diverses",
+    "sections": [
+      {
+        "section": 1,
+        "titre": "Taxe d'apprentissage",
+        "articles": ["Art. 141", "Art. 142", "Art. 143", "Art. 144", "Art. 145", "Art. 146", "Art. 147", "Art. 148", "Art. 149", "Art. 150", "Art. 151", "Art. 152", "Art. 153", "Art. 154", "Art. 155", "Art. 156"],
+        "statut": "entierement_abroge",
+        "note": "Remplacée par la Taxe Unique sur les Salaires (TUS) - voir TFNC 4.6"
+      },
+      {
+        "section": 2,
+        "titre": "Taxes sur les terrains",
+        "articles": ["Art. 157", "Art. 158", "Art. 159", "Art. 160", "Art. 161", "Art. 162", "Art. 163", "Art. 164", "Art. 165", "Art. 166", "Art. 167", "Art. 167 bis"],
+        "themes": ["terrains d'agrément", "terrains non mis en valeur", "terrains à bâtir", "terrains inexploités"],
+        "statut": "en_vigueur"
+      },
+      {
+        "section": 3,
+        "titre": "Taxe spéciale sur les sociétés",
+        "articles": ["Art. 168", "Art. 169", "Art. 170", "Art. 171"],
+        "themes": ["TSS", "minimum d'imposition", "imputation IS"],
+        "statut": "en_vigueur"
+      },
+      {
+        "section": 4,
+        "titre": "Taxe forfaitaire due par les employeurs et les débirentiers",
+        "articles": ["Art. 171 bis", "Art. 171 quinquies"],
+        "statut": "entierement_abroge",
+        "note": "Remplacée par la Taxe Unique sur les Salaires (TUS) - voir TFNC 4.6"
+      },
+      {
+        "section": 5,
+        "titre": "Impôt spécial sur les bons de caisse",
+        "articles": ["Art. 171 sexies", "Art. 171 septies", "Art. 171 octies", "Art. 171 novies", "Art. 171 decies", "Art. 171 undecies"],
+        "themes": ["bons de caisse", "bons nominatifs", "bons au porteur"],
+        "statut": "en_vigueur"
+      },
+      {
+        "section": 6,
+        "titre": "Taxe sur les véhicules de tourisme des sociétés",
+        "articles": ["Art. 171 A", "Art. 171 B", "Art. 171 C", "Art. 171 D", "Art. 171 E", "Art. 171 F", "Art. 171 G", "Art. 171 H", "Art. 171 I", "Art. 171 J", "Art. 171 K", "Art. 171 L"],
+        "themes": ["TVS", "véhicules tourisme", "sociétés"],
+        "statut": "en_vigueur",
+        "articles_abroges": ["Art. 171 H"]
+      },
+      {
+        "section": 7,
+        "titre": "Fonds national d'investissement",
+        "articles": ["Art. 171 M", "Art. 171 N"],
+        "statut": "entierement_abroge"
+      },
+      {
+        "section": 8,
+        "titre": "Taxe sur les externalités négatives de l'activité minière et pétrolière",
+        "articles": ["Art. 171 P-1", "Art. 171 P-2", "Art. 171 P-3"],
+        "statut": "entierement_abroge"
+      }
+    ],
+    "total_articles": 52,
+    "articles_en_vigueur": 27,
+    "articles_abroges": 25
+  },
+  "synonymes_concepts": {
+    "TSS": ["taxe spéciale sur les sociétés", "minimum fiscal sociétés"],
+    "TVS": ["taxe véhicules tourisme", "taxe voitures sociétés"],
+    "terrains d'agrément": ["terrain autour construction", "jardin"],
+    "terrains à bâtir": ["terrain nu", "terrain non construit"],
+    "terrains inexploités": ["terrain en friche", "terrain non cultivé"],
+    "bons de caisse": ["bons nominatifs", "bons au porteur", "emprunts obligataires"]
+  },
+  "valeurs_cles": {
+    "taxe_speciale_societes": {
+      "taux_normal": "1%",
+      "taux_deficitaire": "2%",
+      "minimum_general": "1 000 000 FCFA",
+      "minimum_petit_ca": "500 000 FCFA",
+      "seuil_petit_ca": "10 000 000 FCFA",
+      "deficits_consecutifs": "2 exercices"
+    },
+    "taxes_terrains": {
+      "agrement_brazzaville": "15 F/m²",
+      "agrement_autres": "5 F/m²",
+      "insuffisamment_mis_en_valeur_brazzaville": "40 F/m²",
+      "insuffisamment_mis_en_valeur_autres": "15 F/m²",
+      "inexploites": "250 F/ha",
+      "a_batir_categorie_1": "30 F/m²",
+      "a_batir_categorie_2": "20 F/m²",
+      "a_batir_categorie_3": "10 F/m²",
+      "cote_minimum": "500 FCFA"
+    },
+    "bons_de_caisse": {
+      "taux_nominatifs": "15%",
+      "taux_porteur": "30%"
+    },
+    "taxe_vehicules_tourisme": {
+      "montant_par_vehicule": "200 000 FCFA",
+      "exoneration_anciennete": "10 ans"
+    },
+    "majorations": {
+      "defaut_mise_en_valeur": "25%",
+      "defaut_paiement_tss": "doublement"
+    }
+  },
+  "delais_et_echeances": {
+    "taxes_terrains": {
+      "declaration": "avant le 1er avril",
+      "fait_generateur": "1er janvier",
+      "exemption_programme_investissement": "3 ans"
+    },
+    "taxe_speciale_societes": {
+      "paiement": "entre le 10 et le 20 mars"
+    },
+    "bons_de_caisse": {
+      "versement": "15 premiers jours du mois suivant"
+    },
+    "taxe_vehicules": {
+      "declaration_paiement": "au plus tard le 1er mars"
+    }
+  },
+  "relations_articles": {
+    "renvois_internes": {
+      "Art. 158": ["Art. 159", "Art. 160"],
+      "Art. 159": ["Art. 161"],
+      "Art. 161": ["Art. 160"],
+      "Art. 163": ["Art. 157", "Art. 608 Code civil"],
+      "Art. 165": ["Art. 157", "Art. 161", "Art. 160"],
+      "Art. 166": ["Art. 157", "Art. 160"],
+      "Art. 168": ["Art. 14", "Art. 15"],
+      "Art. 170": ["Art. 168"],
+      "Art. 171": ["Art. 168", "Art. 170"],
+      "Art. 171 sexies": ["Art. 14", "Art. 15", "Art. 42-1", "Art. 107"],
+      "Art. 171 undecies": ["Art. 518 bis"],
+      "Art. 171 B": ["Art. 171 E"],
+      "Art. 171 C": ["Art. 171 E"],
+      "Art. 171 G": ["Art. 171 B", "Art. 171 C", "Art. 39"],
+      "Art. 171 I": ["Art. 171 E", "Art. 171 B"],
+      "Art. 171 K": ["Art. 171 B"]
+    },
+    "bons_caisse_irpp": {
+      "articles_source": ["Art. 171 sexies", "Art. 171 novies"],
+      "article_irpp": "Art. 61",
+      "articles_acceptables": ["Art. 50", "Art. 58", "Art. 97"],
+      "mots_cles_declencheurs": ["bons de caisse", "précompte 15%", "déclaration IRPP", "libératoire"],
+      "reponse_type": "Le précompte de 15% sur les bons de caisse nominatifs est libératoire de l'IRPP. Ces revenus n'ont pas à être déclarés.",
+      "note": "Art. 61 est dans Ch.1 IRPP - référence croisée nécessaire"
+    }
+  },
+  "communes_concernees_terrains": [
+    "Brazzaville",
+    "Pointe-Noire",
+    "Loudima",
+    "Loubomo"
+  ],
+  "categories_terrains_a_batir": {
+    "categorie_1": {
+      "description": "Voie carrossable + eau courante + électricité",
+      "tarif": "30 F/m²"
+    },
+    "categorie_2": {
+      "description": "Voie carrossable + (eau OU électricité)",
+      "tarif": "20 F/m²"
+    },
+    "categorie_3": {
+      "description": "Voie carrossable seule (sans eau ni électricité)",
+      "tarif": "10 F/m²"
+    }
+  },
+  "classes_superficie_terrains": {
+    "classe_1": {
+      "description": "Terrains normaux",
+      "coefficient": "100%"
+    },
+    "classe_2": {
+      "description": "Terrains nécessitant déblais/remblais > 2m³/m²",
+      "coefficient": "50%"
+    },
+    "classe_3": {
+      "description": "Terrains marécageux",
+      "coefficient": "25%"
+    }
+  }
+}

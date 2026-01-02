@@ -1,0 +1,204 @@
+{
+  "test_suite": {
+    "version": "1.0",
+    "chapitre": "Chapitre 7 - Plus-values sur titres non-résidents, BTP, Réassurance",
+    "code": "CGI Congo 2025",
+    "date_creation": "2026-01-01",
+    "total_questions": 20,
+    "note": "Chapitre court avec 5 articles - 3 thèmes distincts"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "categorie": "Plus-values titres - Principe",
+      "question": "Les plus-values de cession de titres par des non-résidents sont-elles imposables au Congo ?",
+      "reponse_attendue": "Oui, il est établi un impôt spécial sur les plus-values réalisées par les personnes physiques ou morales domiciliées à l'étranger lors de la cession de participations dans des sociétés de droit congolais.",
+      "articles_source": ["Art. 185 quater-A"],
+      "mots_cles": ["plus-values", "non-résidents", "cession titres", "sociétés congolaises"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 2,
+      "categorie": "Plus-values titres - Taux",
+      "question": "Quel est le taux d'imposition des plus-values de cession de titres pour les non-résidents ?",
+      "reponse_attendue": "Le taux est de 20% du montant de la plus-value imposable. Cet impôt est libératoire de l'impôt sur le revenu du bénéficiaire.",
+      "articles_source": ["Art. 185 quater-B"],
+      "mots_cles": ["20%", "plus-value", "libératoire"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 3,
+      "categorie": "Plus-values titres - Paiement",
+      "question": "Quand doit être payé l'impôt sur les plus-values de cession de titres ?",
+      "reponse_attendue": "L'impôt est payable au moment de l'enregistrement obligatoire de l'acte de cession, en même temps que les droits d'enregistrement.",
+      "articles_source": ["Art. 185 quater-B"],
+      "mots_cles": ["enregistrement", "acte de cession", "droits d'enregistrement"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 4,
+      "categorie": "Plus-values titres - Solidarité",
+      "question": "Qui est responsable du paiement de l'impôt sur les plus-values de titres ?",
+      "reponse_attendue": "Le cédant, le cessionnaire et la société de droit congolais dont les titres sont cédés sont solidairement responsables du paiement de l'impôt spécial.",
+      "articles_source": ["Art. 185 quater-C"],
+      "mots_cles": ["solidarité", "cédant", "cessionnaire", "société congolaise"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 5,
+      "categorie": "Plus-values titres - Caractère libératoire",
+      "question": "L'impôt de 20% sur les plus-values de titres est-il définitif ?",
+      "reponse_attendue": "Oui, cet impôt est libératoire de l'impôt sur le revenu du bénéficiaire.",
+      "articles_source": ["Art. 185 quater-B"],
+      "mots_cles": ["libératoire", "impôt sur le revenu", "définitif"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 6,
+      "categorie": "BTP - Principe",
+      "question": "Les entreprises de BTP doivent-elles prélever une retenue sur les paiements aux sous-traitants ?",
+      "reponse_attendue": "Oui, les entrepreneurs de BTP adjudicataires de marchés publics ou privés sont tenus de prélever une retenue à la source sur les sommes payées aux sous-traitants et bureaux d'études.",
+      "articles_source": ["Art. 185 quinquies"],
+      "mots_cles": ["BTP", "retenue source", "sous-traitants", "marchés publics"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 7,
+      "categorie": "BTP - Taux",
+      "question": "Quels sont les taux de retenue sur les sous-traitants BTP ?",
+      "reponse_attendue": "3% pour les sous-traitants relevant du régime réel, 10% pour ceux relevant du régime du forfait.",
+      "articles_source": ["Art. 185 quinquies"],
+      "mots_cles": ["3%", "10%", "régime réel", "régime forfait", "sous-traitants"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 8,
+      "categorie": "BTP - Obligations entrepreneur",
+      "question": "Quelles sont les obligations de l'entrepreneur principal en BTP ?",
+      "reponse_attendue": "L'entrepreneur principal doit : 1) prélever la retenue sur les paiements aux sous-traitants, 2) communiquer trimestriellement la liste des sous-traitants à l'administration fiscale, 3) faire enregistrer le marché principal.",
+      "articles_source": ["Art. 185 quinquies"],
+      "mots_cles": ["entrepreneur principal", "trimestriel", "liste sous-traitants", "enregistrement"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 9,
+      "categorie": "BTP - Obligations sous-traitant",
+      "question": "Le sous-traitant BTP a-t-il des obligations d'enregistrement ?",
+      "reponse_attendue": "Oui, chaque sous-traitant bénéficiaire d'un contrat d'exécution des travaux doit faire enregistrer ledit contrat.",
+      "articles_source": ["Art. 185 quinquies"],
+      "mots_cles": ["sous-traitant", "enregistrement", "contrat"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 10,
+      "categorie": "BTP - Nature retenue",
+      "question": "La retenue BTP est-elle un impôt définitif pour le sous-traitant ?",
+      "reponse_attendue": "Non, pour les sous-traitants, les sommes retenues constituent un acompte d'impôt (imputable sur l'impôt définitif).",
+      "articles_source": ["Art. 185 quinquies"],
+      "mots_cles": ["acompte", "impôt", "sous-traitant", "imputable"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 11,
+      "categorie": "BTP - Sanctions défaut",
+      "question": "Quelles sanctions en cas de défaut de retenue BTP ?",
+      "reponse_attendue": "Une amende de 5 000 000 FCFA et la perte de la déductibilité des sommes versées au sous-traitant.",
+      "articles_source": ["Art. 185 quinquies"],
+      "mots_cles": ["amende", "5 000 000 FCFA", "déductibilité", "défaut retenue"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 12,
+      "categorie": "BTP - Sanctions retard",
+      "question": "Quelle pénalité en cas de retard de versement de la retenue BTP ?",
+      "reponse_attendue": "Une pénalité de retard de 2% par mois ou fraction de mois, sans dépasser 100%.",
+      "articles_source": ["Art. 185 quinquies"],
+      "mots_cles": ["pénalité", "2%", "retard", "100%"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 13,
+      "categorie": "BTP - Versement",
+      "question": "Comment et quand verser la retenue BTP ?",
+      "reponse_attendue": "Les retenues sont régies selon les Art. 172 et 173, soit dans les 20 jours du mois suivant. Le paiement se fait au moyen d'un bordereau spécial fourni par l'administration fiscale.",
+      "articles_source": ["Art. 185 quinquies"],
+      "mots_cles": ["versement", "20 jours", "bordereau spécial", "Art. 172-173"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 14,
+      "categorie": "BTP - Bureaux d'études",
+      "question": "Les bureaux d'études sont-ils concernés par la retenue BTP ?",
+      "reponse_attendue": "Oui, la retenue s'applique aux sommes payées aux sous-traitants ET aux bureaux d'études auxquels l'entrepreneur principal a eu recours pour l'exécution des marchés.",
+      "articles_source": ["Art. 185 quinquies"],
+      "mots_cles": ["bureaux d'études", "retenue", "BTP"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 15,
+      "categorie": "BTP - Marchés privés",
+      "question": "La retenue BTP s'applique-t-elle aux marchés privés ?",
+      "reponse_attendue": "Oui, la retenue s'applique aux entrepreneurs adjudicataires de marchés publics OU privés de construction.",
+      "articles_source": ["Art. 185 quinquies"],
+      "mots_cles": ["marchés privés", "marchés publics", "BTP"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 16,
+      "categorie": "Réassurance - Principe",
+      "question": "Les primes de réassurance sont-elles soumises à retenue ?",
+      "reponse_attendue": "Oui, les primes cédées en réassurance au-delà du plafond fixé par l'Art. 308 du Code CIMA et les primes d'assurance à l'étranger perçues par des sociétés non domiciliées dans les États CIMA sont soumises à une retenue de 20%.",
+      "articles_source": ["Art. 185 sexies"],
+      "mots_cles": ["réassurance", "primes", "CIMA", "20%", "Art. 308"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 17,
+      "categorie": "Réassurance - Taux",
+      "question": "Quel est le taux de retenue sur les primes de réassurance hors CIMA ?",
+      "reponse_attendue": "Le taux est de 20%, conformément à l'Art. 185 ter (retenue non-résidents).",
+      "articles_source": ["Art. 185 sexies"],
+      "mots_cles": ["20%", "réassurance", "hors CIMA"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 18,
+      "categorie": "Réassurance - Autorisation",
+      "question": "L'autorisation du Ministre des assurances exonère-t-elle de la retenue ?",
+      "reponse_attendue": "Non, la retenue de 20% s'applique nonobstant l'autorisation du Ministre en charge des assurances.",
+      "articles_source": ["Art. 185 sexies"],
+      "mots_cles": ["autorisation", "Ministre", "assurances", "nonobstant"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 19,
+      "categorie": "Plus-values titres - Assiette",
+      "question": "Sur quelle base est calculé l'impôt de 20% sur les plus-values de titres ?",
+      "reponse_attendue": "L'impôt spécial est applicable à la fraction de la plus-value réalisée, c'est-à-dire la différence entre le prix de cession et le prix d'acquisition.",
+      "articles_source": ["Art. 185 quater-A"],
+      "mots_cles": ["assiette", "plus-value", "fraction", "prix cession"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 20,
+      "categorie": "BTP - Déclaration trimestrielle",
+      "question": "Quel format pour la déclaration trimestrielle des sous-traitants ?",
+      "reponse_attendue": "L'entrepreneur principal doit communiquer trimestriellement la liste des sous-traitants bénéficiaires des contrats selon un format défini par l'administration fiscale.",
+      "articles_source": ["Art. 185 quinquies"],
+      "mots_cles": ["trimestriel", "format", "administration fiscale", "liste"],
+      "difficulte": "facile"
+    }
+  ],
+  "statistiques": {
+    "par_difficulte": {
+      "facile": 10,
+      "moyen": 8,
+      "difficile": 2
+    },
+    "par_theme": {
+      "Plus-values titres non-résidents": 6,
+      "Retenue BTP": 11,
+      "Réassurance CIMA": 3
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "rag_config": {
+    "version": "2.0",
+    "chapitre": "Chapitre 2 - IBA, IRCM, IRF, ITS",
+    "code": "CGI Congo 2026",
+    "base_juridique": "Directive CEMAC n°0119/25-UEAC-177-CM-42"
+  },
+  "chunking_strategy": {
+    "method": "semantic_hierarchical",
+    "description": "Découpage par impôt et sous-thème avec préservation hiérarchique",
+    "parameters": {
+      "primary_split": "article",
+      "secondary_split": "alinea_ou_tiret",
+      "max_chunk_tokens": 800,
+      "min_chunk_tokens": 100,
+      "overlap_tokens": 50,
+      "preserve_structure": true
+    },
+    "regroupements_recommandes": [
+      {
+        "groupe": "iba_champ_application",
+        "articles": ["Art. 93", "Art. 93A", "Art. 93B", "Art. 93C"],
+        "raison": "Champ d'application et territorialité de l'IBA"
+      },
+      {
+        "groupe": "iba_benefice_imposable",
+        "articles": ["Art. 94", "Art. 94A", "Art. 94B"],
+        "raison": "Détermination du bénéfice imposable IBA"
+      },
+      {
+        "groupe": "iba_modalites",
+        "articles": ["Art. 95", "Art. 95A", "Art. 95B"],
+        "raison": "Taux, minimum de perception et cas particuliers"
+      },
+      {
+        "groupe": "regime_forfait",
+        "articles": ["Art. 96", "Art. 96A", "Art. 97", "Art. 98", "Art. 99", "Art. 100", "Art. 101"],
+        "raison": "Régime forfaitaire complet"
+      },
+      {
+        "groupe": "regime_reel",
+        "articles": ["Art. 102", "Art. 103", "Art. 104"],
+        "raison": "Régime réel et obligations comptables"
+      },
+      {
+        "groupe": "ircm_champ_revenus",
+        "articles": ["Art. 105", "Art. 105A", "Art. 105B", "Art. 105C", "Art. 105D", "Art. 105E"],
+        "raison": "Champ et types de revenus IRCM"
+      },
+      {
+        "groupe": "ircm_modalites",
+        "articles": ["Art. 106", "Art. 107", "Art. 108", "Art. 109", "Art. 110", "Art. 110A"],
+        "raison": "Exonérations, territorialité et taux IRCM"
+      },
+      {
+        "groupe": "irf_champ_revenus",
+        "articles": ["Art. 111", "Art. 111A", "Art. 111B", "Art. 111C", "Art. 111D", "Art. 111E"],
+        "raison": "Champ et territorialité IRF"
+      },
+      {
+        "groupe": "irf_modalites",
+        "articles": ["Art. 112", "Art. 112A", "Art. 112B", "Art. 113", "Art. 113A"],
+        "raison": "Base, taux et retenue IRF"
+      },
+      {
+        "groupe": "its_champ_exonerations",
+        "articles": ["Art. 114", "Art. 114A", "Art. 114B", "Art. 114C", "Art. 114D", "Art. 114E"],
+        "raison": "Champ, exonérations et territorialité ITS"
+      },
+      {
+        "groupe": "its_base_bareme",
+        "articles": ["Art. 115", "Art. 116", "Art. 116A"],
+        "raison": "Base imposable, avantages en nature et barème ITS"
+      }
+    ]
+  },
+  "metadata_enrichment": {
+    "per_chunk_metadata": {
+      "article_id": "identifiant unique",
+      "titre_article": "titre officiel",
+      "section": "section du chapitre",
+      "impot_concerne": "IBA | IRCM | IRF | ITS",
+      "mots_cles": "liste mots-clés",
+      "valeurs_numeriques": "taux, seuils, délais",
+      "references_croisees": "articles liés",
+      "theme_principal": "thème",
+      "type_disposition": "champ | assiette | taux | exonération | obligation | sanction"
+    }
+  },
+  "embedding_optimization": {
+    "model_recommande": "text-embedding-3-large",
+    "dimensions": 1536,
+    "preprocessing": {
+      "normalisation_juridique": true,
+      "expansion_acronymes": {
+        "IBA": "Impôt sur les Bénéfices d'Affaires",
+        "IRCM": "Impôt sur le Revenu des Capitaux Mobiliers",
+        "IRF": "Impôt sur les Revenus Fonciers",
+        "ITS": "Impôt sur les Traitements et Salaires",
+        "BIC": "Bénéfices Industriels et Commerciaux",
+        "BNC": "Bénéfices Non Commerciaux",
+        "BA": "Bénéfices Agricoles",
+        "IS": "Impôt sur les Sociétés",
+        "TVA": "Taxe sur la Valeur Ajoutée",
+        "SMT": "Système Minimal de Trésorerie",
+        "SYSCOHADA": "Système Comptable OHADA",
+        "OHADA": "Organisation pour l'Harmonisation en Afrique du Droit des Affaires",
+        "CEMAC": "Communauté Économique et Monétaire de l'Afrique Centrale",
+        "BEAC": "Banque des États de l'Afrique Centrale",
+        "CA": "Chiffre d'Affaires",
+        "CAC": "Commissaire Aux Comptes",
+        "SMIG": "Salaire Minimum Interprofessionnel Garanti",
+        "SS": "Sécurité Sociale",
+        "RAS": "Retenue À la Source"
+      },
+      "normalisation_montants": {
+        "FCFA": "francs CFA",
+        "millions": "000.000"
+      }
+    }
+  },
+  "retrieval_config": {
+    "strategie": "hybrid",
+    "parametres": {
+      "semantic_weight": 0.6,
+      "keyword_weight": 0.4,
+      "top_k": 10,
+      "rerank": true,
+      "rerank_model": "cross-encoder"
+    },
+    "filtres_contextuels": {
+      "par_impot": ["IBA", "IRCM", "IRF", "ITS"],
+      "par_theme": true,
+      "par_type_question": {
+        "taux": ["Art. 95", "Art. 110", "Art. 113", "Art. 116"],
+        "exonerations": ["Art. 106", "Art. 111C", "Art. 114A", "Art. 114B"],
+        "territorialite": ["Art. 93B", "Art. 107", "Art. 111D", "Art. 114D"],
+        "obligations": ["Art. 96A", "Art. 104", "Art. 116A"],
+        "sanctions": ["Art. 98", "Art. 99", "Art. 103"]
+      }
+    }
+  },
+  "query_expansion": {
+    "synonymes_automatiques": true,
+    "mappings_impots": {
+      "dividendes": "IRCM",
+      "loyers": "IRF",
+      "salaires": "ITS",
+      "entrepreneur": "IBA",
+      "profession libérale": "IBA",
+      "actions": "IRCM",
+      "immeubles": "IRF",
+      "rémunérations": "ITS"
+    },
+    "questions_types": {
+      "taux_patterns": ["quel est le taux", "taux de", "pourcentage", "combien"],
+      "exoneration_patterns": ["exonéré", "exonération", "affranchi", "dispense"],
+      "obligation_patterns": ["doit", "obligé", "obligation", "tenir", "déclarer"],
+      "delai_patterns": ["délai", "quand", "date limite", "combien de temps"]
+    }
+  },
+  "quality_metrics": {
+    "cibles": {
+      "precision_at_5": 0.90,
+      "recall_at_10": 0.95,
+      "mrr": 0.85,
+      "ndcg_at_10": 0.90
+    },
+    "tests_validation": {
+      "fichier": "cgi_2026_iba_tests.json",
+      "nombre_questions": 50,
+      "seuil_reussite": 0.90
+    }
+  },
+  "prompt_template": {
+    "system": "Tu es un expert en fiscalité congolaise, spécialiste du CGI 2026. Tu réponds aux questions sur l'imposition des personnes physiques (IBA, IRCM, IRF, ITS) en citant précisément les articles. Tu distingues clairement les différents impôts et leurs régimes.",
+    "context_prefix": "Voici les dispositions pertinentes du CGI Congo 2026 (Chapitre 2 - Imposition des personnes physiques) :",
+    "answer_format": {
+      "structure": [
+        "Identification de l'impôt concerné (IBA/IRCM/IRF/ITS)",
+        "Réponse directe à la question",
+        "Article(s) de référence avec citation",
+        "Valeurs chiffrées (taux, seuils, délais)"
+      ],
+      "style": "professionnel_pedagogique"
+    }
+  }
+}

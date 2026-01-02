@@ -81,12 +81,11 @@ export async function getConversation(req: Request, res: Response): Promise<void
 }
 
 /**
- * Envoyer un message avec l'orchestrateur multi-agent (2025/2026)
- * Analyse l'intention et route vers le bon agent
+ * Envoyer un message à l'agent CGI
  */
 export async function sendMessageOrchestrated(req: Request, res: Response): Promise<void> {
   try {
-    const { content, conversationId, forceYear } = req.body;
+    const { content, conversationId } = req.body;
     const userId = req.user?.id;
 
     if (!userId) {
@@ -137,26 +136,8 @@ export async function sendMessageOrchestrated(req: Request, res: Response): Prom
       previousMessages,
     };
 
-    // Utiliser l'orchestrateur pour router la requête
-    let orchestratorResponse;
-
-    if (forceYear && (forceYear === 2025 || forceYear === 2026)) {
-      // Forcer un agent spécifique
-      const agentResponse = await orchestrator.queryWithAgent(content, forceYear, agentContext);
-      orchestratorResponse = {
-        answer: agentResponse.answer,
-        sources: agentResponse.sources,
-        routing: {
-          intent: { targetYear: forceYear, isComparison: false, domain: null, confidence: 1, detectedKeywords: [] },
-          agentsUsed: [agentResponse.agentUsed],
-          isComparison: false,
-        },
-        processingTime: agentResponse.processingTime,
-      };
-    } else {
-      // Laisser l'orchestrateur décider
-      orchestratorResponse = await orchestrator.processQuery(content, agentContext);
-    }
+    // Traiter avec l'agent CGI
+    const orchestratorResponse = await orchestrator.processQuery(content, agentContext);
 
     // Convertir les sources en citations
     const citations: CitationJson[] = orchestratorResponse.sources.map((s) => ({
@@ -203,8 +184,7 @@ export async function sendMessageOrchestrated(req: Request, res: Response): Prom
     });
 
     logger.info(
-      `[Orchestrator] Message traité - Agents: ${orchestratorResponse.routing.agentsUsed.join(', ')}, ` +
-        `Comparison: ${orchestratorResponse.routing.isComparison}, Time: ${orchestratorResponse.processingTime}ms`
+      `[CGI] Message traité - Agent: ${orchestratorResponse.routing.agentUsed}, Time: ${orchestratorResponse.processingTime}ms`
     );
 
     sendSuccess(res, {
@@ -220,5 +200,53 @@ export async function sendMessageOrchestrated(req: Request, res: Response): Prom
   } catch (error) {
     logger.error('Erreur sendMessageOrchestrated:', error);
     sendError(res, 'Erreur lors du traitement du message', 500);
+  }
+}
+
+/**
+ * Supprimer une conversation et tous ses messages
+ */
+export async function deleteConversation(req: Request, res: Response): Promise<void> {
+  try {
+    const { id } = req.params;
+    const userId = req.user?.id;
+
+    if (!userId) {
+      sendError(res, 'Non autorisé', 401);
+      return;
+    }
+
+    // Vérifier que la conversation existe et appartient à l'utilisateur
+    const conversation = await prisma.conversation.findUnique({
+      where: { id },
+    });
+
+    if (!conversation) {
+      sendError(res, 'Conversation non trouvée', 404);
+      return;
+    }
+
+    // Vérifier les droits (créateur ou membre de l'organisation)
+    const orgId = req.tenant?.type === 'organization' ? req.tenant.organizationId : null;
+    if (conversation.creatorId !== userId && conversation.organizationId !== orgId) {
+      sendError(res, 'Non autorisé à supprimer cette conversation', 403);
+      return;
+    }
+
+    // Supprimer les messages d'abord (cascade)
+    await prisma.message.deleteMany({
+      where: { conversationId: id },
+    });
+
+    // Supprimer la conversation
+    await prisma.conversation.delete({
+      where: { id },
+    });
+
+    logger.info(`Conversation ${id} supprimée par l'utilisateur ${userId}`);
+    sendSuccess(res, { deleted: true });
+  } catch (error) {
+    logger.error('Erreur deleteConversation:', error);
+    sendError(res, 'Erreur lors de la suppression', 500);
   }
 }

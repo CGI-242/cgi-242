@@ -1,0 +1,224 @@
+{
+  "rag_config": {
+    "version": "2.0",
+    "chapitre": "IS - Impôt sur les bénéfices des sociétés",
+    "code": "CGI Congo 2025"
+  },
+  "chunking_strategy": {
+    "method": "semantic_hierarchical",
+    "description": "Découpage par unité sémantique juridique avec hiérarchie préservée",
+    "parameters": {
+      "primary_split": "article",
+      "secondary_split": "alinea_ou_point",
+      "max_chunk_tokens": 800,
+      "min_chunk_tokens": 100,
+      "overlap_tokens": 50,
+      "preserve_structure": true
+    },
+    "regroupements_recommandes": [
+      {
+        "groupe": "charges_personnel",
+        "articles": ["Art. 110", "Art. 110-A", "Art. 110-B", "Art. 110-C", "Art. 110-D", "Art. 110-E", "Art. 110-F", "Art. 110-G"],
+        "raison": "Thématique cohérente - charges de personnel et dirigeants"
+      },
+      {
+        "groupe": "remunerations_etranger",
+        "articles": ["Art. 111", "Art. 111-A", "Art. 111-A bis", "Art. 111-B"],
+        "raison": "Rémunérations versées à l'étranger et redevances"
+      },
+      {
+        "groupe": "autres_frais",
+        "articles": ["Art. 112", "Art. 112-A", "Art. 112-B", "Art. 112-C", "Art. 112-D", "Art. 112-E", "Art. 112-F", "Art. 112-G"],
+        "raison": "Autres frais et charges déductibles"
+      },
+      {
+        "groupe": "charges_non_deductibles",
+        "articles": ["Art. 113", "Art. 113-A", "Art. 113-B", "Art. 113-C", "Art. 113 bis"],
+        "raison": "Charges exclues de la déduction"
+      },
+      {
+        "groupe": "amortissements",
+        "articles": ["Art. 114", "Art. 114-A", "Art. 114-B", "Art. 114-C", "Art. 114-D", "Art. 114-E", "Art. 114-F", "Art. 114-G", "Art. 114-H", "Art. 114-I", "Art. 114-J", "Art. 114-J bis"],
+        "raison": "Régime complet des amortissements"
+      },
+      {
+        "groupe": "provisions",
+        "articles": ["Art. 115", "Art. 115-A", "Art. 115-B", "Art. 115-C", "Art. 115-D", "Art. 115-E", "Art. 115-F"],
+        "raison": "Régime complet des provisions"
+      },
+      {
+        "groupe": "produits_taxables",
+        "articles": ["Art. 116", "Art. 116-A", "Art. 116-B", "Art. 116-C"],
+        "raison": "Produits taxables"
+      },
+      {
+        "groupe": "plus_values",
+        "articles": ["Art. 118", "Art. 118-A", "Art. 118-B", "Art. 118-C", "Art. 118-D", "Art. 118-E", "Art. 118-F"],
+        "raison": "Régime des plus-values et moins-values"
+      },
+      {
+        "groupe": "prix_transfert",
+        "articles": ["Art. 120", "Art. 120-A", "Art. 120-B", "Art. 120-C", "Art. 120-D", "Art. 120-E", "Art. 120-F", "Art. 120-G", "Art. 120-H", "Art. 120-I"],
+        "raison": "Dispositif prix de transfert complet"
+      },
+      {
+        "groupe": "taux_calcul",
+        "articles": ["Art. 122", "Art. 122-A", "Art. 122-B"],
+        "raison": "Taux et calcul de l'impôt"
+      },
+      {
+        "groupe": "obligations_declaration",
+        "articles": ["Art. 124", "Art. 124-A", "Art. 124-B", "Art. 124-C"],
+        "raison": "Obligations déclaratives et paiement"
+      },
+      {
+        "groupe": "mere_fille",
+        "articles": ["Art. 126", "Art. 126-A"],
+        "raison": "Régime sociétés mères et filiales"
+      },
+      {
+        "groupe": "quartiers_generaux",
+        "articles": ["Art. 126-C-1", "Art. 126-C-2", "Art. 126-C-3", "Art. 126-C-4"],
+        "raison": "Régime quartiers généraux"
+      },
+      {
+        "groupe": "holdings",
+        "articles": ["Art. 126-D", "Art. 126-D-1", "Art. 126-D-2", "Art. 126-D-3", "Art. 126-D-4", "Art. 126-D-5", "Art. 126-D-6"],
+        "raison": "Régime fiscal des holdings"
+      },
+      {
+        "groupe": "integration_fiscale",
+        "articles": ["Art. 126-E", "Art. 126-E-1", "Art. 126-E-2", "Art. 126-E-3", "Art. 126-E-4", "Art. 126-E-5", "Art. 126-E-6", "Art. 126-E-7", "Art. 126-E-8", "Art. 126-E-9"],
+        "raison": "Régime intégration fiscale complet"
+      },
+      {
+        "groupe": "personnes_morales_etrangeres",
+        "articles": ["Art. 126 ter", "Art. 126 ter A", "Art. 126 quater B-1", "Art. 126 quater B-2", "Art. 126 quater C-1", "Art. 126 quater C-2", "Art. 126 quater C-3", "Art. 126 quater D", "Art. 126 quater E", "Art. 126 quinquies-1", "Art. 126 sexies", "Art. 126 septies"],
+        "raison": "Régime personnes morales étrangères et sous-traitants pétroliers"
+      }
+    ]
+  },
+  "metadata_enrichment": {
+    "per_chunk_metadata": {
+      "article_id": "identifiant unique de l'article",
+      "titre_article": "titre officiel de l'article",
+      "section": "section du chapitre",
+      "sous_section": "sous-section le cas échéant",
+      "paragraphe": "paragraphe le cas échéant",
+      "mots_cles": "liste des mots-clés extraits",
+      "valeurs_numeriques": "taux, seuils, délais extraits",
+      "references_croisees": "articles liés",
+      "theme_principal": "thème principal",
+      "type_disposition": "principe | condition | sanction | exonération | obligation",
+      "reference_lf": "référence loi de finances si applicable"
+    }
+  },
+  "embedding_optimization": {
+    "model_recommande": "text-embedding-3-large",
+    "dimensions": 1536,
+    "preprocessing": {
+      "normalisation_juridique": true,
+      "expansion_acronymes": {
+        "IS": "Impôt sur les sociétés",
+        "SA": "Société anonyme",
+        "SARL": "Société à responsabilité limitée",
+        "SNC": "Société en nom collectif",
+        "SCS": "Société en commandite simple",
+        "GIE": "Groupement d'intérêt économique",
+        "BEAC": "Banque des États de l'Afrique Centrale",
+        "CEMAC": "Communauté Économique et Monétaire de l'Afrique Centrale",
+        "OHADA": "Organisation pour l'Harmonisation en Afrique du Droit des Affaires",
+        "COBAC": "Commission Bancaire de l'Afrique Centrale",
+        "SFEC": "Système de Facturation Électronique Certifié",
+        "APP": "Accord Préalable de Prix",
+        "PT": "Prix de Transfert",
+        "IRVM": "Impôt sur le Revenu des Valeurs Mobilières",
+        "IRPP": "Impôt sur le Revenu des Personnes Physiques",
+        "BICA": "Bénéfices Industriels Commerciaux et Artisanaux",
+        "TSS": "Taxe Spéciale sur les Sociétés",
+        "CA": "Chiffre d'affaires",
+        "HT": "Hors taxes",
+        "ATE": "Autorisation Temporaire d'Exercer",
+        "DGID": "Direction Générale des Impôts et des Domaines",
+        "DGI": "Direction Générale des Impôts",
+        "LOA": "Location avec Option d'Achat",
+        "PCML": "Prix Comparable sur Marché Libre",
+        "PRM": "Prix de Revient Majoré",
+        "MTMN": "Méthode Transactionnelle de la Marge Nette",
+        "BTP": "Bâtiments et Travaux Publics",
+        "PEPS": "Premier Entré Premier Sorti",
+        "FIFO": "First In First Out",
+        "NIU": "Numéro d'Identification Unique",
+        "LF": "Loi de Finances"
+      },
+      "normalisation_montants": {
+        "FCFA": "francs CFA",
+        "millions": "000.000",
+        "milliards": "000.000.000"
+      }
+    }
+  },
+  "retrieval_config": {
+    "strategie": "hybrid",
+    "parametres": {
+      "semantic_weight": 0.6,
+      "keyword_weight": 0.4,
+      "top_k": 10,
+      "rerank": true,
+      "rerank_model": "cross-encoder"
+    },
+    "filtres_contextuels": {
+      "par_section": true,
+      "par_theme": true,
+      "par_type_question": {
+        "taux": ["Art. 122", "Art. 122-A", "Art. 114-A", "Art. 126"],
+        "delais": ["Art. 119", "Art. 118", "Art. 124-A", "Art. 126-E"],
+        "conditions": ["Art. 109-B", "Art. 126", "Art. 126-D", "Art. 126-E"],
+        "sanctions": ["Art. 120-D", "Art. 126 quater C-2", "Art. 126 quinquies-1"],
+        "exonerations": ["Art. 107-A", "Art. 118-C"]
+      }
+    }
+  },
+  "query_expansion": {
+    "synonymes_automatiques": true,
+    "variations_orthographiques": {
+      "impôt": ["impot", "taxe"],
+      "société": ["societe", "entreprise", "compagnie"],
+      "bénéfice": ["benefice", "profit", "résultat"],
+      "déductible": ["deductible", "déduction"],
+      "amortissement": ["depreciation", "dotation"]
+    },
+    "questions_types": {
+      "taux_patterns": ["quel est le taux", "à quel taux", "taux de", "pourcentage"],
+      "delai_patterns": ["dans quel délai", "combien de temps", "durée", "date limite"],
+      "condition_patterns": ["quelles sont les conditions", "comment", "peut-on", "est-il possible"],
+      "sanction_patterns": ["quelle sanction", "amende", "pénalité", "en cas de non-respect"]
+    }
+  },
+  "quality_metrics": {
+    "cibles": {
+      "precision_at_5": 0.90,
+      "recall_at_10": 0.95,
+      "mrr": 0.85,
+      "ndcg_at_10": 0.90
+    },
+    "tests_validation": {
+      "fichier": "cgi_2025_is_tests.json",
+      "nombre_questions": 50,
+      "seuil_reussite": 0.90
+    }
+  },
+  "prompt_template": {
+    "system": "Tu es un expert en fiscalité congolaise, spécialiste du Code Général des Impôts 2025. Tu réponds aux questions en citant précisément les articles de loi pertinents. Tu fournis des réponses structurées, précises et pédagogiques.",
+    "context_prefix": "Voici les dispositions pertinentes du CGI Congo 2025 :",
+    "answer_format": {
+      "structure": [
+        "Réponse directe à la question",
+        "Article(s) de référence avec citation",
+        "Précisions complémentaires si nécessaire",
+        "Valeurs chiffrées (taux, seuils, délais)"
+      ],
+      "style": "professionnel_pedagogique"
+    }
+  }
+}

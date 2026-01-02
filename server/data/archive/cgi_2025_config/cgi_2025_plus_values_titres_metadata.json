@@ -1,0 +1,100 @@
+{
+  "metadata_version": "2.0",
+  "source": {
+    "document": "Code Général des Impôts",
+    "pays": "République du Congo",
+    "edition": "2025",
+    "tome": 1,
+    "partie": 1,
+    "livre": 1,
+    "chapitre": 7,
+    "chapitre_titre": "Plus-values sur titres réalisées par des personnes non-résidentes"
+  },
+  "index": {
+    "chapitre_titre": "Plus-values sur titres non-résidents et retenues BTP/réassurance",
+    "sections": [
+      {
+        "section": "Chapitre 7",
+        "titre": "Plus-values sur titres réalisées par des personnes non-résidentes",
+        "articles": ["Art. 185 quater-A", "Art. 185 quater-B", "Art. 185 quater-C"],
+        "themes": ["plus-values", "cession titres", "non-résidents", "20%", "libératoire"]
+      },
+      {
+        "section": 8,
+        "titre": "Paiements effectués par les entreprises adjudicataires des marchés de BTP au profit des sous-traitants",
+        "articles": ["Art. 185 quinquies"],
+        "themes": ["BTP", "sous-traitants", "retenue source", "3%", "10%", "marchés publics"]
+      },
+      {
+        "section": 9,
+        "titre": "Exonération des primes cédées en réassurances",
+        "articles": ["Art. 185 sexies"],
+        "themes": ["réassurance", "CIMA", "primes", "20%"]
+      }
+    ],
+    "total_articles": 5,
+    "articles_en_vigueur": 5,
+    "articles_abroges": 0
+  },
+  "synonymes_concepts": {
+    "plus-values titres": ["gains en capital", "cession participations", "vente actions"],
+    "non-résidents": ["personnes domiciliées à l'étranger", "étrangers"],
+    "BTP": ["bâtiments et travaux publics", "construction", "marchés publics"],
+    "sous-traitants": ["sous-traitance", "bureaux d'études"],
+    "réassurance": ["primes cédées", "CIMA", "assurance"]
+  },
+  "valeurs_cles": {
+    "taux": {
+      "plus_values_titres_non_residents": "20%",
+      "btp_sous_traitants_reel": "3%",
+      "btp_sous_traitants_forfait": "10%",
+      "reassurance_hors_cima": "20%"
+    },
+    "sanctions": {
+      "defaut_retenue_btp": "5 000 000 FCFA + perte déductibilité",
+      "retard_versement_btp": "2% par mois (max 100%)"
+    },
+    "caracteristiques": {
+      "plus_values_titres": "libératoire de l'impôt sur le revenu",
+      "retenue_btp": "acompte d'impôt pour sous-traitants"
+    }
+  },
+  "delais_et_modalites": {
+    "plus_values_titres": {
+      "moment_paiement": "Lors de l'enregistrement de l'acte de cession",
+      "simultaneite": "Avec les droits d'enregistrement"
+    },
+    "btp": {
+      "declaration_liste": "Trimestrielle",
+      "versement": "Selon Art. 172-173 (20 jours du mois suivant)",
+      "enregistrement_marche": "Obligatoire par entrepreneur principal",
+      "enregistrement_contrat": "Obligatoire par chaque sous-traitant"
+    }
+  },
+  "relations_articles": {
+    "renvois_internes": {
+      "Art. 185 quinquies": ["Art. 172", "Art. 173"],
+      "Art. 185 sexies": ["Art. 185 ter", "Art. 308 Code CIMA"]
+    }
+  },
+  "solidarite_paiement": {
+    "plus_values_titres": {
+      "responsables_solidaires": ["Cédant", "Cessionnaire", "Société de droit congolais dont les titres sont cédés"]
+    }
+  },
+  "regime_btp": {
+    "entrepreneur_principal": {
+      "obligations": [
+        "Prélever la retenue sur paiements aux sous-traitants",
+        "Communiquer trimestriellement la liste des sous-traitants",
+        "Enregistrer le marché principal"
+      ]
+    },
+    "sous_traitant": {
+      "obligations": [
+        "Enregistrer le contrat d'exécution des travaux"
+      ],
+      "avantage": "Retenue = acompte d'impôt (imputable)"
+    }
+  }
+}

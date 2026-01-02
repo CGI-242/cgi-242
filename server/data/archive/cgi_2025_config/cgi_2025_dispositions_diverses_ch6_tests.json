@@ -1,0 +1,389 @@
+{
+  "test_suite": {
+    "version": "1.0",
+    "chapitre": "Chapitre 6 - Dispositions diverses",
+    "code": "CGI Congo 2025",
+    "date_creation": "2026-01-01",
+    "total_questions": 40,
+    "note": "Focus sur obligations déclaratives et retenues à la source (résidents et non-résidents)"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "categorie": "Employeurs - Retenue source",
+      "question": "Quelles obligations a un employeur concernant les retenues à la source ?",
+      "reponse_attendue": "L'employeur doit : effectuer la retenue IRPP, mentionner sur le livre de paie (date, nature, montant, avantages en nature, retenues, enfants à charge, référence bordereau), conserver les documents 4 ans, les communiquer aux agents fiscaux, et délivrer une pièce justificative au bénéficiaire.",
+      "articles_source": ["Art. 172"],
+      "mots_cles": ["employeur", "retenue source", "livre paie", "4 ans", "pièce justificative"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 2,
+      "categorie": "Employeurs - Délai versement",
+      "question": "Dans quel délai les retenues sur salaires doivent-elles être versées ?",
+      "reponse_attendue": "Dans les 20 jours du mois suivant les paiements. Toutefois, les employeurs payant moins de 5 personnes peuvent verser dans les 20 premiers jours du mois suivant la fin du trimestre.",
+      "articles_source": ["Art. 173"],
+      "mots_cles": ["versement", "20 jours", "mensuel", "trimestriel", "5 personnes"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 3,
+      "categorie": "Employeurs - Décès",
+      "question": "Quel est le délai de versement des retenues en cas de décès de l'employeur ?",
+      "reponse_attendue": "Les retenues opérées doivent être versées par les ayants droit dans les 15 premiers jours du mois suivant celui du décès.",
+      "articles_source": ["Art. 173"],
+      "mots_cles": ["décès", "15 jours", "ayants droit"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 4,
+      "categorie": "Employeurs - Bordereau",
+      "question": "Comment s'effectue le versement des retenues ?",
+      "reponse_attendue": "Par chèque bancaire libellé à l'ordre du Percepteur/Payeur/Trésor du lieu du domicile, accompagné d'un bordereau de versement en 3 exemplaires sur imprimés administratifs. Un accusé de réception est délivré.",
+      "articles_source": ["Art. 174"],
+      "mots_cles": ["chèque", "bordereau", "3 exemplaires", "Percepteur", "accusé réception"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 5,
+      "categorie": "Employeurs - État annuel",
+      "question": "Quand et à qui doit être remis l'état annuel des salaires ?",
+      "reponse_attendue": "Dans le courant du mois de janvier de chaque année à l'inspecteur divisionnaire des contributions directes et indirectes, pour chaque personne occupée l'année précédente.",
+      "articles_source": ["Art. 176"],
+      "mots_cles": ["état annuel", "janvier", "inspecteur divisionnaire"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 6,
+      "categorie": "Employeurs - Contenu état annuel",
+      "question": "Que doit contenir l'état annuel des salaires ?",
+      "reponse_attendue": "Nom/prénom/emploi/adresse, montant des rémunérations (après retenues retraite), avantages en nature, retenues IRPP, période des paiements, nombre d'enfants à charge, indemnités non imposables, NIU. Une fiche individuelle par employé doit être jointe.",
+      "articles_source": ["Art. 176"],
+      "mots_cles": ["état annuel", "NIU", "fiche individuelle", "avantages nature"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 7,
+      "categorie": "Employeurs - Seuil déclaration",
+      "question": "À partir de quel seuil la déclaration nominative des salaires est-elle obligatoire ?",
+      "reponse_attendue": "Lorsque la rémunération annuelle excède 120 000 FCFA. Les rémunérations inférieures figurent sur l'état récapitulatif pour leur montant global.",
+      "articles_source": ["Art. 177"],
+      "mots_cles": ["seuil", "120 000 FCFA", "déclaration nominative"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 8,
+      "categorie": "Employeurs - Déclaration mensuelle",
+      "question": "Quels employeurs doivent souscrire une déclaration mensuelle ?",
+      "reponse_attendue": "Les employeurs occupant plus de 3 personnes doivent souscrire une déclaration mensuelle, en plus de la déclaration annuelle.",
+      "articles_source": ["Art. 177 bis"],
+      "mots_cles": ["déclaration mensuelle", "plus de 3 personnes"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 9,
+      "categorie": "Employeurs - Rémunérations diverses",
+      "question": "Quelles rémunérations diverses doivent être déclarées ?",
+      "reponse_attendue": "Les rémunérations versées aux prestataires, administrateurs, commissaires aux comptes, ainsi que les loyers, commissions, courtages, ristournes, vacations, honoraires, gratifications dépassant 5 000 FCFA/an pour un même bénéficiaire.",
+      "articles_source": ["Art. 179"],
+      "mots_cles": ["administrateurs", "commissaires aux comptes", "commissions", "5 000 FCFA"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 10,
+      "categorie": "Employeurs - Sociétés pétrolières",
+      "question": "Les sociétés pétrolières ont-elles des obligations déclaratives spécifiques ?",
+      "reponse_attendue": "Oui, elles doivent déclarer dans les conditions de l'Art. 176 les rémunérations versées aux sous-traitants pour toutes les prestations de service de toute nature.",
+      "articles_source": ["Art. 179"],
+      "mots_cles": ["sociétés pétrolières", "sous-traitants", "prestations"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 11,
+      "categorie": "Employeurs - Cession cessation",
+      "question": "Quel est le délai de déclaration en cas de cession ou cessation d'entreprise ?",
+      "reponse_attendue": "Les déclarations de rémunérations doivent être produites dans les 10 jours de l'événement. La déclaration de l'année précédente, si non encore produite, doit également être déposée.",
+      "articles_source": ["Art. 181"],
+      "mots_cles": ["cession", "cessation", "10 jours"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 12,
+      "categorie": "Employeurs - Décès déclaration",
+      "question": "Quel délai pour déclarer les salaires en cas de décès de l'employeur ?",
+      "reponse_attendue": "Les héritiers ont 6 mois pour déclarer les rémunérations versées l'année du décès. Ce délai ne peut dépasser le 31 janvier de l'année suivante.",
+      "articles_source": ["Art. 181"],
+      "mots_cles": ["décès", "6 mois", "31 janvier", "héritiers"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 13,
+      "categorie": "Employeurs - Régularisation",
+      "question": "Un salarié peut-il obtenir le remboursement d'un trop-perçu de retenue ?",
+      "reponse_attendue": "Oui, par voie de réclamation au Directeur Général des Impôts avant le 1er avril de l'année suivante. Le dégrèvement peut être utilisé pour acquitter des droits ultérieurs.",
+      "articles_source": ["Art. 182"],
+      "mots_cles": ["régularisation", "dégrèvement", "réclamation", "1er avril"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 14,
+      "categorie": "Retenue 10% - Principe",
+      "question": "Quel est le taux de retenue sur les commissions et honoraires versés aux résidents ?",
+      "reponse_attendue": "10% sur les sommes versées en rémunération de prestations à des personnes physiques ou morales établies au Congo et non soumises à l'IS.",
+      "articles_source": ["Art. 183"],
+      "mots_cles": ["10%", "commissions", "honoraires", "prestations", "non IS"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 15,
+      "categorie": "Retenue 10% - Champ",
+      "question": "Qui doit opérer la retenue de 10% sur les commissions ?",
+      "reponse_attendue": "Les personnes physiques et morales (y compris institutions publiques, collectivités locales, établissements publics) qui versent des sommes en rémunération de prestations, ainsi que les grossistes et demi-grossistes sur les ristournes, remises et avantages.",
+      "articles_source": ["Art. 183"],
+      "mots_cles": ["retenue", "grossistes", "institutions publiques", "prestations"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 16,
+      "categorie": "Retenue 10% - Nature acompte",
+      "question": "La retenue de 10% sur commissions est-elle un impôt définitif ?",
+      "reponse_attendue": "Non, les versements constituent des acomptes de l'IRPP. Le bénéficiaire reste soumis aux obligations déclaratives des Art. 76 à 80.",
+      "articles_source": ["Art. 183"],
+      "mots_cles": ["acompte", "IRPP", "obligations déclaratives"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 17,
+      "categorie": "Retenue 10% - Sanctions",
+      "question": "Quelles sanctions en cas de défaut de retenue ou de reversement ?",
+      "reponse_attendue": "Défaut de retenue : amende égale au prélèvement non effectué. Défaut de reversement : amende égale au prélèvement + intérêt de retard de 5% par mois ou fraction de mois.",
+      "articles_source": ["Art. 183"],
+      "mots_cles": ["amende", "défaut retenue", "défaut reversement", "5% par mois"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 18,
+      "categorie": "Droits d'auteur",
+      "question": "Dans quel délai les retenues sur droits d'auteur doivent-elles être reversées ?",
+      "reponse_attendue": "Dans les 15 jours suivant la date de paiement, par les maisons d'édition, sociétés de perception et répartition, organisateurs de spectacles.",
+      "articles_source": ["Art. 183 bis"],
+      "mots_cles": ["droits d'auteur", "15 jours", "maisons d'édition", "spectacles"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 19,
+      "categorie": "Commissionnaires douanes",
+      "question": "Quelles obligations déclaratives pour les commissionnaires en douanes ?",
+      "reponse_attendue": "Déclaration mensuelle avant le 15 du mois suivant indiquant : noms/prénoms des tiers, NIU, volume des opérations, droits de douanes acquittés, TVA et centimes additionnels. Défaut : amende de 500 000 FCFA.",
+      "articles_source": ["Art. 183 ter"],
+      "mots_cles": ["commissionnaires douanes", "déclaration mensuelle", "15 du mois", "NIU", "500 000 FCFA"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 20,
+      "categorie": "Associés SNC",
+      "question": "Quelles déclarations pour les sociétés de personnes ?",
+      "reponse_attendue": "Les SNC, commandites simples et associations en participation doivent fournir avec leur déclaration annuelle de bénéfices un état indiquant la répartition ou distribution des bénéfices entre associés et co-participants.",
+      "articles_source": ["Art. 184"],
+      "mots_cles": ["SNC", "commandite simple", "répartition bénéfices", "associés"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 21,
+      "categorie": "Source étrangère",
+      "question": "Un résident percevant des revenus de source étrangère a-t-il des obligations ?",
+      "reponse_attendue": "Oui, les contribuables domiciliés au Congo recevant des traitements, salaires, pensions ou rentes viagères de débiteurs étrangers doivent produire les renseignements exigés par les Art. 176 et suivants.",
+      "articles_source": ["Art. 185"],
+      "mots_cles": ["source étrangère", "domiciliés Congo", "déclaration"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 22,
+      "categorie": "Sociétés Art. 126 ter",
+      "question": "Quelles obligations pour les sociétés étrangères de l'Art. 126 ter ?",
+      "reponse_attendue": "Retenue sur tout le personnel passible de l'IRPP, taxe d'apprentissage et taxe forfaitaire sur salaires. Avant cessation : déclaration définitive et règlement sans émission de rôle, garantie du paiement de l'IRPP pour les étrangers quittant le Congo.",
+      "articles_source": ["Art. 185 bis"],
+      "mots_cles": ["Art. 126 ter", "sociétés étrangères", "cessation", "garantie IRPP"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 23,
+      "categorie": "Sociétés Art. 126 ter - Exception",
+      "question": "Les salariés étrangers en mission courte sont-ils imposables ?",
+      "reponse_attendue": "Non, les salariés de nationalité étrangère introduits temporairement pour une durée n'excédant pas 2 semaines de présence effective au Congo ne sont pas assujettis à l'IRPP, à condition de déclarer cette catégorie de personnel à la DGI.",
+      "articles_source": ["Art. 185 bis"],
+      "mots_cles": ["2 semaines", "étrangers", "temporaire", "non assujettis"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 24,
+      "categorie": "Non-résidents - Champ",
+      "question": "Quels revenus des non-résidents sont soumis à retenue au Congo ?",
+      "reponse_attendue": "Les revenus réalisés au Congo ou en provenance : activité indépendante, droits d'auteur/brevets/marques, intérêts, location licences/équipements, assistance technique/financière/comptable, prestations aux pétroliers, frais commercialisation hydrocarbures.",
+      "articles_source": ["Art. 185 ter-A"],
+      "mots_cles": ["non-résidents", "revenus Congo", "redevances", "prestations"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 25,
+      "categorie": "Non-résidents - Taux général",
+      "question": "Quel est le taux général de retenue sur les revenus des non-résidents ?",
+      "reponse_attendue": "20% (taux général) sur le montant brut hors TVA de toutes les rémunérations.",
+      "articles_source": ["Art. 185 ter-C"],
+      "mots_cles": ["20%", "taux général", "non-résidents", "brut hors TVA"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 26,
+      "categorie": "Non-résidents - Taux moyen",
+      "question": "Quand s'applique le taux de 10% pour les non-résidents ?",
+      "reponse_attendue": "Pour les prestations ponctuelles, les redevances audiovisuelles (TV, radio, streaming numérique), et les paiements à des résidents d'autres États de la CEMAC.",
+      "articles_source": ["Art. 185 ter-C"],
+      "mots_cles": ["10%", "prestations ponctuelles", "audiovisuel", "CEMAC"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 27,
+      "categorie": "Non-résidents - Taux réduit",
+      "question": "Quand s'applique le taux réduit de 5,75% ?",
+      "reponse_attendue": "Pour les contrats liés à la zone d'utilisation de l'Angola, et pour les rémunérations de sociétés de transport maritime/aérien congolaises (location, affrètement navires/aéronefs, commissions agents portuaires à l'étranger).",
+      "articles_source": ["Art. 185 ter-C"],
+      "mots_cles": ["5,75%", "zone Angola", "transport maritime", "affrètement"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 28,
+      "categorie": "Non-résidents - Taux spécifique",
+      "question": "Quand s'applique le taux spécifique de 5% ?",
+      "reponse_attendue": "Aux intérêts des emprunts versés à des personnes étrangères par les sociétés pétrolières pour des acquisitions destinées aux études, recherche, exploration, développement et exploitation pétrolière.",
+      "articles_source": ["Art. 185 ter-C"],
+      "mots_cles": ["5%", "intérêts", "emprunts", "sociétés pétrolières", "exploration"],
+      "difficulte": "difficile"
+    },
+    {
+      "id": 29,
+      "categorie": "Non-résidents - Base",
+      "question": "Sur quelle base est calculée la retenue des non-résidents ?",
+      "reponse_attendue": "Le montant brut des redevances et rémunérations, c'est-à-dire toutes les sommes facturées ou reçues hors TVA.",
+      "articles_source": ["Art. 185 ter-B"],
+      "mots_cles": ["base imposable", "montant brut", "hors TVA"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 30,
+      "categorie": "Non-résidents - Fait générateur",
+      "question": "Quel est le fait générateur de la retenue sur non-résidents ?",
+      "reponse_attendue": "L'émission de la facture ou document en tenant lieu et la comptabilisation des sommes. L'exigibilité intervient au paiement. En cas de paiement partiel, la créance du Trésor est privilégiée et prioritaire.",
+      "articles_source": ["Art. 185 ter-D"],
+      "mots_cles": ["fait générateur", "facture", "paiement", "créance privilégiée"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 31,
+      "categorie": "Non-résidents - Reversement",
+      "question": "Quand reverser la retenue sur les non-résidents ?",
+      "reponse_attendue": "Au cours du mois suivant le paiement, avec une annexe déclarative indiquant : identité du bénéficiaire, montant brut total, montant HT, montant de l'impôt versé, montant net payé.",
+      "articles_source": ["Art. 185 ter-E"],
+      "mots_cles": ["reversement", "mois suivant", "annexe déclarative"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 32,
+      "categorie": "Non-résidents - Caractère libératoire",
+      "question": "La retenue sur non-résidents est-elle libératoire ?",
+      "reponse_attendue": "Oui, elle est libératoire de l'impôt sur les sociétés et de la taxe spéciale sur les sociétés pour les personnes visées à l'Art. 185 ter-A.",
+      "articles_source": ["Art. 185 ter-F"],
+      "mots_cles": ["libératoire", "IS", "TSS", "non-résidents"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 33,
+      "categorie": "Non-résidents - Charges non déductibles",
+      "question": "Que se passe-t-il si les sommes versées aux non-résidents ne sont pas déductibles ?",
+      "reponse_attendue": "Si les sommes ou rémunérations ne sont pas admises comme charges fiscalement déductibles, elles sont considérées comme des distributions de bénéfices.",
+      "articles_source": ["Art. 185 ter-D"],
+      "mots_cles": ["charges non déductibles", "distributions bénéfices"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 34,
+      "categorie": "Non-résidents - CEMAC",
+      "question": "Quel taux maximum pour les paiements à des résidents CEMAC ?",
+      "reponse_attendue": "Les sommes ou redevances payées par un résident du Congo à un résident d'un autre État CEMAC sont soumises au taux prévu par le CGI sans dépasser 10%.",
+      "articles_source": ["Art. 185 ter-A"],
+      "mots_cles": ["CEMAC", "10%", "maximum"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 35,
+      "categorie": "Conservation documents",
+      "question": "Combien de temps conserver les documents relatifs aux retenues ?",
+      "reponse_attendue": "Les documents sur lesquels sont enregistrés les paiements et retenues, ainsi que les bordereaux de versement, doivent être conservés jusqu'à la 4ème année suivant celle des retenues.",
+      "articles_source": ["Art. 172"],
+      "mots_cles": ["conservation", "4 ans", "documents", "bordereaux"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 36,
+      "categorie": "Droits d'auteur - Seuil",
+      "question": "À partir de quel seuil les droits d'auteur doivent-ils être déclarés ?",
+      "reponse_attendue": "Les entreprises versant des droits d'auteur ou d'inventeur doivent déclarer les sommes dépassant 5 000 FCFA par an versées à leurs membres ou mandants.",
+      "articles_source": ["Art. 180"],
+      "mots_cles": ["droits d'auteur", "5 000 FCFA", "seuil déclaration"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 37,
+      "categorie": "Attestation",
+      "question": "L'employeur doit-il remettre une attestation au salarié ?",
+      "reponse_attendue": "Oui, toute personne opérant les retenues est tenue de délivrer aux bénéficiaires une attestation justifiant le montant des retenues.",
+      "articles_source": ["Art. 183"],
+      "mots_cles": ["attestation", "retenues", "bénéficiaire"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 38,
+      "categorie": "Pensions rentes",
+      "question": "Les débirentiers ont-ils des obligations déclaratives ?",
+      "reponse_attendue": "Oui, tous particuliers, administrations, sociétés ou associations payant des pensions ou rentes viagères doivent fournir les indications relatives aux bénéficiaires dans les conditions de l'Art. 176.",
+      "articles_source": ["Art. 178"],
+      "mots_cles": ["pensions", "rentes viagères", "débirentiers", "déclaration"],
+      "difficulte": "facile"
+    },
+    {
+      "id": 39,
+      "categorie": "Non-résidents - Audiovisuel",
+      "question": "Les plateformes de streaming sont-elles soumises au taux réduit ?",
+      "reponse_attendue": "Oui, le taux moyen de 10% s'applique aux redevances pour l'usage, édition de chaînes TV, offres de programmes TV/radio, et fourniture d'accès aux prestations audiovisuelles à contenu numérique.",
+      "articles_source": ["Art. 185 ter-C"],
+      "mots_cles": ["streaming", "audiovisuel numérique", "10%", "contenu numérique"],
+      "difficulte": "moyen"
+    },
+    {
+      "id": 40,
+      "categorie": "Rôle régularisation",
+      "question": "Comment sont régularisés les versements des retenues ?",
+      "reponse_attendue": "Le montant des versements constatés fait l'objet d'un relevé nominatif tenant lieu de rôle provisoire, puis d'un rôle de régularisation établi à la fin de chaque mois.",
+      "articles_source": ["Art. 175"],
+      "mots_cles": ["rôle provisoire", "rôle régularisation", "relevé nominatif"],
+      "difficulte": "moyen"
+    }
+  ],
+  "statistiques": {
+    "par_difficulte": {
+      "facile": 14,
+      "moyen": 20,
+      "difficile": 6
+    },
+    "par_section": {
+      "Employeurs et débirentiers": 13,
+      "Retenue 10% commissions": 6,
+      "Droits d'auteur": 2,
+      "Commissionnaires douanes": 1,
+      "Sociétés de personnes": 1,
+      "Source étrangère": 1,
+      "Sociétés Art. 126 ter": 2,
+      "Non-résidents": 14
+    }
+  }
+}

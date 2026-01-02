@@ -1,0 +1,340 @@
+{
+  "metadata_version": "2.0",
+  "source": {
+    "document": "Code Général des Impôts",
+    "pays": "République du Congo",
+    "edition": "2026",
+    "tome": 1,
+    "partie": 1,
+    "livre": 1,
+    "chapitre": 1,
+    "base_juridique": "Directive n°0119/25-UEAC-177-CM-42 du 09 janvier 2025"
+  },
+  "index": {
+    "chapitre_titre": "Impôt sur les sociétés (IS)",
+    "sections": [
+      {
+        "section": 1,
+        "titre": "Généralités",
+        "articles": ["Art. 1er"],
+        "themes": ["principe IS", "définition IS"]
+      },
+      {
+        "section": 2,
+        "titre": "Champ d'application",
+        "sous_sections": [
+          {
+            "sous_section": 1,
+            "titre": "Personnes imposables",
+            "articles": ["Art. 2"],
+            "themes": ["personnes imposables", "sociétés de capitaux", "option IS"]
+          },
+          {
+            "sous_section": 2,
+            "titre": "Exonérations et crédits d'impôts",
+            "articles": ["Art. 3", "Art. 3A"],
+            "themes": ["exonérations", "crédit d'impôt investissement"]
+          },
+          {
+            "sous_section": 3,
+            "titre": "Territorialité",
+            "articles": ["Art. 4", "Art. 4A", "Art. 7"],
+            "themes": ["territorialité", "établissement stable", "résidence fiscale"]
+          }
+        ]
+      },
+      {
+        "section": 3,
+        "titre": "Bénéfice imposable",
+        "sous_sections": [
+          {
+            "sous_section": 1,
+            "titre": "Définition",
+            "articles": ["Art. 8", "Art. 9", "Art. 10", "Art. 11"],
+            "themes": ["bénéfice net", "actif net", "stocks", "devises", "période d'imposition"]
+          },
+          {
+            "sous_section": 2,
+            "titre": "Les produits imposables",
+            "articles": ["Art. 12", "Art. 13", "Art. 14", "Art. 15", "Art. 16"],
+            "themes": ["produits imposables", "revenus étrangers", "cessions d'actif"]
+          },
+          {
+            "sous_section": 3,
+            "titre": "Régime des plus-values ou moins-values de cession",
+            "articles": ["Art. 17", "Art. 17 A", "Art. 18", "Art. 19", "Art. 20", "Art. 21", "Art. 22", "Art. 23", "Art. 24", "Art. 25"],
+            "themes": ["plus-values", "moins-values", "remploi", "régime mère-fille", "restructurations"]
+          },
+          {
+            "sous_section": 4,
+            "titre": "Les charges déductibles",
+            "paragraphes": [
+              {
+                "paragraphe": 1,
+                "titre": "Charges de personnel et des dirigeants",
+                "articles": ["Art. 27", "Art. 28", "Art. 29", "Art. 30", "Art. 31", "Art. 32", "Art. 33", "Art. 34", "Art. 35", "Art. 36", "Art. 37"],
+                "themes": ["rémunérations", "gérants", "administrateurs", "frais de transport"]
+              },
+              {
+                "paragraphe": 2,
+                "titre": "Frais de siège, services, redevances et commissions",
+                "articles": ["Art. 38", "Art. 39", "Art. 40", "Art. 41"],
+                "themes": ["frais de siège", "redevances", "commissions", "20%", "prêt de main d'œuvre"]
+              },
+              {
+                "paragraphe": 3,
+                "titre": "Dépenses locatives",
+                "articles": ["Art. 42"],
+                "themes": ["loyers", "crédit-bail"]
+              },
+              {
+                "paragraphe": 4,
+                "titre": "Impôts, taxes et amendes",
+                "articles": ["Art. 43"],
+                "themes": ["impôts déductibles", "amendes non déductibles"]
+              },
+              {
+                "paragraphe": 5,
+                "titre": "Primes d'assurances",
+                "articles": ["Art. 44", "Art. 44 A"],
+                "themes": ["assurances déductibles", "captives"]
+              },
+              {
+                "paragraphe": 6,
+                "titre": "Libéralités, dons, subventions et aides accordés",
+                "articles": ["Art. 45", "Art. 46"],
+                "themes": ["dons", "libéralités", "aides non déductibles", "SFEC"]
+              },
+              {
+                "paragraphe": 7,
+                "titre": "Dépenses somptuaires",
+                "articles": ["Art. 47"],
+                "themes": ["dépenses somptuaires", "chasse", "plaisance"]
+              },
+              {
+                "paragraphe": 8,
+                "titre": "Rémunérations occultes",
+                "articles": ["Art. 48"],
+                "themes": ["rémunérations occultes"]
+              },
+              {
+                "paragraphe": 9,
+                "titre": "Charges financières",
+                "articles": ["Art. 49"],
+                "themes": ["intérêts", "sous-capitalisation", "20% EBE", "BEAC"]
+              },
+              {
+                "paragraphe": 10,
+                "titre": "Rémunérations versées par un établissement stable",
+                "articles": ["Art. 50"],
+                "themes": ["établissement stable", "siège"]
+              },
+              {
+                "paragraphe": 11,
+                "titre": "Amortissements",
+                "articles": ["Art. 51", "Art. 52", "Art. 53", "Art. 54", "Art. 55", "Art. 56", "Art. 57", "Art. 58", "Art. 59", "Art. 60", "Art. 61"],
+                "themes": ["amortissements", "taux", "crédit-bail", "amortissement accéléré", "véhicules tourisme", "SFEC"]
+              },
+              {
+                "paragraphe": 12,
+                "titre": "Moins-values et pertes sur actif",
+                "articles": ["Art. 62"],
+                "themes": ["moins-values", "pertes"]
+              },
+              {
+                "paragraphe": 13,
+                "titre": "Provisions",
+                "articles": ["Art. 63", "Art. 64", "Art. 65", "Art. 66", "Art. 67", "Art. 68", "Art. 69", "Art. 70", "Art. 71", "Art. 72", "Art. 73", "Art. 74"],
+                "themes": ["provisions", "créances douteuses", "COBAC", "crédit-bail"]
+              },
+              {
+                "paragraphe": 14,
+                "titre": "Reports déficitaires",
+                "articles": ["Art. 75"],
+                "themes": ["déficits reportables", "5 ans"]
+              },
+              {
+                "paragraphe": 15,
+                "titre": "Dérogations sectorielles",
+                "articles": ["Art. 76"],
+                "themes": ["investissements lourds", "charte des investissements"]
+              }
+            ],
+            "article_general": "Art. 26",
+            "themes_generaux": ["conditions de déductibilité", "acte anormal de gestion", "200.000 FCFA"]
+          },
+          {
+            "sous_section": 5,
+            "titre": "Prix de transferts",
+            "articles": ["Art. 77", "Art. 78", "Art. 79", "Art. 80", "Art. 81", "Art. 82", "Art. 83", "Art. 84", "Art. 85"],
+            "themes": ["prix de transfert", "documentation", "méthodes", "APP", "OCDE", "entreprises liées"]
+          }
+        ]
+      },
+      {
+        "section": 4,
+        "titre": "Modalités d'imposition",
+        "sous_sections": [
+          {
+            "sous_section": 1,
+            "titre": "Assiette et taux",
+            "articles": ["Art. 86", "Art. 86A", "Art. 86B", "Art. 86C"],
+            "themes": ["taux IS 25%", "33%", "minimum de perception 1%", "retenue à la source 20%"]
+          },
+          {
+            "sous_section": 3,
+            "titre": "Établissement de l'impôt",
+            "articles": ["Art. 123 (LF 2025)"],
+            "themes": ["établissement IS", "dissolution", "transformation"]
+          },
+          {
+            "sous_section": 4,
+            "titre": "Obligations des personnes morales",
+            "articles": ["Art. 124 (LF 2025)", "Art. 124 B (LF 2025)"],
+            "themes": ["déclaration d'existence", "acomptes IS", "versement spontané"]
+          }
+        ]
+      },
+      {
+        "section": 5,
+        "titre": "Régimes particuliers",
+        "sous_sections": [
+          {
+            "sous_section": 1,
+            "titre": "Régime des sociétés mères et des filiales",
+            "articles": ["Art. 87", "Art. 87A"],
+            "themes": ["sociétés mères", "filiales", "dividendes", "25%", "quote-part 10%"]
+          },
+          {
+            "sous_section": 2,
+            "titre": "Régime des succursales",
+            "articles": ["Art. 88"],
+            "themes": ["succursales", "conventions internationales"]
+          },
+          {
+            "sous_section": 3,
+            "titre": "Régime fiscal des quartiers généraux de sociétés",
+            "articles": ["Art. 89", "Art. 89A", "Art. 89B", "Art. 89C"],
+            "themes": ["quartiers généraux", "CEMAC", "base forfaitaire"]
+          },
+          {
+            "sous_section": 4,
+            "titre": "Régime fiscal des holdings",
+            "articles": ["Art. 90", "Art. 90A", "Art. 90B", "Art. 90C", "Art. 90D", "Art. 90E", "Art. 90F"],
+            "themes": ["holdings", "deux tiers actif", "plus-values cession", "IRVM réduit"]
+          },
+          {
+            "sous_section": 5,
+            "titre": "Régime d'intégration fiscale des groupes de sociétés",
+            "articles": ["Art. 91", "Art. 91A", "Art. 91B", "Art. 91C", "Art. 91D", "Art. 91E", "Art. 91F", "Art. 91G", "Art. 91H", "Art. 91I"],
+            "themes": ["intégration fiscale", "95%", "résultat d'ensemble", "neutralisation"]
+          },
+          {
+            "sous_section": 6,
+            "titre": "Régime des personnes morales étrangères",
+            "articles": ["Art. 92", "Art. 92A", "Art. 92B", "Art. 92C", "Art. 92D", "Art. 92E", "Art. 92F", "Art. 92G", "Art. 92H", "Art. 92I", "Art. 92J", "Art. 92K"],
+            "themes": ["personnes morales étrangères", "forfaitaire 22%", "sous-traitants pétroliers", "quitus fiscal", "ATE"]
+          }
+        ]
+      }
+    ],
+    "total_articles": 97
+  },
+  "synonymes_concepts": {
+    "IS": ["impôt sur les sociétés", "impôt société", "IS Congo", "corporate tax"],
+    "établissement stable": ["ES", "succursale", "présence permanente", "installation fixe"],
+    "prix de transfert": ["PT", "transfer pricing", "transactions intragroupe", "parties liées"],
+    "minimum de perception": ["minimum IS", "impôt minimum", "plancher fiscal"],
+    "régime mère-fille": ["dividendes intragroupe", "participation qualifiée"],
+    "intégration fiscale": ["groupe fiscal", "consolidation fiscale", "résultat d'ensemble"],
+    "holding": ["société de participation", "société portefeuille"],
+    "crédit-bail": ["leasing", "location financière", "LOA"],
+    "amortissement": ["dotation aux amortissements", "dépréciation", "usure"],
+    "provisions": ["dotation aux provisions", "charges à venir"],
+    "déficit reportable": ["report déficitaire", "pertes reportables"],
+    "retenue à la source": ["RAS", "withholding tax", "prélèvement à la source"],
+    "redevances": ["royalties", "droits d'auteur", "licences"],
+    "sous-traitant pétrolier": ["contractor", "prestataire pétrolier"]
+  },
+  "valeurs_cles": {
+    "taux": {
+      "taux_is_normal": "25%",
+      "taux_is_non_residents": "33%",
+      "minimum_perception": "1%",
+      "minimum_perception_majore": "2%",
+      "retenue_source_services": "20%",
+      "quote_part_frais_mere_fille": "10%",
+      "assiette_forfaitaire_etrangers": "22%",
+      "retenue_zone_angola": "5.75%"
+    },
+    "seuils": {
+      "seuil_documentation_pt": "500.000.000 FCFA",
+      "plafond_paiement_especes": "200.000 FCFA",
+      "plafond_amortissement_vehicule": "40.000.000 FCFA",
+      "seuil_amortissement_accelere": "40.000.000 FCFA",
+      "seuil_amortissement_100%": "500.000 FCFA",
+      "participation_mere_fille": "25%",
+      "participation_integration": "95%",
+      "holding_portefeuille": "deux tiers actif",
+      "activite_petrole_derogation": "70%"
+    },
+    "delais": {
+      "report_deficits": "5 ans",
+      "remploi_plus_values": "3 ans",
+      "conservation_titres_mere_fille": "2 ans",
+      "option_integration": "5 exercices",
+      "duree_etablissement_stable_chantier": "3 mois",
+      "duree_etablissement_stable_services": "183 jours",
+      "app_duree": "3 ans"
+    },
+    "echeances": {
+      "acompte_1": "15 février",
+      "acompte_2": "15 mai",
+      "acompte_3": "15 août",
+      "acompte_4": "15 novembre",
+      "minimum_perception_1": "15 mars",
+      "minimum_perception_2": "15 juin",
+      "minimum_perception_3": "15 septembre",
+      "minimum_perception_4": "15 décembre",
+      "option_is": "30 octobre",
+      "declaration_existence": "3 mois / 15 jours"
+    },
+    "sanctions": {
+      "amende_documentation_pt": "5.000.000 FCFA",
+      "amende_documentation_pt_majore": "25.000.000 FCFA",
+      "amende_app": "10.000.000 FCFA",
+      "amende_enregistrement_contrat": "1.000.000 FCFA",
+      "amende_declaration_trimestre": "3.000.000 FCFA"
+    }
+  },
+  "relations_articles": {
+    "renvois_internes": {
+      "Art. 86C": ["Art. 185 ter"],
+      "Art. 90D": ["Art. 185 ter"],
+      "Art. 92": ["Art. 2", "Art. 86C-86F"],
+      "Art. 49": ["Art. 77"],
+      "Art. 81": ["Art. 77"],
+      "Art. 123": ["Art. 82-88", "Art. 98"]
+    },
+    "articles_complementaires": {
+      "charges_personnel": ["Art. 27", "Art. 28", "Art. 29", "Art. 30", "Art. 31", "Art. 32", "Art. 33", "Art. 34", "Art. 35", "Art. 36", "Art. 37"],
+      "amortissements": ["Art. 51", "Art. 52", "Art. 53", "Art. 54", "Art. 55", "Art. 56", "Art. 57", "Art. 58", "Art. 59", "Art. 60", "Art. 61"],
+      "provisions": ["Art. 63", "Art. 64", "Art. 65", "Art. 66", "Art. 67", "Art. 68", "Art. 69", "Art. 70", "Art. 71", "Art. 72", "Art. 73", "Art. 74"],
+      "prix_transfert": ["Art. 77", "Art. 78", "Art. 79", "Art. 80", "Art. 81", "Art. 82", "Art. 83", "Art. 84", "Art. 85"],
+      "integration_fiscale": ["Art. 91", "Art. 91A", "Art. 91B", "Art. 91C", "Art. 91D", "Art. 91E", "Art. 91F", "Art. 91G", "Art. 91H", "Art. 91I"],
+      "personnes_morales_etrangeres": ["Art. 92", "Art. 92A", "Art. 92B", "Art. 92C", "Art. 92D", "Art. 92E", "Art. 92F", "Art. 92G", "Art. 92H", "Art. 92I", "Art. 92J", "Art. 92K"]
+    }
+  },
+  "nouveautes_2026": {
+    "base_juridique": "Directive CEMAC n°0119/25-UEAC-177-CM-42 du 09 janvier 2025",
+    "principales_modifications": [
+      "Suppression des exonérations conventionnelles IS à compter du 1er janvier 2026",
+      "Limitation déductibilité intérêts à 20% de l'EBE",
+      "Crédit d'impôt investissement plafonné à 15%",
+      "Régime des quartiers généraux CEMAC",
+      "Obligations documentaires prix de transfert renforcées",
+      "Déclaration pays par pays obligatoire",
+      "SFEC : amortissement 100% du matériel"
+    ]
+  }
+}

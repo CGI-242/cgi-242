@@ -2,7 +2,7 @@
 // server/src/tests/generate-manual-check.ts
 // Génère un rapport HTML des échecs à vérifier manuellement
 
-import { ALL_QUESTIONS, TestQuestion, LEVEL_NAMES, TestLevel } from './test-questions-data.js';
+import { ALL_CGI_QUESTIONS, TestQuestion, LEVEL_NAMES, TestLevel, TEST_STATS } from './test-questions-index.js';
 import { hybridSearch, SearchResult } from '../services/rag/hybrid-search.service.js';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -469,11 +469,11 @@ async function generateManualCheckList(): Promise<void> {
   const failures: FailureReport[] = [];
   const DELAY = 500; // Délai entre les requêtes
 
-  console.log(`Analyse de ${ALL_QUESTIONS.length} questions...`);
+  console.log(`Analyse de ${ALL_CGI_QUESTIONS.length} questions...`);
   console.log('');
 
-  for (let i = 0; i < ALL_QUESTIONS.length; i++) {
-    const q = ALL_QUESTIONS[i];
+  for (let i = 0; i < ALL_CGI_QUESTIONS.length; i++) {
+    const q = ALL_CGI_QUESTIONS[i];
 
     try {
       const results = await hybridSearch(q.question, 5);
@@ -499,12 +499,12 @@ async function generateManualCheckList(): Promise<void> {
           matchTypes: results.slice(0, 3).map(r => `${r.payload.numero}(${r.matchType})`).join(', '),
         });
 
-        console.log(`[${i + 1}/${ALL_QUESTIONS.length}] Q${q.id} - ÉCHEC`);
+        console.log(`[${i + 1}/${ALL_CGI_QUESTIONS.length}] Q${q.id} - ÉCHEC`);
       } else {
-        console.log(`[${i + 1}/${ALL_QUESTIONS.length}] Q${q.id} - OK`);
+        console.log(`[${i + 1}/${ALL_CGI_QUESTIONS.length}] Q${q.id} - OK`);
       }
     } catch (error) {
-      console.error(`[${i + 1}/${ALL_QUESTIONS.length}] Q${q.id} - ERREUR: ${error}`);
+      console.error(`[${i + 1}/${ALL_CGI_QUESTIONS.length}] Q${q.id} - ERREUR: ${error}`);
       failures.push({
         id: q.id,
         level: q.level,
@@ -519,7 +519,7 @@ async function generateManualCheckList(): Promise<void> {
     }
 
     // Délai entre les requêtes
-    if (i < ALL_QUESTIONS.length - 1) {
+    if (i < ALL_CGI_QUESTIONS.length - 1) {
       await new Promise(resolve => setTimeout(resolve, DELAY));
     }
   }
@@ -530,7 +530,7 @@ async function generateManualCheckList(): Promise<void> {
   }
 
   // Générer le HTML
-  const html = generateHTML(failures, ALL_QUESTIONS.length);
+  const html = generateHTML(failures, ALL_CGI_QUESTIONS.length);
   const outputPath = path.join(OUTPUT_DIR, 'manual-check.html');
   fs.writeFileSync(outputPath, html);
 
@@ -539,8 +539,8 @@ async function generateManualCheckList(): Promise<void> {
   console.log(' RAPPORT GÉNÉRÉ');
   console.log('='.repeat(60));
   console.log(`  Fichier: ${outputPath}`);
-  console.log(`  Questions à vérifier: ${failures.length}/${ALL_QUESTIONS.length}`);
-  console.log(`  Taux de succès RAG: ${Math.round(((ALL_QUESTIONS.length - failures.length) / ALL_QUESTIONS.length) * 100)}%`);
+  console.log(`  Questions à vérifier: ${failures.length}/${ALL_CGI_QUESTIONS.length}`);
+  console.log(`  Taux de succès RAG: ${Math.round(((ALL_CGI_QUESTIONS.length - failures.length) / ALL_CGI_QUESTIONS.length) * 100)}%`);
   console.log('');
   console.log('  Ouvrez le fichier HTML dans votre navigateur pour');
   console.log('  tester manuellement les questions et identifier');

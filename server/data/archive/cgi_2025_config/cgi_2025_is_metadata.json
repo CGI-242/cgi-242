@@ -1,0 +1,338 @@
+{
+  "metadata_version": "2.0",
+  "source": {
+    "document": "Code Général des Impôts",
+    "pays": "République du Congo",
+    "edition": "2025",
+    "tome": 1,
+    "partie": 1,
+    "livre": 1,
+    "chapitre": 3,
+    "chapitre_titre": "Impôt sur les bénéfices des sociétés"
+  },
+  "index": {
+    "chapitre_titre": "Impôt sur les bénéfices des sociétés (IS)",
+    "sections": [
+      {
+        "section": 1,
+        "titre": "Généralités",
+        "articles": ["Art. 106"],
+        "themes": ["principe IS", "définition IS"]
+      },
+      {
+        "section": 2,
+        "titre": "Champ d'application",
+        "sous_sections": [
+          {
+            "sous_section": 1,
+            "titre": "Personnes imposables",
+            "articles": ["Art. 107"],
+            "themes": ["personnes imposables", "sociétés de capitaux", "option IS", "SA", "SARL"]
+          },
+          {
+            "sous_section": 2,
+            "titre": "Exonérations",
+            "articles": ["Art. 107-A"],
+            "themes": ["exonérations IS", "coopératives", "GIE", "BEAC", "collectivités locales"]
+          },
+          {
+            "sous_section": 3,
+            "titre": "Territorialité",
+            "articles": ["Art. 108"],
+            "themes": ["territorialité", "établissement stable", "cycle commercial"]
+          }
+        ]
+      },
+      {
+        "section": 3,
+        "titre": "Détermination du bénéfice imposable",
+        "sous_sections": [
+          {
+            "sous_section": 1,
+            "titre": "Définition",
+            "articles": ["Art. 109", "Art. 109-A", "Art. 109-B", "Art. 109-C"],
+            "themes": ["bénéfice imposable", "bénéfice net", "actif net", "charges déductibles", "acte anormal de gestion", "microfinance"]
+          },
+          {
+            "sous_section": 2,
+            "titre": "Les frais généraux",
+            "paragraphes": [
+              {
+                "paragraphe": "PA",
+                "titre": "Charges de personnel",
+                "articles": ["Art. 110", "Art. 110-A", "Art. 110-B", "Art. 110-C", "Art. 110-D", "Art. 110-E", "Art. 110-F", "Art. 110-G"],
+                "themes": ["rémunérations", "salariés", "gérants majoritaires", "SARL", "cotisations retraite", "frais de transport"]
+              },
+              {
+                "paragraphe": "PB",
+                "titre": "Rémunérations versées à l'étranger",
+                "articles": ["Art. 111", "Art. 111-A", "Art. 111-A bis", "Art. 111-B"],
+                "themes": ["frais de siège", "20%", "2% BTP", "redevances", "brevets", "commissions", "5%"]
+              }
+            ]
+          },
+          {
+            "sous_section": 3,
+            "titre": "Autres frais et charges",
+            "articles": ["Art. 112", "Art. 112-A", "Art. 112-B", "Art. 112-C", "Art. 112-D", "Art. 112-E", "Art. 112-F", "Art. 112-G"],
+            "themes": ["locations", "crédit-bail", "impôts déductibles", "primes d'assurance", "frais financiers", "intérêts associés", "BEAC"]
+          },
+          {
+            "sous_section": 4,
+            "titre": "Charges non déductibles",
+            "articles": ["Art. 113", "Art. 113-A", "Art. 113-B", "Art. 113-C", "Art. 113 bis"],
+            "themes": ["dons", "libéralités", "0,5‰", "0,5%", "500.000 FCFA", "SFEC", "dépenses somptuaires", "amendes", "Covid-19"]
+          },
+          {
+            "sous_section": 5,
+            "titre": "Les amortissements",
+            "articles": ["Art. 114", "Art. 114-A", "Art. 114-B", "Art. 114-C", "Art. 114-D", "Art. 114-E", "Art. 114-F", "Art. 114-G", "Art. 114-H", "Art. 114-I", "Art. 114-J", "Art. 114-J bis"],
+            "themes": ["amortissements", "taux", "crédit-bail", "amortissement accéléré", "40%", "400 millions", "véhicules tourisme", "40 millions", "500.000 FCFA", "SFEC"]
+          },
+          {
+            "sous_section": 6,
+            "titre": "Les provisions",
+            "articles": ["Art. 115", "Art. 115-A", "Art. 115-B", "Art. 115-C", "Art. 115-D", "Art. 115-E", "Art. 115-F"],
+            "themes": ["provisions", "créances douteuses", "COBAC", "titres", "congés payés"]
+          },
+          {
+            "sous_section": 7,
+            "titre": "Les produits taxables",
+            "articles": ["Art. 116", "Art. 116-A", "Art. 116-B", "Art. 116-C"],
+            "themes": ["produits imposables", "ventes", "cessions d'actif", "dégrèvements", "écarts de conversion"]
+          },
+          {
+            "sous_section": 8,
+            "titre": "Règles d'évaluation des stocks et des travaux",
+            "articles": ["Art. 117", "Art. 117-A"],
+            "themes": ["stocks", "PEPS", "FIFO", "coût moyen pondéré", "travaux"]
+          },
+          {
+            "sous_section": 9,
+            "titre": "Régime des plus-values ou moins-values",
+            "articles": ["Art. 118", "Art. 118-A", "Art. 118-B", "Art. 118-C", "Art. 118-D", "Art. 118-E", "Art. 118-F"],
+            "themes": ["plus-values", "réinvestissement", "3 ans", "fusions", "scissions", "cessation d'activité", "sociétés pétrolières", "10%"]
+          },
+          {
+            "sous_section": 10,
+            "titre": "Report déficitaire",
+            "articles": ["Art. 119"],
+            "themes": ["déficits reportables", "3 ans"]
+          },
+          {
+            "sous_section": 11,
+            "titre": "Prix de transferts",
+            "articles": ["Art. 120", "Art. 120-A", "Art. 120-B", "Art. 120-C", "Art. 120-D", "Art. 120-E", "Art. 120-F", "Art. 120-G", "Art. 120-H", "Art. 120-I"],
+            "themes": ["prix de transfert", "documentation", "500 millions", "OCDE", "APP", "méthodes", "déclaration pays par pays"]
+          }
+        ]
+      },
+      {
+        "section": 4,
+        "titre": "Modalités d'imposition",
+        "sous_sections": [
+          {
+            "sous_section": 1,
+            "titre": "Période d'imposition",
+            "articles": ["Art. 121"],
+            "themes": ["exercice comptable", "12 mois", "premier bilan"]
+          },
+          {
+            "sous_section": 2,
+            "titre": "Calcul de l'impôt",
+            "articles": ["Art. 122", "Art. 122-A", "Art. 122-B"],
+            "themes": ["taux IS 30%", "taux réduits", "25%", "28%", "33%", "IRVM", "imputation"]
+          },
+          {
+            "sous_section": 3,
+            "titre": "Établissement de l'impôt",
+            "articles": ["Art. 123"],
+            "themes": ["établissement IS", "BICA", "dissolution", "fusion"]
+          },
+          {
+            "sous_section": 4,
+            "titre": "Obligations des personnes morales",
+            "articles": ["Art. 124", "Art. 124-A", "Art. 124-B", "Art. 124-C"],
+            "themes": ["déclaration d'existence", "déclaration résultats", "acomptes IS", "cessation d'activités"]
+          }
+        ]
+      },
+      {
+        "section": 5,
+        "titre": "Régimes particuliers",
+        "sous_sections": [
+          {
+            "sous_section": 1,
+            "titre": "Régime des sociétés nouvelles",
+            "articles": ["Art. 125"],
+            "themes": ["abrogé"]
+          },
+          {
+            "sous_section": 2,
+            "titre": "Régime des sociétés mères et des filiales",
+            "articles": ["Art. 126", "Art. 126-A"],
+            "themes": ["sociétés mères", "filiales", "25%", "quote-part 10%", "CEMAC", "subventions", "abandons de créances"]
+          },
+          {
+            "sous_section": 3,
+            "titre": "Régime des succursales",
+            "articles": ["Art. 126-B"],
+            "themes": ["succursales", "agences"]
+          },
+          {
+            "sous_section": "3 bis",
+            "titre": "Régime fiscal des quartiers généraux de sociétés",
+            "articles": ["Art. 126-C-1", "Art. 126-C-2", "Art. 126-C-3", "Art. 126-C-4"],
+            "themes": ["quartiers généraux", "CEMAC", "base forfaitaire", "autorisation préalable"]
+          },
+          {
+            "sous_section": 4,
+            "titre": "Régime fiscal des holdings",
+            "articles": ["Art. 126-D", "Art. 126-D-1", "Art. 126-D-2", "Art. 126-D-3", "Art. 126-D-4", "Art. 126-D-5", "Art. 126-D-6"],
+            "themes": ["holdings", "deux tiers actif", "5 ans", "plus-values", "IRVM réduit"]
+          },
+          {
+            "sous_section": 5,
+            "titre": "Régime d'intégration fiscale des groupes de sociétés",
+            "articles": ["Art. 126-E", "Art. 126-E-1", "Art. 126-E-2", "Art. 126-E-3", "Art. 126-E-4", "Art. 126-E-5", "Art. 126-E-6", "Art. 126-E-7", "Art. 126-E-8", "Art. 126-E-9"],
+            "themes": ["intégration fiscale", "95%", "5 exercices", "résultat d'ensemble", "neutralisation"]
+          },
+          {
+            "sous_section": 6,
+            "titre": "Régime des personnes morales étrangères",
+            "articles": ["Art. 126 bis", "Art. 126 ter", "Art. 126 ter A", "Art. 126 quater B-1", "Art. 126 quater B-2", "Art. 126 quater C-1", "Art. 126 quater C-2", "Art. 126 quater C-3", "Art. 126 quater D", "Art. 126 quater E", "Art. 126 quinquies-1", "Art. 126 sexies", "Art. 126 septies"],
+            "themes": ["personnes morales étrangères", "22%", "sous-traitants pétroliers", "ATE", "quitus fiscal", "5,75%", "70%"]
+          }
+        ]
+      }
+    ],
+    "total_articles": 89
+  },
+  "synonymes_concepts": {
+    "IS": ["impôt sur les sociétés", "impôt sur les bénéfices", "corporate tax"],
+    "établissement stable": ["ES", "succursale", "présence permanente"],
+    "prix de transfert": ["PT", "transfer pricing", "transactions intragroupe"],
+    "régime mère-fille": ["dividendes intragroupe", "participation qualifiée"],
+    "intégration fiscale": ["groupe fiscal", "consolidation fiscale", "résultat d'ensemble"],
+    "holding": ["société de participation", "société portefeuille"],
+    "crédit-bail": ["leasing", "location financière"],
+    "amortissement": ["dotation aux amortissements", "dépréciation"],
+    "provisions": ["dotation aux provisions", "charges à venir"],
+    "déficit reportable": ["report déficitaire", "pertes reportables"],
+    "redevances": ["royalties", "droits d'auteur", "licences"],
+    "sous-traitant pétrolier": ["contractor", "prestataire pétrolier"],
+    "BICA": ["bénéfices industriels et commerciaux artisanaux", "régime réel"]
+  },
+  "valeurs_cles": {
+    "taux": {
+      "taux_is_normal": "30%",
+      "taux_is_microfinance_enseignement": "25%",
+      "taux_is_mines_immobilier": "28%",
+      "taux_is_etrangers": "33%",
+      "quote_part_frais_mere_fille": "10%",
+      "assiette_forfaitaire_etrangers": "22%",
+      "retenue_zone_angola": "5.75%",
+      "retenue_source_generale": "20%",
+      "limite_remunerations_etranger": "20%",
+      "limite_remunerations_btp": "2%",
+      "limite_commissions": "5%",
+      "limite_cotisations_retraite": "15%",
+      "amortissement_accelere": "40%"
+    },
+    "seuils": {
+      "seuil_documentation_pt": "500.000.000 FCFA",
+      "seuil_transactions_pt": "50.000.000 FCFA",
+      "plafond_paiement_especes": "500.000 FCFA",
+      "plafond_amortissement_vehicule": "40.000.000 FCFA",
+      "seuil_amortissement_accelere": "400.000.000 FCFA",
+      "seuil_amortissement_100%": "500.000 FCFA",
+      "participation_mere_fille": "25%",
+      "participation_integration": "95%",
+      "holding_portefeuille": "deux tiers actif",
+      "activite_petrole_derogation": "70%",
+      "quitus_fiscal_ministre": "100.000.000.000 FCFA"
+    },
+    "delais": {
+      "report_deficits": "3 ans",
+      "remploi_plus_values": "3 ans",
+      "conservation_titres_mere_fille": "2 ans",
+      "option_integration": "5 exercices",
+      "declaration_resultats": "4 mois",
+      "declaration_existence": "3 mois / 15 jours",
+      "cessation_activites": "15 jours",
+      "documentation_pt": "6 mois",
+      "app_duree": "3 ans"
+    },
+    "echeances": {
+      "acompte_1": "15 février",
+      "acompte_2": "15 mai",
+      "acompte_3": "15 août",
+      "acompte_4": "15 novembre",
+      "declaration_etrangers": "20 du 2ème mois"
+    },
+    "sanctions": {
+      "amende_documentation_pt": "5.000.000 FCFA",
+      "amende_documentation_pt_majore": "25.000.000 FCFA",
+      "amende_app": "1.000.000 FCFA",
+      "amende_enregistrement_contrat": "1.000.000 FCFA",
+      "amende_declaration_trimestre": "3.000.000 FCFA",
+      "amende_facture_omise": "100.000 FCFA",
+      "amende_report_paiement": "500.000 FCFA",
+      "amende_traduction": "2.000.000 FCFA",
+      "penalite_droits_eludes": "100%",
+      "interet_retard_jour": "1%",
+      "interet_retard_max": "50%"
+    }
+  },
+  "relations_articles": {
+    "renvois_internes": {
+      "Art. 122-A": ["Art. 126 ter"],
+      "Art. 122-B": ["Art. 50-60", "Art. 185 ter"],
+      "Art. 123": ["Art. 82-88", "Art. 98"],
+      "Art. 124-A": ["Art. 31", "Art. 7", "Art. 372"],
+      "Art. 124-B": ["Art. 124-A", "Art. 98"],
+      "Art. 126": ["Art. 185 ter"],
+      "Art. 126-D-4": ["Art. 185 ter"],
+      "Art. 126 ter": ["Art. 107", "Art. 124", "Art. 124-A", "Art. 124-B"],
+      "Art. 126 quater B-1": ["Art. 185 ter A", "Art. 185 ter C"]
+    },
+    "articles_complementaires": {
+      "charges_personnel": ["Art. 110", "Art. 110-A", "Art. 110-B", "Art. 110-C", "Art. 110-D", "Art. 110-E", "Art. 110-F", "Art. 110-G"],
+      "amortissements": ["Art. 114", "Art. 114-A", "Art. 114-B", "Art. 114-C", "Art. 114-D", "Art. 114-E", "Art. 114-F", "Art. 114-G", "Art. 114-H", "Art. 114-I", "Art. 114-J", "Art. 114-J bis"],
+      "provisions": ["Art. 115", "Art. 115-A", "Art. 115-B", "Art. 115-C", "Art. 115-D", "Art. 115-E", "Art. 115-F"],
+      "prix_transfert": ["Art. 120", "Art. 120-A", "Art. 120-B", "Art. 120-C", "Art. 120-D", "Art. 120-E", "Art. 120-F", "Art. 120-G", "Art. 120-H", "Art. 120-I"],
+      "integration_fiscale": ["Art. 126-E", "Art. 126-E-1", "Art. 126-E-2", "Art. 126-E-3", "Art. 126-E-4", "Art. 126-E-5", "Art. 126-E-6", "Art. 126-E-7", "Art. 126-E-8", "Art. 126-E-9"],
+      "personnes_morales_etrangeres": ["Art. 126 ter", "Art. 126 ter A", "Art. 126 quater B-1", "Art. 126 quater B-2", "Art. 126 quater C-1", "Art. 126 quater C-2", "Art. 126 quater C-3", "Art. 126 quater D", "Art. 126 quater E", "Art. 126 quinquies-1", "Art. 126 sexies", "Art. 126 septies"]
+    }
+  },
+  "differences_2025_vs_2026": {
+    "taux_is": {
+      "2025": "30% (normal), 25%/28%/33% (spécifiques)",
+      "2026": "25% (normal), 33% (non-résidents CEMAC)"
+    },
+    "report_deficits": {
+      "2025": "3 ans",
+      "2026": "5 ans"
+    },
+    "seuil_amortissement_accelere": {
+      "2025": "400.000.000 FCFA",
+      "2026": "40.000.000 FCFA"
+    },
+    "plafond_especes": {
+      "2025": "500.000 FCFA",
+      "2026": "200.000 FCFA"
+    },
+    "quote_part_mere_fille_art_87": {
+      "2025": "10% (Art. 126)",
+      "2026": "10% (Art. 87) et 5% (Art. 20)"
+    },
+    "limite_interets": {
+      "2025": "Taux BEAC + 3 points, max 50% capital",
+      "2026": "Taux BEAC + 3 points, max 20% EBE"
+    },
+    "minimum_perception": {
+      "2025": "Non prévu dans ce chapitre",
+      "2026": "1% (2% si 2 déficits consécutifs)"
+    }
+  }
+}

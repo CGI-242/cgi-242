@@ -1,0 +1,119 @@
+{
+  "rag_config": {
+    "version": "2.0",
+    "chapitre": "Chapitre 7 - Plus-values titres non-résidents, BTP, Réassurance",
+    "code": "CGI Congo 2025"
+  },
+  "chunking_strategy": {
+    "method": "semantic_hierarchical",
+    "description": "Découpage par thème (plus-values, BTP, réassurance)",
+    "parameters": {
+      "primary_split": "article",
+      "secondary_split": "alinea",
+      "max_chunk_tokens": 800,
+      "min_chunk_tokens": 100,
+      "overlap_tokens": 50,
+      "preserve_structure": true
+    },
+    "regroupements_recommandes": [
+      {
+        "groupe": "plus_values_titres_non_residents",
+        "articles": ["Art. 185 quater-A", "Art. 185 quater-B", "Art. 185 quater-C"],
+        "raison": "Régime complet plus-values cession titres par non-résidents"
+      },
+      {
+        "groupe": "retenue_btp",
+        "articles": ["Art. 185 quinquies"],
+        "raison": "Retenue sur sous-traitants BTP"
+      },
+      {
+        "groupe": "reassurance",
+        "articles": ["Art. 185 sexies"],
+        "raison": "Retenue sur primes réassurance hors CIMA"
+      }
+    ]
+  },
+  "metadata_enrichment": {
+    "per_chunk_metadata": {
+      "article_id": "identifiant unique",
+      "titre_article": "titre officiel",
+      "section": "section du chapitre",
+      "mots_cles": "liste mots-clés",
+      "valeurs_numeriques": "taux, sanctions",
+      "references_croisees": "articles liés",
+      "theme_principal": "plus_values | btp | reassurance",
+      "type_disposition": "taux | obligation | sanction | solidarité"
+    }
+  },
+  "embedding_optimization": {
+    "model_recommande": "text-embedding-3-large",
+    "dimensions": 1536,
+    "preprocessing": {
+      "normalisation_juridique": true,
+      "expansion_acronymes": {
+        "BTP": "Bâtiments et Travaux Publics",
+        "CIMA": "Conférence Interafricaine des Marchés d'Assurances"
+      },
+      "synonymes": {
+        "plus-values": ["gains en capital", "cession"],
+        "sous-traitants": ["sous-traitance", "bureaux d'études"],
+        "non-résidents": ["étrangers", "domiciliés à l'étranger"]
+      }
+    }
+  },
+  "retrieval_config": {
+    "strategie": "hybrid",
+    "parametres": {
+      "semantic_weight": 0.6,
+      "keyword_weight": 0.4,
+      "top_k": 8,
+      "rerank": true,
+      "rerank_model": "cross-encoder"
+    },
+    "filtres_contextuels": {
+      "par_theme": ["plus_values", "btp", "reassurance"],
+      "par_type_question": {
+        "taux": ["Art. 185 quater-B", "Art. 185 quinquies", "Art. 185 sexies"],
+        "obligations": ["Art. 185 quinquies"],
+        "sanctions": ["Art. 185 quinquies"],
+        "solidarite": ["Art. 185 quater-C"]
+      }
+    }
+  },
+  "query_expansion": {
+    "synonymes_automatiques": true,
+    "mappings_themes": {
+      "cession actions": "plus_values",
+      "vente titres": "plus_values",
+      "construction": "btp",
+      "travaux publics": "btp",
+      "marchés publics": "btp",
+      "assurance": "reassurance"
+    }
+  },
+  "quality_metrics": {
+    "cibles": {
+      "precision_at_5": 0.90,
+      "recall_at_10": 0.95,
+      "mrr": 0.85
+    },
+    "tests_validation": {
+      "fichier": "cgi_2025_plus_values_titres_tests.json",
+      "nombre_questions": 20,
+      "seuil_reussite": 0.90
+    }
+  },
+  "prompt_template": {
+    "system": "Tu es un expert en fiscalité congolaise, spécialiste du CGI 2025. Tu réponds aux questions sur les plus-values de cession de titres par des non-résidents (20%, libératoire), les retenues sur sous-traitants BTP (3%/10%), et les primes de réassurance hors CIMA (20%). Tu cites les articles et les taux applicables.",
+    "context_prefix": "Voici les dispositions pertinentes du CGI Congo 2025 (Chapitre 7) :",
+    "answer_format": {
+      "structure": [
+        "Identification du régime",
+        "Réponse directe",
+        "Article(s) de référence",
+        "Taux et modalités"
+      ],
+      "style": "professionnel_pratique"
+    }
+  }
+}

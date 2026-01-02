@@ -1,0 +1,176 @@
+{
+  "rag_config": {
+    "version": "2.0",
+    "chapitre": "Partie 2 Titre 1 Chapitre 1 - Impôts et taxes obligatoires (Impôts locaux)",
+    "code": "CGI Congo 2025"
+  },
+  "chunking_strategy": {
+    "method": "semantic_hierarchical",
+    "description": "Découpage par impôt local (CFPB, CFPNB, Patente, Taxe régionale, Spectacles)",
+    "parameters": {
+      "primary_split": "article",
+      "secondary_split": "alinea",
+      "max_chunk_tokens": 800,
+      "min_chunk_tokens": 100,
+      "overlap_tokens": 50,
+      "preserve_structure": true
+    },
+    "regroupements_recommandes": [
+      {
+        "groupe": "generalites_impots_locaux",
+        "articles": ["Art. 250"],
+        "raison": "Répartition et liste des impôts locaux"
+      },
+      {
+        "groupe": "cfpb_champ_exemptions",
+        "articles": ["Art. 251", "Art. 252", "Art. 252 bis", "Art. 253", "Art. 254"],
+        "raison": "Champ, redevable et exemptions CFPB"
+      },
+      {
+        "groupe": "cfpb_base_tarifs",
+        "articles": ["Art. 257", "Art. 257 bis", "Art. 258", "Art. 258 bis", "Art. 258 ter", "Art. 260", "Art. 261", "Art. 262"],
+        "raison": "Base, valeur locative, tarifs et calcul CFPB"
+      },
+      {
+        "groupe": "cfpnb_champ_exemptions",
+        "articles": ["Art. 263", "Art. 264", "Art. 265", "Art. 266", "Art. 267", "Art. 268"],
+        "raison": "Champ et exemptions CFPNB"
+      },
+      {
+        "groupe": "cfpnb_base_tarifs",
+        "articles": ["Art. 270", "Art. 270 bis", "Art. 272", "Art. 273", "Art. 274", "Art. 275"],
+        "raison": "Base, valeur cadastrale et tarifs CFPNB"
+      },
+      {
+        "groupe": "patente_champ_exemptions",
+        "articles": ["Art. 277", "Art. 278", "Art. 279"],
+        "raison": "Champ, assiette et exemptions patente"
+      },
+      {
+        "groupe": "patente_entites_titre",
+        "articles": ["Art. 281", "Art. 282", "Art. 285", "Art. 287", "Art. 289", "Art. 290"],
+        "raison": "Entités fiscales, titre de patente, annuité"
+      },
+      {
+        "groupe": "patente_societes_speciales",
+        "articles": ["Art. 294", "Art. 295", "Art. 296"],
+        "raison": "Sociétés étrangères, ambulants, transporteurs"
+      },
+      {
+        "groupe": "patente_matrices_paiement",
+        "articles": ["Art. 301", "Art. 302", "Art. 303", "Art. 304", "Art. 305", "Art. 306", "Art. 307", "Art. 308", "Art. 309", "Art. 310", "Art. 311", "Art. 312"],
+        "raison": "Matrices, titre de perception, paiement"
+      },
+      {
+        "groupe": "patente_tarifs",
+        "articles": ["Art. 314"],
+        "raison": "Barème de la patente"
+      },
+      {
+        "groupe": "taxe_regionale",
+        "articles": ["Art. 321", "Art. 322", "Art. 323", "Art. 324", "Art. 325", "Art. 326", "Art. 327"],
+        "raison": "Taxe régionale complète"
+      },
+      {
+        "groupe": "taxe_spectacles",
+        "articles": ["Art. 331", "Art. 332", "Art. 333", "Art. 334", "Art. 335", "Art. 336", "Art. 337", "Art. 338", "Art. 339", "Art. 340", "Art. 340 bis"],
+        "raison": "Taxe sur les spectacles complète"
+      }
+    ],
+    "articles_abroges_a_exclure": [
+      "Art. 255", "Art. 256", "Art. 259", "Art. 269", "Art. 270 ter", "Art. 271",
+      "Art. 279 bis", "Art. 280", "Art. 283", "Art. 284", "Art. 286", "Art. 288", "Art. 298", "Art. 299", "Art. 300", "Art. 314 bis",
+      "Art. 315", "Art. 316", "Art. 317", "Art. 318", "Art. 319", "Art. 320",
+      "Art. 328", "Art. 329", "Art. 330", "Art. 341"
+    ]
+  },
+  "metadata_enrichment": {
+    "per_chunk_metadata": {
+      "article_id": "identifiant unique",
+      "titre_article": "titre officiel",
+      "section": "section du chapitre",
+      "mots_cles": "liste mots-clés",
+      "valeurs_numeriques": "taux, tarifs, seuils",
+      "references_croisees": "articles liés",
+      "impot": "CFPB | CFPNB | patente | taxe_regionale | spectacles",
+      "type_disposition": "champ | exemption | base | taux | declaration | sanction"
+    }
+  },
+  "embedding_optimization": {
+    "model_recommande": "text-embedding-3-large",
+    "dimensions": 1536,
+    "preprocessing": {
+      "normalisation_juridique": true,
+      "expansion_acronymes": {
+        "CFPB": "Contribution Foncière des Propriétés Bâties",
+        "CFPNB": "Contribution Foncière des Propriétés Non Bâties",
+        "NIU": "Numéro d'Identification Unique",
+        "IGF": "Impôt Global Forfaitaire",
+        "ATE": "Autorisation Temporaire d'Exercice",
+        "CA": "Chiffre d'Affaires"
+      },
+      "synonymes": {
+        "patente": ["contribution des patentes", "droit de patente"],
+        "impôt foncier": ["CFPB", "CFPNB", "contribution foncière"],
+        "taxe spectacles": ["taxe divertissements", "taxe jeux"]
+      }
+    }
+  },
+  "retrieval_config": {
+    "strategie": "hybrid",
+    "parametres": {
+      "semantic_weight": 0.6,
+      "keyword_weight": 0.4,
+      "top_k": 12,
+      "rerank": true,
+      "rerank_model": "cross-encoder"
+    },
+    "filtres_contextuels": {
+      "par_impot": ["CFPB", "CFPNB", "patente", "taxe_regionale", "spectacles"],
+      "par_type_question": {
+        "taux_tarifs": ["Art. 258 ter", "Art. 262", "Art. 270 bis", "Art. 272", "Art. 275", "Art. 314", "Art. 326", "Art. 333"],
+        "exemptions": ["Art. 253", "Art. 254", "Art. 265", "Art. 266", "Art. 279", "Art. 323", "Art. 332"],
+        "declarations": ["Art. 267", "Art. 276", "Art. 312", "Art. 340"],
+        "sanctions": ["Art. 293", "Art. 297", "Art. 312", "Art. 313"]
+      }
+    }
+  },
+  "query_expansion": {
+    "synonymes_automatiques": true,
+    "mappings_impots": {
+      "foncier bâti": "CFPB",
+      "foncier non bâti": "CFPNB",
+      "terrain": "CFPNB",
+      "immeuble": "CFPB",
+      "commerce": "patente",
+      "activité": "patente",
+      "bar": "spectacles",
+      "dancing": "spectacles"
+    }
+  },
+  "quality_metrics": {
+    "cibles": {
+      "precision_at_5": 0.90,
+      "recall_at_10": 0.95,
+      "mrr": 0.85
+    },
+    "tests_validation": {
+      "fichier": "cgi_2025_impots_locaux_tests.json",
+      "nombre_questions": 60,
+      "seuil_reussite": 0.90
+    }
+  },
+  "prompt_template": {
+    "system": "Tu es un expert en fiscalité locale congolaise, spécialiste du CGI 2025. Tu réponds aux questions sur les impôts locaux : CFPB (déduction 75%, zones tarifaires, taux max 20%), CFPNB (base 50%, taux max 40%), Patente (barème progressif par CA), Taxe régionale (18 ans, précompte employeur), Taxe spectacles (15%/30%, bars-dancings). Tu cites les articles et donnes les valeurs chiffrées.",
+    "context_prefix": "Voici les dispositions pertinentes du CGI Congo 2025 (Impôts locaux - Partie 2 Titre 1 Chapitre 1) :",
+    "answer_format": {
+      "structure": [
+        "Identification de l'impôt concerné",
+        "Réponse directe à la question",
+        "Article(s) de référence",
+        "Taux, tarifs ou délais applicables"
+      ],
+      "style": "professionnel_pratique"
+    }
+  }
+}

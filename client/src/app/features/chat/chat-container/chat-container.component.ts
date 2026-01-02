@@ -60,6 +60,18 @@ import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
                     <p class="text-xs text-secondary-500">Posez votre question sur le CGI</p>
                   }
                 </div>
+                <!-- Bouton réinitialiser -->
+                @if (messages().length > 0) {
+                  <button
+                    (click)="onResetConversation()"
+                    class="flex items-center gap-2 px-3 py-1.5 text-sm text-secondary-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                    title="Réinitialiser la conversation">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                    </svg>
+                    <span>Réinitialiser</span>
+                  </button>
+                }
               </div>
 
               <!-- Messages -->
@@ -162,6 +174,19 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked {
   onNewConversation(): void {
     this.chatService.clearCurrentConversation();
     this.messages.set([]);
+  }
+
+  onResetConversation(): void {
+    const convId = this.currentConversation()?.id;
+    if (convId) {
+      this.chatService.deleteConversation(convId).subscribe(() => {
+        this.chatService.clearCurrentConversation();
+        this.messages.set([]);
+        this.chatService.loadConversations().subscribe();
+      });
+    } else {
+      this.messages.set([]);
+    }
   }
 
   onSendMessage(content: string): void {

@@ -1,0 +1,169 @@
+{
+  "rag_config": {
+    "version": "2.0",
+    "chapitre": "IS - Impôt sur les sociétés",
+    "code": "CGI Congo 2026"
+  },
+  "chunking_strategy": {
+    "method": "semantic_hierarchical",
+    "description": "Découpage par unité sémantique juridique avec hiérarchie préservée",
+    "parameters": {
+      "primary_split": "article",
+      "secondary_split": "alinea_ou_point",
+      "max_chunk_tokens": 800,
+      "min_chunk_tokens": 100,
+      "overlap_tokens": 50,
+      "preserve_structure": true
+    },
+    "regroupements_recommandes": [
+      {
+        "groupe": "charges_personnel",
+        "articles": ["Art. 27", "Art. 28", "Art. 29", "Art. 30", "Art. 31", "Art. 32", "Art. 33", "Art. 34", "Art. 35", "Art. 36", "Art. 37"],
+        "raison": "Thématique cohérente - charges de personnel et dirigeants"
+      },
+      {
+        "groupe": "amortissements",
+        "articles": ["Art. 51", "Art. 52", "Art. 53", "Art. 54", "Art. 55", "Art. 56", "Art. 57", "Art. 58", "Art. 59", "Art. 60", "Art. 61"],
+        "raison": "Régime complet des amortissements"
+      },
+      {
+        "groupe": "provisions",
+        "articles": ["Art. 63", "Art. 64", "Art. 65", "Art. 66", "Art. 67", "Art. 68", "Art. 69", "Art. 70", "Art. 71", "Art. 72", "Art. 73", "Art. 74"],
+        "raison": "Régime complet des provisions"
+      },
+      {
+        "groupe": "prix_transfert",
+        "articles": ["Art. 77", "Art. 78", "Art. 79", "Art. 80", "Art. 81", "Art. 82", "Art. 83", "Art. 84", "Art. 85"],
+        "raison": "Dispositif prix de transfert complet"
+      },
+      {
+        "groupe": "integration_fiscale",
+        "articles": ["Art. 91", "Art. 91A", "Art. 91B", "Art. 91C", "Art. 91D", "Art. 91E", "Art. 91F", "Art. 91G", "Art. 91H", "Art. 91I"],
+        "raison": "Régime intégration fiscale complet"
+      },
+      {
+        "groupe": "personnes_morales_etrangeres",
+        "articles": ["Art. 92", "Art. 92A", "Art. 92B", "Art. 92C", "Art. 92D", "Art. 92E", "Art. 92F", "Art. 92G", "Art. 92H", "Art. 92I", "Art. 92J", "Art. 92K"],
+        "raison": "Régime personnes morales étrangères complet"
+      }
+    ]
+  },
+  "metadata_enrichment": {
+    "per_chunk_metadata": {
+      "article_id": "identifiant unique de l'article",
+      "titre_article": "titre officiel de l'article",
+      "section": "section du chapitre",
+      "sous_section": "sous-section le cas échéant",
+      "paragraphe": "paragraphe le cas échéant",
+      "mots_cles": "liste des mots-clés extraits",
+      "valeurs_numeriques": "taux, seuils, délais extraits",
+      "references_croisees": "articles liés",
+      "theme_principal": "thème principal",
+      "type_disposition": "principe | condition | sanction | exonération | obligation"
+    }
+  },
+  "embedding_optimization": {
+    "model_recommande": "text-embedding-3-large",
+    "dimensions": 1536,
+    "preprocessing": {
+      "normalisation_juridique": true,
+      "expansion_acronymes": {
+        "IS": "Impôt sur les sociétés",
+        "SA": "Société anonyme",
+        "SAS": "Société par actions simplifiée",
+        "SARL": "Société à responsabilité limitée",
+        "SNC": "Société en nom collectif",
+        "SCS": "Société en commandite simple",
+        "GIE": "Groupement d'intérêt économique",
+        "BEAC": "Banque des États de l'Afrique Centrale",
+        "CEMAC": "Communauté Économique et Monétaire de l'Afrique Centrale",
+        "OHADA": "Organisation pour l'Harmonisation en Afrique du Droit des Affaires",
+        "COBAC": "Commission Bancaire de l'Afrique Centrale",
+        "SFEC": "Système de Facturation Électronique Certifié",
+        "EBE": "Excédent Brut d'Exploitation",
+        "APP": "Accord Préalable de Prix",
+        "PT": "Prix de Transfert",
+        "IRVM": "Impôt sur le Revenu des Valeurs Mobilières",
+        "IRPP": "Impôt sur le Revenu des Personnes Physiques",
+        "HAO": "Hors Activité Ordinaire",
+        "CA": "Chiffre d'affaires",
+        "HT": "Hors taxes",
+        "ATE": "Autorisation Temporaire d'Exercer",
+        "DGID": "Direction Générale des Impôts et des Domaines",
+        "LOA": "Location avec Option d'Achat",
+        "CUP": "Comparable Uncontrolled Price",
+        "MTMN": "Méthode Transactionnelle de la Marge Nette",
+        "BTP": "Bâtiments et Travaux Publics",
+        "R&D": "Recherche et Développement"
+      },
+      "normalisation_montants": {
+        "FCFA": "francs CFA",
+        "millions": "000.000",
+        "milliards": "000.000.000"
+      }
+    }
+  },
+  "retrieval_config": {
+    "strategie": "hybrid",
+    "parametres": {
+      "semantic_weight": 0.6,
+      "keyword_weight": 0.4,
+      "top_k": 10,
+      "rerank": true,
+      "rerank_model": "cross-encoder"
+    },
+    "filtres_contextuels": {
+      "par_section": true,
+      "par_theme": true,
+      "par_type_question": {
+        "taux": ["Art. 86A", "Art. 86B", "Art. 86C", "Art. 52"],
+        "delais": ["Art. 75", "Art. 17 A", "Art. 3A", "Art. 91"],
+        "conditions": ["Art. 26", "Art. 20", "Art. 90", "Art. 91"],
+        "sanctions": ["Art. 81", "Art. 92E", "Art. 92I"],
+        "exonerations": ["Art. 3", "Art. 21", "Art. 25"]
+      }
+    }
+  },
+  "query_expansion": {
+    "synonymes_automatiques": true,
+    "variations_orthographiques": {
+      "impôt": ["impot", "taxe"],
+      "société": ["societe", "entreprise", "compagnie"],
+      "bénéfice": ["benefice", "profit", "résultat"],
+      "déductible": ["deductible", "déduction"],
+      "amortissement": ["depreciation", "dotation"]
+    },
+    "questions_types": {
+      "taux_patterns": ["quel est le taux", "à quel taux", "taux de", "pourcentage"],
+      "delai_patterns": ["dans quel délai", "combien de temps", "durée", "date limite"],
+      "condition_patterns": ["quelles sont les conditions", "comment", "peut-on", "est-il possible"],
+      "sanction_patterns": ["quelle sanction", "amende", "pénalité", "en cas de non-respect"]
+    }
+  },
+  "quality_metrics": {
+    "cibles": {
+      "precision_at_5": 0.90,
+      "recall_at_10": 0.95,
+      "mrr": 0.85,
+      "ndcg_at_10": 0.90
+    },
+    "tests_validation": {
+      "fichier": "cgi_2026_is_tests.json",
+      "nombre_questions": 50,
+      "seuil_reussite": 0.90
+    }
+  },
+  "prompt_template": {
+    "system": "Tu es un expert en fiscalité congolaise, spécialiste du Code Général des Impôts 2026. Tu réponds aux questions en citant précisément les articles de loi pertinents. Tu fournis des réponses structurées, précises et pédagogiques.",
+    "context_prefix": "Voici les dispositions pertinentes du CGI Congo 2026 :",
+    "answer_format": {
+      "structure": [
+        "Réponse directe à la question",
+        "Article(s) de référence avec citation",
+        "Précisions complémentaires si nécessaire",
+        "Valeurs chiffrées (taux, seuils, délais)"
+      ],
+      "style": "professionnel_pedagogique"
+    }
+  }
+}

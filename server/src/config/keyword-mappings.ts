@@ -160,6 +160,23 @@ export const KEYWORD_ARTICLE_MAP: Record<string, string[]> = {
   'professions non commerciales': ['Art. 42', 'Art. 1'],
   'droits d\'auteur': ['Art. 42'],
   'honoraires': ['Art. 42'],
+
+  // ========== ART. 49 - ARTISTES NON-RÉSIDENTS ==========
+  'artiste étranger': ['Art. 49', 'Art. 185 ter-A'],
+  'artiste non résident': ['Art. 49', 'Art. 185 ter-A'],
+  'artiste non-résident': ['Art. 49', 'Art. 185 ter-A'],
+  'artiste non domicilié': ['Art. 49', 'Art. 185 ter-A'],
+  'musicien étranger': ['Art. 49', 'Art. 185 ter-A'],
+  'musicien non résident': ['Art. 49', 'Art. 185 ter-A'],
+  'concert artiste étranger': ['Art. 49', 'Art. 185 ter-A'],
+  'spectacle artiste étranger': ['Art. 49', 'Art. 185 ter-A'],
+  'représentation artistique': ['Art. 49'],
+  'cachets artistes': ['Art. 49', 'Art. 96'],
+  'artiste organise concert': ['Art. 49'],
+  'artiste organise spectacle': ['Art. 49'],
+  'représentant légal artiste': ['Art. 49'],
+  'music-hall': ['Art. 49'],
+  'théâtre artiste': ['Art. 49'],
   
   // ========== ART. 50-62 - CAPITAUX MOBILIERS ==========
   'revenus des capitaux mobiliers': ['Art. 50', 'Art. 1'],
@@ -322,12 +339,27 @@ export const KEYWORD_ARTICLE_MAP: Record<string, string[]> = {
   'abattement école': ['Art. 34 ter'],
   'établissement enseignement': ['Art. 34 ter'],
 
-  // Art. 61 - Bons de caisse
-  'bons de caisse': ['Art. 61'],
-  'précompte 15%': ['Art. 61'],
+  // ========== ART. 61 - BONS DE CAISSE PRECOMPTE LIBERATOIRE (PRIORITE HAUTE) ==========
+  // Ces mappings doivent primer sur Art. 76 (obligation déclaration générale)
+  'bons caisse précompte 15': ['Art. 61'],
+  'bons caisse précompte': ['Art. 61', 'Art. 171 novies'],
+  'bons caisse declaration': ['Art. 61'],
+  'bons caisse irpp': ['Art. 61'],
+  'bons de caisse précompte': ['Art. 61'],
+  'bons de caisse 15%': ['Art. 61'],
+  'bons de caisse declaration irpp': ['Art. 61'],
+  'précompte libératoire bons': ['Art. 61'],
   'précompte libératoire': ['Art. 61'],
+  'précompte 15%': ['Art. 61'],
+  'revenus bons caisse déclaration': ['Art. 61'],
+  'bons nominatifs précompte': ['Art. 61'],
+  'bons caisse doit declarer': ['Art. 61'],
+  'declarer bons caisse': ['Art. 61'],
+  'bons de caisse': ['Art. 61'],
+  'caractère libératoire': ['Art. 61'],
+  'impôt libératoire bons': ['Art. 61'],
 
-  // Art. 76 - Gérant SARL
+  // Art. 76 - Gérant SARL (NE PAS appliquer si bons de caisse + précompte)
   'gérant majoritaire': ['Art. 76'],
   'rémunération gérant': ['Art. 76'],
   'gérant sarl': ['Art. 76'],
