@@ -1,0 +1,98 @@
+{
+  "version": "2026",
+  "lastUpdated": "2026-01-01",
+  "source": "Code Général des Impôts - République du Congo",
+
+  "cnss": {
+    "taux": 0.04,
+    "plafondMensuel": 1200000,
+    "article": "Article 40 CGI",
+    "description": "Cotisation CNSS salariale: 4% plafonné à 1 200 000 FCFA/mois"
+  },
+
+  "fraisProfessionnels": {
+    "taux": 0.20,
+    "article": "Article 41 CGI",
+    "description": "Déduction forfaitaire de 20% pour frais professionnels"
+  },
+
+  "quotientFamilial": {
+    "maxParts": 6.5,
+    "article": "Article 91 CGI",
+    "regles": {
+      "celibataire": { "base": 1, "premierEnfant": 1, "enfantsSuivants": 0.5 },
+      "marie": { "base": 2, "parEnfant": 0.5 },
+      "divorce": { "base": 1, "premierEnfant": 1, "enfantsSuivants": 0.5 },
+      "veuf": { "base": 1, "baseAvecEnfants": 2, "parEnfant": 0.5 }
+    }
+  },
+
+  "smig": {
+    "mensuel": 70400,
+    "annuel": 844800,
+    "source": "Décret n°2024-2762 du 20 novembre 2024",
+    "entreeEnVigueur": "2025-01-01"
+  },
+
+  "irpp": {
+    "article": "Article 95 CGI",
+    "description": "Impôt sur le Revenu des Personnes Physiques - Barème progressif",
+    "baremes": [
+      { "min": 0, "max": 464000, "taux": 0.01, "libelle": "0 - 464 000 FCFA (1%)" },
+      { "min": 464000, "max": 1000000, "taux": 0.10, "libelle": "464 000 - 1 000 000 FCFA (10%)" },
+      { "min": 1000000, "max": 3000000, "taux": 0.25, "libelle": "1 000 000 - 3 000 000 FCFA (25%)" },
+      { "min": 3000000, "max": null, "taux": 0.40, "libelle": "> 3 000 000 FCFA (40%)" }
+    ]
+  },
+
+  "its": {
+    "article": "Article 116 CGI 2026",
+    "description": "Impôt sur les Traitements et Salaires - Nouveau barème 2026",
+    "minimumAnnuel": 1200,
+    "baremes": [
+      { "min": 0, "max": 615000, "taux": 0, "forfait": 1200, "libelle": "0 - 615 000 FCFA (forfait 1 200 FCFA)" },
+      { "min": 615000, "max": 1500000, "taux": 0.10, "libelle": "615 000 - 1 500 000 FCFA (10%)" },
+      { "min": 1500000, "max": 3500000, "taux": 0.15, "libelle": "1 500 000 - 3 500 000 FCFA (15%)" },
+      { "min": 3500000, "max": 5000000, "taux": 0.20, "libelle": "3 500 000 - 5 000 000 FCFA (20%)" },
+      { "min": 5000000, "max": null, "taux": 0.30, "libelle": "> 5 000 000 FCFA (30%)" }
+    ],
+    "chargeFamille": {
+      "appliqueParDefaut": false,
+      "exceptionDGI2026": true,
+      "description": "Exception autorisée par la DGI en 2026"
+    }
+  },
+
+  "is": {
+    "articles": ["Article 86A CGI", "Article 86B CGI"],
+    "description": "Impôt sur les Sociétés",
+    "tauxGeneral": 0.25,
+    "tauxEtranger": 0.33,
+    "minimumPerception": {
+      "tauxNormal": 0.01,
+      "tauxDeficitConsecutif": 0.02,
+      "deductibiliteNormal": 1.0,
+      "deductibiliteDeficit": 0.5
+    },
+    "acomptes": {
+      "nombre": 4,
+      "echeances": ["15 mars", "15 juin", "15 septembre", "15 décembre"]
+    }
+  },
+
+  "historique": {
+    "2025": {
+      "its": "Ancien barème IRPP appliqué",
+      "smig": 70400
+    },
+    "2026": {
+      "its": "Nouveau barème ITS Article 116",
+      "smig": 70400,
+      "changements": [
+        "Nouveau barème ITS avec tranches élargies",
+        "Forfait 1 200 FCFA pour première tranche",
+        "Taux maximum réduit à 30%"
+      ]
+    }
+  }
+}

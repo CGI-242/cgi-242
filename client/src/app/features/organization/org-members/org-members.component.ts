@@ -1,4 +1,5 @@
-import { Component, inject, signal, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { OrganizationService, Member, Invitation } from '@core/services/organization.service';
@@ -8,6 +9,7 @@ import { LoadingSpinnerComponent } from '@shared/components/loading-spinner/load
 @Component({
   selector: 'app-org-members',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, ReactiveFormsModule, LoadingSpinnerComponent],
   template: `
     <div class="space-y-6">
@@ -118,6 +120,7 @@ export class OrgMembersComponent implements OnInit {
   private fb = inject(FormBuilder);
   private orgService = inject(OrganizationService);
   private tenantService = inject(TenantService);
+  private destroyRef = inject(DestroyRef);
 
   members = signal<Member[]>([]);
   invitations = signal<Invitation[]>([]);
@@ -139,15 +142,19 @@ export class OrgMembersComponent implements OnInit {
     const orgId = this.tenantService.organizationId();
     if (!orgId) return;
 
-    this.orgService.getMembers(orgId).subscribe((members) => {
-      this.members.set(members);
-      this.isLoading.set(false);
-    });
+    this.orgService.getMembers(orgId)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((members) => {
+        this.members.set(members);
+        this.isLoading.set(false);
+      });
 
     if (this.tenantService.hasMinimumRole('ADMIN')) {
-      this.orgService.getPendingInvitations(orgId).subscribe((invitations) => {
-        this.invitations.set(invitations);
-      });
+      this.orgService.getPendingInvitations(orgId)
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe((invitations) => {
+          this.invitations.set(invitations);
+        });
     }
   }
 

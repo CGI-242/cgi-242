@@ -1,4 +1,5 @@
-import { Component, inject, signal, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { OrganizationService, Organization } from '@core/services/organization.service';
@@ -10,6 +11,7 @@ import { LoadingSpinnerComponent } from '@shared/components/loading-spinner/load
 @Component({
   selector: 'app-org-settings',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
     RouterLink,
@@ -87,6 +89,7 @@ import { LoadingSpinnerComponent } from '@shared/components/loading-spinner/load
 })
 export class OrgSettingsComponent implements OnInit {
   private orgService = inject(OrganizationService);
+  private destroyRef = inject(DestroyRef);
   tenantService = inject(TenantService);
 
   organization = signal<Organization | null>(null);
@@ -95,10 +98,12 @@ export class OrgSettingsComponent implements OnInit {
   ngOnInit(): void {
     const orgId = this.tenantService.organizationId();
     if (orgId) {
-      this.orgService.getOrganization(orgId).subscribe((org) => {
-        this.organization.set(org);
-        this.isLoading.set(false);
-      });
+      this.orgService.getOrganization(orgId)
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe((org) => {
+          this.organization.set(org);
+          this.isLoading.set(false);
+        });
     }
   }
 

@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { FiscalCommonService } from './fiscal-common.service';
 
 // Types pour le calcul IS - Art. 86A et 86B CGI 2026
 export interface IsInput {
@@ -71,11 +72,14 @@ const ECHEANCES_ACOMPTES = [
 
 @Injectable({ providedIn: 'root' })
 export class IsService {
+  private readonly fiscalCommon = inject(FiscalCommonService);
 
   /**
    * Calcule l'IS et le minimum de perception selon Art. 86B CGI 2026
+   * Utilise les paramètres du FiscalCommonService
    */
   calculerIS(input: IsInput): IsResult {
+    const params = this.fiscalCommon.getParams();
     const version = input.version || '2026';
 
     // === BASE MINIMUM DE PERCEPTION (Art. 86B al. 2) ===
@@ -143,9 +147,9 @@ export class IsService {
   }
 
   /**
-   * Formate un montant en FCFA
+   * Formate un montant en FCFA - délègue au service commun
    */
   formatMontant(montant: number): string {
-    return new Intl.NumberFormat('fr-FR').format(montant) + ' FCFA';
+    return this.fiscalCommon.formatMontant(montant);
   }
 }

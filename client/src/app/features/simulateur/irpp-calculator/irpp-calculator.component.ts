@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IrppService, IrppInput, IrppResult } from '../services/irpp.service';
 import { IrppFormComponent } from './irpp-form.component';
@@ -7,6 +7,7 @@ import { IrppBaremeComponent } from './irpp-bareme.component';
 @Component({
   selector: 'app-irpp-calculator',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, IrppFormComponent, IrppBaremeComponent],
   template: `
     <div class="flex gap-6">

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AudioButtonComponent } from '@shared/components/audio-button/audio-button.component';
 
@@ -18,6 +18,7 @@ interface Message {
 @Component({
   selector: 'app-chat-message',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, AudioButtonComponent],
   template: `
     <div class="flex gap-3 chat-message" [class.flex-row-reverse]="message.role === 'USER'">

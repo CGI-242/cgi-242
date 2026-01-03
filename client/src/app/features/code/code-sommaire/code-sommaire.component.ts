@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, EventEmitter, Input, Output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CGI_SOMMAIRE_2025, CGI_SOMMAIRE_2026, Tome, Chapitre, Section, Partie, Annexe, Livre, SousSection, SousSectionSommaire } from './cgi-structure.data';
 
@@ -12,6 +12,7 @@ export interface SommaireSelection {
 @Component({
   selector: 'app-code-sommaire',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule],
   template: `
     <div class="divide-y divide-secondary-100">

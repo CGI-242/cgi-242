@@ -264,6 +264,7 @@ model Conversation {
 
   @@index([creatorId])
   @@index([organizationId])
+  @@index([organizationId, updatedAt(sort: Desc)]) // Optimisation: liste conversations par org triées
   @@map("conversations")
 }
 
@@ -310,6 +311,7 @@ model Message {
   createdAt DateTime @default(now())
 
   @@index([conversationId])
+  @@index([conversationId, createdAt]) // Optimisation: messages triés par date
   @@map("messages")
 }
 

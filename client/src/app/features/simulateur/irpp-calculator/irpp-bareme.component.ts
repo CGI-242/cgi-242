@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IrppResult, TrancheDetail } from '../services/irpp.service';
 
 @Component({
   selector: 'app-irpp-bareme',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule],
   template: `
     <div class="bg-white rounded-xl shadow-sm border border-secondary-200 p-8 h-full">

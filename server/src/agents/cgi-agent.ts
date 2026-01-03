@@ -5,6 +5,7 @@ import { hybridSearch } from '../services/rag/hybrid-search.service.js';
 import Anthropic from '@anthropic-ai/sdk';
 import { config } from '../config/environment.js';
 import { createLogger } from '../utils/logger.js';
+import { createAnthropicCall } from '../utils/api-resilience.js';
 
 const logger = createLogger('CGIAgent');
 
@@ -214,14 +215,17 @@ Tu DOIS :
         { role: 'user', content: query },
       ];
 
-      // 6. Appeler Claude Haiku avec température 0
-      const completion = await anthropic.messages.create({
-        model: 'claude-3-haiku-20240307',
-        max_tokens: 2000,
-        system: systemPromptWithContext,
-        messages,
-        temperature: 0,
-      });
+      // 6. Appeler Claude Haiku avec timeout (30s) et retry (3 tentatives)
+      const completion = await createAnthropicCall(
+        () => anthropic.messages.create({
+          model: 'claude-3-haiku-20240307',
+          max_tokens: 2000,
+          system: systemPromptWithContext,
+          messages,
+          temperature: 0,
+        }),
+        30000
+      );
 
       const answer =
         completion.content[0]?.type === 'text' ? completion.content[0].text : '';

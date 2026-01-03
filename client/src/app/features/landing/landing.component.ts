@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
@@ -6,6 +6,7 @@ import { AuthService } from '@core/services/auth.service';
 @Component({
   selector: 'app-landing',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, RouterLink],
   template: `
     <div class="min-h-screen bg-gradient-to-b from-primary-50 to-white">

@@ -1,4 +1,4 @@
-import { Component, inject, signal, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { OrganizationService } from '@core/services/organization.service';
@@ -8,6 +8,7 @@ import { LoadingSpinnerComponent } from '@shared/components/loading-spinner/load
 @Component({
   selector: 'app-accept-invitation',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, RouterLink, LoadingSpinnerComponent],
   template: `
     <div class="min-h-screen flex items-center justify-center bg-secondary-50 py-12 px-4">

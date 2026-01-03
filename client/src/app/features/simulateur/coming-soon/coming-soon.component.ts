@@ -1,10 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-coming-soon',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule],
   template: `
     <div class="bg-white rounded-xl shadow-sm border border-secondary-200 p-12 flex items-center justify-center min-h-[400px]">

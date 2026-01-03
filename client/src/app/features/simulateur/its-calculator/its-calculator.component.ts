@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ItsService, ItsInput, ItsResult } from '../services/its.service';
 import { ItsFormComponent } from './its-form.component';
@@ -7,6 +7,7 @@ import { ItsBaremeComponent } from './its-bareme.component';
 @Component({
   selector: 'app-its-calculator',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, ItsFormComponent, ItsBaremeComponent],
   template: `
     <div class="flex gap-6">

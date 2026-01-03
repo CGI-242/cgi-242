@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 type ButtonSize = 'small' | 'default' | 'large';
@@ -6,6 +6,7 @@ type ButtonSize = 'small' | 'default' | 'large';
 @Component({
   selector: 'app-audio-button',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule],
   template: `
     <button

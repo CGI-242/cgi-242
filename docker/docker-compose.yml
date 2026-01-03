@@ -20,6 +20,22 @@ services:
       timeout: 5s
       retries: 5
 
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: cgi-242-redis
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   # Backend Express
   server:
     build:
@@ -32,11 +48,14 @@ services:
     environment:
       NODE_ENV: production
       DATABASE_URL: postgresql://${DB_USER:-cgiengine}:${DB_PASSWORD:-cgiengine123}@postgres:5432/${DB_NAME:-cgi_engine}
+      REDIS_URL: redis://redis:6379
       JWT_SECRET: ${JWT_SECRET}
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
     depends_on:
       postgres:
+        condition: service_healthy
+      redis:
         condition: service_healthy
     volumes:
       - server_logs:/app/logs
@@ -55,4 +74,5 @@ services:
 
 volumes:
   postgres_data:
+  redis_data:
   server_logs:

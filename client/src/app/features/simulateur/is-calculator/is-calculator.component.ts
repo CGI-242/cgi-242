@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IsService, IsInput, IsResult } from '../services/is.service';
@@ -6,6 +6,7 @@ import { IsService, IsInput, IsResult } from '../services/is.service';
 @Component({
   selector: 'app-is-calculator',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, FormsModule, DecimalPipe],
   styles: [`
     input[type=number]::-webkit-outer-spin-button,

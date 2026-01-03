@@ -2,6 +2,7 @@
 import OpenAI from 'openai';
 import { config } from '../../config/environment.js';
 import { createLogger } from '../../utils/logger.js';
+import { redisService, CACHE_TTL, CACHE_PREFIX, hashText } from '../redis.service.js';
 
 const logger = createLogger('EmbeddingsService');
 
@@ -12,20 +13,44 @@ const openai = new OpenAI({
 export interface EmbeddingResult {
   embedding: number[];
   tokensUsed: number;
+  cached?: boolean;
 }
 
 /**
- * Génère un embedding pour un texte donné
+ * Génère un embedding pour un texte donné (avec cache Redis)
  */
 export async function generateEmbedding(text: string): Promise<EmbeddingResult> {
+  // Générer la clé de cache
+  const cacheKey = `${CACHE_PREFIX.EMBEDDING}${hashText(text)}`;
+
+  // Vérifier le cache
+  const cached = await redisService.get<number[]>(cacheKey);
+  if (cached) {
+    logger.debug(`Embedding cache HIT for text hash: ${hashText(text)}`);
+    return {
+      embedding: cached,
+      tokensUsed: 0,
+      cached: true,
+    };
+  }
+
+  // Générer l'embedding via API
   const response = await openai.embeddings.create({
     model: 'text-embedding-3-small',
     input: text,
   });
 
+  const embedding = response.data[0].embedding;
+  const tokensUsed = response.usage?.total_tokens || 0;
+
+  // Stocker dans le cache (7 jours)
+  await redisService.set(cacheKey, embedding, CACHE_TTL.EMBEDDING);
+  logger.debug(`Embedding cache MISS - stored for text hash: ${hashText(text)}`);
+
   return {
-    embedding: response.data[0].embedding,
-    tokensUsed: response.usage?.total_tokens || 0,
+    embedding,
+    tokensUsed,
+    cached: false,
   };
 }
 

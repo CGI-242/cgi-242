@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, EventEmitter, Input, Output, inject } from '@angular/core';
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IrppInput, IrppResult, IrppService } from '../services/irpp.service';
@@ -6,6 +6,7 @@ import { IrppInput, IrppResult, IrppService } from '../services/irpp.service';
 @Component({
   selector: 'app-irpp-form',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, FormsModule, DecimalPipe],
   styles: [`
     input[type=number]::-webkit-outer-spin-button,

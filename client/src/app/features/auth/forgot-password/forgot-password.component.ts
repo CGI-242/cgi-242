@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -7,6 +7,7 @@ import { AuthService } from '@core/services/auth.service';
 @Component({
   selector: 'app-forgot-password',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
   template: `
     <div class="min-h-screen flex items-center justify-center bg-secondary-50 py-12 px-4">

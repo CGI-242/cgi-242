@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, EventEmitter, Input, Output, inject } from '@angular/core';
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ItsInput, ItsResult, ItsService } from '../services/its.service';
@@ -6,6 +6,7 @@ import { ItsInput, ItsResult, ItsService } from '../services/its.service';
 @Component({
   selector: 'app-its-form',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, FormsModule, DecimalPipe],
   styles: [`
     input[type=number]::-webkit-outer-spin-button,

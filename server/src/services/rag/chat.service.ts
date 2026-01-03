@@ -2,6 +2,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { config } from '../../config/environment.js';
 import { createLogger } from '../../utils/logger.js';
+import { createAnthropicCall } from '../../utils/api-resilience.js';
 import { generateEmbedding } from './embeddings.service.js';
 import { searchSimilarArticles, SearchResult } from './qdrant.service.js';
 
@@ -164,13 +165,16 @@ export async function generateChatResponse(
     { role: 'user', content: query },
   ];
 
-  // 5. Appeler Claude Haiku
-  const completion = await anthropic.messages.create({
-    model: 'claude-3-haiku-20240307',
-    max_tokens: 2000,
-    system: systemPrompt,
-    messages,
-  });
+  // 5. Appeler Claude Haiku avec timeout (30s) et retry (3 tentatives)
+  const completion = await createAnthropicCall(
+    () => anthropic.messages.create({
+      model: 'claude-3-haiku-20240307',
+      max_tokens: 2000,
+      system: systemPrompt,
+      messages,
+    }),
+    30000
+  );
 
   const responseTime = Date.now() - startTime;
   const content = completion.content[0]?.type === 'text'
@@ -268,6 +272,126 @@ function extractArticlesFromResponse(response: string, searchResults: SearchResu
   });
 }
 
+/**
+ * Interface pour les événements SSE
+ */
+export interface StreamEvent {
+  type: 'start' | 'chunk' | 'citations' | 'done' | 'error';
+  content?: string;
+  citations?: Citation[];
+  metadata?: {
+    tokensUsed?: number;
+    responseTime?: number;
+    model?: string;
+  };
+  error?: string;
+}
+
+/**
+ * Génère une réponse en streaming avec SSE
+ * Améliore l'UX en affichant la réponse au fur et à mesure
+ */
+export async function* generateChatResponseStream(
+  query: string,
+  conversationHistory: ChatMessage[] = [],
+  userName?: string
+): AsyncGenerator<StreamEvent> {
+  const startTime = Date.now();
+
+  try {
+    const isFiscal = isFiscalQuery(query);
+    let searchResults: SearchResult[] = [];
+
+    // Émettre le début du stream
+    yield { type: 'start' };
+
+    // Préparer le système prompt
+    let systemPrompt = userName
+      ? `${SYSTEM_PROMPT_SIMPLE}\n\nLe prénom de l'utilisateur est: ${userName}`
+      : SYSTEM_PROMPT_SIMPLE;
+
+    // Recherche pour les questions fiscales
+    if (isFiscal) {
+      const { embedding } = await generateEmbedding(query);
+      searchResults = await searchSimilarArticles(embedding, 10);
+      const context = buildContext(searchResults);
+      systemPrompt = `${SYSTEM_PROMPT_WITH_CONTEXT}\n\nCONTEXTE CGI:\n${context}`;
+    }
+
+    // Préparer les messages
+    const messages: Anthropic.MessageParam[] = [
+      ...conversationHistory
+        .filter(m => m.role !== 'system')
+        .map(m => ({
+          role: m.role as 'user' | 'assistant',
+          content: m.content,
+        })),
+      { role: 'user', content: query },
+    ];
+
+    // Appeler Claude avec streaming
+    const stream = await anthropic.messages.stream({
+      model: 'claude-3-haiku-20240307',
+      max_tokens: 2000,
+      system: systemPrompt,
+      messages,
+    });
+
+    let fullContent = '';
+    let inputTokens = 0;
+    let outputTokens = 0;
+
+    // Émettre les chunks de texte
+    for await (const event of stream) {
+      if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
+        const chunk = event.delta.text;
+        fullContent += chunk;
+        yield { type: 'chunk', content: chunk };
+      }
+
+      // Capturer les tokens utilisés
+      if (event.type === 'message_delta' && event.usage) {
+        outputTokens = event.usage.output_tokens;
+      }
+    }
+
+    // Récupérer les infos finales du message
+    const finalMessage = await stream.finalMessage();
+    inputTokens = finalMessage.usage?.input_tokens || 0;
+    outputTokens = finalMessage.usage?.output_tokens || outputTokens;
+
+    // Extraire les citations si question fiscale
+    const citations = isFiscal ? extractArticlesFromResponse(fullContent, searchResults) : [];
+
+    // Émettre les citations
+    if (citations.length > 0) {
+      yield { type: 'citations', citations };
+    }
+
+    const responseTime = Date.now() - startTime;
+    const tokensUsed = inputTokens + outputTokens;
+
+    logger.info(`Streaming terminé en ${responseTime}ms (${tokensUsed} tokens)`);
+
+    // Émettre la fin avec métadonnées
+    yield {
+      type: 'done',
+      metadata: {
+        tokensUsed,
+        responseTime,
+        model: 'claude-3-haiku',
+      },
+    };
+  } catch (error) {
+    logger.error('Erreur streaming:', error);
+    yield {
+      type: 'error',
+      error: error instanceof Error ? error.message : 'Erreur inconnue',
+    };
+  }
+}
+
 export default {
   generateChatResponse,
+  generateChatResponseStream,
 };

@@ -1,4 +1,5 @@
-import { Component, inject, signal, OnInit, ElementRef, HostListener } from '@angular/core';
+import { Component, inject, signal, OnInit, ElementRef, HostListener, ChangeDetectionStrategy, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { TenantService, OrganizationContext } from '@core/services/tenant.service';
@@ -8,6 +9,7 @@ import { AuthService } from '@core/services/auth.service';
 @Component({
   selector: 'app-org-switcher',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, RouterLink],
   template: `
     <div class="relative">
@@ -123,6 +125,7 @@ export class OrgSwitcherComponent implements OnInit {
   private authService = inject(AuthService);
   private router = inject(Router);
   private elementRef = inject(ElementRef);
+  private destroyRef = inject(DestroyRef);
 
   isOpen = signal(false);
   memberships = signal<OrganizationMembership[]>([]);
@@ -140,9 +143,11 @@ export class OrgSwitcherComponent implements OnInit {
   }
 
   loadMemberships(): void {
-    this.orgService.getUserOrganizations().subscribe((memberships) => {
-      this.memberships.set(memberships);
-    });
+    this.orgService.getUserOrganizations()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((memberships) => {
+        this.memberships.set(memberships);
+      });
   }
 
   toggleDropdown(): void {

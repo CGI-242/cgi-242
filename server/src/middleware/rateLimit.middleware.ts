@@ -1,5 +1,28 @@
 import rateLimit from 'express-rate-limit';
+import RedisStore from 'rate-limit-redis';
+import { getRedisClient } from '../services/redis.service.js';
 import { config } from '../config/environment.js';
+import { logger } from '../utils/logger.js';
+
+/**
+ * Crée un store Redis pour le rate limiting distribué
+ * Permet le scaling horizontal avec plusieurs instances
+ */
+function createRedisStore(prefix: string) {
+  const client = getRedisClient();
+
+  // Si Redis n'est pas disponible, utiliser le store en mémoire (fallback)
+  if (!client) {
+    logger.warn(`[RateLimit] Redis non disponible, utilisation du store en mémoire pour ${prefix}`);
+    return undefined;
+  }
+
+  return new RedisStore({
+    // @ts-expect-error - Le type sendCommand est compatible avec ioredis
+    sendCommand: (...args: string[]) => client.call(...args),
+    prefix: `rl:${prefix}:`,
+  });
+}
 
 /**
  * Rate limiter global
@@ -14,8 +37,9 @@ export const globalRateLimiter = rateLimit({
   },
   standardHeaders: true,
   legacyHeaders: false,
+  store: createRedisStore('global'),
   keyGenerator: (req) => {
-    // Utiliser X-Forwarded-For si derrière un proxy
+    // Utiliser X-Forwarded-For si derrière un proxy (nginx)
     return (
       (req.headers['x-forwarded-for'] as string)?.split(',')[0]?.trim() ||
       req.ip ||
@@ -41,6 +65,7 @@ export const authRateLimiter = rateLimit({
   },
   standardHeaders: true,
   legacyHeaders: false,
+  store: createRedisStore('auth'),
   keyGenerator: (req) => {
     // Limiter par IP + email pour être plus précis
     const email = req.body?.email || '';
@@ -66,6 +91,7 @@ export const sensitiveRateLimiter = rateLimit({
   },
   standardHeaders: true,
   legacyHeaders: false,
+  store: createRedisStore('sensitive'),
 });
 
 /**
@@ -81,6 +107,7 @@ export const aiRateLimiter = rateLimit({
   },
   standardHeaders: true,
   legacyHeaders: false,
+  store: createRedisStore('ai'),
 });
 
 /**
@@ -96,6 +123,7 @@ export const userRateLimiter = rateLimit({
   },
   standardHeaders: true,
   legacyHeaders: false,
+  store: createRedisStore('user'),
   keyGenerator: (req) => {
     // Utiliser l'ID utilisateur si disponible, sinon l'IP
     return req.user?.id || req.ip || 'unknown';

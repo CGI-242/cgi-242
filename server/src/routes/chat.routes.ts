@@ -26,6 +26,19 @@ router.post(
   chatController.sendMessageOrchestrated
 );
 
+// Envoyer un message avec streaming SSE (améliore UX)
+// Retourne la réponse au fur et à mesure via Server-Sent Events
+router.post(
+  '/message/stream',
+  [
+    body('content').notEmpty().withMessage('Le contenu est requis'),
+    body('conversationId').optional().isUUID(),
+  ],
+  validate,
+  checkQuotaMiddleware,
+  chatController.sendMessageStreaming
+);
+
 // Lister les conversations
 router.get('/conversations', chatController.getConversations);
 

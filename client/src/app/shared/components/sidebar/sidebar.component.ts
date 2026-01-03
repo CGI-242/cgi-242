@@ -1,4 +1,4 @@
-import { Component, inject, Input, signal } from '@angular/core';
+import { Component, inject, Input, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -21,6 +21,7 @@ interface NavItem {
 @Component({
   selector: 'app-sidebar',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, RouterLink, RouterLinkActive],
   template: `
     <aside

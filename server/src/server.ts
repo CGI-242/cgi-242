@@ -3,6 +3,7 @@ import { config, validateEnvironment } from './config/environment.js';
 import { connectDatabase, disconnectDatabase } from './config/database.js';
 import { createLogger } from './utils/logger.js';
 import { startQuotaResetJob } from './jobs/quota-reset.job.js';
+import { redisService } from './services/redis.service.js';
 
 const logger = createLogger('Server');
 
@@ -13,6 +14,10 @@ async function bootstrap(): Promise<void> {
 
     // Connecter à la base de données
     await connectDatabase();
+
+    // Connecter à Redis (optionnel, continue sans si indisponible)
+    await redisService.connect();
+    const redisStatus = redisService.isAvailable() ? '✅ Connected' : '⚠️ Unavailable (running without cache)';
 
     // Créer l'application Express
     const app = createApp();
@@ -27,6 +32,7 @@ Environment: ${config.nodeEnv}
 Port: ${config.port}
 API: ${config.backendUrl}${config.apiPrefix}
 Frontend: ${config.frontendUrl}
+Redis: ${redisStatus}
 ========================================
       `);
 
@@ -40,6 +46,7 @@ Frontend: ${config.frontendUrl}
 
       server.close(async () => {
         logger.info('Serveur HTTP fermé');
+        await redisService.disconnect();
         await disconnectDatabase();
         process.exit(0);
       });

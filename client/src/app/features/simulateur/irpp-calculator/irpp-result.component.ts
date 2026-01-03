@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { IrppResult } from '../services/irpp.service';
 
 @Component({
   selector: 'app-irpp-result',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, DecimalPipe],
   template: `
     @if (result) {

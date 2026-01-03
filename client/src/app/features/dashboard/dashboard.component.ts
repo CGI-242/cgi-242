@@ -1,4 +1,5 @@
-import { Component, inject, signal, OnInit } from '@angular/core';
+import { Component, inject, signal, OnInit, ChangeDetectionStrategy, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
@@ -17,6 +18,7 @@ interface UsageStats {
 @Component({
   selector: 'app-dashboard',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, RouterLink, HeaderComponent, SidebarComponent],
   template: `
     <div class="min-h-screen bg-secondary-50">
@@ -166,6 +168,7 @@ interface UsageStats {
 })
 export class DashboardComponent implements OnInit {
   private apiService = inject(ApiService);
+  private destroyRef = inject(DestroyRef);
   authService = inject(AuthService);
   tenantService = inject(TenantService);
 
@@ -184,17 +187,19 @@ export class DashboardComponent implements OnInit {
   }
 
   private loadStats(): void {
-    this.apiService.get<UsageStats>('/stats/usage').subscribe({
-      next: (response) => {
-        if (response.success && response.data) {
-          this.stats.set(response.data);
-        }
-        this.loading.set(false);
-      },
-      error: () => {
-        this.loading.set(false);
-      },
-    });
+    this.apiService.get<UsageStats>('/stats/usage')
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (response) => {
+          if (response.success && response.data) {
+            this.stats.set(response.data);
+          }
+          this.loading.set(false);
+        },
+        error: () => {
+          this.loading.set(false);
+        },
+      });
   }
 
   getUsagePercentage(): number {

@@ -1,4 +1,5 @@
-import { Component, inject, OnInit, signal, computed, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
+import { Component, inject, OnInit, signal, computed, ViewChild, ElementRef, AfterViewChecked, ChangeDetectionStrategy, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { ChatService, Conversation } from '@core/services/chat.service';
 import { TenantService } from '@core/services/tenant.service';
@@ -12,6 +13,7 @@ import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
 @Component({
   selector: 'app-chat-container',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
     ChatInputComponent,
@@ -127,6 +129,7 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked {
   chatService = inject(ChatService);
   tenantService = inject(TenantService);
   private authService = inject(AuthService);
+  private destroyRef = inject(DestroyRef);
 
   @ViewChild('messagesContainer') private messagesContainer!: ElementRef;
 
@@ -149,7 +152,9 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked {
   });
 
   ngOnInit(): void {
-    this.chatService.loadConversations().subscribe();
+    this.chatService.loadConversations()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe();
   }
 
   ngAfterViewChecked(): void {

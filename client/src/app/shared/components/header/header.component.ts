@@ -1,4 +1,4 @@
-import { Component, inject, ElementRef, HostListener } from '@angular/core';
+import { Component, inject, ElementRef, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
@@ -7,6 +7,7 @@ import { OrgSwitcherComponent } from '../org-switcher/org-switcher.component';
 @Component({
   selector: 'app-header',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, RouterLink, OrgSwitcherComponent],
   template: `
     <header class="bg-white border-b border-secondary-200 sticky top-0 z-40">

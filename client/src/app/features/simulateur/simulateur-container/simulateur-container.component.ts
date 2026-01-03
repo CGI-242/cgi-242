@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '@shared/components/header/header.component';
@@ -7,6 +7,7 @@ import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
 @Component({
   selector: 'app-simulateur-container',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderComponent, SidebarComponent],
   template: `
     <div class="min-h-screen bg-secondary-50">

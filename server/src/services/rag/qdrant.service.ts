@@ -1,6 +1,7 @@
 // server/src/services/rag/qdrant.service.ts
 import { QdrantClient } from '@qdrant/js-client-rest';
 import { createLogger } from '../../utils/logger.js';
+import { redisService, CACHE_TTL, CACHE_PREFIX, hashText } from '../redis.service.js';
 
 const logger = createLogger('QdrantService');
 
@@ -97,26 +98,61 @@ export interface SearchResult {
   payload: ArticleVector['payload'];
 }
 
+// Seuil de score minimum pour filtrer les résultats peu pertinents
+const SCORE_THRESHOLD = 0.7;
+
 /**
- * Recherche les articles similaires
+ * Recherche les articles similaires (avec cache Redis et monitoring)
  */
 export async function searchSimilarArticles(
   queryVector: number[],
-  limit: number = 5
+  limit: number = 5,
+  scoreThreshold: number = SCORE_THRESHOLD
 ): Promise<SearchResult[]> {
+  // Générer une clé de cache basée sur le hash du vecteur
+  const vectorHash = hashText(queryVector.slice(0, 10).join(','));
+  const cacheKey = `${CACHE_PREFIX.SEARCH}${vectorHash}:${limit}`;
+
+  // Vérifier le cache
+  const cached = await redisService.get<SearchResult[]>(cacheKey);
+  if (cached) {
+    logger.debug(`Search cache HIT for vector hash: ${vectorHash}`);
+    return cached;
+  }
+
   const qdrant = getQdrantClient();
+
+  // Monitoring: mesurer le temps de recherche
+  const startTime = Date.now();
 
   const results = await qdrant.search(COLLECTION_NAME, {
     vector: queryVector,
     limit,
     with_payload: true,
+    with_vector: false,           // Économie bande passante (pas besoin des vecteurs)
+    score_threshold: scoreThreshold, // Filtrer résultats peu pertinents
   });
 
-  return results.map(result => ({
+  const searchDuration = Date.now() - startTime;
+
+  // Log monitoring avec niveau approprié
+  if (searchDuration > 500) {
+    logger.warn(`Qdrant search slow: ${searchDuration}ms (${results.length} results)`);
+  } else {
+    logger.info(`Qdrant search: ${searchDuration}ms (${results.length} results, threshold: ${scoreThreshold})`);
+  }
+
+  const searchResults = results.map(result => ({
     id: String(result.id),
     score: result.score,
     payload: result.payload as ArticleVector['payload'],
   }));
+
+  // Stocker dans le cache (1 heure)
+  await redisService.set(cacheKey, searchResults, CACHE_TTL.SEARCH_RESULT);
+  logger.debug(`Search cache MISS - stored for vector hash: ${vectorHash}`);
+
+  return searchResults;
 }
 
 /**

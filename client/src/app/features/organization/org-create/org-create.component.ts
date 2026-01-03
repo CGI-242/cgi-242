@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -9,6 +9,7 @@ import { HeaderComponent } from '@shared/components/header/header.component';
 @Component({
   selector: 'app-org-create',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, ReactiveFormsModule, RouterLink, HeaderComponent],
   template: `
     <div class="min-h-screen bg-secondary-50">

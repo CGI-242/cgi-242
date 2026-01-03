@@ -1,4 +1,4 @@
-import express, { Express } from 'express';
+import express, { Express, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -6,15 +6,68 @@ import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import { config } from './config/environment.js';
 import routes from './routes/index.js';
+import metricsRoutes from './routes/metrics.routes.js';
+import healthRoutes from './routes/health.routes.js';
 import { errorHandler, notFoundHandler } from './middleware/error.middleware.js';
 import { globalRateLimiter } from './middleware/rateLimit.middleware.js';
+import { metricsMiddleware } from './middleware/metrics.middleware.js';
 import { sanitizeInputs } from './middleware/validation.middleware.js';
+import { createLogger, httpLogger } from './utils/logger.js';
+import { initSentry } from './services/sentry.service.js';
+
+const appLogger = createLogger('App');
 
 export function createApp(): Express {
   const app = express();
 
-  // Sécurité
-  app.use(helmet());
+  // Métriques Prometheus (avant tout autre middleware)
+  app.use(metricsMiddleware);
+
+  // Endpoint /metrics pour Prometheus (sans auth)
+  app.use('/metrics', metricsRoutes);
+
+  // Endpoint /health pour les health checks (sans auth)
+  app.use('/health', healthRoutes);
+
+  // Initialiser Sentry pour le tracking des erreurs
+  initSentry(app);
+
+  // Sécurité - Helmet avec CSP (Content Security Policy)
+  app.use(
+    helmet({
+      contentSecurityPolicy: {
+        directives: {
+          defaultSrc: ["'self'"],
+          scriptSrc: ["'self'", "'unsafe-inline'"], // unsafe-inline nécessaire pour Angular
+          styleSrc: ["'self'", "'unsafe-inline'"], // Tailwind CSS inline styles
+          imgSrc: ["'self'", 'data:', 'https:'],
+          fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+          connectSrc: [
+            "'self'",
+            config.frontendUrl,
+            'https://api.anthropic.com',
+            'https://api.openai.com',
+          ],
+          frameSrc: ["'none'"],
+          objectSrc: ["'none'"],
+          baseUri: ["'self'"],
+          formAction: ["'self'"],
+          upgradeInsecureRequests: config.isProduction ? [] : null,
+        },
+      },
+      crossOriginEmbedderPolicy: false, // Désactivé pour compatibilité API externes
+      crossOriginResourcePolicy: { policy: 'cross-origin' },
+      referrerPolicy: { policy: 'strict-origin-when-cross-origin' },
+      hsts: {
+        maxAge: 31536000, // 1 an
+        includeSubDomains: true,
+        preload: true,
+      },
+      noSniff: true,
+      xssFilter: true,
+      hidePoweredBy: true,
+    })
+  );
   app.use(
     cors({
       origin: config.frontendUrl,
@@ -38,12 +91,27 @@ export function createApp(): Express {
   // Compression
   app.use(compression());
 
-  // Logging
+  // Logging HTTP avec Winston
   if (config.isDevelopment) {
     app.use(morgan('dev'));
   } else {
-    app.use(morgan('combined'));
+    app.use(morgan('combined', { stream: httpLogger }));
   }
+
+  // Monitoring: Temps de réponse
+  app.use((req: Request, res: Response, next: NextFunction) => {
+    const start = Date.now();
+    res.on('finish', () => {
+      const duration = Date.now() - start;
+      const status = res.statusCode;
+      // Log uniquement les requêtes API (pas les assets)
+      if (req.path.startsWith('/api')) {
+        const logLevel = status >= 500 ? 'error' : status >= 400 ? 'warn' : 'info';
+        appLogger[logLevel](`${req.method} ${req.path} - ${status} - ${duration}ms`);
+      }
+    });
+    next();
+  });
 
   // Sanitization des entrées
   app.use(sanitizeInputs);

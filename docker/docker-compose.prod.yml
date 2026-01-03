@@ -1,0 +1,200 @@
+version: '3.8'
+
+# Configuration Production avec Horizontal Scaling + Database Replicas
+# Usage: docker-compose -f docker-compose.prod.yml up -d
+
+services:
+  # ==================== DATABASE CLUSTER ====================
+
+  # PostgreSQL Master (Writes)
+  postgres-master:
+    image: postgres:16-alpine
+    container_name: cgi-242-db-master
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER:-cgiengine}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-cgiengine123}
+      POSTGRES_DB: ${DB_NAME:-cgi_engine}
+      # Configuration pour la réplication
+      POSTGRES_INITDB_ARGS: "-E UTF8"
+    command: |
+      postgres
+      -c wal_level=replica
+      -c max_wal_senders=3
+      -c max_replication_slots=3
+      -c hot_standby=on
+      -c shared_buffers=256MB
+      -c effective_cache_size=768MB
+      -c work_mem=16MB
+      -c maintenance_work_mem=128MB
+    volumes:
+      - postgres_master_data:/var/lib/postgresql/data
+      - ./init-replica.sh:/docker-entrypoint-initdb.d/init-replica.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-cgiengine}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - backend
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+
+  # PostgreSQL Replica 1 (Read - Conversations)
+  postgres-replica1:
+    image: postgres:16-alpine
+    container_name: cgi-242-db-replica1
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER:-cgiengine}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-cgiengine123}
+      POSTGRES_DB: ${DB_NAME:-cgi_engine}
+      PGUSER: ${DB_USER:-cgiengine}
+      PGPASSWORD: ${DB_PASSWORD:-cgiengine123}
+    command: |
+      bash -c "
+        until pg_basebackup -h postgres-master -D /var/lib/postgresql/data -U replicator -Fp -Xs -P -R; do
+          echo 'Waiting for master...'
+          sleep 5
+        done
+        exec postgres
+      "
+    depends_on:
+      postgres-master:
+        condition: service_healthy
+    volumes:
+      - postgres_replica1_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-cgiengine}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - backend
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  # ==================== CACHE ====================
+
+  # Redis Cache (Distributed)
+  redis:
+    image: redis:7-alpine
+    container_name: cgi-242-redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - backend
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  # ==================== BACKEND CLUSTER ====================
+
+  # Backend Express - Instance 1
+  server1:
+    build:
+      context: ../server
+      dockerfile: ../docker/Dockerfile.server
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      SERVER_ID: server1
+      # Master pour les écritures
+      DATABASE_URL: postgresql://${DB_USER:-cgiengine}:${DB_PASSWORD:-cgiengine123}@postgres-master:5432/${DB_NAME:-cgi_engine}?connection_limit=10&pool_timeout=20
+      # Replicas pour les lectures (séparées par virgule)
+      DATABASE_REPLICA_URLS: postgresql://${DB_USER:-cgiengine}:${DB_PASSWORD:-cgiengine123}@postgres-replica1:5432/${DB_NAME:-cgi_engine}?connection_limit=5
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: ${JWT_SECRET}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+    depends_on:
+      postgres-master:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - server_logs:/app/logs
+    networks:
+      - backend
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+
+  # Backend Express - Instance 2
+  server2:
+    build:
+      context: ../server
+      dockerfile: ../docker/Dockerfile.server
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      SERVER_ID: server2
+      DATABASE_URL: postgresql://${DB_USER:-cgiengine}:${DB_PASSWORD:-cgiengine123}@postgres-master:5432/${DB_NAME:-cgi_engine}?connection_limit=10&pool_timeout=20
+      DATABASE_REPLICA_URLS: postgresql://${DB_USER:-cgiengine}:${DB_PASSWORD:-cgiengine123}@postgres-replica1:5432/${DB_NAME:-cgi_engine}?connection_limit=5
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: ${JWT_SECRET}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+    depends_on:
+      postgres-master:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - server_logs:/app/logs
+    networks:
+      - backend
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+
+  # ==================== LOAD BALANCER ====================
+
+  # Nginx Load Balancer + Frontend
+  nginx:
+    image: nginx:alpine
+    container_name: cgi-242-nginx
+    restart: unless-stopped
+    ports:
+      - "${PORT:-80}:80"
+      - "${SSL_PORT:-443}:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ../client/dist/client:/usr/share/nginx/html:ro
+      - nginx_logs:/var/log/nginx
+    depends_on:
+      - server1
+      - server2
+    networks:
+      - backend
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  postgres_master_data:
+  postgres_replica1_data:
+  redis_data:
+  server_logs:
+  nginx_logs:

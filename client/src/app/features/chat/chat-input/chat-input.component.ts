@@ -1,10 +1,11 @@
-import { Component, Output, EventEmitter, signal } from '@angular/core';
+import { Component, Output, EventEmitter, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-chat-input',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, FormsModule],
   template: `
     <div class="border-t border-secondary-200 bg-white p-4">

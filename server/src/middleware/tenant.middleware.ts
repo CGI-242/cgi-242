@@ -4,6 +4,7 @@ import { sendError } from '../utils/helpers.js';
 import { ERROR_MESSAGES, CUSTOM_HEADERS } from '../utils/constants.js';
 import { TenantContext } from '../types/express.js';
 import { createLogger } from '../utils/logger.js';
+import { redisService, CACHE_TTL, CACHE_PREFIX } from '../services/redis.service.js';
 
 const tenantLogger = createLogger('TenantMiddleware');
 
@@ -130,22 +131,33 @@ export const checkQuotaMiddleware = async (
 };
 
 /**
- * Incrémenter le compteur de questions utilisées
+ * Incrémenter le compteur de questions utilisées (avec cache Redis)
  */
 export async function incrementQuestionsUsed(
   tenant: TenantContext
 ): Promise<void> {
+  // Clé de cache pour le quota
+  const cacheKey = tenant.type === 'organization' && tenant.organizationId
+    ? `${CACHE_PREFIX.QUOTA}org:${tenant.organizationId}`
+    : `${CACHE_PREFIX.QUOTA}user:${tenant.userId}`;
+
+  // Incrémenter dans Redis pour un tracking rapide
+  const redisCount = await redisService.incr(cacheKey, CACHE_TTL.QUOTA);
+
+  // Mettre à jour la DB de manière asynchrone (fire and forget)
   if (tenant.type === 'organization' && tenant.organizationId) {
-    await prisma.subscription.updateMany({
+    prisma.subscription.updateMany({
       where: { organizationId: tenant.organizationId },
       data: { questionsUsed: { increment: 1 } },
-    });
+    }).catch(err => tenantLogger.error('Failed to increment org quota in DB:', err));
   } else {
-    await prisma.subscription.updateMany({
+    prisma.subscription.updateMany({
       where: { userId: tenant.userId },
       data: { questionsUsed: { increment: 1 } },
-    });
+    }).catch(err => tenantLogger.error('Failed to increment user quota in DB:', err));
   }
+
+  tenantLogger.debug(`Quota incremented for ${cacheKey}, Redis count: ${redisCount}`);
 }
 
 /**

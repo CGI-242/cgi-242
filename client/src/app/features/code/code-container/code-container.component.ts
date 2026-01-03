@@ -1,4 +1,5 @@
-import { Component, inject, OnInit, signal, computed } from '@angular/core';
+import { Component, inject, OnInit, signal, computed, ChangeDetectionStrategy, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -12,6 +13,7 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
 @Component({
   selector: 'app-code-container',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, FormsModule, HeaderComponent, SidebarComponent, CodeSommaireComponent, AudioButtonComponent],
   template: `
     <div class="min-h-screen bg-secondary-50">
@@ -216,6 +218,7 @@ export class CodeContainerComponent implements OnInit {
   articlesService = inject(ArticlesService);
   private route = inject(ActivatedRoute);
   private sanitizer = inject(DomSanitizer);
+  private destroyRef = inject(DestroyRef);
 
   sidebarCollapsed = false;
   searchQuery = '';
@@ -302,17 +305,21 @@ export class CodeContainerComponent implements OnInit {
 
   ngOnInit(): void {
     // Récupérer la version depuis l'URL
-    this.route.params.subscribe(params => {
-      const version = params['version'] as '2025' | '2026';
-      if (version === '2025' || version === '2026') {
-        this.articlesService.setVersion(version);
-      }
-      this.loadArticles();
-    });
+    this.route.params
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(params => {
+        const version = params['version'] as '2025' | '2026';
+        if (version === '2025' || version === '2026') {
+          this.articlesService.setVersion(version);
+        }
+        this.loadArticles();
+      });
   }
 
   loadArticles(): void {
-    this.articlesService.loadArticles({ limit: 500 }).subscribe();
+    this.articlesService.loadArticles({ limit: 500 })
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe();
   }
 
   onSearch(): void {
@@ -363,14 +370,23 @@ export class CodeContainerComponent implements OnInit {
     return parts.join('. ');
   }
 
+  /**
+   * Formate le contenu de l'article pour l'affichage HTML
+   * SÉCURITÉ: bypassSecurityTrustHtml est utilisé de manière sécurisée car:
+   * 1. Le contenu provient de la DB (articles CGI), pas d'input utilisateur
+   * 2. Tous les caractères HTML sont échappés AVANT le formatage (&, <, >)
+   * 3. Seul du HTML prédéfini et contrôlé est ajouté (classes CSS)
+   */
   formatArticleContent(contenu: string): SafeHtml {
     if (!contenu) return '';
 
     let html = contenu
-      // Échapper les caractères HTML
+      // SÉCURITÉ: Échapper TOUS les caractères HTML d'abord
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#x27;')
       // Formater les numéros principaux (1), 2), etc.)
       .replace(/^(\d+)\)\s*/gm, '<div class="mt-6 mb-2"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mr-2">$1</span>')
       .replace(/^(\d+)\)\s*([a-z]\))/gm, '<div class="mt-6 mb-2"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mr-2">$1</span>$2')
