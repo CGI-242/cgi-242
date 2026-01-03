@@ -154,7 +154,7 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestr
 
   sidebarCollapsed = false;
   currentConversation = this.chatService.currentConversation;
-  messages = signal<{ id: string; role: string; content: string; citations?: { articleNumber: string; title?: string; excerpt: string }[] }[]>([]);
+  messages = signal<{ id: string; role: string; content: string; citations?: { articleNumber: string; title?: string; excerpt: string }[]; cgiVersion?: string }[]>([]);
 
   // Use streaming by default
   useStreaming = true;
@@ -265,6 +265,7 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestr
                 role: 'ASSISTANT',
                 content: this.chatService.streamingContent(),
                 citations: this.chatService.streamingCitations(),
+                cgiVersion: this.chatService.streamingCgiVersion(),
               };
               this.messages.update((m) => [...m, assistantMessage]);
               this.chatService.resetStreamingState();

@@ -1,5 +1,6 @@
 // server/src/services/rag/chat.service.ts
 import Anthropic from '@anthropic-ai/sdk';
+import axios from 'axios';
 import { config } from '../../config/environment.js';
 import { createLogger } from '../../utils/logger.js';
 import { createAnthropicCall } from '../../utils/api-resilience.js';
@@ -10,6 +11,9 @@ const logger = createLogger('ChatService');
 
 const anthropic = new Anthropic({
   apiKey: config.anthropic.apiKey,
+  timeout: 60000, // 60 secondes
+  maxRetries: 3,
+  fetch: globalThis.fetch, // Utiliser fetch natif Node.js
 });
 
 const SYSTEM_PROMPT_WITH_CONTEXT = `Tu es CGI 242, assistant fiscal expert du Code General des Impots du Congo - Edition 2026.
@@ -42,17 +46,17 @@ Conseil pratique :
 
 Reference : Art. X, Chapitre Y, Livre Z, Tome T du CGI 2026
 
-STYLE DE REPONSE OBLIGATOIRE - TRES IMPORTANT :
-- PREMIERE PHRASE OBLIGATOIRE : "L article X du CGI dispose que..." ou "Selon l article X du CGI, ..."
-- INTERDICTION ABSOLUE de commencer par : "Voici", "Il existe", "Les principales", "Selon le CGI", "D apres"
-- Le numero d article DOIT apparaitre dans la PREMIERE phrase
-- Exemple CORRECT : "L article 3 du CGI dispose que sont exonerees de l impot sur les societes..."
-- Exemple INCORRECT : "Voici les principales exonerations..." (INTERDIT)
+STYLE DE REPONSE - OBLIGATOIRE :
+- PREMIERE PHRASE : "L article X du CGI dispose que..."
+- INTERDIT de commencer par : "Voici", "Selon", "Il existe", "Les principales", "D apres"
+- Exemple CORRECT : "L article 3 du CGI dispose que sont exonerees de l impot sur les societes les entites suivantes :"
+- Exemple INCORRECT : "Selon l article 3..." ou "Voici les exonerations..." (INTERDIT)
 
-REGLES DE LISTE :
-- Utiliser le tiret simple (-)
+REGLES DE LISTE - TRES IMPORTANT :
+- JAMAIS de numeros (1. 2. 3.) - utiliser UNIQUEMENT le tiret (-)
 - Chaque element se termine par point-virgule (;)
 - Le dernier element se termine par un point (.)
+- Citer TOUS les points de l article, pas seulement quelques-uns
 
 REGLES DE REFERENCE :
 - Toujours inclure : Article + Chapitre + Livre + Tome
@@ -350,54 +354,86 @@ export async function* generateChatResponseStream(
       { role: 'user', content: query },
     ];
 
-    // Ajouter prefill pour questions fiscales (force le début de réponse)
-    if (isFiscal) {
-      messages.push({ role: 'assistant', content: "L'article " });
+    // Utiliser axios pour le streaming (contourne bug SDK et fetch natif)
+    logger.info('[Streaming] Début appel API Anthropic');
+    logger.debug('[Streaming] Messages:', JSON.stringify(messages.slice(-2)));
+
+    let response;
+    try {
+      response = await axios({
+        method: 'POST',
+        url: 'https://api.anthropic.com/v1/messages',
+        headers: {
+          'x-api-key': config.anthropic.apiKey,
+          'anthropic-version': '2023-06-01',
+          'content-type': 'application/json',
+        },
+        data: {
+          model: 'claude-3-haiku-20240307',
+          max_tokens: 2000,
+          system: systemPrompt,
+          messages,
+          stream: true,
+        },
+        responseType: 'stream',
+        timeout: 60000,
+      });
+      logger.info('[Streaming] Connexion API établie, status:', response.status);
+    } catch (axiosError: any) {
+      logger.error('[Streaming] Erreur axios:', {
+        message: axiosError.message,
+        code: axiosError.code,
+        status: axiosError.response?.status,
+        data: axiosError.response?.data?.toString?.()?.slice(0, 500),
+      });
+      throw axiosError;
     }
 
-    // Appeler Claude avec streaming
-    const stream = await anthropic.messages.stream({
-      model: 'claude-3-haiku-20240307',
-      max_tokens: 2000,
-      system: systemPrompt,
-      messages,
-    });
-
-    // Inclure le prefill dans le contenu initial
-    let fullContent = isFiscal ? "L'article " : '';
+    let fullContent = '';
     let inputTokens = 0;
     let outputTokens = 0;
 
-    // Envoyer le prefill au client si question fiscale
-    if (isFiscal) {
-      yield { type: 'chunk', content: "L'article " };
-    }
+    // Parser le stream SSE avec axios
+    let buffer = '';
 
-    // Émettre les chunks de texte
-    for await (const event of stream) {
-      if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
-        const chunk = event.delta.text;
-        fullContent += chunk;
-        yield { type: 'chunk', content: chunk };
+    for await (const chunk of response.data) {
+      buffer += chunk.toString();
+      const lines = buffer.split('\n');
+      buffer = lines.pop() || '';
+
+      for (const line of lines) {
+        if (line.startsWith('data: ')) {
+          const data = line.slice(6);
+          if (data === '[DONE]') continue;
+
+          try {
+            const event = JSON.parse(data);
+            if (event.type === 'content_block_delta' && event.delta?.text) {
+              fullContent += event.delta.text;
+              yield { type: 'chunk', content: event.delta.text };
+            }
+            if (event.type === 'message_delta' && event.usage) {
+              outputTokens = event.usage.output_tokens;
+            }
+            if (event.type === 'message_start' && event.message?.usage) {
+              inputTokens = event.message.usage.input_tokens;
+            }
+          } catch (e) {
+            // Ignorer les erreurs de parsing
+          }
+        }
       }
-
-      // Capturer les tokens utilisés
-      if (event.type === 'message_delta' && event.usage) {
-        outputTokens = event.usage.output_tokens;
-      }
     }
-
-    // Récupérer les infos finales du message
-    const finalMessage = await stream.finalMessage();
-    inputTokens = finalMessage.usage?.input_tokens || 0;
-    outputTokens = finalMessage.usage?.output_tokens || outputTokens;
 
     // Extraire les citations si question fiscale
     const citations = isFiscal ? extractArticlesFromResponse(fullContent, searchResults) : [];
 
-    // Émettre les citations
+    // Version du CGI utilisée
+    const cgiVersion = '2026';
+
+    // Émettre les citations avec la version
     if (citations.length > 0) {
-      yield { type: 'citations', citations };
+      yield { type: 'citations', citations, cgiVersion };
     }
 
     const responseTime = Date.now() - startTime;
@@ -412,6 +448,7 @@ export async function* generateChatResponseStream(
         tokensUsed,
         responseTime,
         model: 'claude-3-haiku',
+        cgiVersion,
       },
     };
   } catch (error) {

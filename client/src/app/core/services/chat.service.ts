@@ -41,10 +41,12 @@ export interface StreamEvent {
   conversationId?: string;
   content?: string;
   citations?: Citation[];
+  cgiVersion?: string;
   metadata?: {
     tokensUsed?: number;
     responseTime?: number;
     model?: string;
+    cgiVersion?: string;
   };
   error?: string;
 }
@@ -61,6 +63,7 @@ export class ChatService {
   isStreaming = signal(false);
   streamingContent = signal('');
   streamingCitations = signal<Citation[]>([]);
+  streamingCgiVersion = signal<string>('2026');
   private abortController: AbortController | null = null;
 
   loadConversations(): Observable<Conversation[]> {
@@ -260,10 +263,16 @@ export class ChatService {
         if (event.citations) {
           this.streamingCitations.set(event.citations);
         }
+        if (event.cgiVersion) {
+          this.streamingCgiVersion.set(event.cgiVersion);
+        }
         break;
 
       case 'done':
         this.isStreaming.set(false);
+        if (event.metadata?.cgiVersion) {
+          this.streamingCgiVersion.set(event.metadata.cgiVersion);
+        }
         break;
 
       case 'error':
@@ -278,6 +287,7 @@ export class ChatService {
   resetStreamingState(): void {
     this.streamingContent.set('');
     this.streamingCitations.set([]);
+    this.streamingCgiVersion.set('2026');
     this.isStreaming.set(false);
   }
 }

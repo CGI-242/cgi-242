@@ -11,6 +11,9 @@ const logger = createLogger('CGIAgent');
 
 const anthropic = new Anthropic({
   apiKey: config.anthropic.apiKey,
+  timeout: 60000,
+  maxRetries: 3,
+  fetch: globalThis.fetch,
 });
 
 const SYSTEM_PROMPT = `Tu es CGI 242, assistant fiscal expert du Code General des Impots du Congo - Edition 2026.

@@ -13,6 +13,7 @@ interface Message {
   role: string;
   content: string;
   citations?: Citation[];
+  cgiVersion?: string;
 }
 
 @Component({
@@ -57,7 +58,7 @@ interface Message {
 
         <!-- Source -->
         @if (message.citations && message.citations.length > 0) {
-          <p class="text-xs text-secondary-500 italic">Source : CGI 2025</p>
+          <p class="text-xs text-secondary-500 italic">Source : CGI {{ message.cgiVersion || '2026' }}</p>
         }
       </div>
     </div>

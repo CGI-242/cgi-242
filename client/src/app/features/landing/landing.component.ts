@@ -37,7 +37,7 @@ import { AuthService } from '@core/services/auth.service';
           </h1>
           <p class="text-xl text-secondary-600 mb-8 max-w-2xl mx-auto">
             Posez vos questions fiscales et obtenez des réponses précises,
-            sourcées directement depuis le CGI 2025 du Congo-Brazzaville.
+            sourcées directement depuis le CGI 2026 du Congo-Brazzaville.
           </p>
           <div class="flex gap-4 justify-center">
             <a routerLink="/auth/register" class="btn-primary text-lg px-8 py-3">
