@@ -40,10 +40,10 @@ export const SIMULATEUR_ROUTES: Routes = [
       {
         path: 'patente',
         loadComponent: () =>
-          import('./coming-soon/coming-soon.component').then(
-            (m) => m.ComingSoonComponent
+          import('./patente-calculator/patente-calculator.component').then(
+            (m) => m.PatenteCalculatorComponent
           ),
-        data: { title: 'Patente' },
+        data: { title: 'Patente - Contribution des Patentes (CGI 2025)' },
       },
       {
         path: 'acompte-is',

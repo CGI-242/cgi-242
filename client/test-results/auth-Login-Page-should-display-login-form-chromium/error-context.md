@@ -1,0 +1,45 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - generic [ref=e9]: CGI
+        - generic [ref=e10]: "242"
+      - navigation [ref=e11]:
+        - link "Connexion" [ref=e12] [cursor=pointer]:
+          - /url: /auth/login
+        - link "S'inscrire" [ref=e13] [cursor=pointer]:
+          - /url: /auth/register
+  - generic [ref=e15]:
+    - heading "Votre Assistant IA pour le Code Général des Impôts du Congo" [level=1] [ref=e16]
+    - paragraph [ref=e17]: Posez vos questions fiscales et obtenez des réponses précises, sourcées directement depuis le CGI 2025 du Congo-Brazzaville.
+    - generic [ref=e18]:
+      - link "Commencer gratuitement" [ref=e19] [cursor=pointer]:
+        - /url: /auth/register
+      - link "En savoir plus" [ref=e20] [cursor=pointer]:
+        - /url: "#features"
+  - generic [ref=e22]:
+    - heading "Pourquoi CGI 242 ?" [level=2] [ref=e23]
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - img [ref=e27]
+        - heading "Réponses instantanées" [level=3] [ref=e29]
+        - paragraph [ref=e30]: Obtenez des réponses à vos questions fiscales en quelques secondes
+      - generic [ref=e31]:
+        - img [ref=e33]
+        - heading "Sources vérifiables" [level=3] [ref=e35]
+        - paragraph [ref=e36]: Chaque réponse cite les articles du CGI correspondants
+      - generic [ref=e37]:
+        - img [ref=e39]
+        - heading "Travail en équipe" [level=3] [ref=e41]
+        - paragraph [ref=e42]: Partagez vos recherches avec votre cabinet ou entreprise
+  - generic [ref=e44]:
+    - heading "Prêt à simplifier vos recherches fiscales ?" [level=2] [ref=e45]
+    - paragraph [ref=e46]: Rejoignez les professionnels qui font confiance à CGI 242
+    - link "Créer un compte gratuit" [ref=e47] [cursor=pointer]:
+      - /url: /auth/register
+  - contentinfo [ref=e48]:
+    - paragraph [ref=e50]: © 2025 CGI 242. Tous droits réservés.
+```

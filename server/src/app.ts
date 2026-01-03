@@ -1,4 +1,6 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -8,6 +10,7 @@ import { config } from './config/environment.js';
 import routes from './routes/index.js';
 import metricsRoutes from './routes/metrics.routes.js';
 import healthRoutes from './routes/health.routes.js';
+import swaggerRoutes from './routes/swagger.routes.js';
 import { errorHandler, notFoundHandler } from './middleware/error.middleware.js';
 import { globalRateLimiter } from './middleware/rateLimit.middleware.js';
 import { metricsMiddleware } from './middleware/metrics.middleware.js';
@@ -29,6 +32,18 @@ export function createApp(): Express {
   // Endpoint /health pour les health checks (sans auth)
   app.use('/health', healthRoutes);
 
+  // Documentation API Swagger (sans auth)
+  app.use('/api-docs', swaggerRoutes);
+
+  // Fichiers statiques (test-agent.html, etc.) - AVANT Helmet pour éviter CSP
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+  app.use('/public', (req, res, next) => {
+    // Désactiver CSP pour les fichiers statiques de test
+    res.removeHeader('Content-Security-Policy');
+    next();
+  }, express.static(path.join(__dirname, '../public')));
+
   // Initialiser Sentry pour le tracking des erreurs
   initSentry(app);
 
@@ -38,8 +53,8 @@ export function createApp(): Express {
       contentSecurityPolicy: {
         directives: {
           defaultSrc: ["'self'"],
-          scriptSrc: ["'self'", "'unsafe-inline'"], // unsafe-inline nécessaire pour Angular
-          styleSrc: ["'self'", "'unsafe-inline'"], // Tailwind CSS inline styles
+          scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://cdn.tailwindcss.com'],
+          styleSrc: ["'self'", "'unsafe-inline'"],
           imgSrc: ["'self'", 'data:', 'https:'],
           fontSrc: ["'self'", 'https://fonts.gstatic.com'],
           connectSrc: [

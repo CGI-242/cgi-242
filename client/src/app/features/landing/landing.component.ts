@@ -13,12 +13,9 @@ import { AuthService } from '@core/services/auth.service';
       <!-- Header -->
       <header class="py-4 px-6">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <div class="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center">
-              <span class="text-white font-bold">CGI</span>
-            </div>
-            <span class="font-bold text-xl text-secondary-900">242</span>
-          </div>
+          <a routerLink="/" class="flex items-center">
+            <img src="assets/images/logo-cgi242.png" alt="CGI 242" class="h-16 w-auto" />
+          </a>
           <nav class="flex items-center gap-4">
             @if (authService.isAuthenticated()) {
               <a routerLink="/chat" class="btn-primary">Accéder au chat</a>
@@ -113,11 +110,21 @@ import { AuthService } from '@core/services/auth.service';
       </section>
 
       <!-- Footer -->
-      <footer class="py-8 px-6 bg-secondary-900">
-        <div class="max-w-6xl mx-auto text-center">
-          <p class="text-secondary-400">
-            &copy; 2025 CGI 242. Tous droits réservés.
-          </p>
+      <footer class="py-12 px-6 bg-secondary-900">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center">
+              <img src="assets/images/logo-footer.png" alt="CGI 242" class="h-14 w-auto opacity-90" />
+            </div>
+            <nav class="flex items-center gap-6 text-sm">
+              <a href="#features" class="text-secondary-400 hover:text-white transition">Fonctionnalites</a>
+              <a routerLink="/auth/login" class="text-secondary-400 hover:text-white transition">Connexion</a>
+              <a routerLink="/auth/register" class="text-secondary-400 hover:text-white transition">Inscription</a>
+            </nav>
+            <p class="text-secondary-500 text-sm">
+              &copy; 2026 CGI 242. Tous droits reserves.
+            </p>
+          </div>
         </div>
       </footer>
     </div>

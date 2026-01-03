@@ -15,11 +15,8 @@ import { OrgSwitcherComponent } from '../org-switcher/org-switcher.component';
         <div class="flex items-center justify-between h-16">
           <!-- Logo -->
           <div class="flex items-center gap-8">
-            <a routerLink="/" class="flex items-center gap-2">
-              <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span class="text-white font-bold text-sm">CGI</span>
-              </div>
-              <span class="font-semibold text-secondary-900">242</span>
+            <a routerLink="/" class="flex items-center">
+              <img src="assets/images/logo-cgi242.png" alt="CGI 242" class="h-14 w-auto" />
             </a>
 
             @if (authService.isAuthenticated()) {

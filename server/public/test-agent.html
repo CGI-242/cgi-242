@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CGI-ENGINE - Test Agent IA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .typing-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background-color: #2563eb;
+      animation: blink 1s infinite;
+      margin-left: 2px;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    .message-content {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .prose strong { font-weight: 600; color: #1e40af; }
+    .loading-dots span {
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+    .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+    .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="max-w-4xl mx-auto p-4">
+    <!-- Header -->
+    <header class="bg-white rounded-lg shadow-sm p-4 mb-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold">CGI</span>
+          </div>
+          <div>
+            <h1 class="text-xl font-bold text-gray-900">CGI-ENGINE Agent IA</h1>
+            <p class="text-sm text-gray-500">Test Manuel - Streaming SSE</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="csrf-status" class="px-2 py-1 rounded text-xs bg-gray-100 text-gray-500">
+            CSRF: --
+          </span>
+          <span id="status" class="px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-600">
+            Non connecte
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Auth Section -->
+    <div id="auth-section" class="bg-white rounded-lg shadow-sm p-4 mb-4">
+      <h2 class="font-semibold text-gray-900 mb-3">1. Authentification</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <input type="email" id="email" value="test@example.com"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Mot de passe</label>
+          <input type="password" id="password" value="Password123!"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+      </div>
+      <div class="mt-4 flex gap-2">
+        <button onclick="login()"
+          class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+          Se connecter
+        </button>
+        <button onclick="register()"
+          class="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+          S'inscrire
+        </button>
+      </div>
+      <div id="auth-result" class="mt-3 text-sm"></div>
+    </div>
+
+    <!-- Token Section -->
+    <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+      <h2 class="font-semibold text-gray-900 mb-3">2. Token JWT</h2>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Access Token</label>
+        <textarea id="token" rows="2" placeholder="Collez votre token ici ou connectez-vous"
+          class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 font-mono text-xs"></textarea>
+      </div>
+    </div>
+
+    <!-- Chat Section -->
+    <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+      <h2 class="font-semibold text-gray-900 mb-3">3. Test Agent IA</h2>
+
+      <!-- Mode Selection -->
+      <div class="flex gap-4 mb-4">
+        <label class="flex items-center gap-2">
+          <input type="radio" name="mode" value="stream" checked class="text-blue-600">
+          <span class="text-sm">Streaming SSE</span>
+        </label>
+        <label class="flex items-center gap-2">
+          <input type="radio" name="mode" value="normal" class="text-blue-600">
+          <span class="text-sm">Normal (sans streaming)</span>
+        </label>
+      </div>
+
+      <!-- Quick Questions -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-2">Questions rapides:</label>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="setQuestion('Bonjour')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm">
+            Bonjour
+          </button>
+          <button onclick="setQuestion('Quel est le taux de l\\'IRPP pour un revenu de 500000 FCFA ?')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm">
+            Taux IRPP
+          </button>
+          <button onclick="setQuestion('Comment calculer l\\'ITS ?')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm">
+            Calcul ITS
+          </button>
+          <button onclick="setQuestion('Quelles sont les obligations declaratives pour une entreprise ?')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm">
+            Obligations
+          </button>
+          <button onclick="setQuestion('Article 95 du CGI')" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm">
+            Article 95
+          </button>
+        </div>
+      </div>
+
+      <!-- Input -->
+      <div class="flex gap-2">
+        <input type="text" id="question" placeholder="Posez votre question sur le CGI..."
+          class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          onkeypress="if(event.key === 'Enter') sendMessage()">
+        <button onclick="sendMessage()" id="send-btn"
+          class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+          <span>Envoyer</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+          </svg>
+        </button>
+        <button onclick="cancelStream()" id="cancel-btn" class="hidden px-4 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+          Annuler
+        </button>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="bg-white rounded-lg shadow-sm p-4 mb-4">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="font-semibold text-gray-900">4. Conversation</h2>
+        <button onclick="clearMessages()" class="text-sm text-gray-500 hover:text-red-600">
+          Effacer
+        </button>
+      </div>
+      <div id="messages" class="space-y-4 max-h-[500px] overflow-y-auto">
+        <div class="text-center text-gray-400 py-8">
+          <svg class="w-12 h-12 mx-auto mb-2 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+          </svg>
+          <p>Aucun message. Posez une question pour commencer.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Debug Section -->
+    <div class="bg-white rounded-lg shadow-sm p-4">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="font-semibold text-gray-900">5. Debug (Events SSE)</h2>
+        <button onclick="clearDebug()" class="text-sm text-gray-500 hover:text-red-600">
+          Effacer
+        </button>
+      </div>
+      <div id="debug" class="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-xs max-h-[300px] overflow-y-auto">
+        <div class="text-gray-500">// Events SSE apparaitront ici...</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const API_URL = window.location.origin;
+    let conversationId = null;
+    let abortController = null;
+    let csrfToken = null;
+
+    // Update status indicator
+    function setStatus(status, color) {
+      const el = document.getElementById('status');
+      el.textContent = status;
+      el.className = `px-3 py-1 rounded-full text-sm ${color}`;
+    }
+
+    // Update CSRF status indicator
+    function updateCsrfStatus(success) {
+      const el = document.getElementById('csrf-status');
+      if (success) {
+        el.textContent = 'CSRF: OK';
+        el.className = 'px-2 py-1 rounded text-xs bg-green-100 text-green-600';
+      } else {
+        el.textContent = 'CSRF: --';
+        el.className = 'px-2 py-1 rounded text-xs bg-red-100 text-red-600';
+      }
+    }
+
+    // Fetch CSRF token
+    async function fetchCsrfToken() {
+      try {
+        const response = await fetch(`${API_URL}/api/auth/csrf-token`, {
+          method: 'GET',
+          credentials: 'include'
+        });
+        const data = await response.json();
+        if (data.success && data.data?.csrfToken) {
+          csrfToken = data.data.csrfToken;
+          console.log('CSRF token obtenu:', csrfToken.substring(0, 20) + '...');
+          updateCsrfStatus(true);
+          return csrfToken;
+        }
+        updateCsrfStatus(false);
+      } catch (error) {
+        console.error('Erreur CSRF:', error);
+        updateCsrfStatus(false);
+      }
+      return null;
+    }
+
+    // Initialize - get CSRF token on page load
+    document.addEventListener('DOMContentLoaded', async () => {
+      await fetchCsrfToken();
+    });
+
+    // Login
+    async function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const resultEl = document.getElementById('auth-result');
+
+      try {
+        resultEl.innerHTML = '<span class="text-blue-600">Connexion en cours...</span>';
+
+        // Refresh CSRF token before login
+        if (!csrfToken) await fetchCsrfToken();
+
+        const response = await fetch(`${API_URL}/api/auth/login`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': csrfToken || ''
+          },
+          body: JSON.stringify({ email, password }),
+          credentials: 'include'
+        });
+
+        const data = await response.json();
+
+        if (data.success && data.data?.accessToken) {
+          document.getElementById('token').value = data.data.accessToken;
+          resultEl.innerHTML = '<span class="text-green-600">Connecte avec succes!</span>';
+          setStatus('Connecte', 'bg-green-100 text-green-600');
+          // Refresh CSRF token after login
+          await fetchCsrfToken();
+        } else {
+          resultEl.innerHTML = `<span class="text-red-600">Erreur: ${data.error || 'Identifiants invalides'}</span>`;
+        }
+      } catch (error) {
+        resultEl.innerHTML = `<span class="text-red-600">Erreur: ${error.message}</span>`;
+      }
+    }
+
+    // Register
+    async function register() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const resultEl = document.getElementById('auth-result');
+
+      try {
+        resultEl.innerHTML = '<span class="text-blue-600">Inscription en cours...</span>';
+
+        // Refresh CSRF token before register
+        if (!csrfToken) await fetchCsrfToken();
+
+        const response = await fetch(`${API_URL}/api/auth/register`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': csrfToken || ''
+          },
+          body: JSON.stringify({
+            email,
+            password,
+            firstName: email.split('@')[0],
+            lastName: 'Test'
+          }),
+          credentials: 'include'
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          resultEl.innerHTML = '<span class="text-green-600">Inscription reussie! Connectez-vous maintenant.</span>';
+        } else {
+          resultEl.innerHTML = `<span class="text-red-600">Erreur: ${data.error || JSON.stringify(data.errors)}</span>`;
+        }
+      } catch (error) {
+        resultEl.innerHTML = `<span class="text-red-600">Erreur: ${error.message}</span>`;
+      }
+    }
+
+    // Set question from quick buttons
+    function setQuestion(q) {
+      document.getElementById('question').value = q;
+    }
+
+    // Add message to UI
+    function addMessage(role, content, citations = []) {
+      const messagesEl = document.getElementById('messages');
+
+      // Remove placeholder if present
+      if (messagesEl.querySelector('.text-center')) {
+        messagesEl.innerHTML = '';
+      }
+
+      const isUser = role === 'USER';
+      const messageHtml = `
+        <div class="flex gap-3 ${isUser ? 'flex-row-reverse' : ''}">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${isUser ? 'bg-gray-600' : 'bg-blue-600'}">
+            <span class="text-white text-xs font-bold">${isUser ? 'U' : 'CGI'}</span>
+          </div>
+          <div class="max-w-[80%] ${isUser ? 'bg-gray-600 text-white' : 'bg-gray-100'} rounded-2xl ${isUser ? 'rounded-tr-none' : 'rounded-tl-none'} p-4">
+            <div class="message-content">${formatContent(content)}</div>
+            ${citations.length > 0 ? `
+              <div class="mt-3 pt-3 border-t ${isUser ? 'border-gray-500' : 'border-gray-200'}">
+                <p class="text-xs font-medium mb-2 ${isUser ? 'text-gray-300' : 'text-gray-500'}">References:</p>
+                <div class="flex flex-wrap gap-1">
+                  ${citations.map(c => `
+                    <span class="px-2 py-1 ${isUser ? 'bg-gray-500' : 'bg-blue-100 text-blue-700'} rounded text-xs">
+                      ${c.articleNumber}
+                    </span>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+
+      messagesEl.insertAdjacentHTML('beforeend', messageHtml);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    // Add streaming message
+    function addStreamingMessage() {
+      const messagesEl = document.getElementById('messages');
+
+      if (messagesEl.querySelector('.text-center')) {
+        messagesEl.innerHTML = '';
+      }
+
+      const messageHtml = `
+        <div id="streaming-message" class="flex gap-3">
+          <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xs font-bold">CGI</span>
+          </div>
+          <div class="max-w-[80%] bg-gray-100 rounded-2xl rounded-tl-none p-4">
+            <div id="streaming-content" class="message-content">
+              <div class="loading-dots flex gap-1">
+                <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      messagesEl.insertAdjacentHTML('beforeend', messageHtml);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    // Update streaming content
+    function updateStreamingContent(content) {
+      const el = document.getElementById('streaming-content');
+      if (el) {
+        el.innerHTML = formatContent(content) + '<span class="typing-cursor"></span>';
+        document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+      }
+    }
+
+    // Finalize streaming message
+    function finalizeStreamingMessage(content, citations = []) {
+      const el = document.getElementById('streaming-message');
+      if (el) {
+        el.remove();
+        addMessage('ASSISTANT', content, citations);
+      }
+    }
+
+    // Format content (basic markdown)
+    function formatContent(content) {
+      return content
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n/g, '<br>');
+    }
+
+    // Add debug log
+    function addDebug(event) {
+      const debugEl = document.getElementById('debug');
+      const timestamp = new Date().toLocaleTimeString();
+      const color = {
+        'start': 'text-yellow-400',
+        'chunk': 'text-green-400',
+        'citations': 'text-blue-400',
+        'done': 'text-purple-400',
+        'error': 'text-red-400',
+        'conversation': 'text-cyan-400'
+      }[event.type] || 'text-gray-400';
+
+      debugEl.innerHTML += `<div class="${color}">[${timestamp}] ${JSON.stringify(event)}</div>`;
+      debugEl.scrollTop = debugEl.scrollHeight;
+    }
+
+    // Send message
+    async function sendMessage() {
+      const token = document.getElementById('token').value;
+      const question = document.getElementById('question').value;
+      const mode = document.querySelector('input[name="mode"]:checked').value;
+
+      if (!token) {
+        alert('Veuillez vous connecter ou entrer un token JWT');
+        return;
+      }
+
+      if (!question.trim()) {
+        alert('Veuillez entrer une question');
+        return;
+      }
+
+      // Add user message
+      addMessage('USER', question);
+      document.getElementById('question').value = '';
+
+      // Show/hide buttons
+      document.getElementById('send-btn').classList.add('hidden');
+      document.getElementById('cancel-btn').classList.remove('hidden');
+      setStatus('En cours...', 'bg-yellow-100 text-yellow-600');
+
+      if (mode === 'stream') {
+        await sendMessageStreaming(token, question);
+      } else {
+        await sendMessageNormal(token, question);
+      }
+
+      // Restore buttons
+      document.getElementById('send-btn').classList.remove('hidden');
+      document.getElementById('cancel-btn').classList.add('hidden');
+      setStatus('Connecte', 'bg-green-100 text-green-600');
+    }
+
+    // Send with streaming
+    async function sendMessageStreaming(token, question) {
+      abortController = new AbortController();
+      addStreamingMessage();
+
+      try {
+        const response = await fetch(`${API_URL}/api/chat/message/stream`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            content: question,
+            conversationId: conversationId
+          }),
+          signal: abortController.signal
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+        let fullContent = '';
+        let citations = [];
+
+        while (true) {
+          const { done, value } = await reader.read();
+
+          if (done) break;
+
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n');
+          buffer = lines.pop() || '';
+
+          for (const line of lines) {
+            if (line.startsWith('data: ')) {
+              const data = line.slice(6).trim();
+
+              if (data === '[DONE]') {
+                addDebug({ type: 'done', message: 'Stream complete' });
+                finalizeStreamingMessage(fullContent, citations);
+                return;
+              }
+
+              try {
+                const event = JSON.parse(data);
+                addDebug(event);
+
+                switch (event.type) {
+                  case 'conversation':
+                    conversationId = event.conversationId;
+                    break;
+                  case 'chunk':
+                    fullContent += event.content || '';
+                    updateStreamingContent(fullContent);
+                    break;
+                  case 'citations':
+                    citations = event.citations || [];
+                    break;
+                  case 'done':
+                    finalizeStreamingMessage(fullContent, citations);
+                    return;
+                  case 'error':
+                    throw new Error(event.error);
+                }
+              } catch (e) {
+                // Ignore parse errors
+              }
+            }
+          }
+        }
+
+        finalizeStreamingMessage(fullContent, citations);
+
+      } catch (error) {
+        if (error.name === 'AbortError') {
+          addDebug({ type: 'cancelled', message: 'Stream cancelled by user' });
+        } else {
+          addDebug({ type: 'error', error: error.message });
+          addMessage('ASSISTANT', `Erreur: ${error.message}`);
+        }
+
+        const streamingEl = document.getElementById('streaming-message');
+        if (streamingEl) streamingEl.remove();
+      }
+    }
+
+    // Send without streaming
+    async function sendMessageNormal(token, question) {
+      try {
+        const response = await fetch(`${API_URL}/api/chat/message`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            content: question,
+            conversationId: conversationId
+          })
+        });
+
+        const data = await response.json();
+        addDebug({ type: 'response', data });
+
+        if (data.success && data.data?.message) {
+          conversationId = data.data.conversation?.id;
+          addMessage('ASSISTANT', data.data.message.content, data.data.message.citations || []);
+        } else {
+          addMessage('ASSISTANT', `Erreur: ${data.error || 'Erreur inconnue'}`);
+        }
+
+      } catch (error) {
+        addDebug({ type: 'error', error: error.message });
+        addMessage('ASSISTANT', `Erreur: ${error.message}`);
+      }
+    }
+
+    // Cancel stream
+    function cancelStream() {
+      if (abortController) {
+        abortController.abort();
+        abortController = null;
+      }
+    }
+
+    // Clear messages
+    function clearMessages() {
+      document.getElementById('messages').innerHTML = `
+        <div class="text-center text-gray-400 py-8">
+          <svg class="w-12 h-12 mx-auto mb-2 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+          </svg>
+          <p>Aucun message. Posez une question pour commencer.</p>
+        </div>
+      `;
+      conversationId = null;
+    }
+
+    // Clear debug
+    function clearDebug() {
+      document.getElementById('debug').innerHTML = '<div class="text-gray-500">// Events SSE apparaitront ici...</div>';
+    }
+  </script>
+</body>
+</html>

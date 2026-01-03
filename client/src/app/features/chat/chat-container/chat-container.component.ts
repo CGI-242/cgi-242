@@ -1,7 +1,7 @@
-import { Component, inject, OnInit, signal, computed, ViewChild, ElementRef, AfterViewChecked, ChangeDetectionStrategy, DestroyRef } from '@angular/core';
+import { Component, inject, OnInit, signal, computed, ViewChild, ElementRef, AfterViewChecked, ChangeDetectionStrategy, DestroyRef, OnDestroy } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
-import { ChatService, Conversation } from '@core/services/chat.service';
+import { ChatService, Conversation, Citation, StreamEvent } from '@core/services/chat.service';
 import { TenantService } from '@core/services/tenant.service';
 import { AuthService } from '@core/services/auth.service';
 import { ChatInputComponent } from '../chat-input/chat-input.component';
@@ -99,7 +99,26 @@ import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
                     <app-chat-message [message]="message" [userInitials]="userInitials()" />
                   }
 
-                  @if (chatService.isLoading()) {
+                  @if (chatService.isStreaming()) {
+                    <div class="flex gap-3">
+                      <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-primary-600 text-xs font-bold">CGI</span>
+                      </div>
+                      <div class="bg-white border border-secondary-200 rounded-2xl rounded-tl-none p-4 max-w-3xl">
+                        @if (chatService.streamingContent()) {
+                          <div class="prose prose-sm whitespace-pre-wrap" [innerHTML]="formatStreamingContent()"></div>
+                          <span class="inline-block w-2 h-4 bg-primary-600 animate-pulse ml-1"></span>
+                        } @else {
+                          <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-primary-600 rounded-full animate-bounce"></div>
+                            <div class="w-2 h-2 bg-primary-600 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                            <div class="w-2 h-2 bg-primary-600 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                            <span class="text-sm text-secondary-500 ml-2">Recherche en cours...</span>
+                          </div>
+                        }
+                      </div>
+                    </div>
+                  } @else if (chatService.isLoading()) {
                     <div class="flex gap-3">
                       <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <span class="text-primary-600 text-xs font-bold">CGI</span>
@@ -125,7 +144,7 @@ import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
     </div>
   `,
 })
-export class ChatContainerComponent implements OnInit, AfterViewChecked {
+export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestroy {
   chatService = inject(ChatService);
   tenantService = inject(TenantService);
   private authService = inject(AuthService);
@@ -136,6 +155,9 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked {
   sidebarCollapsed = false;
   currentConversation = this.chatService.currentConversation;
   messages = signal<{ id: string; role: string; content: string; citations?: { articleNumber: string; title?: string; excerpt: string }[] }[]>([]);
+
+  // Use streaming by default
+  useStreaming = true;
 
   userInitials = computed(() => {
     const user = this.authService.user();
@@ -202,6 +224,70 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked {
     };
     this.messages.update((m) => [...m, userMessage]);
 
+    if (this.useStreaming) {
+      this.sendMessageWithStreaming(content);
+    } else {
+      this.sendMessageWithoutStreaming(content);
+    }
+  }
+
+  private sendMessageWithStreaming(content: string): void {
+    let conversationId = this.currentConversation()?.id;
+    let finalContent = '';
+    let citations: Citation[] = [];
+
+    this.chatService
+      .sendMessageStreaming({
+        content,
+        conversationId,
+      })
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (event: StreamEvent) => {
+          switch (event.type) {
+            case 'conversation':
+              if (event.conversationId) {
+                conversationId = event.conversationId;
+              }
+              break;
+            case 'chunk':
+              finalContent = this.chatService.streamingContent();
+              break;
+            case 'citations':
+              if (event.citations) {
+                citations = event.citations;
+              }
+              break;
+            case 'done':
+              // Add the complete message to the list
+              const assistantMessage = {
+                id: crypto.randomUUID(),
+                role: 'ASSISTANT',
+                content: this.chatService.streamingContent(),
+                citations: this.chatService.streamingCitations(),
+              };
+              this.messages.update((m) => [...m, assistantMessage]);
+              this.chatService.resetStreamingState();
+
+              // Reload conversations to update the list
+              this.chatService.loadConversations()
+                .pipe(takeUntilDestroyed(this.destroyRef))
+                .subscribe();
+              break;
+            case 'error':
+              console.error('Streaming error:', event.error);
+              this.chatService.resetStreamingState();
+              break;
+          }
+        },
+        error: (error) => {
+          console.error('Stream error:', error);
+          this.chatService.resetStreamingState();
+        },
+      });
+  }
+
+  private sendMessageWithoutStreaming(content: string): void {
     this.chatService
       .sendMessage({
         content,
@@ -214,4 +300,23 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked {
       });
   }
 
+  /**
+   * Format streaming content for display
+   * Converts markdown-like formatting to HTML
+   */
+  formatStreamingContent(): string {
+    let content = this.chatService.streamingContent();
+
+    // Basic markdown formatting
+    content = content
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\n/g, '<br>');
+
+    return content;
+  }
+
+  ngOnDestroy(): void {
+    // Cancel any ongoing stream when component is destroyed
+    this.chatService.cancelStream();
+  }
 }
