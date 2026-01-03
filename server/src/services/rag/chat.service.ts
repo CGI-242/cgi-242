@@ -339,7 +339,7 @@ export async function* generateChatResponseStream(
       systemPrompt = `${SYSTEM_PROMPT_WITH_CONTEXT}\n\nCONTEXTE CGI:\n${context}`;
     }
 
-    // Préparer les messages
+    // Préparer les messages avec prefill pour forcer le format
     const messages: Anthropic.MessageParam[] = [
       ...conversationHistory
         .filter(m => m.role !== 'system')
@@ -350,6 +350,11 @@ export async function* generateChatResponseStream(
       { role: 'user', content: query },
     ];
 
+    // Ajouter prefill pour questions fiscales (force le début de réponse)
+    if (isFiscal) {
+      messages.push({ role: 'assistant', content: "L'article " });
+    }
+
     // Appeler Claude avec streaming
     const stream = await anthropic.messages.stream({
       model: 'claude-3-haiku-20240307',
@@ -358,9 +363,15 @@ export async function* generateChatResponseStream(
       messages,
     });
 
-    let fullContent = '';
+    // Inclure le prefill dans le contenu initial
+    let fullContent = isFiscal ? "L'article " : '';
     let inputTokens = 0;
     let outputTokens = 0;
+
+    // Envoyer le prefill au client si question fiscale
+    if (isFiscal) {
+      yield { type: 'chunk', content: "L'article " };
+    }
 
     // Émettre les chunks de texte
     for await (const event of stream) {
