@@ -2,7 +2,7 @@
 // Version simplifiée : UN SEUL AGENT CGI (version en vigueur)
 import { createLogger } from '../utils/logger.js';
 import { cgiAgent } from '../agents/cgi-agent.js';
-import { AgentContext, AgentResponse, ArticleSource } from '../agents/base-agent.js';
+import { AgentContext, ArticleSource } from '../agents/base-agent.js';
 
 const logger = createLogger('CGIOrchestrator');
 

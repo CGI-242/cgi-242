@@ -3,6 +3,7 @@ import { prisma } from '../config/database.js';
 import { createLogger } from '../utils/logger.js';
 import { ERROR_MESSAGES } from '../utils/constants.js';
 import { AppError } from '../middleware/error.middleware.js';
+import { AuditService } from './audit.service.js';
 
 const logger = createLogger('MemberService');
 
@@ -82,6 +83,24 @@ export class MemberService {
 
       logger.info(`Propriété transférée: ${requesterId} -> ${memberId}`);
 
+      // Audit log - Transfert de propriété
+      await AuditService.log({
+        actorId: requesterId,
+        action: 'OWNERSHIP_TRANSFERRED',
+        entityType: 'OrganizationMember',
+        entityId: memberId,
+        organizationId,
+        changes: {
+          before: { role: requester.role },
+          after: { role: 'OWNER' },
+        },
+        metadata: {
+          actorRole: 'OWNER',
+          newOwnerId: memberId,
+          previousOwnerId: requesterId,
+        },
+      });
+
       return prisma.organizationMember.findUnique({
         where: { userId_organizationId: { userId: memberId, organizationId } },
         include: { user: true },
@@ -95,6 +114,23 @@ export class MemberService {
     });
 
     logger.info(`Rôle mis à jour: ${memberId} -> ${newRole}`);
+
+    // Audit log - Changement de rôle
+    await AuditService.log({
+      actorId: requesterId,
+      action: 'MEMBER_ROLE_CHANGED',
+      entityType: 'OrganizationMember',
+      entityId: memberId,
+      organizationId,
+      changes: {
+        before: { role: target.role },
+        after: { role: newRole },
+      },
+      metadata: {
+        actorRole: requester.role,
+      },
+    });
+
     return updated;
   }
 
@@ -135,6 +171,22 @@ export class MemberService {
     });
 
     logger.info(`Membre retiré: ${memberId} de l'org ${organizationId}`);
+
+    // Audit log - Retrait de membre
+    await AuditService.log({
+      actorId: requesterId,
+      action: 'MEMBER_REMOVED',
+      entityType: 'OrganizationMember',
+      entityId: memberId,
+      organizationId,
+      changes: {
+        before: { role: target.role, status: 'active' },
+        after: { status: 'removed' },
+      },
+      metadata: {
+        removedByOther: memberId !== requesterId,
+      },
+    });
   }
 
   /**

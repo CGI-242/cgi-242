@@ -2,7 +2,7 @@
 import { Router } from 'express';
 import { body } from 'express-validator';
 import { authMiddleware } from '../middleware/auth.middleware.js';
-import { tenantMiddleware } from '../middleware/tenant.middleware.js';
+import { tenantMiddleware, checkQuotaMiddleware } from '../middleware/tenant.middleware.js';
 import { validate } from '../middleware/validation.middleware.js';
 import * as chatController from '../controllers/chat.controller.js';
 
@@ -22,6 +22,7 @@ router.post(
     body('forceYear').optional().isIn([2025, 2026]).withMessage('forceYear doit être 2025 ou 2026'),
   ],
   validate,
+  checkQuotaMiddleware, // ✅ CORRECTION CRITIQUE: Vérifier quotas avant traitement
   chatController.sendMessageOrchestrated
 );
 

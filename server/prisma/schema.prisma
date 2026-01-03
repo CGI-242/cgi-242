@@ -33,9 +33,14 @@ model Organization {
   conversations Conversation[]
   usageStats    UsageStats[]
 
+  // Soft delete
+  deletedAt DateTime?
+  deletedBy String?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  @@index([deletedAt])
   @@map("organizations")
 }
 
@@ -217,6 +222,7 @@ model Payment {
   status          String // succeeded, pending, failed
   paymentMethod   String?
   stripePaymentId String?
+  metadata        Json?   // Données CinetPay ou Stripe
 
   createdAt DateTime @default(now())
 
@@ -412,4 +418,70 @@ model SystemConfig {
   updatedAt DateTime @updatedAt
 
   @@map("system_config")
+}
+
+// ==================== AUDIT TRAIL ====================
+
+enum AuditAction {
+  // Organization
+  ORG_CREATED
+  ORG_UPDATED
+  ORG_DELETED
+  ORG_RESTORED
+
+  // Members
+  MEMBER_INVITED
+  MEMBER_JOINED
+  MEMBER_ROLE_CHANGED
+  MEMBER_REMOVED
+  OWNERSHIP_TRANSFERRED
+
+  // Subscription
+  SUBSCRIPTION_CREATED
+  SUBSCRIPTION_UPDATED
+  SUBSCRIPTION_CANCELLED
+  PAYMENT_SUCCEEDED
+  PAYMENT_FAILED
+
+  // Data
+  CONVERSATION_CREATED
+  CONVERSATION_DELETED
+  DATA_EXPORTED
+
+  // Security
+  LOGIN_SUCCESS
+  LOGIN_FAILED
+  PASSWORD_CHANGED
+  EMAIL_VERIFIED
+}
+
+model AuditLog {
+  id String @id @default(uuid())
+
+  // Qui a fait l'action ?
+  actorId    String
+  actorEmail String
+  actorRole  String?
+
+  // Quelle action ?
+  action     AuditAction
+  entityType String // Organization, User, Subscription, etc.
+  entityId   String
+
+  // Contexte organisation (optionnel)
+  organizationId String?
+
+  // Détails des changements
+  changes  Json // { before: {...}, after: {...} }
+  metadata Json? // { ip, userAgent, reason, etc. }
+
+  // Quand ?
+  createdAt DateTime @default(now())
+
+  @@index([actorId])
+  @@index([organizationId])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+  @@index([action])
+  @@map("audit_logs")
 }

@@ -49,7 +49,11 @@ export const config = {
     user: process.env.SMTP_USER || '',
     pass: process.env.SMTP_PASS || '',
     from: process.env.EMAIL_FROM || 'CGI Engine <noreply@cgi-engine.com>',
+    adminEmail: process.env.ADMIN_EMAIL || '',
   },
+
+  // Super Admins (emails séparés par des virgules)
+  superAdmins: (process.env.SUPER_ADMIN_EMAILS || '').split(',').filter(Boolean),
 
   // URLs
   frontendUrl: process.env.FRONTEND_URL || 'http://localhost:4200',

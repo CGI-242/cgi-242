@@ -185,4 +185,34 @@ export function verifyRefreshToken(token: string): { userId: string } | null {
   }
 }
 
+/**
+ * Middleware pour vérifier que l'utilisateur est un super admin
+ * Les super admins sont définis dans SUPER_ADMIN_EMAILS
+ */
+export const requireSuperAdmin = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void | Response> => {
+  if (!req.user) {
+    return sendError(res, ERROR_MESSAGES.UNAUTHORIZED, 401);
+  }
+
+  const isSuperAdmin = config.superAdmins.includes(req.user.email);
+
+  if (!isSuperAdmin) {
+    authLogger.warn(`Accès super admin refusé pour ${req.user.email}`);
+    return sendError(res, 'Accès réservé aux super administrateurs', 403);
+  }
+
+  next();
+};
+
+/**
+ * Vérifier si un utilisateur est super admin (helper)
+ */
+export function isSuperAdmin(email: string): boolean {
+  return config.superAdmins.includes(email);
+}
+
 export default authMiddleware;

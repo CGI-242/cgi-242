@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { OrganizationService } from '../services/organization.service.js';
 import { MemberService } from '../services/member.service.js';
 import { InvitationService } from '../services/invitation.service.js';
+import { AuditService } from '../services/audit.service.js';
 import { asyncHandler } from '../middleware/error.middleware.js';
 import { sendSuccess } from '../utils/helpers.js';
 import { SUCCESS_MESSAGES } from '../utils/constants.js';
@@ -9,6 +10,12 @@ import { SUCCESS_MESSAGES } from '../utils/constants.js';
 const orgService = new OrganizationService();
 const memberService = new MemberService();
 const invitationService = new InvitationService();
+
+// Helper pour extraire les métadonnées de la requête
+const getAuditMetadata = (req: Request) => ({
+  ip: req.ip || req.headers['x-forwarded-for'] as string,
+  userAgent: req.headers['user-agent'],
+});
 
 // === Organisation CRUD ===
 
@@ -24,6 +31,17 @@ export const create = asyncHandler(async (req: Request, res: Response) => {
     address,
   });
 
+  // Audit trail
+  await AuditService.log({
+    actorId: userId,
+    action: 'ORG_CREATED',
+    entityType: 'Organization',
+    entityId: organization.id,
+    organizationId: organization.id,
+    changes: { before: null, after: { name, slug } },
+    metadata: getAuditMetadata(req),
+  });
+
   sendSuccess(res, organization, SUCCESS_MESSAGES.ORG_CREATED, 201);
 });
 
@@ -37,7 +55,11 @@ export const getDetails = asyncHandler(async (req: Request, res: Response) => {
 
 export const update = asyncHandler(async (req: Request, res: Response) => {
   const { orgId } = req.params;
+  const userId = req.user!.id;
   const { name, website, phone, address, logo, settings } = req.body;
+
+  // Récupérer l'état avant modification pour l'audit
+  const before = await orgService.getById(orgId);
 
   const organization = await orgService.update(orgId, {
     name,
@@ -46,6 +68,20 @@ export const update = asyncHandler(async (req: Request, res: Response) => {
     address,
     logo,
     settings,
+  }, userId);
+
+  // Audit trail
+  await AuditService.log({
+    actorId: userId,
+    action: 'ORG_UPDATED',
+    entityType: 'Organization',
+    entityId: orgId,
+    organizationId: orgId,
+    changes: {
+      before: { name: before?.name, website: before?.website, phone: before?.phone },
+      after: { name, website, phone }
+    },
+    metadata: getAuditMetadata(req),
   });
 
   sendSuccess(res, organization, SUCCESS_MESSAGES.ORG_UPDATED);
@@ -53,8 +89,24 @@ export const update = asyncHandler(async (req: Request, res: Response) => {
 
 export const deleteOrg = asyncHandler(async (req: Request, res: Response) => {
   const { orgId } = req.params;
+  const userId = req.user!.id;
 
-  await orgService.delete(orgId);
+  // Récupérer l'état avant suppression pour l'audit
+  const before = await orgService.getById(orgId);
+
+  // La méthode delete gère déjà l'audit en interne
+  await orgService.delete(orgId, userId);
+
+  // Audit trail supplémentaire (avec metadata de la requête)
+  await AuditService.log({
+    actorId: userId,
+    action: 'ORG_DELETED',
+    entityType: 'Organization',
+    entityId: orgId,
+    organizationId: orgId,
+    changes: { before: { name: before?.name, slug: before?.slug }, after: null },
+    metadata: getAuditMetadata(req),
+  });
 
   sendSuccess(res, null, SUCCESS_MESSAGES.ORG_DELETED);
 });
@@ -82,7 +134,23 @@ export const updateMemberRole = asyncHandler(async (req: Request, res: Response)
   const { role } = req.body;
   const requesterId = req.user!.id;
 
+  // Récupérer le rôle avant modification
+  const beforeMember = await memberService.getByOrganization(orgId);
+  const oldMember = beforeMember.find(m => m.userId === memberId);
+  const oldRole = oldMember?.role;
+
   const member = await memberService.updateRole(orgId, memberId, role, requesterId);
+
+  // Audit trail
+  await AuditService.log({
+    actorId: requesterId,
+    action: 'MEMBER_ROLE_CHANGED',
+    entityType: 'OrganizationMember',
+    entityId: memberId,
+    organizationId: orgId,
+    changes: { before: { role: oldRole }, after: { role } },
+    metadata: { ...getAuditMetadata(req), targetUserId: memberId },
+  });
 
   sendSuccess(res, member);
 });
@@ -92,6 +160,17 @@ export const removeMember = asyncHandler(async (req: Request, res: Response) => 
   const requesterId = req.user!.id;
 
   await memberService.remove(orgId, memberId, requesterId);
+
+  // Audit trail
+  await AuditService.log({
+    actorId: requesterId,
+    action: 'MEMBER_REMOVED',
+    entityType: 'OrganizationMember',
+    entityId: memberId,
+    organizationId: orgId,
+    changes: { before: { memberId }, after: null },
+    metadata: { ...getAuditMetadata(req), removedUserId: memberId },
+  });
 
   sendSuccess(res, null, SUCCESS_MESSAGES.MEMBER_REMOVED);
 });
@@ -105,6 +184,17 @@ export const inviteMember = asyncHandler(async (req: Request, res: Response) => 
 
   const invitation = await invitationService.create(orgId, invitedById, email, role);
 
+  // Audit trail
+  await AuditService.log({
+    actorId: invitedById,
+    action: 'MEMBER_INVITED',
+    entityType: 'Invitation',
+    entityId: invitation.id,
+    organizationId: orgId,
+    changes: { before: null, after: { email, role } },
+    metadata: { ...getAuditMetadata(req), invitedEmail: email },
+  });
+
   sendSuccess(res, invitation, SUCCESS_MESSAGES.INVITATION_SENT, 201);
 });
 
@@ -113,6 +203,17 @@ export const acceptInvitation = asyncHandler(async (req: Request, res: Response)
   const userId = req.user!.id;
 
   const member = await invitationService.accept(token, userId);
+
+  // Audit trail
+  await AuditService.log({
+    actorId: userId,
+    action: 'MEMBER_JOINED',
+    entityType: 'OrganizationMember',
+    entityId: member.id,
+    organizationId: member.organizationId,
+    changes: { before: null, after: { role: member.role } },
+    metadata: getAuditMetadata(req),
+  });
 
   sendSuccess(res, member, SUCCESS_MESSAGES.INVITATION_ACCEPTED);
 });

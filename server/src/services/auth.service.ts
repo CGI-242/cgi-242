@@ -8,6 +8,7 @@ import { createLogger } from '../utils/logger.js';
 import { ERROR_MESSAGES, PASSWORD_RESET_EXPIRY_HOURS } from '../utils/constants.js';
 import { AppError } from '../middleware/error.middleware.js';
 import { EmailService } from './email.service.js';
+import { AuditService } from './audit.service.js';
 
 const logger = createLogger('AuthService');
 
@@ -155,6 +156,18 @@ export class AuthService {
 
     logger.info(`Utilisateur connecté: ${user.email}`);
 
+    // Audit log - Connexion réussie
+    await AuditService.log({
+      actorId: user.id,
+      action: 'LOGIN_SUCCESS',
+      entityType: 'User',
+      entityId: user.id,
+      changes: {
+        before: null,
+        after: { lastLoginAt: new Date().toISOString() },
+      },
+    });
+
     return {
       user: {
         id: user.id,
@@ -235,6 +248,21 @@ export class AuthService {
     });
 
     logger.info(`Mot de passe réinitialisé: ${user.email}`);
+
+    // Audit log - Mot de passe changé
+    await AuditService.log({
+      actorId: user.id,
+      action: 'PASSWORD_CHANGED',
+      entityType: 'User',
+      entityId: user.id,
+      changes: {
+        before: { hasPassword: true },
+        after: { hasPassword: true, resetAt: new Date().toISOString() },
+      },
+      metadata: {
+        method: 'password_reset_token',
+      },
+    });
   }
 
   /**
@@ -262,6 +290,18 @@ export class AuthService {
     });
 
     logger.info(`Email vérifié: ${user.email}`);
+
+    // Audit log - Email vérifié
+    await AuditService.log({
+      actorId: user.id,
+      action: 'EMAIL_VERIFIED',
+      entityType: 'User',
+      entityId: user.id,
+      changes: {
+        before: { isEmailVerified: false },
+        after: { isEmailVerified: true },
+      },
+    });
   }
 
   /**

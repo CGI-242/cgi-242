@@ -2,6 +2,7 @@ import { createApp } from './app.js';
 import { config, validateEnvironment } from './config/environment.js';
 import { connectDatabase, disconnectDatabase } from './config/database.js';
 import { createLogger } from './utils/logger.js';
+import { startQuotaResetJob } from './jobs/quota-reset.job.js';
 
 const logger = createLogger('Server');
 
@@ -28,6 +29,9 @@ API: ${config.backendUrl}${config.apiPrefix}
 Frontend: ${config.frontendUrl}
 ========================================
       `);
+
+      // Démarrer le cron job pour reset quotas mensuel
+      startQuotaResetJob();
     });
 
     // Gestion de l'arrêt propre

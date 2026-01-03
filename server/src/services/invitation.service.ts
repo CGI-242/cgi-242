@@ -5,6 +5,7 @@ import { createLogger } from '../utils/logger.js';
 import { ERROR_MESSAGES, INVITATION_EXPIRY_DAYS } from '../utils/constants.js';
 import { AppError } from '../middleware/error.middleware.js';
 import { EmailService } from './email.service.js';
+import { AuditService } from './audit.service.js';
 
 const logger = createLogger('InvitationService');
 
@@ -93,6 +94,24 @@ export class InvitationService {
     }
 
     logger.info(`Invitation envoyée: ${email} -> ${org.name} (role: ${role})`);
+
+    // Audit log - Invitation membre
+    await AuditService.log({
+      actorId: invitedById,
+      action: 'MEMBER_INVITED',
+      entityType: 'Invitation',
+      entityId: invitation.id,
+      organizationId,
+      changes: {
+        before: null,
+        after: { email, role },
+      },
+      metadata: {
+        invitedEmail: email,
+        invitedRole: role,
+      },
+    });
+
     return invitation;
   }
 
@@ -148,6 +167,24 @@ export class InvitationService {
     ]);
 
     logger.info(`Invitation acceptée: ${user.email} a rejoint ${invitation.organization.name}`);
+
+    // Audit log - Membre a rejoint l'organisation
+    await AuditService.log({
+      actorId: userId,
+      action: 'MEMBER_JOINED',
+      entityType: 'OrganizationMember',
+      entityId: member.id,
+      organizationId: invitation.organizationId,
+      changes: {
+        before: { status: 'invited' },
+        after: { status: 'active', role: invitation.role },
+      },
+      metadata: {
+        invitationId: invitation.id,
+        invitedBy: invitation.invitedById,
+      },
+    });
+
     return member;
   }
 

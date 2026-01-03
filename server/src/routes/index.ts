@@ -4,6 +4,9 @@ import organizationRoutes from './organization.routes.js';
 import chatRoutes from './chat.routes.js';
 import statsRoutes from './stats.routes.js';
 import articlesRoutes from './articles.routes.js';
+import cinetpayRoutes from './cinetpay.routes.js';
+import webhookRoutes from './webhook.routes.js';
+import auditRoutes from './audit.routes.js';
 
 const router = Router();
 
@@ -22,5 +25,10 @@ router.use('/organizations', organizationRoutes);
 router.use('/chat', chatRoutes);
 router.use('/stats', statsRoutes);
 router.use('/articles', articlesRoutes);
+router.use('/cinetpay', cinetpayRoutes);
+router.use('/webhooks', webhookRoutes);
+
+// Routes d'audit (montées à la racine car incluent /organizations/:orgId/audit et /audit/*)
+router.use(auditRoutes);
 
 export default router;

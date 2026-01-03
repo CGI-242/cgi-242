@@ -32,6 +32,7 @@ export const CGI_COLLECTION = 'cgi_2026';
 
 // Pour compatibilité descendante
 export const CGI_COLLECTIONS = {
+  '2025': 'cgi_2025',
   '2026': 'cgi_2026',
   'current': 'cgi_2026',
 } as const;

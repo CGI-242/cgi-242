@@ -242,6 +242,162 @@ export class EmailService {
     };
     return labels[role] || role;
   }
+
+  /**
+   * Envoyer une confirmation de paiement réussi
+   */
+  async sendPaymentConfirmation(data: {
+    email: string;
+    firstName?: string | null;
+    plan: string;
+    amount: number;
+    transactionId: string;
+  }): Promise<void> {
+    const greeting = data.firstName ? `Bonjour ${data.firstName}` : 'Bonjour';
+
+    const html = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <style>
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background: #059669; color: white; padding: 20px; text-align: center; }
+          .content { padding: 20px; background: #f9fafb; }
+          .details { background: white; padding: 15px; border-radius: 8px; margin: 15px 0; }
+          .footer { padding: 20px; text-align: center; font-size: 12px; color: #666; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>Paiement confirmé</h1>
+          </div>
+          <div class="content">
+            <p>${greeting},</p>
+            <p>Votre paiement a été traité avec succès !</p>
+            <div class="details">
+              <p><strong>Plan:</strong> ${data.plan}</p>
+              <p><strong>Montant:</strong> ${data.amount.toLocaleString('fr-FR')} FCFA</p>
+              <p><strong>Transaction:</strong> ${data.transactionId}</p>
+              <p><strong>Date:</strong> ${new Date().toLocaleDateString('fr-FR')}</p>
+            </div>
+            <p>Votre abonnement est maintenant actif. Profitez de toutes les fonctionnalités de CGI 242 !</p>
+          </div>
+          <div class="footer">
+            <p>© ${new Date().getFullYear()} CGI 242. Tous droits réservés.</p>
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
+
+    await this.sendMail(data.email, 'Confirmation de paiement - CGI 242', html);
+  }
+
+  /**
+   * Envoyer une notification d'échec de paiement
+   */
+  async sendPaymentFailed(data: {
+    email: string;
+    firstName?: string | null;
+    plan: string;
+    reason?: string;
+  }): Promise<void> {
+    const greeting = data.firstName ? `Bonjour ${data.firstName}` : 'Bonjour';
+
+    const html = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <style>
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background: #dc2626; color: white; padding: 20px; text-align: center; }
+          .content { padding: 20px; background: #f9fafb; }
+          .button { display: inline-block; padding: 12px 24px; background: #1e40af; color: white; text-decoration: none; border-radius: 6px; margin: 20px 0; }
+          .footer { padding: 20px; text-align: center; font-size: 12px; color: #666; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>Échec du paiement</h1>
+          </div>
+          <div class="content">
+            <p>${greeting},</p>
+            <p>Votre paiement pour l'abonnement <strong>${data.plan}</strong> n'a pas pu être traité.</p>
+            ${data.reason ? `<p>Raison: ${data.reason}</p>` : ''}
+            <p>Veuillez réessayer ou contacter notre support si le problème persiste.</p>
+            <p style="text-align: center;">
+              <a href="${config.frontendUrl}/pricing" class="button">Réessayer le paiement</a>
+            </p>
+          </div>
+          <div class="footer">
+            <p>© ${new Date().getFullYear()} CGI 242. Tous droits réservés.</p>
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
+
+    await this.sendMail(data.email, 'Échec du paiement - CGI 242', html);
+  }
+
+  /**
+   * Envoyer une notification admin (quota reset, alertes système)
+   */
+  async sendAdminNotification(data: {
+    type: 'QUOTA_RESET_SUCCESS' | 'QUOTA_RESET_FAILED' | 'CRITICAL_ERROR';
+    message: string;
+    details?: Record<string, unknown>;
+  }): Promise<void> {
+    const adminEmail = config.email.adminEmail || config.email.from;
+    if (!adminEmail) {
+      logger.warn('Pas d\'email admin configuré pour les notifications');
+      return;
+    }
+
+    const typeLabels = {
+      QUOTA_RESET_SUCCESS: { label: 'Reset quotas réussi', color: '#059669' },
+      QUOTA_RESET_FAILED: { label: 'Échec reset quotas', color: '#dc2626' },
+      CRITICAL_ERROR: { label: 'Erreur critique', color: '#dc2626' },
+    };
+
+    const { label, color } = typeLabels[data.type];
+
+    const html = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <style>
+          body { font-family: monospace; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background: ${color}; color: white; padding: 20px; text-align: center; }
+          .content { padding: 20px; background: #f9fafb; }
+          .details { background: #1f2937; color: #10b981; padding: 15px; border-radius: 8px; overflow-x: auto; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>[CGI-ENGINE] ${label}</h1>
+          </div>
+          <div class="content">
+            <p><strong>Timestamp:</strong> ${new Date().toISOString()}</p>
+            <p><strong>Message:</strong> ${data.message}</p>
+            ${data.details ? `<div class="details"><pre>${JSON.stringify(data.details, null, 2)}</pre></div>` : ''}
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
+
+    await this.sendMail(adminEmail, `[CGI-ENGINE] ${label}`, html);
+  }
 }
 
 export default EmailService;
