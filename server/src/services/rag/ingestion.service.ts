@@ -261,6 +261,7 @@ export async function ingestArticles(articles: ArticleJSON[]): Promise<Ingestion
               contenu: article.contenu.substring(0, 1000),
               tome: article.tome,
               chapitre: article.chapitre,
+              version: version,
               keywords: article.keywords || [],
             },
           });

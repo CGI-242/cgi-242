@@ -5,8 +5,10 @@ import https from 'https';
 import { config } from '../../config/environment.js';
 import { createLogger } from '../../utils/logger.js';
 import { createAnthropicCall } from '../../utils/api-resilience.js';
-import { generateEmbedding } from './embeddings.service.js';
-import { searchSimilarArticles, SearchResult } from './qdrant.service.js';
+import { hybridSearch, SearchResult as HybridSearchResult } from './hybrid-search.service.js';
+
+// Alias pour compatibilité
+type SearchResult = HybridSearchResult;
 
 const logger = createLogger('ChatService');
 
@@ -26,7 +28,7 @@ const anthropic = new Anthropic({
 
 const SYSTEM_PROMPT_WITH_CONTEXT = `Tu es CGI 242, assistant fiscal expert du Code General des Impots du Congo - Edition 2026.
 
-IMPORTANT : Tu reponds UNIQUEMENT sur le CGI 2026 (Directive CEMAC n0119/25-UEAC-177-CM-42 du 09 janvier 2025).
+IMPORTANT : Tu reponds UNIQUEMENT sur le CGI 2026.
 
 REGLES DE FORMAT - PRIORITE MAXIMALE :
 Tu dois IMPERATIVEMENT respecter ces regles de format. Toute violation est inacceptable.
@@ -73,7 +75,10 @@ REGLES DE REFERENCE :
 REGLES DE CONTENU :
 - Citer UNIQUEMENT les articles presents dans le CONTEXTE
 - Ne JAMAIS inventer de numero d article
-- Citer TEXTUELLEMENT les montants et taux`;
+- Citer TEXTUELLEMENT les montants et taux
+
+SI AUCUN ARTICLE PERTINENT :
+Reponds simplement : "Veuillez poser une question sur le CGI 2026."`;
 
 
 const SYSTEM_PROMPT_SIMPLE = `Tu es CGI 242, assistant fiscal expert du Code General des Impots du Congo.
@@ -166,14 +171,11 @@ export async function generateChatResponse(
 
   // Ne faire la recherche que pour les questions fiscales
   if (isFiscal) {
-    // 1. Générer l'embedding de la question
-    const { embedding } = await generateEmbedding(query);
-
-    // 2. Rechercher les articles pertinents
-    searchResults = await searchSimilarArticles(embedding, 10);
+    // Recherche hybride (keywords + vectorielle) avec métadonnées CGI 2026
+    searchResults = await hybridSearch(query, 10, '2026');
 
     // Log des articles trouvés pour debug
-    logger.info(`Articles trouvés: ${searchResults.map(r => r.payload.numero).join(', ')}`);
+    logger.info(`Articles trouvés (hybride): ${searchResults.map(r => `${r.payload.numero}(${r.matchType})`).join(', ')}`);
 
     // Log du contenu pour debug (premiers 300 chars de chaque article)
     searchResults.forEach(r => {
@@ -250,17 +252,22 @@ function buildContext(results: SearchResult[]): string {
  * Extrait les numéros d'articles mentionnés dans la réponse de Claude
  */
 function extractArticlesFromResponse(response: string, searchResults: SearchResult[]): Citation[] {
-  // Regex pour trouver les mentions d'articles
-  // Matches: "article 2", "l'article 95", "articles 2 et 3", "Art. 95", "article 2 du CGI"
-  const articleRegex = /(?:l')?article\s*(\d+(?:\s*(?:,|et)\s*\d+)*)|art\.\s*(\d+)/gi;
+  // Regex pour trouver les mentions d'articles (supporte 4A, 44 A, 86C, etc.)
+  // Matches: "article 2", "l'article 4A", "articles 2 et 3", "Art. 95", "article 44 A"
+  const articleRegex = /(?:l')?article\s*(\d+\s*[A-Z]?(?:\s*(?:,|et)\s*\d+\s*[A-Z]?)*)|art\.\s*(\d+\s*[A-Z]?)/gi;
 
   const mentionedArticles = new Set<string>();
   let match;
 
   while ((match = articleRegex.exec(response)) !== null) {
-    const numbers = (match[1] || match[2]).match(/\d+/g);
-    if (numbers) {
-      numbers.forEach(num => mentionedArticles.add(num));
+    // Extraire les numéros avec leur lettre optionnelle
+    const articleNumbers = (match[1] || match[2]).match(/\d+\s*[A-Z]?/gi);
+    if (articleNumbers) {
+      articleNumbers.forEach(num => {
+        // Normaliser: "4 A" -> "4A", "44 A" -> "44 A"
+        const normalized = num.replace(/\s+/g, ' ').trim().toUpperCase();
+        mentionedArticles.add(normalized);
+      });
     }
   }
 
@@ -312,10 +319,12 @@ export interface StreamEvent {
   type: 'start' | 'chunk' | 'citations' | 'done' | 'error';
   content?: string;
   citations?: Citation[];
+  cgiVersion?: string;
   metadata?: {
     tokensUsed?: number;
     responseTime?: number;
     model?: string;
+    cgiVersion?: string;
   };
   error?: string;
 }
@@ -345,8 +354,9 @@ export async function* generateChatResponseStream(
 
     // Recherche pour les questions fiscales
     if (isFiscal) {
-      const { embedding } = await generateEmbedding(query);
-      searchResults = await searchSimilarArticles(embedding, 10);
+      // Recherche hybride (keywords + vectorielle) avec métadonnées CGI 2026
+      searchResults = await hybridSearch(query, 10, '2026');
+      logger.info(`[Streaming] Articles trouvés (hybride): ${searchResults.map(r => `${r.payload.numero}(${r.matchType})`).join(', ')}`);
       const context = buildContext(searchResults);
       systemPrompt = `${SYSTEM_PROMPT_WITH_CONTEXT}\n\nCONTEXTE CGI:\n${context}`;
     }
@@ -388,12 +398,13 @@ export async function* generateChatResponseStream(
         httpsAgent,
       });
       logger.info('[Streaming] Connexion API établie, status:', response.status);
-    } catch (axiosError: any) {
+    } catch (axiosError) {
+      const err = axiosError as Error & { code?: string; response?: { status?: number; data?: { toString?: () => string } } };
       logger.error('[Streaming] Erreur axios:', {
-        message: axiosError.message,
-        code: axiosError.code,
-        status: axiosError.response?.status,
-        data: axiosError.response?.data?.toString?.()?.slice(0, 500),
+        message: err.message,
+        code: err.code,
+        status: err.response?.status,
+        data: err.response?.data?.toString?.()?.slice(0, 500),
       });
       throw axiosError;
     }
@@ -427,7 +438,7 @@ export async function* generateChatResponseStream(
             if (event.type === 'message_start' && event.message?.usage) {
               inputTokens = event.message.usage.input_tokens;
             }
-          } catch (e) {
+          } catch {
             // Ignorer les erreurs de parsing
           }
         }

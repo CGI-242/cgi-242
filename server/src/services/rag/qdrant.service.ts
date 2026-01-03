@@ -29,6 +29,7 @@ export interface ArticleVector {
     contenu: string;
     tome?: string;
     chapitre?: string;
+    version?: string;
     keywords: string[];
   };
 }
@@ -107,11 +108,12 @@ const SCORE_THRESHOLD = 0.7;
 export async function searchSimilarArticles(
   queryVector: number[],
   limit: number = 5,
-  scoreThreshold: number = SCORE_THRESHOLD
+  scoreThreshold: number = SCORE_THRESHOLD,
+  version: string = '2026'
 ): Promise<SearchResult[]> {
   // Générer une clé de cache basée sur le hash du vecteur
   const vectorHash = hashText(queryVector.slice(0, 10).join(','));
-  const cacheKey = `${CACHE_PREFIX.SEARCH}${vectorHash}:${limit}`;
+  const cacheKey = `${CACHE_PREFIX.SEARCH}${vectorHash}:${limit}:${version}`;
 
   // Vérifier le cache
   const cached = await redisService.get<SearchResult[]>(cacheKey);
@@ -131,6 +133,9 @@ export async function searchSimilarArticles(
     with_payload: true,
     with_vector: false,           // Économie bande passante (pas besoin des vecteurs)
     score_threshold: scoreThreshold, // Filtrer résultats peu pertinents
+    filter: {
+      must: [{ key: 'version', match: { value: version } }],
+    },
   });
 
   const searchDuration = Date.now() - startTime;

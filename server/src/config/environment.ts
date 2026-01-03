@@ -16,7 +16,7 @@ export const config = {
   // JWT - tokens sécurisés
   jwt: {
     secret: process.env.JWT_SECRET || 'default-secret-change-in-production',
-    expiresIn: process.env.JWT_EXPIRES_IN || '15m', // Réduit à 15min pour sécurité
+    expiresIn: process.env.JWT_EXPIRES_IN || '24h', // 24 heures
     refreshExpiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '7d', // Réduit à 7 jours
   },
 

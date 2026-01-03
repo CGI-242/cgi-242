@@ -11,6 +11,8 @@ interface UsageStats {
   questionsLimit: number;
   articlesViewed: number;
   conversationsCount: number;
+  plan: string;
+  status: string;
 }
 
 /**
@@ -30,6 +32,8 @@ export async function getUsageStats(req: Request, res: Response): Promise<void> 
     let questionsUsed = 0;
     let conversationsCount = 0;
     let articlesViewed = 0;
+    let plan = 'FREE';
+    let status = 'ACTIVE';
 
     if (tenant?.type === 'organization' && tenant.organizationId) {
       const subscription = await prisma.subscription.findUnique({
@@ -38,6 +42,8 @@ export async function getUsageStats(req: Request, res: Response): Promise<void> 
 
       questionsLimit = subscription?.questionsPerMonth ?? 10;
       questionsUsed = subscription?.questionsUsed ?? 0;
+      plan = subscription?.plan ?? 'FREE';
+      status = subscription?.status ?? 'ACTIVE';
 
       conversationsCount = await prisma.conversation.count({
         where: { organizationId: tenant.organizationId },
@@ -60,6 +66,8 @@ export async function getUsageStats(req: Request, res: Response): Promise<void> 
 
       questionsLimit = subscription?.questionsPerMonth ?? 10;
       questionsUsed = subscription?.questionsUsed ?? 0;
+      plan = subscription?.plan ?? 'FREE';
+      status = subscription?.status ?? 'ACTIVE';
 
       conversationsCount = await prisma.conversation.count({
         where: { creatorId: userId, organizationId: null },
@@ -75,6 +83,8 @@ export async function getUsageStats(req: Request, res: Response): Promise<void> 
       questionsLimit,
       articlesViewed,
       conversationsCount,
+      plan,
+      status,
     };
 
     sendSuccess(res, stats);

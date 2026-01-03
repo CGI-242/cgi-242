@@ -20,9 +20,6 @@ describe('API General', () => {
         .get('/health/ping')
         .expect(200);
 
-      // Helmet headers - check with case-insensitive comparison
-      const headers = Object.keys(response.headers).map(h => h.toLowerCase());
-
       // In test environment, headers may or may not be present depending on setup
       // Just verify the response is successful
       expect(response.status).toBe(200);
