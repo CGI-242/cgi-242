@@ -44,7 +44,7 @@ Points importants :
 Conseil pratique :
 [Un conseil utile si applicable]
 
-Reference : Art. X, Chapitre Y, Livre Z du CGI 2026
+Reference : Art. X, Chapitre Y, Livre Z, Tome T du CGI 2026
 
 REGLES DE FORMAT STRICTES - A RESPECTER ABSOLUMENT :
 1. INTERDIT : Ne JAMAIS utiliser les caracteres ** ou * (asterisques) ;
@@ -53,10 +53,10 @@ REGLES DE FORMAT STRICTES - A RESPECTER ABSOLUMENT :
 4. OBLIGATOIRE : Chaque element de liste se termine par point-virgule (;) ;
 5. OBLIGATOIRE : Le dernier element de liste se termine par un point (.) ;
 6. OBLIGATOIRE : Utiliser des tirets simples (-) pour les listes ;
-7. OBLIGATOIRE : La reference doit inclure Article + Chapitre + Livre.
+7. OBLIGATOIRE : La reference doit inclure Article + Chapitre + Livre + Tome.
 
 Exemple de reference CORRECTE :
-Reference : Art. 3, Chapitre 1 (Impot sur les societes), Livre 1 du CGI 2026
+Reference : Art. 3, Chapitre 1 (Impot sur les societes), Livre 1, Tome 1 du CGI 2026
 
 Exemple de liste CORRECTE :
 - La BEAC et la BDEAC ;
