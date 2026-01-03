@@ -179,6 +179,38 @@ export class CGIAgent extends BaseAgent {
   }
 
   /**
+   * Supprime tout formatage markdown et emojis de la réponse
+   * Appliqué en post-processing pour garantir une réponse en texte brut
+   */
+  private removeMarkdownAndEmojis(text: string): string {
+    return text
+      // Supprimer bold (**text** ou __text__)
+      .replace(/\*\*([^*]+)\*\*/g, '$1')
+      .replace(/__([^_]+)__/g, '$1')
+      // Supprimer italique (*text* ou _text_)
+      .replace(/\*([^*]+)\*/g, '$1')
+      .replace(/_([^_]+)_/g, '$1')
+      // Supprimer headers (# ## ###)
+      .replace(/^#{1,6}\s+/gm, '')
+      // Supprimer tirets multiples
+      .replace(/---+/g, '')
+      // Supprimer backticks
+      .replace(/`([^`]+)`/g, '$1')
+      // Supprimer emojis courants
+      .replace(/[\u{1F300}-\u{1F9FF}]/gu, '')
+      .replace(/[\u{2600}-\u{26FF}]/gu, '')
+      .replace(/[\u{2700}-\u{27BF}]/gu, '')
+      .replace(/[\u{1F600}-\u{1F64F}]/gu, '')
+      .replace(/[\u{1F680}-\u{1F6FF}]/gu, '')
+      // Supprimer symboles spéciaux (check, fleche, etc.)
+      .replace(/[📋📌💡📖✅❌⚠️🔴🟢🟡➡️⬅️⬆️⬇️]/g, '')
+      // Nettoyer les espaces multiples
+      .replace(/[^\S\n]+/g, ' ')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+  }
+
+  /**
    * Traite une requête utilisateur
    */
   async process(query: string, context?: AgentContext): Promise<AgentResponse> {
@@ -249,8 +281,11 @@ Tu DOIS :
         30000
       );
 
-      const answer =
+      let answer =
         completion.content[0]?.type === 'text' ? completion.content[0].text : '';
+
+      // Post-processing : supprimer markdown et emojis
+      answer = this.removeMarkdownAndEmojis(answer);
 
       logger.info(`[CGIAgent] Réponse générée en ${Date.now() - startTime}ms`);
       logger.info(`[CGIAgent] Articles trouvés:`, sources.map((s) => s.numero));
