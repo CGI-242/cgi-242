@@ -9,6 +9,10 @@ import { createLogger } from '../utils/logger.js';
 
 const authLogger = createLogger('AuthMiddleware');
 
+// Noms des cookies
+const ACCESS_TOKEN_COOKIE = 'cgi_access_token';
+const REFRESH_TOKEN_COOKIE = 'cgi_refresh_token';
+
 interface JwtPayload {
   userId: string;
   email: string;
@@ -17,8 +21,27 @@ interface JwtPayload {
 }
 
 /**
+ * Extraire le token depuis les cookies OU le header Authorization
+ * Priorité: Cookie HttpOnly > Header Authorization (pour compatibilité)
+ */
+function extractToken(req: Request): string | null {
+  // 1. Essayer d'abord les cookies HttpOnly (plus sécurisé)
+  if (req.cookies && req.cookies[ACCESS_TOKEN_COOKIE]) {
+    return req.cookies[ACCESS_TOKEN_COOKIE];
+  }
+
+  // 2. Fallback sur le header Authorization (compatibilité pendant migration)
+  const authHeader = req.headers.authorization;
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    return authHeader.substring(7);
+  }
+
+  return null;
+}
+
+/**
  * Middleware d'authentification JWT
- * Vérifie le token et attache l'utilisateur à la requête
+ * Vérifie le token (cookie HttpOnly ou header) et attache l'utilisateur à la requête
  */
 export const authMiddleware = async (
   req: Request,
@@ -26,14 +49,12 @@ export const authMiddleware = async (
   next: NextFunction
 ): Promise<void | Response> => {
   try {
-    // Récupérer le token depuis le header Authorization
-    const authHeader = req.headers.authorization;
+    // Récupérer le token depuis cookie ou header
+    const token = extractToken(req);
 
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    if (!token) {
       return sendError(res, ERROR_MESSAGES.UNAUTHORIZED, 401);
     }
-
-    const token = authHeader.substring(7); // Enlever "Bearer "
 
     // Vérifier et décoder le token
     let decoded: JwtPayload;
@@ -87,13 +108,11 @@ export const optionalAuthMiddleware = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    const authHeader = req.headers.authorization;
+    const token = extractToken(req);
 
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    if (!token) {
       return next();
     }
-
-    const token = authHeader.substring(7);
 
     try {
       const decoded = jwt.verify(token, config.jwt.secret) as JwtPayload;
@@ -214,5 +233,65 @@ export const requireSuperAdmin = async (
 export function isSuperAdmin(email: string): boolean {
   return config.superAdmins.includes(email);
 }
+
+/**
+ * Options de base pour les cookies sécurisés
+ */
+function getSecureCookieOptions(maxAge: number) {
+  return {
+    httpOnly: true,
+    secure: config.cookie.secure,
+    sameSite: config.cookie.sameSite,
+    path: '/',
+    maxAge,
+    ...(config.cookie.domain && { domain: config.cookie.domain }),
+  };
+}
+
+/**
+ * Définir les tokens dans des cookies HttpOnly sécurisés
+ */
+export function setAuthCookies(
+  res: Response,
+  accessToken: string,
+  refreshToken: string
+): void {
+  // Access token - durée courte (15 minutes par défaut)
+  const accessMaxAge = 15 * 60 * 1000; // 15 minutes en ms
+  res.cookie(ACCESS_TOKEN_COOKIE, accessToken, getSecureCookieOptions(accessMaxAge));
+
+  // Refresh token - durée plus longue (7 jours par défaut)
+  const refreshMaxAge = 7 * 24 * 60 * 60 * 1000; // 7 jours en ms
+  res.cookie(REFRESH_TOKEN_COOKIE, refreshToken, getSecureCookieOptions(refreshMaxAge));
+}
+
+/**
+ * Supprimer les cookies d'authentification (logout)
+ */
+export function clearAuthCookies(res: Response): void {
+  const clearOptions = {
+    httpOnly: true,
+    secure: config.cookie.secure,
+    sameSite: config.cookie.sameSite,
+    path: '/',
+    ...(config.cookie.domain && { domain: config.cookie.domain }),
+  };
+
+  res.clearCookie(ACCESS_TOKEN_COOKIE, clearOptions);
+  res.clearCookie(REFRESH_TOKEN_COOKIE, clearOptions);
+}
+
+/**
+ * Extraire le refresh token depuis les cookies
+ */
+export function extractRefreshToken(req: Request): string | null {
+  if (req.cookies && req.cookies[REFRESH_TOKEN_COOKIE]) {
+    return req.cookies[REFRESH_TOKEN_COOKIE];
+  }
+  return null;
+}
+
+// Export des noms de cookies pour usage externe
+export { ACCESS_TOKEN_COOKIE, REFRESH_TOKEN_COOKIE };
 
 export default authMiddleware;

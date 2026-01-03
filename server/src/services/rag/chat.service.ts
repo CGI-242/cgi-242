@@ -60,20 +60,6 @@ Tu peux aider sur:
 ⚖️ Analyse de redressements
 🧮 Calculs fiscaux`;
 
-// Mots-clés indiquant une question fiscale
-const FISCAL_KEYWORDS = [
-  'impôt', 'taxe', 'irpp', 'tva', 'bica', 'bnc', 'fiscal', 'contribuable',
-  'déclaration', 'revenu', 'bénéfice', 'déduction', 'exonération', 'barème',
-  'taux', 'article', 'cgi', 'payer', 'calculer', 'montant', 'base imposable',
-  'charges', 'amortissement', 'plus-value', 'déficit', 'société', 'entreprise',
-  'salaire', 'traitement', 'pension', 'dividende', 'loyer', 'foncier',
-  'patente', 'licence', 'timbre', 'enregistrement', 'douane', 'droit',
-  'recouvrement', 'contrôle', 'vérification', 'redressement', 'pénalité',
-  'majoration', 'intérêt', 'délai', 'prescription', 'réclamation', 'contentieux',
-  'parts', 'quotient', 'célibataire', 'marié', 'veuf', 'divorcé', 'enfant'
-];
-
-
 export interface ChatMessage {
   role: 'user' | 'assistant' | 'system';
   content: string;

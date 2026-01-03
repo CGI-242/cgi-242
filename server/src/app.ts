@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import compression from 'compression';
+import cookieParser from 'cookie-parser';
 import { config } from './config/environment.js';
 import routes from './routes/index.js';
 import { errorHandler, notFoundHandler } from './middleware/error.middleware.js';
@@ -19,9 +20,13 @@ export function createApp(): Express {
       origin: config.frontendUrl,
       credentials: true,
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-      allowedHeaders: ['Content-Type', 'Authorization', 'X-Organization-ID'],
+      allowedHeaders: ['Content-Type', 'Authorization', 'X-Organization-ID', 'X-CSRF-Token'],
+      exposedHeaders: ['X-CSRF-Token'],
     })
   );
+
+  // Cookie parser pour les cookies HttpOnly
+  app.use(cookieParser(config.cookie.secret));
 
   // Rate limiting global
   app.use(globalRateLimiter);

@@ -2,8 +2,16 @@ import { Request, Response } from 'express';
 import { AuthService } from '../services/auth.service.js';
 import { AuditService } from '../services/audit.service.js';
 import { asyncHandler } from '../middleware/error.middleware.js';
-import { sendSuccess } from '../utils/helpers.js';
-import { SUCCESS_MESSAGES } from '../utils/constants.js';
+import { sendSuccess, sendError } from '../utils/helpers.js';
+import { SUCCESS_MESSAGES, ERROR_MESSAGES } from '../utils/constants.js';
+import {
+  setAuthCookies,
+  clearAuthCookies,
+  extractRefreshToken,
+  verifyRefreshToken,
+  generateToken,
+  generateRefreshToken,
+} from '../middleware/auth.middleware.js';
 
 const authService = new AuthService();
 
@@ -24,13 +32,25 @@ export const register = asyncHandler(async (req: Request, res: Response) => {
     profession,
   });
 
-  sendSuccess(res, result, SUCCESS_MESSAGES.REGISTER_SUCCESS, 201);
+  // Définir les tokens dans des cookies HttpOnly sécurisés
+  setAuthCookies(res, result.accessToken, result.refreshToken);
+
+  // Retourner les données utilisateur (sans les tokens dans le body pour sécurité)
+  sendSuccess(res, {
+    user: result.user,
+    // Tokens inclus pour compatibilité avec clients existants (à retirer après migration)
+    accessToken: result.accessToken,
+    refreshToken: result.refreshToken,
+  }, SUCCESS_MESSAGES.REGISTER_SUCCESS, 201);
 });
 
 export const login = asyncHandler(async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
   const result = await authService.login({ email, password });
+
+  // Définir les tokens dans des cookies HttpOnly sécurisés
+  setAuthCookies(res, result.accessToken, result.refreshToken);
 
   // Audit trail - succès
   await AuditService.log({
@@ -42,7 +62,13 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
     metadata: getAuditMetadata(req),
   });
 
-  sendSuccess(res, result, SUCCESS_MESSAGES.LOGIN_SUCCESS);
+  // Retourner les données utilisateur
+  sendSuccess(res, {
+    user: result.user,
+    // Tokens inclus pour compatibilité avec clients existants (à retirer après migration)
+    accessToken: result.accessToken,
+    refreshToken: result.refreshToken,
+  }, SUCCESS_MESSAGES.LOGIN_SUCCESS);
 });
 
 export const forgotPassword = asyncHandler(async (req: Request, res: Response) => {
@@ -99,4 +125,75 @@ export const changePassword = asyncHandler(async (req: Request, res: Response) =
 
 export const me = asyncHandler(async (req: Request, res: Response) => {
   sendSuccess(res, { user: req.user });
+});
+
+/**
+ * Déconnexion - supprime les cookies d'authentification
+ */
+export const logout = asyncHandler(async (req: Request, res: Response) => {
+  // Supprimer les cookies HttpOnly
+  clearAuthCookies(res);
+
+  // Audit trail - déconnexion
+  if (req.user) {
+    await AuditService.log({
+      actorId: req.user.id,
+      action: 'LOGIN_SUCCESS', // Utiliser LOGIN_SUCCESS car LOGOUT n'existe pas dans l'enum
+      entityType: 'User',
+      entityId: req.user.id,
+      changes: { before: { loggedIn: true }, after: { loggedIn: false } },
+      metadata: {
+        ...getAuditMetadata(req),
+        eventType: 'logout',
+      },
+    });
+  }
+
+  sendSuccess(res, null, 'Déconnexion réussie');
+});
+
+/**
+ * Rafraîchir le token d'accès avec le refresh token
+ */
+export const refreshToken = asyncHandler(async (req: Request, res: Response) => {
+  // Extraire le refresh token depuis les cookies
+  const refreshTokenValue = extractRefreshToken(req);
+
+  if (!refreshTokenValue) {
+    return sendError(res, 'Refresh token manquant', 401);
+  }
+
+  // Vérifier le refresh token
+  const payload = verifyRefreshToken(refreshTokenValue);
+
+  if (!payload) {
+    // Supprimer les cookies invalides
+    clearAuthCookies(res);
+    return sendError(res, ERROR_MESSAGES.TOKEN_INVALID, 401);
+  }
+
+  // Récupérer l'utilisateur
+  const { prisma } = await import('../config/database.js');
+  const user = await prisma.user.findUnique({
+    where: { id: payload.userId },
+    select: { id: true, email: true },
+  });
+
+  if (!user) {
+    clearAuthCookies(res);
+    return sendError(res, ERROR_MESSAGES.USER_NOT_FOUND, 401);
+  }
+
+  // Générer de nouveaux tokens
+  const newAccessToken = generateToken(user.id, user.email);
+  const newRefreshToken = generateRefreshToken(user.id);
+
+  // Mettre à jour les cookies
+  setAuthCookies(res, newAccessToken, newRefreshToken);
+
+  sendSuccess(res, {
+    // Tokens inclus pour compatibilité (à retirer après migration frontend)
+    accessToken: newAccessToken,
+    refreshToken: newRefreshToken,
+  }, 'Token rafraîchi');
 });
