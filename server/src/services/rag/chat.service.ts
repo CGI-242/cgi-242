@@ -1,6 +1,7 @@
 // server/src/services/rag/chat.service.ts
 import Anthropic from '@anthropic-ai/sdk';
 import axios from 'axios';
+import https from 'https';
 import { config } from '../../config/environment.js';
 import { createLogger } from '../../utils/logger.js';
 import { createAnthropicCall } from '../../utils/api-resilience.js';
@@ -8,6 +9,13 @@ import { generateEmbedding } from './embeddings.service.js';
 import { searchSimilarArticles, SearchResult } from './qdrant.service.js';
 
 const logger = createLogger('ChatService');
+
+// Agent HTTPS avec keep-alive pour stabilité connexion
+const httpsAgent = new https.Agent({
+  keepAlive: true,
+  keepAliveMsecs: 30000,
+  timeout: 60000,
+});
 
 const anthropic = new Anthropic({
   apiKey: config.anthropic.apiKey,
@@ -377,6 +385,7 @@ export async function* generateChatResponseStream(
         },
         responseType: 'stream',
         timeout: 60000,
+        httpsAgent,
       });
       logger.info('[Streaming] Connexion API établie, status:', response.status);
     } catch (axiosError: any) {
