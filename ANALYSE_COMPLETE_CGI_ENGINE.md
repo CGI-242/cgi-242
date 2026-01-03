@@ -313,37 +313,28 @@ IS:
 
 ## 4. REVUE DE SÉCURITÉ
 
-### 4.1 Score Global: 6.4/10
+### 4.1 Score Global: 6.4/10 → **6.8/10** ↑
 
-**ÉVALUATION CRITIQUE**
+**ÉVALUATION CRITIQUE (Mise à jour 3 janvier 2026)**
 
-**Vulnérabilités critiques:** 4
+**Vulnérabilités critiques:** ~~4~~ → **3** (1 faux positif éliminé)
 **Vulnérabilités hautes:** 7
 **Vulnérabilités moyennes:** 8
 
 ### 4.2 Vulnérabilités CRITIQUES
 
-#### 🔴 CRITIQUE 1: Clés API exposées dans Git
+#### ~~🔴 CRITIQUE 1: Clés API exposées dans Git~~ ✅ **FAUX POSITIF**
 
-**Fichier:** `/home/christelle-mabika/cgi-engine/server/.env`
+**Vérification effectuée le 3 janvier 2026:**
+- ✅ `.env` est dans `.gitignore`
+- ✅ Aucun fichier `.env` tracké dans git (`git ls-files | grep .env` = vide)
+- ✅ Pas d'historique de commit `.env` (`git log --all -- "**/.env"` = vide)
 
-**Secrets compromis:**
-```
-OPENAI_API_KEY=sk-proj-n7ZlsfY7EbJ8Mv_b1rOF8OYiW8if53mFc-SSi0...
-ANTHROPIC_API_KEY=sk-ant-api03-RhKdFONiCY3tvWYKqjzMFYbDk3Gyb...
-```
+**Statut:** Les clés API ne sont **PAS exposées** dans le dépôt git.
 
-**ACTIONS URGENTES:**
-1. RÉVOQUER immédiatement ces clés
-2. Supprimer du Git history:
-```bash
-git filter-branch --force --index-filter \
-  "git rm --cached --ignore-unmatch server/.env" \
-  --prune-empty --tag-name-filter cat -- --all
-git push --force --all
-```
-3. Régénérer de nouvelles clés
-4. Ne JAMAIS commiter .env (déjà dans .gitignore mais fichier présent)
+**Bonnes pratiques actuelles:**
+- `.env` ignoré par git ✅
+- `.env.example` fourni sans secrets ✅
 
 #### 🔴 CRITIQUE 2: Pas de protection CSRF
 
@@ -1238,16 +1229,11 @@ export function calculateIRPP(input: IrppInput): IrppResult {
 ### 7.1 CRITIQUES (Semaine 1)
 
 #### Sécurité (P0)
-1. ✅ **RÉVOQUER clés API exposées** (URGENT - 1h)
-   - OpenAI: https://platform.openai.com/api-keys
-   - Anthropic: https://console.anthropic.com/settings/keys
+1. ~~✅ **RÉVOQUER clés API exposées** (URGENT - 1h)~~ ✅ **NON NÉCESSAIRE** - Clés jamais exposées
+   - `.env` dans `.gitignore` depuis le début
+   - Aucun historique git avec secrets
 
-2. ✅ **Nettoyer Git history** (2h)
-   ```bash
-   git filter-branch --force --index-filter \
-     "git rm --cached --ignore-unmatch server/.env" \
-     --prune-empty --tag-name-filter cat -- --all
-   ```
+2. ~~✅ **Nettoyer Git history** (2h)~~ ✅ **NON NÉCESSAIRE** - Historique propre
 
 3. ✅ **Implémenter CSRF protection** (4h)
    ```typescript
@@ -1731,7 +1717,7 @@ server/
 ### Blockers Production
 
 **CRITIQUES (Stop Ship):**
-1. 🔴 Clés API exposées dans Git
+1. ~~🔴 Clés API exposées dans Git~~ ✅ **FAUX POSITIF** - `.env` dans `.gitignore`, jamais commité
 2. 🔴 Aucune protection CSRF
 3. 🔴 Tokens localStorage (XSS risk)
 4. ~~🔴 Quotas non appliqués~~ ✅ **CORRIGÉ** - `checkQuotaMiddleware` ajouté
@@ -1744,14 +1730,14 @@ server/
 | Catégorie | Score Initial | Score Actuel | Commentaire |
 |-----------|---------------|--------------|-------------|
 | **Architecture** | 8.5/10 | 8.5/10 | Excellente, multi-tenant robuste |
-| **Sécurité** | 6.4/10 | 6.4/10 | Bases solides, mais vulnérabilités critiques |
+| **Sécurité** | 6.4/10 | **6.8/10** ↑ | 1 faux positif éliminé (clés API OK) |
 | **Performance** | 6.0/10 | 6.0/10 | Architecture ok, mais aucun cache |
 | **Qualité Code** | 7.5/10 | **8.0/10** ↑ | 0 erreurs TS, 0 warnings ESLint, build OK |
 | **Multi-tenant** | 8.0/10 | **9.0/10** ↑ | Quotas appliqués, audit trail, CinetPay |
 | **Calculateurs** | 8.5/10 | 8.5/10 | Conformes CGI, excellente UX |
 | **Innovation** | 9.0/10 | 9.0/10 | IA fiscale unique sur le marché |
 
-**SCORE GLOBAL: 7.4/10 → 7.9/10** ↑ (MVP amélioré, nécessite encore hardening sécurité)
+**SCORE GLOBAL: 7.4/10 → 8.0/10** ↑ (MVP solide, reste CSRF + tests + cache)
 
 ### Chemin vers Production
 
