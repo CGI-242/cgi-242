@@ -9,9 +9,12 @@ interface Plan {
   id: string;
   name: string;
   price: number;
+  priceAnnual?: number;
   period: string;
   features: string[];
   questionsPerMonth: number;
+  questionsPerDay: number;
+  users: number;
   recommended?: boolean;
 }
 
@@ -38,7 +41,7 @@ interface Plan {
               <p class="text-secondary-600 mt-2">Selectionnez le plan adapte a vos besoins</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               @for (plan of plans; track plan.id) {
                 <div
                   class="card p-6 relative"
@@ -60,7 +63,10 @@ interface Plan {
                       <span class="text-secondary-500"> FCFA/{{ plan.period }}</span>
                     </div>
                     <p class="text-sm text-secondary-600 mt-2">
-                      {{ plan.questionsPerMonth }} questions/mois
+                      {{ plan.questionsPerDay }} questions/jour
+                    </p>
+                    <p class="text-xs text-secondary-500">
+                      {{ plan.users }} utilisateur{{ plan.users > 1 ? 's' : '' }}
                     </p>
                   </div>
 
@@ -129,24 +135,28 @@ export class SubscriptionComponent implements OnInit {
       name: 'Gratuit',
       price: 0,
       period: 'mois',
-      questionsPerMonth: 10,
+      questionsPerMonth: 90,
+      questionsPerDay: 3,
+      users: 1,
       features: [
         'Acces au CGI 2026',
-        '10 questions par mois',
         'Historique des conversations',
+        '2 simulateurs (IS, ITS)',
       ],
     },
     {
       id: 'BASIC',
       name: 'Basic',
       price: 5000,
+      priceAnnual: 50000,
       period: 'mois',
-      questionsPerMonth: 50,
-      recommended: true,
+      questionsPerMonth: 200,
+      questionsPerDay: 10,
+      users: 1,
       features: [
         'Acces au CGI 2026',
-        '50 questions par mois',
         'Historique des conversations',
+        '2 simulateurs (IS, ITS)',
         'Export des reponses',
         'Support email',
       ],
@@ -155,15 +165,35 @@ export class SubscriptionComponent implements OnInit {
       id: 'PRO',
       name: 'Pro',
       price: 15000,
+      priceAnnual: 150000,
       period: 'mois',
-      questionsPerMonth: 200,
+      questionsPerMonth: 1000,
+      questionsPerDay: 50,
+      users: 3,
+      recommended: true,
       features: [
         'Acces au CGI 2026',
-        '200 questions par mois',
-        'Historique des conversations',
-        'Export des reponses',
-        'Support prioritaire',
-        'API access',
+        'Tous les simulateurs (8)',
+        '5 espaces clients',
+        'Partage de recherches',
+        'Support email 48h',
+      ],
+    },
+    {
+      id: 'BUSINESS',
+      name: 'Business',
+      price: 35000,
+      priceAnnual: 350000,
+      period: 'mois',
+      questionsPerMonth: 3000,
+      questionsPerDay: 150,
+      users: 10,
+      features: [
+        'Acces au CGI 2026',
+        'Tous les simulateurs (8)',
+        '20 espaces clients',
+        'API access (2000 appels)',
+        'Support telephone/WhatsApp',
       ],
     },
   ];
