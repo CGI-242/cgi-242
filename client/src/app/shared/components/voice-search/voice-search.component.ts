@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
 import { VoiceSearchService, VoiceState, VoiceError } from '@core/services/voice-search.service';
@@ -382,8 +382,7 @@ export class VoiceSearchComponent implements OnInit, OnDestroy {
   errorMessage = '';
 
   private destroy$ = new Subject<void>();
-
-  constructor(private voiceService: VoiceSearchService) {}
+  private voiceService = inject(VoiceSearchService);
 
   ngOnInit(): void {
     // S'abonner aux changements d'état

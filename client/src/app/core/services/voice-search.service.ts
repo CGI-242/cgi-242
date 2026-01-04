@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from '@angular/core';
+import { inject, Injectable, NgZone } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 // ============================================
@@ -100,8 +100,9 @@ export class VoiceSearchService {
   // Configuration
   private language = 'fr-FR';
   private voiceName = '';
+  private ngZone = inject(NgZone);
 
-  constructor(private ngZone: NgZone) {
+  constructor() {
     this.initializeSpeechRecognition();
     this.initializeSpeechSynthesis();
   }
