@@ -409,7 +409,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
                 <h3 class="text-2xl font-bold text-secondary-900 mb-1">Christelle MABIKA</h3>
                 <p class="text-primary-700 font-semibold mb-3">Fondatrice de NORMX AI</p>
                 <p class="text-secondary-600 italic mb-4">
-                  "Rendre la fiscalite africaine accessible grace a l'intelligence artificielle"
+                  "Rendre la fiscalite congolaise accessible grace a l'intelligence artificielle"
                 </p>
                 <div class="flex flex-wrap gap-2 justify-center md:justify-start">
                   <span class="bg-white px-3 py-1 rounded-full text-xs text-secondary-600">Master Finance</span>
