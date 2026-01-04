@@ -2,12 +2,13 @@ import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
+import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.component';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, InfoWidgetComponent],
   template: `
     <div class="min-h-screen bg-gradient-to-b from-primary-50 to-white">
       <!-- Header -->
@@ -127,6 +128,9 @@ import { AuthService } from '@core/services/auth.service';
           </div>
         </div>
       </footer>
+
+      <!-- Info Widget (FAQ) -->
+      <app-info-widget />
     </div>
   `,
 })
