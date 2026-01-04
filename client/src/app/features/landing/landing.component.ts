@@ -200,62 +200,98 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </section>
 
       <!-- Produits -->
-      <section id="produits" class="py-20 px-2 bg-white">
+      <section id="produits" class="py-20 px-2 bg-white overflow-hidden">
         <div class="max-w-[1600px] mx-auto">
-          <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4">
+          <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4 animate-fade-in-up">
             Nos Produits
           </h2>
-          <p class="text-center text-secondary-600 mb-12 max-w-2xl mx-auto">
+          <p class="text-center text-secondary-600 mb-12 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.1s">
             Des outils puissants pour simplifier votre travail fiscal au quotidien
           </p>
           <div class="grid md:grid-cols-3 gap-8">
-            <div class="text-center p-6 bg-primary-50 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group border border-primary-100">
-              <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <img src="assets/images/chat-cgi2.png" alt="Assistant IA" class="w-12 h-12 object-contain" />
+            <!-- Produit 1: Assistant IA -->
+            <div class="text-center p-6 bg-gradient-to-br from-primary-50 to-white rounded-2xl hover:shadow-2xl hover:-translate-y-3 hover:scale-105 transition-all duration-500 cursor-pointer group border border-primary-100 animate-fade-in-up relative overflow-hidden" style="animation-delay: 0.2s">
+              <div class="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-accent-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="relative z-10">
+                <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 group-hover:shadow-primary-200 group-hover:shadow-xl">
+                  <img src="assets/images/chat-cgi2.png" alt="Assistant IA" class="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" />
+                </div>
+                <h3 class="text-xl font-semibold text-secondary-900 mb-2 group-hover:text-primary-600 transition-colors duration-300">Assistant IA CGI</h3>
+                <p class="text-secondary-600 group-hover:text-secondary-700 transition-colors duration-300">
+                  Posez vos questions fiscales et obtenez des reponses precises avec les articles du CGI correspondants
+                </p>
+                <div class="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <span class="inline-flex items-center text-sm text-primary-600 font-medium">
+                    Decouvrir
+                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </span>
+                </div>
               </div>
-              <h3 class="text-xl font-semibold text-secondary-900 mb-2">Assistant IA CGI</h3>
-              <p class="text-secondary-600">
-                Posez vos questions fiscales et obtenez des reponses precises avec les articles du CGI correspondants
-              </p>
             </div>
-            <div class="text-center p-6 bg-primary-50 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group border border-primary-100">
-              <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <img src="assets/images/calculateur.png" alt="Simulateurs" class="w-12 h-12 object-contain" />
+            <!-- Produit 2: Simulateurs -->
+            <div class="text-center p-6 bg-gradient-to-br from-accent-50 to-white rounded-2xl hover:shadow-2xl hover:-translate-y-3 hover:scale-105 transition-all duration-500 cursor-pointer group border border-accent-100 animate-fade-in-up relative overflow-hidden" style="animation-delay: 0.3s">
+              <div class="absolute inset-0 bg-gradient-to-r from-accent-500/10 to-primary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="relative z-10">
+                <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 group-hover:shadow-accent-200 group-hover:shadow-xl">
+                  <img src="assets/images/calculateur.png" alt="Simulateurs" class="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" />
+                </div>
+                <h3 class="text-xl font-semibold text-secondary-900 mb-2 group-hover:text-accent-600 transition-colors duration-300">Simulateurs fiscaux</h3>
+                <p class="text-secondary-600 group-hover:text-secondary-700 transition-colors duration-300">
+                  Calculez IRPP, ITS, IS, Patente et autres impots selon le CGI 2026
+                </p>
+                <div class="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <span class="inline-flex items-center text-sm text-accent-600 font-medium">
+                    Essayer
+                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </span>
+                </div>
               </div>
-              <h3 class="text-xl font-semibold text-secondary-900 mb-2">Simulateurs fiscaux</h3>
-              <p class="text-secondary-600">
-                Calculez IRPP, ITS, IS, Patente et autres impots selon le CGI 2026
-              </p>
             </div>
-            <div class="text-center p-6 bg-primary-50 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group border border-primary-100">
-              <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <img src="assets/images/book.png" alt="Livre CGI" class="w-12 h-12 object-contain" />
+            <!-- Produit 3: Livre CGI -->
+            <div class="text-center p-6 bg-gradient-to-br from-green-50 to-white rounded-2xl hover:shadow-2xl hover:-translate-y-3 hover:scale-105 transition-all duration-500 cursor-pointer group border border-green-100 animate-fade-in-up relative overflow-hidden" style="animation-delay: 0.4s">
+              <div class="absolute inset-0 bg-gradient-to-r from-green-500/10 to-primary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="relative z-10">
+                <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 group-hover:shadow-green-200 group-hover:shadow-xl">
+                  <img src="assets/images/book.png" alt="Livre CGI" class="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" />
+                </div>
+                <h3 class="text-xl font-semibold text-secondary-900 mb-2 group-hover:text-green-600 transition-colors duration-300">Livre CGI integral</h3>
+                <p class="text-secondary-600 group-hover:text-secondary-700 transition-colors duration-300">
+                  Consultez le Code General des Impots 2025 et 2026 directement dans l'application
+                </p>
+                <div class="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <span class="inline-flex items-center text-sm text-green-600 font-medium">
+                    Consulter
+                    <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </span>
+                </div>
               </div>
-              <h3 class="text-xl font-semibold text-secondary-900 mb-2">Livre CGI integral</h3>
-              <p class="text-secondary-600">
-                Consultez le Code General des Impots 2025 et 2026 directement dans l'application
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Tarifs -->
-      <section id="tarifs" class="py-20 px-2 bg-gradient-to-br from-accent-50 via-accent-100 to-primary-50">
+      <section id="tarifs" class="py-20 px-2 bg-gradient-to-br from-accent-50 via-accent-100 to-primary-50 overflow-hidden">
         <div class="max-w-[1600px] mx-auto">
-          <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4">
+          <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4 animate-fade-in-up">
             Tarifs simples et transparents
           </h2>
-          <p class="text-center text-secondary-600 mb-12">
+          <p class="text-center text-secondary-600 mb-12 animate-fade-in-up" style="animation-delay: 0.1s">
             Abonnements annuels - Choisissez le plan adapte a vos besoins
           </p>
 
           <!-- Abonnements -->
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             <!-- Gratuit -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <div class="text-2xl mb-2">🆓</div>
-              <h3 class="text-lg font-semibold text-secondary-900 mb-2">Gratuit</h3>
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-xl hover:-translate-y-2 hover:border-primary-300 transition-all duration-500 group animate-fade-in-up" style="animation-delay: 0.15s">
+              <div class="text-2xl mb-2 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 inline-block">🆓</div>
+              <h3 class="text-lg font-semibold text-secondary-900 mb-2 group-hover:text-primary-600 transition-colors">Gratuit</h3>
               <div class="mb-4">
                 <span class="text-3xl font-bold text-secondary-900">0</span>
                 <span class="text-secondary-600"> FCFA/an</span>
@@ -288,9 +324,9 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
             </div>
 
             <!-- Basic -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <div class="text-2xl mb-2">🥉</div>
-              <h3 class="text-lg font-semibold text-secondary-900 mb-2">Basic</h3>
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-xl hover:-translate-y-2 hover:border-accent-300 transition-all duration-500 group animate-fade-in-up" style="animation-delay: 0.25s">
+              <div class="text-2xl mb-2 group-hover:scale-125 group-hover:-rotate-12 transition-transform duration-300 inline-block">🥉</div>
+              <h3 class="text-lg font-semibold text-secondary-900 mb-2 group-hover:text-accent-600 transition-colors">Basic</h3>
               <div class="mb-4">
                 <span class="text-3xl font-bold text-secondary-900">50 000</span>
                 <span class="text-secondary-600"> FCFA/an</span>
@@ -329,12 +365,14 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
             </div>
 
             <!-- Pro (Recommande) -->
-            <div class="bg-primary-600 rounded-2xl p-6 text-white relative hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300">
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1 rounded-full">
+            <div class="bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl p-6 text-white relative hover:shadow-2xl hover:-translate-y-3 hover:scale-105 transition-all duration-500 group animate-fade-in-up" style="animation-delay: 0.35s">
+              <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1 rounded-full animate-pulse shadow-lg">
                 Recommande
               </div>
-              <div class="text-2xl mb-2">🥈</div>
-              <h3 class="text-lg font-semibold mb-2">Pro</h3>
+              <div class="relative z-10">
+                <div class="text-2xl mb-2 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 inline-block">🥈</div>
+                <h3 class="text-lg font-semibold mb-2">Pro</h3>
               <div class="mb-4">
                 <span class="text-3xl font-bold">45 000</span>
                 <span class="text-primary-200"> FCFA/user/an</span>
@@ -367,15 +405,16 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
                   Support prioritaire
                 </li>
               </ul>
-              <a routerLink="/auth/register" class="block text-center bg-white text-primary-600 font-semibold py-2 rounded-lg hover:bg-primary-50 transition w-full text-sm">
+              <a routerLink="/auth/register" class="block text-center bg-white text-primary-600 font-semibold py-2 rounded-lg hover:bg-primary-50 hover:scale-105 transition-all duration-300 w-full text-sm shadow-lg">
                 Essai gratuit 14 jours
               </a>
+              </div>
             </div>
 
             <!-- Entreprise -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <div class="text-2xl mb-2">🏢</div>
-              <h3 class="text-lg font-semibold text-secondary-900 mb-2">Entreprise</h3>
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-xl hover:-translate-y-2 hover:border-green-300 transition-all duration-500 group animate-fade-in-up" style="animation-delay: 0.45s">
+              <div class="text-2xl mb-2 group-hover:scale-125 group-hover:-rotate-12 transition-transform duration-300 inline-block">🏢</div>
+              <h3 class="text-lg font-semibold text-secondary-900 mb-2 group-hover:text-green-600 transition-colors">Entreprise</h3>
               <div class="mb-4">
                 <span class="text-2xl font-bold text-secondary-900">Sur devis</span>
               </div>
@@ -414,30 +453,30 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
           </div>
 
           <!-- Packs depassement -->
-          <div class="bg-white rounded-2xl p-8 border border-secondary-200">
+          <div class="bg-white rounded-2xl p-8 border border-secondary-200 shadow-lg animate-fade-in-up" style="animation-delay: 0.5s">
             <h3 class="text-xl font-bold text-secondary-900 mb-2 text-center">Packs depassement</h3>
             <p class="text-center text-secondary-500 mb-8 text-sm">Besoin de plus de requetes ? Achetez des packs supplementaires</p>
             <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
               <!-- Mini -->
-              <div class="text-center p-4 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-colors">
-                <div class="text-2xl mb-2">🔹</div>
-                <h4 class="font-semibold text-secondary-900">Mini</h4>
+              <div class="text-center p-4 rounded-xl bg-gradient-to-br from-blue-50 to-white border border-blue-100 hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer group">
+                <div class="text-2xl mb-2 group-hover:scale-125 group-hover:animate-bounce transition-transform inline-block">🔹</div>
+                <h4 class="font-semibold text-secondary-900 group-hover:text-blue-600 transition-colors">Mini</h4>
                 <p class="text-2xl font-bold text-primary-600 my-2">+10 <span class="text-sm font-normal text-secondary-500">requetes</span></p>
-                <p class="text-secondary-600 font-semibold">2 500 FCFA</p>
+                <p class="text-secondary-600 font-semibold group-hover:text-primary-600 transition-colors">2 500 FCFA</p>
               </div>
               <!-- Medium -->
-              <div class="text-center p-4 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-colors">
-                <div class="text-2xl mb-2">🔸</div>
-                <h4 class="font-semibold text-secondary-900">Medium</h4>
+              <div class="text-center p-4 rounded-xl bg-gradient-to-br from-orange-50 to-white border border-orange-100 hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer group">
+                <div class="text-2xl mb-2 group-hover:scale-125 group-hover:animate-bounce transition-transform inline-block">🔸</div>
+                <h4 class="font-semibold text-secondary-900 group-hover:text-orange-600 transition-colors">Medium</h4>
                 <p class="text-2xl font-bold text-primary-600 my-2">+50 <span class="text-sm font-normal text-secondary-500">requetes</span></p>
-                <p class="text-secondary-600 font-semibold">5 000 FCFA</p>
+                <p class="text-secondary-600 font-semibold group-hover:text-primary-600 transition-colors">5 000 FCFA</p>
               </div>
               <!-- Maxi -->
-              <div class="text-center p-4 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-colors">
-                <div class="text-2xl mb-2">🔶</div>
-                <h4 class="font-semibold text-secondary-900">Maxi</h4>
+              <div class="text-center p-4 rounded-xl bg-gradient-to-br from-amber-50 to-white border border-amber-100 hover:shadow-lg hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer group">
+                <div class="text-2xl mb-2 group-hover:scale-125 group-hover:animate-bounce transition-transform inline-block">🔶</div>
+                <h4 class="font-semibold text-secondary-900 group-hover:text-amber-600 transition-colors">Maxi</h4>
                 <p class="text-2xl font-bold text-primary-600 my-2">+100 <span class="text-sm font-normal text-secondary-500">requetes</span></p>
-                <p class="text-secondary-600 font-semibold">7 500 FCFA</p>
+                <p class="text-secondary-600 font-semibold group-hover:text-primary-600 transition-colors">7 500 FCFA</p>
               </div>
             </div>
           </div>
@@ -539,71 +578,86 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </section>
 
       <!-- Produits NORMX AI -->
-      <section class="py-20 px-2 bg-gradient-to-br from-primary-50 via-primary-100 to-accent-50">
+      <section class="py-20 px-2 bg-gradient-to-br from-primary-50 via-primary-100 to-accent-50 overflow-hidden">
         <div class="max-w-[1600px] mx-auto">
-          <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4">
-            Ecosysteme <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">NORMX AI</span>
+          <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4 animate-fade-in-up">
+            Ecosysteme <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent animate-pulse">NORMX AI</span>
           </h2>
-          <p class="text-center text-secondary-600 mb-12 max-w-2xl mx-auto">
+          <p class="text-center text-secondary-600 mb-12 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.1s">
             Des solutions intelligentes pour la conformite reglementaire en Afrique
           </p>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- CGI 242 -->
-            <div class="bg-white rounded-2xl p-6 border-2 border-primary-500 hover:shadow-xl transition-all duration-300 relative">
-              <span class="absolute -top-3 right-4 bg-green-500 text-white text-xs px-3 py-1 rounded-full">En production</span>
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-2xl">🇨🇬</span>
-                <h3 class="text-lg font-bold text-secondary-900">CGI 242</h3>
+            <div class="bg-white rounded-2xl p-6 border-2 border-primary-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-500 relative group animate-fade-in-up overflow-hidden" style="animation-delay: 0.15s">
+              <div class="absolute inset-0 bg-gradient-to-r from-primary-500/5 to-accent-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <span class="absolute -top-3 right-4 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow-lg animate-pulse">En production</span>
+              <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-2xl group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 inline-block">🇨🇬</span>
+                  <h3 class="text-lg font-bold text-secondary-900 group-hover:text-primary-600 transition-colors">CGI 242</h3>
+                </div>
+                <p class="text-sm text-secondary-600 mb-3">Assistant fiscal intelligent — Congo-Brazzaville</p>
+                <p class="text-xs text-secondary-500">Recherche vocale, simulateurs fiscaux, CGI 2026</p>
               </div>
-              <p class="text-sm text-secondary-600 mb-3">Assistant fiscal intelligent — Congo-Brazzaville</p>
-              <p class="text-xs text-secondary-500">Recherche vocale, simulateurs fiscaux, CGI 2026</p>
             </div>
             <!-- OHADA 17 -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-xl transition-all duration-300 relative opacity-90">
-              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full">2025</span>
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-2xl">🌍</span>
-                <h3 class="text-lg font-bold text-secondary-900">OHADA 17</h3>
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:border-primary-300 transition-all duration-500 relative group animate-fade-in-up overflow-hidden" style="animation-delay: 0.2s">
+              <div class="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-lg">2025</span>
+              <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-2xl group-hover:scale-125 group-hover:-rotate-12 transition-transform duration-300 inline-block">🌍</span>
+                  <h3 class="text-lg font-bold text-secondary-900 group-hover:text-yellow-600 transition-colors">OHADA 17</h3>
+                </div>
+                <p class="text-sm text-secondary-600 mb-3">Assistant juridique OHADA — 17 pays africains</p>
+                <p class="text-xs text-secondary-500">Actes Uniformes, droit commercial, SYSCOHADA</p>
               </div>
-              <p class="text-sm text-secondary-600 mb-3">Assistant juridique OHADA — 17 pays africains</p>
-              <p class="text-xs text-secondary-500">Actes Uniformes, droit commercial, SYSCOHADA</p>
             </div>
             <!-- GENfin 17 -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-xl transition-all duration-300 relative opacity-90">
-              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full">2025</span>
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-2xl">📊</span>
-                <h3 class="text-lg font-bold text-secondary-900">GENfin 17</h3>
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:border-accent-300 transition-all duration-500 relative group animate-fade-in-up overflow-hidden" style="animation-delay: 0.25s">
+              <div class="absolute inset-0 bg-gradient-to-r from-accent-500/5 to-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-lg">2025</span>
+              <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-2xl group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 inline-block">📊</span>
+                  <h3 class="text-lg font-bold text-secondary-900 group-hover:text-accent-600 transition-colors">GENfin 17</h3>
+                </div>
+                <p class="text-sm text-secondary-600 mb-3">Generateur d'etats financiers SYSCOHADA</p>
+                <p class="text-xs text-secondary-500">Bilan, Compte de resultat, TAFIRE, Notes annexes</p>
               </div>
-              <p class="text-sm text-secondary-600 mb-3">Generateur d'etats financiers SYSCOHADA</p>
-              <p class="text-xs text-secondary-500">Bilan, Compte de resultat, TAFIRE, Notes annexes</p>
             </div>
             <!-- Paie 242 -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-xl transition-all duration-300 relative opacity-90">
-              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full">2025</span>
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-2xl">💰</span>
-                <h3 class="text-lg font-bold text-secondary-900">Paie 242</h3>
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:border-green-300 transition-all duration-500 relative group animate-fade-in-up overflow-hidden" style="animation-delay: 0.3s">
+              <div class="absolute inset-0 bg-gradient-to-r from-green-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-lg">2025</span>
+              <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-2xl group-hover:scale-125 group-hover:-rotate-12 transition-transform duration-300 inline-block">💰</span>
+                  <h3 class="text-lg font-bold text-secondary-900 group-hover:text-green-600 transition-colors">Paie 242</h3>
+                </div>
+                <p class="text-sm text-secondary-600 mb-3">Gestion de la paie — Congo-Brazzaville</p>
+                <p class="text-xs text-secondary-500">ITS, CNSS, ONEMO, bulletins de paie, DSF</p>
               </div>
-              <p class="text-sm text-secondary-600 mb-3">Gestion de la paie — Congo-Brazzaville</p>
-              <p class="text-xs text-secondary-500">ITS, CNSS, ONEMO, bulletins de paie, DSF</p>
             </div>
             <!-- LaboDEC -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-xl transition-all duration-300 relative opacity-90">
-              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full">2025</span>
-              <div class="flex items-center gap-3 mb-4">
-                <span class="text-2xl">🎓</span>
-                <h3 class="text-lg font-bold text-secondary-900">LaboDEC</h3>
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:border-purple-300 transition-all duration-500 relative group animate-fade-in-up overflow-hidden" style="animation-delay: 0.35s">
+              <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-lg">2025</span>
+              <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-2xl group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 inline-block">🎓</span>
+                  <h3 class="text-lg font-bold text-secondary-900 group-hover:text-purple-600 transition-colors">LaboDEC</h3>
+                </div>
+                <p class="text-sm text-secondary-600 mb-3">Preparation au DEC — France</p>
+                <p class="text-xs text-secondary-500">Cas pratiques, methodologie memoire, simulation soutenance</p>
               </div>
-              <p class="text-sm text-secondary-600 mb-3">Preparation au DEC — France</p>
-              <p class="text-xs text-secondary-500">Cas pratiques, methodologie memoire, simulation soutenance</p>
             </div>
             <!-- Plus a venir -->
-            <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-6 border border-primary-200 hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+            <div class="bg-gradient-to-br from-primary-50 via-accent-50 to-primary-100 rounded-2xl p-6 border border-primary-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-500 flex items-center justify-center group animate-fade-in-up cursor-pointer" style="animation-delay: 0.4s">
               <div class="text-center">
-                <span class="text-3xl mb-2 block">🚀</span>
-                <p class="text-primary-700 font-semibold">Et bien plus a venir...</p>
-                <p class="text-xs text-primary-600 mt-2">Restez connectes !</p>
+                <span class="text-3xl mb-2 block group-hover:animate-bounce">🚀</span>
+                <p class="text-primary-700 font-semibold group-hover:text-primary-800 transition-colors">Et bien plus a venir...</p>
+                <p class="text-xs text-primary-600 mt-2 group-hover:text-primary-700 transition-colors">Restez connectes !</p>
               </div>
             </div>
           </div>
