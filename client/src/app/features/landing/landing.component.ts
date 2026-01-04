@@ -16,7 +16,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
         <div class="max-w-7xl mx-auto flex items-center justify-between">
           <a routerLink="/" class="flex items-center gap-2">
             <img src="assets/images/logo242.png" alt="CGI 242" class="h-16 w-auto" />
-            <span class="text-sm text-secondary-500 font-semibold">By NORMX AI</span>
+            <span class="text-base text-secondary-600 font-bold">By NORMX AI</span>
           </a>
           <!-- Navigation principale -->
           <nav class="hidden md:flex items-center gap-8">
@@ -513,7 +513,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
             <div>
               <div class="flex items-center gap-2 mb-2">
                 <img src="assets/images/logo242.png" alt="CGI 242" class="h-16 w-auto opacity-90" />
-                <span class="text-sm text-secondary-400 font-semibold">By NORMX AI</span>
+                <span class="text-base text-secondary-300 font-bold">By NORMX AI</span>
               </div>
               <p class="text-secondary-400 text-sm">
                 Votre assistant IA pour le Code Général des Impôts du Congo
