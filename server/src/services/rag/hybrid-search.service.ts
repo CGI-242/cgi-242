@@ -27,6 +27,161 @@ const client = new QdrantClient({
   url: process.env.QDRANT_URL || 'http://localhost:6333',
 });
 
+// ============================================================
+// ROUTAGE DIRECT PAR MOTS-CLÉS (EXACT MATCH → ARTICLE)
+// ============================================================
+
+/**
+ * Mappings directs: mot-clé exact → article à forcer en position 1
+ */
+const DIRECT_KEYWORD_MAPPINGS: Record<string, string> = {
+  // Art. 92A - Base forfaitaire étrangers
+  '22%': 'Art. 92A',
+  'vingt-deux pour cent': 'Art. 92A',
+  'base forfaitaire': 'Art. 92A',
+  'forfaitaire étrangers': 'Art. 92A',
+  'forfaitaire pm': 'Art. 92A',
+  'assiette forfaitaire': 'Art. 92A',
+  'mobilisation': 'Art. 92A',
+  'démobilisation': 'Art. 92A',
+  'demobilisation': 'Art. 92A',
+  'mob demob': 'Art. 92A',
+  'mob': 'Art. 92A',
+  'demob': 'Art. 92A',
+
+  // Art. 92J - Régime dérogatoire pétrolier
+  '70%': 'Art. 92J',
+  'soixante-dix': 'Art. 92J',
+  'seuil pétrolier': 'Art. 92J',
+  'seuil ca pétrolier': 'Art. 92J',
+  'régime dérogatoire': 'Art. 92J',
+  'regime derogatoire': 'Art. 92J',
+  'dérogatoire pétrolier': 'Art. 92J',
+  'catering': 'Art. 92J',
+  'restauration pétrolier': 'Art. 92J',
+  'restauration sites': 'Art. 92J',
+  'cantine pétrolier': 'Art. 92J',
+  'charte investissements': 'Art. 92J',
+  'charte des investissements': 'Art. 92J',
+  'éligible charte': 'Art. 92J',
+  'eligible charte': 'Art. 92J',
+  'non éligible charte': 'Art. 92J',
+  'non eligible charte': 'Art. 92J',
+
+  // Art. 26 - Plafond espèces
+  '200.000 fcfa': 'Art. 26',
+  '200000': 'Art. 26',
+  'espèces': 'Art. 26',
+  'especes': 'Art. 26',
+  'paiement cash': 'Art. 26',
+  'numéraire': 'Art. 26',
+  'numeraire': 'Art. 26',
+};
+
+/**
+ * Règles de routage avec contexte
+ */
+interface RoutingRule {
+  id: string;
+  keywordsRequired: string[];  // Au moins un doit être présent
+  keywordsContext?: string[];  // Optionnel: contexte qui renforce
+  routeTo: string;
+  boost: number;
+}
+
+const ROUTING_RULES: RoutingRule[] = [
+  {
+    id: 'R1_forfaitaire_etrangers',
+    keywordsRequired: ['base forfaitaire', '22%', 'forfaitaire', 'assiette forfaitaire'],
+    keywordsContext: ['étrang', 'pm', 'personne morale', 'calcul', 'comment'],
+    routeTo: 'Art. 92A',
+    boost: 3.0,
+  },
+  {
+    id: 'R2_mobilisation',
+    keywordsRequired: ['mobilisation', 'démobilisation', 'demobilisation', 'mob', 'demob', 'installation chantier', 'repli'],
+    routeTo: 'Art. 92A',
+    boost: 3.0,
+  },
+  {
+    id: 'R3_seuil_petrolier',
+    keywordsRequired: ['70%', 'seuil', 'soixante-dix'],
+    keywordsContext: ['pétrol', 'petrol', 'dérogatoire', 'derogatoire', 'ca'],
+    routeTo: 'Art. 92J',
+    boost: 3.0,
+  },
+  {
+    id: 'R4_catering',
+    keywordsRequired: ['catering', 'restauration', 'cantine'],
+    keywordsContext: ['pétrol', 'petrol', 'site', 'dérogatoire', 'derogatoire', 'sous-traitant'],
+    routeTo: 'Art. 92J',
+    boost: 3.0,
+  },
+  {
+    id: 'R5_charte',
+    keywordsRequired: ['charte', 'investissement'],
+    keywordsContext: ['pétrol', 'petrol', 'dérogatoire', 'derogatoire', 'éligible', 'eligible', 'sous-traitant'],
+    routeTo: 'Art. 92J',
+    boost: 3.0,
+  },
+  {
+    id: 'R6_especes',
+    keywordsRequired: ['espèces', 'especes', 'cash', 'liquide', 'numéraire', 'numeraire'],
+    keywordsContext: ['plafond', 'maximum', 'déductible', 'deductible', '200', 'charge'],
+    routeTo: 'Art. 26',
+    boost: 3.0,
+  },
+];
+
+/**
+ * Vérifie les mappings directs et retourne l'article à forcer
+ */
+function checkDirectMappings(query: string): string | null {
+  const queryLower = query.toLowerCase();
+
+  for (const [keyword, article] of Object.entries(DIRECT_KEYWORD_MAPPINGS)) {
+    if (queryLower.includes(keyword.toLowerCase())) {
+      logger.info(`[HybridSearch] DIRECT MAPPING: "${keyword}" → ${article}`);
+      return article;
+    }
+  }
+  return null;
+}
+
+/**
+ * Applique les règles de routage et retourne l'article à forcer avec boost
+ */
+function applyRoutingRules(query: string): { article: string; boost: number; ruleId: string } | null {
+  const queryLower = query.toLowerCase();
+
+  for (const rule of ROUTING_RULES) {
+    // Vérifier si au moins un mot-clé requis est présent
+    const hasRequiredKeyword = rule.keywordsRequired.some(kw =>
+      queryLower.includes(kw.toLowerCase())
+    );
+
+    if (!hasRequiredKeyword) continue;
+
+    // Si contexte défini, vérifier qu'au moins un mot de contexte est présent
+    if (rule.keywordsContext && rule.keywordsContext.length > 0) {
+      const hasContext = rule.keywordsContext.some(kw =>
+        queryLower.includes(kw.toLowerCase())
+      );
+      // Contexte optionnel mais renforce la confiance
+      if (hasContext) {
+        logger.info(`[HybridSearch] ROUTING RULE ${rule.id}: matched with context → ${rule.routeTo}`);
+        return { article: rule.routeTo, boost: rule.boost, ruleId: rule.id };
+      }
+    } else {
+      // Pas de contexte requis
+      logger.info(`[HybridSearch] ROUTING RULE ${rule.id}: matched → ${rule.routeTo}`);
+      return { article: rule.routeTo, boost: rule.boost, ruleId: rule.id };
+    }
+  }
+
+  return null;
+}
+
 // Collection CGI unique (version en vigueur)
 export const CGI_COLLECTION = 'cgi_2026';
 
@@ -767,6 +922,54 @@ function applyPriorityRules(query: string, results: SearchResult[]): SearchResul
 }
 
 /**
+ * Force un article en position 1 avec boost
+ */
+async function forceArticleFirst(
+  articleNumber: string,
+  results: SearchResult[],
+  collectionName: string,
+  version: CGIVersion,
+  boost: number
+): Promise<SearchResult[]> {
+  // Normaliser le numéro
+  const normalizedNum = articleNumber.replace(/^Art\.\s*/i, '');
+
+  // Chercher si l'article est déjà dans les résultats
+  const existingIndex = results.findIndex(r => {
+    const resultNum = r.payload.numero.replace(/^Art\.\s*/i, '');
+    return resultNum === normalizedNum;
+  });
+
+  if (existingIndex >= 0) {
+    // L'article existe, le déplacer en position 1 avec boost
+    const article = results[existingIndex];
+    article.priority = 0; // Priorité maximale
+    article.score = article.score * boost;
+    article.matchType = 'keyword';
+    results.splice(existingIndex, 1);
+    results.unshift(article);
+    logger.info(`[HybridSearch] FORCED: ${articleNumber} moved to position 1 (boost ${boost}x)`);
+  } else {
+    // L'article n'existe pas, le chercher dans Qdrant
+    try {
+      const searchResults = await searchByArticleNumbers([articleNumber], collectionName, version);
+      if (searchResults.length > 0) {
+        const article = searchResults[0];
+        article.priority = 0;
+        article.score = boost;
+        article.matchType = 'keyword';
+        results.unshift(article);
+        logger.info(`[HybridSearch] FORCED: ${articleNumber} fetched and added at position 1`);
+      }
+    } catch (error) {
+      logger.error(`[HybridSearch] Error fetching forced article ${articleNumber}:`, error);
+    }
+  }
+
+  return results;
+}
+
+/**
  * Recherche hybride : keyword + vectorielle avec priorisation intelligente
  * @param query - La requête utilisateur
  * @param limit - Nombre maximum de résultats
@@ -780,22 +983,55 @@ export async function hybridSearch(
   const collectionName = CGI_COLLECTIONS[version];
   logger.info(`[HybridSearch] Query: "${query.substring(0, 50)}..." (collection: ${collectionName}, version: ${version})`);
 
-  // 1. Recherche par keywords (avec métadonnées selon version)
+  // ============================================================
+  // ÉTAPE 0: ROUTAGE DIRECT (AVANT TOUTE RECHERCHE)
+  // ============================================================
+  let forcedArticle: string | null = null;
+  let forcedBoost = 3.0;
+
+  // 0a. Vérifier mappings directs
+  forcedArticle = checkDirectMappings(query);
+
+  // 0b. Si pas de mapping direct, vérifier règles de routage
+  if (!forcedArticle) {
+    const routingResult = applyRoutingRules(query);
+    if (routingResult) {
+      forcedArticle = routingResult.article;
+      forcedBoost = routingResult.boost;
+    }
+  }
+
+  // ============================================================
+  // ÉTAPE 1: RECHERCHE PAR KEYWORDS
+  // ============================================================
   const keywordArticles = extractKeywordMatches(query, version);
   logger.info(`[HybridSearch] Keywords matched: ${keywordArticles.length > 0 ? keywordArticles.slice(0, 5).join(', ') : 'aucun'}`);
 
   const keywordResults = await searchByArticleNumbers(keywordArticles, collectionName, version);
   logger.info(`[HybridSearch] Keyword results: ${keywordResults.length}`);
 
-  // 2. Recherche vectorielle (avec métadonnées selon version)
+  // ============================================================
+  // ÉTAPE 2: RECHERCHE VECTORIELLE
+  // ============================================================
   const vectorLimit = Math.max(limit, limit - keywordResults.length + 3);
   const vectorResults = await searchByVector(query, vectorLimit, collectionName, version);
   logger.info(`[HybridSearch] Vector results: ${vectorResults.length}`);
 
-  // 3. Fusionner avec priorisation intelligente
+  // ============================================================
+  // ÉTAPE 3: FUSION AVEC PRIORISATION
+  // ============================================================
   let merged = mergeResults(keywordResults, vectorResults, limit);
 
-  // 4. Appliquer les règles de priorité spéciales
+  // ============================================================
+  // ÉTAPE 4: APPLIQUER ROUTAGE FORCÉ (SI DÉFINI)
+  // ============================================================
+  if (forcedArticle) {
+    merged = await forceArticleFirst(forcedArticle, merged, collectionName, version, forcedBoost);
+  }
+
+  // ============================================================
+  // ÉTAPE 5: RÈGLES DE PRIORITÉ LEGACY
+  // ============================================================
   merged = applyPriorityRules(query, merged);
 
   logger.info(
