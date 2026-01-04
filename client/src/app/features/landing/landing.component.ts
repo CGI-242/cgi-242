@@ -15,7 +15,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       <header class="fixed top-0 left-0 right-0 z-50 py-3 px-6 bg-white/80 backdrop-blur-md border-b border-secondary-100">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
           <a routerLink="/" class="flex items-center gap-2">
-            <img src="assets/images/logo242.png" alt="CGI 242" class="h-12 w-auto" />
+            <img src="assets/images/logo242.png" alt="CGI 242" class="h-16 w-auto" />
             <span class="text-sm text-secondary-500 font-semibold">By NORMX AI</span>
           </a>
           <!-- Navigation principale -->
@@ -512,7 +512,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
           <div class="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div class="flex items-center gap-2 mb-2">
-                <img src="assets/images/logo242.png" alt="CGI 242" class="h-12 w-auto opacity-90" />
+                <img src="assets/images/logo242.png" alt="CGI 242" class="h-16 w-auto opacity-90" />
                 <span class="text-sm text-secondary-400 font-semibold">By NORMX AI</span>
               </div>
               <p class="text-secondary-400 text-sm">
