@@ -17,7 +17,7 @@ import { HeaderComponent } from '@shared/components/header/header.component';
 
       <div class="max-w-2xl mx-auto py-12 px-4">
         <div class="mb-8">
-          <a routerLink="/chat" class="text-sm text-secondary-600 hover:text-secondary-900 flex items-center gap-1">
+          <a routerLink="/dashboard" class="text-sm text-secondary-600 hover:text-secondary-900 flex items-center gap-1">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
             </svg>
@@ -93,7 +93,7 @@ import { HeaderComponent } from '@shared/components/header/header.component';
               <div class="pt-4 flex gap-4">
                 <button
                   type="button"
-                  routerLink="/chat"
+                  routerLink="/dashboard"
                   class="btn-outline flex-1">
                   Annuler
                 </button>

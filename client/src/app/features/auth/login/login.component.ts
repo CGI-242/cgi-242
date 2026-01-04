@@ -117,7 +117,7 @@ export class LoginComponent {
       next: (res) => {
         this.isLoading.set(false);
         if (res.success) {
-          this.router.navigate(['/chat']);
+          this.router.navigate(['/dashboard']);
         } else {
           this.errorMessage.set(res.error ?? 'Erreur de connexion');
         }
