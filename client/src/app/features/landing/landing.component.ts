@@ -119,63 +119,42 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
             </div>
           </div>
 
-          <!-- Right: Visual -->
+          <!-- Right: Visual - 3 devices -->
           <div class="hidden lg:block animate-slide-in-right">
             <div class="relative">
               <!-- Glow effect -->
               <div class="absolute -inset-4 bg-gradient-to-r from-primary-400 to-accent-400 rounded-3xl blur-2xl opacity-20 animate-pulse-slow"></div>
 
-              <!-- Main mockup -->
-              <div class="relative">
-                <img
-                  src="assets/images/dashboard-cgi.png"
-                  alt="Dashboard CGI 242"
-                  class="relative rounded-2xl shadow-2xl border border-secondary-200 w-full"
-                />
-
-                <!-- Floating card 1: Article -->
-                <div class="absolute -left-8 top-1/4 bg-white rounded-xl shadow-lg p-3 border border-secondary-100 animate-float">
-                  <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
-                      <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <p class="text-xs font-semibold text-secondary-900">Article 111</p>
-                      <p class="text-xs text-secondary-500">IRF — Impot sur le revenu</p>
-                    </div>
-                  </div>
+              <!-- 3 Devices: Web, Tablet, Mobile -->
+              <div class="relative flex items-end justify-center gap-4">
+                <!-- Desktop/Web -->
+                <div class="relative animate-float" style="animation-delay: 0s">
+                  <img
+                    src="assets/images/dashboard-cgi.png"
+                    alt="CGI 242 Web"
+                    class="w-64 rounded-lg shadow-2xl border border-secondary-200"
+                  />
+                  <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-primary-600 text-white text-xs px-2 py-1 rounded-full">Web</span>
                 </div>
 
-                <!-- Floating card 2: Response time -->
-                <div class="absolute -right-6 top-1/3 bg-white rounded-xl shadow-lg p-3 border border-secondary-100 animate-float" style="animation-delay: 0.5s">
-                  <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center">
-                      <svg class="w-4 h-4 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <p class="text-xs font-semibold text-secondary-900">Reponse en 12s</p>
-                      <p class="text-xs text-secondary-500">Rapide et precis</p>
-                    </div>
-                  </div>
+                <!-- Tablet -->
+                <div class="relative animate-float" style="animation-delay: 0.3s">
+                  <img
+                    src="assets/images/tablette.jpg"
+                    alt="CGI 242 Tablette"
+                    class="w-44 rounded-lg shadow-2xl border border-secondary-200"
+                  />
+                  <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-accent-500 text-white text-xs px-2 py-1 rounded-full">Tablette</span>
                 </div>
 
-                <!-- Floating card 3: History -->
-                <div class="absolute -left-4 bottom-1/4 bg-white rounded-xl shadow-lg p-3 border border-secondary-100 animate-float" style="animation-delay: 1s">
-                  <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                      <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <p class="text-xs font-semibold text-secondary-900">Historique</p>
-                      <p class="text-xs text-secondary-500">Toutes vos questions</p>
-                    </div>
-                  </div>
+                <!-- Mobile -->
+                <div class="relative animate-float" style="animation-delay: 0.6s">
+                  <img
+                    src="assets/images/mobile.jpg"
+                    alt="CGI 242 Mobile"
+                    class="w-24 rounded-lg shadow-2xl border border-secondary-200"
+                  />
+                  <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-secondary-600 text-white text-xs px-2 py-1 rounded-full">Mobile</span>
                 </div>
               </div>
             </div>
