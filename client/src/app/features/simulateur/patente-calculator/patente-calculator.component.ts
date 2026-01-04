@@ -83,9 +83,10 @@ import { PatenteService, PatenteInput, PatenteResult } from '../services/patente
 
               @if (input.isStandBy) {
                 <div class="mt-3">
-                  <label class="block text-xs text-orange-700 mb-1">Derniere patente payee (FCFA)</label>
+                  <label for="dernierePatente" class="block text-xs text-orange-700 mb-1">Derniere patente payee (FCFA)</label>
                   <input
                     type="number"
+                    id="dernierePatente"
                     [(ngModel)]="input.dernierePatente"
                     (ngModelChange)="calculer()"
                     placeholder="0"

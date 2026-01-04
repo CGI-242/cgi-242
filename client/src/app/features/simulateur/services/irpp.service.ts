@@ -3,7 +3,6 @@ import {
   FiscalCommonService,
   SituationFamiliale,
   PeriodeRevenu,
-  FISCAL_PARAMS_2026,
 } from './fiscal-common.service';
 
 // Ré-exporter les types pour compatibilité

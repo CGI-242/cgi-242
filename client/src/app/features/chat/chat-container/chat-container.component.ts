@@ -1,7 +1,7 @@
 import { Component, inject, OnInit, signal, computed, ViewChild, ElementRef, AfterViewChecked, ChangeDetectionStrategy, DestroyRef, OnDestroy } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
-import { ChatService, Conversation, Citation, StreamEvent } from '@core/services/chat.service';
+import { ChatService, Conversation, StreamEvent } from '@core/services/chat.service';
 import { TenantService } from '@core/services/tenant.service';
 import { AuthService } from '@core/services/auth.service';
 import { ChatInputComponent } from '../chat-input/chat-input.component';
@@ -31,7 +31,7 @@ import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
 
         <main
           class="flex-1 transition-all duration-300"
-          [class.ml-56]="!sidebarCollapsed"
+          [class.ml-64]="!sidebarCollapsed"
           [class.ml-14]="sidebarCollapsed">
           <div class="flex h-[calc(100vh-4rem)]">
             <!-- History sidebar -->
@@ -233,8 +233,6 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestr
 
   private sendMessageWithStreaming(content: string): void {
     let conversationId = this.currentConversation()?.id;
-    let finalContent = '';
-    let citations: Citation[] = [];
 
     this.chatService
       .sendMessageStreaming({
@@ -251,14 +249,10 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestr
               }
               break;
             case 'chunk':
-              finalContent = this.chatService.streamingContent();
               break;
             case 'citations':
-              if (event.citations) {
-                citations = event.citations;
-              }
               break;
-            case 'done':
+            case 'done': {
               // Add the complete message to the list
               const assistantMessage = {
                 id: crypto.randomUUID(),
@@ -275,6 +269,7 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestr
                 .pipe(takeUntilDestroyed(this.destroyRef))
                 .subscribe();
               break;
+            }
             case 'error':
               console.error('Streaming error:', event.error);
               this.chatService.resetStreamingState();

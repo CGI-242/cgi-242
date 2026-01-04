@@ -79,7 +79,6 @@ export class IsService {
    * Utilise les paramètres du FiscalCommonService
    */
   calculerIS(input: IsInput): IsResult {
-    const params = this.fiscalCommon.getParams();
     const version = input.version || '2026';
 
     // === BASE MINIMUM DE PERCEPTION (Art. 86B al. 2) ===

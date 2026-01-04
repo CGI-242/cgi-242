@@ -182,7 +182,7 @@ export class FiscalCommonService {
   calculateQuotient(
     situation: SituationFamiliale,
     nombreEnfants: number | null,
-    appliquerCharge: boolean = true
+    appliquerCharge = true
   ): number {
     // Si pas d'application des charges de famille (ITS sans exception)
     if (!appliquerCharge) {

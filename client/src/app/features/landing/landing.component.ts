@@ -15,7 +15,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       <header class="fixed top-0 left-0 right-0 z-50 py-4 px-6 bg-white/80 backdrop-blur-md border-b border-secondary-100">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
           <a routerLink="/" class="flex items-center">
-            <img src="assets/images/logo-site.png" alt="CGI 242" class="h-24 w-auto" />
+            <img src="assets/images/logo-app-cgi.png" alt="CGI 242" class="h-16 w-auto" />
           </a>
           <nav class="flex items-center gap-4">
             @if (authService.isAuthenticated()) {
@@ -29,24 +29,38 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </header>
 
       <!-- Hero (with top padding for fixed header) -->
-      <section class="pt-48 pb-24 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-5xl font-bold text-secondary-900 mb-6">
-            Votre Assistant IA pour le
-            <span class="text-primary-600">Code Général des Impôts</span>
-            du Congo
-          </h1>
-          <p class="text-xl text-secondary-600 mb-8 max-w-2xl mx-auto">
-            Posez vos questions fiscales et obtenez des réponses précises,
-            sourcées directement depuis le CGI 2026 du Congo-Brazzaville.
-          </p>
-          <div class="flex gap-4 justify-center">
-            <a routerLink="/auth/register" class="btn-primary text-lg px-8 py-3">
-              Commencer gratuitement
-            </a>
-            <a href="#features" class="btn-outline text-lg px-8 py-3">
-              En savoir plus
-            </a>
+      <section class="pt-40 pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Text content -->
+          <div class="text-center lg:text-left">
+            <h1 class="text-4xl lg:text-5xl font-bold text-secondary-900 mb-6">
+              Votre Assistant IA pour le
+              <span class="text-primary-600">Code Général des Impôts</span>
+              du Congo
+            </h1>
+            <p class="text-lg lg:text-xl text-secondary-600 mb-8">
+              Posez vos questions fiscales et obtenez des réponses précises,
+              sourcées directement depuis le CGI 2026 du Congo-Brazzaville.
+            </p>
+            <div class="flex gap-4 justify-center lg:justify-start">
+              <a routerLink="/auth/register" class="btn-primary text-lg px-8 py-3">
+                Commencer gratuitement
+              </a>
+              <a href="#features" class="btn-outline text-lg px-8 py-3">
+                En savoir plus
+              </a>
+            </div>
+          </div>
+          <!-- Hero Image -->
+          <div class="hidden lg:block">
+            <div class="relative">
+              <div class="absolute inset-0 bg-primary-200 rounded-3xl transform rotate-3 scale-105 opacity-50"></div>
+              <img
+                src="assets/images/dashboard-cgi.png"
+                alt="Dashboard CGI 242"
+                class="relative rounded-2xl shadow-2xl border border-secondary-200 w-full"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -115,7 +129,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
         <div class="max-w-6xl mx-auto">
           <div class="flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center">
-              <img src="assets/images/logo-site.png" alt="CGI 242" class="h-20 w-auto opacity-90" />
+              <img src="assets/images/logo-app-cgi.png" alt="CGI 242" class="h-14 w-auto opacity-90" />
             </div>
             <nav class="flex items-center gap-6 text-sm">
               <a href="#features" class="text-secondary-400 hover:text-white transition">Fonctionnalites</a>
