@@ -38,37 +38,127 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </header>
 
       <!-- Hero (with top padding for fixed header) -->
-      <section class="pt-36 pb-20 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-8 items-center">
-          <!-- Text content -->
-          <div class="lg:col-span-2 text-center lg:text-left animate-fade-in-up">
-            <h1 class="text-3xl lg:text-4xl font-bold text-secondary-900 mb-5">
+      <section class="pt-32 pb-16 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left: Text content -->
+          <div class="text-center lg:text-left animate-fade-in-up">
+            <h1 class="text-3xl lg:text-4xl xl:text-5xl font-bold text-secondary-900 mb-5 leading-tight">
               Votre Assistant IA pour le
-              <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent animate-pulse-slow">Code General des Impots</span>
+              <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">Code General des Impots</span>
               du Congo
             </h1>
-            <p class="text-base lg:text-lg text-secondary-600 mb-6">
+            <p class="text-base lg:text-lg text-secondary-600 mb-6 max-w-lg">
               Posez vos questions fiscales et obtenez des reponses precises,
               sourcees directement depuis le CGI 2026 du Congo-Brazzaville.
             </p>
-            <div class="flex gap-3 justify-center lg:justify-start flex-wrap">
-              <a routerLink="/auth/register" class="btn-primary px-6 py-2.5 hover:scale-105 transition-transform duration-300">
+
+            <!-- Buttons -->
+            <div class="flex gap-3 justify-center lg:justify-start flex-wrap mb-6">
+              <a routerLink="/auth/register" class="btn-primary px-6 py-3 text-base hover:scale-105 transition-transform duration-300">
                 Commencer gratuitement
               </a>
-              <a href="#produits" class="btn-outline px-6 py-2.5 hover:scale-105 transition-transform duration-300">
+              <a href="#produits" class="btn-outline px-6 py-3 text-base hover:scale-105 transition-transform duration-300">
                 En savoir plus
               </a>
             </div>
+
+            <!-- Trust line -->
+            <p class="text-sm text-secondary-500 mb-5 flex items-center justify-center lg:justify-start gap-2 flex-wrap">
+              <span class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Sources officielles
+              </span>
+              <span class="text-secondary-300">•</span>
+              <span class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Articles cites
+              </span>
+              <span class="text-secondary-300">•</span>
+              <span class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Reponses tracables
+              </span>
+            </p>
+
+            <!-- Mini badges -->
+            <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-6">
+              <span class="bg-primary-100 text-primary-700 text-xs font-medium px-3 py-1.5 rounded-full">CGI 2026</span>
+              <span class="bg-accent-100 text-accent-700 text-xs font-medium px-3 py-1.5 rounded-full">Citations d'articles</span>
+              <span class="bg-secondary-100 text-secondary-700 text-xs font-medium px-3 py-1.5 rounded-full">Mode Cabinet / Entreprise</span>
+            </div>
+
+            <!-- Used by -->
+            <div class="pt-4 border-t border-secondary-200">
+              <p class="text-xs text-secondary-400 mb-3 uppercase tracking-wide">Bientot utilise par</p>
+              <div class="flex items-center gap-4 justify-center lg:justify-start opacity-50">
+                <span class="text-secondary-400 text-sm font-medium">Cabinets comptables</span>
+                <span class="text-secondary-300">•</span>
+                <span class="text-secondary-400 text-sm font-medium">Entreprises</span>
+                <span class="text-secondary-300">•</span>
+                <span class="text-secondary-400 text-sm font-medium">Fiscalistes</span>
+              </div>
+            </div>
           </div>
-          <!-- Hero Image -->
-          <div class="lg:col-span-3 hidden lg:block animate-slide-in-right">
-            <div class="relative animate-float">
-              <div class="absolute inset-0 bg-primary-200 rounded-3xl transform rotate-2 scale-[1.02] opacity-40"></div>
-              <img
-                src="assets/images/dashboard-cgi.png"
-                alt="Dashboard CGI 242"
-                class="relative rounded-2xl shadow-2xl border border-secondary-200 w-full max-w-none hover:shadow-3xl transition-shadow duration-300"
-              />
+
+          <!-- Right: Visual -->
+          <div class="hidden lg:block animate-slide-in-right">
+            <div class="relative">
+              <!-- Glow effect -->
+              <div class="absolute -inset-4 bg-gradient-to-r from-primary-400 to-accent-400 rounded-3xl blur-2xl opacity-20 animate-pulse-slow"></div>
+
+              <!-- Main mockup -->
+              <div class="relative">
+                <img
+                  src="assets/images/dashboard-cgi.png"
+                  alt="Dashboard CGI 242"
+                  class="relative rounded-2xl shadow-2xl border border-secondary-200 w-full"
+                />
+
+                <!-- Floating card 1: Article -->
+                <div class="absolute -left-8 top-1/4 bg-white rounded-xl shadow-lg p-3 border border-secondary-100 animate-float">
+                  <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+                      <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-xs font-semibold text-secondary-900">Article 111</p>
+                      <p class="text-xs text-secondary-500">IRF — Impot sur le revenu</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating card 2: Response time -->
+                <div class="absolute -right-6 top-1/3 bg-white rounded-xl shadow-lg p-3 border border-secondary-100 animate-float" style="animation-delay: 0.5s">
+                  <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center">
+                      <svg class="w-4 h-4 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-xs font-semibold text-secondary-900">Reponse en 12s</p>
+                      <p class="text-xs text-secondary-500">Rapide et precis</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating card 3: History -->
+                <div class="absolute -left-4 bottom-1/4 bg-white rounded-xl shadow-lg p-3 border border-secondary-100 animate-float" style="animation-delay: 1s">
+                  <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                      <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-xs font-semibold text-secondary-900">Historique</p>
+                      <p class="text-xs text-secondary-500">Toutes vos questions</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
