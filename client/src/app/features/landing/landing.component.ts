@@ -12,11 +12,11 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
   template: `
     <div class="min-h-screen bg-gradient-to-br from-primary-50 via-accent-50 to-white">
       <!-- Header (fixed) -->
-      <header class="fixed top-0 left-0 right-0 z-50 py-2 px-4 sm:px-6 bg-white/80 backdrop-blur-md border-b border-secondary-100">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <header class="fixed top-0 left-0 right-0 z-50 py-2 px-2 bg-white/80 backdrop-blur-md border-b border-secondary-100">
+        <div class="max-w-[1600px] mx-auto flex items-center justify-between">
           <a routerLink="/" class="flex items-center gap-1">
             <img src="assets/images/logo242.png" alt="CGI 242" class="h-10 sm:h-14 w-auto" />
-            <span class="text-[10px] text-secondary-400 font-medium hidden sm:inline">By NORMX AI</span>
+            <span class="text-sm text-secondary-400 font-medium hidden sm:inline">By NORMX AI</span>
           </a>
           <!-- Navigation principale -->
           <nav class="hidden md:flex items-center gap-8">
@@ -57,8 +57,8 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </header>
 
       <!-- Hero (with top padding for fixed header) -->
-      <section class="pt-32 pb-16 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <section class="pt-32 pb-32 px-2 overflow-hidden">
+        <div class="max-w-[1600px] mx-auto grid lg:grid-cols-2 gap-8 items-center">
           <!-- Left: Text content -->
           <div class="text-center lg:text-left animate-fade-in-up">
             <h1 class="text-3xl lg:text-4xl xl:text-5xl font-bold text-secondary-900 mb-5 leading-tight">
@@ -119,42 +119,79 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
             </div>
           </div>
 
-          <!-- Right: Visual - 3 devices -->
+          <!-- Right: Visual - Dashboard mockup with floating cards -->
           <div class="hidden lg:block animate-slide-in-right">
             <div class="relative">
               <!-- Glow effect -->
-              <div class="absolute -inset-4 bg-gradient-to-r from-primary-400 to-accent-400 rounded-3xl blur-2xl opacity-20 animate-pulse-slow"></div>
+              <div class="absolute -inset-8 bg-gradient-to-r from-primary-500 to-accent-400 rounded-3xl blur-3xl opacity-30 animate-pulse-slow"></div>
 
-              <!-- 3 Devices: Web, Tablet, Mobile -->
-              <div class="relative flex items-end justify-center gap-4">
-                <!-- Desktop/Web -->
-                <div class="relative animate-float" style="animation-delay: 0s">
-                  <img
-                    src="assets/images/dashboard-cgi.png"
-                    alt="CGI 242 Web"
-                    class="w-64 rounded-lg shadow-2xl border border-secondary-200"
-                  />
-                  <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-primary-600 text-white text-xs px-2 py-1 rounded-full">Web</span>
+              <!-- Main Dashboard Mockup -->
+              <div class="relative">
+                <img
+                  src="assets/images/dashb.png"
+                  alt="CGI 242 Dashboard"
+                  class="w-[600px] rounded-xl shadow-2xl border border-secondary-200 relative z-10"
+                />
+
+                <!-- Floating Card 1: Article -->
+                <div class="absolute -left-16 top-8 bg-white rounded-xl shadow-xl p-4 border border-secondary-100 animate-float z-20" style="animation-delay: 0s">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                      <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold text-secondary-900">Article 111 — IRF</p>
+                      <p class="text-xs text-secondary-500">CGI 2026</p>
+                    </div>
+                  </div>
                 </div>
 
-                <!-- Tablet -->
-                <div class="relative animate-float" style="animation-delay: 0.3s">
+                <!-- Floating Card 2: Response time -->
+                <div class="absolute -right-12 top-12 bg-white rounded-xl shadow-xl p-4 border border-secondary-100 animate-float z-20" style="animation-delay: 0.3s">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center">
+                      <svg class="w-5 h-5 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold text-secondary-900">Réponse en 12s</p>
+                      <p class="text-xs text-secondary-500">Ultra rapide</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Floating Card 3: History -->
+                <div class="absolute -left-8 bottom-12 bg-white rounded-xl shadow-xl p-4 border border-secondary-100 animate-float z-20" style="animation-delay: 0.6s">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                      <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold text-secondary-900">Historique</p>
+                      <p class="text-xs text-secondary-500">Toutes vos questions</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tablet & Mobile in corner -->
+                <div class="absolute -right-16 -bottom-16 flex items-end gap-3 z-20">
                   <img
                     src="assets/images/tablette.jpg"
                     alt="CGI 242 Tablette"
-                    class="w-44 rounded-lg shadow-2xl border border-secondary-200"
+                    class="w-52 rounded-lg shadow-xl border border-secondary-200 animate-float"
+                    style="animation-delay: 0.4s"
                   />
-                  <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-accent-500 text-white text-xs px-2 py-1 rounded-full">Tablette</span>
-                </div>
-
-                <!-- Mobile -->
-                <div class="relative animate-float" style="animation-delay: 0.6s">
                   <img
                     src="assets/images/mobile.jpg"
                     alt="CGI 242 Mobile"
-                    class="w-24 rounded-lg shadow-2xl border border-secondary-200"
+                    class="w-32 rounded-lg shadow-xl border border-secondary-200 animate-float"
+                    style="animation-delay: 0.7s"
                   />
-                  <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-secondary-600 text-white text-xs px-2 py-1 rounded-full">Mobile</span>
                 </div>
               </div>
             </div>
@@ -163,8 +200,8 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </section>
 
       <!-- Produits -->
-      <section id="produits" class="py-20 px-6 bg-white">
-        <div class="max-w-6xl mx-auto">
+      <section id="produits" class="py-20 px-2 bg-white">
+        <div class="max-w-[1600px] mx-auto">
           <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4">
             Nos Produits
           </h2>
@@ -172,31 +209,27 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
             Des outils puissants pour simplifier votre travail fiscal au quotidien
           </p>
           <div class="grid md:grid-cols-3 gap-8">
-            <div class="text-center p-6 bg-secondary-50 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
-              <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
-                </svg>
+            <div class="text-center p-6 bg-primary-50 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group border border-primary-100">
+              <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <img src="assets/images/chat-cgi2.png" alt="Assistant IA" class="w-12 h-12 object-contain" />
               </div>
               <h3 class="text-xl font-semibold text-secondary-900 mb-2">Assistant IA CGI</h3>
               <p class="text-secondary-600">
                 Posez vos questions fiscales et obtenez des reponses precises avec les articles du CGI correspondants
               </p>
             </div>
-            <div class="text-center p-6 bg-secondary-50 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
-              <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                </svg>
+            <div class="text-center p-6 bg-primary-50 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group border border-primary-100">
+              <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <img src="assets/images/calculateur.png" alt="Simulateurs" class="w-12 h-12 object-contain" />
               </div>
               <h3 class="text-xl font-semibold text-secondary-900 mb-2">Simulateurs fiscaux</h3>
               <p class="text-secondary-600">
                 Calculez IRPP, ITS, IS, Patente et autres impots selon le CGI 2026
               </p>
             </div>
-            <div class="text-center p-6 bg-secondary-50 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
-              <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <i class="ph ph-book text-3xl text-blue-600"></i>
+            <div class="text-center p-6 bg-primary-50 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group border border-primary-100">
+              <div class="w-20 h-20 mx-auto mb-4 bg-white rounded-xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <img src="assets/images/book.png" alt="Livre CGI" class="w-12 h-12 object-contain" />
               </div>
               <h3 class="text-xl font-semibold text-secondary-900 mb-2">Livre CGI integral</h3>
               <p class="text-secondary-600">
@@ -208,73 +241,80 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </section>
 
       <!-- Tarifs -->
-      <section id="tarifs" class="py-20 px-6 bg-gradient-to-br from-accent-50 via-accent-100 to-primary-50">
-        <div class="max-w-5xl mx-auto">
+      <section id="tarifs" class="py-20 px-2 bg-gradient-to-br from-accent-50 via-accent-100 to-primary-50">
+        <div class="max-w-[1600px] mx-auto">
           <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4">
             Tarifs simples et transparents
           </h2>
           <p class="text-center text-secondary-600 mb-12">
-            Choisissez le plan adapté à vos besoins
+            Abonnements annuels - Choisissez le plan adapte a vos besoins
           </p>
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Abonnements -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             <!-- Gratuit -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-in-up-delay-1">
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <div class="text-2xl mb-2">🆓</div>
               <h3 class="text-lg font-semibold text-secondary-900 mb-2">Gratuit</h3>
               <div class="mb-4">
                 <span class="text-3xl font-bold text-secondary-900">0</span>
-                <span class="text-secondary-600"> FCFA</span>
+                <span class="text-secondary-600"> FCFA/an</span>
               </div>
-              <p class="text-sm text-secondary-500 mb-4">3 questions/jour - 1 utilisateur</p>
+              <div class="space-y-2 mb-6 text-sm text-secondary-600">
+                <p class="flex items-center gap-2">
+                  <span class="font-semibold">1</span> utilisateur
+                </p>
+                <p class="flex items-center gap-2">
+                  <span class="font-semibold">60</span> requetes/mois
+                </p>
+              </div>
               <ul class="space-y-2 mb-6 text-sm">
                 <li class="flex items-center text-secondary-600">
                   <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  FAQ uniquement
+                  Acces CGI 2025 et 2026
                 </li>
                 <li class="flex items-center text-secondary-600">
-                  <svg class="w-4 h-4 text-red-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Pas de simulateurs
-                </li>
-                <li class="flex items-center text-secondary-600">
-                  <svg class="w-4 h-4 text-red-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                  </svg>
-                  Pas de CGI 2026
+                  Assistant IA
                 </li>
               </ul>
               <a routerLink="/auth/register" class="block text-center btn-outline w-full text-sm py-2">
                 Commencer
               </a>
             </div>
+
             <!-- Basic -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-in-up-delay-2">
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <div class="text-2xl mb-2">🥉</div>
               <h3 class="text-lg font-semibold text-secondary-900 mb-2">Basic</h3>
               <div class="mb-4">
                 <span class="text-3xl font-bold text-secondary-900">50 000</span>
                 <span class="text-secondary-600"> FCFA/an</span>
               </div>
-              <p class="text-sm text-secondary-500 mb-4">10 questions/jour - 1 utilisateur</p>
+              <div class="space-y-2 mb-6 text-sm text-secondary-600">
+                <p class="flex items-center gap-2">
+                  <span class="font-semibold">1</span> utilisateur
+                </p>
+                <p class="flex items-center gap-2">
+                  <span class="font-semibold">200</span> requetes/mois
+                </p>
+              </div>
               <ul class="space-y-2 mb-6 text-sm">
                 <li class="flex items-center text-secondary-600">
                   <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
+                  Acces CGI 2025 et 2026
+                </li>
+                <li class="flex items-center text-secondary-600">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
                   8 simulateurs fiscaux
-                </li>
-                <li class="flex items-center text-secondary-600">
-                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  Acces CGI 2026
-                </li>
-                <li class="flex items-center text-secondary-600">
-                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  Historique 30 jours
                 </li>
                 <li class="flex items-center text-secondary-600">
                   <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -287,72 +327,72 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
                 Choisir Basic
               </a>
             </div>
+
             <!-- Pro (Recommande) -->
-            <div class="bg-primary-600 rounded-2xl p-6 text-white relative hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 opacity-0 animate-fade-in-up-delay-3">
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1 rounded-full animate-bounce-slow">
+            <div class="bg-primary-600 rounded-2xl p-6 text-white relative hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300">
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1 rounded-full">
                 Recommande
               </div>
+              <div class="text-2xl mb-2">🥈</div>
               <h3 class="text-lg font-semibold mb-2">Pro</h3>
               <div class="mb-4">
-                <span class="text-3xl font-bold">225 000</span>
-                <span class="text-primary-200"> FCFA/an</span>
+                <span class="text-3xl font-bold">45 000</span>
+                <span class="text-primary-200"> FCFA/user/an</span>
               </div>
-              <p class="text-sm text-primary-200 mb-4">50 questions/jour - 5 utilisateurs</p>
+              <div class="space-y-2 mb-6 text-sm text-primary-200">
+                <p class="flex items-center gap-2">
+                  <span class="font-semibold text-white">2-10</span> utilisateurs
+                </p>
+                <p class="flex items-center gap-2">
+                  <span class="font-semibold text-white">200</span> requetes/user/mois
+                </p>
+              </div>
               <ul class="space-y-2 mb-6 text-sm">
                 <li class="flex items-center">
                   <svg class="w-4 h-4 text-primary-200 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  8 simulateurs fiscaux
+                  Tout Basic +
                 </li>
                 <li class="flex items-center">
                   <svg class="w-4 h-4 text-primary-200 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Acces CGI 2026
+                  Gestion equipe
                 </li>
                 <li class="flex items-center">
                   <svg class="w-4 h-4 text-primary-200 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Historique 1 an
-                </li>
-                <li class="flex items-center">
-                  <svg class="w-4 h-4 text-primary-200 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  Support email 48h
+                  Support prioritaire
                 </li>
               </ul>
               <a routerLink="/auth/register" class="block text-center bg-white text-primary-600 font-semibold py-2 rounded-lg hover:bg-primary-50 transition w-full text-sm">
                 Essai gratuit 14 jours
               </a>
             </div>
-            <!-- Sur devis -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-in-up-delay-4">
-              <h3 class="text-lg font-semibold text-secondary-900 mb-2">Sur devis</h3>
+
+            <!-- Entreprise -->
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <div class="text-2xl mb-2">🏢</div>
+              <h3 class="text-lg font-semibold text-secondary-900 mb-2">Entreprise</h3>
               <div class="mb-4">
                 <span class="text-2xl font-bold text-secondary-900">Sur devis</span>
               </div>
-              <p class="text-sm text-secondary-500 mb-4">100 questions/jour - 10+ utilisateurs</p>
+              <div class="space-y-2 mb-6 text-sm text-secondary-600">
+                <p class="flex items-center gap-2">
+                  <span class="font-semibold">10+</span> utilisateurs
+                </p>
+                <p class="flex items-center gap-2">
+                  <span class="font-semibold">Negocie</span>
+                </p>
+              </div>
               <ul class="space-y-2 mb-6 text-sm">
                 <li class="flex items-center text-secondary-600">
                   <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  8 simulateurs fiscaux
-                </li>
-                <li class="flex items-center text-secondary-600">
-                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  Acces CGI 2026
-                </li>
-                <li class="flex items-center text-secondary-600">
-                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  Historique 2 ans
+                  Tout Pro +
                 </li>
                 <li class="flex items-center text-secondary-600">
                   <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -360,18 +400,53 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
                   </svg>
                   Support telephone
                 </li>
+                <li class="flex items-center text-secondary-600">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Formation incluse
+                </li>
               </ul>
               <a href="mailto:contact@cgi242.com?subject=Demande%20de%20devis%20CGI%20242" class="block text-center btn-outline w-full text-sm py-2">
                 Nous contacter
               </a>
             </div>
           </div>
+
+          <!-- Packs depassement -->
+          <div class="bg-white rounded-2xl p-8 border border-secondary-200">
+            <h3 class="text-xl font-bold text-secondary-900 mb-2 text-center">Packs depassement</h3>
+            <p class="text-center text-secondary-500 mb-8 text-sm">Besoin de plus de requetes ? Achetez des packs supplementaires</p>
+            <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+              <!-- Mini -->
+              <div class="text-center p-4 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-colors">
+                <div class="text-2xl mb-2">🔹</div>
+                <h4 class="font-semibold text-secondary-900">Mini</h4>
+                <p class="text-2xl font-bold text-primary-600 my-2">+10 <span class="text-sm font-normal text-secondary-500">requetes</span></p>
+                <p class="text-secondary-600 font-semibold">2 500 FCFA</p>
+              </div>
+              <!-- Medium -->
+              <div class="text-center p-4 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-colors">
+                <div class="text-2xl mb-2">🔸</div>
+                <h4 class="font-semibold text-secondary-900">Medium</h4>
+                <p class="text-2xl font-bold text-primary-600 my-2">+50 <span class="text-sm font-normal text-secondary-500">requetes</span></p>
+                <p class="text-secondary-600 font-semibold">5 000 FCFA</p>
+              </div>
+              <!-- Maxi -->
+              <div class="text-center p-4 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-colors">
+                <div class="text-2xl mb-2">🔶</div>
+                <h4 class="font-semibold text-secondary-900">Maxi</h4>
+                <p class="text-2xl font-bold text-primary-600 my-2">+100 <span class="text-sm font-normal text-secondary-500">requetes</span></p>
+                <p class="text-secondary-600 font-semibold">7 500 FCFA</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- À propos -->
-      <section id="about" class="py-20 px-6 bg-white">
-        <div class="max-w-5xl mx-auto">
+      <section id="about" class="py-20 px-2 bg-white">
+        <div class="max-w-[1600px] mx-auto">
           <h2 class="text-3xl font-bold text-center text-secondary-900 mb-12">
             À propos de CGI 242
           </h2>
@@ -464,8 +539,8 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </section>
 
       <!-- Produits NORMX AI -->
-      <section class="py-20 px-6 bg-gradient-to-br from-primary-50 via-primary-100 to-accent-50">
-        <div class="max-w-6xl mx-auto">
+      <section class="py-20 px-2 bg-gradient-to-br from-primary-50 via-primary-100 to-accent-50">
+        <div class="max-w-[1600px] mx-auto">
           <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4">
             Ecosysteme <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">NORMX AI</span>
           </h2>
@@ -536,8 +611,8 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </section>
 
       <!-- Contact -->
-      <section id="contact" class="py-20 px-6 bg-white">
-        <div class="max-w-4xl mx-auto">
+      <section id="contact" class="py-20 px-2 bg-white">
+        <div class="max-w-[1600px] mx-auto">
           <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4">
             Contactez-nous
           </h2>
@@ -578,8 +653,8 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </section>
 
       <!-- CTA -->
-      <section class="py-20 px-6 bg-primary-600">
-        <div class="max-w-4xl mx-auto text-center">
+      <section class="py-20 px-2 bg-primary-600">
+        <div class="max-w-[1600px] mx-auto text-center">
           <h2 class="text-3xl font-bold text-white mb-4">
             Prêt à simplifier vos recherches fiscales ?
           </h2>
@@ -593,8 +668,8 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </section>
 
       <!-- Footer -->
-      <footer class="py-12 px-6 bg-secondary-900">
-        <div class="max-w-6xl mx-auto">
+      <footer class="py-12 px-2 bg-secondary-900">
+        <div class="max-w-[1600px] mx-auto">
           <div class="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div class="flex items-center gap-2 mb-2">
