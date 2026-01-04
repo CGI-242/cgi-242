@@ -11,12 +11,22 @@ import { AuthService } from '@core/services/auth.service';
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
   template: `
     <div class="min-h-screen flex items-center justify-center bg-secondary-50 py-12 px-4">
+      <!-- Lien retour vitrine -->
+      <a routerLink="/landing" class="absolute top-6 left-6 flex items-center gap-2 text-secondary-600 hover:text-primary-600 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        <span>Retour à l'accueil</span>
+      </a>
+
       <div class="max-w-md w-full">
         <!-- Logo -->
         <div class="text-center mb-8">
-          <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <span class="text-white font-bold text-lg">CGI</span>
-          </div>
+          <a routerLink="/landing" class="inline-block">
+            <div class="w-12 h-12 bg-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4 hover:bg-primary-700 transition">
+              <span class="text-white font-bold text-lg">CGI</span>
+            </div>
+          </a>
           <h1 class="text-2xl font-bold text-secondary-900">Connexion</h1>
           <p class="text-secondary-600 mt-2">Accédez à votre assistant fiscal IA</p>
         </div>
