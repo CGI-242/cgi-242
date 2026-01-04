@@ -129,112 +129,154 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
           <p class="text-center text-secondary-600 mb-12">
             Choisissez le plan adapté à vos besoins
           </p>
-          <div class="grid md:grid-cols-3 gap-8">
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Gratuit -->
-            <div class="bg-white rounded-2xl p-8 border border-secondary-200">
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200">
               <h3 class="text-lg font-semibold text-secondary-900 mb-2">Gratuit</h3>
-              <div class="mb-6">
-                <span class="text-4xl font-bold text-secondary-900">0</span>
-                <span class="text-secondary-600"> FCFA/mois</span>
+              <div class="mb-4">
+                <span class="text-3xl font-bold text-secondary-900">0</span>
+                <span class="text-secondary-600"> FCFA</span>
               </div>
-              <ul class="space-y-3 mb-8">
+              <p class="text-sm text-secondary-500 mb-4">3 questions/jour - 1 utilisateur</p>
+              <ul class="space-y-2 mb-6 text-sm">
                 <li class="flex items-center text-secondary-600">
-                  <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  10 questions/mois
+                  Acces CGI 2026
                 </li>
                 <li class="flex items-center text-secondary-600">
-                  <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Simulateurs de base
+                  Historique conversations
                 </li>
                 <li class="flex items-center text-secondary-600">
-                  <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  <svg class="w-4 h-4 text-red-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                   </svg>
-                  Accès CGI 2026
+                  Simulateurs limites
                 </li>
               </ul>
-              <a routerLink="/auth/register" class="block text-center btn-outline w-full">
+              <a routerLink="/auth/register" class="block text-center btn-outline w-full text-sm py-2">
                 Commencer
               </a>
             </div>
-            <!-- Pro -->
-            <div class="bg-primary-600 rounded-2xl p-8 text-white relative">
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1 rounded-full">
-                Populaire
+            <!-- Basic -->
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200">
+              <h3 class="text-lg font-semibold text-secondary-900 mb-2">Basic</h3>
+              <div class="mb-4">
+                <span class="text-3xl font-bold text-secondary-900">50 000</span>
+                <span class="text-secondary-600"> FCFA/an</span>
               </div>
-              <h3 class="text-lg font-semibold mb-2">Professionnel</h3>
-              <div class="mb-6">
-                <span class="text-4xl font-bold">15 000</span>
-                <span class="text-primary-200"> FCFA/mois</span>
-              </div>
-              <ul class="space-y-3 mb-8">
-                <li class="flex items-center">
-                  <svg class="w-5 h-5 text-primary-200 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <p class="text-sm text-secondary-500 mb-4">10 questions/jour - 1 utilisateur</p>
+              <ul class="space-y-2 mb-6 text-sm">
+                <li class="flex items-center text-secondary-600">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Questions illimitées
+                  Acces CGI 2026
                 </li>
+                <li class="flex items-center text-secondary-600">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  2 simulateurs (IS, ITS)
+                </li>
+                <li class="flex items-center text-secondary-600">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Export des reponses
+                </li>
+                <li class="flex items-center text-secondary-600">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Support email
+                </li>
+              </ul>
+              <a routerLink="/auth/register" class="block text-center btn-outline w-full text-sm py-2">
+                Choisir Basic
+              </a>
+            </div>
+            <!-- Pro (Recommande) -->
+            <div class="bg-primary-600 rounded-2xl p-6 text-white relative">
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1 rounded-full">
+                Recommande
+              </div>
+              <h3 class="text-lg font-semibold mb-2">Pro</h3>
+              <div class="mb-4">
+                <span class="text-3xl font-bold">225 000</span>
+                <span class="text-primary-200"> FCFA/an</span>
+              </div>
+              <p class="text-sm text-primary-200 mb-4">50 questions/jour - 5 utilisateurs</p>
+              <ul class="space-y-2 mb-6 text-sm">
                 <li class="flex items-center">
-                  <svg class="w-5 h-5 text-primary-200 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 text-primary-200 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
                   Tous les simulateurs
                 </li>
                 <li class="flex items-center">
-                  <svg class="w-5 h-5 text-primary-200 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 text-primary-200 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Historique complet
+                  Espaces clients
                 </li>
                 <li class="flex items-center">
-                  <svg class="w-5 h-5 text-primary-200 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 text-primary-200 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Partage de recherches
+                </li>
+                <li class="flex items-center">
+                  <svg class="w-4 h-4 text-primary-200 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
                   Support prioritaire
                 </li>
               </ul>
-              <a routerLink="/auth/register" class="block text-center bg-white text-primary-600 font-semibold py-2.5 rounded-lg hover:bg-primary-50 transition w-full">
+              <a routerLink="/auth/register" class="block text-center bg-white text-primary-600 font-semibold py-2 rounded-lg hover:bg-primary-50 transition w-full text-sm">
                 Essai gratuit 14 jours
               </a>
             </div>
-            <!-- Entreprise -->
-            <div class="bg-white rounded-2xl p-8 border border-secondary-200">
-              <h3 class="text-lg font-semibold text-secondary-900 mb-2">Entreprise</h3>
-              <div class="mb-6">
-                <span class="text-4xl font-bold text-secondary-900">Sur devis</span>
+            <!-- Business -->
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200">
+              <h3 class="text-lg font-semibold text-secondary-900 mb-2">Business</h3>
+              <div class="mb-4">
+                <span class="text-3xl font-bold text-secondary-900">675 000</span>
+                <span class="text-secondary-600"> FCFA/an</span>
               </div>
-              <ul class="space-y-3 mb-8">
+              <p class="text-sm text-secondary-500 mb-4">200 questions/jour - 15 utilisateurs</p>
+              <ul class="space-y-2 mb-6 text-sm">
                 <li class="flex items-center text-secondary-600">
-                  <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Multi-utilisateurs
+                  Tous les simulateurs
                 </li>
                 <li class="flex items-center text-secondary-600">
-                  <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Espace organisation
+                  200 questions/jour
                 </li>
                 <li class="flex items-center text-secondary-600">
-                  <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Formation incluse
+                  API access
                 </li>
                 <li class="flex items-center text-secondary-600">
-                  <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Support dédié
+                  Support telephone/WhatsApp
                 </li>
               </ul>
-              <a href="#contact" class="block text-center btn-outline w-full">
-                Nous contacter
+              <a routerLink="/auth/register" class="block text-center btn-outline w-full text-sm py-2">
+                Choisir Business
               </a>
             </div>
           </div>
