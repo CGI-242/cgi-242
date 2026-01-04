@@ -15,7 +15,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       <header class="fixed top-0 left-0 right-0 z-50 py-3 px-6 bg-white/80 backdrop-blur-md border-b border-secondary-100">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
           <a routerLink="/" class="flex items-center gap-2">
-            <img src="assets/images/logo-app-cgi.png" alt="CGI 242" class="h-12 w-auto" />
+            <img src="assets/images/logo-cgi242.png" alt="CGI 242" class="h-12 w-auto" />
             <span class="text-sm text-secondary-500 font-semibold">By NORMX AI</span>
           </a>
           <!-- Navigation principale -->
@@ -377,6 +377,78 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
         </div>
       </section>
 
+      <!-- Produits NORMX AI -->
+      <section class="py-20 px-6 bg-secondary-50">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4">
+            Ecosysteme NORMX AI
+          </h2>
+          <p class="text-center text-secondary-600 mb-12 max-w-2xl mx-auto">
+            Des solutions intelligentes pour la conformite reglementaire en Afrique
+          </p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- CGI 242 -->
+            <div class="bg-white rounded-2xl p-6 border-2 border-primary-500 hover:shadow-xl transition-all duration-300 relative">
+              <span class="absolute -top-3 right-4 bg-green-500 text-white text-xs px-3 py-1 rounded-full">En production</span>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-2xl">🇨🇬</span>
+                <h3 class="text-lg font-bold text-secondary-900">CGI 242</h3>
+              </div>
+              <p class="text-sm text-secondary-600 mb-3">Assistant fiscal intelligent — Congo-Brazzaville</p>
+              <p class="text-xs text-secondary-500">Recherche vocale, simulateurs fiscaux, CGI 2026</p>
+            </div>
+            <!-- OHADA 17 -->
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-xl transition-all duration-300 relative opacity-90">
+              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full">2025</span>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-2xl">🌍</span>
+                <h3 class="text-lg font-bold text-secondary-900">OHADA 17</h3>
+              </div>
+              <p class="text-sm text-secondary-600 mb-3">Assistant juridique OHADA — 17 pays africains</p>
+              <p class="text-xs text-secondary-500">Actes Uniformes, droit commercial, SYSCOHADA</p>
+            </div>
+            <!-- GENfin 17 -->
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-xl transition-all duration-300 relative opacity-90">
+              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full">2025</span>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-2xl">📊</span>
+                <h3 class="text-lg font-bold text-secondary-900">GENfin 17</h3>
+              </div>
+              <p class="text-sm text-secondary-600 mb-3">Generateur d'etats financiers SYSCOHADA</p>
+              <p class="text-xs text-secondary-500">Bilan, Compte de resultat, TAFIRE, Notes annexes</p>
+            </div>
+            <!-- Paie 242 -->
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-xl transition-all duration-300 relative opacity-90">
+              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full">2025</span>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-2xl">💰</span>
+                <h3 class="text-lg font-bold text-secondary-900">Paie 242</h3>
+              </div>
+              <p class="text-sm text-secondary-600 mb-3">Gestion de la paie — Congo-Brazzaville</p>
+              <p class="text-xs text-secondary-500">ITS, CNSS, ONEMO, bulletins de paie, DSF</p>
+            </div>
+            <!-- LaboDEC -->
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-xl transition-all duration-300 relative opacity-90">
+              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full">2025</span>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-2xl">🎓</span>
+                <h3 class="text-lg font-bold text-secondary-900">LaboDEC</h3>
+              </div>
+              <p class="text-sm text-secondary-600 mb-3">Preparation au DEC — France</p>
+              <p class="text-xs text-secondary-500">Cas pratiques, methodologie memoire, simulation soutenance</p>
+            </div>
+            <!-- Plus a venir -->
+            <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-6 border border-primary-200 hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+              <div class="text-center">
+                <span class="text-3xl mb-2 block">🚀</span>
+                <p class="text-primary-700 font-semibold">Et bien plus a venir...</p>
+                <p class="text-xs text-primary-600 mt-2">Restez connectes !</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Contact -->
       <section id="contact" class="py-20 px-6 bg-secondary-50">
         <div class="max-w-4xl mx-auto">
@@ -440,7 +512,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
           <div class="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div class="flex items-center gap-2 mb-2">
-                <img src="assets/images/logo-app-cgi.png" alt="CGI 242" class="h-12 w-auto opacity-90" />
+                <img src="assets/images/logo-cgi242.png" alt="CGI 242" class="h-12 w-auto opacity-90" />
                 <span class="text-sm text-secondary-400 font-semibold">By NORMX AI</span>
               </div>
               <p class="text-secondary-400 text-sm">
