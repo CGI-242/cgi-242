@@ -9,8 +9,8 @@
     <!-- Sécurité: Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
-      script-src 'self' 'unsafe-inline' 'unsafe-eval';
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
       font-src 'self' https://fonts.gstatic.com;
       img-src 'self' data: https:;
       connect-src 'self' http://localhost:3000 https://api.anthropic.com https://api.openai.com;
@@ -26,7 +26,9 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="manifest" href="site.webmanifest" />
-    <meta name="theme-color" content="#2563eb" />
+    <meta name="theme-color" content="#059669" />
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
   </head>
   <body>
     <app-root></app-root>
