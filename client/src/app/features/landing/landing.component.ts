@@ -14,8 +14,9 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       <!-- Header (fixed) -->
       <header class="fixed top-0 left-0 right-0 z-50 py-3 px-6 bg-white/80 backdrop-blur-md border-b border-secondary-100">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-          <a routerLink="/" class="flex items-center">
+          <a routerLink="/" class="flex items-center gap-2">
             <img src="assets/images/logo-app-cgi.png" alt="CGI 242" class="h-12 w-auto" />
+            <span class="text-sm text-secondary-500 font-semibold">By NORMX AI</span>
           </a>
           <!-- Navigation principale -->
           <nav class="hidden md:flex items-center gap-8">
@@ -143,19 +144,19 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
                   <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Acces CGI 2026
-                </li>
-                <li class="flex items-center text-secondary-600">
-                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  Historique conversations
+                  FAQ uniquement
                 </li>
                 <li class="flex items-center text-secondary-600">
                   <svg class="w-4 h-4 text-red-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                   </svg>
-                  Simulateurs limites
+                  Pas de simulateurs
+                </li>
+                <li class="flex items-center text-secondary-600">
+                  <svg class="w-4 h-4 text-red-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                  Pas de CGI 2026
                 </li>
               </ul>
               <a routerLink="/auth/register" class="block text-center btn-outline w-full text-sm py-2">
@@ -175,19 +176,19 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
                   <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
+                  8 simulateurs fiscaux
+                </li>
+                <li class="flex items-center text-secondary-600">
+                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
                   Acces CGI 2026
                 </li>
                 <li class="flex items-center text-secondary-600">
                   <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  2 simulateurs (IS, ITS)
-                </li>
-                <li class="flex items-center text-secondary-600">
-                  <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  Export des reponses
+                  Historique 30 jours
                 </li>
                 <li class="flex items-center text-secondary-600">
                   <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -216,67 +217,66 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
                   <svg class="w-4 h-4 text-primary-200 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Tous les simulateurs
+                  8 simulateurs fiscaux
                 </li>
                 <li class="flex items-center">
                   <svg class="w-4 h-4 text-primary-200 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Espaces clients
+                  Acces CGI 2026
                 </li>
                 <li class="flex items-center">
                   <svg class="w-4 h-4 text-primary-200 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Partage de recherches
+                  Historique 1 an
                 </li>
                 <li class="flex items-center">
                   <svg class="w-4 h-4 text-primary-200 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Support prioritaire
+                  Support email 48h
                 </li>
               </ul>
               <a routerLink="/auth/register" class="block text-center bg-white text-primary-600 font-semibold py-2 rounded-lg hover:bg-primary-50 transition w-full text-sm">
                 Essai gratuit 14 jours
               </a>
             </div>
-            <!-- Business -->
+            <!-- Sur devis -->
             <div class="bg-white rounded-2xl p-6 border border-secondary-200">
-              <h3 class="text-lg font-semibold text-secondary-900 mb-2">Business</h3>
+              <h3 class="text-lg font-semibold text-secondary-900 mb-2">Sur devis</h3>
               <div class="mb-4">
-                <span class="text-3xl font-bold text-secondary-900">675 000</span>
-                <span class="text-secondary-600"> FCFA/an</span>
+                <span class="text-2xl font-bold text-secondary-900">Sur devis</span>
               </div>
-              <p class="text-sm text-secondary-500 mb-4">200 questions/jour - 15 utilisateurs</p>
+              <p class="text-sm text-secondary-500 mb-4">100 questions/jour - 10+ utilisateurs</p>
               <ul class="space-y-2 mb-6 text-sm">
                 <li class="flex items-center text-secondary-600">
                   <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Tous les simulateurs
+                  8 simulateurs fiscaux
                 </li>
                 <li class="flex items-center text-secondary-600">
                   <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  200 questions/jour
+                  Acces CGI 2026
                 </li>
                 <li class="flex items-center text-secondary-600">
                   <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  API access
+                  Historique 2 ans
                 </li>
                 <li class="flex items-center text-secondary-600">
                   <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
-                  Support telephone/WhatsApp
+                  Support telephone
                 </li>
               </ul>
-              <a routerLink="/auth/register" class="block text-center btn-outline w-full text-sm py-2">
-                Choisir Business
+              <a href="mailto:contact@cgi242.com?subject=Demande%20de%20devis%20CGI%20242" class="block text-center btn-outline w-full text-sm py-2">
+                Nous contacter
               </a>
             </div>
           </div>
@@ -398,7 +398,10 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
         <div class="max-w-6xl mx-auto">
           <div class="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <img src="assets/images/logo-app-cgi.png" alt="CGI 242" class="h-12 w-auto opacity-90 mb-4" />
+              <div class="flex items-center gap-2 mb-2">
+                <img src="assets/images/logo-app-cgi.png" alt="CGI 242" class="h-12 w-auto opacity-90" />
+                <span class="text-sm text-secondary-400 font-semibold">By NORMX AI</span>
+              </div>
               <p class="text-secondary-400 text-sm">
                 Votre assistant IA pour le Code Général des Impôts du Congo
               </p>
