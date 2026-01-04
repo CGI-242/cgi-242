@@ -9,13 +9,15 @@ interface Plan {
   id: string;
   name: string;
   price: number;
-  priceAnnual?: number;
+  priceLabel?: string;
   period: string;
   features: string[];
   questionsPerMonth: number;
   questionsPerDay: number;
   users: number;
+  usersLabel?: string;
   recommended?: boolean;
+  isCustom?: boolean;
 }
 
 @Component({
@@ -59,14 +61,18 @@ interface Plan {
                   <div class="text-center mb-6">
                     <h3 class="text-lg font-semibold text-secondary-900">{{ plan.name }}</h3>
                     <div class="mt-4">
-                      <span class="text-3xl font-bold text-secondary-900">{{ plan.price | number }}</span>
-                      <span class="text-secondary-500"> FCFA/{{ plan.period }}</span>
+                      @if (plan.isCustom) {
+                        <span class="text-2xl font-bold text-secondary-900">{{ plan.priceLabel }}</span>
+                      } @else {
+                        <span class="text-3xl font-bold text-secondary-900">{{ plan.price | number }}</span>
+                        <span class="text-secondary-500"> FCFA/{{ plan.period }}</span>
+                      }
                     </div>
                     <p class="text-sm text-secondary-600 mt-2">
-                      {{ plan.questionsPerDay > 0 ? plan.questionsPerDay + ' questions/jour' : 'Questions illimitees' }}
+                      {{ plan.questionsPerDay }} questions/jour
                     </p>
                     <p class="text-xs text-secondary-500">
-                      {{ plan.users }} utilisateur{{ plan.users > 1 ? 's' : '' }}
+                      {{ plan.usersLabel || (plan.users + ' utilisateur' + (plan.users > 1 ? 's' : '')) }}
                     </p>
                   </div>
 
@@ -81,25 +87,33 @@ interface Plan {
                     }
                   </ul>
 
-                  <button
-                    (click)="selectPlan(plan)"
-                    [disabled]="loading() || currentPlan() === plan.id"
-                    class="w-full py-2 px-4 rounded-lg font-medium transition-colors"
-                    [class.bg-primary-600]="plan.recommended"
-                    [class.text-white]="plan.recommended"
-                    [class.hover:bg-primary-700]="plan.recommended"
-                    [class.bg-secondary-100]="!plan.recommended"
-                    [class.text-secondary-700]="!plan.recommended"
-                    [class.hover:bg-secondary-200]="!plan.recommended"
-                    [class.opacity-50]="currentPlan() === plan.id">
-                    @if (currentPlan() === plan.id) {
-                      Plan actuel
-                    } @else if (loading()) {
-                      Chargement...
-                    } @else {
-                      Choisir ce plan
-                    }
-                  </button>
+                  @if (plan.isCustom) {
+                    <a
+                      href="mailto:contact@cgi242.com?subject=Demande%20de%20devis%20CGI%20242"
+                      class="block w-full py-2 px-4 rounded-lg font-medium transition-colors text-center bg-secondary-100 text-secondary-700 hover:bg-secondary-200">
+                      Nous contacter
+                    </a>
+                  } @else {
+                    <button
+                      (click)="selectPlan(plan)"
+                      [disabled]="loading() || currentPlan() === plan.id"
+                      class="w-full py-2 px-4 rounded-lg font-medium transition-colors"
+                      [class.bg-primary-600]="plan.recommended"
+                      [class.text-white]="plan.recommended"
+                      [class.hover:bg-primary-700]="plan.recommended"
+                      [class.bg-secondary-100]="!plan.recommended"
+                      [class.text-secondary-700]="!plan.recommended"
+                      [class.hover:bg-secondary-200]="!plan.recommended"
+                      [class.opacity-50]="currentPlan() === plan.id">
+                      @if (currentPlan() === plan.id) {
+                        Plan actuel
+                      } @else if (loading()) {
+                        Chargement...
+                      } @else {
+                        Choisir ce plan
+                      }
+                    </button>
+                  }
                 </div>
               }
             </div>
@@ -135,13 +149,13 @@ export class SubscriptionComponent implements OnInit {
       name: 'Gratuit',
       price: 0,
       period: 'an',
-      questionsPerMonth: 90,
+      questionsPerMonth: 60,
       questionsPerDay: 3,
       users: 1,
       features: [
-        'Acces au CGI 2026',
-        'Historique des conversations',
-        'Simulateurs limites',
+        'FAQ uniquement',
+        'Pas de simulateurs',
+        'Pas de CGI 2026',
       ],
     },
     {
@@ -149,13 +163,14 @@ export class SubscriptionComponent implements OnInit {
       name: 'Basic',
       price: 50000,
       period: 'an',
-      questionsPerMonth: 300,
+      questionsPerMonth: 200,
       questionsPerDay: 10,
       users: 1,
       features: [
-        'Acces au CGI 2026',
-        '2 simulateurs (IS, ITS)',
-        'Export des reponses',
+        'Recherche vocale',
+        '8 simulateurs fiscaux',
+        'Acces CGI 2026',
+        'Historique 30 jours',
         'Support email',
       ],
     },
@@ -164,31 +179,35 @@ export class SubscriptionComponent implements OnInit {
       name: 'Pro',
       price: 225000,
       period: 'an',
-      questionsPerMonth: 1500,
+      questionsPerMonth: 1000,
       questionsPerDay: 50,
       users: 5,
       recommended: true,
       features: [
-        'Acces au CGI 2026',
-        'Tous les simulateurs',
-        'Espaces clients',
-        'Partage de recherches',
-        'Support prioritaire',
+        'Recherche vocale',
+        '8 simulateurs fiscaux',
+        'Acces CGI 2026',
+        'Historique 1 an',
+        'Support email 48h',
       ],
     },
     {
-      id: 'BUSINESS',
-      name: 'Business',
-      price: 675000,
+      id: 'CUSTOM',
+      name: 'Sur devis',
+      price: 0,
+      priceLabel: 'Sur devis',
       period: 'an',
-      questionsPerMonth: 6000,
-      questionsPerDay: 200,
-      users: 15,
+      questionsPerMonth: 2500,
+      questionsPerDay: 100,
+      users: 10,
+      usersLabel: '10+ utilisateurs',
+      isCustom: true,
       features: [
-        'Acces au CGI 2026',
-        'Tous les simulateurs',
-        'API access',
-        'Support telephone/WhatsApp',
+        'Recherche vocale',
+        '8 simulateurs fiscaux',
+        'Acces CGI 2026',
+        'Historique 2 ans',
+        'Support telephone',
       ],
     },
   ];
