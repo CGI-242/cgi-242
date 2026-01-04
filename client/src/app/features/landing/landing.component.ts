@@ -11,15 +11,15 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
   imports: [CommonModule, RouterLink, InfoWidgetComponent],
   template: `
     <div class="min-h-screen bg-gradient-to-b from-primary-50 to-white">
-      <!-- Header -->
-      <header class="py-4 px-6">
+      <!-- Header (fixed) -->
+      <header class="fixed top-0 left-0 right-0 z-50 py-4 px-6 bg-white/80 backdrop-blur-md border-b border-secondary-100">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
           <a routerLink="/" class="flex items-center">
             <img src="assets/images/logo-site.png" alt="CGI 242" class="h-24 w-auto" />
           </a>
           <nav class="flex items-center gap-4">
             @if (authService.isAuthenticated()) {
-              <a routerLink="/chat" class="btn-primary">Accéder au chat</a>
+              <a routerLink="/dashboard" class="btn-primary">Accéder à l'application</a>
             } @else {
               <a routerLink="/auth/login" class="btn-outline">Connexion</a>
               <a routerLink="/auth/register" class="btn-primary">S'inscrire</a>
@@ -28,8 +28,8 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
         </div>
       </header>
 
-      <!-- Hero -->
-      <section class="py-20 px-6">
+      <!-- Hero (with top padding for fixed header) -->
+      <section class="pt-32 pb-20 px-6">
         <div class="max-w-4xl mx-auto text-center">
           <h1 class="text-5xl font-bold text-secondary-900 mb-6">
             Votre Assistant IA pour le

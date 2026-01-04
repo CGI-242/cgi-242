@@ -20,7 +20,7 @@ import { RouterLink } from '@angular/router';
           Vous n'avez pas les permissions nécessaires pour accéder à cette page.
         </p>
         <div class="flex gap-4 justify-center">
-          <a routerLink="/chat" class="btn-primary">Retour au chat</a>
+          <a routerLink="/dashboard" class="btn-primary">Retour au dashboard</a>
           <a routerLink="/" class="btn-outline">Page d'accueil</a>
         </div>
       </div>

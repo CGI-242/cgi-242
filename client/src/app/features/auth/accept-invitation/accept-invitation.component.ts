@@ -42,7 +42,7 @@ import { LoadingSpinnerComponent } from '@shared/components/loading-spinner/load
               </div>
               <h2 class="text-xl font-semibold text-secondary-900 mb-2">Bienvenue !</h2>
               <p class="text-secondary-600 mb-6">{{ successMessage() }}</p>
-              <a routerLink="/chat" class="btn-primary">Accéder au chat</a>
+              <a routerLink="/dashboard" class="btn-primary">Accéder au chat</a>
             </div>
           }
         </div>
