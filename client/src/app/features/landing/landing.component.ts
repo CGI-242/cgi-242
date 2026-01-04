@@ -293,9 +293,11 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
           <!-- La Créatrice -->
           <div class="bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-8 mb-12">
             <div class="flex flex-col md:flex-row items-center gap-8">
-              <div class="w-32 h-32 bg-primary-200 rounded-full flex items-center justify-center flex-shrink-0">
-                <span class="text-4xl font-bold text-primary-700">CM</span>
-              </div>
+              <img
+                src="assets/images/christelle-mabika.jpg"
+                alt="Christelle MABIKA"
+                class="w-32 h-32 rounded-full object-cover flex-shrink-0 border-4 border-white shadow-lg"
+              />
               <div class="text-center md:text-left">
                 <h3 class="text-2xl font-bold text-secondary-900 mb-1">Christelle MABIKA</h3>
                 <p class="text-primary-700 font-semibold mb-3">Fondatrice de NORMX AI</p>
