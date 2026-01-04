@@ -19,7 +19,7 @@ import { IsService, IsInput, IsResult } from '../services/is.service';
     }
   `],
   template: `
-    <div class="max-w-5xl mx-auto">
+    <div>
       <!-- Info CGI 2026 -->
       <div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
         <div class="flex items-start gap-3">
@@ -36,9 +36,9 @@ import { IsService, IsInput, IsResult } from '../services/is.service';
         </div>
       </div>
 
-      <div class="flex gap-6">
+      <div class="flex flex-col lg:flex-row gap-6">
         <!-- Formulaire -->
-        <div class="w-1/2">
+        <div class="w-full lg:w-1/2">
           <div class="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
             <h2 class="text-lg font-semibold text-secondary-900 mb-6 flex items-center gap-2">
               <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -164,7 +164,7 @@ import { IsService, IsInput, IsResult } from '../services/is.service';
         </div>
 
         <!-- Résultats -->
-        <div class="w-1/2">
+        <div class="w-full lg:w-1/2">
           <div class="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
             <h3 class="text-lg font-semibold text-secondary-900 mb-6 flex items-center gap-2">
               <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
