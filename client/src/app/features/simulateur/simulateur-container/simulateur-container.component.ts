@@ -18,7 +18,7 @@ import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
 
         <main
           class="flex-1 transition-all duration-300"
-          [class.ml-56]="!sidebarCollapsed"
+          [class.ml-64]="!sidebarCollapsed"
           [class.ml-14]="sidebarCollapsed">
           <div class="p-6">
             <!-- Header -->

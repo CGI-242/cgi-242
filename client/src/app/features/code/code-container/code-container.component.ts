@@ -24,7 +24,7 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
 
         <main
           class="flex-1 transition-all duration-300"
-          [class.ml-56]="!sidebarCollapsed"
+          [class.ml-64]="!sidebarCollapsed"
           [class.ml-14]="sidebarCollapsed">
           <div class="flex h-[calc(100vh-4rem)]">
             <!-- Sidebar navigation -->

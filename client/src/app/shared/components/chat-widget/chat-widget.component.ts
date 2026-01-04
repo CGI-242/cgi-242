@@ -8,12 +8,11 @@ import {
   AfterViewChecked,
   ChangeDetectionStrategy,
   DestroyRef,
-  HostListener,
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ChatService, Citation, StreamEvent } from '@core/services/chat.service';
+import { ChatService, StreamEvent } from '@core/services/chat.service';
 import { AuthService } from '@core/services/auth.service';
 
 interface Message {
@@ -252,7 +251,7 @@ export class ChatWidgetComponent implements AfterViewChecked {
   }
 
   private sendMessageWithStreaming(content: string): void {
-    let conversationId = this.chatService.currentConversation()?.id;
+    const conversationId = this.chatService.currentConversation()?.id;
 
     this.chatService
       .sendMessageStreaming({
@@ -263,7 +262,7 @@ export class ChatWidgetComponent implements AfterViewChecked {
       .subscribe({
         next: (event: StreamEvent) => {
           switch (event.type) {
-            case 'done':
+            case 'done': {
               const assistantMessage: Message = {
                 id: crypto.randomUUID(),
                 role: 'ASSISTANT',
@@ -274,6 +273,7 @@ export class ChatWidgetComponent implements AfterViewChecked {
               this.messages.update(m => [...m, assistantMessage]);
               this.chatService.resetStreamingState();
               break;
+            }
             case 'error':
               console.error('Streaming error:', event.error);
               this.chatService.resetStreamingState();

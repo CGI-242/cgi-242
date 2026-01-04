@@ -26,7 +26,7 @@ interface NavItem {
   template: `
     <aside
       class="fixed left-0 top-16 h-[calc(100vh-4rem)] bg-white border-r border-secondary-200 transition-all duration-300"
-      [class.w-56]="!collapsed"
+      [class.w-64]="!collapsed"
       [class.w-14]="collapsed">
       <nav class="space-y-1" [class.p-4]="!collapsed" [class.p-2]="collapsed">
         @for (item of visibleItems; track item.label) {
