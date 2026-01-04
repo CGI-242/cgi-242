@@ -10,13 +10,13 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, RouterLink, InfoWidgetComponent],
   template: `
-    <div class="min-h-screen bg-gradient-to-b from-primary-50 to-white">
+    <div class="min-h-screen bg-gradient-to-br from-primary-50 via-accent-50 to-white">
       <!-- Header (fixed) -->
       <header class="fixed top-0 left-0 right-0 z-50 py-3 px-6 bg-white/80 backdrop-blur-md border-b border-secondary-100">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
           <a routerLink="/" class="flex items-center gap-2">
             <img src="assets/images/logo242.png" alt="CGI 242" class="h-16 w-auto" />
-            <span class="text-sm text-secondary-500 font-semibold">By NORMX AI</span>
+            <span class="text-base text-primary-700 font-bold">By NORMX AI</span>
           </a>
           <!-- Navigation principale -->
           <nav class="hidden md:flex items-center gap-8">
@@ -44,7 +44,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
           <div class="lg:col-span-2 text-center lg:text-left animate-fade-in-up">
             <h1 class="text-3xl lg:text-4xl font-bold text-secondary-900 mb-5">
               Votre Assistant IA pour le
-              <span class="text-primary-600 animate-pulse-slow">Code General des Impots</span>
+              <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">Code General des Impots</span>
               du Congo
             </h1>
             <p class="text-base lg:text-lg text-secondary-600 mb-6">
@@ -63,7 +63,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
           <!-- Hero Image -->
           <div class="lg:col-span-3 hidden lg:block animate-slide-in-right">
             <div class="relative animate-float">
-              <div class="absolute inset-0 bg-primary-200 rounded-3xl transform rotate-2 scale-[1.02] opacity-40"></div>
+              <div class="absolute inset-0 bg-gradient-to-br from-primary-300 to-accent-200 rounded-3xl transform rotate-2 scale-[1.02] opacity-50"></div>
               <img
                 src="assets/images/dashboard-cgi.png"
                 alt="Dashboard CGI 242"
