@@ -141,7 +141,7 @@ export class SubscriptionComponent implements OnInit {
       features: [
         'Acces au CGI 2026',
         'Historique des conversations',
-        '2 simulateurs (IS, ITS)',
+        'Tous les simulateurs',
       ],
     },
     {
@@ -156,7 +156,7 @@ export class SubscriptionComponent implements OnInit {
       features: [
         'Acces au CGI 2026',
         'Historique des conversations',
-        '2 simulateurs (IS, ITS)',
+        'Tous les simulateurs',
         'Export des reponses',
         'Support email',
       ],

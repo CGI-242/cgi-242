@@ -20,7 +20,7 @@ import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
           class="flex-1 transition-all duration-300"
           [class.ml-64]="!sidebarCollapsed"
           [class.ml-14]="sidebarCollapsed">
-          <div class="p-6">
+          <div class="p-4 md:p-6 lg:px-8">
             <!-- Header -->
             <div class="mb-6">
               <h1 class="text-2xl font-bold text-secondary-900">Simulateur fiscal</h1>
