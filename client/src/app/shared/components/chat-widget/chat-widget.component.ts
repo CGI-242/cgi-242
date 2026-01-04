@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ChatService, StreamEvent } from '@core/services/chat.service';
 import { AuthService } from '@core/services/auth.service';
+import { VoiceSearchService } from '@core/services/voice-search.service';
 
 interface Message {
   id: string;
@@ -21,6 +22,7 @@ interface Message {
   content: string;
   citations?: { articleNumber: string; title?: string; excerpt: string }[];
   cgiVersion?: string;
+  isVoice?: boolean;
 }
 
 @Component({
@@ -102,18 +104,43 @@ interface Message {
                     <span class="text-white text-[10px] font-bold">{{ userInitials() }}</span>
                   }
                 </div>
-                <div
-                  class="max-w-[80%] rounded-xl px-3 py-2 text-sm"
-                  [class.bg-primary-600]="message.role === 'USER'"
-                  [class.text-white]="message.role === 'USER'"
-                  [class.rounded-tr-none]="message.role === 'USER'"
-                  [class.bg-white]="message.role === 'ASSISTANT'"
-                  [class.border]="message.role === 'ASSISTANT'"
-                  [class.border-secondary-200]="message.role === 'ASSISTANT'"
-                  [class.rounded-tl-none]="message.role === 'ASSISTANT'">
-                  <p class="whitespace-pre-wrap">{{ message.content }}</p>
-                  @if (message.citations && message.citations.length > 0) {
-                    <p class="text-[10px] mt-1 opacity-70">Source: CGI {{ message.cgiVersion || '2026' }}</p>
+                <div class="flex flex-col gap-1 max-w-[80%]">
+                  <div
+                    class="rounded-xl px-3 py-2 text-sm"
+                    [class.bg-primary-600]="message.role === 'USER'"
+                    [class.text-white]="message.role === 'USER'"
+                    [class.rounded-tr-none]="message.role === 'USER'"
+                    [class.bg-white]="message.role === 'ASSISTANT'"
+                    [class.border]="message.role === 'ASSISTANT'"
+                    [class.border-secondary-200]="message.role === 'ASSISTANT'"
+                    [class.rounded-tl-none]="message.role === 'ASSISTANT'">
+                    @if (message.isVoice && message.role === 'USER') {
+                      <span class="text-[10px] opacity-70 block mb-1">Vocal</span>
+                    }
+                    <p class="whitespace-pre-wrap">{{ message.content }}</p>
+                    @if (message.citations && message.citations.length > 0) {
+                      <p class="text-[10px] mt-1 opacity-70">Source: CGI {{ message.cgiVersion || '2026' }}</p>
+                    }
+                  </div>
+                  <!-- Bouton lecture vocale pour les réponses -->
+                  @if (message.role === 'ASSISTANT') {
+                    <button
+                      (click)="speakMessage(message.content)"
+                      class="self-start text-xs text-secondary-500 hover:text-primary-600 flex items-center gap-1 transition"
+                      [disabled]="voiceService.isSpeaking()"
+                      title="Lire à voix haute">
+                      @if (voiceService.isSpeaking() && currentSpeakingId === message.id) {
+                        <svg class="w-3 h-3 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M6 6h12v12H6z"/>
+                        </svg>
+                        <span>Arrêter</span>
+                      } @else {
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                        </svg>
+                        <span>Ecouter</span>
+                      }
+                    </button>
                   }
                 </div>
               </div>
@@ -143,6 +170,18 @@ interface Message {
 
         <!-- Input -->
         <div class="border-t border-secondary-200 bg-white p-3 flex-shrink-0">
+          <!-- Transcription en direct -->
+          @if (isListening()) {
+            <div class="mb-2 px-3 py-2 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700 flex items-center gap-2">
+              <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+              <span class="flex-1">{{ liveTranscript() || 'Je vous écoute...' }}</span>
+              <button (click)="stopListening()" class="text-red-600 hover:text-red-800">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+          }
           <form (ngSubmit)="onSubmit()" class="flex items-end gap-2">
             <textarea
               [(ngModel)]="messageInput"
@@ -150,12 +189,39 @@ interface Message {
               rows="1"
               class="flex-1 resize-none min-h-[40px] max-h-24 px-3 py-2 border border-secondary-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               placeholder="Votre question..."
+              [disabled]="isListening()"
               (keydown.enter)="handleEnterKey($event)"
               (input)="autoResize($event)">
             </textarea>
+            <!-- Bouton microphone -->
+            <button
+              type="button"
+              (click)="toggleVoice()"
+              [disabled]="chatService.isStreaming()"
+              class="h-10 w-10 rounded-xl flex items-center justify-center transition"
+              [class.bg-red-500]="isListening()"
+              [class.hover:bg-red-600]="isListening()"
+              [class.bg-secondary-100]="!isListening()"
+              [class.hover:bg-secondary-200]="!isListening()"
+              [class.text-white]="isListening()"
+              [class.text-secondary-600]="!isListening()"
+              title="Recherche vocale">
+              @if (isListening()) {
+                <div class="flex items-center gap-0.5">
+                  <span class="w-1 h-3 bg-white rounded-full animate-pulse"></span>
+                  <span class="w-1 h-4 bg-white rounded-full animate-pulse" style="animation-delay: 0.15s"></span>
+                  <span class="w-1 h-3 bg-white rounded-full animate-pulse" style="animation-delay: 0.3s"></span>
+                </div>
+              } @else {
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                </svg>
+              }
+            </button>
+            <!-- Bouton envoi -->
             <button
               type="submit"
-              [disabled]="!messageInput.trim() || chatService.isStreaming()"
+              [disabled]="!messageInput.trim() || chatService.isStreaming() || isListening()"
               class="h-10 w-10 bg-primary-600 hover:bg-primary-700 disabled:bg-secondary-300 text-white rounded-xl flex items-center justify-center transition">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
@@ -184,6 +250,7 @@ interface Message {
 })
 export class ChatWidgetComponent implements AfterViewChecked {
   chatService = inject(ChatService);
+  voiceService = inject(VoiceSearchService);
   private authService = inject(AuthService);
   private destroyRef = inject(DestroyRef);
 
@@ -192,6 +259,10 @@ export class ChatWidgetComponent implements AfterViewChecked {
   isOpen = signal(false);
   messageInput = '';
   messages = signal<Message[]>([]);
+  isListening = signal(false);
+  liveTranscript = signal('');
+  currentSpeakingId = '';
+  private lastVoiceQuery = false;
 
   userInitials = computed(() => {
     const user = this.authService.user();
@@ -200,6 +271,31 @@ export class ChatWidgetComponent implements AfterViewChecked {
     const last = user.lastName?.charAt(0)?.toUpperCase() || '';
     return (first + last) || user.email.charAt(0).toUpperCase();
   });
+
+  constructor() {
+    // S'abonner aux changements d'état du service vocal
+    this.voiceService.state$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(state => {
+        this.isListening.set(state.isListening);
+      });
+
+    // S'abonner à la transcription en temps réel
+    this.voiceService.transcript$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(transcript => {
+        this.liveTranscript.set(transcript);
+      });
+
+    // S'abonner aux résultats finaux
+    this.voiceService.result$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(result => {
+        if (result.isFinal && result.transcript.trim()) {
+          this.onVoiceResult(result.transcript);
+        }
+      });
+  }
 
   ngAfterViewChecked(): void {
     this.scrollToBottom();
@@ -216,10 +312,72 @@ export class ChatWidgetComponent implements AfterViewChecked {
     this.isOpen.update(v => !v);
   }
 
+  // ============================================
+  // VOCAL
+  // ============================================
+
+  toggleVoice(): void {
+    if (this.isListening()) {
+      this.stopListening();
+    } else {
+      this.startListening();
+    }
+  }
+
+  startListening(): void {
+    this.liveTranscript.set('');
+    this.voiceService.startListening();
+  }
+
+  stopListening(): void {
+    this.voiceService.stopListening();
+  }
+
+  private onVoiceResult(transcript: string): void {
+    this.lastVoiceQuery = true;
+    const userMessage: Message = {
+      id: crypto.randomUUID(),
+      role: 'USER',
+      content: transcript,
+      isVoice: true,
+    };
+    this.messages.update(m => [...m, userMessage]);
+    this.liveTranscript.set('');
+    this.sendMessageWithStreaming(transcript);
+  }
+
+  async speakMessage(content: string): Promise<void> {
+    if (this.voiceService.isSpeaking()) {
+      this.voiceService.stopSpeaking();
+      this.currentSpeakingId = '';
+      return;
+    }
+
+    // Nettoyer le contenu pour la lecture
+    const cleanText = content
+      .replace(/<[^>]*>/g, '')
+      .replace(/\*\*/g, '')
+      .replace(/\n+/g, '. ');
+
+    const messageId = this.messages().find(m => m.content === content)?.id || '';
+    this.currentSpeakingId = messageId;
+
+    try {
+      await this.voiceService.speak(cleanText, { rate: 0.95 });
+    } finally {
+      this.currentSpeakingId = '';
+    }
+  }
+
+  // ============================================
+  // MESSAGES
+  // ============================================
+
   onSubmit(): void {
     const content = this.messageInput.trim();
     if (!content || this.chatService.isStreaming()) return;
 
+    this.lastVoiceQuery = false;
     const userMessage: Message = {
       id: crypto.randomUUID(),
       role: 'USER',
@@ -248,10 +406,12 @@ export class ChatWidgetComponent implements AfterViewChecked {
   onResetConversation(): void {
     this.messages.set([]);
     this.chatService.clearCurrentConversation();
+    this.voiceService.stopSpeaking();
   }
 
   private sendMessageWithStreaming(content: string): void {
     const conversationId = this.chatService.currentConversation()?.id;
+    const wasVoiceQuery = this.lastVoiceQuery;
 
     this.chatService
       .sendMessageStreaming({
@@ -272,6 +432,11 @@ export class ChatWidgetComponent implements AfterViewChecked {
               };
               this.messages.update(m => [...m, assistantMessage]);
               this.chatService.resetStreamingState();
+
+              // Lecture automatique si la question était vocale
+              if (wasVoiceQuery) {
+                this.speakMessage(assistantMessage.content);
+              }
               break;
             }
             case 'error':
