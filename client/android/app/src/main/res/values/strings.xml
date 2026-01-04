@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">CGI 242</string>
+    <string name="title_activity_main">CGI 242</string>
+    <string name="package_name">com.cgi242.app</string>
+    <string name="custom_url_scheme">com.cgi242.app</string>
+</resources>

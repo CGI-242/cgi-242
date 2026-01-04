@@ -60,6 +60,13 @@ server/dist/
 server/uploads/
 server/test-results/
 
+# Capacitor / Mobile
+client/android/app/src/main/assets/public/
+client/ios/App/App/public/
+*.apk
+*.aab
+*.ipa
+
 # Temporary/backup files at root
 article-metadata.ts
 keyword-mappings-complete.ts
