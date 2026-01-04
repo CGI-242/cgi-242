@@ -70,4 +70,7 @@ client/ios/App/App/public/
 # Temporary/backup files at root
 article-metadata.ts
 keyword-mappings-complete.ts
-*.png
+/*.png
+
+# Keep favicon PNGs
+!client/src/*.png
