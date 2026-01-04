@@ -29,7 +29,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </header>
 
       <!-- Hero (with top padding for fixed header) -->
-      <section class="pt-32 pb-20 px-6">
+      <section class="pt-48 pb-24 px-6">
         <div class="max-w-4xl mx-auto text-center">
           <h1 class="text-5xl font-bold text-secondary-900 mb-6">
             Votre Assistant IA pour le
