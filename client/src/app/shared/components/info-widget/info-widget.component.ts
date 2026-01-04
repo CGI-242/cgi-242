@@ -16,6 +16,7 @@ interface Message {
 }
 
 interface FAQ {
+  id: string;
   keywords: string[];
   answer: string;
 }
@@ -51,7 +52,7 @@ interface FAQ {
             </div>
             <div>
               <h3 class="font-medium text-white text-sm">Questions sur CGI 242</h3>
-              <p class="text-xs text-white/70">Comment pouvons-nous vous aider ?</p>
+              <p class="text-xs text-white/70">La fiscalité congolaise, simplifiée.</p>
             </div>
           </div>
           <button
@@ -180,120 +181,237 @@ export class InfoWidgetComponent implements AfterViewChecked {
     {
       id: '1',
       role: 'assistant',
-      content: 'Bonjour ! Je suis la pour repondre a vos questions sur CGI 242. Comment puis-je vous aider ?',
+      content: 'Bonjour ! Je suis là pour répondre à vos questions sur CGI 242. Comment puis-je vous aider ?',
     },
   ]);
 
   quickQuestions = [
     "C'est quoi CGI 242 ?",
     'Quels sont les tarifs ?',
-    'Comment ca marche ?',
+    'Quels impôts sont couverts ?',
     'Essai gratuit ?',
   ];
 
+  // Mots-clés pour les salutations
+  private greetings = ['bonjour', 'bonsoir', 'salut', 'hello', 'hi', 'coucou', 'hey'];
+
   private faqs: FAQ[] = [
+    // Salutations
     {
-      keywords: ['quoi', 'cgi 242', "c'est quoi", 'kesako', 'application', 'plateforme'],
-      answer: `CGI 242 est un assistant IA specialise dans le Code General des Impots du Congo-Brazzaville.
+      id: 'greeting',
+      keywords: this.greetings,
+      answer: `Bonjour ! 👋 Bienvenue sur CGI 242.
 
-Il vous permet de :
+Je suis là pour répondre à vos questions sur notre plateforme. Vous pouvez me demander :
+
+• Ce qu'est CGI 242
+• Les tarifs et abonnements
+• Les fonctionnalités disponibles
+• Comment ça fonctionne
+
+Comment puis-je vous aider ?`,
+    },
+    // À propos
+    {
+      id: 'about_1',
+      keywords: ['quoi', 'cgi 242', "c'est quoi", 'kesako', 'présentation', 'définition', 'assistant', 'application', 'plateforme'],
+      answer: `🔍 CGI 242 est un assistant fiscal intelligent spécialisé dans le Code Général des Impôts du Congo-Brazzaville.
+
+Il combine l'intelligence artificielle et une base documentaire officielle pour vous fournir des réponses précises, sourcées et actualisées sur la fiscalité congolaise.
+
+Fonctionnalités principales :
 • Poser des questions fiscales en langage naturel
-• Obtenir des reponses precises avec les articles du CGI cites
+• Obtenir des réponses avec les articles du CGI cités
 • Consulter le livre du CGI 2025 et 2026
-• Utiliser des simulateurs fiscaux (IS, ITS, IRPP, Patente...)
-• Travailler en equipe avec votre cabinet ou entreprise`,
+• Utiliser des simulateurs fiscaux`,
     },
     {
-      keywords: ['tarif', 'prix', 'cout', 'combien', 'abonnement', 'payer'],
-      answer: `Nos formules d'abonnement :
+      id: 'about_2',
+      keywords: ['nom', 'signification', '242', 'pourquoi'],
+      answer: `CGI pour Code Général des Impôts, et 242 pour l'indicatif téléphonique du Congo-Brazzaville.
 
-🆓 Gratuit : 10 questions/mois
-   Acces au CGI, simulateurs de base
-
-💼 Basic : 15 000 FCFA/mois
-   100 questions/mois, historique complet
-
-🏢 Pro : 45 000 FCFA/mois
-   Questions illimitees, equipe jusqu'a 5 personnes
-
-🏛️ Entreprise : Sur devis
-   Equipes illimitees, support prioritaire`,
+Un nom qui reflète notre mission : rendre la fiscalité congolaise accessible à tous les professionnels.`,
     },
     {
-      keywords: ['marche', 'fonctionne', 'comment', 'utiliser', 'fonctionnement'],
-      answer: `C'est tres simple :
+      id: 'about_3',
+      keywords: ['utilisateurs', 'cible', 'professionnels', 'comptables', 'pour qui', 'destiné'],
+      answer: `👥 CGI 242 s'adresse à :
 
-1️⃣ Creez un compte gratuit
-2️⃣ Posez votre question fiscale (ex: "Quel est le taux de l'IS ?")
-3️⃣ L'IA analyse le CGI et vous repond avec les articles sources
-4️⃣ Vous pouvez consulter les articles cites directement
+• Experts-comptables et cabinets d'audit
+• Directions financières d'entreprises
+• Fiscalistes et juristes d'affaires
+• Entrepreneurs et PME
+• Étudiants en comptabilité et fiscalité`,
+    },
+    // Contenu et sources
+    {
+      id: 'content_1',
+      keywords: ['sources', 'textes officiels', 'fiable', 'confiance'],
+      answer: `📚 CGI 242 s'appuie exclusivement sur les textes officiels :
 
-L'assistant comprend le langage naturel, pas besoin de connaitre les numeros d'articles !`,
+• Code Général des Impôts 2025 et 2026 (Tomes 1 et 2)
+• Directive CEMAC n°0119/25-UEAC-177-CM-42
+• Textes réglementaires et circulaires fiscales
+
+Chaque réponse cite les articles correspondants pour vérification.`,
     },
     {
+      id: 'content_3',
+      keywords: ['impôts', 'impot', 'couvert', 'IS', 'IBA', 'ITS', 'TVA', 'patente', 'pétrole'],
+      answer: `💼 CGI 242 couvre l'ensemble de la fiscalité congolaise :
+
+• Impôt sur les Sociétés (IS)
+• Impôt sur les Bénéfices d'Affaires (IBA)
+• Impôt sur les Traitements et Salaires (ITS)
+• TVA
+• Patente et contributions diverses
+• Fiscalité pétrolière et minière
+• Prix de transfert et fiscalité internationale`,
+    },
+    {
+      id: 'content_4',
+      keywords: ['2026', 'nouveautés', 'CEMAC', 'nouveau'],
+      answer: `📅 Oui, le CGI 2026 est inclus !
+
+Il intègre toutes les modifications issues de la Directive CEMAC n°0119/25, notamment :
+
+• Nouveaux taux d'IS à 25%
+• Règles de prix de transfert
+• Régime des sous-traitants pétroliers`,
+    },
+    // Fonctionnalités
+    {
+      id: 'features_1',
+      keywords: ['comment', 'utiliser', 'fonctionne', 'marche', 'poser', 'question'],
+      answer: `💡 C'est très simple :
+
+1️⃣ Créez un compte gratuit
+2️⃣ Posez votre question fiscale naturellement
+   Ex: "Quel est le taux de l'IS ?"
+3️⃣ L'IA analyse le CGI et vous répond avec les sources
+4️⃣ Consultez les articles cités directement
+
+L'assistant comprend le langage naturel !`,
+    },
+    {
+      id: 'features_2',
+      keywords: ['simulateur', 'calcul', 'calculer', 'simulation'],
+      answer: `🧮 Simulateurs fiscaux disponibles :
+
+• IS (Impôt sur les Sociétés)
+• ITS (Impôt sur les Salaires)
+• IRPP
+• Patente (droit fixe et proportionnel)
+• Plus-values immobilières et mobilières
+• Retenues à la source
+
+Tous accessibles après inscription !`,
+    },
+    {
+      id: 'features_3',
+      keywords: ['texte', 'intégral', 'article', 'consulter', 'livre', 'cgi'],
+      answer: `📖 Vous pouvez accéder au texte complet du CGI :
+
+• Naviguer par chapitre, section ou thématique
+• Rechercher par mots-clés
+• Consulter les articles 2025 et 2026
+
+Le livre du CGI est intégré à l'application.`,
+    },
+    {
+      id: 'features_5',
+      keywords: ['citation', 'référence', 'article de loi', 'source'],
+      answer: `📌 Oui, systématiquement !
+
+Chaque réponse indique les articles du CGI correspondants (ex: Art. 86A, Art. 3, Art. 92J).
+
+Vous pouvez ainsi vérifier et documenter vos positions fiscales.`,
+    },
+    // Tarifs
+    {
+      id: 'pricing_1',
+      keywords: ['tarif', 'prix', 'cout', 'combien', 'abonnement', 'payer', 'formule'],
+      answer: `💳 Nos formules d'abonnement :
+
+🆓 Gratuit : 0 FCFA/mois
+   10 questions/mois, simulateurs de base, accès CGI
+
+💼 Professionnel : 15 000 FCFA/mois
+   Questions illimitées, tous simulateurs, historique complet
+
+🏢 Entreprise : Sur devis
+   Multi-utilisateurs, espace organisation, formation incluse`,
+    },
+    {
+      id: 'pricing_4',
       keywords: ['essai', 'gratuit', 'free', 'tester', 'demo', 'test'],
-      answer: `Oui ! Vous pouvez commencer gratuitement :
+      answer: `✅ Oui, essai gratuit disponible !
 
-✅ 10 questions par mois incluses
-✅ Acces au livre du CGI complet
-✅ Simulateurs fiscaux de base
-✅ Aucune carte bancaire requise
+• 10 questions par mois incluses
+• Accès au livre du CGI complet
+• Simulateurs fiscaux de base
+• Aucune carte bancaire requise
 
 Inscrivez-vous en 30 secondes pour essayer !`,
     },
+    // Collaboration
     {
-      keywords: ['inscription', 'inscrire', 'compte', 'creer', 'register', 'signup'],
-      answer: `Pour creer votre compte :
+      id: 'collab_1',
+      keywords: ['équipe', 'cabinet', 'entreprise', 'collaborateur', 'partage', 'team', 'multi'],
+      answer: `👥 Mode collaboratif disponible :
+
+• Inviter des collaborateurs
+• Partager des recherches
+• Créer des espaces par client/dossier
+• Gérer les rôles et permissions
+
+Idéal pour les cabinets comptables !`,
+    },
+    // Sécurité
+    {
+      id: 'security_1',
+      keywords: ['sécurité', 'données', 'protection', 'confidentialité', 'privé'],
+      answer: `🔐 Vos données sont protégées :
+
+• Questions jamais partagées avec des tiers
+• Données chiffrées en transit et au repos
+• Aucune utilisation pour entraîner l'IA
+• Historique supprimable à tout moment`,
+    },
+    // Support
+    {
+      id: 'support_1',
+      keywords: ['contact', 'aide', 'support', 'problème', 'email', 'téléphone'],
+      answer: `🆘 Besoin d'aide ?
+
+📧 Email : support@cgi242.com
+📧 Commercial : contact@cgi-242.com
+💬 Chat : Disponible dans l'application
+
+Nous répondons sous 24h ouvrées.`,
+    },
+    // Légal
+    {
+      id: 'legal_1',
+      keywords: ['conseil', 'responsabilité', 'avocat', 'expert-comptable', 'remplace'],
+      answer: `⚖️ Avertissement important :
+
+CGI 242 est un outil d'aide à la recherche. Pour les situations complexes, consultez un expert-comptable ou avocat fiscaliste.
+
+L'application fournit l'information légale, seul un professionnel peut engager sa responsabilité sur un conseil personnalisé.`,
+    },
+    // Inscription
+    {
+      id: 'signup',
+      keywords: ['inscription', 'inscrire', 'compte', 'créer', 'register', 'signup'],
+      answer: `📝 Pour créer votre compte :
 
 1. Cliquez sur "S'inscrire" en haut de la page
 2. Renseignez votre email et mot de passe
 3. Confirmez votre email
-4. C'est pret !
+4. C'est prêt !
 
-Vous pouvez aussi vous inscrire avec votre compte Google.`,
-    },
-    {
-      keywords: ['equipe', 'cabinet', 'entreprise', 'collaborateur', 'partage', 'team'],
-      answer: `Avec les plans Pro et Entreprise, vous pouvez :
-
-👥 Inviter des collaborateurs
-📁 Partager des conversations
-🔒 Gerer les roles et permissions
-📊 Suivre l'utilisation de l'equipe
-
-Ideal pour les cabinets comptables et les directions fiscales !`,
-    },
-    {
-      keywords: ['cgi', 'code', 'impot', 'fiscal', 'loi', 'article', '2025', '2026'],
-      answer: `CGI 242 couvre le Code General des Impots du Congo :
-
-📚 CGI 2025 : Version complete disponible
-📚 CGI 2026 : Nouvelle version avec les mises a jour LF 2026
-
-Tous les impots sont couverts : IS, ITS, TVA, IRPP, Patente, droits d'enregistrement...
-
-Pour des questions fiscales precises, inscrivez-vous pour acceder a l'assistant complet !`,
-    },
-    {
-      keywords: ['simulateur', 'calcul', 'calculer', 'simulation'],
-      answer: `Nos simulateurs fiscaux disponibles :
-
-🧮 Simulateur IS (Impot sur les Societes)
-🧮 Simulateur ITS (Impot sur les Salaires)
-🧮 Simulateur IRPP
-🧮 Simulateur Patente
-🧮 Calculateur d'acomptes IS
-
-Tous accessibles apres inscription !`,
-    },
-    {
-      keywords: ['contact', 'aide', 'support', 'probleme', 'question'],
-      answer: `Besoin d'aide ?
-
-📧 Email : support@cgi242.com
-💬 Chat : Inscrivez-vous pour acceder au chat fiscal complet
-
-Pour les questions fiscales, l'assistant IA vous repondra directement apres inscription.`,
+L'inscription est gratuite et prend 30 secondes.`,
     },
   ];
 
@@ -345,19 +463,39 @@ Pour les questions fiscales, l'assistant IA vous repondra directement apres insc
   }
 
   private findAnswer(question: string): string {
-    const q = question.toLowerCase();
+    const q = question.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
+    // Vérifier d'abord les salutations
+    if (this.greetings.some((g) => q.startsWith(g) || q === g)) {
+      const hour = new Date().getHours();
+      const greeting = hour < 18 ? 'Bonjour' : 'Bonsoir';
+      return `${greeting} ! 👋 Bienvenue sur CGI 242.
+
+Je suis là pour répondre à vos questions sur notre plateforme. Vous pouvez me demander :
+
+• Ce qu'est CGI 242
+• Les tarifs et abonnements
+• Les fonctionnalités disponibles
+• Comment ça fonctionne
+
+Comment puis-je vous aider ?`;
+    }
+
+    // Chercher dans les FAQs
     for (const faq of this.faqs) {
-      if (faq.keywords.some((kw) => q.includes(kw))) {
+      const normalizedKeywords = faq.keywords.map(kw =>
+        kw.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      );
+      if (normalizedKeywords.some((kw) => q.includes(kw))) {
         return faq.answer;
       }
     }
 
     return `Merci pour votre question !
 
-Pour obtenir des reponses detaillees sur la fiscalite congolaise, inscrivez-vous gratuitement a CGI 242.
+Pour obtenir des réponses détaillées sur la fiscalité congolaise, inscrivez-vous gratuitement à CGI 242.
 
-L'assistant IA pourra alors repondre a toutes vos questions fiscales avec les articles du CGI correspondants.
+L'assistant IA pourra alors répondre à toutes vos questions fiscales avec les articles du CGI correspondants.
 
 👉 Cliquez sur "S'inscrire" pour commencer`;
   }
