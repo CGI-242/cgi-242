@@ -38,36 +38,36 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </header>
 
       <!-- Hero (with top padding for fixed header) -->
-      <section class="pt-36 pb-20 px-6">
+      <section class="pt-36 pb-20 px-6 overflow-hidden">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-8 items-center">
           <!-- Text content -->
-          <div class="lg:col-span-2 text-center lg:text-left">
+          <div class="lg:col-span-2 text-center lg:text-left animate-fade-in-up">
             <h1 class="text-3xl lg:text-4xl font-bold text-secondary-900 mb-5">
               Votre Assistant IA pour le
-              <span class="text-primary-600">Code Général des Impôts</span>
+              <span class="text-primary-600 animate-pulse-slow">Code General des Impots</span>
               du Congo
             </h1>
             <p class="text-base lg:text-lg text-secondary-600 mb-6">
-              Posez vos questions fiscales et obtenez des réponses précises,
-              sourcées directement depuis le CGI 2026 du Congo-Brazzaville.
+              Posez vos questions fiscales et obtenez des reponses precises,
+              sourcees directement depuis le CGI 2026 du Congo-Brazzaville.
             </p>
             <div class="flex gap-3 justify-center lg:justify-start flex-wrap">
-              <a routerLink="/auth/register" class="btn-primary px-6 py-2.5">
+              <a routerLink="/auth/register" class="btn-primary px-6 py-2.5 hover:scale-105 transition-transform duration-300">
                 Commencer gratuitement
               </a>
-              <a href="#features" class="btn-outline px-6 py-2.5">
+              <a href="#produits" class="btn-outline px-6 py-2.5 hover:scale-105 transition-transform duration-300">
                 En savoir plus
               </a>
             </div>
           </div>
           <!-- Hero Image -->
-          <div class="lg:col-span-3 hidden lg:block">
-            <div class="relative">
+          <div class="lg:col-span-3 hidden lg:block animate-slide-in-right">
+            <div class="relative animate-float">
               <div class="absolute inset-0 bg-primary-200 rounded-3xl transform rotate-2 scale-[1.02] opacity-40"></div>
               <img
                 src="assets/images/dashboard-cgi.png"
                 alt="Dashboard CGI 242"
-                class="relative rounded-2xl shadow-2xl border border-secondary-200 w-full max-w-none"
+                class="relative rounded-2xl shadow-2xl border border-secondary-200 w-full max-w-none hover:shadow-3xl transition-shadow duration-300"
               />
             </div>
           </div>
@@ -84,37 +84,37 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
             Des outils puissants pour simplifier votre travail fiscal au quotidien
           </p>
           <div class="grid md:grid-cols-3 gap-8">
-            <div class="text-center p-6 bg-secondary-50 rounded-2xl">
-              <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div class="text-center p-6 bg-secondary-50 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+              <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
                 </svg>
               </div>
               <h3 class="text-xl font-semibold text-secondary-900 mb-2">Assistant IA CGI</h3>
               <p class="text-secondary-600">
-                Posez vos questions fiscales et obtenez des réponses précises avec les articles du CGI correspondants
+                Posez vos questions fiscales et obtenez des reponses precises avec les articles du CGI correspondants
               </p>
             </div>
-            <div class="text-center p-6 bg-secondary-50 rounded-2xl">
-              <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div class="text-center p-6 bg-secondary-50 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+              <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                 </svg>
               </div>
               <h3 class="text-xl font-semibold text-secondary-900 mb-2">Simulateurs fiscaux</h3>
               <p class="text-secondary-600">
-                Calculez IRPP, ITS, IS, Patente et autres impôts selon le CGI 2026
+                Calculez IRPP, ITS, IS, Patente et autres impots selon le CGI 2026
               </p>
             </div>
-            <div class="text-center p-6 bg-secondary-50 rounded-2xl">
-              <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div class="text-center p-6 bg-secondary-50 rounded-2xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group">
+              <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold text-secondary-900 mb-2">Livre CGI intégral</h3>
+              <h3 class="text-xl font-semibold text-secondary-900 mb-2">Livre CGI integral</h3>
               <p class="text-secondary-600">
-                Consultez le Code Général des Impôts 2025 et 2026 directement dans l'application
+                Consultez le Code General des Impots 2025 et 2026 directement dans l'application
               </p>
             </div>
           </div>
@@ -132,7 +132,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
           </p>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Gratuit -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200">
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
               <h3 class="text-lg font-semibold text-secondary-900 mb-2">Gratuit</h3>
               <div class="mb-4">
                 <span class="text-3xl font-bold text-secondary-900">0</span>
@@ -164,7 +164,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
               </a>
             </div>
             <!-- Basic -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200">
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
               <h3 class="text-lg font-semibold text-secondary-900 mb-2">Basic</h3>
               <div class="mb-4">
                 <span class="text-3xl font-bold text-secondary-900">50 000</span>
@@ -202,8 +202,8 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
               </a>
             </div>
             <!-- Pro (Recommande) -->
-            <div class="bg-primary-600 rounded-2xl p-6 text-white relative">
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1 rounded-full">
+            <div class="bg-primary-600 rounded-2xl p-6 text-white relative hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300">
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1 rounded-full animate-bounce-slow">
                 Recommande
               </div>
               <h3 class="text-lg font-semibold mb-2">Pro</h3>
@@ -243,7 +243,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
               </a>
             </div>
             <!-- Sur devis -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200">
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
               <h3 class="text-lg font-semibold text-secondary-900 mb-2">Sur devis</h3>
               <div class="mb-4">
                 <span class="text-2xl font-bold text-secondary-900">Sur devis</span>
