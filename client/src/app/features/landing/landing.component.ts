@@ -29,36 +29,36 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </header>
 
       <!-- Hero (with top padding for fixed header) -->
-      <section class="pt-40 pb-24 px-6">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <section class="pt-36 pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-8 items-center">
           <!-- Text content -->
-          <div class="text-center lg:text-left">
-            <h1 class="text-4xl lg:text-5xl font-bold text-secondary-900 mb-6">
+          <div class="lg:col-span-2 text-center lg:text-left">
+            <h1 class="text-3xl lg:text-4xl font-bold text-secondary-900 mb-5">
               Votre Assistant IA pour le
               <span class="text-primary-600">Code Général des Impôts</span>
               du Congo
             </h1>
-            <p class="text-lg lg:text-xl text-secondary-600 mb-8">
+            <p class="text-base lg:text-lg text-secondary-600 mb-6">
               Posez vos questions fiscales et obtenez des réponses précises,
               sourcées directement depuis le CGI 2026 du Congo-Brazzaville.
             </p>
-            <div class="flex gap-4 justify-center lg:justify-start">
-              <a routerLink="/auth/register" class="btn-primary text-lg px-8 py-3">
+            <div class="flex gap-3 justify-center lg:justify-start flex-wrap">
+              <a routerLink="/auth/register" class="btn-primary px-6 py-2.5">
                 Commencer gratuitement
               </a>
-              <a href="#features" class="btn-outline text-lg px-8 py-3">
+              <a href="#features" class="btn-outline px-6 py-2.5">
                 En savoir plus
               </a>
             </div>
           </div>
           <!-- Hero Image -->
-          <div class="hidden lg:block">
+          <div class="lg:col-span-3 hidden lg:block">
             <div class="relative">
-              <div class="absolute inset-0 bg-primary-200 rounded-3xl transform rotate-3 scale-105 opacity-50"></div>
+              <div class="absolute inset-0 bg-primary-200 rounded-3xl transform rotate-2 scale-[1.02] opacity-40"></div>
               <img
                 src="assets/images/dashboard-cgi.png"
                 alt="Dashboard CGI 242"
-                class="relative rounded-2xl shadow-2xl border border-secondary-200 w-full"
+                class="relative rounded-2xl shadow-2xl border border-secondary-200 w-full max-w-none"
               />
             </div>
           </div>
