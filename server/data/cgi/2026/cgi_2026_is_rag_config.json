@@ -1,9 +1,10 @@
 {
   "rag_config": {
-    "version": "2.1",
+    "version": "2.2",
     "chapitre": "IS - Impôt sur les sociétés",
     "code": "CGI Congo 2026",
-    "last_updated": "2026-01-04"
+    "last_updated": "2026-01-04",
+    "corrections_appliquees": "Tests 7, 21, 33, 88, 98, 99 - enrichissement mots-clés Art. 26, 92A, 92J"
   },
   "chunking_strategy": {
     "method": "semantic_hierarchical",
@@ -224,7 +225,14 @@
         "provisions": ["Art. 63", "Art. 64", "Art. 66", "Art. 67", "Art. 69", "Art. 74"],
         "prix_transfert": ["Art. 77", "Art. 78", "Art. 81", "Art. 84", "Art. 85"],
         "groupe_societes": ["Art. 87", "Art. 87A", "Art. 90", "Art. 91"],
-        "petrole": ["Art. 24", "Art. 92", "Art. 92A", "Art. 92B", "Art. 92I", "Art. 92J", "Art. 92K"]
+        "petrole": ["Art. 24", "Art. 92", "Art. 92A", "Art. 92B", "Art. 92I", "Art. 92J", "Art. 92K"],
+        "seuil_especes": ["Art. 26"],
+        "base_forfaitaire_etrangers": ["Art. 92A"],
+        "mobilisation_demobilisation": ["Art. 92A"],
+        "seuil_petrolier": ["Art. 92J"],
+        "catering_petrolier": ["Art. 92J"],
+        "charte_investissements": ["Art. 92J", "Art. 3"],
+        "regime_derogatoire": ["Art. 92J", "Art. 92K"]
       }
     },
     "boost_factors": {
@@ -277,6 +285,30 @@
       "exoneration_patterns": [
         "exonéré", "exonération", "dispense", "pas d'impôt",
         "exempt", "exclusion"
+      ],
+      "especes_patterns": [
+        "espèces", "cash", "liquide", "numéraire", "paiement espèces",
+        "plafond espèces", "montant maximum espèces", "règlement cash"
+      ],
+      "forfaitaire_etrangers_patterns": [
+        "base forfaitaire", "22%", "forfaitaire étrangers", "PM étrangères",
+        "assiette forfaitaire", "personnes morales étrangères"
+      ],
+      "mobilisation_patterns": [
+        "mobilisation", "démobilisation", "mob", "demob",
+        "frais mobilisation", "frais installation", "inclus base"
+      ],
+      "petrolier_seuil_patterns": [
+        "70%", "seuil pétrolier", "CA pétrolier", "régime dérogatoire",
+        "activité pétrolière", "soixante-dix pour cent"
+      ],
+      "catering_patterns": [
+        "catering", "restauration", "cantine", "sites pétroliers",
+        "services annexes", "alimentation"
+      ],
+      "charte_patterns": [
+        "charte", "investissements", "éligible", "non éligible",
+        "exclusion charte", "avantages investissements"
       ]
     }
   },

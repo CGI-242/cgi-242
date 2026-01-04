@@ -1,6 +1,7 @@
 {
-  "metadata_version": "2.1",
+  "metadata_version": "2.2",
   "last_updated": "2026-01-04",
+  "corrections_appliquees": "Tests 7, 21, 33, 88, 98, 99 - enrichissement synonymes Art. 26, 92A, 92J",
   "source": {
     "document": "Code Général des Impôts",
     "pays": "République du Congo",
@@ -70,7 +71,7 @@
             "sous_section": 4,
             "titre": "Les charges déductibles",
             "article_general": "Art. 26",
-            "themes_generaux": ["conditions de déductibilité", "acte anormal de gestion", "200.000 FCFA espèces"],
+            "themes_generaux": ["conditions de déductibilité", "acte anormal de gestion", "200.000 FCFA espèces", "paiement cash", "numéraire", "plafond espèces", "montant maximum espèces", "seuil paiement liquide"],
             "paragraphes": [
               {
                 "paragraphe": 1,
@@ -240,7 +241,7 @@
             "sous_section": 6,
             "titre": "Régime des personnes morales étrangères",
             "articles": ["Art. 92", "Art. 92A", "Art. 92B", "Art. 92C", "Art. 92D", "Art. 92E", "Art. 92F", "Art. 92G", "Art. 92H", "Art. 92I", "Art. 92J", "Art. 92K"],
-            "themes": ["personnes morales étrangères", "forfaitaire 22%", "sous-traitants pétroliers", "quitus fiscal", "ATE", "retenue 5.75% Angola", "enregistrement contrats 1M", "70% activité pétrolière"]
+            "themes": ["personnes morales étrangères", "forfaitaire 22%", "sous-traitants pétroliers", "quitus fiscal", "ATE", "retenue 5.75% Angola", "enregistrement contrats 1M", "70% activité pétrolière", "base forfaitaire", "mobilisation", "démobilisation", "mob demob", "exclusion base", "catering", "restauration sites pétroliers", "régime dérogatoire", "charte investissements", "non éligible charte", "seuil CA pétrolier"]
           }
         ]
       }
@@ -267,7 +268,14 @@
     "chiffre d'affaires": ["CA", "revenus", "ventes", "turnover"],
     "bénéfice imposable": ["résultat fiscal", "base imposable", "assiette fiscale"],
     "acompte": ["versement provisionnel", "paiement anticipé", "avance IS"],
-    "quitus fiscal": ["certificat fiscal", "attestation fiscale", "clearance certificate"]
+    "quitus fiscal": ["certificat fiscal", "attestation fiscale", "clearance certificate"],
+    "espèces": ["cash", "numéraire", "liquide", "argent liquide", "paiement cash", "règlement espèces"],
+    "mobilisation": ["mob", "installation chantier", "mise en place", "transfert personnel"],
+    "démobilisation": ["demob", "repli chantier", "désinstallation", "retrait personnel"],
+    "base forfaitaire": ["assiette forfaitaire", "forfait 22%", "base 22%", "imposition forfaitaire étrangers"],
+    "catering": ["restauration", "cantine", "service repas", "alimentation sites", "restauration collective"],
+    "régime dérogatoire": ["régime spécial", "régime pétrolier", "dérogation fiscale", "régime particulier"],
+    "charte des investissements": ["charte investissements", "code investissements", "avantages investissements", "incitations fiscales"]
   },
   "valeurs_cles": {
     "taux": {
