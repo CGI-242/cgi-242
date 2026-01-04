@@ -12,11 +12,11 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
   template: `
     <div class="min-h-screen bg-gradient-to-br from-primary-50 via-accent-50 to-white">
       <!-- Header (fixed) -->
-      <header class="fixed top-0 left-0 right-0 z-50 py-3 px-6 bg-white/80 backdrop-blur-md border-b border-secondary-100">
+      <header class="fixed top-0 left-0 right-0 z-50 py-2 px-4 sm:px-6 bg-white/80 backdrop-blur-md border-b border-secondary-100">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-          <a routerLink="/" class="flex items-center gap-2">
-            <img src="assets/images/logo242.png" alt="CGI 242" class="h-16 w-auto" />
-            <span class="text-base text-secondary-600 font-bold">By NORMX AI</span>
+          <a routerLink="/" class="flex items-center gap-1">
+            <img src="assets/images/logo242.png" alt="CGI 242" class="h-10 sm:h-14 w-auto" />
+            <span class="text-[10px] text-secondary-400 font-medium hidden sm:inline">By NORMX AI</span>
           </a>
           <!-- Navigation principale -->
           <nav class="hidden md:flex items-center gap-8">
@@ -26,12 +26,31 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
             <a href="#contact" class="text-secondary-600 hover:text-primary-600 font-medium transition">Contact</a>
           </nav>
           <!-- Boutons auth -->
-          <nav class="flex items-center gap-3">
+          <nav class="flex items-center gap-2 sm:gap-3">
             @if (authService.isAuthenticated()) {
-              <a routerLink="/dashboard" class="btn-primary text-sm px-4 py-2">Accéder à l'application</a>
+              <!-- Mobile: icon -->
+              <a routerLink="/dashboard" class="sm:hidden p-2 bg-primary-600 text-white rounded-lg" title="Dashboard">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                </svg>
+              </a>
+              <!-- Desktop: text -->
+              <a routerLink="/dashboard" class="hidden sm:inline-block btn-primary text-sm px-4 py-2">Accéder à l'application</a>
             } @else {
-              <a routerLink="/auth/login" class="text-secondary-600 hover:text-primary-600 font-medium text-sm">Connexion</a>
-              <a routerLink="/auth/register" class="btn-primary text-sm px-4 py-2">S'inscrire</a>
+              <!-- Mobile: icons only -->
+              <a routerLink="/auth/login" class="sm:hidden p-2 text-secondary-600 hover:text-primary-600" title="Connexion">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+                </svg>
+              </a>
+              <a routerLink="/auth/register" class="sm:hidden p-2 bg-primary-600 text-white rounded-lg" title="S'inscrire">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+                </svg>
+              </a>
+              <!-- Desktop: text buttons -->
+              <a routerLink="/auth/login" class="hidden sm:inline-block text-secondary-600 hover:text-primary-600 font-medium text-sm">Connexion</a>
+              <a routerLink="/auth/register" class="hidden sm:inline-block btn-primary text-sm px-4 py-2">S'inscrire</a>
             }
           </nav>
         </div>

@@ -15,9 +15,9 @@ import { OrgSwitcherComponent } from '../org-switcher/org-switcher.component';
         <div class="flex items-center justify-between h-16">
           <!-- Logo -->
           <div class="flex items-center gap-8">
-            <a routerLink="/" class="flex items-center gap-2">
-              <img src="assets/images/logo-cgi242.png" alt="CGI 242" class="h-14 w-auto" />
-              <span class="text-sm text-secondary-500 font-semibold hidden sm:inline">By NORMX AI</span>
+            <a routerLink="/" class="flex items-center gap-1">
+              <img src="assets/images/logo-cgi242.png" alt="CGI 242" class="h-12 sm:h-14 w-auto" />
+              <span class="text-[10px] text-secondary-400 font-medium hidden sm:inline">By NORMX AI</span>
             </a>
 
             @if (authService.isAuthenticated()) {
@@ -61,8 +61,20 @@ import { OrgSwitcherComponent } from '../org-switcher/org-switcher.component';
                 }
               </div>
             } @else {
-              <a routerLink="/auth/login" class="btn-outline">Connexion</a>
-              <a routerLink="/auth/register" class="btn-primary">S'inscrire</a>
+              <!-- Mobile: icons only -->
+              <a routerLink="/auth/login" class="sm:hidden p-2 text-secondary-600 hover:text-primary-600" title="Connexion">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+                </svg>
+              </a>
+              <a routerLink="/auth/register" class="sm:hidden p-2 bg-primary-600 text-white rounded-lg" title="S'inscrire">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+                </svg>
+              </a>
+              <!-- Desktop: text buttons -->
+              <a routerLink="/auth/login" class="hidden sm:inline-block btn-outline">Connexion</a>
+              <a routerLink="/auth/register" class="hidden sm:inline-block btn-primary">S'inscrire</a>
             }
           </div>
         </div>
