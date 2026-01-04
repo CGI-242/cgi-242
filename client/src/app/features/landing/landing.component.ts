@@ -10,7 +10,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, RouterLink, InfoWidgetComponent],
   template: `
-    <div class="min-h-screen bg-gradient-to-b from-primary-50 to-white">
+    <div class="min-h-screen bg-gradient-to-br from-primary-50 via-accent-50 to-white">
       <!-- Header (fixed) -->
       <header class="fixed top-0 left-0 right-0 z-50 py-3 px-6 bg-white/80 backdrop-blur-md border-b border-secondary-100">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
@@ -44,7 +44,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
           <div class="lg:col-span-2 text-center lg:text-left animate-fade-in-up">
             <h1 class="text-3xl lg:text-4xl font-bold text-secondary-900 mb-5">
               Votre Assistant IA pour le
-              <span class="text-primary-600 animate-pulse-slow">Code General des Impots</span>
+              <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent animate-pulse-slow">Code General des Impots</span>
               du Congo
             </h1>
             <p class="text-base lg:text-lg text-secondary-600 mb-6">
@@ -122,7 +122,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </section>
 
       <!-- Tarifs -->
-      <section id="tarifs" class="py-20 px-6 bg-secondary-50">
+      <section id="tarifs" class="py-20 px-6 bg-gradient-to-br from-accent-50 via-accent-100 to-primary-50">
         <div class="max-w-5xl mx-auto">
           <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4">
             Tarifs simples et transparents
@@ -378,10 +378,10 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </section>
 
       <!-- Produits NORMX AI -->
-      <section class="py-20 px-6 bg-secondary-50">
+      <section class="py-20 px-6 bg-gradient-to-br from-primary-50 via-primary-100 to-accent-50">
         <div class="max-w-6xl mx-auto">
           <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4">
-            Ecosysteme NORMX AI
+            Ecosysteme <span class="bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">NORMX AI</span>
           </h2>
           <p class="text-center text-secondary-600 mb-12 max-w-2xl mx-auto">
             Des solutions intelligentes pour la conformite reglementaire en Afrique
@@ -450,7 +450,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
       </section>
 
       <!-- Contact -->
-      <section id="contact" class="py-20 px-6 bg-secondary-50">
+      <section id="contact" class="py-20 px-6 bg-white">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl font-bold text-center text-secondary-900 mb-4">
             Contactez-nous
@@ -459,27 +459,27 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
             Une question ? Notre équipe est là pour vous aider
           </p>
           <div class="grid md:grid-cols-3 gap-8">
-            <div class="text-center">
-              <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="text-center p-6 bg-accent-50 rounded-2xl hover:shadow-lg transition-all duration-300">
+              <div class="w-14 h-14 bg-accent-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg class="w-7 h-7 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
               </div>
               <h3 class="font-semibold text-secondary-900 mb-2">Email</h3>
               <a href="mailto:contact@cgi242.com" class="text-primary-600 hover:underline">contact&#64;cgi242.com</a>
             </div>
-            <div class="text-center">
-              <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="text-center p-6 bg-accent-50 rounded-2xl hover:shadow-lg transition-all duration-300">
+              <div class="w-14 h-14 bg-accent-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg class="w-7 h-7 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                 </svg>
               </div>
               <h3 class="font-semibold text-secondary-900 mb-2">Téléphone</h3>
               <a href="tel:+24205203422" class="text-primary-600 hover:underline">+242 05 203 42 21</a>
             </div>
-            <div class="text-center">
-              <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="text-center p-6 bg-accent-50 rounded-2xl hover:shadow-lg transition-all duration-300">
+              <div class="w-14 h-14 bg-accent-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg class="w-7 h-7 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
