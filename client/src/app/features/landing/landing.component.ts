@@ -132,7 +132,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
           </p>
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Gratuit -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-in-up-delay-1">
               <h3 class="text-lg font-semibold text-secondary-900 mb-2">Gratuit</h3>
               <div class="mb-4">
                 <span class="text-3xl font-bold text-secondary-900">0</span>
@@ -164,7 +164,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
               </a>
             </div>
             <!-- Basic -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-in-up-delay-2">
               <h3 class="text-lg font-semibold text-secondary-900 mb-2">Basic</h3>
               <div class="mb-4">
                 <span class="text-3xl font-bold text-secondary-900">50 000</span>
@@ -202,7 +202,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
               </a>
             </div>
             <!-- Pro (Recommande) -->
-            <div class="bg-primary-600 rounded-2xl p-6 text-white relative hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300">
+            <div class="bg-primary-600 rounded-2xl p-6 text-white relative hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 opacity-0 animate-fade-in-up-delay-3">
               <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1 rounded-full animate-bounce-slow">
                 Recommande
               </div>
@@ -243,7 +243,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
               </a>
             </div>
             <!-- Sur devis -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 opacity-0 animate-fade-in-up-delay-4">
               <h3 class="text-lg font-semibold text-secondary-900 mb-2">Sur devis</h3>
               <div class="mb-4">
                 <span class="text-2xl font-bold text-secondary-900">Sur devis</span>
