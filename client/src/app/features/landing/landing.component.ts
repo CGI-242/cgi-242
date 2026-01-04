@@ -311,7 +311,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
                 </svg>
               </div>
               <h3 class="font-semibold text-secondary-900 mb-2">Email</h3>
-              <a href="mailto:contact@cgi-242.com" class="text-primary-600 hover:underline">contact&#64;cgi-242.com</a>
+              <a href="mailto:contact@cgi242.com" class="text-primary-600 hover:underline">contact&#64;cgi242.com</a>
             </div>
             <div class="text-center">
               <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -320,7 +320,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
                 </svg>
               </div>
               <h3 class="font-semibold text-secondary-900 mb-2">Téléphone</h3>
-              <a href="tel:+24206XXXXXXX" class="text-primary-600 hover:underline">+242 06 XX XX XXX</a>
+              <a href="tel:+24205203422" class="text-primary-600 hover:underline">+242 05 203 42 21</a>
             </div>
             <div class="text-center">
               <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">

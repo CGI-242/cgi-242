@@ -385,7 +385,7 @@ Idéal pour les cabinets comptables !`,
       answer: `🆘 Besoin d'aide ?
 
 📧 Email : support@cgi242.com
-📧 Commercial : contact@cgi-242.com
+📧 Commercial : contact@cgi242.com
 💬 Chat : Disponible dans l'application
 
 Nous répondons sous 24h ouvrées.`,
