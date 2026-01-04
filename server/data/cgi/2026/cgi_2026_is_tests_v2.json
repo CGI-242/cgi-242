@@ -1,0 +1,855 @@
+{
+  "test_suite": {
+    "version": "2.0",
+    "chapitre": "IS - Impôt sur les sociétés",
+    "code": "CGI Congo 2026",
+    "created": "2026-01-04",
+    "total_tests": 100
+  },
+  "tests": [
+    {
+      "id": 1,
+      "categorie": "taux",
+      "question": "Quel est le taux normal de l'impôt sur les sociétés au Congo ?",
+      "reponse_attendue": "25%",
+      "articles_attendus": ["Art. 86A"],
+      "mots_cles": ["taux IS", "25%", "normal"]
+    },
+    {
+      "id": 2,
+      "categorie": "taux",
+      "question": "Quel est le taux IS pour une société française sans établissement stable CEMAC ?",
+      "reponse_attendue": "33%",
+      "articles_attendus": ["Art. 86A"],
+      "mots_cles": ["non-résident", "33%", "hors CEMAC"]
+    },
+    {
+      "id": 3,
+      "categorie": "taux",
+      "question": "Quel est le taux du minimum de perception ?",
+      "reponse_attendue": "1% (2% si déficit 2 exercices consécutifs)",
+      "articles_attendus": ["Art. 86B"],
+      "mots_cles": ["minimum perception", "1%", "2%"]
+    },
+    {
+      "id": 4,
+      "categorie": "taux",
+      "question": "Quel taux de retenue à la source sur les prestations de services à des non-résidents ?",
+      "reponse_attendue": "20%",
+      "articles_attendus": ["Art. 86C"],
+      "mots_cles": ["retenue source", "20%", "non-résidents", "prestations"]
+    },
+    {
+      "id": 5,
+      "categorie": "seuil",
+      "question": "Quel est le plafond d'amortissement des véhicules de tourisme ?",
+      "reponse_attendue": "40.000.000 FCFA",
+      "articles_attendus": ["Art. 59"],
+      "mots_cles": ["véhicule tourisme", "40 millions", "plafond"]
+    },
+    {
+      "id": 6,
+      "categorie": "seuil",
+      "question": "À partir de quel seuil la documentation prix de transfert est-elle obligatoire ?",
+      "reponse_attendue": "500.000.000 FCFA de CA ou actif brut",
+      "articles_attendus": ["Art. 81"],
+      "mots_cles": ["documentation", "prix transfert", "500 millions"]
+    },
+    {
+      "id": 7,
+      "categorie": "seuil",
+      "question": "Quel montant maximum pour un paiement en espèces déductible ?",
+      "reponse_attendue": "200.000 FCFA",
+      "articles_attendus": ["Art. 26"],
+      "mots_cles": ["espèces", "200.000", "cash"]
+    },
+    {
+      "id": 8,
+      "categorie": "delai",
+      "question": "Pendant combien d'années peut-on reporter un déficit fiscal ?",
+      "reponse_attendue": "5 ans",
+      "articles_attendus": ["Art. 75"],
+      "mots_cles": ["déficit", "report", "5 ans"]
+    },
+    {
+      "id": 9,
+      "categorie": "delai",
+      "question": "Quel est le délai de remploi des plus-values ?",
+      "reponse_attendue": "3 ans à compter de la clôture de l'exercice de réalisation",
+      "articles_attendus": ["Art. 17 A"],
+      "mots_cles": ["remploi", "plus-values", "3 ans"]
+    },
+    {
+      "id": 10,
+      "categorie": "delai",
+      "question": "Quelle est la durée minimum de présence pour constituer un établissement stable de services ?",
+      "reponse_attendue": "183 jours sur 12 mois",
+      "articles_attendus": ["Art. 4A"],
+      "mots_cles": ["établissement stable", "183 jours", "services"]
+    },
+    {
+      "id": 11,
+      "categorie": "echeance",
+      "question": "Quelles sont les dates de paiement des acomptes IS ?",
+      "reponse_attendue": "15 février, 15 mai, 15 août, 15 novembre",
+      "articles_attendus": ["Art. 124 B"],
+      "mots_cles": ["acomptes", "échéances", "février", "mai", "août", "novembre"]
+    },
+    {
+      "id": 12,
+      "categorie": "echeance",
+      "question": "Quelles sont les dates de paiement du minimum de perception ?",
+      "reponse_attendue": "15 mars, 15 juin, 15 septembre, 15 décembre",
+      "articles_attendus": ["Art. 86B"],
+      "mots_cles": ["minimum perception", "mars", "juin", "septembre", "décembre"]
+    },
+    {
+      "id": 13,
+      "categorie": "echeance",
+      "question": "Quelle est la date limite pour opter à l'IS pour une société de personnes ?",
+      "reponse_attendue": "30 octobre de l'année en cours",
+      "articles_attendus": ["Art. 2"],
+      "mots_cles": ["option IS", "30 octobre", "sociétés personnes"]
+    },
+    {
+      "id": 14,
+      "categorie": "condition",
+      "question": "Quelles sont les conditions du régime mère-fille ?",
+      "reponse_attendue": "25% du capital minimum, 2 ans conservation titres nominatifs, siège CEMAC",
+      "articles_attendus": ["Art. 87"],
+      "mots_cles": ["mère-fille", "25%", "2 ans", "nominatif"]
+    },
+    {
+      "id": 15,
+      "categorie": "condition",
+      "question": "Quelle participation minimale pour l'intégration fiscale ?",
+      "reponse_attendue": "95% du capital, directement ou indirectement",
+      "articles_attendus": ["Art. 91"],
+      "mots_cles": ["intégration fiscale", "95%", "groupe"]
+    },
+    {
+      "id": 16,
+      "categorie": "condition",
+      "question": "Quelles conditions pour le régime des holdings ?",
+      "reponse_attendue": "2/3 de l'actif en titres de participation, maintien 5 ans",
+      "articles_attendus": ["Art. 90"],
+      "mots_cles": ["holding", "deux tiers", "5 ans"]
+    },
+    {
+      "id": 17,
+      "categorie": "exoneration",
+      "question": "Quelles entités sont exonérées d'IS ?",
+      "reponse_attendue": "BEAC, BDEAC, coopératives agricoles, GIE, collectivités locales, etc.",
+      "articles_attendus": ["Art. 3"],
+      "mots_cles": ["exonérations", "BEAC", "coopératives", "GIE"]
+    },
+    {
+      "id": 18,
+      "categorie": "exoneration",
+      "question": "Les exonérations conventionnelles sont-elles encore possibles en 2026 ?",
+      "reponse_attendue": "Non, supprimées à compter du 1er janvier 2026",
+      "articles_attendus": ["Art. 3"],
+      "mots_cles": ["exonérations conventionnelles", "suppression", "2026"]
+    },
+    {
+      "id": 19,
+      "categorie": "calcul",
+      "question": "Comment calculer l'acompte IS ?",
+      "reponse_attendue": "(IS exercice N-1 × 4/5) ÷ 4",
+      "articles_attendus": ["Art. 124 B"],
+      "mots_cles": ["acompte", "calcul", "4/5", "quart"]
+    },
+    {
+      "id": 20,
+      "categorie": "calcul",
+      "question": "Quelle est la base du minimum de perception ?",
+      "reponse_attendue": "Produits exploitation + produits financiers + produits HAO (hors RAS libératoires)",
+      "articles_attendus": ["Art. 86B"],
+      "mots_cles": ["minimum perception", "base", "produits", "HAO"]
+    },
+    {
+      "id": 21,
+      "categorie": "calcul",
+      "question": "Comment calculer la base imposable forfaitaire des personnes morales étrangères ?",
+      "reponse_attendue": "22% du chiffre d'affaires HT réalisé au Congo",
+      "articles_attendus": ["Art. 92A"],
+      "mots_cles": ["forfaitaire", "22%", "étrangers", "CA"]
+    },
+    {
+      "id": 22,
+      "categorie": "deductibilite",
+      "question": "Quelle est la limite de déductibilité des frais de siège ?",
+      "reponse_attendue": "20% du bénéfice imposable (2% du CA pour BTP)",
+      "articles_attendus": ["Art. 38"],
+      "mots_cles": ["frais siège", "20%", "2%", "BTP"]
+    },
+    {
+      "id": 23,
+      "categorie": "deductibilite",
+      "question": "Quelle est la limite de déductibilité des intérêts ?",
+      "reponse_attendue": "20% de l'EBE",
+      "articles_attendus": ["Art. 49"],
+      "mots_cles": ["intérêts", "20%", "EBE", "sous-capitalisation"]
+    },
+    {
+      "id": 24,
+      "categorie": "deductibilite",
+      "question": "Les amendes fiscales sont-elles déductibles ?",
+      "reponse_attendue": "Non, jamais déductibles",
+      "articles_attendus": ["Art. 43"],
+      "mots_cles": ["amendes", "non déductibles", "pénalités"]
+    },
+    {
+      "id": 25,
+      "categorie": "deductibilite",
+      "question": "Les provisions pour congés payés sont-elles déductibles ?",
+      "reponse_attendue": "Non, jamais déductibles",
+      "articles_attendus": ["Art. 69", "Art. 74"],
+      "mots_cles": ["provisions", "congés payés", "non déductibles"]
+    },
+    {
+      "id": 26,
+      "categorie": "amortissement",
+      "question": "Quel est le taux d'amortissement des bâtiments commerciaux ?",
+      "reponse_attendue": "5%",
+      "articles_attendus": ["Art. 52"],
+      "mots_cles": ["amortissement", "bâtiments", "5%"]
+    },
+    {
+      "id": 27,
+      "categorie": "amortissement",
+      "question": "Quel est le taux d'amortissement du matériel informatique ?",
+      "reponse_attendue": "25%",
+      "articles_attendus": ["Art. 52"],
+      "mots_cles": ["informatique", "25%", "amortissement"]
+    },
+    {
+      "id": 28,
+      "categorie": "amortissement",
+      "question": "Quel est le seuil pour amortir à 100% dès l'acquisition ?",
+      "reponse_attendue": "500.000 FCFA HT",
+      "articles_attendus": ["Art. 60"],
+      "mots_cles": ["500.000", "100%", "faible valeur"]
+    },
+    {
+      "id": 29,
+      "categorie": "amortissement",
+      "question": "Le matériel SFEC peut-il être amorti à 100% ?",
+      "reponse_attendue": "Oui, dès l'année d'acquisition",
+      "articles_attendus": ["Art. 61"],
+      "mots_cles": ["SFEC", "100%", "facturation électronique"]
+    },
+    {
+      "id": 30,
+      "categorie": "sanction",
+      "question": "Quelle amende pour défaut de documentation prix de transfert ?",
+      "reponse_attendue": "5.000.000 FCFA (25.000.000 si défaut à la vérification)",
+      "articles_attendus": ["Art. 81"],
+      "mots_cles": ["documentation", "prix transfert", "5 millions", "25 millions"]
+    },
+    {
+      "id": 31,
+      "categorie": "sanction",
+      "question": "Quelle amende pour défaut d'enregistrement d'un contrat pétrolier ?",
+      "reponse_attendue": "Amende égale au montant des droits (1.000.000 FCFA minimum)",
+      "articles_attendus": ["Art. 92I"],
+      "mots_cles": ["enregistrement", "contrat pétrolier", "1 million"]
+    },
+    {
+      "id": 32,
+      "categorie": "petrole",
+      "question": "Quel est le taux de retenue pour la zone d'unification avec l'Angola ?",
+      "reponse_attendue": "5,75%",
+      "articles_attendus": ["Art. 92B"],
+      "mots_cles": ["Angola", "5,75%", "zone unification"]
+    },
+    {
+      "id": 33,
+      "categorie": "petrole",
+      "question": "Quel seuil de CA pétrolier pour le régime dérogatoire ?",
+      "reponse_attendue": "70% du CA global",
+      "articles_attendus": ["Art. 92J"],
+      "mots_cles": ["70%", "pétrolier", "régime dérogatoire"]
+    },
+    {
+      "id": 34,
+      "categorie": "petrole",
+      "question": "Quelle taxe forfaitaire sur cession de droits pétroliers avec plus-value ?",
+      "reponse_attendue": "10%",
+      "articles_attendus": ["Art. 24"],
+      "mots_cles": ["cession", "pétrolier", "10%", "plus-value"]
+    },
+    {
+      "id": 35,
+      "categorie": "groupe",
+      "question": "Quelle est la quote-part de frais du régime mère-fille ?",
+      "reponse_attendue": "10%",
+      "articles_attendus": ["Art. 87"],
+      "mots_cles": ["quote-part", "10%", "mère-fille"]
+    },
+    {
+      "id": 36,
+      "categorie": "groupe",
+      "question": "Pendant combien de temps les déficits sont-ils reportables dans l'intégration fiscale ?",
+      "reponse_attendue": "3 ans à hauteur de 1/3 par an",
+      "articles_attendus": ["Art. 91D"],
+      "mots_cles": ["intégration", "déficits", "3 ans", "1/3"]
+    },
+    {
+      "id": 37,
+      "categorie": "groupe",
+      "question": "Les holdings bénéficient-ils d'un taux IRVM réduit ?",
+      "reponse_attendue": "Oui, moitié du taux de droit commun",
+      "articles_attendus": ["Art. 90E"],
+      "mots_cles": ["holding", "IRVM", "moitié", "réduit"]
+    },
+    {
+      "id": 38,
+      "categorie": "etablissement_stable",
+      "question": "Quelle durée de chantier crée un établissement stable ?",
+      "reponse_attendue": "Plus de 3 mois",
+      "articles_attendus": ["Art. 4A"],
+      "mots_cles": ["établissement stable", "chantier", "3 mois"]
+    },
+    {
+      "id": 39,
+      "categorie": "prix_transfert",
+      "question": "Quelles sont les 5 méthodes de prix de transfert ?",
+      "reponse_attendue": "CUP, prix de revente, coût majoré, MTMN, partage des bénéfices",
+      "articles_attendus": ["Art. 85"],
+      "mots_cles": ["méthodes", "CUP", "MTMN", "partage"]
+    },
+    {
+      "id": 40,
+      "categorie": "prix_transfert",
+      "question": "Quel est le coût d'un accord préalable de prix (APP) ?",
+      "reponse_attendue": "10.000.000 FCFA",
+      "articles_attendus": ["Art. 84"],
+      "mots_cles": ["APP", "accord préalable", "10 millions"]
+    },
+    {
+      "id": 41,
+      "categorie": "definition",
+      "question": "Qu'est-ce qu'un acte anormal de gestion ?",
+      "reponse_attendue": "Acte dans l'intérêt d'un tiers sans contrepartie proportionnée pour l'entreprise",
+      "articles_attendus": ["Art. 26"],
+      "mots_cles": ["acte anormal", "gestion", "intérêt tiers"]
+    },
+    {
+      "id": 42,
+      "categorie": "definition",
+      "question": "Qu'est-ce qu'une redevance au sens fiscal ?",
+      "reponse_attendue": "Rémunération pour usage de droits de propriété intellectuelle, brevets, marques, etc.",
+      "articles_attendus": ["Art. 40"],
+      "mots_cles": ["redevance", "propriété intellectuelle", "brevet", "marque"]
+    },
+    {
+      "id": 43,
+      "categorie": "nouveaute_2026",
+      "question": "Quelles sont les principales nouveautés IS 2026 ?",
+      "reponse_attendue": "Suppression exonérations conventionnelles, limite intérêts 20% EBE, crédit impôt 15%, SFEC 100%",
+      "articles_attendus": ["Art. 3", "Art. 49", "Art. 3A", "Art. 61"],
+      "mots_cles": ["2026", "nouveautés", "directive CEMAC"]
+    },
+    {
+      "id": 44,
+      "categorie": "credit_impot",
+      "question": "Quel est le plafond du crédit d'impôt investissement ?",
+      "reponse_attendue": "15% des dépenses éligibles",
+      "articles_attendus": ["Art. 3A"],
+      "mots_cles": ["crédit impôt", "15%", "investissement"]
+    },
+    {
+      "id": 45,
+      "categorie": "credit_impot",
+      "question": "Pendant combien de temps le crédit d'impôt est-il reportable ?",
+      "reponse_attendue": "5 ans",
+      "articles_attendus": ["Art. 3A"],
+      "mots_cles": ["crédit impôt", "report", "5 ans"]
+    },
+    {
+      "id": 46,
+      "categorie": "quartier_general",
+      "question": "Quelle est la base d'imposition des quartiers généraux ?",
+      "reponse_attendue": "Base forfaitaire calculée sur l'ensemble des dépenses",
+      "articles_attendus": ["Art. 89A"],
+      "mots_cles": ["quartier général", "forfaitaire", "dépenses"]
+    },
+    {
+      "id": 47,
+      "categorie": "obligation",
+      "question": "Dans quel délai déclarer l'existence d'une société ?",
+      "reponse_attendue": "3 mois après constitution, 15 jours après début activité",
+      "articles_attendus": ["Art. 124"],
+      "mots_cles": ["déclaration existence", "3 mois", "15 jours"]
+    },
+    {
+      "id": 48,
+      "categorie": "obligation",
+      "question": "Quelle date de clôture obligatoire ?",
+      "reponse_attendue": "31 décembre",
+      "articles_attendus": ["Art. 11"],
+      "mots_cles": ["clôture", "31 décembre", "exercice"]
+    },
+    {
+      "id": 49,
+      "categorie": "dons",
+      "question": "Quel est le plafond de déductibilité des dons généraux ?",
+      "reponse_attendue": "0,5‰ du CA HT",
+      "articles_attendus": ["Art. 45"],
+      "mots_cles": ["dons", "0,5 pour mille", "libéralités"]
+    },
+    {
+      "id": 50,
+      "categorie": "dons",
+      "question": "Quel taux de déduction pour les dons sportifs ?",
+      "reponse_attendue": "0,3% du CA HT",
+      "articles_attendus": ["Art. 45"],
+      "mots_cles": ["sport", "0,3%", "dons"]
+    },
+    {
+      "id": 51,
+      "categorie": "cotisations",
+      "question": "Quelle limite pour les cotisations retraite à l'étranger ?",
+      "reponse_attendue": "15% du salaire brut",
+      "articles_attendus": ["Art. 27", "Art. 31"],
+      "mots_cles": ["cotisations", "retraite", "15%", "étranger"]
+    },
+    {
+      "id": 52,
+      "categorie": "commissions",
+      "question": "Quel plafond pour les commissions sur achats ?",
+      "reponse_attendue": "5% du montant des achats",
+      "articles_attendus": ["Art. 41"],
+      "mots_cles": ["commissions", "5%", "achats", "courtages"]
+    },
+    {
+      "id": 53,
+      "categorie": "assurance",
+      "question": "Les captives d'assurance sont-elles déductibles ?",
+      "reponse_attendue": "Non, les primes aux captives ne sont pas déductibles",
+      "articles_attendus": ["Art. 44 A"],
+      "mots_cles": ["captive", "assurance", "non déductible"]
+    },
+    {
+      "id": 54,
+      "categorie": "loyer",
+      "question": "Quelle limite de déductibilité des loyers en crédit-bail ?",
+      "reponse_attendue": "Amortissements + charges financières du crédit-bail",
+      "articles_attendus": ["Art. 42"],
+      "mots_cles": ["crédit-bail", "loyers", "amortissements"]
+    },
+    {
+      "id": 55,
+      "categorie": "provisions",
+      "question": "Les provisions COBAC sont-elles déductibles ?",
+      "reponse_attendue": "Oui, conformément à la réglementation COBAC R-2018/01",
+      "articles_attendus": ["Art. 67"],
+      "mots_cles": ["COBAC", "provisions", "banques"]
+    },
+    {
+      "id": 56,
+      "categorie": "restructuration",
+      "question": "Les plus-values de fusion sont-elles imposables ?",
+      "reponse_attendue": "Exonérées si conditions remplies, réintégration sur 5 ans pour amortissables",
+      "articles_attendus": ["Art. 21", "Art. 25"],
+      "mots_cles": ["fusion", "plus-values", "exonération", "5 ans"]
+    },
+    {
+      "id": 57,
+      "categorie": "cessation",
+      "question": "Que se passe-t-il fiscalement en cas de cessation d'activité ?",
+      "reponse_attendue": "Bénéfices, provisions et plus-values immédiatement imposables",
+      "articles_attendus": ["Art. 22"],
+      "mots_cles": ["cessation", "imposable", "provisions", "plus-values"]
+    },
+    {
+      "id": 58,
+      "categorie": "quitus",
+      "question": "Qui délivre le quitus fiscal pour une société avec CA > 100 milliards ?",
+      "reponse_attendue": "Le ministre des finances, après avis du DGID",
+      "articles_attendus": ["Art. 92G"],
+      "mots_cles": ["quitus", "100 milliards", "ministre"]
+    },
+    {
+      "id": 59,
+      "categorie": "succursale",
+      "question": "Comment sont imposées les succursales ?",
+      "reponse_attendue": "Au Congo, sous réserve des conventions internationales",
+      "articles_attendus": ["Art. 88"],
+      "mots_cles": ["succursale", "conventions", "double imposition"]
+    },
+    {
+      "id": 60,
+      "categorie": "societe_personne",
+      "question": "Quelles sociétés de personnes peuvent opter à l'IS ?",
+      "reponse_attendue": "SNC, SCS, sociétés en participation, sociétés civiles",
+      "articles_attendus": ["Art. 2"],
+      "mots_cles": ["SNC", "option", "sociétés personnes"]
+    },
+    {
+      "id": 61,
+      "categorie": "administrateur",
+      "question": "Les rémunérations d'administrateurs de SA sont-elles déductibles ?",
+      "reponse_attendue": "Non, sauf si travail effectif ; sinon revenus distribués",
+      "articles_attendus": ["Art. 37"],
+      "mots_cles": ["administrateur", "SA", "distribué"]
+    },
+    {
+      "id": 62,
+      "categorie": "transport",
+      "question": "Les frais de transport congés sont-ils déductibles ?",
+      "reponse_attendue": "Oui, 1 voyage par an du lieu de travail au lieu d'embauche",
+      "articles_attendus": ["Art. 34"],
+      "mots_cles": ["transport", "congés", "1 voyage"]
+    },
+    {
+      "id": 63,
+      "categorie": "representation",
+      "question": "Quelle limite pour l'allocation forfaitaire de représentation ?",
+      "reponse_attendue": "15%",
+      "articles_attendus": ["Art. 35"],
+      "mots_cles": ["représentation", "forfaitaire", "15%"]
+    },
+    {
+      "id": 64,
+      "categorie": "amortissement_accelere",
+      "question": "Quelles conditions pour l'amortissement accéléré ?",
+      "reponse_attendue": "Neuf > 40M FCFA, durée > 3 ans, usage industriel intensif, taux 40%",
+      "articles_attendus": ["Art. 58"],
+      "mots_cles": ["accéléré", "40 millions", "40%", "industriel"]
+    },
+    {
+      "id": 65,
+      "categorie": "integration",
+      "question": "Quelle est la durée de l'option d'intégration fiscale ?",
+      "reponse_attendue": "5 exercices, renouvelable par tacite reconduction",
+      "articles_attendus": ["Art. 91"],
+      "mots_cles": ["intégration", "5 exercices", "option"]
+    },
+    {
+      "id": 66,
+      "categorie": "ate",
+      "question": "Que se passe-t-il sans ATE pour une société étrangère ?",
+      "reponse_attendue": "Taux de 20% applicable (Art. 185 ter C)",
+      "articles_attendus": ["Art. 92B"],
+      "mots_cles": ["ATE", "20%", "autorisation temporaire"]
+    },
+    {
+      "id": 67,
+      "categorie": "declaration_pt",
+      "question": "Dans quel délai transmettre la documentation prix de transfert ?",
+      "reponse_attendue": "6 mois après la date limite de déclaration de résultat",
+      "articles_attendus": ["Art. 81"],
+      "mots_cles": ["documentation", "6 mois", "déclaration"]
+    },
+    {
+      "id": 68,
+      "categorie": "reprise",
+      "question": "Quel est le délai de reprise allongé en cas de demande internationale ?",
+      "reponse_attendue": "Jusqu'à 6 ans",
+      "articles_attendus": ["Art. 83"],
+      "mots_cles": ["reprise", "6 ans", "international"]
+    },
+    {
+      "id": 69,
+      "categorie": "pret_main_oeuvre",
+      "question": "Le prêt de main d'œuvre intragroupe est-il déductible ?",
+      "reponse_attendue": "Uniquement au coût réel (rémunérations + charges), pas de marge",
+      "articles_attendus": ["Art. 38"],
+      "mots_cles": ["prêt main d'œuvre", "intragroupe", "coût réel"]
+    },
+    {
+      "id": 70,
+      "categorie": "devises",
+      "question": "Comment traiter les écarts de conversion en devises ?",
+      "reponse_attendue": "Pris en compte dans le résultat au dernier cours de change",
+      "articles_attendus": ["Art. 10"],
+      "mots_cles": ["devises", "conversion", "cours change"]
+    },
+    {
+      "id": 71,
+      "categorie": "produits_non_encaisses",
+      "question": "Que faire des produits non encaissés après 2 ans ?",
+      "reponse_attendue": "Retranchés du bénéfice imposable du premier exercice vérifié",
+      "articles_attendus": ["Art. 16"],
+      "mots_cles": ["non encaissés", "2 ans", "retrancher"]
+    },
+    {
+      "id": 72,
+      "categorie": "changement_controle",
+      "question": "Comment sont imposées les plus-values sur cession avec changement de contrôle ?",
+      "reponse_attendue": "50% si < 5 ans, 33% sinon",
+      "articles_attendus": ["Art. 19"],
+      "mots_cles": ["changement contrôle", "50%", "33%"]
+    },
+    {
+      "id": 73,
+      "categorie": "cooperative",
+      "question": "Quelle limite salariale pour les coopératives artisanales ?",
+      "reponse_attendue": "SMIG de la zone du siège social",
+      "articles_attendus": ["Art. 30"],
+      "mots_cles": ["coopérative", "SMIG", "artisanale"]
+    },
+    {
+      "id": 74,
+      "categorie": "depenses_somptuaires",
+      "question": "Les dépenses de chasse sont-elles déductibles ?",
+      "reponse_attendue": "Non, dépenses somptuaires non déductibles",
+      "articles_attendus": ["Art. 47"],
+      "mots_cles": ["chasse", "somptuaires", "non déductible"]
+    },
+    {
+      "id": 75,
+      "categorie": "interets_beac",
+      "question": "Quel taux maximum pour les intérêts intragroupe ?",
+      "reponse_attendue": "Taux BEAC + 3 points",
+      "articles_attendus": ["Art. 49"],
+      "mots_cles": ["BEAC", "3 points", "intragroupe"]
+    },
+    {
+      "id": 76,
+      "categorie": "etablissement_stable_siege",
+      "question": "Les intérêts d'une succursale à son siège sont-ils déductibles ?",
+      "reponse_attendue": "Non (sauf banques)",
+      "articles_attendus": ["Art. 50"],
+      "mots_cles": ["succursale", "siège", "intérêts", "non déductible"]
+    },
+    {
+      "id": 77,
+      "categorie": "amortissement_differe",
+      "question": "Pendant combien de temps les amortissements différés sont-ils reportables ?",
+      "reponse_attendue": "Sans limitation de durée",
+      "articles_attendus": ["Art. 53"],
+      "mots_cles": ["amortissements différés", "illimité", "déficit"]
+    },
+    {
+      "id": 78,
+      "categorie": "logiciels",
+      "question": "Quel taux d'amortissement pour les logiciels ?",
+      "reponse_attendue": "50%",
+      "articles_attendus": ["Art. 52"],
+      "mots_cles": ["logiciels", "50%", "informatique"]
+    },
+    {
+      "id": 79,
+      "categorie": "vehicules",
+      "question": "Quel taux d'amortissement pour les véhicules légers en ville ?",
+      "reponse_attendue": "25%",
+      "articles_attendus": ["Art. 52"],
+      "mots_cles": ["véhicules", "25%", "ville"]
+    },
+    {
+      "id": 80,
+      "categorie": "constructions_sol_autrui",
+      "question": "Comment amortir les constructions sur sol d'autrui ?",
+      "reponse_attendue": "Sur la durée normale d'utilisation, même si > durée du bail",
+      "articles_attendus": ["Art. 55"],
+      "mots_cles": ["sol autrui", "bail", "amortissement"]
+    },
+    {
+      "id": 81,
+      "categorie": "credit_bail",
+      "question": "Comment le crédit-bailleur amortit-il les biens meubles ?",
+      "reponse_attendue": "Sur la durée du contrat de leasing",
+      "articles_attendus": ["Art. 56"],
+      "mots_cles": ["crédit-bail", "leasing", "durée contrat"]
+    },
+    {
+      "id": 82,
+      "categorie": "moins_value",
+      "question": "Les pertes dues à un détournement par un dirigeant sont-elles déductibles ?",
+      "reponse_attendue": "Non",
+      "articles_attendus": ["Art. 62"],
+      "mots_cles": ["détournement", "dirigeant", "non déductible"]
+    },
+    {
+      "id": 83,
+      "categorie": "provisions_etat",
+      "question": "Peut-on provisionner une créance douteuse sur l'État ?",
+      "reponse_attendue": "Non, jamais déductible",
+      "articles_attendus": ["Art. 69", "Art. 74"],
+      "mots_cles": ["État", "créance douteuse", "provision", "non déductible"]
+    },
+    {
+      "id": 84,
+      "categorie": "subvention_fille",
+      "question": "Quelle participation minimale pour déduire une subvention à une filiale ?",
+      "reponse_attendue": "10% du capital",
+      "articles_attendus": ["Art. 87A"],
+      "mots_cles": ["subvention", "filiale", "10%"]
+    },
+    {
+      "id": 85,
+      "categorie": "integration_credits",
+      "question": "La société mère peut-elle imputer les crédits d'impôt du groupe ?",
+      "reponse_attendue": "Oui, sur autorisation du DGID",
+      "articles_attendus": ["Art. 91G"],
+      "mots_cles": ["crédits impôt", "intégration", "DGID"]
+    },
+    {
+      "id": 86,
+      "categorie": "integration_sortie",
+      "question": "Que se passe-t-il si une filiale sort du groupe intégré ?",
+      "reponse_attendue": "Remise en cause rétroactive des neutralisations",
+      "articles_attendus": ["Art. 91I"],
+      "mots_cles": ["sortie", "groupe", "rétroactive"]
+    },
+    {
+      "id": 87,
+      "categorie": "etrangers_mentions",
+      "question": "Quelles mentions obligatoires sur les factures des PM étrangères ?",
+      "reponse_attendue": "Prestation rendue au Congo, montant imposable, retenue à la source",
+      "articles_attendus": ["Art. 92F"],
+      "mots_cles": ["facture", "mentions", "étrangers"]
+    },
+    {
+      "id": 88,
+      "categorie": "etrangers_mobilisation",
+      "question": "Les frais de mobilisation/démobilisation sont-ils inclus dans la base forfaitaire ?",
+      "reponse_attendue": "Non, exclus sous conditions (transfert effectif, facture séparée)",
+      "articles_attendus": ["Art. 92A"],
+      "mots_cles": ["mobilisation", "démobilisation", "exclusion"]
+    },
+    {
+      "id": 89,
+      "categorie": "contrat_petrolier",
+      "question": "Quel droit fixe pour l'enregistrement d'un contrat pétrolier ?",
+      "reponse_attendue": "1.000.000 FCFA",
+      "articles_attendus": ["Art. 92I"],
+      "mots_cles": ["enregistrement", "contrat", "1 million"]
+    },
+    {
+      "id": 90,
+      "categorie": "bon_commande",
+      "question": "Quel taux d'enregistrement pour les bons de commande pétroliers ?",
+      "reponse_attendue": "1% (proportionnel)",
+      "articles_attendus": ["Art. 92I"],
+      "mots_cles": ["bon commande", "1%", "proportionnel"]
+    },
+    {
+      "id": 91,
+      "categorie": "retard_paiement",
+      "question": "Quel intérêt de retard journalier pour les PM étrangères ?",
+      "reponse_attendue": "1% par jour ouvrable, plafonné à 50%",
+      "articles_attendus": ["Art. 92E"],
+      "mots_cles": ["intérêt retard", "1%", "50%"]
+    },
+    {
+      "id": 92,
+      "categorie": "nouvelle_societe",
+      "question": "Comment calculer les acomptes d'une société nouvelle ?",
+      "reponse_attendue": "(Capital appelé × 5%) × taux IS ÷ 4",
+      "articles_attendus": ["Art. 124 B"],
+      "mots_cles": ["nouvelle société", "acompte", "5% capital"]
+    },
+    {
+      "id": 93,
+      "categorie": "succursale_etrangere",
+      "question": "Comment calculer les acomptes d'une succursale de société étrangère ?",
+      "reponse_attendue": "Sur base du capital minimum SA OHADA (10 millions)",
+      "articles_attendus": ["Art. 124 B"],
+      "mots_cles": ["succursale", "acompte", "capital SA"]
+    },
+    {
+      "id": 94,
+      "categorie": "excedent_acompte",
+      "question": "Que devient l'excédent d'acomptes IS payés ?",
+      "reponse_attendue": "Imputé sur l'IS suivant, remboursé à la dissolution",
+      "articles_attendus": ["Art. 124 B"],
+      "mots_cles": ["excédent", "acompte", "imputation"]
+    },
+    {
+      "id": 95,
+      "categorie": "dissolution",
+      "question": "Quel délai de déclaration en cas de dissolution ?",
+      "reponse_attendue": "15 jours",
+      "articles_attendus": ["Art. 124 B"],
+      "mots_cles": ["dissolution", "15 jours", "déclaration"]
+    },
+    {
+      "id": 96,
+      "categorie": "declaration_trimestrielle",
+      "question": "Quelle amende pour défaut de déclaration trimestrielle des sous-traitants ?",
+      "reponse_attendue": "3.000.000 FCFA",
+      "articles_attendus": ["Art. 92I"],
+      "mots_cles": ["déclaration trimestrielle", "3 millions", "sous-traitants"]
+    },
+    {
+      "id": 97,
+      "categorie": "traduction",
+      "question": "Quelle amende pour un contrat pétrolier non traduit ?",
+      "reponse_attendue": "2.000.000 FCFA",
+      "articles_attendus": ["Art. 92I"],
+      "mots_cles": ["traduction", "2 millions", "contrat"]
+    },
+    {
+      "id": 98,
+      "categorie": "catering",
+      "question": "Le catering sur sites pétroliers relève-t-il du régime dérogatoire ?",
+      "reponse_attendue": "Oui, dans la limite du seuil de 70% CA pétrolier",
+      "articles_attendus": ["Art. 92J"],
+      "mots_cles": ["catering", "pétrolier", "70%"]
+    },
+    {
+      "id": 99,
+      "categorie": "charte_investissement",
+      "question": "Les sociétés pétrolières sous régime dérogatoire sont-elles éligibles à la charte ?",
+      "reponse_attendue": "Non",
+      "articles_attendus": ["Art. 92J"],
+      "mots_cles": ["charte investissements", "pétrolier", "non éligible"]
+    },
+    {
+      "id": 100,
+      "categorie": "revenus_accessoires",
+      "question": "Comment sont imposés les revenus accessoires des sous-traitants pétroliers ?",
+      "reponse_attendue": "Selon le régime forfaitaire des articles 92 et suivants",
+      "articles_attendus": ["Art. 92K"],
+      "mots_cles": ["accessoires", "sous-traitants", "forfaitaire"]
+    }
+  ],
+  "statistiques_tests": {
+    "par_categorie": {
+      "taux": 4,
+      "seuil": 3,
+      "delai": 3,
+      "echeance": 3,
+      "condition": 3,
+      "exoneration": 2,
+      "calcul": 3,
+      "deductibilite": 4,
+      "amortissement": 8,
+      "sanction": 2,
+      "petrole": 15,
+      "groupe": 8,
+      "etablissement_stable": 2,
+      "prix_transfert": 4,
+      "definition": 2,
+      "nouveaute_2026": 1,
+      "credit_impot": 2,
+      "quartier_general": 1,
+      "obligation": 2,
+      "dons": 2,
+      "cotisations": 1,
+      "commissions": 1,
+      "assurance": 1,
+      "loyer": 1,
+      "provisions": 3,
+      "restructuration": 1,
+      "cessation": 1,
+      "quitus": 1,
+      "succursale": 2,
+      "societe_personne": 1,
+      "administrateur": 1,
+      "transport": 1,
+      "representation": 1,
+      "integration": 5,
+      "autres": 10
+    },
+    "par_difficulte": {
+      "facile": 40,
+      "moyen": 45,
+      "difficile": 15
+    }
+  }
+}

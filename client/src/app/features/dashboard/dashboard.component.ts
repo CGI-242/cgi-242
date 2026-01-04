@@ -13,6 +13,8 @@ interface UsageStats {
   questionsLimit: number;
   articlesViewed: number;
   conversationsCount: number;
+  plan: string;
+  status: string;
 }
 
 @Component({
@@ -28,10 +30,10 @@ interface UsageStats {
         <app-sidebar [collapsed]="sidebarCollapsed" />
 
         <main
-          class="flex-1 transition-all duration-300 p-8"
+          class="flex-1 transition-all duration-300 p-4"
           [class.ml-56]="!sidebarCollapsed"
           [class.ml-14]="sidebarCollapsed">
-          <div class="max-w-6xl mx-auto">
+          <div class="px-2">
             <!-- Header -->
             <div class="mb-8">
               <h1 class="text-2xl font-bold text-secondary-900">
@@ -148,15 +150,17 @@ interface UsageStats {
                 <h3 class="font-semibold text-secondary-900 mb-4">Votre abonnement</h3>
                 <div class="p-4 bg-primary-50 rounded-lg">
                   <div class="flex items-center justify-between mb-2">
-                    <span class="font-medium text-primary-900">Plan Gratuit</span>
-                    <span class="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">Actif</span>
+                    <span class="font-medium text-primary-900">{{ getPlanLabel() }}</span>
+                    <span class="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">{{ getStatusLabel() }}</span>
                   </div>
                   <p class="text-sm text-primary-700 mb-4">
                     {{ stats().questionsLimit - stats().questionsUsed }} questions restantes ce mois
                   </p>
-                  <a routerLink="/subscription" class="btn-primary w-full text-center">
-                    Passer au Premium
-                  </a>
+                  @if (stats().plan === 'FREE') {
+                    <a routerLink="/subscription" class="btn-primary w-full text-center">
+                      Passer au Premium
+                    </a>
+                  }
                 </div>
               </div>
             </div>
@@ -180,6 +184,8 @@ export class DashboardComponent implements OnInit {
     questionsLimit: 10,
     articlesViewed: 0,
     conversationsCount: 0,
+    plan: 'FREE',
+    status: 'ACTIVE',
   });
 
   ngOnInit(): void {
@@ -210,5 +216,25 @@ export class DashboardComponent implements OnInit {
 
   getTimeSaved(): number {
     return Math.round(this.stats().questionsUsed * 0.5);
+  }
+
+  getPlanLabel(): string {
+    const planLabels: Record<string, string> = {
+      FREE: 'Plan Gratuit',
+      BASIC: 'Plan Basic',
+      PRO: 'Plan Pro',
+      ENTERPRISE: 'Plan Entreprise',
+    };
+    return planLabels[this.stats().plan] || 'Plan Gratuit';
+  }
+
+  getStatusLabel(): string {
+    const statusLabels: Record<string, string> = {
+      ACTIVE: 'Actif',
+      TRIAL: 'Essai',
+      CANCELLED: 'Annulé',
+      EXPIRED: 'Expiré',
+    };
+    return statusLabels[this.stats().status] || 'Actif';
   }
 }

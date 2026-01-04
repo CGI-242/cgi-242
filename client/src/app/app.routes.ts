@@ -38,6 +38,12 @@ export const routes: Routes = [
     canActivate: [authGuard],
   },
   {
+    path: 'subscription',
+    loadChildren: () =>
+      import('./features/subscription/subscription.routes').then((m) => m.SUBSCRIPTION_ROUTES),
+    canActivate: [authGuard],
+  },
+  {
     path: 'forbidden',
     loadComponent: () =>
       import('./features/landing/forbidden.component').then((m) => m.ForbiddenComponent),

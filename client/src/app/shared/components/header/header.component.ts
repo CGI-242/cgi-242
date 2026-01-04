@@ -11,7 +11,7 @@ import { OrgSwitcherComponent } from '../org-switcher/org-switcher.component';
   imports: [CommonModule, RouterLink, OrgSwitcherComponent],
   template: `
     <header class="bg-white border-b border-secondary-200 sticky top-0 z-40">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="px-2 sm:px-4">
         <div class="flex items-center justify-between h-16">
           <!-- Logo -->
           <div class="flex items-center gap-8">
@@ -21,7 +21,6 @@ import { OrgSwitcherComponent } from '../org-switcher/org-switcher.component';
 
             @if (authService.isAuthenticated()) {
               <nav class="hidden md:flex items-center gap-6">
-                <a routerLink="/chat" class="text-sm text-secondary-600 hover:text-secondary-900">Chat</a>
                 <a routerLink="/dashboard" class="text-sm text-secondary-600 hover:text-secondary-900">Dashboard</a>
               </nav>
             }

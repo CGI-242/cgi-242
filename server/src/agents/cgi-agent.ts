@@ -211,8 +211,9 @@ export class CGIAgent extends BaseAgent {
       .replace(/[\u{2700}-\u{27BF}]/gu, '')
       .replace(/[\u{1F600}-\u{1F64F}]/gu, '')
       .replace(/[\u{1F680}-\u{1F6FF}]/gu, '')
-      // Supprimer symboles spéciaux (check, fleche, etc.)
-      .replace(/[📋📌💡📖✅❌⚠️🔴🟢🟡➡️⬅️⬆️⬇️]/g, '')
+      // Supprimer symboles spéciaux (check, fleche, etc.) et variation selectors
+      .replace(/[\u{1F4CB}\u{1F4CC}\u{1F4A1}\u{1F4D6}\u{2705}\u{274C}\u{26A0}\u{1F534}\u{1F7E2}\u{1F7E1}\u{27A1}\u{2B05}\u{2B06}\u{2B07}]/gu, '')
+      .replace(/\u{FE0F}/gu, '')
       // Nettoyer les espaces multiples
       .replace(/[^\S\n]+/g, ' ')
       .replace(/\n{3,}/g, '\n\n')

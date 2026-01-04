@@ -14,7 +14,7 @@ import { AuthService } from '@core/services/auth.service';
       <header class="py-4 px-6">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
           <a routerLink="/" class="flex items-center">
-            <img src="assets/images/logo-cgi242.png" alt="CGI 242" class="h-16 w-auto" />
+            <img src="assets/images/logo-site.png" alt="CGI 242" class="h-24 w-auto" />
           </a>
           <nav class="flex items-center gap-4">
             @if (authService.isAuthenticated()) {
@@ -114,7 +114,7 @@ import { AuthService } from '@core/services/auth.service';
         <div class="max-w-6xl mx-auto">
           <div class="flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center">
-              <img src="assets/images/logo-footer.png" alt="CGI 242" class="h-14 w-auto opacity-90" />
+              <img src="assets/images/logo-site.png" alt="CGI 242" class="h-20 w-auto opacity-90" />
             </div>
             <nav class="flex items-center gap-6 text-sm">
               <a href="#features" class="text-secondary-400 hover:text-white transition">Fonctionnalites</a>

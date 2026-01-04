@@ -178,7 +178,7 @@ export const KEYWORD_ARTICLE_MAP_2026: Record<string, string[]> = {
   '25 000 000 amende': ['Art. 81'],
   'declaration pays par pays': ['Art. 82', 'Art. 83', 'Art. 84', 'Art. 85'],
 
-  // ========== ART. 86-86C - ASSIETTE ET TAUX ==========
+  // ========== ART. 86-86F - ASSIETTE, TAUX ET RETENUES ==========
   'assiette is': ['Art. 86'],
   'minimum perception': ['Art. 86B'],
   'minimum is': ['Art. 86B'],
@@ -190,14 +190,20 @@ export const KEYWORD_ARTICLE_MAP_2026: Record<string, string[]> = {
   '15 juin': ['Art. 86B'],
   '15 septembre': ['Art. 86B'],
   '15 decembre': ['Art. 86B'],
-  'retenue source': ['Art. 86C'],
+  'retenue source': ['Art. 86C', 'Art. 86D', 'Art. 86E', 'Art. 86F'],
   '20% retenue': ['Art. 86C'],
   'prestations non residents': ['Art. 86C'],
-  'acomptes is': ['Art. 124'],
+  'retenue source interets': ['Art. 86D'],
+  'retenue source dividendes': ['Art. 86E', 'Art. 185 ter'],
+  'retenue source redevances': ['Art. 86F'],
+  'royalties retenue': ['Art. 86F'],
+  'acomptes is': ['Art. 124', 'Art. 124A'],
   '15 fevrier': ['Art. 124'],
   '15 mai': ['Art. 124'],
   '15 aout': ['Art. 124'],
   '15 novembre': ['Art. 124'],
+  'declarations obligations': ['Art. 124A'],
+  'liasse fiscale': ['Art. 124A'],
 
   // ========== ART. 87 - REGIME MERE-FILLE ==========
   'societes meres': ['Art. 87'],
@@ -242,6 +248,19 @@ export const KEYWORD_ARTICLE_MAP_2026: Record<string, string[]> = {
   'autorisation temporaire exercer': ['Art. 92F'],
   'zone angola': ['Art. 92J'],
   '5.75%': ['Art. 92J'],
+
+  // ========== ART. 185 ter - IRVM DIVIDENDES ==========
+  'irvm dividendes': ['Art. 185 ter'],
+  'retenue dividendes': ['Art. 185 ter', 'Art. 86E'],
+  'distributions benefices': ['Art. 185 ter'],
+  'impot revenu valeurs mobilieres': ['Art. 185 ter'],
+
+  // ========== ART. 378 - SANCTIONS ==========
+  'sanctions fiscales': ['Art. 378', 'Art. 81'],
+  'penalites fiscales': ['Art. 378'],
+  'amendes fiscales': ['Art. 378', 'Art. 81'],
+  'interet retard': ['Art. 378'],
+  'majoration retard': ['Art. 378'],
 };
 
 /**
@@ -256,8 +275,14 @@ export const SYNONYMS_2026: Record<string, string[]> = {
   'integration fiscale': ['groupe fiscal', 'consolidation fiscale'],
   'holding': ['societe de participation', 'societe portefeuille'],
   'credit-bail': ['leasing', 'location financiere', 'loa'],
-  'amortissement': ['dotation aux amortissements', 'depreciation'],
+  'amortissement': ['dotation aux amortissements', 'depreciation', 'dap'],
   'provisions': ['dotation aux provisions', 'charges a venir'],
-  'retenue a la source': ['ras', 'withholding tax', 'prelevement a la source'],
+  'retenue a la source': ['ras', 'withholding tax', 'prelevement a la source', 'wht'],
   'redevances': ['royalties', 'droits auteur', 'licences'],
+  'dividendes': ['distributions', 'benefices distribues', 'irvm'],
+  'sanctions': ['penalites', 'amendes', 'majorations'],
+  'acomptes': ['versements anticipes', 'paiements fractionnaires'],
+  'quitus fiscal': ['attestation fiscale', 'certificat conformite'],
+  'ebitda': ['ebe', 'excedent brut exploitation'],
+  'benefice imposable': ['resultat fiscal', 'base imposable'],
 };

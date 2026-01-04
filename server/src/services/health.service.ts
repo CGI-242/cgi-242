@@ -3,11 +3,10 @@
  * Vérifie l'état de tous les services critiques
  */
 
+import os from 'os';
 import { PrismaClient } from '@prisma/client';
 import { createLogger } from '../utils/logger.js';
 import { redisService } from './redis.service.js';
-import { getLogStats } from '../utils/logger.js';
-import { getMetricsStats } from './metrics.service.js';
 import { isSentryEnabled } from './sentry.service.js';
 
 const logger = createLogger('HealthService');
@@ -157,8 +156,7 @@ async function checkQdrant(): Promise<HealthCheck> {
  */
 function getSystemInfo() {
   const memUsage = process.memoryUsage();
-  const totalMem = require('os').totalmem();
-  const loadAvg = require('os').loadavg();
+  const loadAvg = os.loadavg();
 
   return {
     memory: {

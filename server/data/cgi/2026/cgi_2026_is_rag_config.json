@@ -1,8 +1,9 @@
 {
   "rag_config": {
-    "version": "2.0",
+    "version": "2.1",
     "chapitre": "IS - Impôt sur les sociétés",
-    "code": "CGI Congo 2026"
+    "code": "CGI Congo 2026",
+    "last_updated": "2026-01-04"
   },
   "chunking_strategy": {
     "method": "semantic_hierarchical",
@@ -13,13 +14,54 @@
       "max_chunk_tokens": 800,
       "min_chunk_tokens": 100,
       "overlap_tokens": 50,
-      "preserve_structure": true
+      "preserve_structure": true,
+      "include_parent_context": true
     },
     "regroupements_recommandes": [
+      {
+        "groupe": "principes_generaux",
+        "articles": ["Art. 1er", "Art. 2", "Art. 3", "Art. 3A"],
+        "raison": "Fondamentaux IS - champ d'application et exonérations"
+      },
+      {
+        "groupe": "territorialite",
+        "articles": ["Art. 4", "Art. 4A", "Art. 7"],
+        "raison": "Règles de territorialité et établissement stable"
+      },
+      {
+        "groupe": "benefice_imposable_definition",
+        "articles": ["Art. 8", "Art. 9", "Art. 10", "Art. 11"],
+        "raison": "Définition du bénéfice imposable"
+      },
+      {
+        "groupe": "produits_imposables",
+        "articles": ["Art. 12", "Art. 13", "Art. 14", "Art. 15", "Art. 16"],
+        "raison": "Ensemble des produits imposables"
+      },
+      {
+        "groupe": "plus_values",
+        "articles": ["Art. 17", "Art. 17 A", "Art. 18", "Art. 19", "Art. 20", "Art. 21", "Art. 22", "Art. 23", "Art. 24", "Art. 25"],
+        "raison": "Régime complet des plus-values et moins-values"
+      },
       {
         "groupe": "charges_personnel",
         "articles": ["Art. 27", "Art. 28", "Art. 29", "Art. 30", "Art. 31", "Art. 32", "Art. 33", "Art. 34", "Art. 35", "Art. 36", "Art. 37"],
         "raison": "Thématique cohérente - charges de personnel et dirigeants"
+      },
+      {
+        "groupe": "frais_siege_redevances",
+        "articles": ["Art. 38", "Art. 39", "Art. 40", "Art. 41"],
+        "raison": "Frais de siège et redevances"
+      },
+      {
+        "groupe": "assurances",
+        "articles": ["Art. 44", "Art. 44 A"],
+        "raison": "Primes d'assurances déductibles et non déductibles"
+      },
+      {
+        "groupe": "dons_liberalites",
+        "articles": ["Art. 45", "Art. 46"],
+        "raison": "Dons, libéralités et aides"
       },
       {
         "groupe": "amortissements",
@@ -35,6 +77,31 @@
         "groupe": "prix_transfert",
         "articles": ["Art. 77", "Art. 78", "Art. 79", "Art. 80", "Art. 81", "Art. 82", "Art. 83", "Art. 84", "Art. 85"],
         "raison": "Dispositif prix de transfert complet"
+      },
+      {
+        "groupe": "taux_et_minimum",
+        "articles": ["Art. 86", "Art. 86A", "Art. 86B", "Art. 86C"],
+        "raison": "Taux IS et minimum de perception"
+      },
+      {
+        "groupe": "obligations_declaratives",
+        "articles": ["Art. 123", "Art. 124", "Art. 124 B"],
+        "raison": "Établissement IS et obligations déclaratives"
+      },
+      {
+        "groupe": "regime_mere_fille",
+        "articles": ["Art. 87", "Art. 87A"],
+        "raison": "Régime sociétés mères-filiales"
+      },
+      {
+        "groupe": "quartiers_generaux",
+        "articles": ["Art. 89", "Art. 89A", "Art. 89B", "Art. 89C"],
+        "raison": "Régime quartiers généraux CEMAC"
+      },
+      {
+        "groupe": "holdings",
+        "articles": ["Art. 90", "Art. 90A", "Art. 90B", "Art. 90C", "Art. 90D", "Art. 90E", "Art. 90F"],
+        "raison": "Régime fiscal holdings"
       },
       {
         "groupe": "integration_fiscale",
@@ -56,10 +123,14 @@
       "sous_section": "sous-section le cas échéant",
       "paragraphe": "paragraphe le cas échéant",
       "mots_cles": "liste des mots-clés extraits",
+      "mots_cles_enrichis": "synonymes et variations",
       "valeurs_numeriques": "taux, seuils, délais extraits",
       "references_croisees": "articles liés",
       "theme_principal": "thème principal",
-      "type_disposition": "principe | condition | sanction | exonération | obligation"
+      "themes_secondaires": "thèmes associés",
+      "type_disposition": "principe | condition | sanction | exonération | obligation | calcul",
+      "applicable_a": "toutes sociétés | résidents | non-résidents | pétroliers | holdings | groupes",
+      "nouveaute_2026": "true | false"
     }
   },
   "embedding_optimization": {
@@ -72,10 +143,12 @@
         "SA": "Société anonyme",
         "SAS": "Société par actions simplifiée",
         "SARL": "Société à responsabilité limitée",
+        "SARLU": "Société à responsabilité limitée unipersonnelle",
         "SNC": "Société en nom collectif",
         "SCS": "Société en commandite simple",
         "GIE": "Groupement d'intérêt économique",
         "BEAC": "Banque des États de l'Afrique Centrale",
+        "BDEAC": "Banque de Développement des États de l'Afrique Centrale",
         "CEMAC": "Communauté Économique et Monétaire de l'Afrique Centrale",
         "OHADA": "Organisation pour l'Harmonisation en Afrique du Droit des Affaires",
         "COBAC": "Commission Bancaire de l'Afrique Centrale",
@@ -88,18 +161,39 @@
         "HAO": "Hors Activité Ordinaire",
         "CA": "Chiffre d'affaires",
         "HT": "Hors taxes",
+        "TTC": "Toutes taxes comprises",
         "ATE": "Autorisation Temporaire d'Exercer",
         "DGID": "Direction Générale des Impôts et des Domaines",
         "LOA": "Location avec Option d'Achat",
         "CUP": "Comparable Uncontrolled Price",
         "MTMN": "Méthode Transactionnelle de la Marge Nette",
         "BTP": "Bâtiments et Travaux Publics",
-        "R&D": "Recherche et Développement"
+        "R&D": "Recherche et Développement",
+        "NIU": "Numéro d'Immatriculation Unique",
+        "BC": "Bon de Commande",
+        "PM": "Personne Morale",
+        "PP": "Personne Physique",
+        "ES": "Établissement Stable",
+        "RAS": "Retenue À la Source",
+        "WHT": "Withholding Tax",
+        "MP": "Minimum de Perception",
+        "DAP": "Dotation aux Amortissements et Provisions",
+        "VNC": "Valeur Nette Comptable",
+        "BICA": "Bénéfice Industriel Commercial Agricole",
+        "LF": "Loi de Finances"
       },
       "normalisation_montants": {
         "FCFA": "francs CFA",
+        "F CFA": "francs CFA",
         "millions": "000.000",
-        "milliards": "000.000.000"
+        "milliards": "000.000.000",
+        "M": "000.000",
+        "Mds": "000.000.000"
+      },
+      "normalisation_pourcentages": {
+        "‰": "pour mille",
+        "pour cent": "%",
+        "pourcent": "%"
       }
     }
   },
@@ -110,60 +204,172 @@
       "keyword_weight": 0.4,
       "top_k": 10,
       "rerank": true,
-      "rerank_model": "cross-encoder"
+      "rerank_model": "cross-encoder",
+      "diversity_factor": 0.3
     },
     "filtres_contextuels": {
       "par_section": true,
       "par_theme": true,
+      "par_applicable_a": true,
       "par_type_question": {
-        "taux": ["Art. 86A", "Art. 86B", "Art. 86C", "Art. 52"],
-        "delais": ["Art. 75", "Art. 17 A", "Art. 3A", "Art. 91"],
-        "conditions": ["Art. 26", "Art. 20", "Art. 90", "Art. 91"],
-        "sanctions": ["Art. 81", "Art. 92E", "Art. 92I"],
-        "exonerations": ["Art. 3", "Art. 21", "Art. 25"]
+        "taux": ["Art. 86A", "Art. 86B", "Art. 86C", "Art. 52", "Art. 49", "Art. 38", "Art. 45", "Art. 92A"],
+        "delais": ["Art. 75", "Art. 17 A", "Art. 3A", "Art. 91", "Art. 83", "Art. 84", "Art. 124", "Art. 124 B"],
+        "conditions": ["Art. 26", "Art. 20", "Art. 87", "Art. 90", "Art. 91", "Art. 3", "Art. 4A"],
+        "sanctions": ["Art. 81", "Art. 92E", "Art. 92I", "Art. 124"],
+        "exonerations": ["Art. 3", "Art. 21", "Art. 25", "Art. 90D"],
+        "calcul_base": ["Art. 8", "Art. 86B", "Art. 92A", "Art. 89A"],
+        "obligations_declaratives": ["Art. 81", "Art. 92", "Art. 92I", "Art. 124", "Art. 124 B"],
+        "retenue_source": ["Art. 86C", "Art. 92B", "Art. 185 ter"],
+        "amortissements": ["Art. 51", "Art. 52", "Art. 53", "Art. 58", "Art. 59", "Art. 60", "Art. 61"],
+        "provisions": ["Art. 63", "Art. 64", "Art. 66", "Art. 67", "Art. 69", "Art. 74"],
+        "prix_transfert": ["Art. 77", "Art. 78", "Art. 81", "Art. 84", "Art. 85"],
+        "groupe_societes": ["Art. 87", "Art. 87A", "Art. 90", "Art. 91"],
+        "petrole": ["Art. 24", "Art. 92", "Art. 92A", "Art. 92B", "Art. 92I", "Art. 92J", "Art. 92K"]
       }
+    },
+    "boost_factors": {
+      "nouveaute_2026": 1.3,
+      "article_principal_groupe": 1.2,
+      "contient_valeur_numerique": 1.1
     }
   },
   "query_expansion": {
     "synonymes_automatiques": true,
     "variations_orthographiques": {
-      "impôt": ["impot", "taxe"],
-      "société": ["societe", "entreprise", "compagnie"],
-      "bénéfice": ["benefice", "profit", "résultat"],
-      "déductible": ["deductible", "déduction"],
-      "amortissement": ["depreciation", "dotation"]
+      "impôt": ["impot", "taxe", "imposition"],
+      "société": ["societe", "entreprise", "compagnie", "firme"],
+      "bénéfice": ["benefice", "profit", "résultat", "gain"],
+      "déductible": ["deductible", "déduction", "deduire"],
+      "amortissement": ["depreciation", "dotation", "usure"],
+      "établissement": ["etablissement", "installation", "présence"],
+      "résidence": ["residence", "domicile", "siège"],
+      "filiale": ["filliale", "succursale", "subsidiaire"],
+      "dividende": ["dividendes", "distribution", "bénéfice distribué"],
+      "intérêt": ["interet", "interets", "charges financières"],
+      "redevance": ["redevances", "royalties", "droits"],
+      "acompte": ["accompte", "avance", "versement"]
     },
     "questions_types": {
-      "taux_patterns": ["quel est le taux", "à quel taux", "taux de", "pourcentage"],
-      "delai_patterns": ["dans quel délai", "combien de temps", "durée", "date limite"],
-      "condition_patterns": ["quelles sont les conditions", "comment", "peut-on", "est-il possible"],
-      "sanction_patterns": ["quelle sanction", "amende", "pénalité", "en cas de non-respect"]
+      "taux_patterns": [
+        "quel est le taux", "à quel taux", "taux de", "pourcentage",
+        "combien de pourcent", "quel pourcentage", "taux applicable"
+      ],
+      "delai_patterns": [
+        "dans quel délai", "combien de temps", "durée", "date limite",
+        "avant quelle date", "échéance", "quand", "jusqu'à quand"
+      ],
+      "condition_patterns": [
+        "quelles sont les conditions", "comment", "peut-on", "est-il possible",
+        "à quelle condition", "sous quelle condition", "pour bénéficier"
+      ],
+      "sanction_patterns": [
+        "quelle sanction", "amende", "pénalité", "en cas de non-respect",
+        "si je ne", "défaut de", "que se passe-t-il si"
+      ],
+      "calcul_patterns": [
+        "comment calculer", "quelle base", "assiette", "formule",
+        "sur quoi", "montant de", "combien"
+      ],
+      "obligation_patterns": [
+        "que dois-je", "obligation", "faut-il", "dois-je déclarer",
+        "quand déclarer", "comment déclarer"
+      ],
+      "exoneration_patterns": [
+        "exonéré", "exonération", "dispense", "pas d'impôt",
+        "exempt", "exclusion"
+      ]
+    }
+  },
+  "intent_detection": {
+    "categories": {
+      "information_generale": {
+        "patterns": ["qu'est-ce que", "c'est quoi", "définition", "expliquer"],
+        "strategy": "broad_search",
+        "top_k": 5
+      },
+      "valeur_precise": {
+        "patterns": ["quel taux", "combien", "montant", "pourcentage", "seuil"],
+        "strategy": "precise_search",
+        "top_k": 3,
+        "boost_numeric": true
+      },
+      "procedure": {
+        "patterns": ["comment faire", "procédure", "démarche", "étapes"],
+        "strategy": "sequential_search",
+        "top_k": 5
+      },
+      "eligibilite": {
+        "patterns": ["ai-je droit", "puis-je", "suis-je éligible", "conditions"],
+        "strategy": "condition_search",
+        "top_k": 5
+      },
+      "comparaison": {
+        "patterns": ["différence entre", "versus", "ou bien", "plutôt"],
+        "strategy": "multi_search",
+        "top_k": 8
+      },
+      "cas_pratique": {
+        "patterns": ["dans mon cas", "si je", "exemple", "concrètement"],
+        "strategy": "contextual_search",
+        "top_k": 7
+      }
     }
   },
   "quality_metrics": {
     "cibles": {
-      "precision_at_5": 0.90,
-      "recall_at_10": 0.95,
-      "mrr": 0.85,
-      "ndcg_at_10": 0.90
+      "precision_at_5": 0.92,
+      "recall_at_10": 0.97,
+      "mrr": 0.88,
+      "ndcg_at_10": 0.92
     },
     "tests_validation": {
-      "fichier": "cgi_2026_is_tests.json",
-      "nombre_questions": 50,
-      "seuil_reussite": 0.90
+      "fichier": "cgi_2026_is_tests_v2.json",
+      "nombre_questions": 100,
+      "seuil_reussite": 0.92
     }
   },
-  "prompt_template": {
-    "system": "Tu es un expert en fiscalité congolaise, spécialiste du Code Général des Impôts 2026. Tu réponds aux questions en citant précisément les articles de loi pertinents. Tu fournis des réponses structurées, précises et pédagogiques.",
+  "prompt_templates": {
+    "system": "Tu es un expert en fiscalité congolaise, spécialiste du Code Général des Impôts 2026. Tu réponds aux questions en citant précisément les articles de loi pertinents. Tu fournis des réponses structurées, précises et pédagogiques. Tu indiques systématiquement les valeurs chiffrées (taux, seuils, délais) quand elles existent.",
     "context_prefix": "Voici les dispositions pertinentes du CGI Congo 2026 :",
     "answer_format": {
       "structure": [
         "Réponse directe à la question",
-        "Article(s) de référence avec citation",
-        "Précisions complémentaires si nécessaire",
-        "Valeurs chiffrées (taux, seuils, délais)"
+        "Article(s) de référence avec citation exacte",
+        "Valeurs chiffrées (taux, seuils, délais)",
+        "Conditions d'application si pertinent",
+        "Précisions complémentaires si nécessaire"
       ],
       "style": "professionnel_pedagogique"
+    },
+    "fallback": "Je n'ai pas trouvé d'information précise dans le CGI 2026 pour répondre à cette question. Je vous recommande de consulter directement la Direction Générale des Impôts et des Domaines (DGID) ou un expert-comptable agréé au Congo.",
+    "disclaimer": "Cette information est fournie à titre indicatif et ne constitue pas un conseil fiscal. Pour toute situation spécifique, consultez un professionnel qualifié."
+  },
+  "response_templates": {
+    "taux": {
+      "template": "Le taux applicable est de {taux} selon l'article {article}.\n\nConditions : {conditions}\n\nBase de calcul : {base}",
+      "required_fields": ["taux", "article", "conditions", "base"]
+    },
+    "delai": {
+      "template": "Le délai est de {delai} selon l'article {article}.\n\nPoint de départ : {debut}\n\nConséquences du non-respect : {sanction}",
+      "required_fields": ["delai", "article", "debut", "sanction"]
+    },
+    "obligation": {
+      "template": "Selon l'article {article}, vous devez :\n\n{obligations}\n\nÉchéance : {echeance}\n\nSanctions en cas de non-respect : {sanctions}",
+      "required_fields": ["article", "obligations", "echeance", "sanctions"]
+    }
+  },
+  "error_handling": {
+    "no_results": {
+      "action": "expand_query",
+      "fallback_message": "Aucun résultat trouvé. Essayez de reformuler votre question ou de préciser le contexte."
+    },
+    "ambiguous_query": {
+      "action": "request_clarification",
+      "clarification_prompt": "Votre question peut concerner plusieurs sujets. Pouvez-vous préciser si vous parlez de : {options}"
+    },
+    "multiple_articles": {
+      "action": "present_all",
+      "summary_prompt": "Plusieurs articles traitent de ce sujet :"
     }
   }
 }

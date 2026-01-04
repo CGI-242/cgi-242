@@ -1,0 +1,211 @@
+import { Component, inject, signal, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { ApiService } from '@core/services/api.service';
+import { HeaderComponent } from '@shared/components/header/header.component';
+import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
+
+interface Plan {
+  id: string;
+  name: string;
+  price: number;
+  period: string;
+  features: string[];
+  questionsPerMonth: number;
+  recommended?: boolean;
+}
+
+@Component({
+  selector: 'app-subscription',
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, HeaderComponent, SidebarComponent],
+  template: `
+    <div class="min-h-screen bg-secondary-50">
+      <app-header />
+
+      <div class="flex">
+        <app-sidebar [collapsed]="sidebarCollapsed" />
+
+        <main
+          class="flex-1 transition-all duration-300 p-4"
+          [class.ml-56]="!sidebarCollapsed"
+          [class.ml-14]="sidebarCollapsed">
+
+          <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-8">
+              <h1 class="text-2xl font-bold text-secondary-900">Choisissez votre abonnement</h1>
+              <p class="text-secondary-600 mt-2">Selectionnez le plan adapte a vos besoins</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              @for (plan of plans; track plan.id) {
+                <div
+                  class="card p-6 relative"
+                  [class.border-primary-500]="plan.recommended"
+                  [class.border-2]="plan.recommended">
+
+                  @if (plan.recommended) {
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+                      <span class="bg-primary-600 text-white text-xs px-3 py-1 rounded-full">
+                        Recommande
+                      </span>
+                    </div>
+                  }
+
+                  <div class="text-center mb-6">
+                    <h3 class="text-lg font-semibold text-secondary-900">{{ plan.name }}</h3>
+                    <div class="mt-4">
+                      <span class="text-3xl font-bold text-secondary-900">{{ plan.price | number }}</span>
+                      <span class="text-secondary-500"> FCFA/{{ plan.period }}</span>
+                    </div>
+                    <p class="text-sm text-secondary-600 mt-2">
+                      {{ plan.questionsPerMonth }} questions/mois
+                    </p>
+                  </div>
+
+                  <ul class="space-y-3 mb-6">
+                    @for (feature of plan.features; track feature) {
+                      <li class="flex items-start gap-2 text-sm text-secondary-700">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        {{ feature }}
+                      </li>
+                    }
+                  </ul>
+
+                  <button
+                    (click)="selectPlan(plan)"
+                    [disabled]="loading() || currentPlan() === plan.id"
+                    class="w-full py-2 px-4 rounded-lg font-medium transition-colors"
+                    [class.bg-primary-600]="plan.recommended"
+                    [class.text-white]="plan.recommended"
+                    [class.hover:bg-primary-700]="plan.recommended"
+                    [class.bg-secondary-100]="!plan.recommended"
+                    [class.text-secondary-700]="!plan.recommended"
+                    [class.hover:bg-secondary-200]="!plan.recommended"
+                    [class.opacity-50]="currentPlan() === plan.id">
+                    @if (currentPlan() === plan.id) {
+                      Plan actuel
+                    } @else if (loading()) {
+                      Chargement...
+                    } @else {
+                      Choisir ce plan
+                    }
+                  </button>
+                </div>
+              }
+            </div>
+
+            @if (message()) {
+              <div class="mt-6 p-4 rounded-lg"
+                   [class.bg-green-100]="!error()"
+                   [class.text-green-700]="!error()"
+                   [class.bg-red-100]="error()"
+                   [class.text-red-700]="error()">
+                {{ message() }}
+              </div>
+            }
+          </div>
+        </main>
+      </div>
+    </div>
+  `,
+})
+export class SubscriptionComponent implements OnInit {
+  private api = inject(ApiService);
+  private router = inject(Router);
+
+  sidebarCollapsed = false;
+  loading = signal(false);
+  message = signal('');
+  error = signal(false);
+  currentPlan = signal('FREE');
+
+  plans: Plan[] = [
+    {
+      id: 'FREE',
+      name: 'Gratuit',
+      price: 0,
+      period: 'mois',
+      questionsPerMonth: 10,
+      features: [
+        'Acces au CGI 2026',
+        '10 questions par mois',
+        'Historique des conversations',
+      ],
+    },
+    {
+      id: 'BASIC',
+      name: 'Basic',
+      price: 5000,
+      period: 'mois',
+      questionsPerMonth: 50,
+      recommended: true,
+      features: [
+        'Acces au CGI 2026',
+        '50 questions par mois',
+        'Historique des conversations',
+        'Export des reponses',
+        'Support email',
+      ],
+    },
+    {
+      id: 'PRO',
+      name: 'Pro',
+      price: 15000,
+      period: 'mois',
+      questionsPerMonth: 200,
+      features: [
+        'Acces au CGI 2026',
+        '200 questions par mois',
+        'Historique des conversations',
+        'Export des reponses',
+        'Support prioritaire',
+        'API access',
+      ],
+    },
+  ];
+
+  ngOnInit(): void {
+    this.loadCurrentPlan();
+  }
+
+  private loadCurrentPlan(): void {
+    this.api.get<{ plan: string }>('/stats/usage').subscribe({
+      next: (res) => {
+        if (res.success && res.data) {
+          this.currentPlan.set(res.data.plan || 'FREE');
+        }
+      },
+    });
+  }
+
+  selectPlan(plan: Plan): void {
+    if (plan.id === this.currentPlan()) return;
+
+    this.loading.set(true);
+    this.message.set('');
+    this.error.set(false);
+
+    this.api.post<{ success: boolean }>('/subscription/upgrade', { plan: plan.id }).subscribe({
+      next: (res) => {
+        this.loading.set(false);
+        if (res.success) {
+          this.currentPlan.set(plan.id);
+          this.message.set(`Abonnement mis a jour vers ${plan.name}`);
+          this.error.set(false);
+        } else {
+          this.message.set('Erreur lors de la mise a jour');
+          this.error.set(true);
+        }
+      },
+      error: () => {
+        this.loading.set(false);
+        this.message.set('Erreur lors de la mise a jour');
+        this.error.set(true);
+      },
+    });
+  }
+}

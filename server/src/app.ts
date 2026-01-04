@@ -1,6 +1,5 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -36,13 +35,12 @@ export function createApp(): Express {
   app.use('/api-docs', swaggerRoutes);
 
   // Fichiers statiques (test-agent.html, etc.) - AVANT Helmet pour éviter CSP
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
+  const publicPath = path.join(process.cwd(), 'public');
   app.use('/public', (req, res, next) => {
     // Désactiver CSP pour les fichiers statiques de test
     res.removeHeader('Content-Security-Policy');
     next();
-  }, express.static(path.join(__dirname, '../public')));
+  }, express.static(publicPath));
 
   // Initialiser Sentry pour le tracking des erreurs
   initSentry(app);
