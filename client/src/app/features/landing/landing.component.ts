@@ -285,23 +285,47 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
 
       <!-- À propos -->
       <section id="about" class="py-20 px-6 bg-white">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-5xl mx-auto">
           <h2 class="text-3xl font-bold text-center text-secondary-900 mb-12">
             À propos de CGI 242
           </h2>
-          <div class="grid md:grid-cols-2 gap-12 items-center">
+
+          <!-- La Créatrice -->
+          <div class="bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-8 mb-12">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+              <div class="w-32 h-32 bg-primary-200 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-4xl font-bold text-primary-700">CM</span>
+              </div>
+              <div class="text-center md:text-left">
+                <h3 class="text-2xl font-bold text-secondary-900 mb-1">Christelle MABIKA</h3>
+                <p class="text-primary-700 font-semibold mb-3">Fondatrice de NORMX AI</p>
+                <p class="text-secondary-600 italic mb-4">
+                  "Rendre la fiscalite africaine accessible grace a l'intelligence artificielle"
+                </p>
+                <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                  <span class="bg-white px-3 py-1 rounded-full text-xs text-secondary-600">Master Finance</span>
+                  <span class="bg-white px-3 py-1 rounded-full text-xs text-secondary-600">DSCG</span>
+                  <span class="bg-white px-3 py-1 rounded-full text-xs text-secondary-600">Expert-Comptable Stagiaire</span>
+                  <span class="bg-white px-3 py-1 rounded-full text-xs text-secondary-600">Ingenieure IA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 items-start">
+            <!-- Mission -->
             <div>
               <h3 class="text-xl font-semibold text-secondary-900 mb-4">Notre mission</h3>
               <p class="text-secondary-600 mb-6">
-                CGI 242 est né de la volonté de rendre le Code Général des Impôts du Congo accessible et compréhensible pour tous les professionnels de la fiscalité.
+                CGI 242 est ne de la volonte de rendre le Code General des Impots du Congo accessible et comprehensible pour tous les professionnels de la fiscalite.
               </p>
               <p class="text-secondary-600 mb-6">
-                Grâce à l'intelligence artificielle, nous transformons des textes juridiques complexes en réponses claires et sourcées, permettant aux fiscalistes, comptables et juristes de gagner un temps précieux.
+                Grace a l'intelligence artificielle, nous transformons des textes juridiques complexes en reponses claires et sourcees, permettant aux fiscalistes, comptables et juristes de gagner un temps precieux.
               </p>
               <div class="flex gap-8">
                 <div>
                   <div class="text-3xl font-bold text-primary-600">500+</div>
-                  <div class="text-sm text-secondary-600">Articles indexés</div>
+                  <div class="text-sm text-secondary-600">Articles indexes</div>
                 </div>
                 <div>
                   <div class="text-3xl font-bold text-primary-600">100%</div>
@@ -309,6 +333,8 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
                 </div>
               </div>
             </div>
+
+            <!-- Pourquoi choisir -->
             <div class="bg-secondary-50 rounded-2xl p-8">
               <h4 class="font-semibold text-secondary-900 mb-4">Pourquoi nous choisir ?</h4>
               <ul class="space-y-4">
@@ -316,22 +342,35 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
                   <svg class="w-5 h-5 text-primary-600 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                   </svg>
-                  <span class="text-secondary-600">Réponses instantanées à vos questions fiscales</span>
+                  <span class="text-secondary-600">Reponses instantanees a vos questions fiscales</span>
                 </li>
                 <li class="flex items-start">
                   <svg class="w-5 h-5 text-primary-600 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
-                  <span class="text-secondary-600">Sources vérifiables avec articles du CGI</span>
+                  <span class="text-secondary-600">Sources verifiables avec articles du CGI</span>
                 </li>
                 <li class="flex items-start">
                   <svg class="w-5 h-5 text-primary-600 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                   </svg>
-                  <span class="text-secondary-600">Données sécurisées et confidentielles</span>
+                  <span class="text-secondary-600">Donnees securisees et confidentielles</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-primary-600 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                  </svg>
+                  <span class="text-secondary-600">Concu pour l'Afrique, par une Africaine</span>
                 </li>
               </ul>
             </div>
+          </div>
+
+          <!-- NORMX AI -->
+          <div class="mt-12 text-center">
+            <p class="text-secondary-500 text-sm">
+              <strong class="text-secondary-700">NORMX AI</strong> — Startup specialisee dans le developpement d'assistants intelligents pour la conformite reglementaire en Afrique.
+            </p>
           </div>
         </div>
       </section>
