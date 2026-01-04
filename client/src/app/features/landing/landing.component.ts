@@ -586,11 +586,11 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
           <p class="text-center text-secondary-600 mb-12 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.1s">
             Des solutions intelligentes pour la conformite reglementaire en Afrique
           </p>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
             <!-- CGI 242 -->
-            <div class="bg-white rounded-2xl p-6 border-2 border-primary-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-500 relative group animate-fade-in-up overflow-hidden" style="animation-delay: 0.15s">
-              <div class="absolute inset-0 bg-gradient-to-r from-primary-500/5 to-accent-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <span class="absolute -top-3 right-4 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow-lg animate-pulse">En production</span>
+            <div class="bg-white rounded-2xl p-6 border-2 border-primary-500 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-500 relative group animate-fade-in-up" style="animation-delay: 0.15s">
+              <div class="absolute inset-0 bg-gradient-to-r from-primary-500/5 to-accent-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <span class="absolute -top-3 right-4 bg-green-500 text-white text-xs px-3 py-1 rounded-full shadow-lg animate-pulse z-20">En production</span>
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-4">
                   <span class="text-2xl group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 inline-block">🇨🇬</span>
@@ -601,9 +601,9 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
               </div>
             </div>
             <!-- OHADA 17 -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:border-primary-300 transition-all duration-500 relative group animate-fade-in-up overflow-hidden" style="animation-delay: 0.2s">
-              <div class="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-lg">2025</span>
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:border-primary-300 transition-all duration-500 relative group animate-fade-in-up" style="animation-delay: 0.2s">
+              <div class="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-lg z-20">2025</span>
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-4">
                   <span class="text-2xl group-hover:scale-125 group-hover:-rotate-12 transition-transform duration-300 inline-block">🌍</span>
@@ -614,9 +614,9 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
               </div>
             </div>
             <!-- GENfin 17 -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:border-accent-300 transition-all duration-500 relative group animate-fade-in-up overflow-hidden" style="animation-delay: 0.25s">
-              <div class="absolute inset-0 bg-gradient-to-r from-accent-500/5 to-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-lg">2025</span>
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:border-accent-300 transition-all duration-500 relative group animate-fade-in-up" style="animation-delay: 0.25s">
+              <div class="absolute inset-0 bg-gradient-to-r from-accent-500/5 to-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-lg z-20">2025</span>
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-4">
                   <span class="text-2xl group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 inline-block">📊</span>
@@ -627,9 +627,9 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
               </div>
             </div>
             <!-- Paie 242 -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:border-green-300 transition-all duration-500 relative group animate-fade-in-up overflow-hidden" style="animation-delay: 0.3s">
-              <div class="absolute inset-0 bg-gradient-to-r from-green-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-lg">2025</span>
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:border-green-300 transition-all duration-500 relative group animate-fade-in-up" style="animation-delay: 0.3s">
+              <div class="absolute inset-0 bg-gradient-to-r from-green-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-lg z-20">2025</span>
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-4">
                   <span class="text-2xl group-hover:scale-125 group-hover:-rotate-12 transition-transform duration-300 inline-block">💰</span>
@@ -640,9 +640,9 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
               </div>
             </div>
             <!-- LaboDEC -->
-            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:border-purple-300 transition-all duration-500 relative group animate-fade-in-up overflow-hidden" style="animation-delay: 0.35s">
-              <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-lg">2025</span>
+            <div class="bg-white rounded-2xl p-6 border border-secondary-200 hover:shadow-2xl hover:-translate-y-2 hover:scale-105 hover:border-purple-300 transition-all duration-500 relative group animate-fade-in-up" style="animation-delay: 0.35s">
+              <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <span class="absolute -top-3 right-4 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow-lg z-20">2025</span>
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-4">
                   <span class="text-2xl group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300 inline-block">🎓</span>
