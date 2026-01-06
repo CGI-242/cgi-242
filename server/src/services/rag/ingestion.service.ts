@@ -99,6 +99,18 @@ interface Section {
 function extractArticlesFromSource(source: SourceFile & { sections?: Section[] }): ArticleSource[] {
   const allArticles: ArticleSource[] = [];
 
+  // Fonction helper pour ajouter le contexte de section aux articles
+  const addWithSection = (articles: ArticleSource[], sectionTitle?: string) => {
+    for (const art of articles) {
+      // Si l'article n'a pas de section string, ajouter le titre de section
+      if (!art.section || typeof art.section !== 'string') {
+        allArticles.push({ ...art, section: sectionTitle });
+      } else {
+        allArticles.push(art);
+      }
+    }
+  };
+
   // Articles directs à la racine
   if (source.articles) {
     allArticles.push(...source.articles);
@@ -107,15 +119,17 @@ function extractArticlesFromSource(source: SourceFile & { sections?: Section[] }
   // Articles dans les sections (format unifié 2025/2026)
   if (source.sections) {
     for (const section of source.sections) {
+      const sectionTitle = section.titre || (section.section ? `Section ${section.section}` : undefined);
       // Articles directs dans la section
       if (section.articles) {
-        allArticles.push(...section.articles);
+        addWithSection(section.articles, sectionTitle);
       }
       // Articles dans les sous-sections de la section
       if (section.sous_sections) {
         for (const sousSection of section.sous_sections) {
+          const sousSectionTitle = sousSection.titre || sectionTitle;
           if (sousSection.articles) {
-            allArticles.push(...sousSection.articles);
+            addWithSection(sousSection.articles, sousSectionTitle);
           }
         }
       }
@@ -125,14 +139,16 @@ function extractArticlesFromSource(source: SourceFile & { sections?: Section[] }
   // Articles dans les sous-sections (ancien format)
   if (source.sous_sections) {
     for (const sousSection of source.sous_sections) {
+      const sectionTitle = sousSection.titre || (sousSection.sous_section ? `Sous-section ${sousSection.sous_section}` : undefined);
       if (sousSection.articles) {
-        allArticles.push(...sousSection.articles);
+        addWithSection(sousSection.articles, sectionTitle);
       }
       // Articles dans les paragraphes des sous-sections
       if (sousSection.paragraphes) {
         for (const paragraphe of sousSection.paragraphes) {
+          const paraTitle = paragraphe.titre || sectionTitle;
           if (paragraphe.articles) {
-            allArticles.push(...paragraphe.articles);
+            addWithSection(paragraphe.articles, paraTitle);
           }
         }
       }
@@ -158,8 +174,13 @@ function transformSourceToArticles(source: SourceFile): ArticleJSON[] {
     partie: meta.partie ? `Partie ${meta.partie}` : undefined,
     livre: meta.livre ? `Livre ${meta.livre}` : undefined,
     chapitre: meta.chapitre_titre || (meta.chapitre ? `Chapitre ${meta.chapitre}` : undefined),
-    // Priorité à la section de l'article, sinon celle du meta
-    section: art.section || meta.section_titre || meta.titre || (meta.section ? `Section ${meta.section}` : undefined),
+    // Priorité à la section de l'article (string), sinon celle du meta
+    // S'assurer que section est toujours une string ou undefined
+    // Note: meta.titre est le numéro du Titre (int), pas un titre de section
+    section: typeof art.section === 'string' ? art.section
+           : meta.section_titre
+           || (typeof meta.titre === 'string' ? meta.titre : undefined)
+           || (meta.section ? `Section ${meta.section}` : undefined),
     // Supporte version OU edition pour la compatibilité CGI 2025/2026
     version: meta.version || meta.edition || '2025',
     keywords: art.mots_cles || [],
