@@ -146,7 +146,10 @@ function transformSourceToArticles(source: SourceFile): ArticleJSON[] {
   const { meta } = source;
   const articles = extractArticlesFromSource(source);
 
-  return articles.map((art) => ({
+  // Filtrer les articles sans numéro (entrées invalides)
+  const validArticles = articles.filter((art) => art.article && typeof art.article === 'string');
+
+  return validArticles.map((art) => ({
     numero: parseArticleNumber(art.article),
     titre: art.titre,
     chapeau: art.chapeau,
