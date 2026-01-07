@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "document": "Code général des impôts",
+    "pays": "République du Congo",
+    "edition": "2025",
+    "tome": 1,
+    "partie": 3,
+    "partie_titre": "Dispositions communes aux parties 1 et 2",
+    "titre": 3,
+    "titre_titre": "Réclamations",
+    "chapitre": 1,
+    "chapitre_titre": "Domaines respectifs des juridictions contentieuse et gracieuse",
+    "en_tete_page": "Procédures fiscales"
+  },
+  "articles": [
+    {
+      "article": "Art. 422",
+      "titre": null,
+      "texte": [
+        "1) Les réclamations relatives aux impôts, droits ou amendes établis par les services dépendant de la DGID ressortissent à la juridiction contentieuse lorsqu'elles tendent à obtenir soit la réparation d'erreurs commises dans l'assiette ou le calcul des impositions, soit le bénéfice d'un droit résultant d'une disposition législative ou réglementaire.",
+        "2) La juridiction gracieuse connaît des demandes tendant à obtenir de la bienveillance de l'autorité administrative, en cas d'indigence ou de gêne mettant les contribuables dans l'impossibilité de se libérer envers le Trésor, la remise ou la modération d'impositions régulièrement établies.",
+        "Elle statue également sur les demandes en remise de pénalités et les demandes d'admission en non-valeur de cotes dont le recouvrement n'a pu être effectué (état des cotes irrécouvrables présenté par les comptables chargés de la perception).",
+        "3) Sauf cas prévus aux articles 435 à 437 et 452 à 456 du CGI, aucune autorité publique ne peut accorder des remises ou des modérations des impôts et taxes existants si elles ne sont pas prévues par la loi, ni en suspendre ou faire suspendre le recouvrement."
+      ],
+      "mots_cles": [
+        "réclamations",
+        "juridiction contentieuse",
+        "juridiction gracieuse",
+        "DGID",
+        "assiette",
+        "indigence",
+        "remise",
+        "modération",
+        "pénalités",
+        "non-valeur"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 422 bis",
+      "titre": null,
+      "texte": [
+        "Toutefois, en ce qui concerne les pénalités y afférentes, des remises ou modérations peuvent être accordées lorsqu'elles concernent des dispositions devenues définitives.",
+        "Dans le cadre d'une transaction fiscale, le contribuable peut solliciter une modération totale ou partielle des pénalités dans les deux cas suivants :",
+        "a) avant la mise en recouvrement suivant une procédure de contrôle ;",
+        "b) durant toute la procédure contentieuse.",
+        "Dans les deux cas, le contribuable fait une proposition des sommes à payer et de leurs modalités de paiement. En cas d'acceptation de cette proposition de transaction, le contribuable s'engage expressément :",
+        "• à ne pas introduire une réclamation contentieuse ou gracieuse ultérieure ;",
+        "• à se désister des réclamations ou des requêtes par lui introduites ;",
+        "• à acquitter immédiatement les droits et pénalités restant à sa charge."
+      ],
+      "mots_cles": [
+        "pénalités",
+        "remises",
+        "modérations",
+        "transaction fiscale",
+        "mise en recouvrement",
+        "procédure contentieuse",
+        "désistement"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 422 ter",
+      "titre": null,
+      "texte": [
+        "(L.F.2025) À la suite de toute procédure de contrôle fiscal, le contribuable peut saisir par voie de recours hiérarchique, le supérieur de l'inspecteur vérificateur ou du service ayant mis à sa charge des redressements pour discuter ou réviser les chefs de redressements.",
+        "Le recours hiérarchique doit être engagé avant la mise en recouvrement des droits. Toute saisine du supérieur hiérarchique après réception de l'avis de mise en recouvrement est de jure nulle.",
+        "Quand le recours hiérarchique est régulièrement engagé, l'administration ne peut pas mettre en recouvrement les impositions contestées jusqu'à l'examen, par le supérieur hiérarchique, de la situation du contribuable, sans entacher d'irrégularité sa procédure.",
+        "La procédure de recours hiérarchique est subordonnée à une demande écrite du contribuable, adressée au Directeur Général des Impôts et des Domaines."
+      ],
+      "mots_cles": [
+        "recours hiérarchique",
+        "contrôle fiscal",
+        "redressements",
+        "mise en recouvrement",
+        "Directeur Général des Impôts",
+        "L.F.2025"
+      ],
+      "statut": "en vigueur"
+    }
+  ]
+}

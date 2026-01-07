@@ -1,0 +1,21 @@
+{
+  "section": {
+    "intitule": "Textes fiscaux non codifiés",
+    "contenu": [
+      {
+        "niveau": "1",
+        "intitule": "Conventions fiscales",
+        "note": [
+          "NB - Le Congo a signé des conventions avec la Chine, la France, l'Italie, la République de Maurice et le Rwanda, ainsi qu'une convention multilatérale avec les pays CEMAC."
+        ]
+      },
+      {
+        "niveau": "1.1",
+        "intitule": "Convention fiscale CEMAC",
+        "note": [
+          "NB - Règlement n°07/19-UEAC-010A-CM-33 du 7 avril 2019 portant révision de l'Acte n°5/66-UDEAC-49 du 13 décembre 1966 relatif à la Convention sur la non double imposition"
+        ]
+      }
+    ]
+  }
+}

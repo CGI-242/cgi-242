@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "document": "Code général des impôts",
+    "pays": "République du Congo",
+    "edition": "2025",
+    "tome": 1,
+    "partie": 3,
+    "partie_titre": "Dispositions communes aux parties 1 et 2",
+    "titre": 2,
+    "titre_titre": "Rôles",
+    "chapitre": 1,
+    "chapitre_titre": "Émission des rôles",
+    "en_tete_page": "Procédures fiscales"
+  },
+  "articles": [
+    {
+      "article": "Art. 407",
+      "titre": null,
+      "texte": [
+        "Tout titre de perception concernant les impôts, droits et taxes visés au présent Code est établi par le responsable de la résidence fiscale dont relève le contribuable."
+      ],
+      "mots_cles": [
+        "titre de perception",
+        "résidence fiscale",
+        "contribuable"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 408",
+      "titre": null,
+      "texte": [
+        "Les instructions spéciales fixent les modalités particulières de rédaction des rôles ainsi que le nombre d'exemplaires à établir."
+      ],
+      "mots_cles": [
+        "instructions spéciales",
+        "rédaction des rôles",
+        "exemplaires"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 409",
+      "titre": null,
+      "texte": [
+        "Tous les exemplaires des rôles rédigés par les inspecteurs divisionnaires des contributions directes et indirectes sont transmis au Directeur des Contributions Directes et Indirectes, accompagnés des avertissements destinés aux redevables d'impositions nominatives."
+      ],
+      "mots_cles": [
+        "rôles",
+        "inspecteurs divisionnaires",
+        "Directeur des Contributions",
+        "avertissements"
+      ],
+      "statut": "en vigueur"
+    }
+  ]
+}
