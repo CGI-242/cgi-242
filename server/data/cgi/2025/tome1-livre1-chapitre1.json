@@ -2003,7 +2003,10 @@
         "",
         "Au cas où ce solde se traduit par un crédit d'impôt, le contribuable est autorisé à le faire valoir auprès de l'unité de la fiscalité des particuliers, sur ses déclarations ultérieures."
       ],
-      "modifications": ["LF.2022", "LF.2023"],
+      "modifications": [
+        "LF.2022",
+        "LF.2023"
+      ],
       "mots_cles": [
         "délai déclaration",
         "20 mars",
@@ -2374,7 +2377,10 @@
         "décision du tribunal",
         "revenus salariaux"
       ],
-      "modifications": ["LF.2022", "LF.R.2022"],
+      "modifications": [
+        "LF.2022",
+        "LF.R.2022"
+      ],
       "statut": "en vigueur"
     },
     {
@@ -2605,8 +2611,35 @@
       "statut": "abrogé"
     },
     {
-      "article": "Art. 102 à 105",
-      "titre": "Articles abrogés",
+      "article": "Art. 102",
+      "titre": "Articles abrogés (Art. 102)",
+      "texte": [
+        "Abrogés."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 103",
+      "titre": "Articles abrogés (Art. 103)",
+      "texte": [
+        "Abrogés."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 104",
+      "titre": "Articles abrogés (Art. 104)",
+      "texte": [
+        "Abrogés."
+      ],
+      "mots_cles": [],
+      "statut": "abrogé"
+    },
+    {
+      "article": "Art. 105",
+      "titre": "Articles abrogés (Art. 105)",
       "texte": [
         "Abrogés."
       ],

@@ -13,8 +13,27 @@
   },
   "articles": [
     {
-      "article": "Art. 365 à 367",
-      "titre": null,
+      "article": "Art. 365",
+      "texte": [
+        "Sans objet"
+      ],
+      "mots_cles": [
+        "sans objet"
+      ],
+      "statut": "sans objet"
+    },
+    {
+      "article": "Art. 366",
+      "texte": [
+        "Sans objet"
+      ],
+      "mots_cles": [
+        "sans objet"
+      ],
+      "statut": "sans objet"
+    },
+    {
+      "article": "Art. 367",
       "texte": [
         "Sans objet"
       ],
