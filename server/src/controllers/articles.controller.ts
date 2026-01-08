@@ -67,13 +67,14 @@ export async function getArticles(req: Request, res: Response): Promise<void> {
 export async function getArticle(req: Request, res: Response): Promise<void> {
   try {
     const { numero } = req.params;
-    const { version = '2025' } = req.query;
+    const { version = '2025', tome = '1' } = req.query;
 
     const article = await prisma.article.findUnique({
       where: {
-        numero_version: {
+        numero_version_tome: {
           numero,
-          version: version as string
+          version: version as string,
+          tome: tome as string
         }
       },
       select: {

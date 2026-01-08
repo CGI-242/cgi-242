@@ -232,11 +232,14 @@ export class CodeContainerComponent implements OnInit {
     const range = this.articleRange();
     const query = this.searchQuery.toLowerCase().trim();
 
+    console.log('[CodeContainer] filteredArticles - articles chargés:', articles.length, 'range:', range, 'query:', query);
+
     let result: Article[];
 
     // Si une plage d'articles est définie, filtrer par numéro
     if (range) {
       result = articles.filter(a => this.isArticleInRange(a.numero, range));
+      console.log('[CodeContainer] Après filtrage par range:', result.length, 'articles');
     } else if (!query) {
       result = articles;
     } else {
@@ -317,7 +320,8 @@ export class CodeContainerComponent implements OnInit {
   }
 
   loadArticles(): void {
-    this.articlesService.loadArticles({ limit: 500 })
+    // Charger tous les articles (1149+ pour Tome 1 et 2)
+    this.articlesService.loadArticles({ limit: 2000 })
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe();
   }
@@ -332,12 +336,15 @@ export class CodeContainerComponent implements OnInit {
   }
 
   onSommaireSelect(selection: SommaireSelection): void {
+    console.log('[CodeContainer] Sélection sommaire:', selection);
     // Si une plage d'articles est définie, l'utiliser pour filtrer
     if (selection.articles) {
+      console.log('[CodeContainer] Filtrage par plage d\'articles:', selection.articles);
       this.searchQuery = '';
       this.articleRange.set(selection.articles);
     } else {
       // Sinon, utiliser le titre pour la recherche
+      console.log('[CodeContainer] Pas de plage d\'articles, recherche par titre:', selection.titre);
       this.articleRange.set(null);
       this.searchQuery = selection.titre;
     }

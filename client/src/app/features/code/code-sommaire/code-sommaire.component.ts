@@ -319,6 +319,7 @@ export class CodeSommaireComponent {
   }
 
   onChapitreClick(chapitre: Chapitre): void {
+    console.log('[Sommaire] Chapitre cliqué:', chapitre.chapitre, 'articles:', chapitre.articles);
     this.selection.emit({
       type: 'chapitre',
       path: `Chapitre ${chapitre.chapitre}`,
@@ -328,6 +329,7 @@ export class CodeSommaireComponent {
   }
 
   onSectionClick(chapitre: Chapitre, section: Section): void {
+    console.log('[Sommaire] Section cliquée:', section.section, 'articles:', section.articles);
     this.selection.emit({
       type: 'section',
       path: `Chapitre ${chapitre.chapitre}, Section ${section.section}`,
@@ -337,6 +339,7 @@ export class CodeSommaireComponent {
   }
 
   onSousSectionClick(chapitre: Chapitre, section: Section, sousSection: SousSectionSommaire): void {
+    console.log('[Sommaire] Sous-section cliquée:', sousSection.sous_section, 'articles:', sousSection.articles);
     this.selection.emit({
       type: 'sous_section',
       path: `Chapitre ${chapitre.chapitre}, Section ${section.section}, §${sousSection.sous_section}`,
@@ -346,10 +349,12 @@ export class CodeSommaireComponent {
   }
 
   onPartieClick(partie: Partie): void {
+    console.log('[Sommaire] Partie cliquée:', partie.partie, 'articles:', partie.articles);
     this.selection.emit({
       type: 'partie',
       path: `Partie ${partie.partie}`,
       titre: partie.titre,
+      articles: partie.articles,
     });
   }
 

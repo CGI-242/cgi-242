@@ -79,10 +79,9 @@ async function main() {
   ];
 
   for (const article of articles) {
-    await prisma.article.upsert({
-      where: { numero: article.numero },
-      update: {},
-      create: article,
+    // Utiliser createMany ou create simple car le seed est exécuté sur une DB vide
+    await prisma.article.create({
+      data: article,
     });
   }
 

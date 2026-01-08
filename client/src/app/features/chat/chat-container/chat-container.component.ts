@@ -1,6 +1,7 @@
-import { Component, inject, OnInit, signal, computed, ViewChild, ElementRef, AfterViewChecked, ChangeDetectionStrategy, DestroyRef, OnDestroy } from '@angular/core';
+import { Component, inject, OnInit, signal, computed, ViewChild, ElementRef, AfterViewChecked, ChangeDetectionStrategy, DestroyRef, OnDestroy, SecurityContext } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ChatService, Conversation, StreamEvent } from '@core/services/chat.service';
 import { TenantService } from '@core/services/tenant.service';
 import { AuthService } from '@core/services/auth.service';
@@ -185,6 +186,7 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestr
   tenantService = inject(TenantService);
   private authService = inject(AuthService);
   private destroyRef = inject(DestroyRef);
+  private sanitizer = inject(DomSanitizer);
 
   @ViewChild('messagesContainer') private messagesContainer!: ElementRef;
 
@@ -334,17 +336,37 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestr
 
   /**
    * Format streaming content for display
-   * Converts markdown-like formatting to HTML
+   * Converts markdown-like formatting to HTML with XSS protection
+   * Uses Angular's DomSanitizer to prevent script injection
    */
-  formatStreamingContent(): string {
+  formatStreamingContent(): SafeHtml {
     let content = this.chatService.streamingContent();
 
-    // Basic markdown formatting
+    // First, escape HTML special characters to prevent XSS
+    content = this.escapeHtml(content);
+
+    // Then apply safe markdown-like formatting
     content = content
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\n/g, '<br>');
 
-    return content;
+    // Sanitize the final HTML to ensure no malicious content
+    const sanitized = this.sanitizer.sanitize(SecurityContext.HTML, content);
+    return sanitized ?? '';
+  }
+
+  /**
+   * Escape HTML special characters to prevent XSS attacks
+   */
+  private escapeHtml(text: string): string {
+    const htmlEscapes: Record<string, string> = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+    };
+    return text.replace(/[&<>"']/g, (char) => htmlEscapes[char]);
   }
 
   ngOnDestroy(): void {

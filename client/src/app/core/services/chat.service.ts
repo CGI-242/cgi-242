@@ -156,17 +156,17 @@ export class ChatService {
     this.abortController = new AbortController();
 
     const url = `${environment.apiUrl}/chat/message/stream`;
-    const token = localStorage.getItem('cgi_access_token');
 
+    // Authentification via cookies httpOnly (credentials: 'include')
+    // Plus de token en header = protection contre XSS
     fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
       },
       body: JSON.stringify(data),
       signal: this.abortController.signal,
-      credentials: 'include',
+      credentials: 'include', // Envoie automatiquement les cookies httpOnly
     })
       .then(async (response) => {
         if (!response.ok) {

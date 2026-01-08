@@ -358,8 +358,8 @@ model Article {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  // Contrainte unique sur numero + version (permet même numéro dans différentes versions)
-  @@unique([numero, version])
+  // Contrainte unique sur numero + version + tome (permet même numéro dans différents tomes)
+  @@unique([numero, version, tome], name: "numero_version_tome")
   @@index([numero])
   @@index([tome, livre, chapitre])
   @@index([statut])

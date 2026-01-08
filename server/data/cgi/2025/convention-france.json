@@ -1,231 +1,229 @@
 {
-  "convention": {
-    "intitule": "Convention fiscale avec la France",
+  "meta": {
+    "document": "Convention fiscale Congo-France",
+    "pays": "République du Congo / France",
+    "edition": "2025",
+    "tome": null,
+    "partie": null,
+    "livre": null,
+    "chapitre": null,
+    "chapitre_titre": "Convention fiscale avec la France",
     "reference": "Convention entre le Gouvernement de la République du Congo et le Gouvernement de la République Française en vue d'éviter les doubles impositions et de prévenir l'évasion fiscale",
     "date_signature": "27 novembre 1987",
-    "date_entree_vigueur": "1er septembre 1989",
-    "articles": [
-      {
-        "article": "Art.1.-",
-        "intitule": "Personnes visées",
-        "texte": [
-          "La présente Convention s'applique aux personnes qui sont des résidents d'un État ou des deux États."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.2.-",
-        "intitule": "Impôts visés",
-        "texte": [
-          "La présente Convention s'applique aux impôts sur le revenu, aux impôts sur les successions, aux droits d'enregistrement et de timbre, perçus pour le compte d'un État ou de ses collectivités territoriales, quel que soit le système de perception.",
-          "a) sont considérés comme impôts sur le revenu, les impôts perçus sur le revenu total ou sur des éléments du revenu, y compris les impôts sur les gains provenant de l'aliénation des biens mobiliers ou immobiliers ainsi que les impôts sur les plus-values.",
-          "b) sont considérés comme impôts sur les successions, les impôts perçus par suite de décès sous forme d'impôts sur la masse successorale, d'impôts sur les parts héréditaires, de droits de mutation ou d'impôts sur les donations pour cause de décès."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.3.-",
-        "intitule": "Définitions générales",
-        "texte": [
-          "Au sens de la présente Convention, à moins que le contexte n'exige une interprétation différente :",
-          "a) les expressions « un État » et « l'autre État » désignent, suivant le cas, la République Populaire du Congo ou la République Française ;",
-          "b) le terme « personne » comprend les personnes physiques, les sociétés et tous autres groupements de personnes ;",
-          "c) le terme « société » désigne toute personne morale ou toute entité qui est considérée comme une personne morale aux fins d'imposition ;",
-          "d) les expressions « entreprise d'un État » et « entreprise de l'autre État » désignent respectivement une entreprise exploitée par un résident d'un État et une entreprise exploitée par un résident de l'autre État ;",
-          "e) l'expression « trafic international » désigne tout transport effectué par un navire ou un aéronef exploité par une entreprise dont le siège de direction effective est situé dans un État, sauf lorsque le navire ou l'aéronef n'est exploité qu'entre des points situés dans l'autre État ;",
-          "f) l'expression « autorité compétente » désigne :",
-          "- dans le cas de la République Populaire du Congo, le Ministre des Finances et du Budget ou son Représentant autorisé ;",
-          "- dans le cas de la République Française, le Ministre chargé du Budget ou son Représentant autorisé.",
-          "Pour l'application de la Convention par un État, toute expression qui n'y est pas définie a le sens que lui attribue le droit de cet État à propos des impôts auxquels s'applique la Convention, à moins que le contexte n'exige une interprétation différente."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.4.-",
-        "intitule": "Résident",
-        "texte": [
-          "1. Au sens de la présente Convention, l'expression « résident d'un État » désigne toute personne qui, en vertu de la législation de cet État, est assujettie à l'impôt dans cet État, en raison de son domicile, de sa résidence, de son siège de direction ou de tout autre critère de nature analogue.",
-          "Toutefois, cette expression ne comprend pas les personnes qui sont assujetties à l'impôt dans cet État que pour les revenus de sources situées dans cet État.",
-          "2. Lorsque, selon les dispositions du paragraphe 1, une personne physique est un résident des deux États, sa situation est réglée de la manière suivante :",
-          "a) cette personne est considérée comme un résident de l'État où elle dispose d'un foyer d'habitation permanent ; si elle dispose d'un foyer d'habitation permanent dans les deux États, elle est considérée comme un résident de l'État avec lequel ses liens personnels et économiques sont les plus étroits (centre des intérêts vitaux) ;",
-          "b) si l'État où cette personne a le centre de ses intérêts vitaux ne peut pas être déterminé, ou si elle ne dispose d'un foyer d'habitation permanent dans aucun des États, elle est considérée comme un résident de l'État où elle séjourne de façon habituelle ;",
-          "c) si cette personne séjourne de façon habituelle dans les deux États ou si elle ne séjourne de façon habituelle dans aucun d'eux, elle est considérée comme un résident de l'État dont elle possède la nationalité ;",
-          "d) si cette personne possède la nationalité des deux États ou si elle ne possède la nationalité d'aucun d'eux, les autorités compétentes des États tranchent la question d'un commun accord.",
-          "3. Lorsque, selon les dispositions du paragraphe 1, une personne autre qu'une personne physique est un résident des deux États, elle est considérée comme un résident de l'État où son siège de direction effective est situé."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.5.-",
-        "intitule": "Établissement stable",
-        "texte": [
-          "1. Au sens de la présente Convention, l'expression « établissement stable » désigne une installation fixe d'affaires par l'intermédiaire de laquelle une entreprise exerce tout ou partie de son activité.",
-          "2. L'expression « établissement stable » comprend notamment :",
-          "a) un siège de direction ;",
-          "b) une succursale ;",
-          "c) un bureau ;",
-          "d) une usine ;",
-          "e) un atelier ;",
-          "f) un magasin de vente ;",
-          "g) une mine, un puits de pétrole ou de gaz, une carrière ou tout autre lieu d'extraction des ressources naturelles.",
-          "3. Un chantier de construction ou de montage et les services afférents ne constituent un établissement stable que si leur durée dépasse six mois.",
-          "4. Nonobstant les dispositions précédentes du présent article, on considère qu'il n'y a pas « établissement stable » si :",
-          "a) il est fait usage d'installations aux seules fins de stockage, d'exposition ou de livraison de marchandises appartenant à l'entreprise ;",
-          "b) des marchandises appartenant à l'entreprise sont entreposées aux seules fins de stockage, d'exposition ou de livraison ;",
-          "c) des marchandises appartenant à l'entreprise sont entreposées aux seules fins de transformation par une autre entreprise ;",
-          "d) une installation fixe d'affaires est utilisée aux seules fins d'acheter des marchandises ou de réunir des informations, pour l'entreprise ;",
-          "e) une installation fixe d'affaires est utilisée aux seules fins d'exercer, pour l'entreprise, toute autre activité de caractère préparatoire ou auxiliaire ;",
-          "f) une installation fixe d'affaires est utilisée aux seules fins de l'exercice cumulé d'activités mentionnées aux alinéas a) à e) à condition que l'activité d'ensemble de l'installation fixe d'affaires résultant de ce cumul garde un caractère préparatoire ou auxiliaire.",
-          "5. Nonobstant les dispositions des paragraphes 1 et 2, lorsqu'une personne autre qu'un agent jouissant d'un statut indépendant, auquel s'applique le paragraphe 6, agit pour le compte d'une entreprise et dispose dans un État de pouvoirs qu'elle y exerce habituellement lui permettant de conclure des contrats au nom de l'entreprise, cette entreprise est considérée comme ayant un établissement stable dans cet État pour toutes les activités que cette personne exerce pour l'entreprise, à moins que les activités de cette personne ne soient limitées à celles qui sont mentionnées au paragraphe 4 et qui, si elles étaient exercées par l'intermédiaire d'une installation fixe d'affaires, ne permettraient pas de considérer cette installation comme un établissement stable selon les dispositions de ce paragraphe.",
-          "6. Une entreprise n'est pas considérée comme ayant un établissement stable dans un État du seul fait qu'elle y exerce son activité par l'entremise d'un courtier, d'un commissionnaire général ou de tout autre agent jouissant d'un statut indépendant à condition que ces personnes agissent dans le cadre ordinaire de leur activité.",
-          "Toutefois, si l'intermédiaire dont le concours est utilisé dispose d'un dépôt, d'un stock de marchandises dédouanées à partir duquel sont effectuées les ventes et les livraisons, et s'il exerce son activité exclusivement ou presque exclusivement pour le compte d'une entreprise, il est admis que ce stock soit caractéristique de l'existence d'un établissement stable de l'entreprise.",
-          "7. Le fait qu'une société qui est un résident d'un État contrôle ou est contrôlée par une autre société qui est un résident de l'autre État ou qui y exerce son activité (que ce soit par l'intermédiaire d'un établissement stable ou non) ne suffit pas, en lui-même, à faire de l'une quelconque de ces sociétés un établissement stable de l'autre."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.6.-",
-        "intitule": "Revenus immobiliers",
-        "texte": [
-          "1. Les revenus qu'un résident d'un État tire de biens immobiliers (y compris les revenus des exploitations agricoles ou forestières) situés dans l'autre État, sont imposables dans cet autre État.",
-          "2. L'expression « biens immobiliers » a le sens que lui attribue le droit de l'État où les biens considérés sont situés. L'expression comprend en tous cas les accessoires, le cheptel mort ou vif des exploitations agricoles ou forestières, les droits auxquels s'appliquent les dispositions du droit privé concernant la propriété, l'usufruit des biens immobiliers et les droits à des paiements variables ou fixes pour l'exploitation ou la concession de l'exploitation des gisements minéraux, sources et autres ressources naturelles ; les navires et aéronefs ne sont pas considérés comme des biens immobiliers.",
-          "3. Les dispositions du paragraphe 1 s'appliquent aux revenus provenant de l'exploitation directe, de la location ou de l'affermage ainsi que de toute autre forme d'exploitation de biens immobiliers.",
-          "4. Les dispositions des paragraphes 1 et 3 s'appliquent également aux revenus provenant des biens immobiliers d'une entreprise ainsi qu'aux revenus des biens immobiliers servant à l'exercice d'une profession indépendante.",
-          "5. Lorsque la propriété d'actions, parts ou autres droits dans une société ou une autre personne morale donne au propriétaire la jouissance de biens immobiliers situés dans un État et détenus par cette société ou cette autre personne morale, les revenus que le propriétaire tire de l'utilisation directe, de la location ou de l'usage sous toute autre forme de son droit de jouissance sont imposables dans cet État."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.7.-",
-        "intitule": "Bénéfices des entreprises",
-        "texte": [
-          "1. Les bénéfices d'une entreprise d'un État ne sont imposables que dans cet État, à moins que l'entreprise n'exerce son activité dans l'autre État par l'intermédiaire d'un établissement stable qui y est situé. Si l'entreprise exerce son activité d'une telle façon, les bénéfices de l'entreprise sont imposables dans l'autre État mais uniquement dans la mesure où ils sont imputables à cet établissement stable.",
-          "2. Lorsqu'une entreprise d'un État exerce son activité dans l'autre État par l'intermédiaire d'un établissement stable qui y est situé, il est imputé, dans chaque État contractant, à cet établissement stable les bénéfices qu'il aurait pu réaliser s'il avait constitué une entreprise distincte exerçant des activités identiques ou analogues dans les conditions analogues et traitant en toute indépendance avec l'entreprise dont il constitue un établissement stable.",
-          "3. Pour déterminer les bénéfices d'un établissement stable, sont admises en déduction les dépenses exposées aux fins poursuivies par cet établissement stable, y compris les dépenses de direction et les frais généraux d'administration ainsi exposés, dans l'État où est situé cet établissement stable, ou ailleurs.",
-          "4. Une quote-part des dépenses de direction et des frais généraux d'administration du siège de l'entreprise est imputée sur les résultats des différents établissements stables au prorata du chiffre d'affaires réalisé par chacun d'eux.",
-          "5. S'il est d'usage, dans un État, de déterminer les bénéfices imputables à un établissement stable sur la base d'une répartition des bénéfices totaux de l'entreprise entre ses diverses parties, aucune disposition du paragraphe 2 n'empêche cet État de déterminer les bénéfices imposables selon la répartition en usage, la méthode de répartition adoptée doit cependant être telle que le résultat obtenu soit conforme aux principes contenus dans le présent article.",
-          "6. Aucun bénéfice n'est imputé à un établissement stable du fait qu'il a simplement acheté des marchandises pour le compte du siège de l'entreprise.",
-          "7. Aux fins des paragraphes précédents, les bénéfices à imputer à l'établissement stable sont déterminés chaque année selon la même méthode, à moins qu'il n'existe des motifs valables et suffisants de procéder autrement.",
-          "8. Lorsque les bénéfices comprennent des éléments de revenu traités séparément dans d'autres articles de la présente Convention, les dispositions de ces articles ne sont pas affectées par les dispositions du présent article."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.8.-",
-        "intitule": "Navigation maritime et aérienne",
-        "texte": [
-          "1. Les bénéfices provenant de l'exploitation, en trafic international, de navires ou d'aéronefs ne sont imposables que dans l'État où le siège de direction effective de l'entreprise est situé.",
-          "2. Ces bénéfices comprennent également les revenus accessoires tirés par cette entreprise de l'utilisation de conteneurs pour le transport international de biens ou de marchandises.",
-          "3. Si le siège de direction effective d'une entreprise de navigation maritime est situé à bord d'un navire, ce siège est considéré comme situé dans l'État où se trouve le port d'attache de ce navire ou, à défaut de port d'attache, dans l'État dont l'exploitant du navire est un résident.",
-          "4. Les dispositions du paragraphe 1 s'appliquent aussi aux bénéfices provenant de la participation à un groupe, une exploitation en commun ou un organisme international d'exploitation."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.9.-",
-        "intitule": "Entreprises associées",
-        "texte": [
-          "Lorsque :",
-          "a) une entreprise d'un État participe directement ou indirectement à la direction, au contrôle ou au capital d'une entreprise de l'autre État, ou que",
-          "b) les mêmes personnes participent directement ou indirectement à la direction, au contrôle ou au capital d'une entreprise d'un État et d'une entreprise de l'autre État,",
-          "et que, dans l'un et l'autre cas, les deux entreprises sont, dans leurs relations commerciales ou financières, liées par des conditions convenues ou imposées, qui diffèrent de celles qui seraient convenues entre des entreprises indépendantes, les bénéfices qui, sans ces conditions, auraient été réalisés par l'une des entreprises mais n'ont pu l'être en fait à cause de ces conditions, peuvent être inclus dans les bénéfices de cette entreprise et imposés en conséquence."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.10.-",
-        "intitule": "Dividendes",
-        "texte": [
-          "1. Un résident du Congo qui reçoit des dividendes payés par une société qui est un résident de France peut obtenir le remboursement du précompte afférent à ces dividendes acquittés, le cas échéant, par cette société.",
-          "2. Le montant brut du précompte remboursé est considéré comme un dividende pour l'application de l'ensemble des dispositions de la présente Convention.",
-          "3. Lorsqu'une société qui est un résident d'un État tire des bénéfices ou des revenus de l'autre État, cet autre État ne peut percevoir aucun impôt sur les dividendes payés par la société, sauf dans la mesure où ces dividendes sont payés à un résident de cet autre État ou dans la mesure où la participation génératrice des dividendes se rattache effectivement à un établissement stable ou à une base fixe située dans cet autre État, ni prélever aucun impôt, au titre de l'imposition des bénéfices non distribués, sur les bénéfices non distribués de la société, même si les dividendes payés ou les bénéfices non distribués consistent en tout ou en partie en bénéfices ou revenus provenant de cet autre État.",
-          "4. Nonobstant les dispositions du paragraphe 3, lorsqu'une société qui est un résident d'un État exerce dans l'autre État une activité industrielle ou commerciale par l'intermédiaire d'un établissement stable qui y est situé, les bénéfices de cet établissement stable peuvent, après avoir supporté l'impôt sur les sociétés, être assujettis conformément à la législation de cet autre État à un impôt dont le taux ne peut excéder 15 %."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.11.-",
-        "intitule": "Intérêts",
-        "texte": [
-          "1. Les intérêts provenant d'un État et payés à un résident de l'autre État et qui en est le bénéficiaire effectif ne sont imposables que dans cet autre État.",
-          "2. Le terme « intérêts » employé dans le présent article désigne les revenus des créances de toute nature, assorties ou non de garanties hypothécaires ou d'une clause de participation aux bénéfices du débiteur, et notamment les revenus des fonds publics et des obligations d'emprunts, y compris les primes et lots attachés à ces titres. Les pénalisations pour paiement tardif ne sont pas considérées comme des intérêts au sens du présent article.",
-          "3. Les dispositions du paragraphe 1 ne s'appliquent pas lorsque le bénéficiaire effectif des intérêts, résident d'un État, exerce dans l'autre État une activité industrielle ou commerciale par l'intermédiaire d'un établissement stable qui y est situé, soit une profession indépendante au moyen d'une base fixe qui y est située et que la créance génératrice des intérêts s'y rattache effectivement. Dans ce cas, les dispositions de l'article 7 ou de l'article 14, suivant les cas, sont applicables.",
-          "4. Les intérêts sont considérés comme provenant d'un État lorsque le débiteur est cet État lui-même, une collectivité territoriale, une personne morale de droit public ou un résident de cet État. Toutefois, lorsque le débiteur des intérêts, qu'il soit ou non un résident d'un État, a dans un État un établissement stable, ou une base fixe, pour lequel la dette donnant lieu au paiement des intérêts a été contractée et qui supporte la charge de ces intérêts, ceux-ci sont considérés comme provenant de l'État où l'établissement stable, ou la base fixe, est situé.",
-          "5. Lorsque, en raison de relations spéciales existant entre le débiteur et le bénéficiaire effectif ou que l'un et l'autre entretiennent avec de tierces personnes, le montant des intérêts, compte tenu de la créance pour laquelle ils sont payés, excède celui dont seraient convenus le débiteur et le bénéficiaire effectif en l'absence de pareilles relations, les dispositions du présent article ne s'appliquent qu'à ce dernier montant. Dans ce cas, la partie excédentaire des paiements reste imposable selon la législation de chaque État et compte tenu des autres dispositions de la présente Convention."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.12.-",
-        "intitule": "Redevances",
-        "texte": [
-          "1. Les redevances provenant d'un État et payées à un résident de l'autre État sont imposables dans cet autre État.",
-          "2. Toutefois, ces redevances sont aussi imposables dans l'État d'où elles proviennent et selon la législation de cet État. Mais si la personne qui reçoit les redevances en est le bénéficiaire effectif, l'impôt ainsi établi ne peut excéder 15 % du montant brut des redevances.",
-          "3. Le terme « redevances » employé dans le présent article désigne les rémunérations de toute nature payées pour l'usage ou la concession de l'usage d'un droit d'auteur sur une œuvre littéraire, artistique ou scientifique, de films cinématographiques et de tous autres enregistrements sonores ou des images, d'un brevet, d'une marque de fabrique ou de commerce, d'un dessin ou d'un modèle, d'un plan, d'une formule ou d'un procédé secret.",
-          "4. Les dispositions des paragraphes 1 et 2 ne s'appliquent pas lorsque le bénéficiaire effectif des redevances, résident d'un État, exerce dans l'autre État d'où proviennent les redevances, soit une activité industrielle ou commerciale par l'intermédiaire d'un établissement stable qui y est situé, soit une profession indépendante au moyen d'une base fixe qui y est située, et que le droit ou le bien générateur des redevances s'y rattache effectivement. Dans ce cas, les dispositions de l'article 7 ou de l'article 14, suivant les cas, sont applicables.",
-          "5. Les redevances sont considérées comme provenant d'un État lorsque le débiteur est cet État lui-même, une collectivité territoriale, une personne morale de droit public ou un résident de cet État. Toutefois, lorsque le débiteur des redevances, qu'il soit ou non un résident d'un État, a dans un État un établissement stable, ou une base fixe, auquel se rattache effectivement le droit ou le bien générateur des redevances et qui supporte la charge de ces redevances, lesdites redevances sont réputées provenir de l'État où l'établissement stable, ou la base fixe, est situé.",
-          "6. Lorsque, en raison de relations spéciales existant entre le débiteur et le bénéficiaire effectif ou que l'un et l'autre entretiennent avec de tierces personnes, le montant des redevances, compte tenu de la prestation pour laquelle elles sont payées, excède celui dont seraient convenus le débiteur et le bénéficiaire effectif en l'absence de pareilles relations, les dispositions du présent article ne s'appliquent qu'à ce dernier montant. Dans ce cas, la partie excédentaire des paiements reste imposable selon la législation de chaque État et compte tenu des autres dispositions de la présente Convention."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.13.-",
-        "intitule": "Gains en capital",
-        "texte": [
-          "1. Les gains qu'un résident d'un État tire de l'aliénation de biens immobiliers visés à l'article 6, paragraphe 2, sont imposables dans l'État où les biens immobiliers sont situés.",
-          "2. Les gains provenant de l'aliénation d'actions, parts ou autres droits dans une société ou une autre personne morale possédant des biens immobiliers situés dans un État y sont imposables lorsqu'ils sont soumis, selon la législation de cet État, au même régime fiscal que les gains provenant de l'aliénation de biens immobiliers. Pour l'application de cette disposition, ne sont pas pris en considération les immeubles affectés par cette société ou cette autre personne morale à sa propre exploitation industrielle, commerciale, agricole, ou à l'exercice d'une profession non commerciale.",
-          "3. Les gains provenant de l'aliénation d'actions ou de parts faisant partie d'une participation substantielle dans le capital d'une société qui est un résident d'un État sont imposables dans cet État. On considère qu'il existe une participation substantielle lorsque le cédant, seul ou avec des personnes apparentées, possède directement ou indirectement au moins 25 % du capital de la société.",
-          "4. Les gains provenant de l'aliénation de biens mobiliers qui font partie de l'actif d'un établissement stable qu'une entreprise d'un État a dans l'autre État, ou de biens mobiliers qui appartiennent à une base fixe dont un résident d'un État dispose dans l'autre État pour l'exercice d'une profession indépendante, y compris les gains provenant de l'aliénation de cet établissement stable (seul ou avec l'ensemble de l'entreprise) ou de cette base fixe, sont imposables dans cet autre État.",
-          "5. Les gains provenant de l'aliénation de navires ou aéronefs exploités en trafic international ou de biens mobiliers affectés à l'exploitation de ces navires ou aéronefs ne sont imposables que dans l'État où le siège de direction effective de l'entreprise est situé.",
-          "6. Les gains provenant de l'aliénation de tous biens autres que ceux visés aux paragraphes 1 à 5 ne sont imposables que dans l'État dont le cédant est un résident."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.14.-",
-        "intitule": "Professions indépendantes",
-        "texte": [
-          "1. Les revenus qu'un résident d'un État tire d'une profession libérale ou d'autres activités de caractère indépendant ne sont imposables que dans cet État, à moins que ce résident ne dispose de façon habituelle dans l'autre État d'une base fixe pour l'exercice de ces activités. S'il dispose d'une telle base fixe, les revenus sont imposables dans l'autre État mais uniquement dans la mesure où ils sont imputables à cette base fixe.",
-          "2. L'expression « profession libérale » comprend notamment les activités indépendantes d'ordre scientifique, littéraire, artistique, éducatif ou pédagogique, ainsi que les activités indépendantes des médecins, avocats, ingénieurs, architectes, dentistes et comptables."
-        ],
-        "statut": "en vigueur"
-      },
-      {
-        "article": "Art.15.-",
-        "intitule": "Revenus d'emploi",
-        "texte": [
-          "1. Sous réserve des dispositions des articles 16, 18, 19 et 20, les salaires, traitements et autres rémunérations similaires qu'un résident d'un État reçoit au titre d'un emploi salarié ne sont imposables que dans cet État à moins que l'emploi ne soit exercé dans l'autre État. Si l'emploi y est exercé, les rémunérations reçues à ce titre sont imposables dans cet autre État.",
-          "2. Nonobstant les dispositions du paragraphe 1, les rémunérations qu'un résident d'un État reçoit au titre d'un emploi salarié exercé dans l'autre État ne sont imposables que dans le premier État si :",
-          "a) le bénéficiaire séjourne dans l'autre État pendant une période ou des périodes, y compris la durée des interruptions de travail, n'excédant pas au total 183 jours au cours de l'année fiscale considérée ;",
-          "b) les rémunérations sont payées par un employeur ou pour le compte d'un employeur qui n'est pas un résident de l'autre État ; et",
-          "c) la charge des rémunérations n'est pas supportée par un établissement stable ou une base fixe que l'employeur a dans l'autre État."
-        ],
-        "statut": "en vigueur",
-        "note": "Article tronqué - suite à compléter"
-      }
-    ],
-    "impots_actuels": {
-      "Congo": [
-        "la taxe sur les salaires ;",
-        "l'IRPP ;",
-        "l'impôt complémentaire ;",
-        "l'impôt sur les sociétés ;",
-        "la taxe spéciale sur les sociétés ;",
-        "l'IRVM ;",
-        "la taxe sur les loyers ;",
-        "l'impôt spécial sur les bons de caisse ;",
-        "les droits d'enregistrement et de timbre ;",
-        "y compris toutes les retenues à la source et avances décomptées sur les impôts visés ci-dessus (ci-après dénommés « impôts congolais »)."
+    "source": "Convention bilatérale Congo-France"
+  },
+  "articles": [
+    {
+      "article": "Art.1",
+      "titre": "Personnes visées",
+      "texte": [
+        "La présente Convention s'applique aux personnes qui sont des résidents d'un État ou des deux États."
       ],
-      "France": [
-        "l'impôt sur le revenu ;",
-        "l'impôt sur les sociétés ;",
-        "l'impôt sur les successions ;",
-        "les droits d'enregistrement et de timbre ;",
-        "la taxe sur les salaires ;",
-        "y compris toutes retenues à la source, tous précomptes et avances décomptés sur les impôts visés ci-dessus (ci-après dénommés « impôts français »)."
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.2",
+      "titre": "Impôts visés",
+      "texte": [
+        "La présente Convention s'applique aux impôts sur le revenu, aux impôts sur les successions, aux droits d'enregistrement et de timbre, perçus pour le compte d'un État ou de ses collectivités territoriales, quel que soit le système de perception.",
+        "a) sont considérés comme impôts sur le revenu, les impôts perçus sur le revenu total ou sur des éléments du revenu, y compris les impôts sur les gains provenant de l'aliénation des biens mobiliers ou immobiliers ainsi que les impôts sur les plus-values.",
+        "b) sont considérés comme impôts sur les successions, les impôts perçus par suite de décès sous forme d'impôts sur la masse successorale, d'impôts sur les parts héréditaires, de droits de mutation ou d'impôts sur les donations pour cause de décès."
       ],
-      "note": "La Convention s'applique aussi aux impôts de nature identique ou analogue à ceux qui sont visés au paragraphe 3 du présent article, qui seraient établis après la date de signature de la Convention et qui s'ajouteraient aux impôts actuels ou qui les remplaceraient. Les autorités compétentes des États se communiqueront les modifications importantes apportées à leurs législations fiscales respectives."
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.3",
+      "titre": "Définitions générales",
+      "texte": [
+        "Au sens de la présente Convention, à moins que le contexte n'exige une interprétation différente :",
+        "a) les expressions « un État » et « l'autre État » désignent, suivant le cas, la République Populaire du Congo ou la République Française ;",
+        "b) le terme « personne » comprend les personnes physiques, les sociétés et tous autres groupements de personnes ;",
+        "c) le terme « société » désigne toute personne morale ou toute entité qui est considérée comme une personne morale aux fins d'imposition ;",
+        "d) les expressions « entreprise d'un État » et « entreprise de l'autre État » désignent respectivement une entreprise exploitée par un résident d'un État et une entreprise exploitée par un résident de l'autre État ;",
+        "e) l'expression « trafic international » désigne tout transport effectué par un navire ou un aéronef exploité par une entreprise dont le siège de direction effective est situé dans un État, sauf lorsque le navire ou l'aéronef n'est exploité qu'entre des points situés dans l'autre État ;",
+        "f) l'expression « autorité compétente » désigne :",
+        "- dans le cas de la République Populaire du Congo, le Ministre des Finances et du Budget ou son Représentant autorisé ;",
+        "- dans le cas de la République Française, le Ministre chargé du Budget ou son Représentant autorisé.",
+        "Pour l'application de la Convention par un État, toute expression qui n'y est pas définie a le sens que lui attribue le droit de cet État à propos des impôts auxquels s'applique la Convention, à moins que le contexte n'exige une interprétation différente."
+      ],
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.4",
+      "titre": "Résident",
+      "texte": [
+        "1. Au sens de la présente Convention, l'expression « résident d'un État » désigne toute personne qui, en vertu de la législation de cet État, est assujettie à l'impôt dans cet État, en raison de son domicile, de sa résidence, de son siège de direction ou de tout autre critère de nature analogue.",
+        "Toutefois, cette expression ne comprend pas les personnes qui sont assujetties à l'impôt dans cet État que pour les revenus de sources situées dans cet État.",
+        "2. Lorsque, selon les dispositions du paragraphe 1, une personne physique est un résident des deux États, sa situation est réglée de la manière suivante :",
+        "a) cette personne est considérée comme un résident de l'État où elle dispose d'un foyer d'habitation permanent ; si elle dispose d'un foyer d'habitation permanent dans les deux États, elle est considérée comme un résident de l'État avec lequel ses liens personnels et économiques sont les plus étroits (centre des intérêts vitaux) ;",
+        "b) si l'État où cette personne a le centre de ses intérêts vitaux ne peut pas être déterminé, ou si elle ne dispose d'un foyer d'habitation permanent dans aucun des États, elle est considérée comme un résident de l'État où elle séjourne de façon habituelle ;",
+        "c) si cette personne séjourne de façon habituelle dans les deux États ou si elle ne séjourne de façon habituelle dans aucun d'eux, elle est considérée comme un résident de l'État dont elle possède la nationalité ;",
+        "d) si cette personne possède la nationalité des deux États ou si elle ne possède la nationalité d'aucun d'eux, les autorités compétentes des États tranchent la question d'un commun accord.",
+        "3. Lorsque, selon les dispositions du paragraphe 1, une personne autre qu'une personne physique est un résident des deux États, elle est considérée comme un résident de l'État où son siège de direction effective est situé."
+      ],
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.5",
+      "titre": "Établissement stable",
+      "texte": [
+        "1. Au sens de la présente Convention, l'expression « établissement stable » désigne une installation fixe d'affaires par l'intermédiaire de laquelle une entreprise exerce tout ou partie de son activité.",
+        "2. L'expression « établissement stable » comprend notamment :",
+        "a) un siège de direction ;",
+        "b) une succursale ;",
+        "c) un bureau ;",
+        "d) une usine ;",
+        "e) un atelier ;",
+        "f) un magasin de vente ;",
+        "g) une mine, un puits de pétrole ou de gaz, une carrière ou tout autre lieu d'extraction des ressources naturelles.",
+        "3. Un chantier de construction ou de montage et les services afférents ne constituent un établissement stable que si leur durée dépasse six mois.",
+        "4. Nonobstant les dispositions précédentes du présent article, on considère qu'il n'y a pas « établissement stable » si :",
+        "a) il est fait usage d'installations aux seules fins de stockage, d'exposition ou de livraison de marchandises appartenant à l'entreprise ;",
+        "b) des marchandises appartenant à l'entreprise sont entreposées aux seules fins de stockage, d'exposition ou de livraison ;",
+        "c) des marchandises appartenant à l'entreprise sont entreposées aux seules fins de transformation par une autre entreprise ;",
+        "d) une installation fixe d'affaires est utilisée aux seules fins d'acheter des marchandises ou de réunir des informations, pour l'entreprise ;",
+        "e) une installation fixe d'affaires est utilisée aux seules fins d'exercer, pour l'entreprise, toute autre activité de caractère préparatoire ou auxiliaire ;",
+        "f) une installation fixe d'affaires est utilisée aux seules fins de l'exercice cumulé d'activités mentionnées aux alinéas a) à e) à condition que l'activité d'ensemble de l'installation fixe d'affaires résultant de ce cumul garde un caractère préparatoire ou auxiliaire.",
+        "5. Nonobstant les dispositions des paragraphes 1 et 2, lorsqu'une personne autre qu'un agent jouissant d'un statut indépendant, auquel s'applique le paragraphe 6, agit pour le compte d'une entreprise et dispose dans un État de pouvoirs qu'elle y exerce habituellement lui permettant de conclure des contrats au nom de l'entreprise, cette entreprise est considérée comme ayant un établissement stable dans cet État pour toutes les activités que cette personne exerce pour l'entreprise, à moins que les activités de cette personne ne soient limitées à celles qui sont mentionnées au paragraphe 4 et qui, si elles étaient exercées par l'intermédiaire d'une installation fixe d'affaires, ne permettraient pas de considérer cette installation comme un établissement stable selon les dispositions de ce paragraphe.",
+        "6. Une entreprise n'est pas considérée comme ayant un établissement stable dans un État du seul fait qu'elle y exerce son activité par l'entremise d'un courtier, d'un commissionnaire général ou de tout autre agent jouissant d'un statut indépendant à condition que ces personnes agissent dans le cadre ordinaire de leur activité.",
+        "Toutefois, si l'intermédiaire dont le concours est utilisé dispose d'un dépôt, d'un stock de marchandises dédouanées à partir duquel sont effectuées les ventes et les livraisons, et s'il exerce son activité exclusivement ou presque exclusivement pour le compte d'une entreprise, il est admis que ce stock soit caractéristique de l'existence d'un établissement stable de l'entreprise.",
+        "7. Le fait qu'une société qui est un résident d'un État contrôle ou est contrôlée par une autre société qui est un résident de l'autre État ou qui y exerce son activité (que ce soit par l'intermédiaire d'un établissement stable ou non) ne suffit pas, en lui-même, à faire de l'une quelconque de ces sociétés un établissement stable de l'autre."
+      ],
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.6",
+      "titre": "Revenus immobiliers",
+      "texte": [
+        "1. Les revenus qu'un résident d'un État tire de biens immobiliers (y compris les revenus des exploitations agricoles ou forestières) situés dans l'autre État, sont imposables dans cet autre État.",
+        "2. L'expression « biens immobiliers » a le sens que lui attribue le droit de l'État où les biens considérés sont situés. L'expression comprend en tous cas les accessoires, le cheptel mort ou vif des exploitations agricoles ou forestières, les droits auxquels s'appliquent les dispositions du droit privé concernant la propriété, l'usufruit des biens immobiliers et les droits à des paiements variables ou fixes pour l'exploitation ou la concession de l'exploitation des gisements minéraux, sources et autres ressources naturelles ; les navires et aéronefs ne sont pas considérés comme des biens immobiliers.",
+        "3. Les dispositions du paragraphe 1 s'appliquent aux revenus provenant de l'exploitation directe, de la location ou de l'affermage ainsi que de toute autre forme d'exploitation de biens immobiliers.",
+        "4. Les dispositions des paragraphes 1 et 3 s'appliquent également aux revenus provenant des biens immobiliers d'une entreprise ainsi qu'aux revenus des biens immobiliers servant à l'exercice d'une profession indépendante.",
+        "5. Lorsque la propriété d'actions, parts ou autres droits dans une société ou une autre personne morale donne au propriétaire la jouissance de biens immobiliers situés dans un État et détenus par cette société ou cette autre personne morale, les revenus que le propriétaire tire de l'utilisation directe, de la location ou de l'usage sous toute autre forme de son droit de jouissance sont imposables dans cet État."
+      ],
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.7",
+      "titre": "Bénéfices des entreprises",
+      "texte": [
+        "1. Les bénéfices d'une entreprise d'un État ne sont imposables que dans cet État, à moins que l'entreprise n'exerce son activité dans l'autre État par l'intermédiaire d'un établissement stable qui y est situé. Si l'entreprise exerce son activité d'une telle façon, les bénéfices de l'entreprise sont imposables dans l'autre État mais uniquement dans la mesure où ils sont imputables à cet établissement stable.",
+        "2. Lorsqu'une entreprise d'un État exerce son activité dans l'autre État par l'intermédiaire d'un établissement stable qui y est situé, il est imputé, dans chaque État contractant, à cet établissement stable les bénéfices qu'il aurait pu réaliser s'il avait constitué une entreprise distincte exerçant des activités identiques ou analogues dans les conditions analogues et traitant en toute indépendance avec l'entreprise dont il constitue un établissement stable.",
+        "3. Pour déterminer les bénéfices d'un établissement stable, sont admises en déduction les dépenses exposées aux fins poursuivies par cet établissement stable, y compris les dépenses de direction et les frais généraux d'administration ainsi exposés, dans l'État où est situé cet établissement stable, ou ailleurs.",
+        "4. Une quote-part des dépenses de direction et des frais généraux d'administration du siège de l'entreprise est imputée sur les résultats des différents établissements stables au prorata du chiffre d'affaires réalisé par chacun d'eux.",
+        "5. S'il est d'usage, dans un État, de déterminer les bénéfices imputables à un établissement stable sur la base d'une répartition des bénéfices totaux de l'entreprise entre ses diverses parties, aucune disposition du paragraphe 2 n'empêche cet État de déterminer les bénéfices imposables selon la répartition en usage, la méthode de répartition adoptée doit cependant être telle que le résultat obtenu soit conforme aux principes contenus dans le présent article.",
+        "6. Aucun bénéfice n'est imputé à un établissement stable du fait qu'il a simplement acheté des marchandises pour le compte du siège de l'entreprise.",
+        "7. Aux fins des paragraphes précédents, les bénéfices à imputer à l'établissement stable sont déterminés chaque année selon la même méthode, à moins qu'il n'existe des motifs valables et suffisants de procéder autrement.",
+        "8. Lorsque les bénéfices comprennent des éléments de revenu traités séparément dans d'autres articles de la présente Convention, les dispositions de ces articles ne sont pas affectées par les dispositions du présent article."
+      ],
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.8",
+      "titre": "Navigation maritime et aérienne",
+      "texte": [
+        "1. Les bénéfices provenant de l'exploitation, en trafic international, de navires ou d'aéronefs ne sont imposables que dans l'État où le siège de direction effective de l'entreprise est situé.",
+        "2. Ces bénéfices comprennent également les revenus accessoires tirés par cette entreprise de l'utilisation de conteneurs pour le transport international de biens ou de marchandises.",
+        "3. Si le siège de direction effective d'une entreprise de navigation maritime est situé à bord d'un navire, ce siège est considéré comme situé dans l'État où se trouve le port d'attache de ce navire ou, à défaut de port d'attache, dans l'État dont l'exploitant du navire est un résident.",
+        "4. Les dispositions du paragraphe 1 s'appliquent aussi aux bénéfices provenant de la participation à un groupe, une exploitation en commun ou un organisme international d'exploitation."
+      ],
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.9",
+      "titre": "Entreprises associées",
+      "texte": [
+        "Lorsque :",
+        "a) une entreprise d'un État participe directement ou indirectement à la direction, au contrôle ou au capital d'une entreprise de l'autre État, ou que",
+        "b) les mêmes personnes participent directement ou indirectement à la direction, au contrôle ou au capital d'une entreprise d'un État et d'une entreprise de l'autre État,",
+        "et que, dans l'un et l'autre cas, les deux entreprises sont, dans leurs relations commerciales ou financières, liées par des conditions convenues ou imposées, qui diffèrent de celles qui seraient convenues entre des entreprises indépendantes, les bénéfices qui, sans ces conditions, auraient été réalisés par l'une des entreprises mais n'ont pu l'être en fait à cause de ces conditions, peuvent être inclus dans les bénéfices de cette entreprise et imposés en conséquence."
+      ],
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.10",
+      "titre": "Dividendes",
+      "texte": [
+        "1. Un résident du Congo qui reçoit des dividendes payés par une société qui est un résident de France peut obtenir le remboursement du précompte afférent à ces dividendes acquittés, le cas échéant, par cette société.",
+        "2. Le montant brut du précompte remboursé est considéré comme un dividende pour l'application de l'ensemble des dispositions de la présente Convention.",
+        "3. Lorsqu'une société qui est un résident d'un État tire des bénéfices ou des revenus de l'autre État, cet autre État ne peut percevoir aucun impôt sur les dividendes payés par la société, sauf dans la mesure où ces dividendes sont payés à un résident de cet autre État ou dans la mesure où la participation génératrice des dividendes se rattache effectivement à un établissement stable ou à une base fixe située dans cet autre État, ni prélever aucun impôt, au titre de l'imposition des bénéfices non distribués, sur les bénéfices non distribués de la société, même si les dividendes payés ou les bénéfices non distribués consistent en tout ou en partie en bénéfices ou revenus provenant de cet autre État.",
+        "4. Nonobstant les dispositions du paragraphe 3, lorsqu'une société qui est un résident d'un État exerce dans l'autre État une activité industrielle ou commerciale par l'intermédiaire d'un établissement stable qui y est situé, les bénéfices de cet établissement stable peuvent, après avoir supporté l'impôt sur les sociétés, être assujettis conformément à la législation de cet autre État à un impôt dont le taux ne peut excéder 15 %."
+      ],
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.11",
+      "titre": "Intérêts",
+      "texte": [
+        "1. Les intérêts provenant d'un État et payés à un résident de l'autre État et qui en est le bénéficiaire effectif ne sont imposables que dans cet autre État.",
+        "2. Le terme « intérêts » employé dans le présent article désigne les revenus des créances de toute nature, assorties ou non de garanties hypothécaires ou d'une clause de participation aux bénéfices du débiteur, et notamment les revenus des fonds publics et des obligations d'emprunts, y compris les primes et lots attachés à ces titres. Les pénalisations pour paiement tardif ne sont pas considérées comme des intérêts au sens du présent article.",
+        "3. Les dispositions du paragraphe 1 ne s'appliquent pas lorsque le bénéficiaire effectif des intérêts, résident d'un État, exerce dans l'autre État une activité industrielle ou commerciale par l'intermédiaire d'un établissement stable qui y est situé, soit une profession indépendante au moyen d'une base fixe qui y est située et que la créance génératrice des intérêts s'y rattache effectivement. Dans ce cas, les dispositions de l'article 7 ou de l'article 14, suivant les cas, sont applicables.",
+        "4. Les intérêts sont considérés comme provenant d'un État lorsque le débiteur est cet État lui-même, une collectivité territoriale, une personne morale de droit public ou un résident de cet État. Toutefois, lorsque le débiteur des intérêts, qu'il soit ou non un résident d'un État, a dans un État un établissement stable, ou une base fixe, pour lequel la dette donnant lieu au paiement des intérêts a été contractée et qui supporte la charge de ces intérêts, ceux-ci sont considérés comme provenant de l'État où l'établissement stable, ou la base fixe, est situé.",
+        "5. Lorsque, en raison de relations spéciales existant entre le débiteur et le bénéficiaire effectif ou que l'un et l'autre entretiennent avec de tierces personnes, le montant des intérêts, compte tenu de la créance pour laquelle ils sont payés, excède celui dont seraient convenus le débiteur et le bénéficiaire effectif en l'absence de pareilles relations, les dispositions du présent article ne s'appliquent qu'à ce dernier montant. Dans ce cas, la partie excédentaire des paiements reste imposable selon la législation de chaque État et compte tenu des autres dispositions de la présente Convention."
+      ],
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.12",
+      "titre": "Redevances",
+      "texte": [
+        "1. Les redevances provenant d'un État et payées à un résident de l'autre État sont imposables dans cet autre État.",
+        "2. Toutefois, ces redevances sont aussi imposables dans l'État d'où elles proviennent et selon la législation de cet État. Mais si la personne qui reçoit les redevances en est le bénéficiaire effectif, l'impôt ainsi établi ne peut excéder 15 % du montant brut des redevances.",
+        "3. Le terme « redevances » employé dans le présent article désigne les rémunérations de toute nature payées pour l'usage ou la concession de l'usage d'un droit d'auteur sur une œuvre littéraire, artistique ou scientifique, de films cinématographiques et de tous autres enregistrements sonores ou des images, d'un brevet, d'une marque de fabrique ou de commerce, d'un dessin ou d'un modèle, d'un plan, d'une formule ou d'un procédé secret.",
+        "4. Les dispositions des paragraphes 1 et 2 ne s'appliquent pas lorsque le bénéficiaire effectif des redevances, résident d'un État, exerce dans l'autre État d'où proviennent les redevances, soit une activité industrielle ou commerciale par l'intermédiaire d'un établissement stable qui y est situé, soit une profession indépendante au moyen d'une base fixe qui y est située, et que le droit ou le bien générateur des redevances s'y rattache effectivement. Dans ce cas, les dispositions de l'article 7 ou de l'article 14, suivant les cas, sont applicables.",
+        "5. Les redevances sont considérées comme provenant d'un État lorsque le débiteur est cet État lui-même, une collectivité territoriale, une personne morale de droit public ou un résident de cet État. Toutefois, lorsque le débiteur des redevances, qu'il soit ou non un résident d'un État, a dans un État un établissement stable, ou une base fixe, auquel se rattache effectivement le droit ou le bien générateur des redevances et qui supporte la charge de ces redevances, lesdites redevances sont réputées provenir de l'État où l'établissement stable, ou la base fixe, est situé.",
+        "6. Lorsque, en raison de relations spéciales existant entre le débiteur et le bénéficiaire effectif ou que l'un et l'autre entretiennent avec de tierces personnes, le montant des redevances, compte tenu de la prestation pour laquelle elles sont payées, excède celui dont seraient convenus le débiteur et le bénéficiaire effectif en l'absence de pareilles relations, les dispositions du présent article ne s'appliquent qu'à ce dernier montant. Dans ce cas, la partie excédentaire des paiements reste imposable selon la législation de chaque État et compte tenu des autres dispositions de la présente Convention."
+      ],
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.13",
+      "titre": "Gains en capital",
+      "texte": [
+        "1. Les gains qu'un résident d'un État tire de l'aliénation de biens immobiliers visés à l'article 6, paragraphe 2, sont imposables dans l'État où les biens immobiliers sont situés.",
+        "2. Les gains provenant de l'aliénation d'actions, parts ou autres droits dans une société ou une autre personne morale possédant des biens immobiliers situés dans un État y sont imposables lorsqu'ils sont soumis, selon la législation de cet État, au même régime fiscal que les gains provenant de l'aliénation de biens immobiliers. Pour l'application de cette disposition, ne sont pas pris en considération les immeubles affectés par cette société ou cette autre personne morale à sa propre exploitation industrielle, commerciale, agricole, ou à l'exercice d'une profession non commerciale.",
+        "3. Les gains provenant de l'aliénation d'actions ou de parts faisant partie d'une participation substantielle dans le capital d'une société qui est un résident d'un État sont imposables dans cet État. On considère qu'il existe une participation substantielle lorsque le cédant, seul ou avec des personnes apparentées, possède directement ou indirectement au moins 25 % du capital de la société.",
+        "4. Les gains provenant de l'aliénation de biens mobiliers qui font partie de l'actif d'un établissement stable qu'une entreprise d'un État a dans l'autre État, ou de biens mobiliers qui appartiennent à une base fixe dont un résident d'un État dispose dans l'autre État pour l'exercice d'une profession indépendante, y compris les gains provenant de l'aliénation de cet établissement stable (seul ou avec l'ensemble de l'entreprise) ou de cette base fixe, sont imposables dans cet autre État.",
+        "5. Les gains provenant de l'aliénation de navires ou aéronefs exploités en trafic international ou de biens mobiliers affectés à l'exploitation de ces navires ou aéronefs ne sont imposables que dans l'État où le siège de direction effective de l'entreprise est situé.",
+        "6. Les gains provenant de l'aliénation de tous biens autres que ceux visés aux paragraphes 1 à 5 ne sont imposables que dans l'État dont le cédant est un résident."
+      ],
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.14",
+      "titre": "Professions indépendantes",
+      "texte": [
+        "1. Les revenus qu'un résident d'un État tire d'une profession libérale ou d'autres activités de caractère indépendant ne sont imposables que dans cet État, à moins que ce résident ne dispose de façon habituelle dans l'autre État d'une base fixe pour l'exercice de ces activités. S'il dispose d'une telle base fixe, les revenus sont imposables dans l'autre État mais uniquement dans la mesure où ils sont imputables à cette base fixe.",
+        "2. L'expression « profession libérale » comprend notamment les activités indépendantes d'ordre scientifique, littéraire, artistique, éducatif ou pédagogique, ainsi que les activités indépendantes des médecins, avocats, ingénieurs, architectes, dentistes et comptables."
+      ],
+      "mots_cles": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art.15",
+      "titre": "Revenus d'emploi",
+      "texte": [
+        "1. Sous réserve des dispositions des articles 16, 18, 19 et 20, les salaires, traitements et autres rémunérations similaires qu'un résident d'un État reçoit au titre d'un emploi salarié ne sont imposables que dans cet État à moins que l'emploi ne soit exercé dans l'autre État. Si l'emploi y est exercé, les rémunérations reçues à ce titre sont imposables dans cet autre État.",
+        "2. Nonobstant les dispositions du paragraphe 1, les rémunérations qu'un résident d'un État reçoit au titre d'un emploi salarié exercé dans l'autre État ne sont imposables que dans le premier État si :",
+        "a) le bénéficiaire séjourne dans l'autre État pendant une période ou des périodes, y compris la durée des interruptions de travail, n'excédant pas au total 183 jours au cours de l'année fiscale considérée ;",
+        "b) les rémunérations sont payées par un employeur ou pour le compte d'un employeur qui n'est pas un résident de l'autre État ; et",
+        "c) la charge des rémunérations n'est pas supportée par un établissement stable ou une base fixe que l'employeur a dans l'autre État."
+      ],
+      "mots_cles": [],
+      "statut": "en vigueur"
     }
-  }
+  ]
 }

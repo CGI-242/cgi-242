@@ -1,7 +1,6 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
 import path from 'path';
 import cors from 'cors';
-import helmet from 'helmet';
 import morgan from 'morgan';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
@@ -14,6 +13,8 @@ import { errorHandler, notFoundHandler } from './middleware/error.middleware.js'
 import { globalRateLimiter } from './middleware/rateLimit.middleware.js';
 import { metricsMiddleware } from './middleware/metrics.middleware.js';
 import { sanitizeInputs } from './middleware/validation.middleware.js';
+import { metricsIPWhitelist } from './middleware/ipWhitelist.middleware.js';
+import { secureCSPMiddleware } from './middleware/csp.middleware.js';
 import { createLogger, httpLogger } from './utils/logger.js';
 import { initSentry } from './services/sentry.service.js';
 
@@ -25,8 +26,10 @@ export function createApp(): Express {
   // Métriques Prometheus (avant tout autre middleware)
   app.use(metricsMiddleware);
 
-  // Endpoint /metrics pour Prometheus (sans auth)
-  app.use('/metrics', metricsRoutes);
+  // Endpoint /metrics pour Prometheus (protégé par IP whitelist)
+  // Autorise: localhost, réseaux privés (10.x, 172.16-31.x, 192.168.x)
+  // Configurable via METRICS_WHITELIST_IPS="ip1,ip2,ip3"
+  app.use('/metrics', metricsIPWhitelist, metricsRoutes);
 
   // Endpoint /health pour les health checks (sans auth)
   app.use('/health', healthRoutes);
@@ -45,42 +48,10 @@ export function createApp(): Express {
   // Initialiser Sentry pour le tracking des erreurs
   initSentry(app);
 
-  // Sécurité - Helmet avec CSP (Content Security Policy)
-  app.use(
-    helmet({
-      contentSecurityPolicy: {
-        directives: {
-          defaultSrc: ["'self'"],
-          scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://cdn.tailwindcss.com'],
-          styleSrc: ["'self'", "'unsafe-inline'"],
-          imgSrc: ["'self'", 'data:', 'https:'],
-          fontSrc: ["'self'", 'https://fonts.gstatic.com'],
-          connectSrc: [
-            "'self'",
-            config.frontendUrl,
-            'https://api.anthropic.com',
-            'https://api.openai.com',
-          ],
-          frameSrc: ["'none'"],
-          objectSrc: ["'none'"],
-          baseUri: ["'self'"],
-          formAction: ["'self'"],
-          upgradeInsecureRequests: config.isProduction ? [] : null,
-        },
-      },
-      crossOriginEmbedderPolicy: false, // Désactivé pour compatibilité API externes
-      crossOriginResourcePolicy: { policy: 'cross-origin' },
-      referrerPolicy: { policy: 'strict-origin-when-cross-origin' },
-      hsts: {
-        maxAge: 31536000, // 1 an
-        includeSubDomains: true,
-        preload: true,
-      },
-      noSniff: true,
-      xssFilter: true,
-      hidePoweredBy: true,
-    })
-  );
+  // Sécurité - Helmet avec CSP stricte (sans 'unsafe-inline' ni 'unsafe-eval')
+  // Utilise des nonces cryptographiques pour les scripts inline autorisés
+  // Voir middleware/csp.middleware.ts pour la configuration détaillée
+  app.use(secureCSPMiddleware());
   app.use(
     cors({
       origin: config.frontendUrl,

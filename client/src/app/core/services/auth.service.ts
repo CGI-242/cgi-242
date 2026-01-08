@@ -1,7 +1,7 @@
 import { Injectable, inject, signal, computed } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService, ApiResponse } from './api.service';
-import { Observable, tap, catchError, of } from 'rxjs';
+import { Observable, tap, catchError, of, firstValueFrom } from 'rxjs';
 
 export interface User {
   id: string;
@@ -14,8 +14,7 @@ export interface User {
 
 export interface AuthResponse {
   user: User;
-  accessToken: string;
-  refreshToken: string;
+  // Tokens gérés par cookies httpOnly (non accessibles en JS)
 }
 
 export interface LoginCredentials {
@@ -31,8 +30,8 @@ export interface RegisterData {
   profession?: string;
 }
 
-const TOKEN_KEY = 'cgi_access_token';
-const REFRESH_KEY = 'cgi_refresh_token';
+// Seules les données utilisateur sont stockées localement (pour l'état UI)
+// Les tokens JWT sont gérés exclusivement via cookies httpOnly (protection XSS)
 const USER_KEY = 'cgi_user';
 
 @Injectable({ providedIn: 'root' })
@@ -70,9 +69,36 @@ export class AuthService {
     );
   }
 
-  logout(): void {
-    localStorage.removeItem(TOKEN_KEY);
-    localStorage.removeItem(REFRESH_KEY);
+  /**
+   * Déconnexion sécurisée
+   * Appelle le backend pour invalider les tokens (blacklist) et supprimer les cookies
+   */
+  async logout(): Promise<void> {
+    try {
+      // Appeler le backend pour blacklister les tokens et supprimer les cookies httpOnly
+      await firstValueFrom(this.api.post<null>('/auth/logout', {}));
+    } catch {
+      // En cas d'erreur réseau, on continue la déconnexion locale
+      console.warn('Logout API call failed, proceeding with local cleanup');
+    }
+
+    // Nettoyer l'état local
+    localStorage.removeItem(USER_KEY);
+    this.userSignal.set(null);
+    this.router.navigate(['/auth/login']);
+  }
+
+  /**
+   * Déconnexion de toutes les sessions
+   * Invalide tous les tokens de l'utilisateur sur tous les appareils
+   */
+  async logoutAll(): Promise<void> {
+    try {
+      await firstValueFrom(this.api.post<null>('/auth/logout-all', {}));
+    } catch {
+      console.warn('Logout all API call failed');
+    }
+
     localStorage.removeItem(USER_KEY);
     this.userSignal.set(null);
     this.router.navigate(['/auth/login']);
@@ -90,10 +116,10 @@ export class AuthService {
     return this.api.get<null>('/auth/verify-email', { token });
   }
 
-  getToken(): string | null {
-    return localStorage.getItem(TOKEN_KEY);
-  }
-
+  /**
+   * Vérifie si l'utilisateur est authentifié en appelant le backend
+   * Les cookies httpOnly sont envoyés automatiquement
+   */
   refreshCurrentUser(): Observable<ApiResponse<{ user: User }>> {
     return this.api.get<{ user: User }>('/auth/me').pipe(
       tap((res) => {
@@ -103,15 +129,19 @@ export class AuthService {
         }
       }),
       catchError(() => {
-        this.logout();
+        // Session invalide, nettoyer l'état local sans appeler logout API
+        localStorage.removeItem(USER_KEY);
+        this.userSignal.set(null);
         return of({ success: false } as ApiResponse<{ user: User }>);
       })
     );
   }
 
+  /**
+   * Stocke uniquement les données utilisateur (pas les tokens)
+   * Les tokens sont gérés par les cookies httpOnly côté serveur
+   */
   private setSession(auth: AuthResponse): void {
-    localStorage.setItem(TOKEN_KEY, auth.accessToken);
-    localStorage.setItem(REFRESH_KEY, auth.refreshToken);
     localStorage.setItem(USER_KEY, JSON.stringify(auth.user));
     this.userSignal.set(auth.user);
   }

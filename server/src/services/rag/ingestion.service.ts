@@ -235,11 +235,13 @@ export async function ingestArticles(articles: ArticleJSON[]): Promise<Ingestion
 
         try {
           const version = article.version || '2025';
+          const tome = article.tome || '1';
           const existing = await prisma.article.findUnique({
             where: {
-              numero_version: {
+              numero_version_tome: {
                 numero: article.numero,
-                version: version
+                version: version,
+                tome: tome
               }
             },
           });
@@ -249,7 +251,7 @@ export async function ingestArticles(articles: ArticleJSON[]): Promise<Ingestion
             titre: article.titre,
             chapeau: article.chapeau,
             contenu: article.contenu,
-            tome: article.tome,
+            tome: tome,
             partie: article.partie,
             livre: article.livre,
             chapitre: article.chapitre,
@@ -262,9 +264,10 @@ export async function ingestArticles(articles: ArticleJSON[]): Promise<Ingestion
           if (existing) {
             dbArticle = await prisma.article.update({
               where: {
-                numero_version: {
+                numero_version_tome: {
                   numero: article.numero,
-                  version: version
+                  version: version,
+                  tome: tome
                 }
               },
               data: articleData,

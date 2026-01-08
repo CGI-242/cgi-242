@@ -49,10 +49,13 @@ router.post(
 
 router.get('/verify-email', authController.verifyEmail);
 
-// Route de déconnexion (nouvelle)
+// Route de déconnexion
 router.post('/logout', authMiddleware, authController.logout);
 
-// Refresh token (nouvelle)
+// Route de déconnexion de toutes les sessions
+router.post('/logout-all', authMiddleware, csrfProtection, authController.logoutAll);
+
+// Refresh token
 router.post('/refresh-token', authController.refreshToken);
 
 // Routes authentifiées avec protection CSRF

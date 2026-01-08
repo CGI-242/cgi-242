@@ -1,0 +1,317 @@
+{
+  "metadata_version": "2.2",
+  "last_updated": "2026-01-04",
+  "description": "Corrections RAG pour les tests échoués sur IRF et IRCM - enrichissement des métadonnées",
+
+  "articles_enrichis": {
+    "Art. 109": {
+      "titre": "Moins-values mobilières - Imputation",
+      "impot": "IRCM",
+      "section": 5,
+      "themes_principaux": [
+        "moins-values",
+        "moins-values mobilières",
+        "imputation moins-values",
+        "perte cession titres",
+        "déficit mobilier",
+        "compensation plus-values"
+      ],
+      "mots_cles_obligatoires": [
+        "moins-value",
+        "moins-values",
+        "perte",
+        "imputation",
+        "3 ans",
+        "cession titres perte"
+      ],
+      "synonymes": [
+        "perte sur cession",
+        "déficit de cession",
+        "moins-value de cession",
+        "perte mobilière"
+      ],
+      "regles_cles": [
+        "Moins-values imputables sur plus-values de même nature",
+        "Report sur 3 années suivantes",
+        "Non imputable sur autres revenus"
+      ],
+      "questions_types": [
+        "Comment imputer une moins-value mobilière ?",
+        "Durée de report des moins-values ?",
+        "Moins-value sur cession de titres"
+      ],
+      "renvois": ["Art. 111"],
+      "boost_score": 2.0
+    },
+
+    "Art. 110A": {
+      "titre": "Plus-values mobilières - Déclaration",
+      "impot": "IRCM",
+      "section": 5,
+      "themes_principaux": [
+        "plus-values mobilières",
+        "déclaration plus-values",
+        "cession titres déclaration",
+        "délai déclaration",
+        "60 jours"
+      ],
+      "mots_cles_obligatoires": [
+        "déclaration",
+        "plus-value",
+        "60 jours",
+        "délai",
+        "cession titres"
+      ],
+      "synonymes": [
+        "déclaration cession",
+        "formalité plus-value",
+        "délai déclaratif",
+        "obligation déclarative"
+      ],
+      "regles_cles": [
+        "Déclaration dans les 60 jours suivant la cession",
+        "Formulaire spécifique",
+        "Paiement spontané de l'IRCM"
+      ],
+      "questions_types": [
+        "Délai pour déclarer une plus-value mobilière ?",
+        "Comment déclarer une cession de titres ?",
+        "Quand déclarer les plus-values sur actions ?"
+      ],
+      "renvois": ["Art. 105E", "Art. 110"],
+      "boost_score": 2.0
+    },
+
+    "Art. 111": {
+      "titre": "IRF - Champ d'application",
+      "impot": "IRF",
+      "section": 6,
+      "themes_principaux": [
+        "revenus fonciers",
+        "loyers",
+        "propriétés bâties",
+        "propriétés non bâties",
+        "revenus locatifs",
+        "champ application IRF"
+      ],
+      "mots_cles_obligatoires": [
+        "IRF",
+        "revenus fonciers",
+        "loyers",
+        "immeubles",
+        "location"
+      ],
+      "synonymes": [
+        "impôt foncier",
+        "taxe sur loyers",
+        "imposition locative"
+      ],
+      "regles_cles": [
+        "Revenus de location d'immeubles",
+        "Propriétés bâties et non bâties",
+        "Résidents et non-résidents"
+      ],
+      "questions_types": [
+        "Qu'est-ce que l'IRF ?",
+        "Quels revenus sont soumis à l'IRF ?",
+        "Les loyers sont-ils imposables ?"
+      ],
+      "boost_score": 1.5
+    },
+
+    "Art. 111B": {
+      "titre": "IRF - Crédit-bail immobilier",
+      "impot": "IRF",
+      "section": 6,
+      "themes_principaux": [
+        "crédit-bail",
+        "crédit-bail immobilier",
+        "leasing immobilier",
+        "location-vente",
+        "levée option"
+      ],
+      "mots_cles_obligatoires": [
+        "crédit-bail",
+        "leasing",
+        "location-vente",
+        "option achat",
+        "levée option"
+      ],
+      "synonymes": [
+        "leasing",
+        "location avec option d'achat",
+        "LOA immobilier",
+        "location-financement"
+      ],
+      "regles_cles": [
+        "Loyers de crédit-bail = revenus fonciers",
+        "Levée d'option = plus-value",
+        "Traitement fiscal spécifique"
+      ],
+      "questions_types": [
+        "Fiscalité du crédit-bail immobilier ?",
+        "Comment est imposé le leasing immobilier ?",
+        "IRF et crédit-bail"
+      ],
+      "renvois": ["Art. 111"],
+      "boost_score": 2.5
+    },
+
+    "Art. 111C": {
+      "titre": "IRF - Exonérations",
+      "impot": "IRF",
+      "section": 6,
+      "themes_principaux": [
+        "exonération IRF",
+        "exonération foncière",
+        "résidence principale",
+        "exonération famille",
+        "dispense IRF",
+        "5 ans"
+      ],
+      "mots_cles_obligatoires": [
+        "exonération",
+        "exonéré",
+        "dispense",
+        "résidence principale",
+        "famille"
+      ],
+      "synonymes": [
+        "dispense d'IRF",
+        "non imposable",
+        "franchise",
+        "exemption foncière"
+      ],
+      "regles_cles": [
+        "Résidence principale détenue 5 ans = exonérée",
+        "Location à famille = conditions",
+        "Première cession résidence"
+      ],
+      "questions_types": [
+        "Quelles exonérations pour l'IRF ?",
+        "Ma résidence principale est-elle exonérée ?",
+        "Exonération IRF famille"
+      ],
+      "renvois": ["Art. 111"],
+      "boost_score": 2.5
+    },
+
+    "Art. 113": {
+      "titre": "IRF - Taux d'imposition",
+      "impot": "IRF",
+      "section": 6,
+      "themes_principaux": [
+        "taux IRF",
+        "taux revenus fonciers",
+        "taux loyers",
+        "taux plus-values immobilières",
+        "9%",
+        "15%"
+      ],
+      "mots_cles_obligatoires": [
+        "taux",
+        "9%",
+        "15%",
+        "pourcentage",
+        "IRF"
+      ],
+      "synonymes": [
+        "tarif IRF",
+        "barème foncier",
+        "imposition loyers"
+      ],
+      "regles_cles": [
+        "Loyers : 9%",
+        "Plus-values immobilières : 15%",
+        "Base = montant brut"
+      ],
+      "questions_types": [
+        "Quel est le taux de l'IRF ?",
+        "Taux d'imposition des loyers ?",
+        "Taux des plus-values immobilières ?"
+      ],
+      "renvois": ["Art. 111", "Art. 112"],
+      "boost_score": 2.0
+    },
+
+    "Art. 113A": {
+      "titre": "IRF - Retenue à la source",
+      "impot": "IRF",
+      "section": 6,
+      "themes_principaux": [
+        "retenue source IRF",
+        "retenue loyers",
+        "retenue libératoire",
+        "prélèvement locataire",
+        "date retenue",
+        "nouveau bail"
+      ],
+      "mots_cles_obligatoires": [
+        "retenue",
+        "source",
+        "libératoire",
+        "locataire",
+        "15 mars",
+        "3 mois"
+      ],
+      "synonymes": [
+        "prélèvement à la source",
+        "RAS loyers",
+        "withholding tax foncier",
+        "retenue locative"
+      ],
+      "regles_cles": [
+        "Retenue par le locataire",
+        "Caractère libératoire",
+        "Déclaration annuelle au 15 mars",
+        "Nouveau bail : 3 mois après entrée en jouissance"
+      ],
+      "questions_types": [
+        "Qui effectue la retenue IRF ?",
+        "La retenue IRF est-elle libératoire ?",
+        "Date de la retenue sur loyers ?",
+        "Retenue IRF nouveau bail ?"
+      ],
+      "renvois": ["Art. 111", "Art. 112", "Art. 113"],
+      "boost_score": 2.5
+    }
+  },
+
+  "keyword_routing": {
+    "moins-value": "Art. 109",
+    "moins-values": "Art. 109",
+    "moins values": "Art. 109",
+    "perte cession": "Art. 109",
+    "imputation perte": "Art. 109",
+
+    "déclaration plus-value": "Art. 110A",
+    "60 jours cession": "Art. 110A",
+    "délai plus-value": "Art. 110A",
+
+    "crédit-bail": "Art. 111B",
+    "crédit bail": "Art. 111B",
+    "leasing immobilier": "Art. 111B",
+    "location-vente": "Art. 111B",
+
+    "exonération IRF": "Art. 111C",
+    "exonération famille": "Art. 111C",
+    "exonération résidence": "Art. 111C",
+    "dispense IRF": "Art. 111C",
+    "IRF famille": "Art. 111C",
+
+    "taux IRF": "Art. 113",
+    "taux loyers": "Art. 113",
+    "taux plus-values immobilières": "Art. 113",
+    "9% loyers": "Art. 113",
+    "15% plus-values": "Art. 113",
+    "taux foncier": "Art. 113",
+
+    "retenue IRF": "Art. 113A",
+    "retenue loyers": "Art. 113A",
+    "retenue libératoire IRF": "Art. 113A",
+    "15 mars IRF": "Art. 113A",
+    "nouveau bail retenue": "Art. 113A",
+    "date retenue IRF": "Art. 113A",
+    "retenue source foncier": "Art. 113A"
+  }
+}

@@ -43,6 +43,7 @@ export interface Partie {
   livres?: Livre[];
   titres?: Titre[];
   simple?: boolean;
+  articles?: string; // Plage d'articles pour parties simples ex: "521-526"
 }
 
 export interface Annexe {
