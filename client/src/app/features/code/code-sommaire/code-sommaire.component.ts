@@ -282,63 +282,18 @@ export interface SommaireSelection {
               <div class="ml-6 border-l border-secondary-100">
                 @for (section of chapitre.sections; track section.section) {
                   <div>
-                    @if (section.sous_sections && section.sous_sections.length > 0) {
-                      <div class="flex items-center">
-                        <button
-                          (click)="toggle('section-' + chapitre.chapitre + '-' + section.section)"
-                          class="p-2 hover:bg-secondary-50">
-                          <svg class="w-3 h-3 text-secondary-400 transition-transform"
-                            [class.rotate-90]="isOpen('section-' + chapitre.chapitre + '-' + section.section)"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                          </svg>
-                        </button>
-                        <button
-                          (click)="onSectionClick(chapitre, section, tomeNum)"
-                          class="flex-1 text-left py-2 pr-2 hover:bg-primary-50 text-sm"
-                          [class.opacity-50]="section.statut === 'abrogé'">
-                          <span class="text-secondary-500">Sec. {{ section.section }}: {{ capitalizeFirst(section.titre) }}</span>
-                          @if (section.articles) {
-                            <span class="text-secondary-400 text-xs ml-1">(Art. {{ section.articles }})</span>
-                          }
-                          @if (section.statut === 'abrogé') {
-                            <span class="text-red-500 ml-1">(abrogé)</span>
-                          }
-                        </button>
-                      </div>
-                      @if (isOpen('section-' + chapitre.chapitre + '-' + section.section)) {
-                        <div class="ml-4 border-l border-secondary-100">
-                          @for (sousSection of section.sous_sections; track sousSection.sous_section) {
-                            <button
-                              (click)="onSousSectionClick(chapitre, section, sousSection, tomeNum)"
-                              class="w-full text-left p-1.5 pl-3 hover:bg-primary-50 text-sm text-secondary-400"
-                              [class.opacity-50]="sousSection.statut === 'abrogé'">
-                              <span class="font-medium">§{{ sousSection.sous_section }}</span>
-                              <span class="ml-1">{{ capitalizeFirst(sousSection.titre) }}</span>
-                              @if (sousSection.articles) {
-                                <span class="text-secondary-300 text-xs ml-1">(Art. {{ sousSection.articles }})</span>
-                              }
-                              @if (sousSection.statut === 'abrogé') {
-                                <span class="text-red-500 ml-1">(abrogé)</span>
-                              }
-                            </button>
-                          }
-                        </div>
+                    <button
+                      (click)="onSectionClick(chapitre, section, tomeNum)"
+                      class="w-full text-left p-2 pl-3 hover:bg-primary-50 text-sm text-secondary-500"
+                      [class.opacity-50]="section.statut === 'abrogé'">
+                      Sec. {{ section.section }}: {{ capitalizeFirst(section.titre) }}
+                      @if (section.articles) {
+                        <span class="text-secondary-400 text-xs ml-1">(Art. {{ section.articles }})</span>
                       }
-                    } @else {
-                      <button
-                        (click)="onSectionClick(chapitre, section, tomeNum)"
-                        class="w-full text-left p-2 pl-3 hover:bg-primary-50 text-sm text-secondary-500"
-                        [class.opacity-50]="section.statut === 'abrogé'">
-                        Sec. {{ section.section }}: {{ capitalizeFirst(section.titre) }}
-                        @if (section.articles) {
-                          <span class="text-secondary-400 text-xs ml-1">(Art. {{ section.articles }})</span>
-                        }
-                        @if (section.statut === 'abrogé') {
-                          <span class="text-red-500">(abrogé)</span>
-                        }
-                      </button>
-                    }
+                      @if (section.statut === 'abrogé') {
+                        <span class="text-red-500">(abrogé)</span>
+                      }
+                    </button>
                   </div>
                 }
               </div>
