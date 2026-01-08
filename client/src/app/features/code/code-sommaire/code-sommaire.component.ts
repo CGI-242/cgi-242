@@ -282,23 +282,29 @@ export interface SommaireSelection {
                 @for (section of chapitre.sections; track section.section) {
                   <div>
                     @if (section.sous_sections && section.sous_sections.length > 0) {
-                      <button
-                        (click)="toggle('section-' + chapitre.chapitre + '-' + section.section)"
-                        class="w-full text-left p-2 pl-3 hover:bg-secondary-50 text-sm flex items-center gap-1"
-                        [class.opacity-50]="section.statut === 'abrogé'">
-                        <svg class="w-3 h-3 text-secondary-400 transition-transform flex-shrink-0"
-                          [class.rotate-90]="isOpen('section-' + chapitre.chapitre + '-' + section.section)"
-                          fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                        <span class="text-secondary-500">Sec. {{ section.section }}: {{ capitalizeFirst(section.titre) }}</span>
-                        @if (section.articles) {
-                          <span class="text-secondary-400 text-xs ml-1">(Art. {{ section.articles }})</span>
-                        }
-                        @if (section.statut === 'abrogé') {
-                          <span class="text-red-500 ml-1">(abrogé)</span>
-                        }
-                      </button>
+                      <div class="flex items-center">
+                        <button
+                          (click)="toggle('section-' + chapitre.chapitre + '-' + section.section)"
+                          class="p-2 hover:bg-secondary-50">
+                          <svg class="w-3 h-3 text-secondary-400 transition-transform"
+                            [class.rotate-90]="isOpen('section-' + chapitre.chapitre + '-' + section.section)"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                          </svg>
+                        </button>
+                        <button
+                          (click)="onSectionClick(chapitre, section, tomeNum)"
+                          class="flex-1 text-left py-2 pr-2 hover:bg-primary-50 text-sm"
+                          [class.opacity-50]="section.statut === 'abrogé'">
+                          <span class="text-secondary-500">Sec. {{ section.section }}: {{ capitalizeFirst(section.titre) }}</span>
+                          @if (section.articles) {
+                            <span class="text-secondary-400 text-xs ml-1">(Art. {{ section.articles }})</span>
+                          }
+                          @if (section.statut === 'abrogé') {
+                            <span class="text-red-500 ml-1">(abrogé)</span>
+                          }
+                        </button>
+                      </div>
                       @if (isOpen('section-' + chapitre.chapitre + '-' + section.section)) {
                         <div class="ml-4 border-l border-secondary-100">
                           @for (sousSection of section.sous_sections; track sousSection.sous_section) {
