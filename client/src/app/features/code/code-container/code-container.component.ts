@@ -104,8 +104,8 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                         }
                         <!-- Sous-header de paragraphe (1) Définition, 2) Exemptions...) -->
                         @if (isFirstOfParagraph(article, i)) {
-                          <div class="px-3 py-1.5 bg-primary-50/50 border-l-2 border-primary-300 ml-2">
-                            <span class="text-xs font-medium text-primary-600">{{ getParagraphHeader(article) }}</span>
+                          <div class="px-3 py-2 bg-primary-50 border-l-3 border-primary-400 ml-2">
+                            <span class="text-sm font-semibold text-primary-700">{{ getParagraphHeader(article) }}</span>
                           </div>
                         }
                         <button
@@ -226,8 +226,8 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                       }
                       <!-- Sous-header de paragraphe (1) Définition, 2) Exemptions...) -->
                       @if (isFirstOfParagraph(article, i)) {
-                        <div class="py-2 px-4 bg-primary-50/50 border-l-2 border-primary-300 rounded-r-lg ml-4">
-                          <h3 class="text-base font-medium text-primary-600">{{ getParagraphHeader(article) }}</h3>
+                        <div class="py-3 px-5 bg-primary-50 border-l-4 border-primary-400 rounded-r-lg ml-4">
+                          <h3 class="text-lg font-semibold text-primary-700">{{ getParagraphHeader(article) }}</h3>
                         </div>
                       }
                       <!-- Article -->
