@@ -384,13 +384,16 @@ export class CodeContainerComponent implements OnInit {
     const sousSections = this.sousSections();
     if (!sousSections.length) return null;
 
-    const articleNum = parseInt(articleNumero.match(/^(\d+)/)?.[1] || '0', 10);
+    // Normaliser le numéro d'article (ex: "12 bis" -> "12bis", "12" -> "12")
+    const normalizedNumero = articleNumero.toLowerCase().replace(/\s+/g, '');
 
     for (const ss of sousSections) {
+      // Extraire le premier article de la plage (ex: "12-65 bis" -> "12")
       const ssMatch = ss.articles.match(/^(\d+)/);
       if (ssMatch) {
-        const ssStart = parseInt(ssMatch[1], 10);
-        if (articleNum === ssStart) {
+        const ssStart = ssMatch[1]; // Juste le numéro sans suffixe
+        // Vérifier que c'est exactement le premier article (pas "12 bis" quand on veut "12")
+        if (normalizedNumero === ssStart) {
           return ss.titre;
         }
       }
