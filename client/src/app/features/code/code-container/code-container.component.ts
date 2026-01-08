@@ -484,16 +484,15 @@ export class CodeContainerComponent implements OnInit {
     return null;
   }
 
-  // Nettoie le titre pour l'affichage (retire les préfixes "I. Xxx :" et "3) Xxx :")
+  // Nettoie le titre pour l'affichage (retire les préfixes "I. Xxx :" et "1) Xxx")
   getCleanTitle(titre: string | undefined): string {
     if (!titre) return '';
     // Extraire la dernière partie après le dernier ":"
     const parts = titre.split(':');
-    if (parts.length > 1) {
-      return parts[parts.length - 1].trim();
-    }
-    // Format "I. Personnes imposables" (sans ":") -> garder tel quel
-    return titre;
+    let result = parts.length > 1 ? parts[parts.length - 1].trim() : titre;
+    // Retirer le préfixe numéroté "1) ", "2) ", "3) "...
+    result = result.replace(/^\d+\)\s*/, '');
+    return result;
   }
 
   // Retourne le sous-header de paragraphe (3) Détermination...) extrait du titre
