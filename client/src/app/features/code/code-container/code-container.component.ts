@@ -93,7 +93,7 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                         <!-- Séparateur sous-section si c'est le premier article de la sous-section -->
                         @if (getSousSectionHeader(article.numero); as ssHeader) {
                           <div class="px-3 py-2 bg-primary-100 border-l-4 border-primary-500">
-                            <span class="text-sm font-semibold text-primary-800">§ {{ ssHeader }}</span>
+                            <span class="text-sm font-semibold text-primary-800">{{ ssHeader }}</span>
                           </div>
                         }
                         <!-- Sous-header de paragraphe (1) Définition, 2) Exemptions...) -->
@@ -209,7 +209,7 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                       <!-- Séparateur sous-section -->
                       @if (getSousSectionHeader(article.numero); as ssHeader) {
                         <div class="py-4 px-6 bg-primary-100 border-l-4 border-primary-500 rounded-r-lg">
-                          <h2 class="text-lg font-bold text-primary-800">§ {{ ssHeader }}</h2>
+                          <h2 class="text-lg font-bold text-primary-800">{{ ssHeader }}</h2>
                         </div>
                       }
                       <!-- Sous-header de paragraphe (1) Définition, 2) Exemptions...) -->
