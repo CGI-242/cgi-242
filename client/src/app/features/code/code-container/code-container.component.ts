@@ -484,24 +484,27 @@ export class CodeContainerComponent implements OnInit {
     return null;
   }
 
-  // Nettoie le titre pour l'affichage (retire le préfixe "I. Xxx :" ou "II. Xxx :")
+  // Nettoie le titre pour l'affichage (retire les préfixes "I. Xxx :" et "3) Xxx :")
   getCleanTitle(titre: string | undefined): string {
     if (!titre) return '';
-    // Format "II. Lieu d'imposition : Résidence unique" -> "Résidence unique"
-    const match = titre.match(/^(?:I{1,3}|IV|V|VI)\.\s*[^:]+:\s*(.+)$/);
-    if (match) return match[1];
+    // Extraire la dernière partie après le dernier ":"
+    const parts = titre.split(':');
+    if (parts.length > 1) {
+      return parts[parts.length - 1].trim();
+    }
     // Format "I. Personnes imposables" (sans ":") -> garder tel quel
     return titre;
   }
 
-  // Retourne le sous-header de paragraphe (1) Définition, 2) Exemptions...) extrait du titre
+  // Retourne le sous-header de paragraphe (3) Détermination...) extrait du titre
   getParagraphHeader(article: Article): string | null {
     if (!article.titre) return null;
 
-    // Format attendu: "I. Revenus fonciers : 1) Définition" -> extraire "1) Définition"
-    const match = article.titre.match(/:\s*(\d+\)\s*.+)$/);
+    // Format: "I. Revenus fonciers : 3) Détermination du revenu imposable : Revenu net"
+    // -> extraire "3) Détermination du revenu imposable"
+    const match = article.titre.match(/:\s*(\d+\)\s*[^:]+)/);
     if (match) {
-      return match[1];
+      return match[1].trim();
     }
     return null;
   }
