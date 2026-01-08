@@ -81,7 +81,7 @@
     },
     {
       "article": "Art. 3",
-      "titre": "Personnes affranchies de l'impôt",
+      "titre": "I. Personnes imposables",
       "texte": [
         "Sont affranchis de l'impôt :",
         "1° les personnes physiques dont le revenu net imposable n'excède pas le minimum fixé à l'article 95 du présent Code ;",
@@ -97,7 +97,7 @@
     },
     {
       "article": "Art. 4",
-      "titre": "Imposition par chef de famille et imposition distincte",
+      "titre": "I. Personnes imposables",
       "texte": [
         "Chaque chef de famille est imposable tant en raison de ses revenus personnels que de ceux de sa femme et des enfants considérés comme étant à sa charge au sens de l'article 93 ci-après.",
         "Par dérogation au paragraphe précédent, le contribuable peut réclamer des impositions distinctes pour ses enfants lorsqu'ils tirent un revenu de leur propre travail ou d'une fortune indépendante de la sienne.",
@@ -121,7 +121,7 @@
     },
     {
       "article": "Art. 5",
-      "titre": "Décès du contribuable ou du conjoint",
+      "titre": "I. Personnes imposables",
       "texte": [
         "1) En cas de décès du contribuable, l'impôt afférent aux bénéfices ou revenus non encore taxés est établi au nom du défunt. La veuve est personnellement imposable dans les conditions prévues au premier alinéa du précédent article, pour la période postérieure au décès de son mari.",
         "2) En cas de décès de la femme du contribuable, les revenus perçus par l'un ou l'autre époux sont compris en totalité dans le revenu imposable."
@@ -136,7 +136,7 @@
     },
     {
       "article": "Art. 6",
-      "titre": "Imposition des associés et assimilés",
+      "titre": "I. Personnes imposables",
       "texte": [
         "Sous réserve des dispositions de l'article 4, les associés de sociétés en nom collectif et les commandités des sociétés en commandite simple sont personnellement soumis à l'IRPP pour la part des bénéfices sociaux correspondant à leurs droits dans la société. Il en est de même, sous les mêmes conditions :",
         "1° des membres de sociétés civiles qui ne revêtent pas, en droit ou en fait, l'une des formes des sociétés visées au paragraphe 1 de l'article 107 du présent Code et qui ne se livrent pas à une exploitation ou à des opérations visées aux articles 14 et 15 ci-après ;",
@@ -153,7 +153,7 @@
     },
     {
       "article": "Art. 7",
-      "titre": "Imposition à la source par les sociétés",
+      "titre": "I. Personnes imposables",
       "texte": [
         "Les sociétés par actions ou autres personnes morales sont assujetties à l'IRPP à raison du montant global des sommes comptabilisées dans les frais des entreprises qu'elles versent directement ou indirectement, sous quelque forme ou dénomination que ce soit, à des personnes dont elles ne révèlent pas l'identité.",
         "La taxation est établie sous une cote unique et porte chaque année sur les sommes payées au cours de la période retenue pour l'assiette de l'impôt sur les sociétés dû au titre de la même année.",
@@ -185,7 +185,7 @@
     },
     {
       "article": "Art. 9",
-      "titre": "Changement de situation du contribuable",
+      "titre": "II. Lieu d'imposition",
       "texte": [
         "Lorsque le contribuable a déplacé soit sa résidence, soit le lieu de son principal établissement, les cotisations dont il est redevable au titre de l'IRPP, tant pour l'année au cours de laquelle s'est produit le changement que pour les années antérieures non atteintes par la prescription, peuvent valablement être établies au lieu d'imposition qui correspond à sa nouvelle situation."
       ],
