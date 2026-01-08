@@ -389,13 +389,45 @@ export class CodeSommaireComponent {
   }
 
   onSectionClick(chapitre: Chapitre, section: Section, tomeNum?: number): void {
+    // Si la section a des sous-sections, n'afficher que les articles d'intro (avant la 1ère sous-section)
+    let articlesToShow = section.articles;
+    if (section.sous_sections && section.sous_sections.length > 0 && section.articles) {
+      const introArticles = this.getIntroArticles(section);
+      if (introArticles) {
+        articlesToShow = introArticles;
+      }
+    }
     this.selection.emit({
       type: 'section',
       path: `Chapitre ${chapitre.chapitre}, Section ${section.section}`,
       titre: section.titre,
-      articles: section.articles,
+      articles: articlesToShow,
       tome: tomeNum,
     });
+  }
+
+  // Calcule les articles d'intro d'une section (avant la 1ère sous-section)
+  private getIntroArticles(section: Section): string | undefined {
+    if (!section.articles || !section.sous_sections || section.sous_sections.length === 0) {
+      return section.articles;
+    }
+    // Extraire le début de la section
+    const sectionMatch = section.articles.match(/^(\d+)/);
+    if (!sectionMatch) return section.articles;
+    const sectionStart = parseInt(sectionMatch[1], 10);
+
+    // Trouver le début de la première sous-section
+    const firstSousSection = section.sous_sections[0];
+    if (!firstSousSection.articles) return section.articles;
+    const sousSectionMatch = firstSousSection.articles.match(/^(\d+)/);
+    if (!sousSectionMatch) return section.articles;
+    const sousSectionStart = parseInt(sousSectionMatch[1], 10);
+
+    // Si les articles d'intro existent (section commence avant sous-section)
+    if (sectionStart < sousSectionStart) {
+      return `${sectionStart}-${sousSectionStart - 1}`;
+    }
+    return section.articles;
   }
 
   onSousSectionClick(chapitre: Chapitre, section: Section, sousSection: SousSectionSommaire, tomeNum?: number): void {
