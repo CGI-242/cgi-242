@@ -207,7 +207,7 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                         </div>
                       }
                       <!-- Article -->
-                      <div class="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
+                      <div [id]="'article-' + article.numero.replace(' ', '-')" class="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
                         <div class="flex items-baseline gap-3 mb-4 pb-3 border-b border-secondary-200">
                           <h3 class="text-xl font-bold text-secondary-900">Art. {{ article.numero }}</h3>
                           @if (article.titre) {
@@ -389,6 +389,18 @@ export class CodeContainerComponent implements OnInit {
   }
 
   selectArticle(article: Article): void {
+    // Si on est en vue multi-articles, scroller vers l'article au lieu de changer de vue
+    if (!this.selectedArticle() && this.filteredArticles().length > 0) {
+      const elementId = 'article-' + article.numero.replace(' ', '-');
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Highlight temporaire
+        element.classList.add('ring-2', 'ring-primary-500');
+        setTimeout(() => element.classList.remove('ring-2', 'ring-primary-500'), 2000);
+        return;
+      }
+    }
     this.articlesService.selectArticle(article);
   }
 
