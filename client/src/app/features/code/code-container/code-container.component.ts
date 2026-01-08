@@ -394,7 +394,12 @@ export class CodeContainerComponent implements OnInit {
       const elementId = 'article-' + article.numero.replace(' ', '-');
       const element = document.getElementById(elementId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Scroll avec offset pour le header (80px)
+        const container = element.closest('.overflow-y-auto');
+        if (container) {
+          const elementTop = element.offsetTop - 100; // 100px d'offset pour le header + marge
+          container.scrollTo({ top: elementTop, behavior: 'smooth' });
+        }
         // Highlight temporaire
         element.classList.add('ring-2', 'ring-primary-500');
         setTimeout(() => element.classList.remove('ring-2', 'ring-primary-500'), 2000);
