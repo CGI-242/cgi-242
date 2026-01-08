@@ -195,6 +195,36 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                     Article copié !
                   </div>
                 }
+              } @else if (filteredArticles().length > 0) {
+                <!-- Vue multi-articles (lecture continue) -->
+                <div class="flex-1 overflow-y-auto p-6 bg-secondary-50/50">
+                  <div class="max-w-4xl mx-auto space-y-6">
+                    @for (article of filteredArticles(); track article.id) {
+                      <!-- Séparateur sous-section -->
+                      @if (getSousSectionHeader(article.numero); as ssHeader) {
+                        <div class="py-4 px-6 bg-primary-100 border-l-4 border-primary-500 rounded-r-lg">
+                          <h2 class="text-lg font-bold text-primary-800">§ {{ ssHeader }}</h2>
+                        </div>
+                      }
+                      <!-- Article -->
+                      <div class="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
+                        <div class="flex items-baseline gap-3 mb-4 pb-3 border-b border-secondary-200">
+                          <h3 class="text-xl font-bold text-secondary-900">Art. {{ article.numero }}</h3>
+                          @if (article.titre) {
+                            <span class="text-base text-secondary-600">{{ article.titre }}</span>
+                          }
+                        </div>
+                        @if (article.chapeau) {
+                          <div class="text-secondary-700 font-medium italic mb-4 pb-4 border-b border-secondary-200">
+                            {{ article.chapeau }}
+                          </div>
+                        }
+                        <div class="article-content text-secondary-800 leading-loose text-base text-justify" [innerHTML]="formatArticleContent(article.contenu)">
+                        </div>
+                      </div>
+                    }
+                  </div>
+                </div>
               } @else {
                 <!-- Empty state -->
                 <div class="flex-1 flex items-center justify-center">
@@ -208,7 +238,7 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                       Code Général des Impôts
                     </h3>
                     <p class="text-secondary-600 text-sm">
-                      Sélectionnez un article dans la liste pour consulter son contenu exact.
+                      Sélectionnez une section dans le sommaire pour consulter les articles.
                     </p>
                   </div>
                 </div>
@@ -363,6 +393,9 @@ export class CodeContainerComponent implements OnInit {
   }
 
   onSommaireSelect(selection: SommaireSelection): void {
+    // Désélectionner l'article pour afficher la vue multi-articles
+    this.articlesService.selectArticle(null);
+
     // Si une plage d'articles est définie, l'utiliser pour filtrer
     if (selection.articles) {
       this.searchQuery = '';
