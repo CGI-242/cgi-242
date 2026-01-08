@@ -96,10 +96,16 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                             <span class="text-sm font-semibold text-primary-800">{{ ssHeader }}</span>
                           </div>
                         }
+                        <!-- Header point romain (I. Personnes imposables, II. Lieu d'imposition) -->
+                        @if (getRomanHeader(article, i); as romanHeader) {
+                          <div class="px-3 py-2 bg-primary-50 border-l-4 border-primary-400">
+                            <span class="text-sm font-semibold text-primary-700">{{ romanHeader }}</span>
+                          </div>
+                        }
                         <!-- Sous-header de paragraphe (1) Définition, 2) Exemptions...) -->
                         @if (isFirstOfParagraph(article, i)) {
-                          <div class="px-3 py-1.5 bg-primary-50 border-l-2 border-primary-300 ml-2">
-                            <span class="text-xs font-medium text-primary-700">{{ getParagraphHeader(article) }}</span>
+                          <div class="px-3 py-1.5 bg-primary-50/50 border-l-2 border-primary-300 ml-2">
+                            <span class="text-xs font-medium text-primary-600">{{ getParagraphHeader(article) }}</span>
                           </div>
                         }
                         <button
@@ -212,10 +218,16 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                           <h2 class="text-lg font-bold text-primary-800">{{ ssHeader }}</h2>
                         </div>
                       }
+                      <!-- Header point romain (I. Personnes imposables, II. Lieu d'imposition) -->
+                      @if (getRomanHeader(article, i); as romanHeader) {
+                        <div class="py-3 px-6 bg-primary-50 border-l-4 border-primary-400 rounded-r-lg">
+                          <h2 class="text-lg font-semibold text-primary-700">{{ romanHeader }}</h2>
+                        </div>
+                      }
                       <!-- Sous-header de paragraphe (1) Définition, 2) Exemptions...) -->
                       @if (isFirstOfParagraph(article, i)) {
-                        <div class="py-2 px-4 bg-primary-50 border-l-2 border-primary-300 rounded-r-lg ml-4">
-                          <h3 class="text-base font-medium text-primary-700">{{ getParagraphHeader(article) }}</h3>
+                        <div class="py-2 px-4 bg-primary-50/50 border-l-2 border-primary-300 rounded-r-lg ml-4">
+                          <h3 class="text-base font-medium text-primary-600">{{ getParagraphHeader(article) }}</h3>
                         </div>
                       }
                       <!-- Article -->
@@ -463,6 +475,15 @@ export class CodeContainerComponent implements OnInit {
     return null;
   }
 
+  // Extrait le préfixe romain (I., II., III...) ou numéroté (1), 2)...) du titre
+  private getRomanPrefix(titre: string | undefined): string | null {
+    if (!titre) return null;
+    // Format "I. Personnes imposables" ou "II. Lieu d'imposition"
+    const romanMatch = titre.match(/^(I{1,3}|IV|V|VI)\.\s*/);
+    if (romanMatch) return romanMatch[1];
+    return null;
+  }
+
   // Retourne le sous-header de paragraphe (1) Définition, 2) Exemptions...) extrait du titre
   getParagraphHeader(article: Article): string | null {
     if (!article.titre) return null;
@@ -475,7 +496,34 @@ export class CodeContainerComponent implements OnInit {
     return null;
   }
 
-  // Vérifie si c'est le premier article d'un nouveau paragraphe
+  // Retourne le header du point romain (I. Personnes imposables) si c'est le premier article
+  getRomanHeader(article: Article, index: number): string | null {
+    if (!article.titre) return null;
+
+    const romanPrefix = this.getRomanPrefix(article.titre);
+    if (!romanPrefix) return null;
+
+    // Si c'est le premier article, afficher le header
+    if (index === 0) {
+      // Extraire "I. Personnes imposables" du titre complet
+      const match = article.titre.match(/^(I{1,3}|IV|V|VI)\.\s*([^:]+)/);
+      if (match) return `${match[1]}. ${match[2].trim()}`;
+    }
+
+    // Sinon vérifier si l'article précédent a un préfixe différent
+    const articles = this.filteredArticles();
+    const prevArticle = articles[index - 1];
+    const prevRomanPrefix = this.getRomanPrefix(prevArticle?.titre);
+
+    if (romanPrefix !== prevRomanPrefix) {
+      const match = article.titre.match(/^(I{1,3}|IV|V|VI)\.\s*([^:]+)/);
+      if (match) return `${match[1]}. ${match[2].trim()}`;
+    }
+
+    return null;
+  }
+
+  // Vérifie si c'est le premier article d'un nouveau paragraphe numéroté (1), 2)...)
   isFirstOfParagraph(article: Article, index: number): boolean {
     const paragraphHeader = this.getParagraphHeader(article);
     if (!paragraphHeader) return false;

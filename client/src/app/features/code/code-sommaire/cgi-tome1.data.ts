@@ -17,16 +17,7 @@ export const CGI_TOME_1: Tome = {
               titre: 'Impôt sur le revenu des personnes physiques (IRPP)',
               articles: '1-101',
               sections: [
-                {
-                  section: 1,
-                  titre: 'Dispositions générales',
-                  page: 9,
-                  articles: '1-9',
-                  sous_sections: [
-                    { sous_section: 'I', titre: 'I. Personnes imposables', articles: '2-7' },
-                    { sous_section: 'II', titre: 'II. Lieu d\'imposition', articles: '8-9' },
-                  ]
-                },
+                { section: 1, titre: 'Dispositions générales', page: 9, articles: '1-9' },
                 {
                   section: 2,
                   titre: 'Revenus imposables',
