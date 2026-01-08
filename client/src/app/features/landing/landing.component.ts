@@ -16,7 +16,7 @@ import { InfoWidgetComponent } from '@shared/components/info-widget/info-widget.
         <div class="max-w-[1600px] mx-auto flex items-center justify-between">
           <a routerLink="/" class="flex items-center gap-1">
             <img src="assets/images/logo242.png" alt="CGI 242" class="h-10 sm:h-14 w-auto" />
-            <span class="text-sm text-secondary-400 font-medium hidden sm:inline">By NORMX AI</span>
+            <span class="text-base text-secondary-400 font-medium hidden sm:inline">By NORMX AI</span>
           </a>
           <!-- Navigation principale -->
           <nav class="hidden md:flex items-center gap-8">

@@ -14,11 +14,20 @@ export const CGI_TOME_1: Tome = {
           chapitres: [
             {
               chapitre: 1,
-              titre: 'IRPP',
+              titre: 'Impôt sur le revenu des personnes physiques (IRPP)',
               articles: '1-101',
               sections: [
-                { section: 1, titre: 'Dispositions générales', page: 9, articles: '1-65 bis' },
-                { section: 2, titre: 'Revenus imposables', page: 12, articles: '66-75' },
+                { section: 1, titre: 'Dispositions générales', page: 9, articles: '1-9' },
+                {
+                  section: 2,
+                  titre: 'Revenus imposables',
+                  page: 12,
+                  articles: '10-75',
+                  sous_sections: [
+                    { sous_section: 1, titre: 'Détermination des bénéfices ou revenus catégoriels', articles: '12-65 bis' },
+                    { sous_section: 2, titre: 'Revenu global', articles: '66-75' },
+                  ]
+                },
                 { section: 3, titre: 'Déclaration des contribuables', page: 31, articles: '76-80' },
                 { section: 4, titre: 'Vérification des déclarations', page: 33, articles: '81-85' },
                 { section: 5, titre: 'Taxation d\'office', page: 34, articles: '86-88' },

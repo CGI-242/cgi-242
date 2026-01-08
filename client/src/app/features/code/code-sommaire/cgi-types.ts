@@ -73,3 +73,17 @@ export interface Tome {
   sectionsNonCodifiees?: SectionNonCodifiee[];
   annexes?: Annexe;
 }
+
+export interface ConventionChapitre {
+  chapitre: number;
+  titre: string;
+  articles?: string;
+}
+
+export interface Convention {
+  code: string; // CEMAC, FR, CN
+  titre: string;
+  pays?: string;
+  chapitres?: ConventionChapitre[];
+  articles?: string;
+}

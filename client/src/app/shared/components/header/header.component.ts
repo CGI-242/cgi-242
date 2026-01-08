@@ -12,17 +12,17 @@ import { OrgSwitcherComponent } from '../org-switcher/org-switcher.component';
   template: `
     <header class="bg-white border-b border-secondary-200 sticky top-0 z-40">
       <div class="px-2 sm:px-4">
-        <div class="flex items-center justify-between h-16">
+        <div class="flex items-center justify-between h-20">
           <!-- Logo -->
           <div class="flex items-center gap-8">
             <a routerLink="/" class="flex items-center gap-1">
-              <img src="assets/images/logo242.png" alt="CGI 242" class="h-12 sm:h-14 w-auto" />
-              <span class="text-[10px] text-secondary-400 font-medium hidden sm:inline">By NORMX AI</span>
+              <img src="assets/images/logo242.png" alt="CGI 242" class="h-14 sm:h-16 w-auto" />
+              <span class="text-base text-secondary-400 font-medium hidden sm:inline">By NORMX AI</span>
             </a>
 
             @if (authService.isAuthenticated()) {
               <nav class="hidden md:flex items-center gap-6">
-                <a routerLink="/dashboard" class="text-sm text-secondary-600 hover:text-secondary-900">Dashboard</a>
+                <a routerLink="/dashboard" class="text-base text-secondary-600 hover:text-secondary-900 font-medium">Dashboard</a>
               </nav>
             }
           </div>

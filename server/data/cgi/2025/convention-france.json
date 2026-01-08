@@ -14,7 +14,7 @@
   },
   "articles": [
     {
-      "article": "Art.1",
+      "article": "FR-1",
       "titre": "Personnes visées",
       "texte": [
         "La présente Convention s'applique aux personnes qui sont des résidents d'un État ou des deux États."
@@ -23,7 +23,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.2",
+      "article": "FR-2",
       "titre": "Impôts visés",
       "texte": [
         "La présente Convention s'applique aux impôts sur le revenu, aux impôts sur les successions, aux droits d'enregistrement et de timbre, perçus pour le compte d'un État ou de ses collectivités territoriales, quel que soit le système de perception.",
@@ -34,7 +34,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.3",
+      "article": "FR-3",
       "titre": "Définitions générales",
       "texte": [
         "Au sens de la présente Convention, à moins que le contexte n'exige une interprétation différente :",
@@ -52,7 +52,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.4",
+      "article": "FR-4",
       "titre": "Résident",
       "texte": [
         "1. Au sens de la présente Convention, l'expression « résident d'un État » désigne toute personne qui, en vertu de la législation de cet État, est assujettie à l'impôt dans cet État, en raison de son domicile, de sa résidence, de son siège de direction ou de tout autre critère de nature analogue.",
@@ -68,7 +68,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.5",
+      "article": "FR-5",
       "titre": "Établissement stable",
       "texte": [
         "1. Au sens de la présente Convention, l'expression « établissement stable » désigne une installation fixe d'affaires par l'intermédiaire de laquelle une entreprise exerce tout ou partie de son activité.",
@@ -97,7 +97,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.6",
+      "article": "FR-6",
       "titre": "Revenus immobiliers",
       "texte": [
         "1. Les revenus qu'un résident d'un État tire de biens immobiliers (y compris les revenus des exploitations agricoles ou forestières) situés dans l'autre État, sont imposables dans cet autre État.",
@@ -110,7 +110,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.7",
+      "article": "FR-7",
       "titre": "Bénéfices des entreprises",
       "texte": [
         "1. Les bénéfices d'une entreprise d'un État ne sont imposables que dans cet État, à moins que l'entreprise n'exerce son activité dans l'autre État par l'intermédiaire d'un établissement stable qui y est situé. Si l'entreprise exerce son activité d'une telle façon, les bénéfices de l'entreprise sont imposables dans l'autre État mais uniquement dans la mesure où ils sont imputables à cet établissement stable.",
@@ -126,7 +126,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.8",
+      "article": "FR-8",
       "titre": "Navigation maritime et aérienne",
       "texte": [
         "1. Les bénéfices provenant de l'exploitation, en trafic international, de navires ou d'aéronefs ne sont imposables que dans l'État où le siège de direction effective de l'entreprise est situé.",
@@ -138,7 +138,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.9",
+      "article": "FR-9",
       "titre": "Entreprises associées",
       "texte": [
         "Lorsque :",
@@ -150,7 +150,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.10",
+      "article": "FR-10",
       "titre": "Dividendes",
       "texte": [
         "1. Un résident du Congo qui reçoit des dividendes payés par une société qui est un résident de France peut obtenir le remboursement du précompte afférent à ces dividendes acquittés, le cas échéant, par cette société.",
@@ -162,7 +162,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.11",
+      "article": "FR-11",
       "titre": "Intérêts",
       "texte": [
         "1. Les intérêts provenant d'un État et payés à un résident de l'autre État et qui en est le bénéficiaire effectif ne sont imposables que dans cet autre État.",
@@ -175,7 +175,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.12",
+      "article": "FR-12",
       "titre": "Redevances",
       "texte": [
         "1. Les redevances provenant d'un État et payées à un résident de l'autre État sont imposables dans cet autre État.",
@@ -189,7 +189,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.13",
+      "article": "FR-13",
       "titre": "Gains en capital",
       "texte": [
         "1. Les gains qu'un résident d'un État tire de l'aliénation de biens immobiliers visés à l'article 6, paragraphe 2, sont imposables dans l'État où les biens immobiliers sont situés.",
@@ -203,7 +203,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.14",
+      "article": "FR-14",
       "titre": "Professions indépendantes",
       "texte": [
         "1. Les revenus qu'un résident d'un État tire d'une profession libérale ou d'autres activités de caractère indépendant ne sont imposables que dans cet État, à moins que ce résident ne dispose de façon habituelle dans l'autre État d'une base fixe pour l'exercice de ces activités. S'il dispose d'une telle base fixe, les revenus sont imposables dans l'autre État mais uniquement dans la mesure où ils sont imputables à cette base fixe.",
@@ -213,7 +213,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.15",
+      "article": "FR-15",
       "titre": "Revenus d'emploi",
       "texte": [
         "1. Sous réserve des dispositions des articles 16, 18, 19 et 20, les salaires, traitements et autres rémunérations similaires qu'un résident d'un État reçoit au titre d'un emploi salarié ne sont imposables que dans cet État à moins que l'emploi ne soit exercé dans l'autre État. Si l'emploi y est exercé, les rémunérations reçues à ce titre sont imposables dans cet autre État.",

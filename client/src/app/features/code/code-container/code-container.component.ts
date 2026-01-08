@@ -26,9 +26,9 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
           class="flex-1 transition-all duration-300"
           [class.ml-64]="!sidebarCollapsed"
           [class.ml-14]="sidebarCollapsed">
-          <div class="flex h-[calc(100vh-4rem)]">
+          <div class="flex h-[calc(100vh-5rem)]">
             <!-- Sidebar navigation -->
-            <div class="w-[540px] border-r border-secondary-200 bg-white flex flex-col">
+            <div class="w-[640px] border-r border-secondary-200 bg-white flex flex-col">
               <!-- Header avec version -->
               <div class="p-4 border-b border-secondary-200 bg-primary-50">
                 <h2 class="font-semibold text-primary-900">CGI {{ articlesService.currentVersion() }}</h2>
@@ -96,13 +96,13 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                           [class.bg-primary-50]="selectedArticle()?.id === article.id"
                           [class.border-l-2]="selectedArticle()?.id === article.id"
                           [class.border-l-primary-600]="selectedArticle()?.id === article.id">
-                          <span class="font-medium text-primary-700 text-sm whitespace-nowrap">Art. {{ article.numero }}</span>
+                          <span class="font-medium text-primary-700 text-base whitespace-nowrap">Art. {{ article.numero }}</span>
                           @if (article.titre) {
-                            <span class="text-xs text-secondary-500 truncate">{{ article.titre }}</span>
+                            <span class="text-sm text-secondary-500 truncate">{{ article.titre }}</span>
                           }
                         </button>
                       } @empty {
-                        <div class="p-3 text-center text-secondary-500 text-sm">
+                        <div class="p-3 text-center text-secondary-500 text-base">
                           Aucun article trouvé
                         </div>
                       }
@@ -112,7 +112,7 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
 
                 <!-- Total count -->
                 <div class="p-3 border-t border-secondary-200 bg-secondary-50">
-                  <p class="text-xs text-secondary-500 text-center">
+                  <p class="text-sm text-secondary-500 text-center">
                     {{ filteredArticles().length }} article(s) sur {{ articlesService.total() }}
                   </p>
                 </div>
@@ -125,10 +125,10 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                 <!-- Article header -->
                 <div class="p-6 border-b border-secondary-200">
                   <div class="flex items-start justify-between">
-                    <div>
-                      <h1 class="text-2xl font-bold text-secondary-900">{{ article.numero }}</h1>
+                    <div class="flex items-baseline gap-3">
+                      <h1 class="text-2xl font-bold text-secondary-900">Art. {{ article.numero }}</h1>
                       @if (article.titre) {
-                        <p class="text-lg text-secondary-600 mt-1">{{ article.titre }}</p>
+                        <p class="text-lg text-secondary-600">{{ article.titre }}</p>
                       }
                     </div>
                     <div class="flex items-center gap-2">
@@ -152,10 +152,10 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                   @if (article.tome || article.chapitre) {
                     <div class="flex items-center gap-2 mt-3">
                       @if (article.tome) {
-                        <span class="px-2 py-1 bg-secondary-100 text-secondary-600 text-xs rounded">{{ article.tome }}</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-600 text-sm rounded">Tome {{ article.tome }}</span>
                       }
                       @if (article.chapitre) {
-                        <span class="px-2 py-1 bg-secondary-100 text-secondary-600 text-xs rounded">{{ article.chapitre }}</span>
+                        <span class="px-2 py-1 bg-secondary-100 text-secondary-600 text-sm rounded">{{ article.chapitre }}</span>
                       }
                     </div>
                   }
@@ -169,7 +169,7 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                         {{ article.chapeau }}
                       </div>
                     }
-                    <div class="article-content text-secondary-800 leading-loose text-[15px] text-justify" [innerHTML]="formatArticleContent(article.contenu)">
+                    <div class="article-content text-secondary-800 leading-loose text-base text-justify" [innerHTML]="formatArticleContent(article.contenu)">
                     </div>
 
                     <!-- Audio button at bottom for long articles -->
@@ -223,6 +223,7 @@ export class CodeContainerComponent implements OnInit {
   sidebarCollapsed = false;
   searchQuery = '';
   articleRange = signal<string | null>(null);
+  selectedTome = signal<number | null>(null); // Tome sélectionné pour filtrer
   selectedArticle = this.articlesService.selectedArticle;
   copied = signal(false);
   activeTab = signal<'sommaire' | 'articles'>('sommaire');
@@ -230,16 +231,22 @@ export class CodeContainerComponent implements OnInit {
   filteredArticles = computed(() => {
     const articles = this.articlesService.articles();
     const range = this.articleRange();
+    const tome = this.selectedTome();
     const query = this.searchQuery.toLowerCase().trim();
 
-    console.log('[CodeContainer] filteredArticles - articles chargés:', articles.length, 'range:', range, 'query:', query);
-
+    
     let result: Article[];
 
-    // Si une plage d'articles est définie, filtrer par numéro
+    // Si une plage d'articles est définie, filtrer par numéro ET par tome
     if (range) {
-      result = articles.filter(a => this.isArticleInRange(a.numero, range));
-      console.log('[CodeContainer] Après filtrage par range:', result.length, 'articles');
+      result = articles.filter(a => {
+        const inRange = this.isArticleInRange(a.numero, range);
+        // Si un tome est spécifié, filtrer aussi par tome
+        if (tome && a.tome) {
+          return inRange && a.tome === String(tome);
+        }
+        return inRange;
+      });
     } else if (!query) {
       result = articles;
     } else {
@@ -327,8 +334,9 @@ export class CodeContainerComponent implements OnInit {
   }
 
   onSearch(): void {
-    // Réinitialiser la plage d'articles quand l'utilisateur tape
+    // Réinitialiser la plage d'articles et le tome quand l'utilisateur tape
     this.articleRange.set(null);
+    this.selectedTome.set(null);
   }
 
   selectArticle(article: Article): void {
@@ -336,16 +344,15 @@ export class CodeContainerComponent implements OnInit {
   }
 
   onSommaireSelect(selection: SommaireSelection): void {
-    console.log('[CodeContainer] Sélection sommaire:', selection);
     // Si une plage d'articles est définie, l'utiliser pour filtrer
     if (selection.articles) {
-      console.log('[CodeContainer] Filtrage par plage d\'articles:', selection.articles);
       this.searchQuery = '';
       this.articleRange.set(selection.articles);
+      this.selectedTome.set(selection.tome ?? null); // Filtrer par tome si spécifié
     } else {
       // Sinon, utiliser le titre pour la recherche
-      console.log('[CodeContainer] Pas de plage d\'articles, recherche par titre:', selection.titre);
       this.articleRange.set(null);
+      this.selectedTome.set(null);
       this.searchQuery = selection.titre;
     }
     this.activeTab.set('articles');
@@ -387,34 +394,60 @@ export class CodeContainerComponent implements OnInit {
   formatArticleContent(contenu: string): SafeHtml {
     if (!contenu) return '';
 
-    let html = contenu
-      // SÉCURITÉ: Échapper TOUS les caractères HTML d'abord
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#x27;')
-      // Formater les numéros principaux (1), 2), etc.)
-      .replace(/^(\d+)\)\s*/gm, '<div class="mt-6 mb-2"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mr-2">$1</span>')
-      .replace(/^(\d+)\)\s*([a-z]\))/gm, '<div class="mt-6 mb-2"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm mr-2">$1</span>$2')
+    // D'abord, diviser le contenu en lignes pour traiter chaque ligne
+    const lines = contenu.split('\n');
+    const formattedLines = lines.map(line => {
+      // Échapper les caractères HTML
+      let escaped = line
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;');
+
+      // Formater "1) a)" directement
+      if (/^(\d+)\)[ \t]*([a-z])\)[ \t]*(.*)$/.test(escaped)) {
+        return escaped.replace(/^(\d+)\)[ \t]*([a-z])\)[ \t]*(.*)$/,
+          '<div class="mt-6 mb-2 flex items-start gap-2"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm flex-shrink-0">$1</span></div><div class="ml-10 mt-2 mb-1 flex items-start gap-2"><span class="font-semibold text-primary-600 flex-shrink-0">$2)</span><span>$3</span></div>');
+      }
+      // Formater les numéros seuls (1), 2), etc.)
+      if (/^(\d+)\)[ \t]*/.test(escaped)) {
+        return escaped.replace(/^(\d+)\)[ \t]*(.*)$/,
+          '<div class="mt-6 mb-2 flex items-start gap-2"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm flex-shrink-0">$1</span><span>$2</span></div>');
+      }
       // Formater les lettres a), b), etc.
-      .replace(/^([a-z])\)\s*/gm, '<div class="ml-4 mt-3 mb-1"><span class="font-semibold text-primary-600 mr-2">$1)</span>')
+      if (/^([a-z])\)[ \t]*/.test(escaped)) {
+        return escaped.replace(/^([a-z])\)[ \t]*(.*)$/,
+          '<div class="ml-10 mt-2 mb-1 flex items-start gap-2"><span class="font-semibold text-primary-600 flex-shrink-0">$1)</span><span>$2</span></div>');
+      }
       // Formater les sous-numéros 1°, 2°, etc.
-      .replace(/^(\d+)°\s*/gm, '<div class="ml-8 mt-2 pl-4 border-l-2 border-secondary-200"><span class="font-medium text-secondary-700 mr-2">$1°</span>')
+      if (/^(\d+)°[ \t]*/.test(escaped)) {
+        return escaped.replace(/^(\d+)°[ \t]*(.*)$/,
+          '<div class="ml-14 mt-2 pl-4 border-l-2 border-secondary-200 flex items-start gap-2"><span class="font-medium text-secondary-700 flex-shrink-0">$1°</span><span>$2</span></div>');
+      }
       // Formater les tirets en liste
-      .replace(/^[-–—]\s*/gm, '<div class="ml-6 mt-1 flex"><span class="text-primary-500 mr-3">•</span><span>')
-      // Fermer les divs pour les tirets
-      .replace(/<span>([^<]+)$/gm, '<span>$1</span></div>')
-      // Paragraphes vides = espacement
-      .replace(/\n\n+/g, '</div><div class="mt-4">')
-      // Retours à la ligne simples
-      .replace(/\n/g, '</div><div class="mt-2">');
+      if (/^[-–—][ \t]*/.test(escaped)) {
+        return escaped.replace(/^[-–—][ \t]*(.*)$/,
+          '<div class="ml-6 mt-1 flex items-start gap-2"><span class="text-primary-500 flex-shrink-0">•</span><span>$1</span></div>');
+      }
+      // Ligne vide = espacement
+      if (escaped.trim() === '') {
+        return '<div class="mt-4"></div>';
+      }
+      // Ligne normale (texte de continuation)
+      return '<div class="mt-2">' + escaped + '</div>';
+    });
+
+    let html = formattedLines.join('');
+
+    // Formater les notes NB entre crochets en italique
+    html = html.replace(/\[NB-([^\]]+)\]/g, '<em class="text-secondary-500 italic">[NB-$1]</em>');
 
     // Envelopper le tout
     html = '<div class="mt-2">' + html + '</div>';
 
-    // Nettoyer les divs vides
-    html = html.replace(/<div class="[^"]*"><\/div>/g, '');
+    // Nettoyer les divs de texte vides (mais garder les espacements mt-4)
+    html = html.replace(/<div class="mt-2"><\/div>/g, '');
 
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }

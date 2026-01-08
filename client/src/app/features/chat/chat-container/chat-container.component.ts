@@ -34,7 +34,7 @@ import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
           class="flex-1 transition-all duration-300"
           [class.ml-64]="!sidebarCollapsed"
           [class.ml-14]="sidebarCollapsed">
-          <div class="flex h-[calc(100vh-4rem)]">
+          <div class="flex h-[calc(100vh-5rem)]">
             <!-- History sidebar -->
             <div class="w-80 border-r border-secondary-200 bg-white hidden lg:block">
               <app-chat-history

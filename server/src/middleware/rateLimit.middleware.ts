@@ -58,7 +58,7 @@ export const globalRateLimiter = rateLimit({
  */
 export const authRateLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5, // 5 tentatives
+  max: config.isDevelopment ? 100 : 5, // Plus permissif en dev
   message: {
     success: false,
     error: 'Trop de tentatives de connexion. Veuillez réessayer dans 15 minutes.',
@@ -76,6 +76,10 @@ export const authRateLimiter = rateLimit({
     return `${ip}:${email}`;
   },
   skipSuccessfulRequests: true, // Ne pas compter les succès
+  skip: (_req) => {
+    // Skip en développement si configuré
+    return config.isDevelopment && process.env.SKIP_RATE_LIMIT === 'true';
+  },
 });
 
 /**

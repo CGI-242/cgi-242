@@ -14,7 +14,7 @@
   },
   "articles": [
     {
-      "article": "Art.1",
+      "article": "CN-1",
       "titre": "Personnes visées",
       "texte": [
         "1. La présente Convention s'applique aux personnes qui sont des résidents d'un État contractant ou des deux États contractants.",
@@ -25,7 +25,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.2",
+      "article": "CN-2",
       "titre": "Impôts visés",
       "texte": [
         "1. La présente convention s'applique aux impôts sur le revenu perçus pour le compte d'un État contractant, de ses subdivisions politiques ou de ses collectivités locales, quel que soit le système de perception.",
@@ -44,7 +44,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.3",
+      "article": "CN-3",
       "titre": "Définitions générales",
       "texte": [
         "1. Au sens de la présente Convention, à moins que le contexte n'exige une interprétation différente :",
@@ -65,7 +65,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.4",
+      "article": "CN-4",
       "titre": "Résident",
       "texte": [
         "1. Au sens de la présente Convention, l'expression « résident d'un État contractant » désigne toute personne qui, en vertu de la législation de cet État, est assujettie à l'impôt dans cet État en raison de son domicile, de sa résidence, de son siège de direction, du lieu de sa direction effective ou de tout autre critère de nature analogue et s'applique aussi à cet État et à toutes subdivisions politiques ou collectivités locales. Toutefois, cette expression ne comprend pas les personnes qui sont assujetties à l'impôt dans cet État que pour les revenus de sources situées dans cet État.",
@@ -80,7 +80,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.5",
+      "article": "CN-5",
       "titre": "Établissement stable",
       "texte": [
         "1. Au sens de la présente Convention, l'expression « établissement stable » désigne une installation fixe d'affaires par l'intermédiaire de laquelle une entreprise exerce tout ou partie de son activité.",
@@ -107,7 +107,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.6",
+      "article": "CN-6",
       "titre": "Revenus immobiliers",
       "texte": [
         "1. Les revenus qu'un résident d'un État Contractant tire de biens immobiliers y compris les revenus des exploitations agricoles ou forestières situés dans l'autre État, sont imposables dans cet autre État.",
@@ -119,7 +119,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.7",
+      "article": "CN-7",
       "titre": "Bénéfices des entreprises",
       "texte": [
         "1. Les bénéfices d'une entreprise d'un État Contractant ne sont imposables que dans cet État, à moins que l'entreprise n'exerce son activité dans l'autre État Contractant par l'intermédiaire d'un établissement stable qui y est situé. Si l'entreprise exerce son activité de telle façon, les bénéfices de l'entreprise sont imposables dans l'autre État mais uniquement dans la mesure où ils sont imputables à cet établissement stable.",
@@ -134,7 +134,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.8",
+      "article": "CN-8",
       "titre": "Navigation maritime et aérienne",
       "texte": [
         "1. Les bénéfices provenant de l'exploitation, en trafic international de navires ou d'aéronefs ne sont imposables que dans l'État Contractant où le siège de direction effective de l'entreprise est situé.",
@@ -144,7 +144,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.9",
+      "article": "CN-9",
       "titre": "Entreprises associées",
       "texte": [
         "1. Lorsque :",
@@ -156,7 +156,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.10",
+      "article": "CN-10",
       "titre": "Dividendes",
       "texte": [
         "1. Les dividendes payés par une société qui est un résident d'un État Contractant à un résident de l'autre État Contractant sont imposables dans cet autre État.",
@@ -173,7 +173,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.11",
+      "article": "CN-11",
       "titre": "Intérêts",
       "texte": [
         "1. Les intérêts provenant d'un État Contractant et payés à un résident de l'autre État Contractant sont imposables dans cet autre État.",
@@ -189,7 +189,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.12",
+      "article": "CN-12",
       "titre": "Redevances",
       "texte": [
         "1. Les redevances provenant d'un État Contractant et payées à un résident de l'autre État Contractant sont imposables dans cet autre État.",
@@ -203,7 +203,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.13",
+      "article": "CN-13",
       "titre": "Gains en capital",
       "texte": [
         "1. Les gains qu'un résident d'un État tire de l'aliénation de biens immobiliers visés à l'article 6 et situés dans l'autre État Contractant, sont imposables dans cet autre État.",
@@ -216,7 +216,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.14",
+      "article": "CN-14",
       "titre": "Professions indépendantes",
       "texte": [
         "1. Les revenus qu'un résident d'un État Contractant tire d'une profession libérale ou d'autres activités de caractère indépendant ne sont imposables que dans cet État, à l'exception des cas suivants où ces revenus sont aussi imposables dans l'autre État Contractant :",
@@ -228,7 +228,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.15",
+      "article": "CN-15",
       "titre": "Revenus d'emploi",
       "texte": [
         "1. Sous réserve des dispositions des articles 16, 18 et 19, les salaires, traitements et autres rémunérations similaires qu'un résident d'un État Contractant reçoit au titre d'un emploi salarié ne sont imposables que dans cet État à moins que l'emploi ne soit exercé dans l'autre État. S'il est exercé, les rémunérations reçues à ce titre sont imposables dans cet autre État.",
@@ -242,7 +242,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.16",
+      "article": "CN-16",
       "titre": "Tantièmes",
       "texte": [
         "Les tantièmes et autres rétributions similaires qu'un résident d'un État Contractant reçoit en sa qualité de membre du Conseil d'administration ou de surveillance d'une société qui est un résident de l'autre État Contractant sont imposables dans cet autre État."
@@ -251,7 +251,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.17",
+      "article": "CN-17",
       "titre": "Artistes et sportifs",
       "texte": [
         "1. Nonobstant les dispositions des Articles 14 et 15, les revenus qu'un résident d'un État Contractant tire des activités personnelles exercées dans l'autre État Contractant en tant qu'artiste du spectacle, tel qu'un artiste de théâtre, de cinéma, de la radio ou de la télévision, ou qu'un musicien, ou en tant que sportif, sont imposables dans cet autre État.",
@@ -262,7 +262,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.18",
+      "article": "CN-18",
       "titre": "Pensions",
       "texte": [
         "1. Sous réserve des dispositions du paragraphe 2 de l'article 19, les pensions et autres rémunérations similaires payées à un résident d'un État Contractant au titre d'un emploi antérieur, ne sont imposables que dans cet État.",
@@ -272,7 +272,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.19",
+      "article": "CN-19",
       "titre": "Fonctions publiques",
       "texte": [
         "1. a) Les salaires, traitements et autres rémunérations similaires, autres que les pensions, payés par le Gouvernement d'un État Contractant ou l'une de ses subdivisions politiques ou collectivités locales à une personne physique au titre de services rendus à cet État, à cette collectivité ou à cette personne morale de droit public, ne sont imposables que dans cet État.",
@@ -287,7 +287,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.20",
+      "article": "CN-20",
       "titre": "Étudiants et stagiaires",
       "texte": [
         "Les sommes qu'un étudiant ou un stagiaire qui est, ou qui était immédiatement avant de se rendre dans un État Contractant, un résident de l'autre État Contractant et qui séjourne dans le premier État à seule fin d'y poursuivre ses études ou sa formation, reçoit pour couvrir ses frais d'entretien, d'études ou de formation ne sont pas imposables dans cet État, à condition qu'elles proviennent de sources situées en dehors de cet État."
@@ -296,7 +296,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.21",
+      "article": "CN-21",
       "titre": "Autres revenus",
       "texte": [
         "1. Les éléments de revenu d'un résident d'un État Contractant, d'où qu'ils proviennent, qui ne sont pas traités dans les articles précédents de la présente Convention ne sont imposables que dans cet État.",
@@ -306,7 +306,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.22",
+      "article": "CN-22",
       "titre": "Méthodes pour éliminer la double imposition",
       "texte": [
         "1. En Chine, en accord avec les dispositions du droit interne, la double imposition est éliminée de la manière suivante :",
@@ -320,7 +320,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.23",
+      "article": "CN-23",
       "titre": "Non-discrimination",
       "texte": [
         "1. Les nationaux d'un État contractant ne sont soumis dans l'autre État contractant à aucune imposition ou obligation y relative qui est autre ou plus lourde que celle à laquelle sont ou pourront être assujettis les nationaux de cet autre État qui se trouvent dans la même situation, notamment eu égard à la résidence. Cette disposition s'applique aussi, nonobstant les dispositions de l'article 1, aux personnes qui ne sont pas des résidents de l'un ou des deux États contractants.",
@@ -333,7 +333,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.24",
+      "article": "CN-24",
       "titre": "Procédure amiable",
       "texte": [
         "1. Lorsqu'une personne estime que les mesures prises par un État contractant ou par les deux États contractants entraînent ou entraîneront pour elle une imposition non conforme aux dispositions de la présente Convention, elle peut, indépendamment des recours prévus par la législation nationale de ces États, soumettre son cas à l'autorité compétente de l'État contractant dont elle est un résident, ou si le cas relève du paragraphe 1 de l'article 23, celle de l'État contractant dont elle possède la nationalité. Le cas doit être soumis dans les trois ans qui suivent la première notification de la mesure qui a entraîné une imposition non conforme aux dispositions de la Convention.",
@@ -345,7 +345,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.25",
+      "article": "CN-25",
       "titre": "Échange de renseignements",
       "texte": [
         "1. Les autorités compétentes des États contractants échangent les renseignements nécessaires pour appliquer les dispositions de la présente Convention ou celles des lois internes des États contractants relatives aux impôts visés par la Convention, dans la mesure où l'imposition qu'elles prévoient n'est pas contraire à la Convention, notamment en ce qui concerne la prévention en matière d'évasion desdits impôts. L'échange de ces renseignements n'est pas restreint par les Articles 1 et 2.",
@@ -361,7 +361,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.26",
+      "article": "CN-26",
       "titre": "Droits aux avantages",
       "texte": [
         "Nonobstant les autres dispositions de la présente Convention, un avantage au titre de celle-ci ne sera accordé à titre d'un élément de revenu ou de fortune s'il est raisonnable de conclure, compte tenu de l'ensemble des faits et circonstances propres à la situation, que l'octroi de cet avantage était l'un des objectifs principaux d'un montage ou d'une transaction ayant permis, directement ou indirectement, de l'obtenir, à moins qu'il soit établi que l'octroi de cet avantage dans ces circonstances serait conforme à l'objet et au but des dispositions pertinentes de cette Convention."
@@ -370,7 +370,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.27",
+      "article": "CN-27",
       "titre": "Agents diplomatiques et fonctionnaires consulaires",
       "texte": [
         "Les dispositions de la présente Convention ne portent pas atteinte aux privilèges fiscaux dont bénéficient les agents diplomatiques ou les fonctionnaires consulaires en vertu soit des règles générales du droit international, soit des dispositions d'accords particuliers."
@@ -379,7 +379,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.28",
+      "article": "CN-28",
       "titre": "Entrée en vigueur",
       "texte": [
         "1. Chaque État contractant notifiera à l'autre État contractant, par la voie diplomatique, l'accomplissement de la procédure requise par sa législation pour l'application de la présente convention. La présente convention entrera en vigueur à compter de la date de la dernière notification.",
@@ -391,7 +391,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art.29",
+      "article": "CN-29",
       "titre": "Dénonciation",
       "texte": [
         "1. La présente convention demeurera en vigueur pour une durée illimitée. Chaque État contractant peut dénoncer la convention par la voie diplomatique à travers un préavis écrit à l'autre État contractant avant le 30 juin de chaque année civile et après une période de cinq années à partir de la date de son entrée en vigueur.",
