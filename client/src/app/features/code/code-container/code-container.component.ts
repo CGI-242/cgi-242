@@ -89,11 +89,17 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                     </div>
                   } @else {
                     <div class="divide-y divide-secondary-100">
-                      @for (article of filteredArticles(); track article.id) {
+                      @for (article of filteredArticles(); track article.id; let i = $index) {
                         <!-- Séparateur sous-section si c'est le premier article de la sous-section -->
                         @if (getSousSectionHeader(article.numero); as ssHeader) {
                           <div class="px-3 py-2 bg-primary-100 border-l-4 border-primary-500">
                             <span class="text-sm font-semibold text-primary-800">§ {{ ssHeader }}</span>
+                          </div>
+                        }
+                        <!-- Sous-header de paragraphe (1) Définition, 2) Exemptions...) -->
+                        @if (isFirstOfParagraph(article, i)) {
+                          <div class="px-3 py-1.5 bg-primary-50 border-l-2 border-primary-300 ml-2">
+                            <span class="text-xs font-medium text-primary-700">{{ getParagraphHeader(article) }}</span>
                           </div>
                         }
                         <button
@@ -199,11 +205,17 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                 <!-- Vue multi-articles (lecture continue) -->
                 <div class="flex-1 overflow-y-auto p-6 bg-secondary-50/50">
                   <div class="max-w-4xl mx-auto space-y-6">
-                    @for (article of filteredArticles(); track article.id) {
+                    @for (article of filteredArticles(); track article.id; let i = $index) {
                       <!-- Séparateur sous-section -->
                       @if (getSousSectionHeader(article.numero); as ssHeader) {
                         <div class="py-4 px-6 bg-primary-100 border-l-4 border-primary-500 rounded-r-lg">
                           <h2 class="text-lg font-bold text-primary-800">§ {{ ssHeader }}</h2>
+                        </div>
+                      }
+                      <!-- Sous-header de paragraphe (1) Définition, 2) Exemptions...) -->
+                      @if (isFirstOfParagraph(article, i)) {
+                        <div class="py-2 px-4 bg-primary-50 border-l-2 border-primary-300 rounded-r-lg ml-4">
+                          <h3 class="text-base font-medium text-primary-700">{{ getParagraphHeader(article) }}</h3>
                         </div>
                       }
                       <!-- Article -->
@@ -449,6 +461,40 @@ export class CodeContainerComponent implements OnInit {
       }
     }
     return null;
+  }
+
+  // Retourne le sous-header de paragraphe (1) Définition, 2) Exemptions...) extrait du titre
+  getParagraphHeader(article: Article): string | null {
+    if (!article.titre) return null;
+
+    // Format attendu: "I. Revenus fonciers : 1) Définition" -> extraire "1) Définition"
+    const match = article.titre.match(/:\s*(\d+\)\s*.+)$/);
+    if (match) {
+      return match[1];
+    }
+    return null;
+  }
+
+  // Vérifie si c'est le premier article d'un nouveau paragraphe
+  isFirstOfParagraph(article: Article, index: number): boolean {
+    const paragraphHeader = this.getParagraphHeader(article);
+    if (!paragraphHeader) return false;
+
+    // Extraire le numéro du paragraphe (1, 2, 3...)
+    const paragraphNum = paragraphHeader.match(/^(\d+)\)/)?.[1];
+    if (!paragraphNum) return false;
+
+    // Si c'est le premier article ou si l'article précédent a un paragraphe différent
+    if (index === 0) return true;
+
+    const articles = this.filteredArticles();
+    const prevArticle = articles[index - 1];
+    const prevParagraphHeader = this.getParagraphHeader(prevArticle);
+
+    if (!prevParagraphHeader) return true;
+
+    const prevParagraphNum = prevParagraphHeader.match(/^(\d+)\)/)?.[1];
+    return paragraphNum !== prevParagraphNum;
   }
 
   async copyArticle(article: Article): Promise<void> {
