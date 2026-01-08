@@ -116,7 +116,7 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                           [class.border-l-primary-600]="selectedArticle()?.id === article.id">
                           <span class="font-medium text-primary-700 text-base whitespace-nowrap">Art. {{ article.numero }}</span>
                           @if (article.titre) {
-                            <span class="text-sm text-secondary-500 truncate">{{ article.titre }}</span>
+                            <span class="text-sm text-secondary-500 truncate">{{ getCleanTitle(article.titre) }}</span>
                           }
                         </button>
                       } @empty {
@@ -146,7 +146,7 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                     <div class="flex items-baseline gap-3">
                       <h1 class="text-2xl font-bold text-secondary-900">Art. {{ article.numero }}</h1>
                       @if (article.titre) {
-                        <p class="text-lg text-secondary-600">{{ article.titre }}</p>
+                        <p class="text-lg text-secondary-600">{{ getCleanTitle(article.titre) }}</p>
                       }
                     </div>
                     <div class="flex items-center gap-2">
@@ -235,7 +235,7 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                         <div class="flex items-baseline gap-3 mb-4 pb-3 border-b border-secondary-200">
                           <h3 class="text-xl font-bold text-secondary-900">Art. {{ article.numero }}</h3>
                           @if (article.titre) {
-                            <span class="text-base text-secondary-600">{{ article.titre }}</span>
+                            <span class="text-base text-secondary-600">{{ getCleanTitle(article.titre) }}</span>
                           }
                         </div>
                         @if (article.chapeau) {
@@ -482,6 +482,16 @@ export class CodeContainerComponent implements OnInit {
     const romanMatch = titre.match(/^(I{1,3}|IV|V|VI)\.\s*/);
     if (romanMatch) return romanMatch[1];
     return null;
+  }
+
+  // Nettoie le titre pour l'affichage (retire le préfixe "I. Xxx :" ou "II. Xxx :")
+  getCleanTitle(titre: string | undefined): string {
+    if (!titre) return '';
+    // Format "II. Lieu d'imposition : Résidence unique" -> "Résidence unique"
+    const match = titre.match(/^(?:I{1,3}|IV|V|VI)\.\s*[^:]+:\s*(.+)$/);
+    if (match) return match[1];
+    // Format "I. Personnes imposables" (sans ":") -> garder tel quel
+    return titre;
   }
 
   // Retourne le sous-header de paragraphe (1) Définition, 2) Exemptions...) extrait du titre
