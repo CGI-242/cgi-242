@@ -90,6 +90,12 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                   } @else {
                     <div class="divide-y divide-secondary-100">
                       @for (article of filteredArticles(); track article.id) {
+                        <!-- Séparateur sous-section si c'est le premier article de la sous-section -->
+                        @if (getSousSectionHeader(article.numero); as ssHeader) {
+                          <div class="px-3 py-2 bg-primary-100 border-l-4 border-primary-500">
+                            <span class="text-sm font-semibold text-primary-800">§ {{ ssHeader }}</span>
+                          </div>
+                        }
                         <button
                           (click)="selectArticle(article)"
                           class="w-full text-left px-3 py-1.5 hover:bg-secondary-50 transition-colors flex items-center gap-2"
@@ -224,6 +230,7 @@ export class CodeContainerComponent implements OnInit {
   searchQuery = '';
   articleRange = signal<string | null>(null);
   selectedTome = signal<number | null>(null); // Tome sélectionné pour filtrer
+  sousSections = signal<{ titre: string; articles: string }[]>([]); // Sous-sections pour les séparateurs
   selectedArticle = this.articlesService.selectedArticle;
   copied = signal(false);
   activeTab = signal<'sommaire' | 'articles'>('sommaire');
@@ -349,13 +356,34 @@ export class CodeContainerComponent implements OnInit {
       this.searchQuery = '';
       this.articleRange.set(selection.articles);
       this.selectedTome.set(selection.tome ?? null); // Filtrer par tome si spécifié
+      this.sousSections.set(selection.sousSections ?? []); // Stocker les sous-sections pour les séparateurs
     } else {
       // Sinon, utiliser le titre pour la recherche
       this.articleRange.set(null);
       this.selectedTome.set(null);
+      this.sousSections.set([]);
       this.searchQuery = selection.titre;
     }
     this.activeTab.set('articles');
+  }
+
+  // Retourne le titre de la sous-section si l'article est le premier de cette sous-section
+  getSousSectionHeader(articleNumero: string): string | null {
+    const sousSections = this.sousSections();
+    if (!sousSections.length) return null;
+
+    const articleNum = parseInt(articleNumero.match(/^(\d+)/)?.[1] || '0', 10);
+
+    for (const ss of sousSections) {
+      const ssMatch = ss.articles.match(/^(\d+)/);
+      if (ssMatch) {
+        const ssStart = parseInt(ssMatch[1], 10);
+        if (articleNum === ssStart) {
+          return ss.titre;
+        }
+      }
+    }
+    return null;
   }
 
   async copyArticle(article: Article): Promise<void> {

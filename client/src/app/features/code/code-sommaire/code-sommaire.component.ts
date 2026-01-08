@@ -8,6 +8,7 @@ export interface SommaireSelection {
   titre: string;
   articles?: string; // Plage d'articles ex: "1-65 bis"
   tome?: number; // Numéro du tome pour filtrer correctement
+  sousSections?: { titre: string; articles: string }[]; // Pour afficher les sous-sections comme séparateurs
 }
 
 @Component({
@@ -389,20 +390,19 @@ export class CodeSommaireComponent {
   }
 
   onSectionClick(chapitre: Chapitre, section: Section, tomeNum?: number): void {
-    // Si la section a des sous-sections, n'afficher que les articles d'intro (avant la 1ère sous-section)
-    let articlesToShow = section.articles;
-    if (section.sous_sections && section.sous_sections.length > 0 && section.articles) {
-      const introArticles = this.getIntroArticles(section);
-      if (introArticles) {
-        articlesToShow = introArticles;
-      }
-    }
+    // Préparer les sous-sections pour les afficher comme séparateurs
+    const sousSections = section.sous_sections?.map(ss => ({
+      titre: `${ss.sous_section}. ${ss.titre}`,
+      articles: ss.articles || ''
+    }));
+
     this.selection.emit({
       type: 'section',
       path: `Chapitre ${chapitre.chapitre}, Section ${section.section}`,
       titre: section.titre,
-      articles: articlesToShow,
+      articles: section.articles,
       tome: tomeNum,
+      sousSections,
     });
   }
 
