@@ -272,15 +272,27 @@ export class CodeContainerComponent implements OnInit {
       return true;
     });
 
-    // Trier numériquement
+    // Trier numériquement avec gestion des suffixes latins
     return result.sort((a, b) => {
       const numA = parseInt(a.numero.match(/^(\d+)/)?.[1] || '0', 10);
       const numB = parseInt(b.numero.match(/^(\d+)/)?.[1] || '0', 10);
       if (numA !== numB) return numA - numB;
-      // Si même numéro, trier par suffixe (bis, ter, etc.)
-      return a.numero.localeCompare(b.numero);
+      // Si même numéro, trier par suffixe latin (bis, ter, quater...)
+      return this.getLatinSuffixOrder(a.numero) - this.getLatinSuffixOrder(b.numero);
     });
   });
+
+  // Ordre des suffixes latins
+  private getLatinSuffixOrder(numero: string): number {
+    const suffixes = ['', 'bis', 'ter', 'quater', 'quinquies', 'sexies', 'septies', 'octies', 'novies', 'decies', 'undecies', 'duodecies'];
+    const lower = numero.toLowerCase();
+    for (let i = suffixes.length - 1; i >= 0; i--) {
+      if (suffixes[i] && lower.includes(suffixes[i])) {
+        return i;
+      }
+    }
+    return 0;
+  }
 
   // Vérifie si un numéro d'article est dans une plage (ex: "1-65 bis") ou correspond à un article unique
   private isArticleInRange(numero: string, range: string): boolean {
