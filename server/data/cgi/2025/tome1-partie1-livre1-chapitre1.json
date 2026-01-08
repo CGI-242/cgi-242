@@ -38,7 +38,7 @@
     },
     {
       "article": "Art. 2",
-      "titre": "I. Personnes imposables : Personnes imposables",
+      "titre": "I. Personnes imposables : Domicile fiscal et résidence",
       "texte": [
         "Sous réserve des dispositions des conventions internationales, sont imposables :",
         "1) a) Les personnes physiques de nationalité congolaise ou étrangère ayant leur domicile fiscal au Congo ou y résidant habituellement.",
@@ -170,7 +170,7 @@
     },
     {
       "article": "Art. 8",
-      "titre": "II. Lieu d'imposition : Lieu d'imposition",
+      "titre": "II. Lieu d'imposition : Résidence unique ou multiple",
       "texte": [
         "Si le contribuable a une résidence unique au Congo, l'impôt est établi au lieu de cette résidence.",
         "Si le contribuable possède plusieurs résidences au Congo, il est assujetti à l'impôt dans la Commune ou le District où est réputé posséder sa résidence principale.",
@@ -265,7 +265,7 @@
     },
     {
       "article": "Art. 13",
-      "titre": "I. Revenus fonciers : 3) Détermination du revenu imposable",
+      "titre": "I. Revenus fonciers : 3) Détermination - Revenu net foncier",
       "texte": [
         "Le revenu net foncier est égal à la différence entre le montant du revenu brut et le total des charges de la propriété."
       ],
@@ -278,7 +278,7 @@
     },
     {
       "article": "Art. 13 bis",
-      "titre": "I. Revenus fonciers : 3) Détermination du revenu imposable",
+      "titre": "I. Revenus fonciers : 3) Détermination - Revenu brut locatif",
       "texte": [
         "Le revenu brut des immeubles ou parties d'immeubles donnés en location est constitué par le montant des recettes brutes perçues par le propriétaire augmenté du montant des dépenses incombant normalement à ce dernier et mises par les conventions à la charge des locataires et diminué du montant des dépenses supportées par le propriétaire pour le compte des locataires."
       ],
@@ -293,7 +293,7 @@
     },
     {
       "article": "Art. 13 ter",
-      "titre": "I. Revenus fonciers : 3) Détermination du revenu imposable",
+      "titre": "I. Revenus fonciers : 3) Détermination - Finition par le locataire",
       "texte": [
         "Pour les immeubles dont la finition ou l'achèvement est confié aux futurs locataires, le revenu brut foncier est constitué par les loyers et prestations de toute nature figurant dans le contrat de bail."
       ],
@@ -307,7 +307,7 @@
     },
     {
       "article": "Art. 13 quater",
-      "titre": "I. Revenus fonciers : 3) Détermination du revenu imposable",
+      "titre": "I. Revenus fonciers : 3) Détermination - Charges déductibles",
       "texte": [
         "Les charges de la propriété déductibles pour la détermination du revenu net comprennent :",
         "- les intérêts des dettes contractées pour la conservation, l'acquisition, la construction, la réparation ou l'amélioration desdites propriétés ;",
@@ -327,7 +327,7 @@
     },
     {
       "article": "Art. 14",
-      "titre": "Définition des bénéfices industriels, commerciaux et artisanaux",
+      "titre": "II. Bénéfices industriels : 1) Définition",
       "texte": [
         "Sont considérés comme bénéfices industriels, commerciaux et artisanaux pour l'application de l'IRPP, les bénéfices réalisés par des personnes physiques et provenant de l'exercice d'une profession commerciale, industrielle et artisanale.",
         "Il en est ainsi des bénéfices réalisés par les concessionnaires des mines et des carrières, les amodiataires et sous-amodiataires de concessions minières, les titulaires de permis d'exploration et d'exploitation des mines et des carrières, des hydrocarbures et des forêts."
@@ -344,7 +344,7 @@
     },
     {
       "article": "Art. 15",
-      "titre": "Assimilation à des bénéfices industriels et commerciaux",
+      "titre": "II. Bénéfices industriels : 1) Assimilation BIC",
       "texte": [
         "Présentent également le caractère de bénéfices commerciaux et industriels pour l'application du présent impôt, les bénéfices réalisés par les personnes physiques désignées ci-après :",
         "1° personnes qui, habituellement, achètent en leur nom ou en vue de revendre, des actions ou parts créées ou émises par les mêmes sociétés ;",
@@ -366,7 +366,7 @@
     },
     {
       "article": "Art. 15 bis",
-      "titre": "Déclaration d'existence",
+      "titre": "II. Bénéfices industriels : 2) Déclaration d'existence",
       "texte": [
         "Les contribuables visés aux articles 14 et 15 ci-dessus doivent, dans les quinze jours du début de leurs opérations, souscrire une déclaration d'existence auprès de l'inspection divisionnaire des contributions directes et indirectes dont ils dépendent."
       ],
@@ -379,7 +379,7 @@
     },
     {
       "article": "Art. 16",
-      "titre": "Exonération",
+      "titre": "II. Bénéfices industriels : 3) Exonération",
       "texte": [
         "Abrogé."
       ],
@@ -388,7 +388,7 @@
     },
     {
       "article": "Art. 17",
-      "titre": "Détermination des bénéfices imposables",
+      "titre": "II. Bénéfices industriels : 4) Détermination des bénéfices",
       "texte": [
         "Sous réserve des dispositions ci-après, les règles de détermination du résultat sont définies par les articles 107 à 121 du présent Code.",
         "",
@@ -411,7 +411,7 @@
     },
     {
       "article": "Art. 18",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -420,7 +420,7 @@
     },
     {
       "article": "Art. 19",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -429,7 +429,7 @@
     },
     {
       "article": "Art. 20",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -438,7 +438,7 @@
     },
     {
       "article": "Art. 21",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -463,7 +463,7 @@
     },
     {
       "article": "Art. 23",
-      "titre": "",
+      "titre": "Sans objet",
       "texte": [
         "Sans objet."
       ],
@@ -472,7 +472,7 @@
     },
     {
       "article": "Art. 24",
-      "titre": "",
+      "titre": "Sans objet",
       "texte": [
         "Sans objet."
       ],
@@ -481,7 +481,7 @@
     },
     {
       "article": "Art. 25",
-      "titre": "",
+      "titre": "Sans objet",
       "texte": [
         "Sans objet."
       ],
@@ -771,7 +771,7 @@
     },
     {
       "article": "Art. 31 quater",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -780,7 +780,7 @@
     },
     {
       "article": "Art. 31 quinquies",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -789,7 +789,7 @@
     },
     {
       "article": "Art. 31 sexies",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -798,7 +798,7 @@
     },
     {
       "article": "Art. 31 septies",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -807,7 +807,7 @@
     },
     {
       "article": "Art. 31 octies",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -816,7 +816,7 @@
     },
     {
       "article": "Art. 31 nonies",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -867,7 +867,7 @@
     },
     {
       "article": "Art. 34",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -876,7 +876,7 @@
     },
     {
       "article": "Art. 34 bis",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -955,7 +955,7 @@
     },
     {
       "article": "Art. 36-C",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -1169,7 +1169,7 @@
     },
     {
       "article": "Art. 44",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -1178,7 +1178,7 @@
     },
     {
       "article": "Art. 44 bis",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -1187,7 +1187,7 @@
     },
     {
       "article": "Art. 45",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -1196,7 +1196,7 @@
     },
     {
       "article": "Art. 46",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -1205,7 +1205,7 @@
     },
     {
       "article": "Art. 46 bis",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -1214,7 +1214,7 @@
     },
     {
       "article": "Art. 47",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
@@ -1223,7 +1223,7 @@
     },
     {
       "article": "Art. 47 bis",
-      "titre": "",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé."
       ],
