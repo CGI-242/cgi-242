@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -13,18 +13,18 @@ import { RouterLink } from '@angular/router';
         <div class="flex items-center justify-between h-16">
           <!-- Logo -->
           <div class="flex items-center">
-            <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" class="h-48 w-auto" />
+            <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" class="h-10 md:h-14 w-auto" />
           </div>
 
-          <!-- Navigation -->
+          <!-- Navigation Desktop -->
           <nav class="hidden md:flex items-center space-x-8">
             <a href="#fonctionnalites" class="text-secondary-600 hover:text-primary-600 transition-colors">Fonctionnalités</a>
             <a href="#tarifs" class="text-secondary-600 hover:text-primary-600 transition-colors">Tarifs</a>
             <a href="#contact" class="text-secondary-600 hover:text-primary-600 transition-colors">Contact</a>
           </nav>
 
-          <!-- CTA -->
-          <div class="flex items-center space-x-4">
+          <!-- CTA Desktop -->
+          <div class="hidden md:flex items-center space-x-4">
             <a routerLink="/auth/login" class="text-secondary-600 hover:text-primary-600 transition-colors">
               Connexion
             </a>
@@ -32,31 +32,91 @@ import { RouterLink } from '@angular/router';
               Essai gratuit
             </a>
           </div>
+
+          <!-- Menu Hamburger Mobile -->
+          <button
+            (click)="toggleMobileMenu()"
+            class="md:hidden p-2 rounded-lg text-secondary-600 hover:bg-secondary-100 transition-colors"
+            aria-label="Menu">
+            @if (!mobileMenuOpen()) {
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            }
+            @if (mobileMenuOpen()) {
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            }
+          </button>
         </div>
+
+        <!-- Mobile Menu -->
+        @if (mobileMenuOpen()) {
+          <div class="md:hidden border-t border-secondary-200 py-4 space-y-3">
+          <a href="#fonctionnalites" (click)="closeMobileMenu()" class="block px-3 py-2 text-secondary-600 hover:bg-secondary-50 rounded-lg">Fonctionnalités</a>
+          <a href="#tarifs" (click)="closeMobileMenu()" class="block px-3 py-2 text-secondary-600 hover:bg-secondary-50 rounded-lg">Tarifs</a>
+          <a href="#contact" (click)="closeMobileMenu()" class="block px-3 py-2 text-secondary-600 hover:bg-secondary-50 rounded-lg">Contact</a>
+          <hr class="border-secondary-200">
+          <a routerLink="/auth/login" (click)="closeMobileMenu()" class="block px-3 py-2 text-secondary-600 hover:bg-secondary-50 rounded-lg">Connexion</a>
+          <a routerLink="/auth/register" (click)="closeMobileMenu()" class="block px-3 py-2 bg-primary-600 text-white text-center rounded-lg font-semibold">Essai gratuit</a>
+          </div>
+        }
       </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-primary-600 to-primary-700 text-white py-20 md:py-32">
+    <section class="bg-gradient-to-br from-primary-600 to-primary-700 text-white py-12 md:py-32">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div class="text-center md:text-left">
+            <h1 class="text-3xl md:text-5xl font-heading font-bold mb-4 md:mb-6">
               Votre assistant fiscal IA pour le Congo-Brazzaville
             </h1>
-            <p class="text-xl text-white/80 mb-8">
+            <p class="text-lg md:text-xl text-white/80 mb-6 md:mb-8">
               Accédez instantanément au Code Général des Impôts 2025.
               Recherche intelligente, simulateurs fiscaux et réponses précises.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a routerLink="/auth/register" class="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all text-center">
+
+            <!-- Badges Mobile -->
+            <div class="flex flex-wrap justify-center md:hidden gap-2 mb-6">
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                2000+ articles
+              </span>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                IA instantanée
+              </span>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                </svg>
+                Simulateurs
+              </span>
+              <span class="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                CGI 2025
+              </span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <a routerLink="/auth/register" class="bg-white text-primary-600 px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-gray-100 transition-all text-center">
                 Commencer gratuitement
               </a>
-              <a routerLink="/auth/login" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary-600 transition-all text-center">
+              <a routerLink="/auth/login" class="border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-white hover:text-primary-600 transition-all text-center">
                 Se connecter
               </a>
             </div>
           </div>
+
+          <!-- Desktop Features Card -->
           <div class="hidden md:block">
             <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
               <div class="space-y-4">
@@ -367,7 +427,7 @@ import { RouterLink } from '@angular/router';
         <div class="grid md:grid-cols-4 gap-12 mb-12">
           <!-- Logo & Description -->
           <div class="md:col-span-2">
-            <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" class="h-16 mb-4" />
+            <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" class="h-10 md:h-16 mb-4" />
             <p class="text-secondary-400 mb-4 max-w-md">
               Assistant fiscal intelligent pour le Code Général des Impôts du Congo-Brazzaville.
               Recherche sémantique, simulateurs et IA au service des professionnels.
@@ -434,4 +494,13 @@ import { RouterLink } from '@angular/router';
 })
 export class Cgi242LandingComponent {
   currentYear = new Date().getFullYear();
+  mobileMenuOpen = signal(false);
+
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen.update(v => !v);
+  }
+
+  closeMobileMenu(): void {
+    this.mobileMenuOpen.set(false);
+  }
 }
