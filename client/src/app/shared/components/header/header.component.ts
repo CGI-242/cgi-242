@@ -16,7 +16,7 @@ import { OrgSwitcherComponent } from '../org-switcher/org-switcher.component';
           <!-- Logo -->
           <div class="flex items-center gap-8">
             <a routerLink="/" class="flex items-center gap-1">
-              <img src="assets/images/logo242.png" alt="CGI 242" class="h-14 sm:h-16 w-auto" />
+              <img src="assets/images/logo_transp.webp" alt="CGI 242" class="h-14 sm:h-16 w-auto" />
               <span class="text-base text-secondary-400 font-medium hidden sm:inline">By NORMX AI</span>
             </a>
 
