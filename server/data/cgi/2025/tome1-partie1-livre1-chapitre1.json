@@ -633,10 +633,10 @@
     },
     {
       "article": "Art. 30",
-      "titre": "II. Bénéfices industriels, commerciaux et artisanaux (BICA) : 4) Fixation du bénéfice imposable : b) Régime du réel",
+      "titre": "II. Bénéfices industriels, commerciaux et artisanaux (BICA) : 4) Fixation du bénéfice imposable : b) Régime du réel : Assujettis du régime du réel",
       "texte": [
         "Les contribuables dont le chiffre d'affaires est supérieur à 100 000 000 FCFA sont assujettis au régime de l'imposition assis sur le bénéfice réel.",
-        "Ces contribuables sont tenus de souscrire une déclaration du montant de leur résultat à l'unité des moyennes entreprises de la circonscription dans laquelle est situé le siège de l'entreprise ou son principal établissement, dans les conditions prévus par les articles 78 à 80 du CGI si leur chiffres d'affaires ne dépasse pas 2 000 000 000 FCFA.",
+        "Ces contribuables sont tenus de souscrire une déclaration du montant de leur résultat à l'unité des moyennes entreprises de la circonscription dans laquelle est situé le siège de l'entreprise ou son principal établissement, dans les conditions et détails prévus par les articles 78 à 80 du CGI, si leur chiffres d'affaires ne dépasse pas 2 000 000 000 FCFA.",
         "",
         "En l'absence d'une unité des moyennes entreprises dans le département, l'unité territorialement compétente est celle chargée de la gestion des petites entreprises.",
         "Pour les contribuables dont le chiffre d'affaires est supérieur ou égal à 2 000 000 000 FCFA, la déclaration susvisée est déposée à l'unité des grandes entreprises de la circonscription dans laquelle est situé le siège de l'entreprise ou son principal établissement.",
@@ -655,18 +655,23 @@
     },
     {
       "article": "Art. 30 bis",
-      "titre": "II. Bénéfices industriels, commerciaux et artisanaux (BICA) : 4) Fixation du bénéfice imposable : b) Régime du réel : Télé-déclaration",
+      "titre": "II. Bénéfices industriels, commerciaux et artisanaux (BICA) : 4) Fixation du bénéfice imposable : b) Régime du réel : Télédéclaration et télépaiement",
       "texte": [
         "Les contribuables soumis au régime de l'imposition d'après le bénéfice réel doivent, dans le cadre de leurs obligations fiscales, procéder à la télé-déclaration et au télépaiement des impôts, droits et taxes dont ils sont redevables, en application des dispositions légales en vigueur.",
         "Le non-respect des dispositions de l'alinéa ci-dessus est sanctionné par une pénalité de 10 % du montant à déclarer.",
-        "Sous peine d'irrecevabilité, les états financiers doivent être attestés et certifiés par un expert-comptable en l'absence d'un commissaire aux comptes en leur entité."
+        "Sous peine d'irrecevabilité, les états financiers doivent être attestés et certifiés par un expert-comptable en l'absence d'un commissaire aux comptes en leur entité.",
+        "Ces derniers doivent justifier d'un certificat de moralité fiscale de l'année en cours.",
+        "En cas de conflit sur ces états financiers, l'administration fiscale se référera à ceux déposés auprès d'elle ou à ceux de la centrale des bilans auprès de la BEAC."
       ],
       "mots_cles": [
         "télé-déclaration",
         "télépaiement",
         "pénalité",
         "expert-comptable",
-        "états financiers"
+        "états financiers",
+        "certificat de moralité fiscale",
+        "centrale des bilans",
+        "BEAC"
       ],
       "statut": "en vigueur"
     },
