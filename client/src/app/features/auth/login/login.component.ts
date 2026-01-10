@@ -11,29 +11,29 @@ import { AuthService } from '@core/services/auth.service';
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
   template: `
     <div class="login-page">
-      <!-- Section Gauche - Branding avec logo -->
-      <div class="login-left bg-primary-600">
+      <!-- Section Gauche - Logo sur fond blanc -->
+      <div class="login-left bg-white">
         <div class="text-center">
           <a routerLink="/">
             <img src="assets/images/logo_transp.webp" alt="CGI 242" class="h-48 md:h-64 cursor-pointer" />
           </a>
-          <p class="text-white/80 mt-4 text-lg">Assistant Fiscal IA</p>
-          <p class="text-white/60 text-sm mt-2">Congo-Brazzaville</p>
+          <p class="text-primary-600 mt-4 text-lg font-medium">Assistant Fiscal IA</p>
+          <p class="text-secondary-500 text-sm mt-2">Congo-Brazzaville</p>
         </div>
       </div>
 
-      <!-- Section Droite - Formulaire -->
-      <div class="login-right">
+      <!-- Section Droite - Formulaire sur fond bleu -->
+      <div class="login-right bg-primary-600">
         <div class="login-form">
           <!-- Logo mobile -->
           <div class="text-center mb-8">
             <a routerLink="/" class="inline-block md:hidden">
               <img src="assets/images/logo_transp.webp" alt="CGI 242" class="h-20 mx-auto mb-4" />
             </a>
-            <h2 class="text-2xl font-heading font-semibold text-primary-600">
+            <h2 class="text-2xl font-heading font-semibold text-white">
               Bienvenue
             </h2>
-            <p class="text-secondary-500">Connectez-vous pour continuer</p>
+            <p class="text-white/70">Connectez-vous pour continuer</p>
           </div>
 
           <!-- Message d'erreur -->
@@ -45,7 +45,7 @@ import { AuthService } from '@core/services/auth.service';
 
           <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
             <div>
-              <label for="email" class="form-label">Email</label>
+              <label for="email" class="form-label text-white">Email</label>
               <input
                 type="email"
                 id="email"
@@ -60,7 +60,7 @@ import { AuthService } from '@core/services/auth.service';
             </div>
 
             <div>
-              <label for="password" class="form-label">Mot de passe</label>
+              <label for="password" class="form-label text-white">Mot de passe</label>
               <div class="relative">
                 <input
                   [type]="showPassword() ? 'text' : 'password'"
@@ -91,18 +91,18 @@ import { AuthService } from '@core/services/auth.service';
             </div>
 
             <div class="flex items-center justify-between">
-              <label for="rememberMe" class="flex items-center gap-2 text-sm text-secondary-600">
-                <input type="checkbox" id="rememberMe" class="rounded border-secondary-300 text-primary-600" />
+              <label for="rememberMe" class="flex items-center gap-2 text-sm text-white/80">
+                <input type="checkbox" id="rememberMe" class="rounded border-white/30 bg-white/10 text-white" />
                 Se souvenir de moi
               </label>
-              <a routerLink="/auth/forgot-password" class="text-sm text-primary-600 hover:underline">
+              <a routerLink="/auth/forgot-password" class="text-sm text-white hover:underline">
                 Mot de passe oublié?
               </a>
             </div>
 
             <button
               type="submit"
-              class="btn-primary w-full flex items-center justify-center gap-2"
+              class="w-full flex items-center justify-center gap-2 bg-white text-primary-600 font-semibold py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors disabled:opacity-50"
               [disabled]="form.invalid || isLoading()"
             >
               @if (isLoading()) {
@@ -121,17 +121,17 @@ import { AuthService } from '@core/services/auth.service';
           </form>
 
           <div class="mt-6 text-center">
-            <p class="text-sm text-secondary-600">
+            <p class="text-sm text-white/80">
               Pas encore de compte ?
-              <a routerLink="/auth/register" class="text-primary-600 hover:underline font-medium">Créer un compte</a>
+              <a routerLink="/auth/register" class="text-white hover:underline font-medium">Créer un compte</a>
             </p>
           </div>
 
-          <div class="mt-8 pt-8 border-t border-secondary-200 text-center">
-            <p class="text-sm text-secondary-500">
+          <div class="mt-8 pt-8 border-t border-white/20 text-center">
+            <p class="text-sm text-white/80">
               CGI 242 by NORMX AI
             </p>
-            <p class="text-xs text-secondary-400 mt-1">
+            <p class="text-xs text-white/60 mt-1">
               Code Général des Impôts - Congo-Brazzaville
             </p>
           </div>
@@ -149,11 +149,11 @@ import { AuthService } from '@core/services/auth.service';
     }
 
     .login-right {
-      @apply flex-1 flex items-center justify-center p-6 bg-secondary-50;
+      @apply flex-1 flex items-center justify-center p-6;
     }
 
     .login-form {
-      @apply w-full max-w-md bg-white rounded-2xl shadow-lg p-8;
+      @apply w-full max-w-md p-8;
     }
 
     .form-label {
