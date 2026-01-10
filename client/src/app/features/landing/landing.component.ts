@@ -19,26 +19,25 @@ interface Product {
   imports: [CommonModule, RouterLink],
   template: `
     <!-- Header -->
-    <header class="bg-primary-500 text-white sticky top-0 z-50 shadow-lg">
+    <header class="bg-white text-secondary-800 sticky top-0 z-50 shadow-lg border-b border-secondary-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
+        <div class="flex items-center justify-between h-20">
           <!-- Logo -->
           <div class="flex items-center">
-            <span class="font-heading font-bold text-2xl">NORMX</span>
-            <span class="text-gray-200 text-2xl ml-1">AI</span>
+            <img src="assets/images/normx_ai_transp_slogan_sm.webp" alt="NORMX AI" class="h-56 w-auto" />
           </div>
 
           <!-- Navigation -->
           <nav class="hidden md:flex items-center space-x-8">
-            <a href="#produits" class="hover:text-gray-200 transition-colors">Produits</a>
-            <a href="#apropos" class="hover:text-gray-200 transition-colors">À propos</a>
-            <a href="#contact" class="hover:text-gray-200 transition-colors">Contact</a>
+            <a href="#produits" class="text-secondary-600 hover:text-primary-600 transition-colors">Produits</a>
+            <a href="#apropos" class="text-secondary-600 hover:text-primary-600 transition-colors">À propos</a>
+            <a href="#contact" class="text-secondary-600 hover:text-primary-600 transition-colors">Contact</a>
           </nav>
 
           <!-- CTA -->
           <div class="flex items-center space-x-4">
             <a [href]="cgi242Url"
-               class="bg-white text-primary-500 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+               class="bg-primary-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
               Accéder à CGI 242
             </a>
           </div>
@@ -224,8 +223,7 @@ interface Product {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="mb-6 md:mb-0">
-            <span class="font-heading font-bold text-2xl">NORMX</span>
-            <span class="text-gray-400 text-2xl ml-1">AI</span>
+            <img src="assets/images/normx_ai_blanc_slogan_sm.webp" alt="NORMX AI" class="h-16 w-auto mb-2" />
             <p class="text-gray-400 mt-2">Solutions IA pour l'Afrique</p>
           </div>
 
@@ -253,7 +251,7 @@ export class LandingComponent {
   // URL dynamique selon l'environnement (localhost en dev, cgi242.normx-ai.com en prod)
   cgi242Url = environment.production
     ? `https://${environment.appDomain}`
-    : `http://${environment.appDomain}`;
+    : '/accueil';
 
   products: Product[] = [
     {

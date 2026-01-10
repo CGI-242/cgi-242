@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 2,
-    "livre_titre": "Contribution du timbre",
     "chapitre": 2,
-    "chapitre_titre": "Timbre de dimension"
+    "chapitre_titre": "Timbre de dimension",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

@@ -5,11 +5,12 @@
     "edition": "2025",
     "tome": 1,
     "partie": 2,
-    "partie_titre": "Impositions perçues au profit des collectivités et de divers organismes",
-    "titre": 1,
-    "titre_titre": "Impôts perçus au profit des collectivités",
+    "livre": null,
     "chapitre": 2,
-    "chapitre_titre": "Taxes facultatives"
+    "chapitre_titre": "Taxes facultatives",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "sections": [
     {

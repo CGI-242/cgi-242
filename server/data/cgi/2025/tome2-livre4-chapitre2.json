@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 4,
-    "livre_titre": "Taxe immobilière",
     "chapitre": 2,
-    "chapitre_titre": "Modalités d'imposition"
+    "chapitre_titre": "Modalités d'imposition",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

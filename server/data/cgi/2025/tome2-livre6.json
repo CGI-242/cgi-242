@@ -6,16 +6,25 @@
     "tome": 2,
     "partie": null,
     "livre": 6,
-    "livre_titre": "Taxe sur le kilowatt / heure",
     "chapitre": null,
-    "chapitre_titre": "Taxe sur le kilowatt / heure"
+    "chapitre_titre": "Taxe sur le kilowatt / heure",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {
-      "article": "Livre 6",
+      "article": "Art. 6",
       "titre": "Taxe sur le kilowatt / heure",
-      "texte": ["Ce livre a été intégralement abrogé"],
-      "mots_cles": ["taxe", "kilowatt", "heure", "abrogé"],
+      "texte": [
+        "Ce livre a été intégralement abrogé"
+      ],
+      "mots_cles": [
+        "taxe",
+        "kilowatt",
+        "heure",
+        "abrogé"
+      ],
       "statut": "abrogé"
     }
   ]

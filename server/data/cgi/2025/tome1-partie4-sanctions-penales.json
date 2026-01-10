@@ -5,8 +5,12 @@
     "edition": "2025",
     "tome": 1,
     "partie": 4,
-    "partie_titre": "Sanctions pénales",
-    "en_tete_page": "Procédures fiscales"
+    "livre": null,
+    "chapitre": null,
+    "chapitre_titre": "",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

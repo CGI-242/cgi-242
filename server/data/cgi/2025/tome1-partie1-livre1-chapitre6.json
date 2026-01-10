@@ -8,6 +8,8 @@
     "livre": 1,
     "chapitre": 6,
     "chapitre_titre": "Dispositions diverses",
+    "section": null,
+    "section_titre": null,
     "page_source": null
   },
   "articles": [
@@ -247,7 +249,6 @@
       "article": "Art. 183",
       "titre": "Retenue à la source sur commissions, courtages, honoraires",
       "section": "Section 2 : Obligations des personnes versant commissions, courtages, ristournes, honoraires et droits d'auteurs",
-      "reference": "L.F.2023, L.F.2024, L.F.2025",
       "texte": [
         "Les personnes physiques et morales qui, à l'occasion de l'exercice de leur profession, versent à des personnes physiques ou morales établies au Congo et non soumises à l'impôt sur les sociétés des sommes en rémunération de prestations de toute nature fournies ou utilisées au Congo, sont tenues d'opérer la retenue à la source au taux de 10 % pour le compte de l'État.",
         "Cette retenue doit également être opérée par les institutions et les administrations publiques, les collectivités locales et les établissements publics qui versent aux personnes physiques des sommes à titre de primes, émoluments, indemnités, honoraires.",
@@ -378,7 +379,6 @@
       "article": "Art. 185 ter-A",
       "titre": "Champ d'application - Non-résidents",
       "section": "Section 6 : Dispositions particulières applicables aux personnes physiques ou morales de nationalité congolaise ou étrangère n'ayant ni domicile, ni résidence fiscale au Congo",
-      "reference": "L.F.2023",
       "texte": [
         "1) Sous réserve des conventions fiscales internationales, les personnes physiques ou morales de nationalité congolaise ou étrangère n'ayant ni domicile, ni résidence fiscale au Congo, sont soumises à une retenue à la source sur les revenus réalisés au Congo ou en provenance, en contrepartie des prestations rendues ou utilisées au Congo par l'État, les collectivités territoriales, les entreprises ou établissements situés au Congo.",
         "2) Il s'agit notamment :",
@@ -419,7 +419,6 @@
       "article": "Art. 185 ter-B",
       "titre": "Base imposable",
       "section": "Section 6 : Dispositions particulières applicables aux personnes physiques ou morales de nationalité congolaise ou étrangère n'ayant ni domicile, ni résidence fiscale au Congo",
-      "reference": "L.F.2023",
       "texte": [
         "La base imposable de la retenue à la source est constituée par le montant brut des redevances et autres rémunérations visées ci-dessus.",
         "Par montant brut, il faut entendre toutes les sommes facturées ou reçues, hors TVA."
@@ -436,7 +435,6 @@
       "article": "Art. 185 ter-C",
       "titre": "Taux d'imposition",
       "section": "Section 6 : Dispositions particulières applicables aux personnes physiques ou morales de nationalité congolaise ou étrangère n'ayant ni domicile, ni résidence fiscale au Congo",
-      "reference": "L.F.2023",
       "texte": [
         "1) Sous réserve des conventions fiscales internationales, les taux de la retenue à la source sont fixés comme suit :",
         "• taux général : 20 % ;",
@@ -476,7 +474,6 @@
       "article": "Art. 185 ter-D",
       "titre": "Fait générateur et exigibilité",
       "section": "Section 6 : Dispositions particulières applicables aux personnes physiques ou morales de nationalité congolaise ou étrangère n'ayant ni domicile, ni résidence fiscale au Congo",
-      "reference": "L.F.2023",
       "texte": [
         "Le fait générateur de la taxe est l'émission de la facture ou de tout document en tenant lieu et la comptabilisation ou la prise en charge des sommes visées ci-dessus.",
         "Au cas où lesdites sommes ou rémunérations sont admises comme charges fiscalement déductibles, elles sont considérées comme des distributions de bénéfices.",
@@ -500,7 +497,6 @@
       "article": "Art. 185 ter-E",
       "titre": "Modalités de déclaration et de paiement",
       "section": "Section 6 : Dispositions particulières applicables aux personnes physiques ou morales de nationalité congolaise ou étrangère n'ayant ni domicile, ni résidence fiscale au Congo",
-      "reference": "L.F.2023",
       "texte": [
         "L'impôt est retenu à la source et déclaré à l'administration fiscale au nom de la personne débitrice située au Congo et pour le compte de la personne créancière non domiciliée au Congo, telles que lesdites personnes sont visées à l'article 185 ter A.",
         "La personne débitrice, en tant que redevable légal de l'impôt, doit :",
@@ -521,7 +517,6 @@
       "article": "Art. 185 ter-F",
       "titre": "Dispositions diverses - Caractère libératoire",
       "section": "Section 6 : Dispositions particulières applicables aux personnes physiques ou morales de nationalité congolaise ou étrangère n'ayant ni domicile, ni résidence fiscale au Congo",
-      "reference": "L.F.2023",
       "texte": [
         "L'assujettissement des personnes visées à l'article 185 ter A est libératoire de l'impôt sur les sociétés (IS) et de la taxe spéciale sur les sociétés."
       ],

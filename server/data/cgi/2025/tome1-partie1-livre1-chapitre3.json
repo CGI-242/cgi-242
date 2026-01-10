@@ -8,6 +8,8 @@
     "livre": 1,
     "chapitre": 3,
     "chapitre_titre": "Impôt sur les bénéfices des sociétés",
+    "section": null,
+    "section_titre": null,
     "page_source": 40
   },
   "articles": [
@@ -78,7 +80,6 @@
     },
     {
       "article": "Art. 107-A",
-      "reference": "L.F.2023",
       "titre": "Exonérations de l'IS",
       "texte": [
         "Sont exonérées de l'impôt sur les sociétés :",
@@ -124,7 +125,6 @@
     },
     {
       "article": "Art. 108",
-      "reference": "L.F.2022, L.F.R.2022",
       "titre": "Territorialité de l'IS",
       "texte": [
         "Une activité économique est considérée comme réalisée au Congo, lorsqu'il y a exercice habituel de cette activité soit dans le cadre d'un établissement stable, soit par l'intermédiaire des représentants sans personnalité professionnelle indépendante ou lorsque cette activité se traduit par des opérations qui forment un cycle commercial complet.",
@@ -179,7 +179,6 @@
     },
     {
       "article": "Art. 109-B",
-      "reference": "L.F.2023",
       "titre": "Charges déductibles et acte anormal de gestion",
       "texte": [
         "Le bénéfice net imposable est établi sous déduction de toutes les charges nécessitées directement par l'exercice de l'activité imposable, notamment les frais généraux, les frais financiers, les pertes proprement dites, les amortissements et les provisions.",
@@ -374,7 +373,6 @@
     },
     {
       "article": "Art. 111",
-      "reference": "L.F.2023",
       "titre": "Rémunérations versées à l'étranger",
       "texte": [
         "Sont également admises comme charges déductibles, les sommes versées à une personne physique ou morale hors du Congo en rémunération :",
@@ -518,7 +516,6 @@
     },
     {
       "article": "Art. 112-C",
-      "reference": "L.F.2023",
       "titre": "Primes d'assurance",
       "texte": [
         "Sont déductibles des bénéfices imposables :",
@@ -560,7 +557,6 @@
     },
     {
       "article": "Art. 112-E",
-      "reference": "L.F.2023",
       "titre": "Intérêts versés aux associés et groupe",
       "texte": [
         "Les intérêts versés par une société, soit à ses associés ou actionnaires soit à des sociétés ou établissements financiers, membres d'un même groupe, ne sont déductibles que dans la limite de ceux calculés au taux d'intérêt des appels d'offre de la Banque Centrale, majoré de trois points et à la condition que le capital social ait été entièrement libéré.",
@@ -633,7 +629,6 @@
     },
     {
       "article": "Art. 113-A",
-      "reference": "L.F.2023, L.F.2025",
       "titre": "Charges exclues de la déduction",
       "texte": [
         "Sont exclues des charges déductibles :",
@@ -1042,7 +1037,6 @@
     },
     {
       "article": "Art. 114-J bis",
-      "reference": "L.F.2025",
       "titre": "Amortissement matériel SFEC",
       "texte": [
         "Par dérogation à l'article 114-A, le matériel acquis dans le cadre d'utilisation du système de facturation électronique certifié (SFEC) est amortissable, dès l'année d'acquisition à 100 %, quelle que soit la durée d'utilisation dudit matériel."
@@ -1124,7 +1118,6 @@
     },
     {
       "article": "Art. 115-D",
-      "reference": "L.F.2024",
       "titre": "Provisions établissements de crédit - COBAC",
       "texte": [
         "Les provisions constituées par les établissements de crédits et autres entités juridiques du même secteur d'activité, conformément à la réglementation COBAC R n°2018-01 relatif à la classification, à la comptabilisation et au provisionnement des créances des établissements de crédit du 18 janvier 2018, sont déductibles du bénéfice imposable."
@@ -1448,7 +1441,6 @@
     },
     {
       "article": "Art. 120",
-      "reference": "L.F.2023",
       "titre": "Prix de transfert",
       "texte": [
         "Pour l'établissement de l'impôt sur les sociétés dû par les entreprises qui sont sous la dépendance ou qui possèdent le contrôle d'entreprises situées hors du Congo, les bénéfices indirectement transférés à ces dernières soit par voie de majoration ou de minoration des prix d'achat ou de vente, soit par tout autre moyen, sont incorporés aux résultats accusés par les comptabilités.",
@@ -1524,7 +1516,6 @@
     },
     {
       "article": "Art. 120-D",
-      "reference": "L.F.2023",
       "titre": "Obligation documentaire prix de transfert",
       "texte": [
         "Les personnes morales établies au Congo, dont le chiffre d'affaires annuel hors taxes ou l'actif brut figurant au bilan est supérieur ou égal à 500.000.000 FCFA, doivent tenir à la disposition de l'administration une documentation permettant de justifier la politique de prix de transfert pratiquée dans le cadre des transactions de toute nature réalisées avec des entités juridiques liées, établies ou constituées hors du Congo.",
@@ -1628,7 +1619,6 @@
     },
     {
       "article": "Art. 120-H",
-      "reference": "L.F.2023",
       "titre": "Accords préalables de prix",
       "texte": [
         "Les contribuables peuvent demander à l'administration la conclusion des accords préalables sur les méthodes de détermination des prix de transfert.",
@@ -1697,7 +1687,6 @@
     },
     {
       "article": "Art. 122",
-      "reference": "L.F.2025",
       "titre": "Taux de l'IS",
       "texte": [
         "Le taux de l'impôt sur les sociétés est fixé à 30 %.",
@@ -1713,7 +1702,6 @@
     },
     {
       "article": "Art. 122-A",
-      "reference": "L.F.2025",
       "titre": "Taux réduits et majorés",
       "texte": [
         "Par dérogation aux dispositions de l'article 122, le taux de l'impôt sur les sociétés est fixé à :",
@@ -1901,7 +1889,6 @@
     },
     {
       "article": "Art. 125",
-      "reference": "L.F.2023",
       "titre": "Abrogé",
       "texte": [
         "Abrogé"
@@ -2480,7 +2467,6 @@
     },
     {
       "article": "Art. 126 quater B-1",
-      "reference": "L.F.2022, L.F.R.2022, L.F.2023",
       "titre": "Paiement de l'IS et retenue à la source - Sous-traitants pétroliers",
       "texte": [
         "1) L'impôt sur les sociétés (IS) est payé spontanément et sans émission préalable de rôle sur les bénéfices ou la base imposable telle que définie ci-dessus par la société sous-traitante pétrolière.",
@@ -2684,7 +2670,6 @@
     },
     {
       "article": "Art. 126 sexies",
-      "reference": "L.F.2022, L.F.R.2022, L.F.2023",
       "titre": "Personnes morales liées aux sociétés pétrolières",
       "texte": [
         "1) Toutes les personnes morales ayant leur siège social au Congo, ou celles qui exercent au Congo une activité industrielle, commerciale, artisanale, agricole ou de prestations de services, par dérogation à l'article 31 bis et qui sont liées aux sociétés de recherche, de production et d'exploitation pétrolières installées ou opérant au Congo sont imposées au Congo selon les dispositions des articles 126 ter, 126 quater et 126 quinquies du présent Code, quel que soit le lieu d'exécution du contrat.",

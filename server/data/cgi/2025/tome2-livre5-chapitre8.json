@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 5,
-    "livre_titre": "Curatelle",
     "chapitre": 8,
-    "chapitre_titre": "Remise des successions au domaine et vente des biens non réclamés"
+    "chapitre_titre": "Remise des successions au domaine et vente des biens non réclamés",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

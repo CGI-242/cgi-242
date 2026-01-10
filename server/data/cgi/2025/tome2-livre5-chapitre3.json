@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 5,
-    "livre_titre": "Curatelle",
     "chapitre": 3,
-    "chapitre_titre": "Obligations des curateurs à l'ouverture d'une succession"
+    "chapitre_titre": "Obligations des curateurs à l'ouverture d'une succession",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

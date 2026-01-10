@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 5,
-    "livre_titre": "Curatelle",
     "chapitre": 14,
-    "chapitre_titre": "Biens sous séquestre"
+    "chapitre_titre": "Biens sous séquestre",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

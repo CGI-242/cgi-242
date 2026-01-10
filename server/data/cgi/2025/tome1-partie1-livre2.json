@@ -6,9 +6,11 @@
     "tome": 1,
     "partie": 1,
     "livre": 2,
-    "livre_titre": "Impôt sur le chiffre d'affaires intérieur",
-    "page_source": null,
-    "note": "Livre entièrement abrogé - Voir TFNC 6 pour les dispositions relatives à la TVA"
+    "chapitre": null,
+    "chapitre_titre": "",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {
@@ -21,8 +23,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 187",
@@ -34,8 +35,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 188",
@@ -47,8 +47,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 189",
@@ -60,8 +59,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 190",
@@ -73,8 +71,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 191",
@@ -86,8 +83,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 192",
@@ -99,8 +95,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 193",
@@ -112,8 +107,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 194",
@@ -125,8 +119,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 195",
@@ -138,8 +131,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 196",
@@ -151,8 +143,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 197",
@@ -164,8 +155,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 198",
@@ -177,8 +167,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 199",
@@ -190,8 +179,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 200",
@@ -203,8 +191,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 201",
@@ -216,8 +203,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 202",
@@ -229,8 +215,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 203",
@@ -242,8 +227,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 204",
@@ -255,8 +239,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 205",
@@ -268,8 +251,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 206",
@@ -281,8 +263,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 207",
@@ -294,8 +275,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 208",
@@ -307,8 +287,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 209",
@@ -320,8 +299,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 210",
@@ -333,8 +311,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 211",
@@ -346,8 +323,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 212",
@@ -359,8 +335,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 213",
@@ -372,8 +347,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 214",
@@ -385,8 +359,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 215",
@@ -398,8 +371,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 216",
@@ -411,8 +383,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 217",
@@ -424,8 +395,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 218",
@@ -437,8 +407,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 219",
@@ -450,8 +419,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 220",
@@ -463,8 +431,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 221",
@@ -476,8 +443,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 222",
@@ -489,8 +455,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 223",
@@ -502,8 +467,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 224",
@@ -515,8 +479,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 225",
@@ -528,8 +491,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 226",
@@ -541,8 +503,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 227",
@@ -554,8 +515,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 228",
@@ -567,8 +527,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 229",
@@ -580,8 +539,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 230",
@@ -593,8 +551,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 231",
@@ -606,8 +563,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 232",
@@ -619,8 +575,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 233",
@@ -632,8 +587,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 234",
@@ -645,8 +599,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 235",
@@ -658,8 +611,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 236",
@@ -671,8 +623,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 237",
@@ -684,8 +635,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 238",
@@ -697,8 +647,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 239",
@@ -710,8 +659,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 240",
@@ -723,8 +671,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 241",
@@ -736,8 +683,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 242",
@@ -749,8 +695,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 243",
@@ -762,8 +707,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 244",
@@ -775,8 +719,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 245",
@@ -788,8 +731,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 246",
@@ -801,8 +743,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 247",
@@ -814,8 +755,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 248",
@@ -827,8 +767,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 249",
@@ -840,8 +779,7 @@
         "TVA",
         "TFNC 6"
       ],
-      "statut": "abrogé",
-      "note": "NB – Voir sous TFNC 6 les dispositions relatives à la TVA"
+      "statut": "abrogé"
     }
   ]
 }

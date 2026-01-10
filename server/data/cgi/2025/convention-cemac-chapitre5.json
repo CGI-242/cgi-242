@@ -3,16 +3,18 @@
     "document": "Convention fiscale CEMAC",
     "pays": "CEMAC",
     "edition": "2025",
-    "tome": null,
+    "tome": "CONV-CEMAC",
     "partie": null,
     "livre": null,
     "chapitre": 5,
     "chapitre_titre": "Chapitre 5 - Dispositions spéciales",
-    "source": "Convention CEMAC"
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {
-      "article": "CEMAC-25",
+      "article": "Art. 25",
       "titre": "Non-discrimination",
       "texte": [
         "1) Les nationaux d'un État membre ne sont soumis dans les autres États membres à aucune imposition ou obligation y relative, qui est autre ou plus lourde que celle à laquelle sont ou pourront être assujettis les nationaux de cet autre État se trouvant dans la même situation.",
@@ -25,7 +27,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-26",
+      "article": "Art. 26",
       "titre": "Procédure amiable",
       "texte": [
         "1) Lorsqu'une personne estime que les mesures prises par un État ou plusieurs États membres entraînent ou entraîneront pour elle une imposition non conforme aux dispositions de la présente Convention, elle peut, indépendamment des recours prévus par le droit interne des États, soumettre son cas à l'autorité compétente de l'un des États membres concernés.",
@@ -43,7 +45,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-27",
+      "article": "Art. 27",
       "titre": "Échange de renseignements",
       "texte": [
         "1) Les autorités compétentes des États membres échangent automatiquement, spontanément ou sur demande, les renseignements pour appliquer les dispositions de la présente Convention ou pour l'administration ou l'application de la législation interne relative aux impôts de toute nature ou dénomination perçus pour le compte des États membres, de leurs subdivisions politiques ou de leurs collectivités locales dans la mesure où l'imposition qu'elle prévoit n'est pas contraire à la Convention.",
@@ -75,7 +77,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-28",
+      "article": "Art. 28",
       "titre": "Assistance au recouvrement des impôts",
       "texte": [
         "1) Les États membres se prêtent mutuellement assistance pour le recouvrement de leurs créances fiscales. Cette assistance n'est pas limitée par les articles 1 (Personnes visées) et 2 (Impôts visés). Les autorités compétentes des États membres peuvent régler d'un commun accord les modalités d'application du présent article.",
@@ -100,7 +102,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-29",
+      "article": "Art. 29",
       "titre": "Droit aux avantages",
       "texte": [
         "Nonobstant toute disposition de la présente Convention, un avantage au titre de la Convention ne sera pas accordé au titre d'un élément de revenus s'il est raisonnable de conclure, compte tenu de l'ensemble des faits et circonstances propres à la situation, que l'octroi de cet avantage était l'un des objets principaux d'un montage ou d'une transaction ayant pour but direct ou indirectement, d'obtenir, au moment où il serait établi, que l'octroi de cet avantage dans ces circonstances serait conforme à l'objet et au but des dispositions pertinentes de la présente Convention."
@@ -109,7 +111,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-30",
+      "article": "Art. 30",
       "titre": "Agents diplomatiques, consulaires et assimilés",
       "texte": [
         "Les dispositions de la présente Convention ne portent pas atteinte aux privilèges fiscaux dont bénéficient les agents diplomatiques, consulaires et assimilés, en vertu soit des règles générales du droit international, soit des dispositions d'accords particuliers."

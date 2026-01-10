@@ -6,14 +6,15 @@
     "tome": 2,
     "partie": null,
     "livre": 8,
-    "livre_titre": "Livre 8 - Droits relatifs aux domaines de l'État",
     "chapitre": null,
     "chapitre_titre": "Droits relatifs aux domaines de l'État",
-    "source": "CGI Tome 2"
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {
-      "article": "Référence 1",
+      "article": "Art. 1",
       "titre": "Droits, taxes, redevances et frais du secteur des postes et des communications électroniques",
       "texte": [
         "voir la loi de finances pour 2011, modifiée par la loi de finances rectificative pour 2012 et les lois de finances pour 2013, 2014 et 2015, et voir la loi de finances pour 2019"
@@ -24,7 +25,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Référence 2",
+      "article": "Art. 2",
       "titre": "Redevance d'aviation civile",
       "texte": [
         "voir la loi de finances pour 2012"
@@ -35,7 +36,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Référence 3",
+      "article": "Art. 3",
       "titre": "Fiscalité domaniale",
       "texte": [
         "voir la loi n°9-2004 du 26 novembre 2004 portant Code du domaine de l'État"
@@ -46,7 +47,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Référence 4",
+      "article": "Art. 4",
       "titre": "Fiscalité foncière",
       "texte": [
         "voir la loi n°17-2000 du 30 décembre 2000 portant régime de la propriété foncière, modifiée par les lois de finances pour 2012 et 2015"
@@ -57,7 +58,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Référence 5",
+      "article": "Art. 5",
       "titre": "Fiscalité minière",
       "texte": [
         "voir la loi n°4-2005 du 11 avril 2005 portant Code minier"
@@ -68,7 +69,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Référence 6",
+      "article": "Art. 6",
       "titre": "Fiscalité des hydrocarbures",
       "texte": [
         "voir la loi n°24-94 du 23 août 1994 portant Code des hydrocarbures et la loi de finances pour 2019"
@@ -79,7 +80,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Référence 7",
+      "article": "Art. 7",
       "titre": "Fiscalité forestière",
       "texte": [
         "voir la loi n°16-2000 du 20 novembre 2000 portant Code forestier"

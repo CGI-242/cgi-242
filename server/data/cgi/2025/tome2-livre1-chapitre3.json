@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 1,
-    "livre_titre": "Enregistrement des actes et mutations",
     "chapitre": 3,
-    "chapitre_titre": "Délais pour l'enregistrement"
+    "chapitre_titre": "Délais pour l'enregistrement",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

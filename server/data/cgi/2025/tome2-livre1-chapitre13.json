@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 1,
-    "livre_titre": "Enregistrement des actes et mutations",
     "chapitre": 13,
-    "chapitre_titre": "Taxe spéciale sur les assurances"
+    "chapitre_titre": "Taxe spéciale sur les assurances",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {
@@ -108,7 +111,6 @@
         "enregistrement",
         "réassurances"
       ],
-      "note": "Texte manifestement tronqué - suite à rattacher",
       "statut": "en vigueur"
     },
     {

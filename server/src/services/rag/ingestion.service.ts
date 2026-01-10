@@ -1,9 +1,22 @@
 // server/src/services/rag/ingestion.service.ts
 import { prisma } from '../../config/database.js';
+import { ArticleStatut } from '@prisma/client';
 import { generateEmbeddings } from './embeddings.service.js';
 import { initializeCollection, upsertArticleVectors, ArticleVector } from './qdrant.service.js';
 import { createLogger } from '../../utils/logger.js';
 import { v4 as uuidv4 } from 'uuid';
+
+// Fonction pour mapper les valeurs string vers l'enum Prisma
+function mapStatutToEnum(statut: string | undefined): ArticleStatut {
+  const statutLower = (statut || 'en vigueur').toLowerCase().trim();
+  if (statutLower === 'abrogé' || statutLower === 'abroge') {
+    return ArticleStatut.ABROGE;
+  }
+  if (statutLower === 'modifié' || statutLower === 'modifie') {
+    return ArticleStatut.MODIFIE;
+  }
+  return ArticleStatut.EN_VIGUEUR;
+}
 
 const logger = createLogger('IngestionService');
 
@@ -63,6 +76,7 @@ export interface ArticleJSON {
   section?: string;
   version?: string;
   keywords?: string[];
+  statut?: string; // "en vigueur" ou "abrogé"
 }
 
 export interface IngestionResult {
@@ -175,8 +189,6 @@ function transformSourceToArticles(source: SourceFile): ArticleJSON[] {
     livre: meta.livre ? `Livre ${meta.livre}` : undefined,
     chapitre: meta.chapitre_titre || (meta.chapitre ? `Chapitre ${meta.chapitre}` : undefined),
     // Priorité à la section de l'article (string), sinon celle du meta
-    // S'assurer que section est toujours une string ou undefined
-    // Note: meta.titre est le numéro du Titre (int), pas un titre de section
     section: typeof art.section === 'string' ? art.section
            : meta.section_titre
            || (typeof meta.titre === 'string' ? meta.titre : undefined)
@@ -184,6 +196,7 @@ function transformSourceToArticles(source: SourceFile): ArticleJSON[] {
     // Supporte version OU edition pour la compatibilité CGI 2025/2026
     version: meta.version || meta.edition || '2025',
     keywords: art.mots_cles || [],
+    statut: art.statut || 'en vigueur', // Par défaut "en vigueur"
   }));
 }
 
@@ -246,6 +259,7 @@ export async function ingestArticles(articles: ArticleJSON[]): Promise<Ingestion
             },
           });
 
+          const articleStatutEnum = mapStatutToEnum(article.statut);
           const articleData = {
             numero: article.numero,
             titre: article.titre,
@@ -257,22 +271,30 @@ export async function ingestArticles(articles: ArticleJSON[]): Promise<Ingestion
             chapitre: article.chapitre,
             section: article.section,
             version: version,
+            statut: articleStatutEnum,
             keywords: article.keywords || [],
           };
 
           let dbArticle;
           if (existing) {
-            dbArticle = await prisma.article.update({
-              where: {
-                numero_version_tome: {
-                  numero: article.numero,
-                  version: version,
-                  tome: tome
-                }
-              },
-              data: articleData,
-            });
-            result.updated++;
+            // Ne pas écraser un article "en vigueur" par un article "abrogé"
+            const existingStatut = existing.statut || ArticleStatut.EN_VIGUEUR;
+            if (existingStatut === ArticleStatut.EN_VIGUEUR && articleStatutEnum === ArticleStatut.ABROGE) {
+              logger.debug(`Skip: Article ${article.numero} (en vigueur) non écrasé par version abrogée`);
+              dbArticle = existing;
+            } else {
+              dbArticle = await prisma.article.update({
+                where: {
+                  numero_version_tome: {
+                    numero: article.numero,
+                    version: version,
+                    tome: tome
+                  }
+                },
+                data: articleData,
+              });
+              result.updated++;
+            }
           } else {
             dbArticle = await prisma.article.create({ data: articleData });
             result.inserted++;

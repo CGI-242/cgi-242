@@ -8,6 +8,8 @@ export interface SommaireSelection {
   titre: string;
   articles?: string; // Plage d'articles ex: "1-65 bis"
   tome?: number; // Numéro du tome pour filtrer correctement
+  chapitreTitre?: string; // Titre du chapitre pour filtrer (ex: "Impôt sur le revenu des personnes physiques (IRPP)")
+  sectionTitre?: string; // Titre de la section pour filtrer
   sousSections?: { titre: string; articles: string }[]; // Pour afficher les sous-sections comme séparateurs
 }
 
@@ -341,6 +343,7 @@ export class CodeSommaireComponent {
       titre: chapitre.titre,
       articles: chapitre.articles,
       tome: tomeNum,
+      chapitreTitre: chapitre.titre, // Pour filtrer par chapitre dans la DB
     });
   }
 
@@ -357,6 +360,8 @@ export class CodeSommaireComponent {
       titre: section.titre,
       articles: section.articles,
       tome: tomeNum,
+      chapitreTitre: chapitre.titre, // Pour filtrer par chapitre dans la DB
+      sectionTitre: section.titre, // Pour filtrer par section dans la DB
       sousSections,
     });
   }

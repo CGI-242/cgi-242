@@ -4,8 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 7,
-    "livre_titre": "Taxe sur les appareils automatiques"
+    "chapitre": null,
+    "chapitre_titre": "",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

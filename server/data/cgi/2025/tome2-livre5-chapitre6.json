@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 5,
-    "livre_titre": "Curatelle",
     "chapitre": 6,
-    "chapitre_titre": "Successions et biens vacants des étrangers"
+    "chapitre_titre": "Successions et biens vacants des étrangers",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

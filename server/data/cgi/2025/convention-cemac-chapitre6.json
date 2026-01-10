@@ -3,16 +3,18 @@
     "document": "Convention fiscale CEMAC",
     "pays": "CEMAC",
     "edition": "2025",
-    "tome": null,
+    "tome": "CONV-CEMAC",
     "partie": null,
     "livre": null,
     "chapitre": 6,
     "chapitre_titre": "Chapitre 6 - Dispositions finales",
-    "source": "Convention CEMAC"
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {
-      "article": "CEMAC-31",
+      "article": "Art. 31",
       "titre": "Entrée en vigueur",
       "texte": [
         "1) La présente Convention entre en vigueur à compter de la date de sa signature et devra être enregistrée et publiée au Bulletin officiel de la Communauté.",
@@ -24,7 +26,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-32",
+      "article": "Art. 32",
       "titre": "Sort des conventions fiscales antérieurement signées par les États membres",
       "texte": [
         "Les dispositions des actes et conventions énumérés ci-dessous cessent d'avoir effet à compter de la date à laquelle les dispositions de la présente Convention prennent effet en vertu de l'article 31 (Entrée en vigueur) de la présente Convention :",
@@ -36,7 +38,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-33",
+      "article": "Art. 33",
       "titre": "Dénonciation",
       "texte": [
         "1) La présente Convention demeure en vigueur tant qu'elle n'a pas été dénoncée par un État membre.",

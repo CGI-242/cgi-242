@@ -1,7 +1,6 @@
 {
-  "name": "CGI 242 - Assistant Fiscal",
+  "name": "CGI 242 - Assistant Fiscal IA",
   "short_name": "CGI 242",
-  "description": "Assistant IA pour le Code General des Impots du Congo-Brazzaville",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -16,9 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#2563eb",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "display": "standalone",
-  "start_url": "/",
-  "scope": "/"
+  "display": "standalone"
 }

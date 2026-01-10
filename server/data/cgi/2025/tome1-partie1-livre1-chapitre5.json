@@ -8,6 +8,8 @@
     "livre": 1,
     "chapitre": 5,
     "chapitre_titre": "Taxes diverses",
+    "section": null,
+    "section_titre": null,
     "page_source": null
   },
   "articles": [
@@ -17,8 +19,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 142",
@@ -26,8 +27,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 143",
@@ -35,8 +35,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 144",
@@ -44,8 +43,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 145",
@@ -53,8 +51,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 146",
@@ -62,8 +59,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 147",
@@ -71,8 +67,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 148",
@@ -80,8 +75,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 149",
@@ -89,8 +83,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 150",
@@ -98,8 +91,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 151",
@@ -107,8 +99,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 152",
@@ -116,8 +107,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 153",
@@ -125,8 +115,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 154",
@@ -134,8 +123,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 155",
@@ -143,8 +131,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 156",
@@ -152,8 +139,7 @@
       "section": "Section 1 : Taxe d'apprentissage",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir la taxe unique sur les salaires sous TNC 4.6"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 157",
@@ -566,8 +552,7 @@
       "section": "Section 4 : Taxe forfaitaire due par les employeurs et les débirentiers",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir TFNC 4.6 la taxe unique sur les salaires"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 171 quinquies",
@@ -575,8 +560,7 @@
       "section": "Section 4 : Taxe forfaitaire due par les employeurs et les débirentiers",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé",
-      "note": "Voir TFNC 4.6 la taxe unique sur les salaires"
+      "statut": "abrogé"
     },
     {
       "article": "Art. 171 sexies",

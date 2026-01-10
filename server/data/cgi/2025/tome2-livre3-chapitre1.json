@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 3,
-    "livre_titre": "Impôt sur le revenu des valeurs mobilières (IRVM)",
     "chapitre": 1,
-    "chapitre_titre": "Dispositions générales"
+    "chapitre_titre": "Dispositions générales",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {
@@ -162,8 +165,7 @@
         "IRVM",
         "conventions pétrolières"
       ],
-      "statut": "en vigueur",
-      "note": "Articles 4 et 5 non fournis dans la source"
+      "statut": "en vigueur"
     },
     {
       "sous_intertitre": "3) Remboursements et amortissements dans les sociétés"

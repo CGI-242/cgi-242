@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 3,
-    "livre_titre": "Impôt sur le revenu des valeurs mobilières (IRVM)",
     "chapitre": 2,
-    "chapitre_titre": "Dispositions diverses"
+    "chapitre_titre": "Dispositions diverses",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 1,
-    "livre_titre": "Enregistrement des actes et mutations",
     "chapitre": 10,
-    "chapitre_titre": "Poursuites et instances"
+    "chapitre_titre": "Poursuites et instances",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

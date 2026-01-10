@@ -3,16 +3,18 @@
     "document": "Convention fiscale CEMAC",
     "pays": "CEMAC",
     "edition": "2025",
-    "tome": null,
+    "tome": "CONV-CEMAC",
     "partie": null,
     "livre": null,
     "chapitre": 1,
     "chapitre_titre": "Chapitre 1 - Champ d'application de la convention",
-    "source": "Convention CEMAC"
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {
-      "article": "CEMAC-1",
+      "article": "Art. 1",
       "titre": "Personnes visées",
       "texte": [
         "La présente convention s'applique aux personnes qui sont des résidents de l'un ou plusieurs États membres de la CEMAC."
@@ -21,7 +23,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-2",
+      "article": "Art. 2",
       "titre": "Impôts visés",
       "texte": [
         "1) La présente Convention s'applique aux impôts sur le revenu perçus pour le compte de chacun des États membres, de ses subdivisions politiques ou de ses collectivités locales, quel que soit le système de perception.",

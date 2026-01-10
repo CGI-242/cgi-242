@@ -5,12 +5,12 @@
     "edition": "2025",
     "tome": 1,
     "partie": 3,
-    "partie_titre": "Dispositions communes aux parties 1 et 2",
-    "titre": 1,
-    "titre_titre": "Dispositions diverses",
+    "livre": null,
     "chapitre": 9,
     "chapitre_titre": "Marchés publics",
-    "en_tete_page": "Procédures fiscales"
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

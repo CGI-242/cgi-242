@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 1,
-    "livre_titre": "Enregistrement des actes et mutations",
     "chapitre": 6,
-    "chapitre_titre": "Peines pour défaut d'enregistrement dans les délais"
+    "chapitre_titre": "Peines pour défaut d'enregistrement dans les délais",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

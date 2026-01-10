@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 5,
-    "livre_titre": "Curatelle",
     "chapitre": 9,
-    "chapitre_titre": "Comptabilité des successions et biens vacants"
+    "chapitre_titre": "Comptabilité des successions et biens vacants",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {

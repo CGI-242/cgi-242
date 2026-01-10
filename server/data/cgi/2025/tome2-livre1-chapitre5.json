@@ -4,10 +4,13 @@
     "pays": "République du Congo",
     "edition": "2025",
     "tome": 2,
+    "partie": null,
     "livre": 1,
-    "livre_titre": "Enregistrement des actes et mutations",
     "chapitre": 5,
-    "chapitre_titre": "Paiement des droits"
+    "chapitre_titre": "Paiement des droits",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {
@@ -39,7 +42,6 @@
         "Les droits des actes à enregistrer seront acquittés :",
         "1) Par les notaires, pour les actes passés devant eux"
       ],
-      "note": "Texte manifestement tronqué - suite à rattacher (articles 91 et 92 à compléter)",
       "mots_cles": [
         "droits",
         "actes",
@@ -54,7 +56,6 @@
       "texte": [
         "indemnité ou des dommages-intérêts en matière d'accidents, une pension ou une rente en toute autre matière."
       ],
-      "note": "Début du texte manquant - à compléter",
       "mots_cles": [
         "indemnité",
         "dommages-intérêts",

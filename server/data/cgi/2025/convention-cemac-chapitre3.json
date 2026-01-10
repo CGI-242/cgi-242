@@ -3,16 +3,18 @@
     "document": "Convention fiscale CEMAC",
     "pays": "CEMAC",
     "edition": "2025",
-    "tome": null,
+    "tome": "CONV-CEMAC",
     "partie": null,
     "livre": null,
     "chapitre": 3,
     "chapitre_titre": "Chapitre 3 - Imposition des revenus",
-    "source": "Convention CEMAC"
+    "section": null,
+    "section_titre": null,
+    "page_source": null
   },
   "articles": [
     {
-      "article": "CEMAC-6",
+      "article": "Art. 6",
       "titre": "Revenus immobiliers",
       "texte": [
         "1) Les revenus qu'un résident d'un État membre tire de biens immobiliers situés dans un autre État membre sont imposables dans cet autre État membre.",
@@ -24,7 +26,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-7",
+      "article": "Art. 7",
       "titre": "Bénéfices des entreprises",
       "texte": [
         "1) Les bénéfices d'une entreprise d'un État membre ne sont imposables que dans cet État, à moins que l'entreprise n'exerce son activité dans un autre État membre par l'intermédiaire d'un établissement stable qui y est situé. Si l'entreprise exerce son activité d'une telle façon, les bénéfices de l'entreprise sont imposables dans cet autre État mais uniquement dans la mesure où ils sont imputables audit établissement stable.",
@@ -41,7 +43,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-8",
+      "article": "Art. 8",
       "titre": "Trafic international",
       "texte": [
         "1) Les bénéfices d'une entreprise d'un État membre provenant de l'exploitation, en trafic international, de navires ou d'aéronefs ne sont imposables que dans cet État membre.",
@@ -51,7 +53,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-9",
+      "article": "Art. 9",
       "titre": "Entreprises associées",
       "texte": [
         "1) Lorsque :",
@@ -65,7 +67,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-10",
+      "article": "Art. 10",
       "titre": "Dividendes",
       "texte": [
         "1) Les dividendes payés par une société qui est un résident d'un État membre à un résident d'un autre État membre ne sont imposables que dans cet autre État.",
@@ -82,7 +84,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-11",
+      "article": "Art. 11",
       "titre": "Intérêts",
       "texte": [
         "1) Les intérêts provenant d'un État membre et payés à un résident d'un autre État membre ne sont imposables que dans cet autre État.",
@@ -99,7 +101,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-12",
+      "article": "Art. 12",
       "titre": "Redevances",
       "texte": [
         "1) Les redevances provenant d'un État membre et payées à un résident d'un autre État membre ne sont imposables que dans cet autre État.",
@@ -122,7 +124,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-13",
+      "article": "Art. 13",
       "titre": "Rémunérations pour services techniques",
       "texte": [
         "1) Les rémunérations pour services techniques provenant d'un État contractant et payées à un résident d'un autre État contractant sont imposables dans cet autre État.",
@@ -139,7 +141,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-14",
+      "article": "Art. 14",
       "titre": "Gains en capital",
       "texte": [
         "1) Les gains provenant de l'aliénation des biens immobiliers, tels qu'ils sont définis au paragraphe 2 de l'article 6 (Revenus immobiliers) de la présente Convention, sont imposables dans l'État membre où ces biens sont situés.",
@@ -153,7 +155,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-15",
+      "article": "Art. 15",
       "titre": "Professions indépendantes",
       "texte": [
         "1) Les revenus qu'un résident d'un État membre tire d'une profession libérale ou d'autres activités de caractère indépendant ne sont imposables que dans cet État ; toutefois, ces revenus sont aussi imposables dans l'autre État membre dans les cas suivants :",
@@ -165,7 +167,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-16",
+      "article": "Art. 16",
       "titre": "Professions dépendantes",
       "texte": [
         "1) Sous réserve des dispositions des articles 17 (Tantièmes et rémunérations du personnel de direction de haut niveau), 19 (Pensions, rentes viagères et prestations de sécurité sociale) et 20 (Fonction publique) de la présente Convention, les salaires, traitements et autres rémunérations similaires qu'un résident d'un État membre reçoit au titre d'un emploi salarié ne sont imposables que dans cet État, à moins que l'emploi ne soit exercé dans un autre État membre. Si l'emploi y est exercé, les rémunérations reçues à ce titre sont imposables dans cet autre État.",
@@ -179,7 +181,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-17",
+      "article": "Art. 17",
       "titre": "Tantièmes et rémunérations du personnel de direction de haut niveau",
       "texte": [
         "1) Les tantièmes de fonction et autres rétributions similaires qu'un résident d'un État membre reçoit en sa qualité de membre du conseil d'administration ou de surveillance d'un organe analogue d'une société qui est un résident d'un autre État membre sont imposables dans cet autre État.",
@@ -189,7 +191,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-18",
+      "article": "Art. 18",
       "titre": "Artistes et sportifs",
       "texte": [
         "1) Nonobstant les dispositions des articles 14 (Professions indépendantes) et 15 (Professions dépendantes) de la présente Convention, les revenus qu'un résident d'un État membre tire des activités personnelles exercées dans un autre État membre en tant qu'artiste du spectacle, tel qu'un artiste de théâtre, de cinéma, de la radio ou de la télévision ou en tant qu'un musicien ou en tant que sportif sont imposables dans l'État membre où ces activités sont exercées.",
@@ -200,7 +202,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-19",
+      "article": "Art. 19",
       "titre": "Pensions, rentes viagères et prestations de sécurité sociale",
       "texte": [
         "1) Sous réserve des dispositions du paragraphe 2 de l'article 20 (Fonction publique), les pensions, rentes viagères et autres rémunérations similaires, payées à un résident d'un État membre au titre d'un emploi antérieur, ne sont imposables que dans cet État.",
@@ -212,7 +214,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-20",
+      "article": "Art. 20",
       "titre": "Fonction publique",
       "texte": [
         "1) Les salaires, traitements et autres rémunérations similaires, autres que les pensions, payés par un État membre, l'une de ses subdivisions politiques ou collectivités locales à une personne physique, au titre de services rendus à cet État ou à cette subdivision ou collectivité, ne sont imposables que dans cet État.",
@@ -226,7 +228,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-21",
+      "article": "Art. 21",
       "titre": "Étudiants, stagiaires et apprentis",
       "texte": [
         "1) Les sommes qu'un étudiant, un stagiaire ou un apprenti qui est, ou qui était immédiatement avant de se rendre dans un État membre, un résident d'un autre État membre et qui séjourne dans le premier État à seule fin d'y poursuivre ses études ou sa formation, reçoit pour couvrir ses frais d'entretien, d'études ou de formation ne sont pas imposables dans cet État, à condition qu'elles proviennent de sources situées en dehors de cet État.",
@@ -236,7 +238,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-22",
+      "article": "Art. 22",
       "titre": "Professeurs et chercheurs",
       "texte": [
         "1) Les dispositions des articles 15 (Professions indépendantes) et 16 (Professions dépendantes), toute personne physique qui se rend dans un État membre à l'invitation de cet État, d'une université, d'un établissement d'enseignement ou de toute autre institution culturelle sans but lucratif, ou dans le cadre d'un programme d'échanges culturels, pour une période n'excédant pas deux ans à seule fin d'enseigner, de donner des conférences ou de mener des travaux de recherche dans cette institution et qui est ou était un résident de l'autre État membre juste avant ce séjour, est exemptée de l'impôt dans le premier État membre sur la rémunération qu'elle reçoit pour cette activité, à condition que cette rémunération provienne de sources situées en dehors de cet État.",
@@ -246,7 +248,7 @@
       "statut": "en vigueur"
     },
     {
-      "article": "CEMAC-23",
+      "article": "Art. 23",
       "titre": "Autres revenus",
       "texte": [
         "1) Les éléments du revenu d'un résident d'un État membre, d'où qu'ils proviennent, qui ne sont pas expressément traités par la présente Convention ne sont imposables que dans cet État.",

@@ -108,6 +108,12 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                             <span class="text-sm font-semibold text-primary-700">{{ getParagraphHeader(article) }}</span>
                           </div>
                         }
+                        <!-- Sous-header de lettre (a) Régime du forfait, b) Régime du réel...) -->
+                        @if (isFirstOfLetter(article, i)) {
+                          <div class="px-3 py-2 bg-secondary-50 border-l-2 border-secondary-400 ml-4">
+                            <span class="text-sm font-semibold text-secondary-700">{{ getLetterHeader(article) }}</span>
+                          </div>
+                        }
                         <button
                           (click)="selectArticle(article)"
                           class="w-full text-left px-3 py-1.5 hover:bg-secondary-50 transition-colors flex items-center gap-2"
@@ -284,6 +290,8 @@ export class CodeContainerComponent implements OnInit {
   searchQuery = '';
   articleRange = signal<string | null>(null);
   selectedTome = signal<number | null>(null); // Tome sélectionné pour filtrer
+  selectedChapitre = signal<string | null>(null); // Titre du chapitre pour filtrer
+  selectedSection = signal<string | null>(null); // Titre de la section pour filtrer
   sousSections = signal<{ titre: string; articles: string }[]>([]); // Sous-sections pour les séparateurs
   selectedArticle = this.articlesService.selectedArticle;
   copied = signal(false);
@@ -293,20 +301,40 @@ export class CodeContainerComponent implements OnInit {
     const articles = this.articlesService.articles();
     const range = this.articleRange();
     const tome = this.selectedTome();
+    const chapitre = this.selectedChapitre();
+    const section = this.selectedSection();
     const query = this.searchQuery.toLowerCase().trim();
 
-    
+    // DEBUG: Afficher les paramètres de filtrage
+    console.log('[Filtrage] Plage:', range, '| Tome:', tome, '| Chapitre:', chapitre, '| Section:', section);
+
     let result: Article[];
 
-    // Si une plage d'articles est définie, filtrer par numéro ET par tome
+    // Si une plage d'articles est définie, filtrer par numéro ET par tome/chapitre/section
     if (range) {
       result = articles.filter(a => {
         const inRange = this.isArticleInRange(a.numero, range);
-        // Si un tome est spécifié, filtrer aussi par tome
-        if (tome && a.tome) {
-          return inRange && a.tome === String(tome);
+        if (!inRange) return false;
+
+        // Filtrer par tome si spécifié
+        if (tome) {
+          const selectedTomeStr = String(tome);
+          if (!a.tome || a.tome !== selectedTomeStr) {
+            return false;
+          }
         }
-        return inRange;
+
+        // Filtrer par chapitre si spécifié (comparaison partielle car les titres peuvent différer légèrement)
+        if (chapitre && a.chapitre) {
+          // Vérifier si le chapitre de l'article contient le titre sélectionné ou vice versa
+          const chapLower = chapitre.toLowerCase();
+          const articleChapLower = a.chapitre.toLowerCase();
+          if (!articleChapLower.includes(chapLower) && !chapLower.includes(articleChapLower)) {
+            return false;
+          }
+        }
+
+        return true;
       });
     } else if (!query) {
       result = articles;
@@ -325,6 +353,9 @@ export class CodeContainerComponent implements OnInit {
       seen.add(a.numero);
       return true;
     });
+
+    // DEBUG: Afficher le résultat après filtrage avec chapitre
+    console.log('[Filtrage] Résultat:', result.length, 'articles:', result.map(a => `${a.numero}(chap:${a.chapitre?.substring(0, 20)})`).join(', '));
 
     // Trier numériquement avec gestion des suffixes latins
     return result.sort((a, b) => {
@@ -403,13 +434,34 @@ export class CodeContainerComponent implements OnInit {
     // Charger tous les articles (1149+ pour Tome 1 et 2)
     this.articlesService.loadArticles({ limit: 2000 })
       .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe();
+      .subscribe(() => {
+        // Sélection par défaut: Chapitre 1 du Tome 1 (IRPP, Art. 1-65 bis)
+        this.setDefaultSelection();
+      });
+  }
+
+  private setDefaultSelection(): void {
+    const version = this.articlesService.currentVersion();
+    if (version === '2026') {
+      // CGI 2026: Chapitre 1 = Impôt sur les sociétés (IS)
+      this.articleRange.set('1-89');
+      this.selectedTome.set(1);
+      this.selectedChapitre.set('Impôt sur les sociétés');
+    } else {
+      // CGI 2025: Chapitre 1 = IRPP
+      this.articleRange.set('1-65');
+      this.selectedTome.set(1);
+      this.selectedChapitre.set('Impôt sur le revenu des personnes physiques');
+    }
+    this.activeTab.set('articles');
   }
 
   onSearch(): void {
-    // Réinitialiser la plage d'articles et le tome quand l'utilisateur tape
+    // Réinitialiser tous les filtres quand l'utilisateur tape
     this.articleRange.set(null);
     this.selectedTome.set(null);
+    this.selectedChapitre.set(null);
+    this.selectedSection.set(null);
   }
 
   selectArticle(article: Article): void {
@@ -442,11 +494,15 @@ export class CodeContainerComponent implements OnInit {
       this.searchQuery = '';
       this.articleRange.set(selection.articles);
       this.selectedTome.set(selection.tome ?? null); // Filtrer par tome si spécifié
+      this.selectedChapitre.set(selection.chapitreTitre ?? null); // Filtrer par chapitre si spécifié
+      this.selectedSection.set(selection.sectionTitre ?? null); // Filtrer par section si spécifié
       this.sousSections.set(selection.sousSections ?? []); // Stocker les sous-sections pour les séparateurs
     } else {
       // Sinon, utiliser le titre pour la recherche
       this.articleRange.set(null);
       this.selectedTome.set(null);
+      this.selectedChapitre.set(null);
+      this.selectedSection.set(null);
       this.sousSections.set([]);
       this.searchQuery = selection.titre;
     }
@@ -492,6 +548,8 @@ export class CodeContainerComponent implements OnInit {
     let result = parts.length > 1 ? parts[parts.length - 1].trim() : titre;
     // Retirer le préfixe numéroté "1) ", "2) ", "3) "...
     result = result.replace(/^\d+\)\s*/, '');
+    // Retirer le préfixe lettre "a) ", "b) "...
+    result = result.replace(/^[a-z]\)\s*/, '');
     return result;
   }
 
@@ -557,6 +615,41 @@ export class CodeContainerComponent implements OnInit {
     return paragraphNum !== prevParagraphNum;
   }
 
+  // Retourne le sous-header de lettre (a) Régime du forfait...) extrait du titre
+  getLetterHeader(article: Article): string | null {
+    if (!article.titre) return null;
+
+    // Format: "II. BICA : 4) Fixation du bénéfice : a) Régime du forfait : Titre"
+    // -> extraire "a) Régime du forfait"
+    const match = article.titre.match(/:\s*([a-z]\)\s*[^:]+)/);
+    if (match) {
+      return match[1].trim();
+    }
+    return null;
+  }
+
+  // Vérifie si c'est le premier article d'une nouvelle catégorie lettre (a), b)...)
+  isFirstOfLetter(article: Article, index: number): boolean {
+    const letterHeader = this.getLetterHeader(article);
+    if (!letterHeader) return false;
+
+    // Extraire la lettre (a, b, c...)
+    const letter = letterHeader.match(/^([a-z])\)/)?.[1];
+    if (!letter) return false;
+
+    // Si c'est le premier article ou si l'article précédent a une lettre différente
+    if (index === 0) return true;
+
+    const articles = this.filteredArticles();
+    const prevArticle = articles[index - 1];
+    const prevLetterHeader = this.getLetterHeader(prevArticle);
+
+    if (!prevLetterHeader) return true;
+
+    const prevLetter = prevLetterHeader.match(/^([a-z])\)/)?.[1];
+    return letter !== prevLetter;
+  }
+
   async copyArticle(article: Article): Promise<void> {
     const chapeau = article.chapeau ? `\n\n${article.chapeau}` : '';
     const text = `${article.numero}${article.titre ? ' - ' + article.titre : ''}${chapeau}\n\n${article.contenu}\n\nSource: CGI Congo-Brazzaville ${this.articlesService.currentVersion()}`;
@@ -597,7 +690,7 @@ export class CodeContainerComponent implements OnInit {
     const lines = contenu.split('\n');
     const formattedLines = lines.map(line => {
       // Échapper les caractères HTML
-      let escaped = line
+      const escaped = line
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
