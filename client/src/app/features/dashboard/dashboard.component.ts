@@ -119,15 +119,26 @@ interface UsageStats {
               <div class="card p-6">
                 <h3 class="font-semibold text-secondary-900 mb-4">Actions rapides</h3>
                 <div class="space-y-3">
-                  <a routerLink="/chat" class="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary-50 transition">
+                  <a routerLink="/code/2025" class="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary-50 transition">
                     <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
                       <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                       </svg>
                     </div>
                     <div>
-                      <p class="font-medium text-secondary-900">Nouvelle question</p>
-                      <p class="text-sm text-secondary-500">Posez une question sur le CGI</p>
+                      <p class="font-medium text-secondary-900">Consulter le CGI 2025</p>
+                      <p class="text-sm text-secondary-500">Code Général des Impôts en vigueur</p>
+                    </div>
+                  </a>
+                  <a routerLink="/chat" class="flex items-center gap-3 p-3 rounded-lg hover:bg-secondary-50 transition">
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="font-medium text-secondary-900">Poser une question IA</p>
+                      <p class="text-sm text-secondary-500">Assistant fiscal intelligent</p>
                     </div>
                   </a>
                   @if (tenantService.isOrganization()) {
