@@ -89,7 +89,7 @@ interface Plan {
 
                   @if (plan.isCustom) {
                     <a
-                      href="mailto:contact@cgi242.com?subject=Demande%20de%20devis%20CGI%20242"
+                      href="mailto:contact@normx-ai.com?subject=Demande%20de%20devis%20CGI%20242"
                       class="block w-full py-2 px-4 rounded-lg font-medium transition-colors text-center bg-secondary-100 text-secondary-700 hover:bg-secondary-200">
                       Nous contacter
                     </a>

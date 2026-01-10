@@ -1,7 +1,17 @@
 version: '3.8'
 
-# Configuration Production avec Horizontal Scaling + Database Replicas
-# Usage: docker-compose -f docker-compose.prod.yml up -d
+# ============================================================
+# CGI 242 - Configuration Production
+# Horizontal Scaling + Database Replicas + SSL/Certbot
+# ============================================================
+# Usage:
+#   docker-compose -f docker-compose.prod.yml up -d
+#
+# SSL Setup (première fois):
+#   docker-compose -f docker-compose.prod.yml run --rm certbot certonly \
+#     --webroot -w /var/www/certbot \
+#     -d cgi242.normx-ai.com -d www.normx-ai.com -d normx-ai.com -d api.normx-ai.com
+# ============================================================
 
 services:
   # ==================== DATABASE CLUSTER ====================
@@ -15,7 +25,6 @@ services:
       POSTGRES_USER: ${DB_USER:-cgiengine}
       POSTGRES_PASSWORD: ${DB_PASSWORD:-cgiengine123}
       POSTGRES_DB: ${DB_NAME:-cgi_engine}
-      # Configuration pour la réplication
       POSTGRES_INITDB_ARGS: "-E UTF8"
     command: |
       postgres
@@ -107,18 +116,25 @@ services:
     build:
       context: ../server
       dockerfile: ../docker/Dockerfile.server
+    container_name: cgi-242-server1
     restart: unless-stopped
     environment:
       NODE_ENV: production
       SERVER_ID: server1
-      # Master pour les écritures
       DATABASE_URL: postgresql://${DB_USER:-cgiengine}:${DB_PASSWORD:-cgiengine123}@postgres-master:5432/${DB_NAME:-cgi_engine}?connection_limit=10&pool_timeout=20
-      # Replicas pour les lectures (séparées par virgule)
       DATABASE_REPLICA_URLS: postgresql://${DB_USER:-cgiengine}:${DB_PASSWORD:-cgiengine123}@postgres-replica1:5432/${DB_NAME:-cgi_engine}?connection_limit=5
       REDIS_URL: redis://redis:6379
       JWT_SECRET: ${JWT_SECRET}
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      PINECONE_API_KEY: ${PINECONE_API_KEY:-}
+      PINECONE_INDEX: ${PINECONE_INDEX:-}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      CINETPAY_API_KEY: ${CINETPAY_API_KEY:-}
+      CINETPAY_SITE_ID: ${CINETPAY_SITE_ID:-}
     depends_on:
       postgres-master:
         condition: service_healthy
@@ -139,6 +155,7 @@ services:
     build:
       context: ../server
       dockerfile: ../docker/Dockerfile.server
+    container_name: cgi-242-server2
     restart: unless-stopped
     environment:
       NODE_ENV: production
@@ -149,6 +166,14 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      PINECONE_API_KEY: ${PINECONE_API_KEY:-}
+      PINECONE_INDEX: ${PINECONE_INDEX:-}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      CINETPAY_API_KEY: ${CINETPAY_API_KEY:-}
+      CINETPAY_SITE_ID: ${CINETPAY_SITE_ID:-}
     depends_on:
       postgres-master:
         condition: service_healthy
@@ -164,20 +189,24 @@ services:
           memory: 512M
           cpus: '0.5'
 
-  # ==================== LOAD BALANCER ====================
+  # ==================== LOAD BALANCER + SSL ====================
 
-  # Nginx Load Balancer + Frontend
+  # Nginx Load Balancer + Frontend + SSL Termination
   nginx:
     image: nginx:alpine
     container_name: cgi-242-nginx
     restart: unless-stopped
     ports:
-      - "${PORT:-80}:80"
-      - "${SSL_PORT:-443}:443"
+      - "80:80"
+      - "443:443"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-      - ../client/dist/client:/usr/share/nginx/html:ro
+      - ./nginx-ssl.conf:/etc/nginx/conf.d/ssl.conf:ro
+      - ../client/dist/client/browser:/usr/share/nginx/html:ro
       - nginx_logs:/var/log/nginx
+      # SSL Certificates (Let's Encrypt)
+      - certbot_conf:/etc/letsencrypt:ro
+      - certbot_www:/var/www/certbot:ro
     depends_on:
       - server1
       - server2
@@ -187,6 +216,22 @@ services:
       resources:
         limits:
           memory: 128M
+    # Reload nginx when certificates are renewed
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+
+  # ==================== SSL CERTIFICATE MANAGER ====================
+
+  # Certbot for automatic SSL certificate renewal
+  certbot:
+    image: certbot/certbot:latest
+    container_name: cgi-242-certbot
+    volumes:
+      - certbot_conf:/etc/letsencrypt
+      - certbot_www:/var/www/certbot
+    # Auto-renew certificates every 12 hours
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    networks:
+      - backend
 
 networks:
   backend:
@@ -198,3 +243,5 @@ volumes:
   redis_data:
   server_logs:
   nginx_logs:
+  certbot_conf:
+  certbot_www:
