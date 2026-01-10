@@ -566,7 +566,7 @@ export class CodeContainerComponent implements OnInit {
     return null;
   }
 
-  // Retourne le header du point romain (I. Personnes imposables) si c'est le premier article
+  // Retourne le header du point romain (I. Personnes imposables) si c'est le premier article de cette section
   getRomanHeader(article: Article, index: number): string | null {
     if (!article.titre) return null;
 
@@ -575,17 +575,24 @@ export class CodeContainerComponent implements OnInit {
 
     // Si c'est le premier article, afficher le header
     if (index === 0) {
-      // Extraire "I. Personnes imposables" du titre complet
       const match = article.titre.match(/^(I{1,3}|IV|V|VI)\.\s*([^:]+)/);
       if (match) return `${match[1]}. ${match[2].trim()}`;
     }
 
-    // Sinon vérifier si l'article précédent a un préfixe différent
+    // Chercher le dernier article avec un préfixe romain parmi les articles précédents
     const articles = this.filteredArticles();
-    const prevArticle = articles[index - 1];
-    const prevRomanPrefix = this.getRomanPrefix(prevArticle?.titre);
+    let lastRomanPrefix: string | null = null;
 
-    if (romanPrefix !== prevRomanPrefix) {
+    for (let i = index - 1; i >= 0; i--) {
+      const prevPrefix = this.getRomanPrefix(articles[i]?.titre);
+      if (prevPrefix) {
+        lastRomanPrefix = prevPrefix;
+        break;
+      }
+    }
+
+    // Afficher le header seulement si c'est une nouvelle section romaine
+    if (romanPrefix !== lastRomanPrefix) {
       const match = article.titre.match(/^(I{1,3}|IV|V|VI)\.\s*([^:]+)/);
       if (match) return `${match[1]}. ${match[2].trim()}`;
     }
