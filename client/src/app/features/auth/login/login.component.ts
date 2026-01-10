@@ -45,7 +45,7 @@ import { AuthService } from '@core/services/auth.service';
 
           <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
             <div>
-              <label for="email" class="form-label text-white">Email</label>
+              <label for="email" class="form-label text-white/90">Email</label>
               <input
                 type="email"
                 id="email"
@@ -60,7 +60,7 @@ import { AuthService } from '@core/services/auth.service';
             </div>
 
             <div>
-              <label for="password" class="form-label text-white">Mot de passe</label>
+              <label for="password" class="form-label text-white/90">Mot de passe</label>
               <div class="relative">
                 <input
                   [type]="showPassword() ? 'text' : 'password'"

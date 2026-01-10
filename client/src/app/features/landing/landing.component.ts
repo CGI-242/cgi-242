@@ -253,7 +253,7 @@ export class LandingComponent {
   // URL dynamique selon l'environnement (localhost en dev, cgi242.normx-ai.com en prod)
   cgi242Url = environment.production
     ? `https://${environment.appDomain}`
-    : `http://${environment.appDomain}/auth/login`;
+    : `http://${environment.appDomain}`;
 
   products: Product[] = [
     {
