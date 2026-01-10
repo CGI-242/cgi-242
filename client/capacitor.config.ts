@@ -1,27 +1,32 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.cgi242.app',
+  appId: 'com.normxai.cgi242',
   appName: 'CGI 242',
   webDir: 'dist/client/browser',
   server: {
     androidScheme: 'https',
     iosScheme: 'https',
+    hostname: 'cgi242.normx-ai.com',
   },
   plugins: {
     SplashScreen: {
       launchShowDuration: 2000,
       launchAutoHide: true,
-      backgroundColor: '#059669',
+      backgroundColor: '#0077B5',
       androidSplashResourceName: 'splash',
       androidScaleType: 'CENTER_CROP',
-      showSpinner: false,
+      showSpinner: true,
+      spinnerColor: '#FFFFFF',
       splashFullScreen: true,
       splashImmersive: true,
     },
     StatusBar: {
       style: 'LIGHT',
-      backgroundColor: '#059669',
+      backgroundColor: '#005A8C',
+    },
+    PushNotifications: {
+      presentationOptions: ['badge', 'sound', 'alert'],
     },
     Keyboard: {
       resize: 'body',
