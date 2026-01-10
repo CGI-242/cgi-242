@@ -557,14 +557,14 @@
       "article": "Art. 28",
       "titre": "II. Bénéfices industriels, commerciaux et artisanaux (BICA) : 4) Fixation du bénéfice imposable : a) Régime du forfait : Dispositions générales",
       "texte": [
-        "1) à 3) Abrogés. ",
+        "1) à 3) Abrogés. [L.F.2025]",
         "4) La base de calcul de l'impôt global forfaitaire est fixée pour une année civile.",
         "",
         "5) Cette base de calcul est connue chaque année, au plus tard le 20 février après le dépôt de la déclaration n°294 accompagnée des états financiers visés aux articles 26 et 28 du présent Code.",
         "",
         "6) Le montant qui sert de base de calcul de l'impôt global forfaitaire est redressé unilatéralement, sans préavis, par l'administration, en cas de manœuvre frauduleuse ou de dissimulation.",
         "",
-        "7) Au cours de la première année d'exploitation, l'impôt global forfaitaire est fixé à partir d'un chiffre d'affaires estimé selon la procédure contradictoire, déterminé sur la base du chiffre d'affaires prévisionnel fixé au montant de la déclaration fiscale d'existence à condition de justifier d'une déclaration d'existence et de faire parapher par le service compétent de l'administration fiscale les registres comptables cités ci-dessous, dans les quinze jours du début d'activité et à la fin de chaque trimestre de l'année.",
+        "7) Au cours de la première année d'exploitation, l'impôt global forfaitaire est fixé à partir d'un chiffre d'affaires estimé selon la procédure contradictoire, déterminé sur la base du chiffre d'affaires prévisionnel fixé au montant de la déclaration fiscale d'existence à condition de justifier d'une déclaration d'existence et de faire parapher par le service compétent de l'administration fiscale les registres comptables cités ci-dessous, dans les 15 jours du début d'activité et à la fin de chaque trimestre de l'année.",
         "",
         "8) Les contribuables relevant du régime de forfait doivent :",
         "a) tenir une comptabilité selon le système minimal de trésorerie défini par le droit comptable OHADA ;",
@@ -636,16 +636,12 @@
       "titre": "II. Bénéfices industriels, commerciaux et artisanaux (BICA) : 4) Fixation du bénéfice imposable : b) Régime du réel",
       "texte": [
         "Les contribuables dont le chiffre d'affaires est supérieur à 100 000 000 FCFA sont assujettis au régime de l'imposition assis sur le bénéfice réel.",
-        "Ces contribuables sont tenus de souscrire une déclaration du montant de leur résultat à l'unité des moyennes entreprises de la circonscription dans laquelle est situé le siège de l'entreprise ou son principal établissement.",
+        "Ces contribuables sont tenus de souscrire une déclaration du montant de leur résultat à l'unité des moyennes entreprises de la circonscription dans laquelle est situé le siège de l'entreprise ou son principal établissement, dans les conditions prévus par les articles 78 à 80 du CGI si leur chiffres d'affaires ne dépasse pas 2 000 000 000 FCFA.",
         "",
-        "Les contribuables dont le chiffre d'affaires est inférieur ou égal à 2 000 000 000 FCFA doivent déposer leur déclaration à l'unité des moyennes entreprises de la circonscription dans laquelle est situé le siège de l'entreprise ou son principal établissement, dans les conditions et délais prévus par les articles 78 à 80 du CGI.",
         "En l'absence d'une unité des moyennes entreprises dans le département, l'unité territorialement compétente est celle chargée de la gestion des petites entreprises.",
         "Pour les contribuables dont le chiffre d'affaires est supérieur ou égal à 2 000 000 000 FCFA, la déclaration susvisée est déposée à l'unité des grandes entreprises de la circonscription dans laquelle est situé le siège de l'entreprise ou son principal établissement.",
         "Les dispositions des alinéas 2, 3 et 4 du présent article ne s'appliquent pas aux sous-traitants pétroliers.",
-        "À l'appui de la déclaration du bénéfice ou déficit, les contribuables sont tenus de faire connaître leur chiffre d'affaires, c'est-à-dire : le montant brut total des ventes, des travaux effectivement et définitivement réalisés, des avantages, commissions, remises, prix de location, intérêts, escomptes, agios encaissés et, d'une façon générale, tous les produits définitivement acquis dans l'exercice de la profession.",
-        "Lorsque la profession comporte plusieurs activités distinctes, la déclaration doit faire état du chiffre d'affaires par nature d'activité.",
-        "Ces derniers doivent justifier d'un certificat de moralité fiscale de l'année en cours.",
-        "En cas de conflit sur ces états financiers, l'administration fiscale se référera à ceux déposés auprès d'elle ou à ceux de la centrale des bilans auprès de la BEAC."
+        "À l'appui de la déclaration du bénéfice ou déficit, les contribuables sont tenus de faire connaître leur chiffre d'affaires, c'est-à-dire : le montant brut total des ventes, des travaux effectivement et définitivement réalisés, des avantages, commissions, remises, prix de location, intérêts, escomptes, agios encaissés et, d'une façon générale, tous les produits définitivement acquis dans l'exercice de la profession. Lorsque la profession comporte plusieurs activités distinctes, la déclaration doit faire état du chiffre d'affaires par nature d'activité."
       ],
       "mots_cles": [
         "bénéfice réel",
@@ -653,11 +649,7 @@
         "régime réel",
         "PME",
         "grandes entreprises",
-        "déclaration fiscale",
-        "certificat de moralité fiscale",
-        "états financiers",
-        "centrale des bilans",
-        "BEAC"
+        "déclaration fiscale"
       ],
       "statut": "en vigueur"
     },
