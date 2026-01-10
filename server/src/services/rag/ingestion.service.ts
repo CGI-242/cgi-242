@@ -1,9 +1,22 @@
 // server/src/services/rag/ingestion.service.ts
 import { prisma } from '../../config/database.js';
+import { ArticleStatut } from '@prisma/client';
 import { generateEmbeddings } from './embeddings.service.js';
 import { initializeCollection, upsertArticleVectors, ArticleVector } from './qdrant.service.js';
 import { createLogger } from '../../utils/logger.js';
 import { v4 as uuidv4 } from 'uuid';
+
+// Fonction pour mapper les valeurs string vers l'enum Prisma
+function mapStatutToEnum(statut: string | undefined): ArticleStatut {
+  const statutLower = (statut || 'en vigueur').toLowerCase().trim();
+  if (statutLower === 'abrogé' || statutLower === 'abroge') {
+    return ArticleStatut.ABROGE;
+  }
+  if (statutLower === 'modifié' || statutLower === 'modifie') {
+    return ArticleStatut.MODIFIE;
+  }
+  return ArticleStatut.EN_VIGUEUR;
+}
 
 const logger = createLogger('IngestionService');
 
@@ -63,6 +76,7 @@ export interface ArticleJSON {
   section?: string;
   version?: string;
   keywords?: string[];
+  statut?: string; // "en vigueur" ou "abrogé"
 }
 
 export interface IngestionResult {
@@ -99,6 +113,18 @@ interface Section {
 function extractArticlesFromSource(source: SourceFile & { sections?: Section[] }): ArticleSource[] {
   const allArticles: ArticleSource[] = [];
 
+  // Fonction helper pour ajouter le contexte de section aux articles
+  const addWithSection = (articles: ArticleSource[], sectionTitle?: string) => {
+    for (const art of articles) {
+      // Si l'article n'a pas de section string, ajouter le titre de section
+      if (!art.section || typeof art.section !== 'string') {
+        allArticles.push({ ...art, section: sectionTitle });
+      } else {
+        allArticles.push(art);
+      }
+    }
+  };
+
   // Articles directs à la racine
   if (source.articles) {
     allArticles.push(...source.articles);
@@ -107,15 +133,17 @@ function extractArticlesFromSource(source: SourceFile & { sections?: Section[] }
   // Articles dans les sections (format unifié 2025/2026)
   if (source.sections) {
     for (const section of source.sections) {
+      const sectionTitle = section.titre || (section.section ? `Section ${section.section}` : undefined);
       // Articles directs dans la section
       if (section.articles) {
-        allArticles.push(...section.articles);
+        addWithSection(section.articles, sectionTitle);
       }
       // Articles dans les sous-sections de la section
       if (section.sous_sections) {
         for (const sousSection of section.sous_sections) {
+          const sousSectionTitle = sousSection.titre || sectionTitle;
           if (sousSection.articles) {
-            allArticles.push(...sousSection.articles);
+            addWithSection(sousSection.articles, sousSectionTitle);
           }
         }
       }
@@ -125,14 +153,16 @@ function extractArticlesFromSource(source: SourceFile & { sections?: Section[] }
   // Articles dans les sous-sections (ancien format)
   if (source.sous_sections) {
     for (const sousSection of source.sous_sections) {
+      const sectionTitle = sousSection.titre || (sousSection.sous_section ? `Sous-section ${sousSection.sous_section}` : undefined);
       if (sousSection.articles) {
-        allArticles.push(...sousSection.articles);
+        addWithSection(sousSection.articles, sectionTitle);
       }
       // Articles dans les paragraphes des sous-sections
       if (sousSection.paragraphes) {
         for (const paragraphe of sousSection.paragraphes) {
+          const paraTitle = paragraphe.titre || sectionTitle;
           if (paragraphe.articles) {
-            allArticles.push(...paragraphe.articles);
+            addWithSection(paragraphe.articles, paraTitle);
           }
         }
       }
@@ -146,7 +176,10 @@ function transformSourceToArticles(source: SourceFile): ArticleJSON[] {
   const { meta } = source;
   const articles = extractArticlesFromSource(source);
 
-  return articles.map((art) => ({
+  // Filtrer les articles sans numéro (entrées invalides)
+  const validArticles = articles.filter((art) => art.article && typeof art.article === 'string');
+
+  return validArticles.map((art) => ({
     numero: parseArticleNumber(art.article),
     titre: art.titre,
     chapeau: art.chapeau,
@@ -155,11 +188,15 @@ function transformSourceToArticles(source: SourceFile): ArticleJSON[] {
     partie: meta.partie ? `Partie ${meta.partie}` : undefined,
     livre: meta.livre ? `Livre ${meta.livre}` : undefined,
     chapitre: meta.chapitre_titre || (meta.chapitre ? `Chapitre ${meta.chapitre}` : undefined),
-    // Priorité à la section de l'article, sinon celle du meta
-    section: art.section || meta.section_titre || meta.titre || (meta.section ? `Section ${meta.section}` : undefined),
+    // Priorité à la section de l'article (string), sinon celle du meta
+    section: typeof art.section === 'string' ? art.section
+           : meta.section_titre
+           || (typeof meta.titre === 'string' ? meta.titre : undefined)
+           || (meta.section ? `Section ${meta.section}` : undefined),
     // Supporte version OU edition pour la compatibilité CGI 2025/2026
     version: meta.version || meta.edition || '2025',
     keywords: art.mots_cles || [],
+    statut: art.statut || 'en vigueur', // Par défaut "en vigueur"
   }));
 }
 
@@ -211,41 +248,53 @@ export async function ingestArticles(articles: ArticleJSON[]): Promise<Ingestion
 
         try {
           const version = article.version || '2025';
+          const tome = article.tome || '1';
           const existing = await prisma.article.findUnique({
             where: {
-              numero_version: {
+              numero_version_tome: {
                 numero: article.numero,
-                version: version
+                version: version,
+                tome: tome
               }
             },
           });
 
+          const articleStatutEnum = mapStatutToEnum(article.statut);
           const articleData = {
             numero: article.numero,
             titre: article.titre,
             chapeau: article.chapeau,
             contenu: article.contenu,
-            tome: article.tome,
+            tome: tome,
             partie: article.partie,
             livre: article.livre,
             chapitre: article.chapitre,
             section: article.section,
             version: version,
+            statut: articleStatutEnum,
             keywords: article.keywords || [],
           };
 
           let dbArticle;
           if (existing) {
-            dbArticle = await prisma.article.update({
-              where: {
-                numero_version: {
-                  numero: article.numero,
-                  version: version
-                }
-              },
-              data: articleData,
-            });
-            result.updated++;
+            // Ne pas écraser un article "en vigueur" par un article "abrogé"
+            const existingStatut = existing.statut || ArticleStatut.EN_VIGUEUR;
+            if (existingStatut === ArticleStatut.EN_VIGUEUR && articleStatutEnum === ArticleStatut.ABROGE) {
+              logger.debug(`Skip: Article ${article.numero} (en vigueur) non écrasé par version abrogée`);
+              dbArticle = existing;
+            } else {
+              dbArticle = await prisma.article.update({
+                where: {
+                  numero_version_tome: {
+                    numero: article.numero,
+                    version: version,
+                    tome: tome
+                  }
+                },
+                data: articleData,
+              });
+              result.updated++;
+            }
           } else {
             dbArticle = await prisma.article.create({ data: articleData });
             result.inserted++;

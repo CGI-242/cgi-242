@@ -384,8 +384,8 @@ Idéal pour les cabinets comptables !`,
       keywords: ['contact', 'aide', 'support', 'problème', 'email', 'téléphone'],
       answer: `🆘 Besoin d'aide ?
 
-📧 Email : support@cgi242.com
-📧 Commercial : contact@cgi242.com
+📧 Email : support@normx-ai.com
+📧 Commercial : contact@normx-ai.com
 💬 Chat : Disponible dans l'application
 
 Nous répondons sous 24h ouvrées.`,

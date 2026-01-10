@@ -4,32 +4,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Couleurs Congo-Brazzaville (Vert, Jaune, Rouge)
-        primary: {
-          50: '#ecfdf5',
-          100: '#d1fae5',
-          200: '#a7f3d0',
-          300: '#6ee7b7',
-          400: '#34d399',
-          500: '#10b981',
-          600: '#059669',
-          700: '#047857',
-          800: '#065f46',
-          900: '#064e3b',
-          950: '#022c22',
+        // NORMX AI - Charte graphique officielle
+        normx: {
+          'primary': '#0077B5',
+          'dark': '#005A8C',
+          'anthracite': '#1E1E1E',
+          'gray': '#6B7280',
+          'light': '#E5E7EB',
+          'off-white': '#F5F7FA',
         },
-        accent: {
-          50: '#fefce8',
-          100: '#fef9c3',
-          200: '#fef08a',
-          300: '#fde047',
-          400: '#facc15',
-          500: '#eab308',
-          600: '#ca8a04',
-          700: '#a16207',
-          800: '#854d0e',
-          900: '#713f12',
-          950: '#422006',
+        // Alias pour faciliter l'usage
+        primary: {
+          50: '#e6f3f9',
+          100: '#cce7f3',
+          200: '#99cfe7',
+          300: '#66b7db',
+          400: '#339fcf',
+          500: '#0077B5', // Primary Blue
+          600: '#005A8C', // Dark Blue
+          700: '#004d78',
+          800: '#003f64',
+          900: '#003250',
         },
         secondary: {
           50: '#f8fafc',
@@ -37,16 +32,44 @@ module.exports = {
           200: '#e2e8f0',
           300: '#cbd5e1',
           400: '#94a3b8',
-          500: '#64748b',
+          500: '#6B7280', // Gray Tech
           600: '#475569',
           700: '#334155',
-          800: '#1e293b',
+          800: '#1E1E1E', // Anthracite
           900: '#0f172a',
-          950: '#020617',
+        },
+        // Couleurs d'alerte
+        success: {
+          light: '#D1FAE5',
+          DEFAULT: '#10B981',
+          dark: '#059669',
+        },
+        error: {
+          light: '#FEE2E2',
+          DEFAULT: '#EF4444',
+          dark: '#DC2626',
+        },
+        warning: {
+          light: '#FEF3C7',
+          DEFAULT: '#F59E0B',
+          dark: '#D97706',
         },
       },
       fontFamily: {
-        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        heading: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        'h1': ['2.5rem', { lineHeight: '1.2', fontWeight: '700' }],
+        'h2': ['1.75rem', { lineHeight: '1.3', fontWeight: '600' }],
+        'h3': ['1.25rem', { lineHeight: '1.4', fontWeight: '600' }],
+      },
+      boxShadow: {
+        'normx': '0 4px 6px rgba(0, 119, 181, 0.1)',
+        'normx-lg': '0 10px 15px rgba(0, 119, 181, 0.15)',
+      },
+      borderRadius: {
+        'normx': '8px',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',

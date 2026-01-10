@@ -5,11 +5,11 @@
     "edition": "2025",
     "tome": 1,
     "partie": 2,
-    "partie_titre": "Impositions perçues au profit des collectivités et de divers organismes",
-    "titre": 1,
-    "titre_titre": "Impôts perçus au profit des collectivités",
+    "livre": null,
     "chapitre": 1,
     "chapitre_titre": "Impôts et taxes obligatoires",
+    "section": null,
+    "section_titre": null,
     "page_source": null
   },
   "articles": [
@@ -1337,56 +1337,90 @@
     {
       "article": "Art. 314 bis",
       "titre": "Abrogé",
-      "texte": ["Abrogé."],
-      "mots_cles": ["abrogation"],
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [
+        "abrogation"
+      ],
       "statut": "abrogé",
       "section": "Section 5 : Contribution des patentes"
     },
     {
       "article": "Art. 315",
       "titre": "Abrogé",
-      "texte": ["Abrogé."],
-      "mots_cles": ["contribution des licences", "abrogation"],
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [
+        "contribution des licences",
+        "abrogation"
+      ],
       "statut": "abrogé",
       "section": "Section 6 : Contribution des licences"
     },
     {
       "article": "Art. 316",
       "titre": "Abrogé",
-      "texte": ["Abrogé."],
-      "mots_cles": ["contribution des licences", "abrogation"],
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [
+        "contribution des licences",
+        "abrogation"
+      ],
       "statut": "abrogé",
       "section": "Section 6 : Contribution des licences"
     },
     {
       "article": "Art. 317",
       "titre": "Abrogé",
-      "texte": ["Abrogé."],
-      "mots_cles": ["contribution des licences", "abrogation"],
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [
+        "contribution des licences",
+        "abrogation"
+      ],
       "statut": "abrogé",
       "section": "Section 6 : Contribution des licences"
     },
     {
       "article": "Art. 318",
       "titre": "Abrogé",
-      "texte": ["Abrogé."],
-      "mots_cles": ["contribution des licences", "abrogation"],
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [
+        "contribution des licences",
+        "abrogation"
+      ],
       "statut": "abrogé",
       "section": "Section 6 : Contribution des licences"
     },
     {
       "article": "Art. 319",
       "titre": "Abrogé",
-      "texte": ["Abrogé."],
-      "mots_cles": ["contribution des licences", "abrogation"],
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [
+        "contribution des licences",
+        "abrogation"
+      ],
       "statut": "abrogé",
       "section": "Section 6 : Contribution des licences"
     },
     {
       "article": "Art. 320",
       "titre": "Abrogé",
-      "texte": ["Abrogé."],
-      "mots_cles": ["contribution des licences", "abrogation"],
+      "texte": [
+        "Abrogé."
+      ],
+      "mots_cles": [
+        "contribution des licences",
+        "abrogation"
+      ],
       "statut": "abrogé",
       "section": "Section 6 : Contribution des licences"
     },

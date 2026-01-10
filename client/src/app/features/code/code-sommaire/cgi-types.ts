@@ -43,6 +43,7 @@ export interface Partie {
   livres?: Livre[];
   titres?: Titre[];
   simple?: boolean;
+  articles?: string; // Plage d'articles pour parties simples ex: "521-526"
 }
 
 export interface Annexe {
@@ -71,4 +72,18 @@ export interface Tome {
   livres?: Livre[];
   sectionsNonCodifiees?: SectionNonCodifiee[];
   annexes?: Annexe;
+}
+
+export interface ConventionChapitre {
+  chapitre: number;
+  titre: string;
+  articles?: string;
+}
+
+export interface Convention {
+  code: string; // CEMAC, FR, CN
+  titre: string;
+  pays?: string;
+  chapitres?: ConventionChapitre[];
+  articles?: string;
 }

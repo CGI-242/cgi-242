@@ -1,6 +1,7 @@
-import { Component, inject, OnInit, signal, computed, ViewChild, ElementRef, AfterViewChecked, ChangeDetectionStrategy, DestroyRef, OnDestroy } from '@angular/core';
+import { Component, inject, OnInit, signal, computed, ViewChild, ElementRef, AfterViewChecked, ChangeDetectionStrategy, DestroyRef, OnDestroy, SecurityContext } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ChatService, Conversation, StreamEvent } from '@core/services/chat.service';
 import { TenantService } from '@core/services/tenant.service';
 import { AuthService } from '@core/services/auth.service';
@@ -33,7 +34,7 @@ import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
           class="flex-1 transition-all duration-300"
           [class.ml-64]="!sidebarCollapsed"
           [class.ml-14]="sidebarCollapsed">
-          <div class="flex h-[calc(100vh-4rem)]">
+          <div class="flex h-[calc(100vh-5rem)]">
             <!-- History sidebar -->
             <div class="w-80 border-r border-secondary-200 bg-white hidden lg:block">
               <app-chat-history
@@ -79,19 +80,55 @@ import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
               <!-- Messages -->
               <div #messagesContainer class="flex-1 overflow-y-auto p-6 space-y-8">
                 @if (!currentConversation() && messages().length === 0) {
-                  <div class="flex items-center justify-center h-full">
-                    <div class="text-center max-w-md">
-                      <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                        </svg>
+                  <div class="max-w-2xl mx-auto space-y-4">
+                    <!-- Message 1: Greeting -->
+                    <div class="flex gap-3">
+                      <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-primary-600 text-sm font-bold">CGI</span>
                       </div>
-                      <h3 class="text-lg font-semibold text-secondary-900 mb-2">
-                        Assistant Fiscal CGI Congo
-                      </h3>
-                      <p class="text-secondary-600 text-sm">
-                        Comment puis-je vous aider ?
-                      </p>
+                      <div class="bg-white border border-secondary-200 rounded-2xl rounded-tl-none p-4 shadow-sm">
+                        <p class="text-secondary-900">
+                          Bonjour <span class="font-semibold text-primary-600">{{ userName() }}</span> !
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Message 2: What I can help with -->
+                    <div class="flex gap-3">
+                      <div class="w-10 h-10 flex-shrink-0"></div>
+                      <div class="bg-white border border-secondary-200 rounded-2xl p-4 shadow-sm">
+                        <p class="text-secondary-700 mb-3">Je peux vous aider sur :</p>
+                        <div class="grid grid-cols-2 gap-2">
+                          <span class="inline-flex items-center gap-2 text-sm text-secondary-600">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span> IRPP
+                          </span>
+                          <span class="inline-flex items-center gap-2 text-sm text-secondary-600">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span> TVA
+                          </span>
+                          <span class="inline-flex items-center gap-2 text-sm text-secondary-600">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span> ITS
+                          </span>
+                          <span class="inline-flex items-center gap-2 text-sm text-secondary-600">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span> IS
+                          </span>
+                          <span class="inline-flex items-center gap-2 text-sm text-secondary-600">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span> Patente
+                          </span>
+                          <span class="inline-flex items-center gap-2 text-sm text-secondary-600">
+                            <span class="w-2 h-2 bg-primary-500 rounded-full"></span> Et plus...
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Message 3: Call to action -->
+                    <div class="flex gap-3">
+                      <div class="w-10 h-10 flex-shrink-0"></div>
+                      <div class="bg-primary-50 border border-primary-200 rounded-2xl p-4 shadow-sm">
+                        <p class="text-primary-700 text-sm">
+                          Posez votre question quand vous voulez !
+                        </p>
+                      </div>
                     </div>
                   </div>
                 } @else {
@@ -149,6 +186,7 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestr
   tenantService = inject(TenantService);
   private authService = inject(AuthService);
   private destroyRef = inject(DestroyRef);
+  private sanitizer = inject(DomSanitizer);
 
   @ViewChild('messagesContainer') private messagesContainer!: ElementRef;
 
@@ -298,17 +336,37 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestr
 
   /**
    * Format streaming content for display
-   * Converts markdown-like formatting to HTML
+   * Converts markdown-like formatting to HTML with XSS protection
+   * Uses Angular's DomSanitizer to prevent script injection
    */
-  formatStreamingContent(): string {
+  formatStreamingContent(): SafeHtml {
     let content = this.chatService.streamingContent();
 
-    // Basic markdown formatting
+    // First, escape HTML special characters to prevent XSS
+    content = this.escapeHtml(content);
+
+    // Then apply safe markdown-like formatting
     content = content
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\n/g, '<br>');
 
-    return content;
+    // Sanitize the final HTML to ensure no malicious content
+    const sanitized = this.sanitizer.sanitize(SecurityContext.HTML, content);
+    return sanitized ?? '';
+  }
+
+  /**
+   * Escape HTML special characters to prevent XSS attacks
+   */
+  private escapeHtml(text: string): string {
+    const htmlEscapes: Record<string, string> = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+    };
+    return text.replace(/[&<>"']/g, (char) => htmlEscapes[char]);
   }
 
   ngOnDestroy(): void {

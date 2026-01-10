@@ -1,0 +1,54 @@
+{
+  "livre": "Livre 8 - Droits relatifs aux domaines de l'État",
+  "contenu": [
+    {
+      "numero": "1",
+      "intitule": "Droits, taxes, redevances et frais du secteur des postes et des communications électroniques",
+      "texte": [
+        "voir la loi de finances pour 2011, modifiée par la loi de finances rectificative pour 2012 et les lois de finances pour 2013, 2014 et 2015, et voir la loi de finances pour 2019"
+      ]
+    },
+    {
+      "numero": "2",
+      "intitule": "Redevance d'aviation civile",
+      "texte": [
+        "voir la loi de finances pour 2012"
+      ]
+    },
+    {
+      "numero": "3",
+      "intitule": "Fiscalité domaniale",
+      "texte": [
+        "voir la loi n°9-2004 du 26 novembre 2004 portant Code du domaine de l'État"
+      ]
+    },
+    {
+      "numero": "4",
+      "intitule": "Fiscalité foncière",
+      "texte": [
+        "voir la loi n°17-2000 du 30 décembre 2000 portant régime de la propriété foncière, modifiée par les lois de finances pour 2012 et 2015"
+      ]
+    },
+    {
+      "numero": "5",
+      "intitule": "Fiscalité minière",
+      "texte": [
+        "voir la loi n°4-2005 du 11 avril 2005 portant Code minier"
+      ]
+    },
+    {
+      "numero": "6",
+      "intitule": "Fiscalité des hydrocarbures",
+      "texte": [
+        "voir la loi n°24-94 du 23 août 1994 portant Code des hydrocarbures et la loi de finances pour 2019"
+      ]
+    },
+    {
+      "numero": "7",
+      "intitule": "Fiscalité forestière",
+      "texte": [
+        "voir la loi n°16-2000 du 20 novembre 2000 portant Code forestier"
+      ]
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import { sendError } from '../utils/helpers.js';
 import { ERROR_MESSAGES } from '../utils/constants.js';
 import { AuthUser } from '../types/express.js';
 import { createLogger } from '../utils/logger.js';
+import { tokenBlacklistService } from '../services/tokenBlacklist.service.js';
 
 const authLogger = createLogger('AuthMiddleware');
 
@@ -64,6 +65,13 @@ export const authMiddleware = async (
       if (jwtError instanceof jwt.TokenExpiredError) {
         return sendError(res, ERROR_MESSAGES.TOKEN_EXPIRED, 401);
       }
+      return sendError(res, ERROR_MESSAGES.TOKEN_INVALID, 401);
+    }
+
+    // Vérifier si le token est blacklisté (logout, révocation, etc.)
+    const isTokenValid = await tokenBlacklistService.isTokenValid(token);
+    if (!isTokenValid) {
+      authLogger.warn(`Token blacklisté détecté pour userId: ${decoded.userId}`);
       return sendError(res, ERROR_MESSAGES.TOKEN_INVALID, 401);
     }
 

@@ -25,21 +25,29 @@ interface SousSection {
   }>;
 }
 
+interface Section {
+  section?: number;
+  section_titre?: string;
+  articles?: ArticleItem[];
+  sous_sections?: SousSection[];
+}
+
 interface SourceFile {
   meta: Record<string, string | number | undefined>;
   articles?: ArticleItem[];
   sous_sections?: SousSection[];
+  sections?: Section[];
 }
 
 function isSourceFormat(data: SourceFile | SourceFile[] | ArticleJSON[]): data is SourceFile | SourceFile[] {
   if (Array.isArray(data)) {
     const first = data[0];
     if (!first) return false;
-    // Supporte articles ou sous_sections
-    return 'meta' in first && ('articles' in first || 'sous_sections' in first);
+    // Supporte articles, sous_sections ou sections
+    return 'meta' in first && ('articles' in first || 'sous_sections' in first || 'sections' in first);
   }
-  // Supporte articles ou sous_sections
-  return 'meta' in data && ('articles' in data || 'sous_sections' in data);
+  // Supporte articles, sous_sections ou sections
+  return 'meta' in data && ('articles' in data || 'sous_sections' in data || 'sections' in data);
 }
 
 async function main() {

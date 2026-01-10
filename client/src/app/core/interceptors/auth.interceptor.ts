@@ -1,21 +1,17 @@
 import { HttpInterceptorFn } from '@angular/common/http';
-import { inject } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 
+/**
+ * Intercepteur HTTP pour l'authentification par cookies httpOnly
+ *
+ * Sécurité:
+ * - withCredentials: true → envoie automatiquement les cookies httpOnly
+ * - Pas de header Authorization → les tokens ne sont JAMAIS accessibles en JavaScript
+ * - Protection totale contre les attaques XSS (tokens inaccessibles)
+ */
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
-  const authService = inject(AuthService);
-  const token = authService.getToken();
-
-  // Always include credentials for cookies (CSRF)
-  let clonedReq = req.clone({ withCredentials: true });
-
-  if (token) {
-    clonedReq = clonedReq.clone({
-      setHeaders: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-  }
+  // Cloner la requête avec withCredentials pour envoyer les cookies httpOnly
+  // Le serveur vérifiera les cookies cgi_access_token et cgi_refresh_token
+  const clonedReq = req.clone({ withCredentials: true });
 
   return next(clonedReq);
 };

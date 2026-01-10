@@ -1,0 +1,305 @@
+{
+  "metadata_version": "2.1",
+  "last_updated": "2026-01-04",
+  "source": {
+    "document": "Code Général des Impôts",
+    "pays": "République du Congo",
+    "edition": "2026",
+    "tome": 1,
+    "partie": 1,
+    "livre": 1,
+    "chapitre": 2,
+    "base_juridique": "Directive n°0119/25-UEAC-177-CM-42 du 09 janvier 2025"
+  },
+  "index": {
+    "chapitre_titre": "Imposition des personnes physiques (IBA, IRCM, IRF, ITS)",
+    "description": "Ce chapitre regroupe l'imposition des personnes physiques : IBA (entrepreneurs individuels), IRCM (revenus mobiliers), IRF (revenus fonciers) et ITS (salaires)",
+    "sections": [
+      {
+        "section": 1,
+        "titre": "Impôt sur les bénéfices d'affaires (IBA) - Champ d'application",
+        "articles": ["Art. 93", "Art. 93A", "Art. 93B", "Art. 93C"],
+        "themes": ["principe IBA", "revenus imposables", "BIC", "BNC", "professions libérales", "personnes imposables", "territorialité", "résidence fiscale", "domicile fiscal", "183 jours", "24 mois absence"]
+      },
+      {
+        "section": 2,
+        "titre": "IBA - Bénéfice imposable",
+        "articles": ["Art. 94", "Art. 94A", "Art. 94B"],
+        "themes": ["détermination bénéfice", "amortissement linéaire", "provisions non déductibles", "report déficitaire 3 ans", "charges non déductibles", "frais de représentation 50%", "SYSCOHADA", "comptabilité de caisse"]
+      },
+      {
+        "section": 3,
+        "titre": "IBA - Modalités d'imposition",
+        "articles": ["Art. 95", "Art. 95A", "Art. 95B"],
+        "themes": ["taux IBA 30%", "minimum de perception 1,5%", "décès exploitant", "report plus-value", "sociétés transparentes", "retenue source"]
+      },
+      {
+        "section": 4,
+        "titre": "Régime des petites et très petites entreprises",
+        "articles": ["Art. 96", "Art. 96A", "Art. 97", "Art. 98", "Art. 99", "Art. 100", "Art. 101", "Art. 102", "Art. 103", "Art. 104"],
+        "themes": ["régime forfait", "SMT", "obligations comptables", "régime réel", "télédéclaration", "OHADA", "option 3 ans", "exclusions forfait", "sanctions", "états financiers"]
+      },
+      {
+        "section": 5,
+        "titre": "Impôt sur le revenu des capitaux mobiliers (IRCM)",
+        "articles": ["Art. 105", "Art. 105A", "Art. 105B", "Art. 105C", "Art. 105D", "Art. 105E", "Art. 106", "Art. 107", "Art. 108", "Art. 109", "Art. 110", "Art. 110A"],
+        "themes": ["IRCM", "dividendes", "intérêts", "obligations", "créances", "comptes courants", "plus-values mobilières", "revenus occultes", "15%", "35%", "exonérations fusion", "territorialité", "10% / 365 jours", "moins-values 3 ans"]
+      },
+      {
+        "section": 6,
+        "titre": "Impôt sur les revenus fonciers (IRF)",
+        "articles": ["Art. 111", "Art. 111A", "Art. 111B", "Art. 111C", "Art. 111D", "Art. 111E", "Art. 112", "Art. 112A", "Art. 112B", "Art. 113", "Art. 113A"],
+        "themes": ["IRF", "revenus fonciers", "loyers", "propriétés bâties", "propriétés non bâties", "plus-values immobilières", "société prépondérance immobilière 50%", "exonération résidence principale 5 ans", "9%", "15%", "retenue source", "15 mars", "80% CA foncier"]
+      },
+      {
+        "section": 7,
+        "titre": "Impôt sur les traitements et salaires (ITS)",
+        "articles": ["Art. 114", "Art. 114A", "Art. 114B", "Art. 114C", "Art. 114D", "Art. 114E", "Art. 115", "Art. 116", "Art. 116A"],
+        "themes": ["ITS", "salaires", "traitements", "pensions", "rentes viagères", "dirigeants", "avantages en nature", "barème progressif", "exonérations", "diplomates", "territorialité", "183 jours", "retenue source", "SMIG"]
+      }
+    ],
+    "total_articles": 43,
+    "articles_references_externes": ["Art. 5", "Art. 6", "Art. 8", "Art. 35", "Art. 176", "Art. 183", "Art. 400"]
+  },
+  "synonymes_concepts": {
+    "IBA": ["impôt sur les bénéfices d'affaires", "BIC", "BNC", "bénéfices industriels et commerciaux", "bénéfices non commerciaux", "entrepreneur individuel"],
+    "IRCM": ["impôt sur le revenu des capitaux mobiliers", "dividendes", "revenus mobiliers", "revenus de valeurs mobilières", "IRVM"],
+    "IRF": ["impôt sur les revenus fonciers", "revenus locatifs", "loyers", "revenus immobiliers"],
+    "ITS": ["impôt sur les traitements et salaires", "salaires", "IRPP salarial", "impôt sur salaire"],
+    "régime forfait": ["forfait", "petites entreprises", "micro-entreprises", "SMT", "système minimal de trésorerie"],
+    "régime réel": ["bénéfice réel", "comptabilité complète", "régime normal"],
+    "résidence fiscale": ["domicile fiscal", "183 jours", "foyer d'habitation", "centre des intérêts vitaux"],
+    "avantages en nature": ["logement", "voiture", "nourriture", "domesticité", "avantages salariaux"],
+    "plus-values": ["cession", "mutation", "gains en capital", "gain de cession"],
+    "retenue à la source": ["RAS", "prélèvement", "withholding tax", "retenue libératoire"],
+    "société transparente": ["société de personnes", "SNC", "SCS", "société non soumise IS"],
+    "dividendes": ["distribution", "bénéfices distribués", "revenus distribués"],
+    "prépondérance immobilière": ["50% actif immobilier", "société immobilière"],
+    "prépondérance foncière": ["80% CA foncier", "société foncière"]
+  },
+  "valeurs_cles": {
+    "taux": {
+      "taux_iba": "30%",
+      "minimum_perception_iba": "1,5%",
+      "taux_ircm": "15%",
+      "taux_ircm_occulte": "35%",
+      "taux_irf_loyers": "9%",
+      "taux_irf_plus_values": "15%",
+      "frais_representation_iba": "50%"
+    },
+    "bareme_its": {
+      "tranche_1": {
+        "de": 0,
+        "a": 615000,
+        "impot": "1 200 FCFA (forfait)"
+      },
+      "tranche_2": {
+        "de": 615001,
+        "a": 1500000,
+        "taux": "10%"
+      },
+      "tranche_3": {
+        "de": 1500001,
+        "a": 3500000,
+        "taux": "15%"
+      },
+      "tranche_4": {
+        "de": 3500001,
+        "a": 5000000,
+        "taux": "20%"
+      },
+      "tranche_5": {
+        "de": 5000001,
+        "a": "infini",
+        "taux": "30%"
+      }
+    },
+    "avantages_nature_its": {
+      "logement": "20% salaire plafonné SS",
+      "domesticité": "7% salaire brut",
+      "gardiennage": "7% salaire brut",
+      "eau": "5% salaire brut",
+      "eclairage": "5% salaire brut",
+      "gaz": "5% salaire brut",
+      "telephone": "2% salaire brut",
+      "voiture": "3% salaire brut",
+      "nourriture": "20% salaire brut"
+    },
+    "seuils": {
+      "residence_fiscale_jours": "183 jours sur 12 mois",
+      "perte_residence": "24 mois absence continue",
+      "cession_titres_ircm": "10% / 365 jours",
+      "societe_preponderance_immobiliere": "50% actif / 365 jours",
+      "residence_principale_exoneree": "5 ans détention",
+      "societe_preponderance_fonciere": "80% CA",
+      "impot_minimum_its": "1 200 FCFA"
+    },
+    "delais": {
+      "report_deficitaire_iba": "3 exercices",
+      "moins_values_mobilieres": "3 ans",
+      "dividendes_exigibilite": "3 mois après décision",
+      "plus_values_cession_declaration": "60 jours",
+      "option_regime_reel": "avant 1er février",
+      "option_duree": "3 ans irrévocable",
+      "retenue_irf_annuelle": "15 mars",
+      "bail_retenue_irf": "3 mois après entrée jouissance",
+      "forfait_declaration": "15 février",
+      "notification_evaluation": "30 jours réponse",
+      "conservation_documents": "10 ans"
+    },
+    "sanctions": {
+      "defaut_registres_forfait": "100 000 FCFA",
+      "defaut_declaration_fournisseurs": "500 000 FCFA",
+      "teledeclaration_penalite": "10%"
+    }
+  },
+  "relations_articles": {
+    "renvois_internes": {
+      "Art. 93A": ["Art. 115"],
+      "Art. 93C": ["Art. 5", "Art. 6"],
+      "Art. 94": ["Art. 8 et suivants", "Art. 3A"],
+      "Art. 95B": ["Art. 183"],
+      "Art. 96": ["Art. 104"],
+      "Art. 96A": ["Art. 176"],
+      "Art. 97": ["Art. 400"],
+      "Art. 107": ["Art. 111"],
+      "Art. 109": ["Art. 111"],
+      "Art. 113": ["Art. 111"],
+      "Art. 114A": ["Art. 35"],
+      "Art. 116": ["Art. 183"],
+      "Art. 116A": ["Art. 183"]
+    },
+    "articles_complementaires": {
+      "iba_champ": ["Art. 93", "Art. 93A", "Art. 93B", "Art. 93C"],
+      "iba_benefice": ["Art. 94", "Art. 94A", "Art. 94B"],
+      "iba_modalites": ["Art. 95", "Art. 95A", "Art. 95B"],
+      "regime_forfait": ["Art. 96", "Art. 96A", "Art. 97", "Art. 98", "Art. 99", "Art. 100", "Art. 101"],
+      "regime_reel": ["Art. 102", "Art. 103", "Art. 104"],
+      "ircm_champ": ["Art. 105", "Art. 105A", "Art. 105B", "Art. 105C", "Art. 105D", "Art. 105E"],
+      "ircm_modalites": ["Art. 106", "Art. 107", "Art. 108", "Art. 109", "Art. 110", "Art. 110A"],
+      "irf_champ": ["Art. 111", "Art. 111A", "Art. 111B", "Art. 111C", "Art. 111D", "Art. 111E"],
+      "irf_modalites": ["Art. 112", "Art. 112A", "Art. 112B", "Art. 113", "Art. 113A"],
+      "its_champ": ["Art. 114", "Art. 114A", "Art. 114B", "Art. 114C", "Art. 114D", "Art. 114E"],
+      "its_modalites": ["Art. 115", "Art. 116", "Art. 116A"]
+    }
+  },
+  "exclusions_regime_forfait": {
+    "liste": [
+      "professions réglementées",
+      "boulangers",
+      "entrepreneurs de travaux",
+      "exploitants de quincaillerie",
+      "grossistes",
+      "importateurs"
+    ],
+    "reference": "Art. 96 b)"
+  },
+  "differences_iba_vs_is": {
+    "description": "Différences majeures entre IBA (personnes physiques) et IS (sociétés)",
+    "tableau": [
+      {
+        "critere": "Amortissement",
+        "iba": "Linéaire uniquement",
+        "is": "Linéaire + accéléré possible"
+      },
+      {
+        "critere": "Provisions créances douteuses",
+        "iba": "Non déductibles",
+        "is": "Déductibles sous conditions"
+      },
+      {
+        "critere": "Report déficitaire",
+        "iba": "3 exercices",
+        "is": "5 exercices"
+      },
+      {
+        "critere": "Crédit d'impôt investissement",
+        "iba": "Non applicable",
+        "is": "Applicable (Art. 3A)"
+      },
+      {
+        "critere": "Minimum de perception",
+        "iba": "1,5%",
+        "is": "1%"
+      },
+      {
+        "critere": "Taux normal",
+        "iba": "30%",
+        "is": "25%"
+      }
+    ]
+  },
+  "calendrier_fiscal_chapitre_2": {
+    "janvier": [],
+    "fevrier": [
+      {"date": "1er", "obligation": "Date limite option régime réel (forfaitaires)", "reference": "Art. 96"},
+      {"date": "15", "obligation": "Déclaration forfait + états financiers SMT", "reference": "Art. 98"}
+    ],
+    "mars": [
+      {"date": "15", "obligation": "Retenue IRF annuelle (loyers)", "reference": "Art. 113A"}
+    ],
+    "avril": [
+      {"date": "30", "obligation": "Déclaration statistique et fiscale (régime réel)", "reference": "Art. 104"}
+    ],
+    "trimestriel": [
+      {"obligation": "Déclaration liste fournisseurs (forfait)", "reference": "Art. 99"},
+      {"obligation": "Paraphe registres par administration fiscale", "reference": "Art. 96A"}
+    ],
+    "mensuel": [
+      {"obligation": "Déclaration TVA (si assujetti)", "reference": "Art. 176"},
+      {"obligation": "Retenue ITS sur salaires", "reference": "Art. 116"},
+      {"obligation": "Déclaration art. 176 (forfait)", "reference": "Art. 96A"}
+    ],
+    "evenementiel": [
+      {"delai": "60 jours", "obligation": "Déclaration plus-values cession titres", "reference": "Art. 110A"},
+      {"delai": "3 mois", "obligation": "Retenue IRF nouveaux baux", "reference": "Art. 113A"},
+      {"delai": "3 mois", "obligation": "IRCM dividendes après décision AG", "reference": "Art. 108"}
+    ]
+  },
+  "formules_calcul": {
+    "iba": {
+      "impot": "Bénéfice imposable × 30%",
+      "minimum_perception": "(Produits exploitation + Produits financiers + Produits HAO) × 1,5%",
+      "reference": "Art. 95"
+    },
+    "ircm": {
+      "impot_normal": "Revenus mobiliers × 15%",
+      "impot_occulte": "Revenus occultes × 35%",
+      "moins_value_imputable": "3 ans suivant la cession",
+      "reference": "Art. 110"
+    },
+    "irf": {
+      "impot_loyers": "Loyers bruts × 9%",
+      "impot_plus_values": "(Prix cession - Prix acquisition - Frais - Travaux) × 15%",
+      "reference": "Art. 113"
+    },
+    "its": {
+      "bareme": "Progressif par tranches (voir barème)",
+      "avantage_logement": "Salaire plafonné SS × 20%",
+      "avantage_voiture": "Salaire brut × 3%",
+      "avantage_nourriture": "Salaire brut × 20%",
+      "reference": "Art. 115, Art. 116"
+    }
+  },
+  "cas_particuliers": {
+    "deces_exploitant": {
+      "description": "Report de taxation de la plus-value si exploitation poursuivie par héritiers directs ou conjoint",
+      "conditions": ["Héritiers en ligne directe ou conjoint", "Pas d'augmentation des évaluations d'actif"],
+      "reference": "Art. 95A"
+    },
+    "societe_transparente": {
+      "description": "Part de bénéfice imposée à l'IBA chez l'associé personne physique",
+      "retenue_source": "Art. 183",
+      "reference": "Art. 95B"
+    },
+    "plusieurs_employeurs_its": {
+      "description": "Retenue non libératoire, déclaration annuelle obligatoire",
+      "reference": "Art. 116"
+    },
+    "revenus_source_etrangere": {
+      "description": "Base = montant net après impôt étranger",
+      "credit_impot": "Impôt acquitté à l'étranger déductible (IRF)",
+      "reference": "Art. 115, Art. 112B"
+    }
+  }
+}

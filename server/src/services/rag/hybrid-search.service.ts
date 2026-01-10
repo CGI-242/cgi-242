@@ -46,8 +46,7 @@ const DIRECT_KEYWORD_MAPPINGS: Record<string, string> = {
   'démobilisation': 'Art. 92A',
   'demobilisation': 'Art. 92A',
   'mob demob': 'Art. 92A',
-  'mob': 'Art. 92A',
-  'demob': 'Art. 92A',
+  // 'mob' et 'demob' supprimés - causent faux positifs (ex: "immobilières" contient "mob")
 
   // Art. 92J - Régime dérogatoire pétrolier
   '70%': 'Art. 92J',
@@ -76,6 +75,35 @@ const DIRECT_KEYWORD_MAPPINGS: Record<string, string> = {
   'paiement cash': 'Art. 26',
   'numéraire': 'Art. 26',
   'numeraire': 'Art. 26',
+
+  // ========== IRF - IMPOT SUR LE REVENU FONCIER ==========
+  // Art. 113 - Taux IRF
+  'taux irf': 'Art. 113',
+  'taux de l\'irf': 'Art. 113',
+  '9% loyers': 'Art. 113',
+  '15% plus-values': 'Art. 113',
+  'taux loyers': 'Art. 113',
+  'taux revenus fonciers': 'Art. 113',
+  'taux plus-values immobilières': 'Art. 113',
+  'taux plus-values immobilieres': 'Art. 113',
+
+  // Art. 113A - Retenue IRF
+  'retenue irf': 'Art. 113A',
+  'retenue loyers': 'Art. 113A',
+  'retenue libératoire irf': 'Art. 113A',
+  'retenue liberatoire irf': 'Art. 113A',
+  'date limite retenue': 'Art. 113A',
+  '15 mars irf': 'Art. 113A',
+  'nouveau bail': 'Art. 113A',
+
+  // Art. 111C - Exonérations IRF
+  'exonération irf': 'Art. 111C',
+  'exoneration irf': 'Art. 111C',
+  'résidence principale': 'Art. 111C',
+  'residence principale': 'Art. 111C',
+  'irf famille': 'Art. 111C',
+  'exonération famille': 'Art. 111C',
+  'exoneration famille': 'Art. 111C',
 };
 
 /**
@@ -129,6 +157,49 @@ const ROUTING_RULES: RoutingRule[] = [
     keywordsRequired: ['espèces', 'especes', 'cash', 'liquide', 'numéraire', 'numeraire'],
     keywordsContext: ['plafond', 'maximum', 'déductible', 'deductible', '200', 'charge'],
     routeTo: 'Art. 26',
+    boost: 3.0,
+  },
+  // ========== IRF - IMPOT SUR LE REVENU FONCIER ==========
+  {
+    id: 'R7_irf_taux_plus_values',
+    keywordsRequired: ['taux', 'plus-value', 'plus-values'],
+    keywordsContext: ['irf', 'immobilier', 'immobilière', 'immobilieres', 'foncier', '15%'],
+    routeTo: 'Art. 113',
+    boost: 3.0,
+  },
+  {
+    id: 'R8_irf_retenue',
+    keywordsRequired: ['retenue', 'source'],
+    keywordsContext: ['irf', 'loyer', 'foncier', 'locataire', 'libératoire', 'liberatoire', 'date', '15 mars'],
+    routeTo: 'Art. 113A',
+    boost: 3.0,
+  },
+  {
+    id: 'R9_irf_exoneration',
+    keywordsRequired: ['exonér', 'exoner', 'dispense'],
+    keywordsContext: ['irf', 'foncier', 'résidence', 'residence', 'famille', 'enfant', 'principal'],
+    routeTo: 'Art. 111C',
+    boost: 3.0,
+  },
+  {
+    id: 'R10_irf_nouveau_bail',
+    keywordsRequired: ['nouveau bail', 'bail'],
+    keywordsContext: ['retenue', 'irf', 'délai', 'delai', '3 mois'],
+    routeTo: 'Art. 113A',
+    boost: 3.0,
+  },
+  {
+    id: 'R11_irf_liberatoire',
+    keywordsRequired: ['libératoire', 'liberatoire'],
+    keywordsContext: ['irf', 'retenue', 'foncier', 'loyer'],
+    routeTo: 'Art. 113A',
+    boost: 3.0,
+  },
+  {
+    id: 'R12_logement_gratuit_famille',
+    keywordsRequired: ['gratuitement', 'gratuit'],
+    keywordsContext: ['enfant', 'famille', 'logement', 'loyer', 'imposable'],
+    routeTo: 'Art. 111C',
     boost: 3.0,
   },
 ];

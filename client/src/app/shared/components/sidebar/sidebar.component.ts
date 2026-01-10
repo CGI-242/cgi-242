@@ -25,7 +25,7 @@ interface NavItem {
   imports: [CommonModule, RouterLink, RouterLinkActive],
   template: `
     <aside
-      class="fixed left-0 top-16 h-[calc(100vh-4rem)] bg-white border-r border-secondary-200 transition-all duration-300"
+      class="fixed left-0 top-20 h-[calc(100vh-5rem)] bg-white border-r border-secondary-200 transition-all duration-300"
       [class.w-64]="!collapsed"
       [class.w-14]="collapsed">
       <nav class="space-y-1" [class.p-4]="!collapsed" [class.p-2]="collapsed">
@@ -40,9 +40,9 @@ interface NavItem {
               [class.py-2]="!collapsed"
               [class.justify-center]="collapsed"
               [class.p-2]="collapsed">
-              <span [innerHTML]="getSafeIcon(item.icon)" class="w-5 h-5 flex-shrink-0"></span>
+              <span [innerHTML]="getSafeIcon(item.icon)" class="w-6 h-6 flex-shrink-0"></span>
               @if (!collapsed) {
-                <span class="text-sm font-medium">{{ item.label }}</span>
+                <span class="text-base font-medium">{{ item.label }}</span>
               }
             </a>
           } @else if (item.children) {
@@ -56,9 +56,9 @@ interface NavItem {
                 [class.py-2]="!collapsed"
                 [class.justify-center]="collapsed"
                 [class.p-2]="collapsed">
-                <span [innerHTML]="getSafeIcon(item.icon)" class="w-5 h-5 flex-shrink-0"></span>
+                <span [innerHTML]="getSafeIcon(item.icon)" class="w-6 h-6 flex-shrink-0"></span>
                 @if (!collapsed) {
-                  <span class="text-sm font-medium flex-1 text-left">{{ item.label }}</span>
+                  <span class="text-base font-medium flex-1 text-left">{{ item.label }}</span>
                   <svg
                     class="w-4 h-4 transition-transform"
                     [class.rotate-180]="isMenuOpen(item.label)"
@@ -73,7 +73,7 @@ interface NavItem {
                     <a
                       [routerLink]="child.route"
                       routerLinkActive="text-primary-700 font-medium"
-                      class="block px-3 py-1.5 text-sm text-secondary-500 hover:text-secondary-900 transition">
+                      class="block px-3 py-1.5 text-base text-secondary-500 hover:text-secondary-900 transition">
                       {{ child.label }}
                     </a>
                   }
@@ -128,6 +128,11 @@ export class SidebarComponent {
         { label: 'Acompte IS', route: '/simulateur/acompte-is' },
         { label: 'Solde IS', route: '/simulateur/solde-is' },
       ],
+    },
+    {
+      label: 'Chat IA',
+      icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>',
+      route: '/chat',
     },
     {
       label: 'Organisation',
