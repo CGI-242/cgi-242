@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
         <div class="flex items-center justify-between h-16">
           <!-- Logo -->
           <div class="flex items-center">
-            <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" class="h-10 md:h-14 w-auto" />
+            <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" class="h-10 md:h-14 w-auto" loading="eager" fetchpriority="high" />
           </div>
 
           <!-- Navigation Desktop -->
