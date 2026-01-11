@@ -257,57 +257,67 @@ import { RouterLink } from '@angular/router';
     <!-- Tarifs -->
     <section id="tarifs" class="py-20 bg-secondary-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
+        <div class="text-center mb-8">
           <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary-900 mb-4">
             Tarifs simples et transparents
           </h2>
           <p class="text-lg text-secondary-600">
-            Licence annuelle + maintenance mensuelle
+            Abonnement annuel - Sans engagement - TVA 18% incluse
           </p>
         </div>
 
+        <!-- Offre de lancement -->
+        <div class="bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-xl p-4 mb-10 max-w-2xl mx-auto text-center">
+          <p class="font-semibold">Offre de lancement - Jusqu'au 31 mars 2026</p>
+          <p class="text-sm opacity-90">Jusqu'a -20% sur tous les abonnements !</p>
+        </div>
+
         <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <!-- STANDARD -->
+          <!-- BASIC -->
           <div class="bg-white rounded-2xl p-8 border border-secondary-200">
-            <div class="inline-block bg-secondary-100 text-secondary-600 text-sm px-3 py-1 rounded-full mb-4">📚 STANDARD</div>
-            <h3 class="text-xl font-bold text-secondary-900 mb-2">Essentiel</h3>
+            <div class="inline-block bg-secondary-100 text-secondary-600 text-sm px-3 py-1 rounded-full mb-4">📚 BASIC</div>
+            <h3 class="text-xl font-bold text-secondary-900 mb-2">Le prix du CGI papier</h3>
             <div class="mb-4">
-              <div class="text-3xl font-bold text-secondary-900">50 000 XAF<span class="text-lg font-normal text-secondary-500">/an/utilisateur</span></div>
-              <div class="text-sm text-secondary-500">+ 5 000 XAF/mois/utilisateur</div>
+              <div class="flex items-baseline gap-2">
+                <span class="text-lg text-secondary-400 line-through">50 000</span>
+                <span class="text-3xl font-bold text-secondary-900">40 000 XAF</span>
+                <span class="text-lg font-normal text-secondary-500">/an</span>
+              </div>
+              <div class="text-sm text-green-600 font-medium">Offre lancement -10 000 XAF</div>
             </div>
             <ul class="space-y-3 mb-8">
               <li class="flex items-center gap-2 text-secondary-600">
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Recherche sémantique illimitée
+                Recherche CGI illimitee
               </li>
               <li class="flex items-center gap-2 text-secondary-600">
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Tous les simulateurs
+                Tous les simulateurs fiscaux
               </li>
               <li class="flex items-center gap-2 text-secondary-600">
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Calendrier fiscal
+                Calendrier fiscal + alertes
               </li>
               <li class="flex items-center gap-2 text-secondary-600">
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Veille fiscale
+                5 exports PDF/mois
               </li>
               <li class="flex items-center gap-2 text-secondary-400">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
-                Questions IA non incluses
+                Assistant IA non inclus
               </li>
             </ul>
-            <p class="text-xs text-secondary-500 mb-4 text-center">~110 000 XAF la 1ère année</p>
+            <p class="text-xs text-secondary-500 mb-4 text-center">Ideal : Particuliers, etudiants, auto-entrepreneurs</p>
             <a routerLink="/auth/register" class="block w-full py-3 px-4 text-center border-2 border-primary-600 text-primary-600 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
               Commencer
             </a>
@@ -315,18 +325,22 @@ import { RouterLink } from '@angular/router';
 
           <!-- PRO -->
           <div class="bg-primary-600 rounded-2xl p-8 text-white transform scale-105 shadow-xl">
-            <div class="inline-block bg-white/20 text-sm px-3 py-1 rounded-full mb-4">💬 PRO - Populaire</div>
-            <h3 class="text-xl font-bold mb-2">Professionnel</h3>
+            <div class="inline-block bg-white/20 text-sm px-3 py-1 rounded-full mb-4">🤖 PRO - Populaire</div>
+            <h3 class="text-xl font-bold mb-2">L'IA a votre service</h3>
             <div class="mb-4">
-              <div class="text-3xl font-bold">100 000 XAF<span class="text-lg font-normal opacity-80">/an/utilisateur</span></div>
-              <div class="text-sm opacity-80">+ 5 000 XAF/mois/utilisateur</div>
+              <div class="flex items-baseline gap-2">
+                <span class="text-lg opacity-60 line-through">75 000</span>
+                <span class="text-3xl font-bold">60 000 XAF</span>
+                <span class="text-lg font-normal opacity-80">/an</span>
+              </div>
+              <div class="text-sm text-green-300 font-medium">Offre lancement -15 000 XAF</div>
             </div>
             <ul class="space-y-3 mb-8">
               <li class="flex items-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Tout STANDARD inclus
+                Tout BASIC inclus
               </li>
               <li class="flex items-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -338,28 +352,38 @@ import { RouterLink } from '@angular/router';
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Explications IA des articles
+                20 exports PDF/mois
               </li>
               <li class="flex items-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Support Email + WhatsApp
+                Veille fiscale
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Support email 48h
               </li>
             </ul>
-            <p class="text-xs opacity-80 mb-4 text-center">~160 000 XAF la 1ère année</p>
+            <p class="text-xs opacity-80 mb-4 text-center">Ideal : Comptables, PME, consultants</p>
             <a routerLink="/auth/register" class="block w-full py-3 px-4 text-center bg-white text-primary-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              Essai gratuit 14 jours
+              Essayer gratuitement
             </a>
           </div>
 
           <!-- EXPERT -->
           <div class="bg-white rounded-2xl p-8 border-2 border-primary-200">
             <div class="inline-block bg-primary-100 text-primary-700 text-sm px-3 py-1 rounded-full mb-4">🏆 EXPERT</div>
-            <h3 class="text-xl font-bold text-secondary-900 mb-2">Cabinets & Entreprises</h3>
+            <h3 class="text-xl font-bold text-secondary-900 mb-2">Pour les exigeants</h3>
             <div class="mb-4">
-              <div class="text-3xl font-bold text-secondary-900">200 000 XAF<span class="text-lg font-normal text-secondary-500">/an/utilisateur</span></div>
-              <div class="text-sm text-secondary-500">+ 5 000 XAF/mois/utilisateur</div>
+              <div class="flex items-baseline gap-2">
+                <span class="text-lg text-secondary-400 line-through">100 000</span>
+                <span class="text-3xl font-bold text-secondary-900">80 000 XAF</span>
+                <span class="text-lg font-normal text-secondary-500">/an</span>
+              </div>
+              <div class="text-sm text-green-600 font-medium">Offre lancement -20 000 XAF</div>
             </div>
             <ul class="space-y-3 mb-8">
               <li class="flex items-center gap-2 text-secondary-600">
@@ -372,32 +396,66 @@ import { RouterLink } from '@angular/router';
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                <strong>200 questions IA/mois</strong>
+                <strong>100 questions IA/mois</strong>
               </li>
               <li class="flex items-center gap-2 text-secondary-600">
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Support prioritaire
+                Exports PDF illimites
               </li>
               <li class="flex items-center gap-2 text-secondary-600">
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                Multi-utilisateurs (-5 000 XAF/licence dès 3+)
+                <strong>3 utilisateurs inclus</strong>
+              </li>
+              <li class="flex items-center gap-2 text-secondary-600">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Support prioritaire 24h
               </li>
             </ul>
-            <p class="text-xs text-secondary-500 mb-4 text-center">~260 000 XAF la 1ère année</p>
+            <p class="text-xs text-secondary-500 mb-4 text-center">Ideal : Cabinets, directions financieres</p>
             <a routerLink="/auth/register" class="block w-full py-3 px-4 text-center bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors">
               Souscrire
             </a>
           </div>
         </div>
 
-        <!-- Questions IA supplémentaires -->
+        <!-- Comparaison CGI papier -->
+        <div class="mt-16 bg-white rounded-2xl p-8 max-w-3xl mx-auto border border-secondary-200">
+          <h3 class="text-xl font-bold text-secondary-900 mb-6 text-center">Meme prix qu'un CGI papier, 10x plus de valeur</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="text-center p-4 bg-secondary-50 rounded-xl">
+              <p class="text-secondary-500 mb-2">CGI Papier</p>
+              <p class="text-2xl font-bold text-secondary-900">50 000 FCFA</p>
+              <ul class="text-sm text-secondary-500 mt-3 space-y-1">
+                <li>Recherche manuelle</li>
+                <li>Racheter chaque annee</li>
+                <li>Calculs a la main</li>
+              </ul>
+            </div>
+            <div class="text-center p-4 bg-primary-50 rounded-xl border-2 border-primary-200">
+              <p class="text-primary-600 mb-2 font-medium">CGI 242 BASIC</p>
+              <p class="text-2xl font-bold text-primary-700">40 000 FCFA</p>
+              <ul class="text-sm text-primary-600 mt-3 space-y-1">
+                <li>Recherche IA + mots-cles</li>
+                <li>Mises a jour automatiques</li>
+                <li>Simulateurs integres</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Packs IA -->
         <div class="mt-12 text-center">
-          <p class="text-secondary-600">
-            <strong>Questions IA supplémentaires :</strong> 500 XAF/question | Packs disponibles avec jusqu'à -40%
+          <p class="text-secondary-600 mb-2">
+            <strong>Besoin de plus de questions IA ?</strong>
+          </p>
+          <p class="text-secondary-500 text-sm">
+            Packs recharges : 20 questions (5 000 FCFA) | 50 questions (10 000 FCFA) | 100 questions (18 000 FCFA) | 200 questions (30 000 FCFA)
           </p>
         </div>
       </div>
