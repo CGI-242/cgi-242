@@ -1,14 +1,16 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, inject } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { StatusBar, Style } from '@capacitor/status-bar';
 import { Keyboard } from '@capacitor/keyboard';
 import { Haptics, ImpactStyle, NotificationType } from '@capacitor/haptics';
+import { LoggerService } from './logger.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MobileService {
+  private logger = inject(LoggerService);
   private readonly _isNative = signal(Capacitor.isNativePlatform());
   private readonly _platform = signal(Capacitor.getPlatform());
   private readonly _keyboardVisible = signal(false);
@@ -40,8 +42,8 @@ export class MobileService {
     try {
       await StatusBar.setStyle({ style: Style.Light });
       await StatusBar.setBackgroundColor({ color: '#005A8C' });
-    } catch (error) {
-      console.warn('StatusBar configuration failed:', error);
+    } catch {
+      this.logger.warn('StatusBar configuration failed', 'MobileService');
     }
   }
 
@@ -59,8 +61,8 @@ export class MobileService {
     if (!this._isNative()) return;
     try {
       await SplashScreen.hide({ fadeOutDuration: 300 });
-    } catch (error) {
-      console.warn('SplashScreen hide failed:', error);
+    } catch {
+      this.logger.warn('SplashScreen hide failed', 'MobileService');
     }
   }
 
@@ -68,8 +70,8 @@ export class MobileService {
     if (!this._isNative()) return;
     try {
       await SplashScreen.show({ autoHide: false });
-    } catch (error) {
-      console.warn('SplashScreen show failed:', error);
+    } catch {
+      this.logger.warn('SplashScreen show failed', 'MobileService');
     }
   }
 
@@ -83,8 +85,8 @@ export class MobileService {
     };
     try {
       await Haptics.impact({ style: impactStyles[style] });
-    } catch (error) {
-      console.warn('Haptic impact failed:', error);
+    } catch {
+      this.logger.warn('Haptic impact failed', 'MobileService');
     }
   }
 
@@ -97,8 +99,8 @@ export class MobileService {
     };
     try {
       await Haptics.notification({ type: notificationTypes[type] });
-    } catch (error) {
-      console.warn('Haptic notification failed:', error);
+    } catch {
+      this.logger.warn('Haptic notification failed', 'MobileService');
     }
   }
 
@@ -106,8 +108,8 @@ export class MobileService {
     if (!this._isNative()) return;
     try {
       await Haptics.vibrate({ duration: 100 });
-    } catch (error) {
-      console.warn('Haptic vibrate failed:', error);
+    } catch {
+      this.logger.warn('Haptic vibrate failed', 'MobileService');
     }
   }
 
@@ -116,8 +118,8 @@ export class MobileService {
     if (!this._isNative()) return;
     try {
       await Keyboard.hide();
-    } catch (error) {
-      console.warn('Keyboard hide failed:', error);
+    } catch {
+      this.logger.warn('Keyboard hide failed', 'MobileService');
     }
   }
 

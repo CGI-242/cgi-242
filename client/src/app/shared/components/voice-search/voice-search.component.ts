@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter, Input, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, output, input, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
 import { VoiceSearchService, VoiceState, VoiceError } from '@core/services/voice-search.service';
@@ -17,7 +17,7 @@ import { VoiceSearchService, VoiceState, VoiceError } from '@core/services/voice
         [class.speaking]="state.isSpeaking"
         [class.processing]="state.isProcessing"
         [class.disabled]="!state.isSupported"
-        [class.mini]="mini"
+        [class.mini]="mini()"
         [disabled]="!state.isSupported || state.isProcessing"
         (click)="onVoiceButtonClick()"
         [attr.aria-label]="getAriaLabel()">
@@ -54,7 +54,7 @@ import { VoiceSearchService, VoiceState, VoiceError } from '@core/services/voice
       </button>
 
       <!-- Indicateur de statut -->
-      @if (showStatus) {
+      @if (showStatus()) {
         <div class="status-indicator">
           @if (state.isListening) {
             <span class="status listening"> Je vous écoute... </span>
@@ -69,7 +69,7 @@ import { VoiceSearchService, VoiceState, VoiceError } from '@core/services/voice
       }
 
       <!-- Transcription en temps réel -->
-      @if (showTranscript && transcript) {
+      @if (showTranscript() && transcript) {
         <div class="transcript-container">
           <p class="transcript">{{ transcript }}</p>
         </div>
@@ -84,7 +84,7 @@ import { VoiceSearchService, VoiceState, VoiceError } from '@core/services/voice
       }
 
       <!-- Bouton stop lecture -->
-      @if (state.isSpeaking && showStopButton) {
+      @if (state.isSpeaking && showStopButton()) {
         <button class="stop-button" (click)="stopSpeaking()" aria-label="Arrêter la lecture">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M6 6h12v12H6z" />
@@ -358,17 +358,17 @@ import { VoiceSearchService, VoiceState, VoiceError } from '@core/services/voice
 })
 export class VoiceSearchComponent implements OnInit, OnDestroy {
   // Inputs
-  @Input() showStatus = true;
-  @Input() showTranscript = true;
-  @Input() showStopButton = true;
-  @Input() autoReadResponse = true;
-  @Input() mini = false;
+  showStatus = input(true);
+  showTranscript = input(true);
+  showStopButton = input(true);
+  autoReadResponse = input(true);
+  mini = input(false);
 
   // Outputs
-  @Output() querySubmitted = new EventEmitter<string>();
-  @Output() listeningChanged = new EventEmitter<boolean>();
-  @Output() speakingChanged = new EventEmitter<boolean>();
-  @Output() errorOccurred = new EventEmitter<VoiceError>();
+  querySubmitted = output<string>();
+  listeningChanged = output<boolean>();
+  speakingChanged = output<boolean>();
+  errorOccurred = output<VoiceError>();
 
   // État
   state: VoiceState = {
@@ -457,7 +457,7 @@ export class VoiceSearchComponent implements OnInit, OnDestroy {
    * Méthode publique pour lire une réponse
    */
   async speakResponse(text: string): Promise<void> {
-    if (this.autoReadResponse) {
+    if (this.autoReadResponse()) {
       await this.voiceService.speak(text);
     }
   }

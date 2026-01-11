@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AbstractControl, FormBuilder, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
+import { ToastService } from '@core/services/toast.service';
+import { PasswordStrengthComponent } from '@shared/components/password-strength/password-strength.component';
 
 // Validateur personnalisé pour vérifier que les mots de passe correspondent
 function passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
@@ -19,7 +21,7 @@ function passwordMatchValidator(control: AbstractControl): ValidationErrors | nu
   selector: 'app-register',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink, PasswordStrengthComponent],
   template: `
     <div class="register-page">
       <!-- Section Gauche - Logo sur fond blanc -->
@@ -134,6 +136,12 @@ function passwordMatchValidator(control: AbstractControl): ValidationErrors | nu
                 <p class="text-red-300 text-xs mt-1">
                   Min. 8 caractères, une majuscule et un chiffre
                 </p>
+              }
+              <!-- Indicateur de force du mot de passe -->
+              @if (form.get('password')?.value) {
+                <div class="mt-3 p-3 bg-white/10 rounded-lg">
+                  <app-password-strength [password]="form.get('password')?.value || ''" [showDetails]="true" />
+                </div>
               }
             </div>
 
@@ -250,6 +258,7 @@ export class RegisterComponent {
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
   private router = inject(Router);
+  private toast = inject(ToastService);
 
   isLoading = signal(false);
   errorMessage = signal('');
@@ -278,6 +287,10 @@ export class RegisterComponent {
       next: (res) => {
         this.isLoading.set(false);
         if (res.success) {
+          this.toast.success({
+            title: 'Compte créé',
+            message: 'Bienvenue sur CGI 242 !'
+          });
           this.router.navigate(['/dashboard']);
         } else {
           this.errorMessage.set(res.error ?? "Erreur lors de l'inscription");

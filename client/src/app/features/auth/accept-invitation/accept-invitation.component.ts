@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { OrganizationService } from '@core/services/organization.service';
 import { AuthService } from '@core/services/auth.service';
+import { ToastService } from '@core/services/toast.service';
 import { LoadingSpinnerComponent } from '@shared/components/loading-spinner/loading-spinner.component';
 
 @Component({
@@ -55,6 +56,7 @@ export class AcceptInvitationComponent implements OnInit {
   private router = inject(Router);
   private orgService = inject(OrganizationService);
   private authService = inject(AuthService);
+  private toast = inject(ToastService);
 
   isLoading = signal(true);
   errorMessage = signal('');
@@ -85,13 +87,19 @@ export class AcceptInvitationComponent implements OnInit {
         this.isLoading.set(false);
         if (res.success) {
           this.successMessage.set("Vous avez rejoint l'organisation avec succès !");
+          this.toast.success({
+            title: 'Bienvenue !',
+            message: "Vous avez rejoint l'organisation"
+          });
         } else {
           this.errorMessage.set(res.error ?? "Erreur lors de l'acceptation");
+          this.toast.error(res.error ?? "Erreur lors de l'acceptation");
         }
       },
       error: () => {
         this.isLoading.set(false);
         this.errorMessage.set("Cette invitation n'est plus valide ou a expiré");
+        this.toast.error("Cette invitation n'est plus valide ou a expiré");
       },
     });
   }

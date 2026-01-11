@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ApiService } from '../../core/services/api.service';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
+import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcrumb.component';
 
 interface Plan {
   id: string;
@@ -23,9 +24,9 @@ interface Plan {
   selector: 'app-subscription',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, HeaderComponent, SidebarComponent],
+  imports: [CommonModule, HeaderComponent, SidebarComponent, BreadcrumbComponent],
   template: `
-    <div class="min-h-screen bg-gray-50">
+    <div class="min-h-screen bg-gray-50 dark:bg-secondary-900 transition-colors duration-300">
       <app-header />
 
       <div class="flex">
@@ -37,6 +38,11 @@ interface Plan {
           [class.ml-14]="sidebarCollapsed">
 
           <div class="max-w-6xl mx-auto">
+            <!-- Breadcrumb -->
+            <div class="mb-4">
+              <app-breadcrumb />
+            </div>
+
             <!-- Header -->
             <div class="text-center mb-10">
               <h1 class="text-3xl font-bold text-gray-900">Choisissez votre abonnement</h1>

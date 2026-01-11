@@ -38,8 +38,11 @@ import { RouterModule } from '@angular/router';
               <ul class="text-gray-700 mt-2 space-y-1">
                 <li><strong>Raison sociale :</strong> ETS MG ADVISE</li>
                 <li><strong>Siège social :</strong> Pointe-Noire / Brazzaville, République du Congo</li>
+                <li><strong>Téléphone :</strong> +242 05 203 42 21 / +242 05 379 99 59</li>
                 <li><strong>Email :</strong> contact&#64;normx-ai.com</li>
                 <li><strong>Site web :</strong> https://cgi242.normx-ai.com</li>
+                <li><strong>RCCM :</strong> CG-PNR-01-2023-A10-01130</li>
+                <li><strong>NUI :</strong> P220000001491719</li>
               </ul>
             </div>
             <p class="text-gray-700">
@@ -254,6 +257,7 @@ import { RouterModule } from '@angular/router';
           <!-- Footer -->
           <footer class="mt-12 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
             <p class="font-medium text-gray-700">ETS MG ADVISE</p>
+            <p>Tél : +242 05 203 42 21 / +242 05 379 99 59</p>
             <p>contact&#64;normx-ai.com</p>
             <p class="mt-4">© 2026 NORMX AI - Marque déposée INPI n°5146181 - Tous droits réservés</p>
           </footer>

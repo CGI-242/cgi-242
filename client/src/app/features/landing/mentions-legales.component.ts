@@ -39,7 +39,12 @@ import { RouterModule } from '@angular/router';
                   <tr><td class="py-1 text-gray-600 w-1/3">Raison sociale</td><td class="py-1 text-gray-900 font-medium">ETS MG ADVISE</td></tr>
                   <tr><td class="py-1 text-gray-600">Forme juridique</td><td class="py-1 text-gray-900">Établissement commercial</td></tr>
                   <tr><td class="py-1 text-gray-600">Siège social</td><td class="py-1 text-gray-900">Pointe-Noire / Brazzaville, République du Congo</td></tr>
+                  <tr><td class="py-1 text-gray-600">Téléphone</td><td class="py-1 text-gray-900">+242 05 203 42 21 / +242 05 379 99 59</td></tr>
                   <tr><td class="py-1 text-gray-600">Email</td><td class="py-1 text-gray-900">contact&#64;normx-ai.com</td></tr>
+                  <tr><td class="py-1 text-gray-600">RCCM</td><td class="py-1 text-gray-900">CG-PNR-01-2023-A10-01130</td></tr>
+                  <tr><td class="py-1 text-gray-600">NUI</td><td class="py-1 text-gray-900">P220000001491719</td></tr>
+                  <tr><td class="py-1 text-gray-600">SCIEn</td><td class="py-1 text-gray-900">2024818</td></tr>
+                  <tr><td class="py-1 text-gray-600">SCIET</td><td class="py-1 text-gray-900">2024818013</td></tr>
                 </tbody>
               </table>
             </div>
@@ -154,6 +159,7 @@ import { RouterModule } from '@angular/router';
             <h2 class="text-xl font-semibold text-gray-900 mb-4">8. Contact</h2>
             <div class="bg-gray-50 rounded-lg p-4">
               <p class="text-gray-900 font-medium">ETS MG ADVISE</p>
+              <p class="text-gray-700">Téléphone : +242 05 203 42 21 / +242 05 379 99 59</p>
               <p class="text-gray-700">Email : contact&#64;normx-ai.com</p>
               <p class="text-gray-700">Site : https://cgi242.normx-ai.com</p>
             </div>

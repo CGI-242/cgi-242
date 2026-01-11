@@ -51,6 +51,13 @@ export const routes: Routes = [
       import('./features/analytics/analytics-dashboard.component').then((m) => m.AnalyticsDashboardComponent),
     canActivate: [authGuard],
   },
+  // Profil utilisateur
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./features/profile/profile.routes').then((m) => m.PROFILE_ROUTES),
+    canActivate: [authGuard],
+  },
   // Pages spéciales
   {
     path: 'forbidden',
@@ -117,9 +124,10 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/landing/landing.component').then((m) => m.LandingComponent),
   },
-  // Redirect pour routes inconnues
+  // Page 404 pour routes inconnues
   {
     path: '**',
-    redirectTo: '',
+    loadComponent: () =>
+      import('./features/landing/not-found.component').then((m) => m.NotFoundComponent),
   },
 ];

@@ -1,6 +1,7 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, inject } from '@angular/core';
 import { Preferences } from '@capacitor/preferences';
 import { Network } from '@capacitor/network';
+import { LoggerService } from './logger.service';
 
 export interface OfflineArticle {
   id: string;
@@ -22,6 +23,7 @@ export interface OfflineData {
   providedIn: 'root'
 })
 export class OfflineStorageService {
+  private logger = inject(LoggerService);
   private readonly STORAGE_KEY = 'cgi242_offline_data';
   private readonly FAVORITES_KEY = 'cgi242_favorites';
   private readonly RECENT_KEY = 'cgi242_recent';
@@ -60,8 +62,8 @@ export class OfflineStorageService {
       if (value) {
         return JSON.parse(value);
       }
-    } catch (error) {
-      console.warn('Error reading offline data:', error);
+    } catch {
+      this.logger.warn('Error reading offline data', 'OfflineStorageService');
     }
     return { articles: [], lastSync: null };
   }

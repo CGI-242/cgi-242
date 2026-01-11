@@ -1,5 +1,6 @@
 import { inject, Injectable, NgZone } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { LoggerService } from './logger.service';
 
 // ============================================
 // INTERFACES
@@ -101,6 +102,7 @@ export class VoiceSearchService {
   private language = 'fr-FR';
   private voiceName = '';
   private ngZone = inject(NgZone);
+  private logger = inject(LoggerService);
 
   constructor() {
     this.initializeSpeechRecognition();
@@ -118,7 +120,7 @@ export class VoiceSearchService {
 
     if (!SpeechRecognitionAPI) {
       this.updateState({ isSupported: false });
-      console.warn('Web Speech API non supportée');
+      this.logger.warn('Web Speech API non supportée', 'VoiceSearchService');
       return;
     }
 
@@ -233,7 +235,7 @@ export class VoiceSearchService {
       this.recognition.start();
     } catch {
       // Déjà en cours d'écoute
-      console.warn('Recognition already started');
+      this.logger.debug('Recognition already started', 'VoiceSearchService');
     }
   }
 

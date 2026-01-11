@@ -2,6 +2,7 @@ import { Injectable, inject, signal, computed } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { firstValueFrom } from 'rxjs';
+import { LoggerService } from './logger.service';
 
 export interface DashboardStats {
   overview: {
@@ -59,6 +60,7 @@ interface AnalyticsState {
 @Injectable({ providedIn: 'root' })
 export class AnalyticsService {
   private http = inject(HttpClient);
+  private logger = inject(LoggerService);
 
   private stateSignal = signal<AnalyticsState>({
     dashboard: null,
@@ -127,8 +129,8 @@ export class AnalyticsService {
       }));
 
       return response.data;
-    } catch (err) {
-      console.error(`Erreur chargement time series ${metric}:`, err);
+    } catch {
+      this.logger.error(`Erreur chargement time series ${metric}`, 'AnalyticsService');
       return null;
     }
   }
@@ -158,8 +160,8 @@ export class AnalyticsService {
       }));
 
       return response.data;
-    } catch (err) {
-      console.error('Erreur chargement member stats:', err);
+    } catch {
+      this.logger.error('Erreur chargement member stats', 'AnalyticsService');
       return [];
     }
   }
@@ -181,8 +183,8 @@ export class AnalyticsService {
       );
 
       return response.data;
-    } catch (err) {
-      console.error('Erreur export analytics:', err);
+    } catch {
+      this.logger.error('Erreur export analytics', 'AnalyticsService');
       return null;
     }
   }

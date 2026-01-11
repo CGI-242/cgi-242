@@ -159,6 +159,48 @@ export const me = asyncHandler(async (req: Request, res: Response) => {
 });
 
 /**
+ * Mettre à jour le profil utilisateur
+ */
+export const updateProfile = asyncHandler(async (req: Request, res: Response) => {
+  const userId = req.user!.id;
+  const { firstName, lastName, profession } = req.body;
+
+  const { prisma } = await import('../config/database.js');
+
+  const updatedUser = await prisma.user.update({
+    where: { id: userId },
+    data: {
+      ...(firstName !== undefined && { firstName }),
+      ...(lastName !== undefined && { lastName }),
+      ...(profession !== undefined && { profession }),
+    },
+    select: {
+      id: true,
+      email: true,
+      firstName: true,
+      lastName: true,
+      profession: true,
+      isEmailVerified: true,
+    },
+  });
+
+  // Audit trail
+  await AuditService.log({
+    actorId: userId,
+    action: 'SETTINGS_CHANGED',
+    entityType: 'User',
+    entityId: userId,
+    changes: {
+      before: { firstName: req.user!.firstName, lastName: req.user!.lastName, profession: req.user!.profession },
+      after: { firstName: updatedUser.firstName, lastName: updatedUser.lastName, profession: updatedUser.profession },
+    },
+    metadata: getAuditMetadata(req),
+  });
+
+  sendSuccess(res, { user: updatedUser }, 'Profil mis à jour avec succès');
+});
+
+/**
  * Déconnexion - supprime les cookies et blackliste les tokens
  */
 export const logout = asyncHandler(async (req: Request, res: Response) => {

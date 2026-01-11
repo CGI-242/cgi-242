@@ -4,6 +4,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { OrganizationService } from '@core/services/organization.service';
 import { TenantService } from '@core/services/tenant.service';
+import { ToastService } from '@core/services/toast.service';
 import { HeaderComponent } from '@shared/components/header/header.component';
 
 @Component({
@@ -120,6 +121,7 @@ export class OrgCreateComponent {
   private orgService = inject(OrganizationService);
   private tenantService = inject(TenantService);
   private router = inject(Router);
+  private toast = inject(ToastService);
 
   isLoading = signal(false);
   errorMessage = signal('');
@@ -149,14 +151,20 @@ export class OrgCreateComponent {
             slug: res.data.slug,
             role: 'OWNER',
           });
+          this.toast.success({
+            title: 'Organisation créée',
+            message: `${res.data.name} a été créée avec succès`
+          });
           this.router.navigate(['/organization']);
         } else {
           this.errorMessage.set(res.error ?? 'Erreur lors de la création');
+          this.toast.error(res.error ?? 'Erreur lors de la création');
         }
       },
       error: () => {
         this.isLoading.set(false);
         this.errorMessage.set('Erreur lors de la création');
+        this.toast.error('Erreur lors de la création');
       },
     });
   }

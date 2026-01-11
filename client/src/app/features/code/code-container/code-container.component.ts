@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ArticlesService, Article } from '@core/services/articles.service';
+import { LoggerService } from '@core/services/logger.service';
 import { HeaderComponent } from '@shared/components/header/header.component';
 import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
 import { AudioButtonComponent } from '@shared/components/audio-button/audio-button.component';
@@ -293,6 +294,7 @@ export class CodeContainerComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private sanitizer = inject(DomSanitizer);
   private destroyRef = inject(DestroyRef);
+  private logger = inject(LoggerService);
 
   sidebarCollapsed = false;
   searchQuery = '';
@@ -313,8 +315,7 @@ export class CodeContainerComponent implements OnInit {
     const section = this.selectedSection();
     const query = this.searchQuery.toLowerCase().trim();
 
-    // DEBUG: Afficher les paramètres de filtrage
-    console.log('[Filtrage] Plage:', range, '| Tome:', tome, '| Chapitre:', chapitre, '| Section:', section);
+    this.logger.debug('Filtrage', 'CodeContainer', { range, tome, chapitre, section });
 
     let result: Article[];
 
@@ -362,8 +363,7 @@ export class CodeContainerComponent implements OnInit {
       return true;
     });
 
-    // DEBUG: Afficher le résultat après filtrage avec chapitre
-    console.log('[Filtrage] Résultat:', result.length, 'articles:', result.map(a => `${a.numero}(chap:${a.chapitre?.substring(0, 20)})`).join(', '));
+    this.logger.debug('Filtrage résultat', 'CodeContainer', { count: result.length });
 
     // Trier numériquement avec gestion des suffixes latins
     return result.sort((a, b) => {
@@ -673,8 +673,8 @@ export class CodeContainerComponent implements OnInit {
       await navigator.clipboard.writeText(text);
       this.copied.set(true);
       setTimeout(() => this.copied.set(false), 2000);
-    } catch (err) {
-      console.error('Erreur lors de la copie:', err);
+    } catch {
+      this.logger.warn('Échec de la copie dans le presse-papiers', 'CodeContainer');
     }
   }
 

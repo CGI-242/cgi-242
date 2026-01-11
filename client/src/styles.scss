@@ -14,6 +14,8 @@
 
   body {
     @apply font-sans text-secondary-800 bg-normx-off-white antialiased;
+    @apply dark:bg-secondary-900 dark:text-secondary-100;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Titres avec Poppins */
@@ -31,6 +33,7 @@
 
   h3 {
     @apply text-xl md:text-2xl font-semibold text-secondary-800;
+    @apply dark:text-secondary-100;
   }
 }
 
@@ -50,6 +53,7 @@
 
   .btn-outline {
     @apply btn border border-secondary-300 bg-white text-secondary-700 hover:bg-secondary-50 focus:ring-primary-500;
+    @apply dark:bg-secondary-800 dark:border-secondary-600 dark:text-secondary-200 dark:hover:bg-secondary-700;
   }
 
   .btn-danger {
@@ -63,6 +67,7 @@
   /* ============ Inputs ============ */
   .input {
     @apply block w-full px-3 py-2 border border-normx-light rounded-lg shadow-sm placeholder-secondary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-sm bg-white;
+    @apply dark:bg-secondary-800 dark:border-secondary-600 dark:text-secondary-100 dark:placeholder-secondary-500;
   }
 
   .input-error {
@@ -71,15 +76,18 @@
 
   .label {
     @apply block text-sm font-medium text-secondary-700 mb-1;
+    @apply dark:text-secondary-300;
   }
 
   /* ============ Cards ============ */
   .card {
     @apply bg-white rounded-xl shadow-sm border border-normx-light overflow-hidden;
+    @apply dark:bg-secondary-800 dark:border-secondary-700;
   }
 
   .card-normx {
     @apply bg-white rounded-normx shadow-normx border border-normx-light p-6;
+    @apply dark:bg-secondary-800 dark:border-secondary-700;
   }
 
   /* ============ Links ============ */
@@ -140,10 +148,16 @@
 
   .table-normx tbody tr:nth-child(even) {
     @apply bg-normx-off-white;
+    @apply dark:bg-secondary-800;
   }
 
   .table-normx td {
     @apply px-4 py-3;
+    @apply dark:text-secondary-200;
+  }
+
+  .table-normx tbody tr {
+    @apply dark:border-secondary-700;
   }
 
   /* ============ Badge NORMX AI ============ */
@@ -178,6 +192,14 @@
 
 ::-webkit-scrollbar-thumb {
   @apply bg-primary-300 rounded-full hover:bg-primary-400;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-secondary-700;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-secondary-500 hover:bg-secondary-400;
 }
 
 /* ============ Chat message spacing ============ */

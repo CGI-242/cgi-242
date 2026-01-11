@@ -5,13 +5,14 @@ import { AuthService } from '@core/services/auth.service';
 import { MobileService } from '@core/services/mobile.service';
 import { ChatWidgetComponent } from '@shared/components/chat-widget/chat-widget.component';
 import { MobileTabsComponent } from '@shared/components/mobile-tabs/mobile-tabs.component';
+import { ToastContainerComponent } from '@shared/components/toast/toast-container.component';
 import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterOutlet, ChatWidgetComponent, MobileTabsComponent],
+  imports: [RouterOutlet, ChatWidgetComponent, MobileTabsComponent, ToastContainerComponent],
   template: `
     <div class="app-container" [class.has-mobile-tabs]="showMobileTabs">
       <router-outlet />
@@ -20,6 +21,7 @@ import { environment } from '../environments/environment';
         <app-mobile-tabs />
       }
     </div>
+    <app-toast-container />
   `,
   styles: [`
     .app-container {

@@ -191,8 +191,10 @@ import { RouterModule } from '@angular/router';
             <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 11 - Contact</h2>
             <div class="bg-gray-50 rounded-lg p-4">
               <p class="text-gray-700"><strong>ETS MG ADVISE</strong></p>
+              <p class="text-gray-700">Téléphone : +242 05 203 42 21 / +242 05 379 99 59</p>
               <p class="text-gray-700">Email : contact&#64;normx-ai.com</p>
               <p class="text-gray-700">Site : https://cgi242.normx-ai.com</p>
+              <p class="text-gray-700 mt-2"><strong>RCCM :</strong> CG-PNR-01-2023-A10-01130</p>
             </div>
           </section>
 
