@@ -19,9 +19,6 @@ import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
             <a routerLink="/" class="flex items-center gap-1">
               <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" class="h-28 sm:h-36 w-auto" />
             </a>
-            <a href="https://normx-ai.com" target="_blank" class="text-base text-secondary-400 hover:text-primary-600 font-medium hidden sm:inline transition-colors">
-              By NORMX AI
-            </a>
 
             @if (authService.isAuthenticated()) {
               <nav class="hidden md:flex items-center gap-6">
