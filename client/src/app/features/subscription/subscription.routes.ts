@@ -6,4 +6,14 @@ export const SUBSCRIPTION_ROUTES: Routes = [
     loadComponent: () =>
       import('./subscription.component').then((m) => m.SubscriptionComponent),
   },
+  {
+    path: 'checkout/:planId',
+    loadComponent: () =>
+      import('./checkout.component').then((m) => m.CheckoutComponent),
+  },
+  {
+    path: 'confirmation',
+    loadComponent: () =>
+      import('./confirmation.component').then((m) => m.ConfirmationComponent),
+  },
 ];
