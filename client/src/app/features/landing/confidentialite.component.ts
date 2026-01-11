@@ -30,7 +30,7 @@ import { RouterModule } from '@angular/router';
           <!-- Introduction -->
           <section class="mb-8">
             <p class="text-gray-700">
-              ETS M ADVISE, éditeur de la plateforme CGI 242, s'engage à protéger la vie privée des utilisateurs.
+              ETS MG ADVISE, éditeur de la plateforme CGI 242, s'engage à protéger la vie privée des utilisateurs.
               Cette politique décrit comment nous collectons, utilisons, stockons et protégeons vos données personnelles.
             </p>
           </section>
@@ -40,7 +40,7 @@ import { RouterModule } from '@angular/router';
             <h2 class="text-xl font-semibold text-gray-900 mb-4">1. Responsable du traitement</h2>
             <div class="bg-gray-50 rounded-lg p-4">
               <ul class="text-gray-700 space-y-1">
-                <li><strong>Responsable :</strong> ETS M ADVISE</li>
+                <li><strong>Responsable :</strong> ETS MG ADVISE</li>
                 <li><strong>Adresse :</strong> Pointe-Noire / Brazzaville, République du Congo</li>
                 <li><strong>Email DPO :</strong> contact&#64;normx-ai.com</li>
               </ul>
@@ -119,7 +119,7 @@ import { RouterModule } from '@angular/router';
             </ul>
 
             <p class="text-gray-700 bg-green-50 border border-green-200 rounded-lg p-4 font-medium">
-              Nous ne vendons pas vos données. ETS M ADVISE ne partage pas vos données personnelles à des fins commerciales.
+              Nous ne vendons pas vos données. ETS MG ADVISE ne partage pas vos données personnelles à des fins commerciales.
             </p>
           </section>
 
@@ -218,7 +218,7 @@ import { RouterModule } from '@angular/router';
           <section class="mb-8">
             <h2 class="text-xl font-semibold text-gray-900 mb-4">10. Contact</h2>
             <div class="bg-blue-50 rounded-lg p-4">
-              <p class="text-gray-700"><strong>ETS M ADVISE</strong></p>
+              <p class="text-gray-700"><strong>ETS MG ADVISE</strong></p>
               <p class="text-gray-700">Email : contact&#64;normx-ai.com</p>
               <p class="text-gray-700">Objet : "Protection des données"</p>
             </div>
@@ -229,7 +229,7 @@ import { RouterModule } from '@angular/router';
             <p>
               Voir aussi : <a routerLink="/cgv" class="text-blue-600 hover:underline">Conditions Générales de Vente</a>
             </p>
-            <p class="mt-4">© 2026 ETS M ADVISE - NORMX AI - Tous droits réservés</p>
+            <p class="mt-4">© 2026 ETS MG ADVISE - NORMX AI - Tous droits réservés</p>
           </footer>
         </article>
       </main>

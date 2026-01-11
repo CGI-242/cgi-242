@@ -277,6 +277,7 @@ export class CheckoutComponent implements OnInit {
 
   plan = signal<PlanDetails | null>(null);
   loading = signal(false);
+  submitted = signal(false); // Protection double-clic
   errorMessage = signal('');
   showValidationError = signal(false);
 
@@ -296,12 +297,18 @@ export class CheckoutComponent implements OnInit {
   }
 
   proceedToPayment(): void {
+    // Protection double-clic
+    if (this.submitted() || this.loading()) {
+      return;
+    }
+
     if (!this.isFormValid()) {
       this.showValidationError.set(true);
       return;
     }
 
     this.showValidationError.set(false);
+    this.submitted.set(true); // Marquer comme soumis
     this.loading.set(true);
     this.errorMessage.set('');
 

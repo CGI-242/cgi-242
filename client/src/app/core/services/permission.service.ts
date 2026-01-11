@@ -135,11 +135,12 @@ export class PermissionService {
 
       this.permissionsSignal.set(newState);
       this.cachePermissions(newState, orgId);
-    } catch (error: any) {
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Erreur de chargement des permissions';
       this.permissionsSignal.update((state) => ({
         ...state,
         loading: false,
-        error: error.message || 'Erreur de chargement des permissions',
+        error: message,
       }));
     }
   }

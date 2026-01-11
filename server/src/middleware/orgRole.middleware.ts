@@ -4,7 +4,7 @@ import { sendError } from '../utils/helpers.js';
 import { ERROR_MESSAGES } from '../utils/constants.js';
 import { hasMinimumRole, getRoleLabel } from '../types/tenant.types.js';
 import { permissionService } from '../services/permission.service.js';
-import { Permission, isValidPermission, PERMISSION_DESCRIPTIONS } from '../types/permission.types.js';
+import { Permission, PERMISSION_DESCRIPTIONS } from '../types/permission.types.js';
 
 /**
  * Middleware factory pour vérifier le rôle minimum dans une organisation

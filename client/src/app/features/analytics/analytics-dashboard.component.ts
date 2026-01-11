@@ -3,11 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartConfiguration, ChartType, ChartData } from 'chart.js';
-import {
-  AnalyticsService,
-  DashboardStats,
-  MetricData,
-} from '../../core/services/analytics.service';
+import { AnalyticsService } from '../../core/services/analytics.service';
 import { TenantService } from '../../core/services/tenant.service';
 
 interface StatCard {

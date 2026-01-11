@@ -36,7 +36,7 @@ import { RouterModule } from '@angular/router';
             <div class="bg-gray-50 rounded-lg p-4 mb-4">
               <p class="font-medium text-gray-900">Le Vendeur :</p>
               <ul class="text-gray-700 mt-2 space-y-1">
-                <li><strong>Raison sociale :</strong> ETS M ADVISE</li>
+                <li><strong>Raison sociale :</strong> ETS MG ADVISE</li>
                 <li><strong>Siège social :</strong> Pointe-Noire / Brazzaville, République du Congo</li>
                 <li><strong>Email :</strong> contact&#64;normx-ai.com</li>
                 <li><strong>Site web :</strong> https://cgi242.normx-ai.com</li>
@@ -119,7 +119,7 @@ import { RouterModule } from '@angular/router';
               Les prix sont exprimés en Francs CFA (XAF) et s'entendent TTC, incluant la TVA au taux en vigueur (18%).
             </p>
             <p class="text-gray-700">
-              ETS M ADVISE peut modifier ses prix à tout moment. Les nouveaux tarifs s'appliquent aux nouvelles souscriptions et renouvellements.
+              ETS MG ADVISE peut modifier ses prix à tout moment. Les nouveaux tarifs s'appliquent aux nouvelles souscriptions et renouvellements.
             </p>
           </section>
 
@@ -144,7 +144,7 @@ import { RouterModule } from '@angular/router';
               <li><strong>Carte bancaire :</strong> Visa, Mastercard (via CinetPay)</li>
             </ul>
             <p class="text-gray-700 text-sm">
-              Les paiements sont sécurisés par CinetPay, certifié PCI-DSS. ETS M ADVISE ne stocke aucune donnée bancaire.
+              Les paiements sont sécurisés par CinetPay, certifié PCI-DSS. ETS MG ADVISE ne stocke aucune donnée bancaire.
             </p>
           </section>
 
@@ -154,7 +154,7 @@ import { RouterModule } from '@angular/router';
             <ul class="text-gray-700 space-y-2">
               <li><strong>Activation :</strong> L'accès est activé immédiatement après confirmation du paiement.</li>
               <li><strong>Identifiants :</strong> Le Client est responsable de la confidentialité de ses identifiants.</li>
-              <li><strong>Disponibilité :</strong> ETS M ADVISE s'efforce d'assurer une disponibilité 24h/24, 7j/7.</li>
+              <li><strong>Disponibilité :</strong> ETS MG ADVISE s'efforce d'assurer une disponibilité 24h/24, 7j/7.</li>
             </ul>
           </section>
 
@@ -174,7 +174,7 @@ import { RouterModule } from '@angular/router';
             <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 8 - Résiliation</h2>
             <ul class="text-gray-700 space-y-2">
               <li><strong>Par le Client :</strong> Résiliation à tout moment depuis l'espace client ou par email. Prend effet à la fin du mois en cours.</li>
-              <li><strong>Par ETS M ADVISE :</strong> Possible en cas de défaut de paiement, violation des CGU ou utilisation frauduleuse.</li>
+              <li><strong>Par ETS MG ADVISE :</strong> Possible en cas de défaut de paiement, violation des CGU ou utilisation frauduleuse.</li>
               <li><strong>Export :</strong> Le Client peut demander l'export de ses données dans les 30 jours suivant la résiliation.</li>
             </ul>
           </section>
@@ -191,7 +191,7 @@ import { RouterModule } from '@angular/router';
           <section class="mb-8">
             <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 10 - Propriété intellectuelle</h2>
             <p class="text-gray-700 mb-4">
-              La plateforme CGI 242 est la propriété exclusive d'ETS M ADVISE et de la marque NORMX AI (INPI n°5146181).
+              La plateforme CGI 242 est la propriété exclusive d'ETS MG ADVISE et de la marque NORMX AI (INPI n°5146181).
             </p>
             <p class="text-gray-700 mb-2">
               L'abonnement confère un droit d'utilisation personnel, non exclusif et non transférable.
@@ -209,8 +209,8 @@ import { RouterModule } from '@angular/router';
           <section class="mb-8">
             <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 11 - Responsabilité</h2>
             <ul class="text-gray-700 space-y-2">
-              <li><strong>Limitation :</strong> ETS M ADVISE ne peut garantir l'exactitude absolue des informations fiscales ni l'absence d'interruptions.</li>
-              <li><strong>Exclusion :</strong> ETS M ADVISE n'est pas responsable des décisions du Client basées sur les informations fournies.</li>
+              <li><strong>Limitation :</strong> ETS MG ADVISE ne peut garantir l'exactitude absolue des informations fiscales ni l'absence d'interruptions.</li>
+              <li><strong>Exclusion :</strong> ETS MG ADVISE n'est pas responsable des décisions du Client basées sur les informations fournies.</li>
               <li><strong>Plafond :</strong> La responsabilité est limitée au montant de l'abonnement des 12 derniers mois.</li>
             </ul>
           </section>
@@ -228,7 +228,7 @@ import { RouterModule } from '@angular/router';
           <section class="mb-8">
             <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 13 - Force majeure</h2>
             <p class="text-gray-700">
-              ETS M ADVISE ne sera pas responsable en cas de force majeure (catastrophe naturelle, guerre, panne d'internet, décision gouvernementale).
+              ETS MG ADVISE ne sera pas responsable en cas de force majeure (catastrophe naturelle, guerre, panne d'internet, décision gouvernementale).
             </p>
           </section>
 
@@ -253,7 +253,7 @@ import { RouterModule } from '@angular/router';
 
           <!-- Footer -->
           <footer class="mt-12 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
-            <p class="font-medium text-gray-700">ETS M ADVISE</p>
+            <p class="font-medium text-gray-700">ETS MG ADVISE</p>
             <p>contact&#64;normx-ai.com</p>
             <p class="mt-4">© 2026 NORMX AI - Marque déposée INPI n°5146181 - Tous droits réservés</p>
           </footer>

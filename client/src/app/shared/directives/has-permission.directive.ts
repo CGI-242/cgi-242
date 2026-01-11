@@ -15,37 +15,37 @@ import { PermissionService, Permission } from '../../core/services/permission.se
  *
  * Usage:
  * ```html
- * <button *hasPermission="'members:invite'">Inviter</button>
+ * <button *appHasPermission="'members:invite'">Inviter</button>
  *
- * <div *hasPermission="['billing:view', 'billing:manage']" hasPermissionMode="any">
+ * <div *appHasPermission="['billing:view', 'billing:manage']" appHasPermissionMode="any">
  *   Facturation
  * </div>
  *
- * <ng-container *hasPermission="'admin:orgs_manage'; else noAccess">
+ * <ng-container *appHasPermission="'admin:orgs_manage'; else noAccess">
  *   Contenu admin
  * </ng-container>
  * <ng-template #noAccess>Accès refusé</ng-template>
  * ```
  */
 @Directive({
-  selector: '[hasPermission]',
+  selector: '[appHasPermission]',
   standalone: true,
 })
 export class HasPermissionDirective implements OnInit, OnDestroy {
-  private templateRef = inject(TemplateRef<any>);
+  private templateRef = inject(TemplateRef<void>);
   private viewContainer = inject(ViewContainerRef);
   private permissionService = inject(PermissionService);
 
   private permissions: Permission | Permission[] = [];
   private mode: 'all' | 'any' = 'all';
-  private elseTemplateRef: TemplateRef<any> | null = null;
+  private elseTemplateRef: TemplateRef<void> | null = null;
   private hasView = false;
 
   /**
    * Permission(s) requise(s) - peut être une string ou un tableau
    */
   @Input()
-  set hasPermission(value: Permission | Permission[]) {
+  set appHasPermission(value: Permission | Permission[]) {
     this.permissions = value;
     this.updateView();
   }
@@ -54,7 +54,7 @@ export class HasPermissionDirective implements OnInit, OnDestroy {
    * Mode de vérification: 'all' (toutes requises) ou 'any' (une seule suffit)
    */
   @Input()
-  set hasPermissionMode(value: 'all' | 'any') {
+  set appHasPermissionMode(value: 'all' | 'any') {
     this.mode = value;
     this.updateView();
   }
@@ -63,7 +63,7 @@ export class HasPermissionDirective implements OnInit, OnDestroy {
    * Template à afficher si la permission n'est pas accordée
    */
   @Input()
-  set hasPermissionElse(templateRef: TemplateRef<any>) {
+  set appHasPermissionElse(templateRef: TemplateRef<void>) {
     this.elseTemplateRef = templateRef;
     this.updateView();
   }

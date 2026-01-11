@@ -36,7 +36,7 @@ import { RouterModule } from '@angular/router';
             <div class="bg-gray-50 rounded-lg p-4">
               <table class="w-full text-sm">
                 <tbody>
-                  <tr><td class="py-1 text-gray-600 w-1/3">Raison sociale</td><td class="py-1 text-gray-900 font-medium">ETS M ADVISE</td></tr>
+                  <tr><td class="py-1 text-gray-600 w-1/3">Raison sociale</td><td class="py-1 text-gray-900 font-medium">ETS MG ADVISE</td></tr>
                   <tr><td class="py-1 text-gray-600">Forme juridique</td><td class="py-1 text-gray-900">Établissement commercial</td></tr>
                   <tr><td class="py-1 text-gray-600">Siège social</td><td class="py-1 text-gray-900">Pointe-Noire / Brazzaville, République du Congo</td></tr>
                   <tr><td class="py-1 text-gray-600">Email</td><td class="py-1 text-gray-900">contact&#64;normx-ai.com</td></tr>
@@ -84,7 +84,7 @@ import { RouterModule } from '@angular/router';
             <h3 class="font-medium text-gray-900 mb-2">3.3 Code Général des Impôts</h3>
             <p class="text-gray-700">
               Le Code Général des Impôts de la République du Congo (Loi n°28-2024) est un texte officiel public.
-              La mise en forme, l'indexation et les enrichissements apportés par CGI 242 sont la propriété d'ETS M ADVISE.
+              La mise en forme, l'indexation et les enrichissements apportés par CGI 242 sont la propriété d'ETS MG ADVISE.
             </p>
           </section>
 
@@ -94,7 +94,7 @@ import { RouterModule } from '@angular/router';
 
             <h3 class="font-medium text-gray-900 mb-2">Responsable du traitement</h3>
             <p class="text-gray-700 mb-4">
-              ETS M ADVISE est responsable du traitement des données personnelles collectées sur le site.
+              ETS MG ADVISE est responsable du traitement des données personnelles collectées sur le site.
             </p>
 
             <h3 class="font-medium text-gray-900 mb-2">Finalités</h3>
@@ -134,7 +134,7 @@ import { RouterModule } from '@angular/router';
             <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
               <ul class="text-yellow-800 space-y-2 text-sm">
                 <li><strong>Information générale :</strong> Les informations ne constituent pas un conseil juridique ou fiscal personnalisé.</li>
-                <li><strong>Exactitude :</strong> ETS M ADVISE ne peut garantir l'exactitude absolue des informations.</li>
+                <li><strong>Exactitude :</strong> ETS MG ADVISE ne peut garantir l'exactitude absolue des informations.</li>
                 <li><strong>Disponibilité :</strong> L'accès au site n'est pas garanti sans interruption.</li>
               </ul>
             </div>
@@ -153,7 +153,7 @@ import { RouterModule } from '@angular/router';
           <section class="mb-8">
             <h2 class="text-xl font-semibold text-gray-900 mb-4">8. Contact</h2>
             <div class="bg-gray-50 rounded-lg p-4">
-              <p class="text-gray-900 font-medium">ETS M ADVISE</p>
+              <p class="text-gray-900 font-medium">ETS MG ADVISE</p>
               <p class="text-gray-700">Email : contact&#64;normx-ai.com</p>
               <p class="text-gray-700">Site : https://cgi242.normx-ai.com</p>
             </div>
@@ -195,7 +195,7 @@ import { RouterModule } from '@angular/router';
               <a routerLink="/confidentialite" class="text-blue-600 hover:underline">Politique de Confidentialité</a>
             </p>
             <p class="text-gray-500 text-sm">
-              © 2026 ETS M ADVISE - NORMX AI - Tous droits réservés
+              © 2026 ETS MG ADVISE - NORMX AI - Tous droits réservés
             </p>
           </footer>
         </article>

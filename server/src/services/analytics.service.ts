@@ -1,8 +1,5 @@
 import { prisma } from '../config/database.js';
-import { createLogger } from '../utils/logger.js';
 import { subDays, startOfDay, endOfDay, format, eachDayOfInterval } from 'date-fns';
-
-const logger = createLogger('AnalyticsService');
 
 export interface DateRange {
   startDate: Date;

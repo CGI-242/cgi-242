@@ -21,8 +21,8 @@ export interface DashboardStats {
     articlesChange: number;
     conversationsChange: number;
   };
-  topArticles: Array<{ articleId: string; query: string; count: number }>;
-  recentActivity: Array<{ action: string; date: string; count: number }>;
+  topArticles: { articleId: string; query: string; count: number }[];
+  recentActivity: { action: string; date: string; count: number }[];
 }
 
 export interface TimeSeriesPoint {
@@ -95,11 +95,12 @@ export class AnalyticsService {
       }));
 
       return response.data;
-    } catch (error: any) {
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Erreur de chargement';
       this.stateSignal.update((s) => ({
         ...s,
         loading: false,
-        error: error.message || 'Erreur de chargement',
+        error: message,
       }));
       return null;
     }
@@ -126,8 +127,8 @@ export class AnalyticsService {
       }));
 
       return response.data;
-    } catch (error: any) {
-      console.error(`Erreur chargement time series ${metric}:`, error);
+    } catch (err) {
+      console.error(`Erreur chargement time series ${metric}:`, err);
       return null;
     }
   }
@@ -157,8 +158,8 @@ export class AnalyticsService {
       }));
 
       return response.data;
-    } catch (error: any) {
-      console.error('Erreur chargement member stats:', error);
+    } catch (err) {
+      console.error('Erreur chargement member stats:', err);
       return [];
     }
   }
@@ -180,8 +181,8 @@ export class AnalyticsService {
       );
 
       return response.data;
-    } catch (error: any) {
-      console.error('Erreur export analytics:', error);
+    } catch (err) {
+      console.error('Erreur export analytics:', err);
       return null;
     }
   }

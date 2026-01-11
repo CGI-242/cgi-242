@@ -44,7 +44,7 @@ import { RouterModule } from '@angular/router';
             <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 2 - Définitions</h2>
             <ul class="list-disc list-inside text-gray-700 space-y-2">
               <li><strong>Plateforme :</strong> Le site web cgi242.normx-ai.com et applications associées</li>
-              <li><strong>Éditeur :</strong> ETS M ADVISE</li>
+              <li><strong>Éditeur :</strong> ETS MG ADVISE</li>
               <li><strong>Utilisateur :</strong> Toute personne accédant à la plateforme</li>
               <li><strong>Client :</strong> Utilisateur ayant souscrit un abonnement payant</li>
               <li><strong>Service :</strong> Ensemble des fonctionnalités proposées par la plateforme</li>
@@ -125,7 +125,7 @@ import { RouterModule } from '@angular/router';
             <h3 class="font-medium text-gray-900 mb-2">6.1 Droits de l'Éditeur</h3>
             <p class="text-gray-700 mb-4">
               La plateforme CGI 242, son code source, design, logos et contenu sont la propriété exclusive
-              d'ETS M ADVISE. Marque NORMX AI (INPI n°5146181).
+              d'ETS MG ADVISE. Marque NORMX AI (INPI n°5146181).
             </p>
 
             <h3 class="font-medium text-gray-900 mb-2">6.2 Licence d'utilisation</h3>
@@ -159,7 +159,7 @@ import { RouterModule } from '@angular/router';
           <!-- Article 8 -->
           <section class="mb-8">
             <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 8 - Sanctions</h2>
-            <p class="text-gray-700 mb-2">En cas de violation des CGU, ETS M ADVISE peut :</p>
+            <p class="text-gray-700 mb-2">En cas de violation des CGU, ETS MG ADVISE peut :</p>
             <ul class="list-disc list-inside text-gray-700 space-y-1">
               <li>Adresser un avertissement</li>
               <li>Suspendre temporairement l'accès</li>
@@ -190,7 +190,7 @@ import { RouterModule } from '@angular/router';
           <section class="mb-8">
             <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 11 - Contact</h2>
             <div class="bg-gray-50 rounded-lg p-4">
-              <p class="text-gray-700"><strong>ETS M ADVISE</strong></p>
+              <p class="text-gray-700"><strong>ETS MG ADVISE</strong></p>
               <p class="text-gray-700">Email : contact&#64;normx-ai.com</p>
               <p class="text-gray-700">Site : https://cgi242.normx-ai.com</p>
             </div>

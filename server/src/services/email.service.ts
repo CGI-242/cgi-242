@@ -244,7 +244,7 @@ export class EmailService {
   }
 
   /**
-   * Envoyer une confirmation de paiement réussi
+   * Envoyer une confirmation de paiement réussi avec facture PDF
    */
   async sendPaymentConfirmation(data: {
     email: string;
@@ -294,6 +294,103 @@ export class EmailService {
     `;
 
     await this.sendMail(data.email, 'Confirmation de paiement - CGI 242', html);
+  }
+
+  /**
+   * Envoyer une facture par email avec PDF en pièce jointe
+   */
+  async sendInvoice(data: {
+    email: string;
+    firstName?: string | null;
+    invoiceNumber: string;
+    plan: string;
+    amountTTC: number;
+    amountHT: number;
+    tvaAmount: number;
+    pdfBuffer: Buffer;
+  }): Promise<void> {
+    if (!config.email.host) {
+      logger.warn(`Email facture non envoyé (SMTP non configuré): ${data.invoiceNumber} -> ${data.email}`);
+      return;
+    }
+
+    const greeting = data.firstName ? `Bonjour ${data.firstName}` : 'Bonjour';
+
+    const html = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <style>
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background: #1e40af; color: white; padding: 20px; text-align: center; }
+          .content { padding: 20px; background: #f9fafb; }
+          .invoice-box { background: white; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #1e40af; }
+          .amount { font-size: 24px; color: #1e40af; font-weight: bold; }
+          .details { color: #6b7280; font-size: 14px; margin-top: 10px; }
+          .footer { padding: 20px; text-align: center; font-size: 12px; color: #666; }
+          .legal { background: #f3f4f6; padding: 15px; border-radius: 6px; font-size: 11px; color: #6b7280; margin-top: 15px; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>Votre facture CGI 242</h1>
+          </div>
+          <div class="content">
+            <p>${greeting},</p>
+            <p>Veuillez trouver ci-joint votre facture pour votre abonnement CGI 242.</p>
+
+            <div class="invoice-box">
+              <p style="margin: 0; color: #6b7280; font-size: 12px;">Facture N°</p>
+              <p style="margin: 5px 0; font-size: 18px; font-weight: bold; color: #111827;">${data.invoiceNumber}</p>
+
+              <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e5e7eb;">
+                <p style="margin: 0;"><strong>Abonnement:</strong> ${data.plan}</p>
+                <div class="details">
+                  <p style="margin: 5px 0;">Montant HT: ${data.amountHT.toLocaleString('fr-FR')} XAF</p>
+                  <p style="margin: 5px 0;">TVA (18%): ${data.tvaAmount.toLocaleString('fr-FR')} XAF</p>
+                </div>
+                <p class="amount" style="margin-top: 10px;">Total TTC: ${data.amountTTC.toLocaleString('fr-FR')} XAF</p>
+              </div>
+            </div>
+
+            <p>La facture PDF est jointe à cet email. Vous pouvez également la télécharger depuis votre espace client.</p>
+
+            <div class="legal">
+              <p style="margin: 0;"><strong>Conservation des documents</strong></p>
+              <p style="margin: 5px 0 0 0;">Conformément à la législation fiscale, nous vous recommandons de conserver cette facture pendant au moins 10 ans.</p>
+            </div>
+          </div>
+          <div class="footer">
+            <p>NORMX AI SAS - Brazzaville, République du Congo</p>
+            <p>© ${new Date().getFullYear()} CGI 242. Tous droits réservés.</p>
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
+
+    try {
+      await this.transporter.sendMail({
+        from: config.email.from,
+        to: data.email,
+        subject: `Facture ${data.invoiceNumber} - CGI 242`,
+        html,
+        attachments: [
+          {
+            filename: `${data.invoiceNumber}.pdf`,
+            content: data.pdfBuffer,
+            contentType: 'application/pdf',
+          },
+        ],
+      });
+      logger.info(`Facture ${data.invoiceNumber} envoyée à ${data.email}`);
+    } catch (error) {
+      logger.error(`Erreur envoi facture ${data.invoiceNumber}:`, error);
+      throw error;
+    }
   }
 
   /**
