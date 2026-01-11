@@ -90,6 +90,17 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/landing/cgi242-landing.component').then((m) => m.Cgi242LandingComponent),
   },
+  // Pages légales
+  {
+    path: 'cgv',
+    loadComponent: () =>
+      import('./features/landing/cgv.component').then((m) => m.CgvComponent),
+  },
+  {
+    path: 'confidentialite',
+    loadComponent: () =>
+      import('./features/landing/confidentialite.component').then((m) => m.ConfidentialiteComponent),
+  },
   // Landing page NORMX AI (page d'accueil pour normx-ai.com)
   {
     path: '',
