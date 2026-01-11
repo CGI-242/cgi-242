@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { OrganizationService, Member, Invitation } from '@core/services/organization.service';
 import { TenantService } from '@core/services/tenant.service';
+import { ToastService } from '@core/services/toast.service';
+import { AuditService } from '@core/services/audit.service';
 import { LoadingSpinnerComponent } from '@shared/components/loading-spinner/loading-spinner.component';
 
 @Component({
@@ -24,9 +26,9 @@ import { LoadingSpinnerComponent } from '@shared/components/loading-spinner/load
               class="input flex-1"
               placeholder="email@exemple.com">
             <select formControlName="role" class="input w-40">
-              <option value="MEMBER">Membre</option>
-              <option value="ADMIN">Admin</option>
-              <option value="VIEWER">Lecteur</option>
+              @for (role of availableRoles(); track role.value) {
+                <option [value]="role.value">{{ role.label }}</option>
+              }
             </select>
             <button
               type="submit"
@@ -121,6 +123,8 @@ export class OrgMembersComponent implements OnInit {
   private orgService = inject(OrganizationService);
   private tenantService = inject(TenantService);
   private destroyRef = inject(DestroyRef);
+  private toast = inject(ToastService);
+  private auditService = inject(AuditService);
 
   members = signal<Member[]>([]);
   invitations = signal<Invitation[]>([]);
@@ -134,8 +138,40 @@ export class OrgMembersComponent implements OnInit {
     role: ['MEMBER' as const],
   });
 
+  /**
+   * SECURITE: Roles disponibles selon le principe de moindre privilege
+   * - OWNER peut inviter: ADMIN, MEMBER, VIEWER
+   * - ADMIN peut inviter: MEMBER, VIEWER (pas ADMIN pour eviter l'elevation)
+   */
+  availableRoles = signal<{ value: string; label: string }[]>([]);
+
+  private readonly ROLE_OPTIONS: Record<string, { value: string; label: string }[]> = {
+    OWNER: [
+      { value: 'ADMIN', label: 'Admin' },
+      { value: 'MEMBER', label: 'Membre' },
+      { value: 'VIEWER', label: 'Lecteur' },
+    ],
+    ADMIN: [
+      { value: 'MEMBER', label: 'Membre' },
+      { value: 'VIEWER', label: 'Lecteur' },
+    ],
+  };
+
   ngOnInit(): void {
+    this.initializeAvailableRoles();
     this.loadData();
+  }
+
+  /**
+   * SECURITE: Initialise les roles disponibles selon le role de l'utilisateur
+   */
+  private initializeAvailableRoles(): void {
+    const userRole = this.tenantService.currentOrganization()?.role;
+    if (userRole && this.ROLE_OPTIONS[userRole]) {
+      this.availableRoles.set(this.ROLE_OPTIONS[userRole]);
+    } else {
+      this.availableRoles.set([]);
+    }
   }
 
   loadData(): void {
@@ -171,26 +207,44 @@ export class OrgMembersComponent implements OnInit {
     const orgId = this.tenantService.organizationId();
     if (!orgId || this.inviteForm.invalid) return;
 
+    const { email, role } = this.inviteForm.getRawValue();
+
+    // SECURITE: Verification cote client pour empecher l'elevation de privileges
+    const allowedRoles = this.availableRoles().map(r => r.value);
+    if (!allowedRoles.includes(role)) {
+      const userRole = this.tenantService.currentOrganization()?.role ?? 'UNKNOWN';
+      this.auditService.logPrivilegeEscalationAttempt(role, userRole);
+      this.inviteError.set('Role non autorise pour votre niveau de privilege');
+      this.toast.error('Tentative d\'elevation de privilege bloquee');
+      return;
+    }
+
     this.isInviting.set(true);
     this.inviteError.set('');
     this.inviteSuccess.set(false);
-
-    const { email, role } = this.inviteForm.getRawValue();
 
     this.orgService.inviteMember(orgId, email, role).subscribe({
       next: (res) => {
         this.isInviting.set(false);
         if (res.success) {
+          // AUDIT: Log de l'invitation reussie
+          this.auditService.logMemberAction('member.invite', email, role);
           this.inviteSuccess.set(true);
+          this.toast.success({
+            title: 'Invitation envoyée',
+            message: `Un email a été envoyé à ${email}`
+          });
           this.inviteForm.reset({ email: '', role: 'MEMBER' });
           this.loadData();
         } else {
           this.inviteError.set(res.error ?? "Erreur lors de l'invitation");
+          this.toast.error(res.error ?? "Erreur lors de l'invitation");
         }
       },
       error: () => {
         this.isInviting.set(false);
         this.inviteError.set("Erreur lors de l'invitation");
+        this.toast.error("Erreur lors de l'invitation");
       },
     });
   }
@@ -199,17 +253,50 @@ export class OrgMembersComponent implements OnInit {
     const orgId = this.tenantService.organizationId();
     if (!orgId) return;
 
-    this.orgService.cancelInvitation(orgId, invitationId).subscribe(() => {
-      this.invitations.update((inv) => inv.filter((i) => i.id !== invitationId));
+    this.orgService.cancelInvitation(orgId, invitationId).subscribe({
+      next: () => {
+        this.invitations.update((inv) => inv.filter((i) => i.id !== invitationId));
+        this.toast.success('Invitation annulée');
+      },
+      error: () => {
+        this.toast.error("Erreur lors de l'annulation");
+      }
     });
   }
 
+  /**
+   * SECURITE: Confirmation avant retrait d'un membre
+   * Empeche les suppressions accidentelles
+   */
   removeMember(userId: string): void {
     const orgId = this.tenantService.organizationId();
     if (!orgId) return;
 
-    this.orgService.removeMember(orgId, userId).subscribe(() => {
-      this.members.update((m) => m.filter((member) => member.user.id !== userId));
+    const member = this.members().find(m => m.user.id === userId);
+    if (!member) return;
+
+    const memberName = member.user.firstName && member.user.lastName
+      ? `${member.user.firstName} ${member.user.lastName}`
+      : member.user.email;
+
+    // Confirmation obligatoire pour action destructive
+    const confirmed = window.confirm(
+      `Etes-vous sur de vouloir retirer ${memberName} de l'organisation ?\n\n` +
+      `Cette action est irreversible. Le membre perdra l'acces a toutes les ressources de l'organisation.`
+    );
+
+    if (!confirmed) return;
+
+    this.orgService.removeMember(orgId, userId).subscribe({
+      next: () => {
+        // AUDIT: Log du retrait de membre
+        this.auditService.logMemberAction('member.remove', member.user.email, member.role);
+        this.members.update((m) => m.filter((member) => member.user.id !== userId));
+        this.toast.success('Membre retiré');
+      },
+      error: () => {
+        this.toast.error('Erreur lors du retrait du membre');
+      }
     });
   }
 

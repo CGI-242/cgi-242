@@ -1,8 +1,13 @@
-import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal, computed, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
+import { ToastService } from '@core/services/toast.service';
+import { AuditService } from '@core/services/audit.service';
+
+const MAX_FAILED_ATTEMPTS = 3;
+const BLOCK_DURATION_MS = 5 * 60 * 1000; // 5 minutes
 
 @Component({
   selector: 'app-login',
@@ -36,10 +41,32 @@ import { AuthService } from '@core/services/auth.service';
             <p class="text-white/70">Connectez-vous pour continuer</p>
           </div>
 
+          <!-- Message de blocage temporaire -->
+          @if (isBlocked()) {
+            <div class="mb-4 p-4 bg-amber-50 border border-amber-300 rounded-lg">
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-amber-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                <div>
+                  <p class="text-amber-800 font-medium">Compte temporairement bloque</p>
+                  <p class="text-amber-700 text-sm mt-1">
+                    Trop de tentatives echouees. Reessayez dans {{ remainingBlockTime() }}.
+                  </p>
+                </div>
+              </div>
+            </div>
+          }
+
           <!-- Message d'erreur -->
-          @if (errorMessage()) {
+          @if (errorMessage() && !isBlocked()) {
             <div class="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
               {{ errorMessage() }}
+              @if (failedAttempts() > 0 && failedAttempts() < MAX_FAILED_ATTEMPTS) {
+                <p class="mt-1 text-xs">
+                  Tentative {{ failedAttempts() }}/{{ MAX_FAILED_ATTEMPTS }}
+                </p>
+              }
             </div>
           }
 
@@ -90,6 +117,27 @@ import { AuthService } from '@core/services/auth.service';
               </div>
             </div>
 
+            <!-- CAPTCHA apres 3 tentatives echouees -->
+            @if (showCaptcha()) {
+              <div class="p-4 bg-white/10 rounded-lg border border-white/20">
+                <label for="captcha" class="form-label text-white/80 mb-2">Verification de securite</label>
+                <p class="text-white text-lg font-mono mb-2">
+                  {{ captchaQuestion() }}
+                </p>
+                <input
+                  type="number"
+                  id="captcha"
+                  formControlName="captcha"
+                  class="form-input w-32"
+                  placeholder="?"
+                  [class.border-red-500]="captchaError()"
+                />
+                @if (captchaError()) {
+                  <p class="text-red-300 text-xs mt-1">Reponse incorrecte</p>
+                }
+              </div>
+            }
+
             <div class="flex items-center justify-between">
               <label for="rememberMe" class="flex items-center gap-2 text-sm text-white/80">
                 <input type="checkbox" id="rememberMe" class="rounded border-white/30 bg-white/10 text-white" />
@@ -103,7 +151,7 @@ import { AuthService } from '@core/services/auth.service';
             <button
               type="submit"
               class="w-full flex items-center justify-center gap-2 bg-white text-primary-600 font-semibold py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors disabled:opacity-50"
-              [disabled]="form.invalid || isLoading()"
+              [disabled]="form.invalid || isLoading() || isBlocked() || (showCaptcha() && !isCaptchaValid())"
             >
               @if (isLoading()) {
                 <svg class="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
@@ -169,21 +217,95 @@ export class LoginComponent {
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
   private router = inject(Router);
+  private toast = inject(ToastService);
+  private auditService = inject(AuditService);
+
+  readonly MAX_FAILED_ATTEMPTS = MAX_FAILED_ATTEMPTS;
 
   isLoading = signal(false);
   errorMessage = signal('');
   showPassword = signal(false);
+  failedAttempts = signal(0);
+  blockEndTime = signal<Date | null>(null);
+  captchaError = signal(false);
+
+  // CAPTCHA simple: addition de deux nombres
+  private captchaA = signal(Math.floor(Math.random() * 10) + 1);
+  private captchaB = signal(Math.floor(Math.random() * 10) + 1);
+
+  showCaptcha = computed(() => this.failedAttempts() >= MAX_FAILED_ATTEMPTS);
+  captchaQuestion = computed(() => `${this.captchaA()} + ${this.captchaB()} = ?`);
+  captchaAnswer = computed(() => this.captchaA() + this.captchaB());
+
+  isBlocked = computed(() => {
+    const endTime = this.blockEndTime();
+    if (!endTime) return false;
+    return new Date() < endTime;
+  });
+
+  remainingBlockTime = computed(() => {
+    const endTime = this.blockEndTime();
+    if (!endTime) return '';
+    const remaining = Math.max(0, endTime.getTime() - Date.now());
+    const minutes = Math.floor(remaining / 60000);
+    const seconds = Math.floor((remaining % 60000) / 1000);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  });
+
+  isCaptchaValid = computed(() => {
+    const captchaValue = this.form.get('captcha')?.value;
+    return captchaValue === this.captchaAnswer();
+  });
 
   form = this.fb.nonNullable.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
+    captcha: [null as number | null],
   });
 
+  private regenerateCaptcha(): void {
+    this.captchaA.set(Math.floor(Math.random() * 10) + 1);
+    this.captchaB.set(Math.floor(Math.random() * 10) + 1);
+    this.form.patchValue({ captcha: null });
+    this.captchaError.set(false);
+  }
+
+  private handleFailedAttempt(): void {
+    const attempts = this.failedAttempts() + 1;
+    this.failedAttempts.set(attempts);
+
+    // AUDIT: Log de la tentative echouee pour detection brute force
+    const email = this.form.get('email')?.value ?? '';
+    this.auditService.logFailedLogin(email);
+
+    if (attempts >= MAX_FAILED_ATTEMPTS) {
+      // Activer le blocage temporaire
+      this.blockEndTime.set(new Date(Date.now() + BLOCK_DURATION_MS));
+      this.regenerateCaptcha();
+
+      // Lancer un timer pour mettre a jour l'affichage
+      const interval = setInterval(() => {
+        if (!this.isBlocked()) {
+          clearInterval(interval);
+          this.blockEndTime.set(null);
+        }
+      }, 1000);
+    }
+  }
+
   onSubmit(): void {
-    if (this.form.invalid) return;
+    if (this.form.invalid || this.isBlocked()) return;
+
+    // Verifier le CAPTCHA si requis
+    if (this.showCaptcha() && !this.isCaptchaValid()) {
+      this.captchaError.set(true);
+      this.regenerateCaptcha();
+      return;
+    }
 
     this.isLoading.set(true);
     this.errorMessage.set('');
+    this.captchaError.set(false);
 
     const { email, password } = this.form.getRawValue();
 
@@ -191,14 +313,22 @@ export class LoginComponent {
       next: (res) => {
         this.isLoading.set(false);
         if (res.success) {
+          // Reinitialiser les tentatives en cas de succes
+          this.failedAttempts.set(0);
+          this.blockEndTime.set(null);
+          this.toast.success('Connexion réussie');
           this.router.navigate(['/dashboard']);
         } else {
+          this.handleFailedAttempt();
           this.errorMessage.set(res.error ?? 'Erreur de connexion');
+          this.regenerateCaptcha();
         }
       },
       error: () => {
         this.isLoading.set(false);
+        this.handleFailedAttempt();
         this.errorMessage.set('Email ou mot de passe incorrect');
+        this.regenerateCaptcha();
       },
     });
   }

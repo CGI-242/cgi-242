@@ -8,13 +8,16 @@ import {
   AfterViewChecked,
   ChangeDetectionStrategy,
   DestroyRef,
+  SecurityContext,
 } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ChatService, StreamEvent } from '@core/services/chat.service';
 import { AuthService } from '@core/services/auth.service';
 import { VoiceSearchService } from '@core/services/voice-search.service';
+import { LoggerService } from '@core/services/logger.service';
 
 interface Message {
   id: string;
@@ -242,6 +245,8 @@ export class ChatWidgetComponent implements AfterViewChecked {
   voiceService = inject(VoiceSearchService);
   private authService = inject(AuthService);
   private destroyRef = inject(DestroyRef);
+  private logger = inject(LoggerService);
+  private sanitizer = inject(DomSanitizer);
 
   @ViewChild('messagesContainer') private messagesContainer!: ElementRef;
 
@@ -429,23 +434,46 @@ export class ChatWidgetComponent implements AfterViewChecked {
               break;
             }
             case 'error':
-              console.error('Streaming error:', event.error);
+              this.logger.error('Streaming error', 'ChatWidget', { error: event.error });
               this.chatService.resetStreamingState();
               break;
           }
         },
-        error: (error) => {
-          console.error('Stream error:', error);
+        error: () => {
+          this.logger.error('Stream connection error', 'ChatWidget');
           this.chatService.resetStreamingState();
         },
       });
   }
 
-  formatStreamingContent(): string {
+  /**
+   * Formate le contenu streaming pour l'affichage HTML
+   * SECURITE: Echappe les caracteres HTML avant le formatage
+   */
+  formatStreamingContent(): SafeHtml {
     let content = this.chatService.streamingContent();
+
+    // D'abord echapper les caracteres HTML pour prevenir XSS
+    content = this.escapeHtml(content);
+
+    // Puis appliquer le formatage markdown securise
     content = content
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\n/g, '<br>');
-    return content;
+
+    // Sanitizer le HTML final
+    const sanitized = this.sanitizer.sanitize(SecurityContext.HTML, content);
+    return sanitized ?? '';
+  }
+
+  private escapeHtml(text: string): string {
+    const htmlEscapes: Record<string, string> = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#x27;',
+    };
+    return text.replace(/[&<>"']/g, (char) => htmlEscapes[char]);
   }
 }
