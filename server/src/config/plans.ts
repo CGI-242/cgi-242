@@ -68,13 +68,12 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionPlan, PlanConfig> = {
     currency: 'XAF',
     questionsPerMonth: 100,
     exportsPerMonth: -1, // Illimité
-    maxMembers: 3,
+    maxMembers: 1,
     supportDelay: '24h',
     features: [
       'Tout PRO inclus',
       '100 questions IA/mois',
       'Exports PDF illimités',
-      '3 utilisateurs inclus',
       'Support prioritaire (24h)',
       'Accès webinaires fiscaux',
     ],
@@ -177,7 +176,7 @@ export interface PlanLimits {
 export const PLAN_LIMITS: Record<SubscriptionPlan, PlanLimits> = {
   FREE: { questions: 0, exports: 5, members: 1, historyDays: 30 },
   STARTER: { questions: 50, exports: 20, members: 1, historyDays: 90 },
-  PROFESSIONAL: { questions: 100, exports: Infinity, members: 3, historyDays: Infinity },
+  PROFESSIONAL: { questions: 100, exports: Infinity, members: 1, historyDays: Infinity },
   TEAM: { questions: 300, exports: Infinity, members: 10, historyDays: Infinity },
   ENTERPRISE: { questions: Infinity, exports: Infinity, members: Infinity, historyDays: Infinity },
 };

@@ -6,15 +6,17 @@ import { AuthService } from '../../core/services/auth.service';
 interface PlanInfo {
   id: string;
   name: string;
-  price: number;
+  price: number; // Prix TTC (offre lancement)
   priceHT: number;
   tva: number;
+  period: string;
 }
 
+// Grille tarifaire officielle CGI 242 - Janvier 2026 (prix offre lancement)
 const PLANS: Record<string, PlanInfo> = {
-  STARTER: { id: 'STARTER', name: 'Starter', price: 9900, priceHT: 8390, tva: 1510 },
-  PROFESSIONAL: { id: 'PROFESSIONAL', name: 'Professionnel', price: 29900, priceHT: 25339, tva: 4561 },
-  TEAM: { id: 'TEAM', name: 'Team', price: 79900, priceHT: 67712, tva: 12188 },
+  FREE: { id: 'FREE', name: 'BASIC', price: 40000, priceHT: 33898, tva: 6102, period: 'an' },
+  STARTER: { id: 'STARTER', name: 'PRO', price: 60000, priceHT: 50847, tva: 9153, period: 'an' },
+  PROFESSIONAL: { id: 'PROFESSIONAL', name: 'EXPERT', price: 80000, priceHT: 67797, tva: 12203, period: 'an' },
 };
 
 @Component({

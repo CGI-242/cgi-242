@@ -9,6 +9,7 @@ interface PlanDetails {
   id: string;
   name: string;
   price: number;
+  launchPrice: number;
   priceHT: number;
   tva: number;
   period: string;
@@ -17,39 +18,61 @@ interface PlanDetails {
   features: string[];
 }
 
+// Grille tarifaire officielle CGI 242 - Janvier 2026
 const PLANS: Record<string, PlanDetails> = {
+  FREE: {
+    id: 'FREE',
+    name: 'BASIC',
+    price: 50000,
+    launchPrice: 40000,
+    priceHT: 33898,
+    tva: 6102,
+    period: 'an',
+    questionsPerMonth: 0,
+    maxMembers: 1,
+    features: [
+      'Recherche CGI illimitee',
+      'Tous les simulateurs fiscaux',
+      'Calendrier fiscal + alertes',
+      '5 exports PDF/mois',
+      'Support email (72h)',
+    ],
+  },
   STARTER: {
     id: 'STARTER',
-    name: 'Starter',
-    price: 9900,
-    priceHT: 8390,
-    tva: 1510,
-    period: 'mois',
-    questionsPerMonth: 100,
+    name: 'PRO',
+    price: 75000,
+    launchPrice: 60000,
+    priceHT: 50847,
+    tva: 9153,
+    period: 'an',
+    questionsPerMonth: 50,
     maxMembers: 1,
-    features: ['100 questions/mois', 'Historique 30 jours', 'Export des réponses', 'Support email'],
+    features: [
+      'Tout BASIC inclus',
+      '50 questions IA/mois',
+      '20 exports PDF/mois',
+      'Veille fiscale',
+      'Support email (48h)',
+    ],
   },
   PROFESSIONAL: {
     id: 'PROFESSIONAL',
-    name: 'Professionnel',
-    price: 29900,
-    priceHT: 25339,
-    tva: 4561,
-    period: 'mois',
-    questionsPerMonth: -1,
-    maxMembers: 1,
-    features: ['Questions illimitées', 'Historique illimité', 'Export PDF/Word', 'Support prioritaire', 'Simulateurs fiscaux'],
-  },
-  TEAM: {
-    id: 'TEAM',
-    name: 'Team',
-    price: 79900,
-    priceHT: 67712,
-    tva: 12188,
-    period: 'mois',
-    questionsPerMonth: 500,
-    maxMembers: 5,
-    features: ['500 questions partagées', "Jusqu'à 5 membres", 'Dashboard équipe', 'Conversations partagées', 'Support prioritaire'],
+    name: 'EXPERT',
+    price: 100000,
+    launchPrice: 80000,
+    priceHT: 67797,
+    tva: 12203,
+    period: 'an',
+    questionsPerMonth: 100,
+    maxMembers: 3,
+    features: [
+      'Tout PRO inclus',
+      '100 questions IA/mois',
+      'Exports PDF illimites',
+      '3 utilisateurs inclus',
+      'Support prioritaire (24h)',
+    ],
   },
 };
 
@@ -78,7 +101,7 @@ const PLANS: Record<string, PlanDetails> = {
       <main class="max-w-2xl mx-auto px-4 py-8">
         @if (!plan()) {
           <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 text-center">
-            <p class="text-gray-600">Plan non trouvé.</p>
+            <p class="text-gray-600">Plan non trouve.</p>
             <a routerLink="/subscription" class="text-blue-600 hover:underline mt-2 inline-block">
               Voir les offres disponibles
             </a>
@@ -91,22 +114,30 @@ const PLANS: Record<string, PlanDetails> = {
             </div>
 
             <div class="p-6">
+              <!-- Launch offer banner -->
+              <div class="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg p-3 mb-6 text-center">
+                <p class="font-medium">Offre de lancement - Economisez {{ plan()!.price - plan()!.launchPrice | number:'1.0-0' }} XAF !</p>
+              </div>
+
               <!-- Order Summary -->
               <div class="mb-8">
                 <h2 class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
                   <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
                   </svg>
-                  Récapitulatif de la commande
+                  Recapitulatif de la commande
                 </h2>
 
                 <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
                   <div class="flex justify-between items-start mb-4 pb-4 border-b border-gray-200">
                     <div>
                       <p class="font-semibold text-gray-900">CGI 242 - Formule {{ plan()!.name }}</p>
-                      <p class="text-sm text-gray-600">Abonnement mensuel</p>
+                      <p class="text-sm text-gray-600">Abonnement annuel</p>
                     </div>
-                    <span class="text-blue-600 font-medium">{{ plan()!.price | number:'1.0-0' }} XAF</span>
+                    <div class="text-right">
+                      <span class="text-sm text-gray-400 line-through">{{ plan()!.price | number:'1.0-0' }} XAF</span>
+                      <span class="block text-blue-600 font-medium">{{ plan()!.launchPrice | number:'1.0-0' }} XAF</span>
+                    </div>
                   </div>
 
                   <!-- Features -->
@@ -124,19 +155,19 @@ const PLANS: Record<string, PlanDetails> = {
                     </ul>
                   </div>
 
-                  <!-- Pricing breakdown -->
+                  <!-- Pricing breakdown (based on launch price) -->
                   <div class="space-y-2 text-sm">
                     <div class="flex justify-between text-gray-600">
-                      <span>Abonnement mensuel HT</span>
-                      <span>{{ plan()!.priceHT | number:'1.0-0' }} XAF</span>
+                      <span>Abonnement annuel HT</span>
+                      <span>{{ getLaunchPriceHT() | number:'1.0-0' }} XAF</span>
                     </div>
                     <div class="flex justify-between text-gray-600">
                       <span>TVA (18%)</span>
-                      <span>{{ plan()!.tva | number:'1.0-0' }} XAF</span>
+                      <span>{{ getLaunchTVA() | number:'1.0-0' }} XAF</span>
                     </div>
                     <div class="flex justify-between font-bold text-gray-900 text-base pt-2 border-t border-gray-300">
                       <span>Total TTC</span>
-                      <span class="text-blue-600">{{ plan()!.price | number:'1.0-0' }} XAF</span>
+                      <span class="text-blue-600">{{ plan()!.launchPrice | number:'1.0-0' }} XAF</span>
                     </div>
                   </div>
                 </div>
@@ -144,8 +175,8 @@ const PLANS: Record<string, PlanDetails> = {
                 <!-- Engagement info -->
                 <div class="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-3">
                   <p class="text-sm text-blue-800">
-                    <strong>Durée :</strong> Abonnement mensuel sans engagement, renouvelé automatiquement.
-                    Résiliable à tout moment depuis votre espace client.
+                    <strong>Duree :</strong> Abonnement annuel sans engagement.
+                    Remboursement sous 7 jours si non satisfait.
                   </p>
                 </div>
               </div>
@@ -165,7 +196,7 @@ const PLANS: Record<string, PlanDetails> = {
                     <span class="text-sm text-gray-700">
                       J'ai lu et j'accepte les
                       <a routerLink="/cgv" target="_blank" class="text-blue-600 hover:underline font-medium">
-                        Conditions Générales de Vente
+                        Conditions Generales de Vente
                       </a>
                       <span class="text-red-500">*</span>
                     </span>
@@ -181,7 +212,7 @@ const PLANS: Record<string, PlanDetails> = {
                     <span class="text-sm text-gray-700">
                       J'accepte la
                       <a routerLink="/confidentialite" target="_blank" class="text-blue-600 hover:underline font-medium">
-                        Politique de confidentialité
+                        Politique de confidentialite
                       </a>
                       <span class="text-red-500">*</span>
                     </span>
@@ -195,7 +226,7 @@ const PLANS: Record<string, PlanDetails> = {
                       class="mt-1 w-5 h-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                     />
                     <span class="text-sm text-gray-700">
-                      Je reconnais que l'accès immédiat au service entraîne la renonciation à mon droit de rétractation
+                      Je reconnais que l'acces immediat au service entraine la renonciation a mon droit de retractation
                       <span class="text-red-500">*</span>
                     </span>
                   </label>
@@ -233,7 +264,7 @@ const PLANS: Record<string, PlanDetails> = {
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                     </svg>
-                    Commander avec obligation de paiement - {{ plan()!.price | number:'1.0-0' }} XAF
+                    Commander - {{ plan()!.launchPrice | number:'1.0-0' }} XAF/an
                   }
                 </button>
 
@@ -242,7 +273,7 @@ const PLANS: Record<string, PlanDetails> = {
                   <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                   </svg>
-                  Paiement sécurisé par CinetPay
+                  Paiement securise par CinetPay
                 </div>
 
                 <!-- Payment methods -->
@@ -277,7 +308,7 @@ export class CheckoutComponent implements OnInit {
 
   plan = signal<PlanDetails | null>(null);
   loading = signal(false);
-  submitted = signal(false); // Protection double-clic
+  submitted = signal(false);
   errorMessage = signal('');
   showValidationError = signal(false);
 
@@ -292,12 +323,23 @@ export class CheckoutComponent implements OnInit {
     }
   }
 
+  getLaunchPriceHT(): number {
+    const p = this.plan();
+    if (!p) return 0;
+    return Math.round(p.launchPrice / 1.18);
+  }
+
+  getLaunchTVA(): number {
+    const p = this.plan();
+    if (!p) return 0;
+    return p.launchPrice - this.getLaunchPriceHT();
+  }
+
   isFormValid(): boolean {
     return this.acceptCGV && this.acceptPrivacy && this.acceptRetractation;
   }
 
   proceedToPayment(): void {
-    // Protection double-clic
     if (this.submitted() || this.loading()) {
       return;
     }
@@ -308,17 +350,16 @@ export class CheckoutComponent implements OnInit {
     }
 
     this.showValidationError.set(false);
-    this.submitted.set(true); // Marquer comme soumis
+    this.submitted.set(true);
     this.loading.set(true);
     this.errorMessage.set('');
 
     const planData = this.plan();
     if (!planData) return;
 
-    // Appel API pour créer le paiement
     this.api.post<{ paymentUrl: string; transactionId: string }>('/payments/create', {
       planId: planData.id,
-      amount: planData.price,
+      amount: planData.launchPrice, // Use launch price
       acceptedCGV: this.acceptCGV,
       acceptedPrivacy: this.acceptPrivacy,
       acceptedRetractation: this.acceptRetractation,
@@ -326,14 +367,12 @@ export class CheckoutComponent implements OnInit {
       next: (res) => {
         this.loading.set(false);
         if (res.success && res.data?.paymentUrl) {
-          // Rediriger vers CinetPay
           window.location.href = res.data.paymentUrl;
         } else {
-          // Mode démo: rediriger vers confirmation
           this.router.navigate(['/subscription/confirmation'], {
             queryParams: {
               plan: planData.id,
-              amount: planData.price,
+              amount: planData.launchPrice,
               status: 'success',
             },
           });
@@ -341,7 +380,8 @@ export class CheckoutComponent implements OnInit {
       },
       error: (err) => {
         this.loading.set(false);
-        this.errorMessage.set(err.error?.message || 'Une erreur est survenue. Veuillez réessayer.');
+        this.submitted.set(false);
+        this.errorMessage.set(err.error?.message || 'Une erreur est survenue. Veuillez reessayer.');
       },
     });
   }

@@ -245,12 +245,11 @@ export class SubscriptionComponent implements OnInit {
       period: 'an',
       questionsPerMonth: 100,
       exportsPerMonth: -1,
-      maxMembers: 3,
+      maxMembers: 1,
       features: [
         'Tout PRO inclus',
         '100 questions IA/mois',
         'Exports PDF illimites',
-        '3 utilisateurs inclus',
         'Support prioritaire (24h)',
       ],
     },
