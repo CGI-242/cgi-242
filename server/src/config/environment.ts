@@ -38,6 +38,11 @@ export const config = {
   // Cryptage
   bcryptRounds: parseInt(process.env.BCRYPT_ROUNDS || '12', 10),
 
+  // Chiffrement AES-256
+  encryption: {
+    key: process.env.ENCRYPTION_KEY || '',
+  },
+
   // OpenAI
   openai: {
     apiKey: process.env.OPENAI_API_KEY || '',

@@ -61,6 +61,12 @@ model User {
   resetPasswordToken   String?
   resetPasswordExpires DateTime?
 
+  // MFA/2FA
+  mfaEnabled           Boolean   @default(false)
+  mfaSecret            String?   // Encrypted TOTP secret
+  mfaBackupCodes       String[]  @default([]) // Hashed backup codes
+  mfaVerifiedAt        DateTime?
+
   // Abonnement personnel (si pas dans une orga)
   personalSubscription Subscription? @relation("PersonalSubscription")
 
@@ -455,6 +461,10 @@ enum AuditAction {
   LOGIN_FAILED
   PASSWORD_CHANGED
   EMAIL_VERIFIED
+  MFA_ENABLED
+  MFA_DISABLED
+  MFA_VERIFIED
+  MFA_FAILED
 }
 
 model AuditLog {

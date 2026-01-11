@@ -52,6 +52,33 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
 
   const result = await authService.login({ email, password });
 
+  // Vérifier si MFA est activé pour cet utilisateur
+  const { prisma } = await import('../config/database.js');
+  const userMfa = await prisma.user.findUnique({
+    where: { id: result.user.id },
+    select: { mfaEnabled: true },
+  });
+
+  if (userMfa?.mfaEnabled) {
+    // MFA activé - ne pas générer de tokens, demander vérification MFA
+    // Audit trail - login partiel (en attente de MFA)
+    await AuditService.log({
+      actorId: result.user.id,
+      action: 'LOGIN_SUCCESS',
+      entityType: 'User',
+      entityId: result.user.id,
+      changes: { before: null, after: { email, mfaPending: true } },
+      metadata: getAuditMetadata(req),
+    });
+
+    return sendSuccess(res, {
+      mfaRequired: true,
+      userId: result.user.id,
+      message: 'Vérification à deux facteurs requise',
+    }, 'Vérification MFA requise');
+  }
+
+  // MFA non activé - connexion normale
   // Définir les tokens dans des cookies HttpOnly sécurisés
   setAuthCookies(res, result.accessToken, result.refreshToken);
 
@@ -68,6 +95,7 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
   // Retourner les données utilisateur
   sendSuccess(res, {
     user: result.user,
+    mfaRequired: false,
     // Tokens inclus pour compatibilité avec clients existants (à retirer après migration)
     accessToken: result.accessToken,
     refreshToken: result.refreshToken,

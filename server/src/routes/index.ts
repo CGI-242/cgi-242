@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import authRoutes from './auth.routes.js';
+import mfaRoutes from './mfa.routes.js';
 import organizationRoutes from './organization.routes.js';
 import chatRoutes from './chat.routes.js';
 import statsRoutes from './stats.routes.js';
@@ -22,6 +23,7 @@ router.get('/health', (_req, res) => {
 
 // Routes API
 router.use('/auth', authRoutes);
+router.use('/mfa', mfaRoutes);
 router.use('/organizations', organizationRoutes);
 router.use('/chat', chatRoutes);
 router.use('/stats', statsRoutes);
