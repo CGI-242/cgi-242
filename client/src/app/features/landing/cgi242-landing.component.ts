@@ -427,7 +427,7 @@ import { RouterLink } from '@angular/router';
         <div class="grid md:grid-cols-4 gap-12 mb-12">
           <!-- Logo & Description -->
           <div class="md:col-span-2">
-            <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" class="h-10 md:h-16 mb-4" />
+            <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" class="h-48 mb-4" />
             <p class="text-secondary-400 mb-4 max-w-md">
               Assistant fiscal intelligent pour le Code Général des Impôts du Congo-Brazzaville.
               Recherche sémantique, simulateurs et IA au service des professionnels.
