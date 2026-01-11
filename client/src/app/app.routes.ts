@@ -45,6 +45,12 @@ export const routes: Routes = [
       import('./features/subscription/subscription.routes').then((m) => m.SUBSCRIPTION_ROUTES),
     canActivate: [authGuard],
   },
+  {
+    path: 'analytics',
+    loadComponent: () =>
+      import('./features/analytics/analytics-dashboard.component').then((m) => m.AnalyticsDashboardComponent),
+    canActivate: [authGuard],
+  },
   // Pages spéciales
   {
     path: 'forbidden',
