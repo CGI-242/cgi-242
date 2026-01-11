@@ -106,6 +106,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/landing/confidentialite.component').then((m) => m.ConfidentialiteComponent),
   },
+  {
+    path: 'mentions-legales',
+    loadComponent: () =>
+      import('./features/landing/mentions-legales.component').then((m) => m.MentionsLegalesComponent),
+  },
   // Landing page NORMX AI (page d'accueil pour normx-ai.com)
   {
     path: '',
