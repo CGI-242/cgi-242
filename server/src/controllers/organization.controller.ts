@@ -233,3 +233,40 @@ export const cancelInvitation = asyncHandler(async (req: Request, res: Response)
 
   sendSuccess(res, null, 'Invitation annulée');
 });
+
+// === Admin - Soft Delete Management ===
+
+export const listDeletedOrganizations = asyncHandler(async (req: Request, res: Response) => {
+  const deletedOrgs = await orgService.listDeleted();
+
+  sendSuccess(res, deletedOrgs);
+});
+
+export const restoreOrganization = asyncHandler(async (req: Request, res: Response) => {
+  const { orgId } = req.params;
+  const userId = req.user!.id;
+
+  const organization = await orgService.restore(orgId, userId);
+
+  // Audit trail
+  await AuditService.log({
+    actorId: userId,
+    action: 'ORG_RESTORED',
+    entityType: 'Organization',
+    entityId: orgId,
+    organizationId: orgId,
+    changes: { before: { deleted: true }, after: { deleted: false } },
+    metadata: getAuditMetadata(req),
+  });
+
+  sendSuccess(res, organization, 'Organisation restaurée avec succès');
+});
+
+export const hardDeleteOrganization = asyncHandler(async (req: Request, res: Response) => {
+  const { orgId } = req.params;
+  const userId = req.user!.id;
+
+  await orgService.hardDelete(orgId, userId);
+
+  sendSuccess(res, null, 'Organisation supprimée définitivement');
+});

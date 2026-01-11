@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import * as orgController from '../controllers/organization.controller.js';
-import { authMiddleware } from '../middleware/auth.middleware.js';
+import { authMiddleware, requireSuperAdmin } from '../middleware/auth.middleware.js';
 import { tenantMiddleware } from '../middleware/tenant.middleware.js';
 import { requireOwner, requireAdmin } from '../middleware/orgRole.middleware.js';
 import { validate, sanitizeUUID } from '../middleware/validation.middleware.js';
@@ -124,6 +124,32 @@ router.delete(
   tenantMiddleware,
   requireAdmin,
   orgController.cancelInvitation
+);
+
+// === Routes Admin (Super Admin uniquement) ===
+
+// GET /api/organizations/admin/deleted - Liste des organisations supprimées
+router.get(
+  '/admin/deleted',
+  requireSuperAdmin,
+  orgController.listDeletedOrganizations
+);
+
+// POST /api/organizations/admin/:orgId/restore - Restaurer une organisation
+router.post(
+  '/admin/:orgId/restore',
+  sanitizeUUID('orgId'),
+  requireSuperAdmin,
+  orgController.restoreOrganization
+);
+
+// DELETE /api/organizations/admin/:orgId/hard-delete - Suppression définitive
+router.delete(
+  '/admin/:orgId/hard-delete',
+  sanitizeUUID('orgId'),
+  requireSuperAdmin,
+  sensitiveRateLimiter,
+  orgController.hardDeleteOrganization
 );
 
 export default router;
