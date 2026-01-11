@@ -10,10 +10,10 @@ import { RouterLink } from '@angular/router';
     <!-- Header -->
     <header class="bg-white border-b border-secondary-200 sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20 md:h-24">
+        <div class="flex items-center justify-between h-40">
           <!-- Logo -->
           <div class="flex items-center">
-            <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" class="h-16 md:h-20 w-auto" loading="eager" fetchpriority="high" />
+            <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" class="h-36 w-auto" loading="eager" fetchpriority="high" />
           </div>
 
           <!-- Navigation Desktop -->
