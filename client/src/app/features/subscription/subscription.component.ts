@@ -14,7 +14,7 @@ interface Plan {
   period: 'an';
   features: string[];
   questionsPerMonth: number;
-  exportsPerMonth: number;
+  exportsPerMonth: number; // -1 = illimité
   maxMembers: number;
   recommended?: boolean;
   isEnterprise?: boolean;
@@ -96,7 +96,7 @@ interface Plan {
                     </div>
 
                     <!-- Quota -->
-                    <div class="mt-3 py-2 px-3 bg-gray-50 rounded-lg">
+                    <div class="mt-3 py-2 px-3 bg-gray-50 rounded-lg space-y-1">
                       <p class="text-sm text-gray-700">
                         @if (plan.questionsPerMonth === -1) {
                           <span class="font-medium">Questions IA illimitees</span>
@@ -104,6 +104,13 @@ interface Plan {
                           <span class="font-medium text-gray-400">Pas d'assistant IA</span>
                         } @else {
                           <span class="font-medium">{{ plan.questionsPerMonth }}</span> questions IA/mois
+                        }
+                      </p>
+                      <p class="text-sm text-gray-700">
+                        @if (plan.exportsPerMonth === -1) {
+                          <span class="font-medium">Exports PDF illimites</span>
+                        } @else {
+                          <span class="font-medium">{{ plan.exportsPerMonth }}</span> exports PDF/mois
                         }
                       </p>
                       <p class="text-xs text-gray-500">
@@ -204,9 +211,9 @@ export class SubscriptionComponent implements OnInit {
   plans: Plan[] = [
     {
       id: 'FREE',
-      name: 'BASIC',
-      price: 50000,
-      launchPrice: 40000,
+      name: 'STANDARD',
+      price: 60000,
+      launchPrice: 50000,
       period: 'an',
       questionsPerMonth: 0,
       exportsPerMonth: 5,
@@ -215,24 +222,21 @@ export class SubscriptionComponent implements OnInit {
         'Recherche CGI illimitee',
         'Tous les simulateurs fiscaux',
         'Calendrier fiscal + alertes',
-        '5 exports PDF/mois',
         'Support email (72h)',
       ],
     },
     {
       id: 'STARTER',
       name: 'PRO',
-      price: 75000,
-      launchPrice: 60000,
+      price: 90000,
+      launchPrice: 75000,
       period: 'an',
       questionsPerMonth: 50,
       exportsPerMonth: 20,
       maxMembers: 1,
       recommended: true,
       features: [
-        'Tout BASIC inclus',
-        '50 questions IA/mois',
-        '20 exports PDF/mois',
+        'Tout STANDARD inclus',
         'Veille fiscale',
         'Support email (48h)',
       ],
@@ -240,16 +244,14 @@ export class SubscriptionComponent implements OnInit {
     {
       id: 'PROFESSIONAL',
       name: 'EXPERT',
-      price: 100000,
-      launchPrice: 80000,
+      price: 120000,
+      launchPrice: 100000,
       period: 'an',
       questionsPerMonth: 100,
       exportsPerMonth: -1,
       maxMembers: 1,
       features: [
         'Tout PRO inclus',
-        '100 questions IA/mois',
-        'Exports PDF illimites',
         'Support prioritaire (24h)',
       ],
     },

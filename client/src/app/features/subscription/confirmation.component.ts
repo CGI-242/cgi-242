@@ -12,11 +12,11 @@ interface PlanInfo {
   period: string;
 }
 
-// Grille tarifaire officielle CGI 242 - Janvier 2026 (prix offre lancement)
+// Grille tarifaire officielle CGI 242 - Janvier 2026 (prix offre lancement TTC)
 const PLANS: Record<string, PlanInfo> = {
-  FREE: { id: 'FREE', name: 'BASIC', price: 40000, priceHT: 33898, tva: 6102, period: 'an' },
-  STARTER: { id: 'STARTER', name: 'PRO', price: 60000, priceHT: 50847, tva: 9153, period: 'an' },
-  PROFESSIONAL: { id: 'PROFESSIONAL', name: 'EXPERT', price: 80000, priceHT: 67797, tva: 12203, period: 'an' },
+  FREE: { id: 'FREE', name: 'STANDARD', price: 50000, priceHT: 42373, tva: 7627, period: 'an' },
+  STARTER: { id: 'STARTER', name: 'PRO', price: 75000, priceHT: 63559, tva: 11441, period: 'an' },
+  PROFESSIONAL: { id: 'PROFESSIONAL', name: 'EXPERT', price: 100000, priceHT: 84746, tva: 15254, period: 'an' },
 };
 
 @Component({

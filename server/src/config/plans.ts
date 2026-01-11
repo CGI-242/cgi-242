@@ -16,12 +16,12 @@ export interface PlanConfig {
 
 // Grille tarifaire officielle CGI 242 - Janvier 2026
 export const SUBSCRIPTION_PLANS: Record<SubscriptionPlan, PlanConfig> = {
-  // BASIC - Le prix du CGI papier
+  // STANDARD
   FREE: {
-    name: 'BASIC',
+    name: 'STANDARD',
     type: 'PERSONAL',
-    price: 50000, // 50 000 FCFA/an
-    launchPrice: 40000, // Offre lancement -10 000
+    price: 60000, // 60 000 FCFA/an
+    launchPrice: 50000, // Offre lancement -10 000
     currency: 'XAF',
     questionsPerMonth: 0, // Pas d'IA
     exportsPerMonth: 5,
@@ -32,18 +32,17 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionPlan, PlanConfig> = {
       'Consultation 600+ articles',
       'Tous les simulateurs fiscaux',
       'Calendrier fiscal + alertes',
-      'FAQ interactive',
       '5 exports PDF/mois',
       'Support email (72h)',
     ],
   },
 
-  // STARTER = PRO dans la grille
+  // PRO
   STARTER: {
     name: 'PRO',
     type: 'PERSONAL',
-    price: 75000, // 75 000 FCFA/an
-    launchPrice: 60000, // Offre lancement -15 000
+    price: 90000, // 90 000 FCFA/an
+    launchPrice: 75000, // Offre lancement -15 000
     currency: 'XAF',
     questionsPerMonth: 50,
     exportsPerMonth: 20,
@@ -51,7 +50,7 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionPlan, PlanConfig> = {
     popular: true,
     supportDelay: '48h',
     features: [
-      'Tout BASIC inclus',
+      'Tout STANDARD inclus',
       '50 questions IA/mois',
       '20 exports PDF/mois',
       'Veille fiscale',
@@ -59,12 +58,12 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionPlan, PlanConfig> = {
     ],
   },
 
-  // PROFESSIONAL = EXPERT dans la grille
+  // EXPERT
   PROFESSIONAL: {
     name: 'EXPERT',
     type: 'PERSONAL',
-    price: 100000, // 100 000 FCFA/an
-    launchPrice: 80000, // Offre lancement -20 000
+    price: 120000, // 120 000 FCFA/an
+    launchPrice: 100000, // Offre lancement -20 000
     currency: 'XAF',
     questionsPerMonth: 100,
     exportsPerMonth: -1, // Illimité
@@ -75,7 +74,6 @@ export const SUBSCRIPTION_PLANS: Record<SubscriptionPlan, PlanConfig> = {
       '100 questions IA/mois',
       'Exports PDF illimités',
       'Support prioritaire (24h)',
-      'Accès webinaires fiscaux',
     ],
   },
 
@@ -159,9 +157,9 @@ export const LAUNCH_OFFER = {
   enabled: true,
   endDate: new Date('2026-03-31'),
   discounts: {
-    FREE: 10000, // -10 000 FCFA
-    STARTER: 15000, // -15 000 FCFA
-    PROFESSIONAL: 20000, // -20 000 FCFA
+    FREE: 10000, // 60 000 -> 50 000 FCFA
+    STARTER: 15000, // 90 000 -> 75 000 FCFA
+    PROFESSIONAL: 20000, // 120 000 -> 100 000 FCFA
   },
 };
 
