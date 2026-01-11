@@ -9,6 +9,7 @@ import cinetpayRoutes from './cinetpay.routes.js';
 import webhookRoutes from './webhook.routes.js';
 import auditRoutes from './audit.routes.js';
 import subscriptionRoutes from './subscription.routes.js';
+import permissionRoutes from './permission.routes.js';
 
 const router = Router();
 
@@ -31,6 +32,7 @@ router.use('/articles', articlesRoutes);
 router.use('/cinetpay', cinetpayRoutes);
 router.use('/webhooks', webhookRoutes);
 router.use('/subscription', subscriptionRoutes);
+router.use('/permissions', permissionRoutes);
 
 // Routes d'audit (montées à la racine car incluent /organizations/:orgId/audit et /audit/*)
 router.use(auditRoutes);
