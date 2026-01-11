@@ -97,6 +97,11 @@ export const routes: Routes = [
       import('./features/landing/cgv.component').then((m) => m.CgvComponent),
   },
   {
+    path: 'cgu',
+    loadComponent: () =>
+      import('./features/landing/cgu.component').then((m) => m.CguComponent),
+  },
+  {
     path: 'confidentialite',
     loadComponent: () =>
       import('./features/landing/confidentialite.component').then((m) => m.ConfidentialiteComponent),
