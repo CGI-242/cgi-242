@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ArticlesService, Article } from '@core/services/articles.service';
 import { HeaderComponent } from '@shared/components/header/header.component';
 import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
@@ -14,7 +15,7 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
   selector: 'app-code-container',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, HeaderComponent, SidebarComponent, CodeSommaireComponent, AudioButtonComponent],
+  imports: [CommonModule, FormsModule, ScrollingModule, HeaderComponent, SidebarComponent, CodeSommaireComponent, AudioButtonComponent],
   template: `
     <div class="min-h-screen bg-secondary-50">
       <app-header />
@@ -81,15 +82,26 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                   </div>
                 </div>
 
-                <!-- Articles list -->
-                <div class="flex-1 overflow-y-auto">
-                  @if (articlesService.isLoading()) {
-                    <div class="flex items-center justify-center h-32">
-                      <div class="w-6 h-6 border-2 border-primary-600 border-t-transparent rounded-full animate-spin"></div>
+                <!-- Articles list with virtual scrolling for performance -->
+                @if (articlesService.isLoading()) {
+                  <div class="flex-1 flex items-center justify-center">
+                    <div class="w-6 h-6 border-2 border-primary-600 border-t-transparent rounded-full animate-spin"></div>
+                  </div>
+                } @else if (filteredArticles().length === 0) {
+                  <div class="flex-1 flex items-center justify-center">
+                    <div class="p-3 text-center text-secondary-500 text-base">
+                      Aucun article trouvé
                     </div>
-                  } @else {
+                  </div>
+                } @else {
+                  <cdk-virtual-scroll-viewport
+                    itemSize="36"
+                    class="flex-1"
+                    [style.height.px]="getViewportHeight()">
                     <div class="divide-y divide-secondary-100">
-                      @for (article of filteredArticles(); track article.id; let i = $index) {
+                      <div
+                        *cdkVirtualFor="let article of filteredArticles(); let i = index; trackBy: trackByArticleId"
+                        class="article-list-item">
                         <!-- Séparateur sous-section si c'est le premier article de la sous-section -->
                         @if (getSousSectionHeader(article.numero); as ssHeader) {
                           <div class="px-3 py-2 bg-primary-100 border-l-4 border-primary-500">
@@ -125,14 +137,10 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                             <span class="text-sm text-secondary-500 truncate">{{ getCleanTitle(article.titre) }}</span>
                           }
                         </button>
-                      } @empty {
-                        <div class="p-3 text-center text-secondary-500 text-base">
-                          Aucun article trouvé
-                        </div>
-                      }
+                      </div>
                     </div>
-                  }
-                </div>
+                  </cdk-virtual-scroll-viewport>
+                }
 
                 <!-- Total count -->
                 <div class="p-3 border-t border-secondary-200 bg-secondary-50">
@@ -749,5 +757,16 @@ export class CodeContainerComponent implements OnInit {
     html = html.replace(/<div class="mt-2"><\/div>/g, '');
 
     return this.sanitizer.bypassSecurityTrustHtml(html);
+  }
+
+  // Virtual scrolling helpers
+  trackByArticleId(index: number, article: Article): string {
+    return article.id;
+  }
+
+  getViewportHeight(): number {
+    // Calculate viewport height based on window size minus header and other elements
+    // Default to a reasonable height that fills the available space
+    return Math.max(400, window.innerHeight - 280);
   }
 }
