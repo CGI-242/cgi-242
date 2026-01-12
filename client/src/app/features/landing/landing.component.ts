@@ -390,6 +390,7 @@ interface Product {
 export class LandingComponent {
   currentYear = new Date().getFullYear();
   cgi242Url = environment.production ? `https://${environment.appDomain}` : '/accueil';
+  paie242Url = environment.production ? `https://${environment.paieDomain}` : 'http://localhost:4201';
 
   stats = [
     { value: '4+', label: 'Produits' },
@@ -399,7 +400,7 @@ export class LandingComponent {
 
   products: Product[] = [
     { id: 'cgi242', name: 'CGI 242', description: 'Assistant fiscal IA pour le Congo-Brazzaville.', icon: 'scales', image: 'assets/images/products/cgi242.webp', status: 'available', url: this.cgi242Url, features: ['2000+ articles', 'Recherche IA', 'CGI 2026'], gradient: 'bg-gradient-to-br from-blue-500 to-blue-600' },
-    { id: 'paie242', name: 'Paie 242', description: 'Solution de paie conforme a la legislation congolaise.', icon: 'money', image: 'assets/images/products/paie-242.webp', status: 'coming-soon', url: '#', features: ['CNSS integre', 'Bulletins auto', 'Declarations'], gradient: 'bg-gradient-to-br from-green-500 to-green-600' },
+    { id: 'paie242', name: 'Paie 242', description: 'Solution de paie conforme a la legislation congolaise.', icon: 'money', image: 'assets/images/products/paie-242.webp', status: 'available', url: this.paie242Url, features: ['CNSS integre', 'Bulletins auto', 'Declarations'], gradient: 'bg-gradient-to-br from-green-500 to-green-600' },
     { id: 'ohada17', name: 'Ohada 17', description: 'Comptabilite SYSCOHADA pour les 17 pays membres.', icon: 'chart-pie', image: 'assets/images/products/ohada-17.webp', status: 'coming-soon', url: '#', features: ['Plan OHADA', 'Controles IA', 'Etats financiers'], gradient: 'bg-gradient-to-br from-orange-500 to-orange-600' },
     { id: 'labodec', name: 'Labo Dec', description: 'Laboratoire de declarations fiscales et sociales.', icon: 'flask', image: 'assets/images/products/labo-dec.webp', status: 'coming-soon', url: '#', features: ['DSF automatisee', 'Liasses fiscales', 'Teledeclaration'], gradient: 'bg-gradient-to-br from-purple-500 to-purple-600' }
   ];
