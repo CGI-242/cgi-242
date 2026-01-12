@@ -253,6 +253,11 @@ export class LandingComponent {
     ? `https://${environment.appDomain}`
     : '/accueil';
 
+  // URL Paie 242
+  paie242Url = environment.production
+    ? `https://${environment.paieDomain}`
+    : 'http://localhost:4201';
+
   products: Product[] = [
     {
       id: 'cgi242',
@@ -273,12 +278,12 @@ export class LandingComponent {
       features: ['Matching IA', 'Gestion talents', 'Analytics RH']
     },
     {
-      id: 'paie-congo',
-      name: 'Paie Congo',
+      id: 'paie242',
+      name: 'Paie 242',
       description: 'Solution de paie 100% conforme à la législation congolaise.',
       icon: 'money',
-      status: 'coming-soon',
-      url: '#',
+      status: 'available',
+      url: this.paie242Url,
       features: ['CNSS intégré', 'Bulletins auto', 'Déclarations']
     },
     {
