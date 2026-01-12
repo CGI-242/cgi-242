@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
+import { ToastService } from '@core/services/toast.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -69,6 +70,7 @@ import { AuthService } from '@core/services/auth.service';
 export class ForgotPasswordComponent {
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
+  private toast = inject(ToastService);
 
   isLoading = signal(false);
   errorMessage = signal('');
@@ -91,10 +93,15 @@ export class ForgotPasswordComponent {
         this.successMessage.set(
           'Si cette adresse existe, vous recevrez un email de réinitialisation.'
         );
+        this.toast.success({
+          title: 'Email envoyé',
+          message: 'Vérifiez votre boîte de réception'
+        });
       },
       error: () => {
         this.isLoading.set(false);
         this.errorMessage.set('Une erreur est survenue');
+        this.toast.error('Une erreur est survenue');
       },
     });
   }

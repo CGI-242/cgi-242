@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, EventEmitter, Input, Output, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CGI_SOMMAIRE_2025, CGI_SOMMAIRE_2026, CGI_CONVENTIONS, Tome, Chapitre, Section, Partie, Annexe, Livre, SousSection, SousSectionSommaire, Convention, ConventionChapitre } from './cgi-structure.data';
 
@@ -180,7 +180,7 @@ export interface SommaireSelection {
       }
 
       <!-- Conventions fiscales -->
-      @if (version === '2025' && conventions.length > 0) {
+      @if (version() === '2025' && conventions.length > 0) {
         <div class="mt-4 pt-4 border-t-2 border-primary-200">
           <div class="px-3 py-2 bg-primary-50">
             <span class="text-base font-semibold text-primary-800">Conventions fiscales internationales</span>
@@ -307,17 +307,17 @@ export interface SommaireSelection {
   `,
 })
 export class CodeSommaireComponent {
-  @Input() version: '2025' | '2026' = '2025';
-  @Output() selection = new EventEmitter<SommaireSelection>();
+  version = input<'2025' | '2026'>('2025');
+  selection = output<SommaireSelection>();
 
   openNodes = signal<Set<string>>(new Set(['tome-1', 'partie-1-1', 'livre-1-1-1']));
 
   get sommaire(): Tome[] {
-    return this.version === '2026' ? CGI_SOMMAIRE_2026 : CGI_SOMMAIRE_2025;
+    return this.version() === '2026' ? CGI_SOMMAIRE_2026 : CGI_SOMMAIRE_2025;
   }
 
   get conventions(): Convention[] {
-    return this.version === '2025' ? CGI_CONVENTIONS : [];
+    return this.version() === '2025' ? CGI_CONVENTIONS : [];
   }
 
   isOpen(key: string): boolean {

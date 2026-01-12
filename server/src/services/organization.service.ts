@@ -100,10 +100,14 @@ export class OrganizationService {
 
   /**
    * Obtenir une organisation par son ID
+   * @param includeDeleted - Inclure les organisations soft-deleted (admin)
    */
-  async getById(organizationId: string) {
-    const organization = await prisma.organization.findUnique({
-      where: { id: organizationId },
+  async getById(organizationId: string, includeDeleted = false) {
+    const organization = await prisma.organization.findFirst({
+      where: {
+        id: organizationId,
+        ...(!includeDeleted && { deletedAt: null }),
+      },
       include: {
         subscription: true,
         _count: { select: { members: true } },
@@ -119,10 +123,14 @@ export class OrganizationService {
 
   /**
    * Obtenir une organisation par son slug
+   * @param includeDeleted - Inclure les organisations soft-deleted (admin)
    */
-  async getBySlug(slug: string) {
-    const organization = await prisma.organization.findUnique({
-      where: { slug },
+  async getBySlug(slug: string, includeDeleted = false) {
+    const organization = await prisma.organization.findFirst({
+      where: {
+        slug,
+        ...(!includeDeleted && { deletedAt: null }),
+      },
       include: {
         subscription: true,
         _count: { select: { members: true } },
@@ -219,10 +227,16 @@ export class OrganizationService {
 
   /**
    * Obtenir les organisations d'un utilisateur
+   * Exclut les organisations soft-deleted
    */
   async getByUserId(userId: string) {
     return prisma.organizationMember.findMany({
-      where: { userId },
+      where: {
+        userId,
+        organization: {
+          deletedAt: null,
+        },
+      },
       include: {
         organization: {
           include: {
@@ -232,6 +246,106 @@ export class OrganizationService {
         },
       },
       orderBy: { joinedAt: 'desc' },
+    });
+  }
+
+  /**
+   * Restaurer une organisation soft-deleted
+   */
+  async restore(organizationId: string, actorId: string) {
+    // Vérifier que l'organisation existe et est supprimée
+    const organization = await prisma.organization.findFirst({
+      where: {
+        id: organizationId,
+        deletedAt: { not: null },
+      },
+    });
+
+    if (!organization) {
+      throw new AppError('Organisation non trouvée ou non supprimée', 404);
+    }
+
+    // Restaurer l'organisation
+    const restored = await prisma.organization.update({
+      where: { id: organizationId },
+      data: {
+        deletedAt: null,
+        deletedBy: null,
+      },
+      include: {
+        subscription: true,
+        _count: { select: { members: true } },
+      },
+    });
+
+    logger.info(`Organisation restaurée: ${organizationId} par ${actorId}`);
+
+    // Audit log
+    await AuditService.log({
+      actorId,
+      action: 'ORG_RESTORED',
+      entityType: 'Organization',
+      entityId: organizationId,
+      organizationId,
+      changes: {
+        before: { deletedAt: organization.deletedAt?.toISOString(), deletedBy: organization.deletedBy },
+        after: { deletedAt: null, deletedBy: null },
+      },
+    });
+
+    return restored;
+  }
+
+  /**
+   * Lister les organisations supprimées (admin)
+   */
+  async listDeleted() {
+    return prisma.organization.findMany({
+      where: {
+        deletedAt: { not: null },
+      },
+      include: {
+        subscription: true,
+        _count: { select: { members: true } },
+      },
+      orderBy: { deletedAt: 'desc' },
+    });
+  }
+
+  /**
+   * Supprimer définitivement une organisation (hard delete - admin uniquement)
+   */
+  async hardDelete(organizationId: string, actorId: string) {
+    // Vérifier que l'organisation est déjà soft-deleted
+    const organization = await prisma.organization.findFirst({
+      where: {
+        id: organizationId,
+        deletedAt: { not: null },
+      },
+    });
+
+    if (!organization) {
+      throw new AppError('Organisation non trouvée ou non soft-deleted. Utilisez d\'abord soft delete.', 400);
+    }
+
+    // Supprimer définitivement (cascade delete configuré dans Prisma)
+    await prisma.organization.delete({
+      where: { id: organizationId },
+    });
+
+    logger.warn(`Organisation supprimée définitivement: ${organizationId} par ${actorId}`);
+
+    // Audit log
+    await AuditService.log({
+      actorId,
+      action: 'ORG_DELETED',
+      entityType: 'Organization',
+      entityId: organizationId,
+      changes: {
+        before: { name: organization.name, slug: organization.slug },
+        after: null,
+      },
+      metadata: { hardDelete: true },
     });
   }
 }

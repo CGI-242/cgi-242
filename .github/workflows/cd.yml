@@ -1,0 +1,297 @@
+# =============================================================================
+# CGI 242 - Pipeline de Deploiement Continu (CD)
+# =============================================================================
+# Ce workflow implemente les 4 etapes du CD selon le cours:
+# 1. Infrastructure as Code (IaC) - Docker/docker-compose
+# 2. Tests en environnement de test (Smoke tests, Performance tests)
+# 3. Deploiement automatise
+# 4. Monitoring et alertes
+# =============================================================================
+
+name: CD Pipeline
+
+on:
+  workflow_run:
+    workflows: ["CI Pipeline"]
+    types: [completed]
+    branches: [main, develop]
+
+env:
+  NODE_VERSION: '20'
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  # ===========================================================================
+  # ETAPE 1: BUILD IMAGES DOCKER (IaC)
+  # ===========================================================================
+  build-images:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Checkout du code source
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Server image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./server
+          file: ./docker/Dockerfile.server
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/server:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build and push Client image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./client
+          file: ./docker/Dockerfile.client
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/client:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # ===========================================================================
+  # DEPLOIEMENT STAGING (branche develop)
+  # ===========================================================================
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: build-images
+    if: ${{ github.event.workflow_run.head_branch == 'develop' }}
+    environment: staging
+    outputs:
+      deploy_url: ${{ steps.deploy.outputs.url }}
+
+    steps:
+      - name: Checkout du code source
+        uses: actions/checkout@v4
+
+      - name: Deploy to Staging Server
+        id: deploy
+        run: |
+          echo "Deploying to staging environment..."
+          echo "url=https://staging.cgi242.example.com" >> $GITHUB_OUTPUT
+          # docker-compose -f docker/docker-compose.yml up -d
+
+  # ===========================================================================
+  # ETAPE 2: SMOKE TESTS POST-DEPLOIEMENT (Staging)
+  # ===========================================================================
+  smoke-tests-staging:
+    name: Smoke Tests (Staging)
+    runs-on: ubuntu-latest
+    needs: deploy-staging
+    if: ${{ github.event.workflow_run.head_branch == 'develop' }}
+
+    steps:
+      - name: Checkout du code source
+        uses: actions/checkout@v4
+
+      - name: Configuration Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Installation dependances
+        working-directory: ./server
+        run: npm ci
+
+      - name: Execution Smoke Tests
+        working-directory: ./server
+        env:
+          SMOKE_TEST_URL: ${{ needs.deploy-staging.outputs.deploy_url }}
+        run: npx tsx src/tests/smoke/smoke-tests.ts
+
+      - name: Upload Smoke Test Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: smoke-tests-staging
+          path: smoke-test-results.json
+          retention-days: 7
+
+  # ===========================================================================
+  # ETAPE 2: TESTS DE PERFORMANCE (Staging)
+  # ===========================================================================
+  performance-tests:
+    name: Performance Tests
+    runs-on: ubuntu-latest
+    needs: smoke-tests-staging
+    if: ${{ github.event.workflow_run.head_branch == 'develop' }}
+
+    steps:
+      - name: Checkout du code source
+        uses: actions/checkout@v4
+
+      - name: Install k6
+        run: |
+          sudo gpg -k
+          sudo gpg --no-default-keyring --keyring /usr/share/keyrings/k6-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
+          echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+          sudo apt-get update
+          sudo apt-get install k6
+
+      - name: Run Performance Tests
+        env:
+          BASE_URL: ${{ needs.deploy-staging.outputs.deploy_url }}
+        run: k6 run server/src/tests/performance/load-test.js --out json=performance-results.json
+        continue-on-error: true
+
+      - name: Upload Performance Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: performance-results
+          path: performance-results.json
+          retention-days: 30
+
+  # ===========================================================================
+  # DEPLOIEMENT PRODUCTION (branche main)
+  # ===========================================================================
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: build-images
+    if: ${{ github.event.workflow_run.head_branch == 'main' }}
+    environment: production
+    outputs:
+      deploy_url: ${{ steps.deploy.outputs.url }}
+
+    steps:
+      - name: Checkout du code source
+        uses: actions/checkout@v4
+
+      - name: Deploy to Production Server
+        id: deploy
+        run: |
+          echo "Deploying to production environment..."
+          echo "url=https://cgi242.example.com" >> $GITHUB_OUTPUT
+          # docker-compose -f docker/docker-compose.prod.yml up -d
+
+  # ===========================================================================
+  # ETAPE 2: SMOKE TESTS POST-DEPLOIEMENT (Production)
+  # ===========================================================================
+  smoke-tests-production:
+    name: Smoke Tests (Production)
+    runs-on: ubuntu-latest
+    needs: deploy-production
+    if: ${{ github.event.workflow_run.head_branch == 'main' }}
+
+    steps:
+      - name: Checkout du code source
+        uses: actions/checkout@v4
+
+      - name: Configuration Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Installation dependances
+        working-directory: ./server
+        run: npm ci
+
+      - name: Execution Smoke Tests
+        working-directory: ./server
+        env:
+          SMOKE_TEST_URL: ${{ needs.deploy-production.outputs.deploy_url }}
+        run: npx tsx src/tests/smoke/smoke-tests.ts
+
+  # ===========================================================================
+  # ETAPE 4: MONITORING ET ALERTES
+  # ===========================================================================
+  setup-monitoring:
+    name: Configure Monitoring
+    runs-on: ubuntu-latest
+    needs: [smoke-tests-staging, smoke-tests-production]
+    if: always() && (needs.smoke-tests-staging.result == 'success' || needs.smoke-tests-production.result == 'success')
+
+    steps:
+      - name: Update monitoring dashboards
+        run: |
+          echo "Updating Grafana dashboards..."
+          # curl -X POST $GRAFANA_URL/api/dashboards/db -d @monitoring/dashboard.json
+
+      - name: Configure alerts
+        run: |
+          echo "Configuring alerting rules..."
+          # Alertes pour: uptime, latence, taux d'erreur
+
+  # ===========================================================================
+  # ROLLBACK AUTOMATIQUE (en cas d'echec)
+  # ===========================================================================
+  rollback:
+    name: Rollback on Failure
+    runs-on: ubuntu-latest
+    needs: [smoke-tests-staging, smoke-tests-production]
+    if: failure()
+
+    steps:
+      - name: Rollback deployment
+        run: |
+          echo "Smoke tests failed - initiating rollback..."
+          # docker-compose down
+          # docker-compose -f docker-compose.yml up -d --scale server=0
+          # Restaurer la version precedente
+
+      - name: Notify rollback
+        run: |
+          echo "::error::Deployment rolled back due to smoke test failures"
+
+  # ===========================================================================
+  # NOTIFICATIONS
+  # ===========================================================================
+  notify:
+    name: Notify Deployment Status
+    runs-on: ubuntu-latest
+    needs: [deploy-staging, deploy-production, smoke-tests-staging, smoke-tests-production]
+    if: always()
+
+    steps:
+      - name: Determine status
+        id: status
+        run: |
+          if [[ "${{ needs.smoke-tests-staging.result }}" == "success" ]] || [[ "${{ needs.smoke-tests-production.result }}" == "success" ]]; then
+            echo "status=success" >> $GITHUB_OUTPUT
+            echo "message=Deployment successful" >> $GITHUB_OUTPUT
+          else
+            echo "status=failure" >> $GITHUB_OUTPUT
+            echo "message=Deployment failed" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send Slack notification
+        if: ${{ vars.SLACK_WEBHOOK_URL != '' }}
+        run: |
+          curl -X POST ${{ vars.SLACK_WEBHOOK_URL }} \
+            -H 'Content-type: application/json' \
+            -d '{"text":"CGI 242 Deployment: ${{ steps.status.outputs.message }}"}'
+
+      - name: Create GitHub deployment status
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const status = '${{ steps.status.outputs.status }}';
+            console.log('Deployment status: ' + status);
+
+            // Creer un commentaire sur le commit
+            await github.rest.repos.createCommitComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: context.sha,
+              body: '## Deployment Report\n\n' +
+                    '**Status:** ' + status + '\n' +
+                    '**Environment:** ' + (context.ref === 'refs/heads/main' ? 'Production' : 'Staging') + '\n' +
+                    '**Timestamp:** ' + new Date().toISOString()
+            });

@@ -3,6 +3,8 @@ import { OrganizationRole } from '@prisma/client';
 import { sendError } from '../utils/helpers.js';
 import { ERROR_MESSAGES } from '../utils/constants.js';
 import { hasMinimumRole, getRoleLabel } from '../types/tenant.types.js';
+import { permissionService } from '../services/permission.service.js';
+import { Permission, PERMISSION_DESCRIPTIONS } from '../types/permission.types.js';
 
 /**
  * Middleware factory pour vérifier le rôle minimum dans une organisation
@@ -122,12 +124,12 @@ export const requireAdminOrSelf = (
 };
 
 /**
- * Middleware pour vérifier des permissions personnalisées
+ * Middleware pour vérifier des permissions granulaires
  *
  * Les permissions sont stockées dans le champ `permissions` de OrganizationMember
- * Format: { "canInvite": true, "canDelete": false, ... }
+ * et évaluées par le PermissionService
  */
-export const requirePermission = (permissionKey: string) => {
+export const requirePermission = (permission: Permission) => {
   return async (
     req: Request,
     res: Response,
@@ -147,26 +149,86 @@ export const requirePermission = (permissionKey: string) => {
       );
     }
 
-    // OWNER a toutes les permissions
-    if (tenant.organizationRole === 'OWNER') {
-      return next();
+    if (!tenant.organizationId) {
+      return sendError(res, ERROR_MESSAGES.ORG_NOT_FOUND, 404);
     }
 
-    // ADMIN a toutes les permissions sauf transfert de propriété
-    if (
-      tenant.organizationRole === 'ADMIN' &&
-      permissionKey !== 'transferOwnership'
-    ) {
-      return next();
-    }
-
-    // Pour les autres rôles, vérifier les permissions personnalisées
-    // Cette logique peut être étendue pour lire les permissions depuis la BDD
-    return sendError(
-      res,
-      `Permission requise: ${permissionKey}`,
-      403
+    // Vérifier la permission via le service
+    const hasPermission = await permissionService.hasPermission(
+      tenant.organizationId,
+      tenant.userId,
+      permission
     );
+
+    if (!hasPermission) {
+      const permDesc = PERMISSION_DESCRIPTIONS[permission];
+      const label = permDesc?.label || permission;
+      return sendError(
+        res,
+        `Permission requise: ${label}`,
+        403
+      );
+    }
+
+    next();
+  };
+};
+
+/**
+ * Middleware pour vérifier plusieurs permissions (toutes requises)
+ */
+export const requireAllPermissions = (...permissions: Permission[]) => {
+  return async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<void | Response> => {
+    const tenant = req.tenant;
+
+    if (!tenant || tenant.type !== 'organization' || !tenant.organizationId) {
+      return sendError(res, ERROR_MESSAGES.UNAUTHORIZED, 401);
+    }
+
+    const hasAll = await permissionService.hasAllPermissions(
+      tenant.organizationId,
+      tenant.userId,
+      permissions
+    );
+
+    if (!hasAll) {
+      return sendError(res, 'Permissions insuffisantes', 403);
+    }
+
+    next();
+  };
+};
+
+/**
+ * Middleware pour vérifier au moins une permission parmi plusieurs
+ */
+export const requireAnyPermission = (...permissions: Permission[]) => {
+  return async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<void | Response> => {
+    const tenant = req.tenant;
+
+    if (!tenant || tenant.type !== 'organization' || !tenant.organizationId) {
+      return sendError(res, ERROR_MESSAGES.UNAUTHORIZED, 401);
+    }
+
+    const hasAny = await permissionService.hasAnyPermission(
+      tenant.organizationId,
+      tenant.userId,
+      permissions
+    );
+
+    if (!hasAny) {
+      return sendError(res, 'Permissions insuffisantes', 403);
+    }
+
+    next();
   };
 };
 

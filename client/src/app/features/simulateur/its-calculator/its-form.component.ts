@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, EventEmitter, Input, Output, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, input, output, inject } from '@angular/core';
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ItsInput, ItsResult, ItsService } from '../services/its.service';
@@ -145,7 +145,7 @@ import { ItsInput, ItsResult, ItsService } from '../services/its.service';
         <div class="flex items-center justify-between px-4 py-3 bg-secondary-50 border-x border-secondary-200">
           <span class="text-sm text-secondary-600">C.N.S.S. (Mensuel) - 4%</span>
           <span class="text-sm font-medium text-red-600 w-48 text-right">
-            - {{ (result?.retenueCnss ?? 0) / 12 | number:'1.0-0' }}
+            - {{ (result()?.retenueCnss ?? 0) / 12 | number:'1.0-0' }}
           </span>
         </div>
 
@@ -153,7 +153,7 @@ import { ItsInput, ItsResult, ItsService } from '../services/its.service';
         <div class="flex items-center justify-between px-4 py-3 bg-white border border-secondary-200">
           <span class="text-sm text-secondary-600">NET IMPOSABLE [Mensuel] (80%)</span>
           <span class="text-sm font-medium w-48 text-right">
-            {{ (result?.revenuNetImposable ?? 0) / 12 | number:'1.0-0' }}
+            {{ (result()?.revenuNetImposable ?? 0) / 12 | number:'1.0-0' }}
           </span>
         </div>
 
@@ -166,7 +166,7 @@ import { ItsInput, ItsResult, ItsService } from '../services/its.service';
         <div class="flex items-center justify-between px-4 py-3 bg-white border-x border-secondary-200">
           <span class="text-sm text-secondary-600">SALAIRE BRUT (Annuel)</span>
           <span class="text-sm font-medium w-48 text-right">
-            {{ result?.revenuBrutAnnuel ?? 0 | number:'1.0-0' }}
+            {{ result()?.revenuBrutAnnuel ?? 0 | number:'1.0-0' }}
           </span>
         </div>
 
@@ -174,7 +174,7 @@ import { ItsInput, ItsResult, ItsService } from '../services/its.service';
         <div class="flex items-center justify-between px-4 py-3 bg-secondary-50 border-x border-secondary-200">
           <span class="text-sm text-secondary-600">C.N.S.S. (Annuel)</span>
           <span class="text-sm font-medium text-red-600 w-48 text-right">
-            - {{ result?.retenueCnss ?? 0 | number:'1.0-0' }}
+            - {{ result()?.retenueCnss ?? 0 | number:'1.0-0' }}
           </span>
         </div>
 
@@ -182,7 +182,7 @@ import { ItsInput, ItsResult, ItsService } from '../services/its.service';
         <div class="flex items-center justify-between px-4 py-3 bg-white border-x border-secondary-200">
           <span class="text-sm text-secondary-600">SALAIRE NET (Annuel)</span>
           <span class="text-sm font-medium w-48 text-right">
-            {{ result?.baseApresCnss ?? 0 | number:'1.0-0' }}
+            {{ result()?.baseApresCnss ?? 0 | number:'1.0-0' }}
           </span>
         </div>
 
@@ -190,7 +190,7 @@ import { ItsInput, ItsResult, ItsService } from '../services/its.service';
         <div class="flex items-center justify-between px-4 py-3 bg-primary-50 border border-primary-200">
           <span class="text-sm font-medium text-primary-800">NET IMPOSABLE [Annuel] (80%)</span>
           <span class="text-sm font-bold text-primary-700 w-48 text-right">
-            {{ result?.revenuNetImposable ?? 0 | number:'1.0-0' }}
+            {{ result()?.revenuNetImposable ?? 0 | number:'1.0-0' }}
           </span>
         </div>
 
@@ -201,7 +201,7 @@ import { ItsInput, ItsResult, ItsService } from '../services/its.service';
             <p class="text-xs text-secondary-500">Net imposable / {{ nombreParts }} parts</p>
           </div>
           <span class="text-lg font-bold text-primary-600 w-48 text-right">
-            {{ result?.revenuParPart ?? 0 | number:'1.0-0' }}
+            {{ result()?.revenuParPart ?? 0 | number:'1.0-0' }}
           </span>
         </div>
 
@@ -214,7 +214,7 @@ import { ItsInput, ItsResult, ItsService } from '../services/its.service';
         <div class="flex items-center justify-between px-4 py-3 bg-white border-x border-secondary-200">
           <span class="text-sm text-secondary-600">ITS (Annuel)</span>
           <span class="text-sm font-medium w-48 text-right">
-            {{ result?.itsAnnuel ?? 0 | number:'1.0-0' }}
+            {{ result()?.itsAnnuel ?? 0 | number:'1.0-0' }}
           </span>
         </div>
 
@@ -222,16 +222,16 @@ import { ItsInput, ItsResult, ItsService } from '../services/its.service';
         <div class="flex items-center justify-between px-4 py-3 bg-red-100 border border-red-200 rounded-b-lg">
           <span class="text-sm font-semibold text-red-800">ITS (Mensuel)</span>
           <span class="text-lg font-bold text-red-700 w-48 text-right">
-            {{ result?.itsMensuel ?? 0 | number:'1.0-0' }}
+            {{ result()?.itsMensuel ?? 0 | number:'1.0-0' }}
           </span>
         </div>
 
         <!-- Salaire net -->
-        @if (result) {
+        @if (result()) {
           <div class="flex items-center justify-between px-4 py-3 bg-green-100 border border-green-200 rounded-lg mt-4">
             <span class="text-sm font-semibold text-green-800">SALAIRE NET (Mensuel)</span>
             <span class="text-lg font-bold text-green-700 w-48 text-right">
-              {{ result.salaireNetMensuel | number:'1.0-0' }}
+              {{ result()!.salaireNetMensuel | number:'1.0-0' }}
             </span>
           </div>
         }
@@ -313,10 +313,10 @@ import { ItsInput, ItsResult, ItsService } from '../services/its.service';
       }
 
       <!-- Avertissements -->
-      @if (result?.smigApplique) {
+      @if (result()?.smigApplique) {
         <div class="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800">
           <p class="font-medium">Salaire inferieur au SMIG (70 400 FCFA/mois)</p>
-          @if (result?.minimumApplique) {
+          @if (result()?.minimumApplique) {
             <p class="text-xs mt-1">Le minimum ITS de 1 200 FCFA/an est applique.</p>
           }
         </div>
@@ -330,11 +330,12 @@ import { ItsInput, ItsResult, ItsService } from '../services/its.service';
   `,
 })
 export class ItsFormComponent {
+  // Keep @Input for two-way bound properties
   @Input() input!: ItsInput;
-  @Input() result: ItsResult | null = null;
-  @Output() inputChange = new EventEmitter<void>();
-  @Output() annuelResultChange = new EventEmitter<ItsResult | null>();
-  @Output() tabChange = new EventEmitter<'mensuel' | 'annuel'>();
+  result = input<ItsResult | null>(null);
+  inputChange = output<void>();
+  annuelResultChange = output<ItsResult | null>();
+  tabChange = output<'mensuel' | 'annuel'>();
 
   private itsService = inject(ItsService);
 

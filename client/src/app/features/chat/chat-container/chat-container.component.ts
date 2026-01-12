@@ -5,6 +5,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ChatService, Conversation, StreamEvent } from '@core/services/chat.service';
 import { TenantService } from '@core/services/tenant.service';
 import { AuthService } from '@core/services/auth.service';
+import { ToastService } from '@core/services/toast.service';
+import { LoggerService } from '@core/services/logger.service';
 import { ChatInputComponent } from '../chat-input/chat-input.component';
 import { ChatMessageComponent } from '../chat-message/chat-message.component';
 import { ChatHistoryComponent } from '../chat-history/chat-history.component';
@@ -187,6 +189,8 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestr
   private authService = inject(AuthService);
   private destroyRef = inject(DestroyRef);
   private sanitizer = inject(DomSanitizer);
+  private toast = inject(ToastService);
+  private logger = inject(LoggerService);
 
   @ViewChild('messagesContainer') private messagesContainer!: ElementRef;
 
@@ -244,10 +248,16 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestr
   onResetConversation(): void {
     const convId = this.currentConversation()?.id;
     if (convId) {
-      this.chatService.deleteConversation(convId).subscribe(() => {
-        this.chatService.clearCurrentConversation();
-        this.messages.set([]);
-        this.chatService.loadConversations().subscribe();
+      this.chatService.deleteConversation(convId).subscribe({
+        next: () => {
+          this.chatService.clearCurrentConversation();
+          this.messages.set([]);
+          this.chatService.loadConversations().subscribe();
+          this.toast.success('Conversation réinitialisée');
+        },
+        error: () => {
+          this.toast.error('Erreur lors de la réinitialisation');
+        }
       });
     } else {
       this.messages.set([]);
@@ -309,14 +319,22 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestr
               break;
             }
             case 'error':
-              console.error('Streaming error:', event.error);
+              this.logger.error('Streaming error', 'ChatContainer', { error: event.error });
               this.chatService.resetStreamingState();
+              this.toast.error({
+                title: 'Erreur',
+                message: 'Une erreur est survenue lors de la réponse'
+              });
               break;
           }
         },
-        error: (error) => {
-          console.error('Stream error:', error);
+        error: () => {
+          this.logger.error('Stream connection error', 'ChatContainer');
           this.chatService.resetStreamingState();
+          this.toast.error({
+            title: 'Erreur de connexion',
+            message: 'Impossible de contacter le serveur'
+          });
         },
       });
   }
@@ -327,9 +345,19 @@ export class ChatContainerComponent implements OnInit, AfterViewChecked, OnDestr
         content,
         conversationId: this.currentConversation()?.id,
       })
-      .subscribe((res) => {
-        if (res.success && res.data) {
-          this.messages.update((m) => [...m, res.data!.message]);
+      .subscribe({
+        next: (res) => {
+          if (res.success && res.data) {
+            this.messages.update((m) => [...m, res.data!.message]);
+          } else {
+            this.toast.error(res.error ?? 'Erreur lors de l\'envoi du message');
+          }
+        },
+        error: () => {
+          this.toast.error({
+            title: 'Erreur de connexion',
+            message: 'Impossible de contacter le serveur'
+          });
         }
       });
   }

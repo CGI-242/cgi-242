@@ -3,21 +3,21 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
 import { OrgSwitcherComponent } from '../org-switcher/org-switcher.component';
+import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, RouterLink, OrgSwitcherComponent],
+  imports: [CommonModule, RouterLink, OrgSwitcherComponent, ThemeToggleComponent],
   template: `
-    <header class="bg-white border-b border-secondary-200 sticky top-0 z-40">
+    <header class="bg-white dark:bg-secondary-800 border-b border-secondary-200 dark:border-secondary-700 sticky top-0 z-40 transition-colors duration-300">
       <div class="px-2 sm:px-4">
         <div class="flex items-center justify-between h-20">
           <!-- Logo -->
           <div class="flex items-center gap-8">
             <a routerLink="/" class="flex items-center gap-1">
               <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" class="h-28 sm:h-36 w-auto" />
-              <span class="text-base text-secondary-400 font-medium hidden sm:inline">By NORMX AI</span>
             </a>
 
             @if (authService.isAuthenticated()) {
@@ -29,32 +29,35 @@ import { OrgSwitcherComponent } from '../org-switcher/org-switcher.component';
 
           <!-- Right side -->
           <div class="flex items-center gap-4">
+            <!-- Theme toggle -->
+            <app-theme-toggle />
+
             @if (authService.isAuthenticated()) {
               <app-org-switcher />
 
               <div class="relative user-menu-container">
                 <button
                   (click)="toggleMenu()"
-                  class="flex items-center gap-2 p-2 rounded-lg hover:bg-secondary-100">
-                  <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
-                    <span class="text-primary-600 text-sm font-medium">
+                  class="flex items-center gap-2 p-2 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-700">
+                  <div class="w-8 h-8 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
+                    <span class="text-primary-600 dark:text-primary-300 text-sm font-medium">
                       {{ userInitials }}
                     </span>
                   </div>
                 </button>
 
                 @if (menuOpen) {
-                  <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-secondary-200 py-1">
-                    <a routerLink="/profile" class="block px-4 py-2 text-sm text-secondary-700 hover:bg-secondary-50">
+                  <div class="absolute right-0 mt-2 w-48 bg-white dark:bg-secondary-800 rounded-lg shadow-lg border border-secondary-200 dark:border-secondary-700 py-1">
+                    <a routerLink="/profile" class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-700">
                       Mon profil
                     </a>
-                    <a routerLink="/profile/settings" class="block px-4 py-2 text-sm text-secondary-700 hover:bg-secondary-50">
+                    <a routerLink="/profile/settings" class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-700">
                       Paramètres
                     </a>
-                    <hr class="my-1">
+                    <hr class="my-1 border-secondary-200 dark:border-secondary-700">
                     <button
                       (click)="logout()"
-                      class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50">
+                      class="w-full text-left px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20">
                       Déconnexion
                     </button>
                   </div>

@@ -7,6 +7,7 @@ import { TenantService } from '@core/services/tenant.service';
 import { HeaderComponent } from '@shared/components/header/header.component';
 import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
 import { LoadingSpinnerComponent } from '@shared/components/loading-spinner/loading-spinner.component';
+import { BreadcrumbComponent } from '@shared/components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-org-settings',
@@ -20,9 +21,10 @@ import { LoadingSpinnerComponent } from '@shared/components/loading-spinner/load
     HeaderComponent,
     SidebarComponent,
     LoadingSpinnerComponent,
+    BreadcrumbComponent,
   ],
   template: `
-    <div class="min-h-screen bg-secondary-50">
+    <div class="min-h-screen bg-secondary-50 dark:bg-secondary-900 transition-colors duration-300">
       <app-header />
 
       <div class="flex">
@@ -30,6 +32,11 @@ import { LoadingSpinnerComponent } from '@shared/components/loading-spinner/load
 
         <main class="flex-1 ml-14">
           <div class="max-w-5xl mx-auto py-8 px-4">
+            <!-- Breadcrumb -->
+            <div class="mb-4">
+              <app-breadcrumb />
+            </div>
+
             @if (isLoading()) {
               <app-loading-spinner size="lg" containerClass="py-12" />
             } @else if (organization()) {

@@ -26,6 +26,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.3.0",
+    "@angular/cdk": "^17.3.10",
     "@angular/common": "^17.3.0",
     "@angular/compiler": "^17.3.0",
     "@angular/core": "^17.3.0",
@@ -40,10 +41,17 @@
     "@capacitor/haptics": "^8.0.0",
     "@capacitor/ios": "^8.0.0",
     "@capacitor/keyboard": "^8.0.0",
+    "@capacitor/network": "^8.0.0",
+    "@capacitor/preferences": "^8.0.0",
+    "@capacitor/push-notifications": "^8.0.0",
     "@capacitor/splash-screen": "^8.0.0",
     "@capacitor/status-bar": "^8.0.0",
+    "@ionic/angular": "^8.7.16",
+    "chart.js": "^4.5.1",
+    "ng2-charts": "^5.0.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.6.0",
+    "winston": "^3.19.0",
     "zone.js": "~0.14.0"
   },
   "devDependencies": {

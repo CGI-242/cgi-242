@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ArticlesService, Article } from '@core/services/articles.service';
+import { LoggerService } from '@core/services/logger.service';
 import { HeaderComponent } from '@shared/components/header/header.component';
 import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
 import { AudioButtonComponent } from '@shared/components/audio-button/audio-button.component';
@@ -14,7 +16,7 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
   selector: 'app-code-container',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, FormsModule, HeaderComponent, SidebarComponent, CodeSommaireComponent, AudioButtonComponent],
+  imports: [CommonModule, FormsModule, ScrollingModule, HeaderComponent, SidebarComponent, CodeSommaireComponent, AudioButtonComponent],
   template: `
     <div class="min-h-screen bg-secondary-50">
       <app-header />
@@ -81,15 +83,26 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                   </div>
                 </div>
 
-                <!-- Articles list -->
-                <div class="flex-1 overflow-y-auto">
-                  @if (articlesService.isLoading()) {
-                    <div class="flex items-center justify-center h-32">
-                      <div class="w-6 h-6 border-2 border-primary-600 border-t-transparent rounded-full animate-spin"></div>
+                <!-- Articles list with virtual scrolling for performance -->
+                @if (articlesService.isLoading()) {
+                  <div class="flex-1 flex items-center justify-center">
+                    <div class="w-6 h-6 border-2 border-primary-600 border-t-transparent rounded-full animate-spin"></div>
+                  </div>
+                } @else if (filteredArticles().length === 0) {
+                  <div class="flex-1 flex items-center justify-center">
+                    <div class="p-3 text-center text-secondary-500 text-base">
+                      Aucun article trouvé
                     </div>
-                  } @else {
+                  </div>
+                } @else {
+                  <cdk-virtual-scroll-viewport
+                    itemSize="36"
+                    class="flex-1"
+                    [style.height.px]="getViewportHeight()">
                     <div class="divide-y divide-secondary-100">
-                      @for (article of filteredArticles(); track article.id; let i = $index) {
+                      <div
+                        *cdkVirtualFor="let article of filteredArticles(); let i = index; trackBy: trackByArticleId"
+                        class="article-list-item">
                         <!-- Séparateur sous-section si c'est le premier article de la sous-section -->
                         @if (getSousSectionHeader(article.numero); as ssHeader) {
                           <div class="px-3 py-2 bg-primary-100 border-l-4 border-primary-500">
@@ -125,14 +138,10 @@ import { CodeSommaireComponent, SommaireSelection } from '../code-sommaire/code-
                             <span class="text-sm text-secondary-500 truncate">{{ getCleanTitle(article.titre) }}</span>
                           }
                         </button>
-                      } @empty {
-                        <div class="p-3 text-center text-secondary-500 text-base">
-                          Aucun article trouvé
-                        </div>
-                      }
+                      </div>
                     </div>
-                  }
-                </div>
+                  </cdk-virtual-scroll-viewport>
+                }
 
                 <!-- Total count -->
                 <div class="p-3 border-t border-secondary-200 bg-secondary-50">
@@ -285,6 +294,7 @@ export class CodeContainerComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private sanitizer = inject(DomSanitizer);
   private destroyRef = inject(DestroyRef);
+  private logger = inject(LoggerService);
 
   sidebarCollapsed = false;
   searchQuery = '';
@@ -305,8 +315,7 @@ export class CodeContainerComponent implements OnInit {
     const section = this.selectedSection();
     const query = this.searchQuery.toLowerCase().trim();
 
-    // DEBUG: Afficher les paramètres de filtrage
-    console.log('[Filtrage] Plage:', range, '| Tome:', tome, '| Chapitre:', chapitre, '| Section:', section);
+    this.logger.debug('Filtrage', 'CodeContainer', { range, tome, chapitre, section });
 
     let result: Article[];
 
@@ -354,29 +363,51 @@ export class CodeContainerComponent implements OnInit {
       return true;
     });
 
-    // DEBUG: Afficher le résultat après filtrage avec chapitre
-    console.log('[Filtrage] Résultat:', result.length, 'articles:', result.map(a => `${a.numero}(chap:${a.chapitre?.substring(0, 20)})`).join(', '));
+    this.logger.debug('Filtrage résultat', 'CodeContainer', { count: result.length });
 
-    // Trier numériquement avec gestion des suffixes latins
+    // Trier numériquement avec gestion des suffixes (latins et lettres)
     return result.sort((a, b) => {
       const numA = parseInt(a.numero.match(/^(\d+)/)?.[1] || '0', 10);
       const numB = parseInt(b.numero.match(/^(\d+)/)?.[1] || '0', 10);
       if (numA !== numB) return numA - numB;
-      // Si même numéro, trier par suffixe latin (bis, ter, quater...)
-      return this.getLatinSuffixOrder(a.numero) - this.getLatinSuffixOrder(b.numero);
+      // Si même numéro, trier par suffixe (bis, ter, A, B...)
+      return this.getSuffixOrder(a.numero) - this.getSuffixOrder(b.numero);
     });
   });
 
-  // Ordre des suffixes latins
-  private getLatinSuffixOrder(numero: string): number {
-    const suffixes = ['', 'bis', 'ter', 'quater', 'quinquies', 'sexies', 'septies', 'octies', 'novies', 'decies', 'undecies', 'duodecies'];
-    const lower = numero.toLowerCase();
-    for (let i = suffixes.length - 1; i >= 0; i--) {
-      if (suffixes[i] && lower.includes(suffixes[i])) {
-        return i;
-      }
+  // Ordre des suffixes (latins et lettres)
+  private getSuffixOrder(numero: string): number {
+    const latinOrder: Record<string, number> = {
+      '': 0,
+      'bis': 1,
+      'ter': 2,
+      'quater': 3,
+      'quinquies': 4,
+      'sexies': 5,
+      'septies': 6,
+      'octies': 7,
+      'nonies': 8,
+      'decies': 9,
+      'undecies': 10,
+      'duodecies': 11,
+    };
+
+    // Extraire le suffixe de l'article (ex: "31 nonies" -> "nonies", "36-A" -> "-a")
+    const match = numero.toLowerCase().match(/^(\d+)\s*[-]?\s*(.*)$/);
+    if (!match) return 0;
+    const suffix = match[2].trim();
+
+    // Vérifier si c'est un suffixe latin
+    if (latinOrder[suffix] !== undefined) {
+      return latinOrder[suffix];
     }
-    return 0;
+
+    // Vérifier si c'est une lettre seule (A, B, C...) - ordre alphabétique après les suffixes latins
+    if (/^[a-z]$/.test(suffix)) {
+      return 100 + suffix.charCodeAt(0) - 97; // A=100, B=101, etc.
+    }
+
+    return 999;
   }
 
   // Vérifie si un numéro d'article est dans une plage (ex: "1-65 bis") ou correspond à un article unique
@@ -665,8 +696,8 @@ export class CodeContainerComponent implements OnInit {
       await navigator.clipboard.writeText(text);
       this.copied.set(true);
       setTimeout(() => this.copied.set(false), 2000);
-    } catch (err) {
-      console.error('Erreur lors de la copie:', err);
+    } catch {
+      this.logger.warn('Échec de la copie dans le presse-papiers', 'CodeContainer');
     }
   }
 
@@ -733,6 +764,10 @@ export class CodeContainerComponent implements OnInit {
       if (escaped.trim() === '') {
         return '<div class="mt-4"></div>';
       }
+      // Formater les NB et Arrêté Art. en italique (bloc entre crochets)
+      if (/^(\[?NB\s*\d*\s*-|Arrêté Art\.)/.test(escaped) || /\]$/.test(escaped)) {
+        return '<div class="mt-2 italic text-secondary-600 border-l-2 border-secondary-300 pl-3">' + escaped + '</div>';
+      }
       // Ligne normale (texte de continuation)
       return '<div class="mt-2">' + escaped + '</div>';
     });
@@ -749,5 +784,16 @@ export class CodeContainerComponent implements OnInit {
     html = html.replace(/<div class="mt-2"><\/div>/g, '');
 
     return this.sanitizer.bypassSecurityTrustHtml(html);
+  }
+
+  // Virtual scrolling helpers
+  trackByArticleId(index: number, article: Article): string {
+    return article.id;
+  }
+
+  getViewportHeight(): number {
+    // Calculate viewport height based on window size minus header and other elements
+    // Default to a reasonable height that fills the available space
+    return Math.max(400, window.innerHeight - 280);
   }
 }

@@ -6,6 +6,8 @@ import { createLogger } from '../utils/logger.js';
 import { prisma } from '../config/database.js';
 import { SUBSCRIPTION_PLANS } from '../config/plans.js';
 import EmailService from './email.service.js';
+import { InvoiceService } from './invoice.service.js';
+import fs from 'fs';
 
 const logger = createLogger('CinetPayService');
 const emailService = new EmailService();
@@ -302,13 +304,94 @@ export class CinetPayService {
         logger.info(`Subscription ${plan} activée pour user ${userId}`);
       });
 
-      // Envoyer email de confirmation
+      // Récupérer les informations utilisateur pour la facture
+      const user = await prisma.user.findUnique({
+        where: { id: userId },
+        select: {
+          email: true,
+          firstName: true,
+          lastName: true,
+          phone: true
+        }
+      });
+
+      if (!user) {
+        logger.error(`Utilisateur ${userId} non trouvé pour la facture`);
+        return;
+      }
+
+      // Récupérer le payment créé pour la facture
+      const payment = await prisma.payment.findFirst({
+        where: {
+          metadata: {
+            path: ['transactionId'],
+            equals: data.cpm_trans_id
+          }
+        },
+        orderBy: { createdAt: 'desc' }
+      });
+
+      if (!payment) {
+        logger.warn(`Payment non trouvé pour transaction ${data.cpm_trans_id}`);
+      }
+
+      // Générer et envoyer la facture
       try {
-        const user = await prisma.user.findUnique({
-          where: { id: userId },
-          select: { email: true, firstName: true }
+        const customerName = user.firstName && user.lastName
+          ? `${user.firstName} ${user.lastName}`
+          : user.firstName || user.email.split('@')[0];
+
+        // Créer la facture
+        const invoiceResult = await InvoiceService.createInvoice(
+          {
+            paymentId: payment?.id || '',
+            userId,
+            plan,
+            planName: planConfig.name,
+            amountTTC: data.cpm_amount,
+            currency: data.cpm_currency || 'XAF',
+            transactionId: data.cpm_trans_id,
+            paymentDate: new Date(data.cpm_payment_date || Date.now()),
+            periodStart: currentPeriodStart,
+            periodEnd: currentPeriodEnd,
+          },
+          {
+            name: customerName,
+            email: user.email,
+            phone: user.phone || undefined,
+          }
+        );
+
+        logger.info(`Facture ${invoiceResult.invoiceNumber} créée pour ${user.email}`);
+
+        // Lire le PDF généré
+        const pdfBuffer = fs.readFileSync(invoiceResult.pdfPath);
+
+        // Calculer les montants pour l'email
+        const { amountHT, tvaAmount } = InvoiceService.calculatePriceBreakdown(data.cpm_amount);
+
+        // Envoyer la facture par email
+        await emailService.sendInvoice({
+          email: user.email,
+          firstName: user.firstName,
+          invoiceNumber: invoiceResult.invoiceNumber,
+          plan: planConfig.name,
+          amountTTC: data.cpm_amount,
+          amountHT,
+          tvaAmount,
+          pdfBuffer,
         });
-        if (user) {
+
+        // Marquer la facture comme envoyée
+        await InvoiceService.markAsSent(invoiceResult.invoiceId);
+
+        logger.info(`Facture ${invoiceResult.invoiceNumber} envoyée à ${user.email}`);
+
+      } catch (invoiceError) {
+        logger.error('Erreur génération/envoi facture:', invoiceError);
+        // Ne pas bloquer le processus si la facture échoue
+        // Envoyer quand même l'email de confirmation simple
+        try {
           await emailService.sendPaymentConfirmation({
             email: user.email,
             firstName: user.firstName,
@@ -316,9 +399,9 @@ export class CinetPayService {
             amount: data.cpm_amount,
             transactionId: data.cpm_trans_id
           });
+        } catch (emailError) {
+          logger.error('Erreur envoi email confirmation paiement:', emailError);
         }
-      } catch (emailError) {
-        logger.error('Erreur envoi email confirmation paiement:', emailError);
       }
 
     } catch (error) {

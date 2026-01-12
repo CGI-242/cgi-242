@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Conversation } from '@core/services/chat.service';
 
@@ -23,19 +23,19 @@ import { Conversation } from '@core/services/chat.service';
 
       <!-- Conversations list -->
       <div class="flex-1 overflow-y-auto p-2">
-        @if (conversations.length === 0) {
+        @if (conversations().length === 0) {
           <div class="text-center py-8">
             <p class="text-sm text-secondary-500">Aucune conversation</p>
           </div>
         } @else {
           <div class="space-y-1">
-            @for (conversation of conversations; track conversation.id) {
+            @for (conversation of conversations(); track conversation.id) {
               <button
                 (click)="selectConversation.emit(conversation)"
                 class="w-full text-left p-3 rounded-lg transition hover:bg-secondary-100"
-                [class.bg-primary-50]="conversation.id === currentConversationId"
-                [class.border-l-2]="conversation.id === currentConversationId"
-                [class.border-primary-600]="conversation.id === currentConversationId">
+                [class.bg-primary-50]="conversation.id === currentConversationId()"
+                [class.border-l-2]="conversation.id === currentConversationId()"
+                [class.border-primary-600]="conversation.id === currentConversationId()">
                 <p class="text-sm font-medium text-secondary-900 truncate">
                   {{ conversation.title ?? 'Nouvelle conversation' }}
                 </p>
@@ -51,10 +51,10 @@ import { Conversation } from '@core/services/chat.service';
   `,
 })
 export class ChatHistoryComponent {
-  @Input() conversations: Conversation[] = [];
-  @Input() currentConversationId?: string;
-  @Output() selectConversation = new EventEmitter<Conversation>();
-  @Output() newConversation = new EventEmitter<void>();
+  conversations = input<Conversation[]>([]);
+  currentConversationId = input<string | undefined>();
+  selectConversation = output<Conversation>();
+  newConversation = output<void>();
 
   formatDate(dateStr: string): string {
     const date = new Date(dateStr);

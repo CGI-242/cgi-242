@@ -61,6 +61,13 @@ router.post('/refresh-token', authController.refreshToken);
 // Routes authentifiées avec protection CSRF
 router.get('/me', authMiddleware, authController.me);
 
+router.patch(
+  '/profile',
+  authMiddleware,
+  csrfProtection,
+  authController.updateProfile
+);
+
 router.post(
   '/resend-verification',
   authMiddleware,
