@@ -4,4 +4,5 @@ export const environment = {
   appName: 'CGI 242',
   appDomain: 'localhost:4200',
   landingDomain: 'localhost:4200',
+  paieDomain: 'localhost:4201',
 };

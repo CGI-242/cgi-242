@@ -4,4 +4,5 @@ export const environment = {
   appName: 'CGI 242',
   appDomain: 'cgi242.normx-ai.com',
   landingDomain: 'www.normx-ai.com',
+  paieDomain: 'paie.normx-ai.com',
 };
