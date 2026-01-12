@@ -365,26 +365,49 @@ export class CodeContainerComponent implements OnInit {
 
     this.logger.debug('Filtrage résultat', 'CodeContainer', { count: result.length });
 
-    // Trier numériquement avec gestion des suffixes latins
+    // Trier numériquement avec gestion des suffixes (latins et lettres)
     return result.sort((a, b) => {
       const numA = parseInt(a.numero.match(/^(\d+)/)?.[1] || '0', 10);
       const numB = parseInt(b.numero.match(/^(\d+)/)?.[1] || '0', 10);
       if (numA !== numB) return numA - numB;
-      // Si même numéro, trier par suffixe latin (bis, ter, quater...)
-      return this.getLatinSuffixOrder(a.numero) - this.getLatinSuffixOrder(b.numero);
+      // Si même numéro, trier par suffixe (bis, ter, A, B...)
+      return this.getSuffixOrder(a.numero) - this.getSuffixOrder(b.numero);
     });
   });
 
-  // Ordre des suffixes latins
-  private getLatinSuffixOrder(numero: string): number {
-    const suffixes = ['', 'bis', 'ter', 'quater', 'quinquies', 'sexies', 'septies', 'octies', 'novies', 'decies', 'undecies', 'duodecies'];
-    const lower = numero.toLowerCase();
-    for (let i = suffixes.length - 1; i >= 0; i--) {
-      if (suffixes[i] && lower.includes(suffixes[i])) {
-        return i;
-      }
+  // Ordre des suffixes (latins et lettres)
+  private getSuffixOrder(numero: string): number {
+    const latinOrder: Record<string, number> = {
+      '': 0,
+      'bis': 1,
+      'ter': 2,
+      'quater': 3,
+      'quinquies': 4,
+      'sexies': 5,
+      'septies': 6,
+      'octies': 7,
+      'nonies': 8,
+      'decies': 9,
+      'undecies': 10,
+      'duodecies': 11,
+    };
+
+    // Extraire le suffixe de l'article (ex: "31 nonies" -> "nonies", "36-A" -> "-a")
+    const match = numero.toLowerCase().match(/^(\d+)\s*[-]?\s*(.*)$/);
+    if (!match) return 0;
+    const suffix = match[2].trim();
+
+    // Vérifier si c'est un suffixe latin
+    if (latinOrder[suffix] !== undefined) {
+      return latinOrder[suffix];
     }
-    return 0;
+
+    // Vérifier si c'est une lettre seule (A, B, C...) - ordre alphabétique après les suffixes latins
+    if (/^[a-z]$/.test(suffix)) {
+      return 100 + suffix.charCodeAt(0) - 97; // A=100, B=101, etc.
+    }
+
+    return 999;
   }
 
   // Vérifie si un numéro d'article est dans une plage (ex: "1-65 bis") ou correspond à un article unique
@@ -740,6 +763,10 @@ export class CodeContainerComponent implements OnInit {
       // Ligne vide = espacement
       if (escaped.trim() === '') {
         return '<div class="mt-4"></div>';
+      }
+      // Formater les NB et Arrêté Art. en italique (bloc entre crochets)
+      if (/^(\[?NB\s*\d*\s*-|Arrêté Art\.)/.test(escaped) || /\]$/.test(escaped)) {
+        return '<div class="mt-2 italic text-secondary-600 border-l-2 border-secondary-300 pl-3">' + escaped + '</div>';
       }
       // Ligne normale (texte de continuation)
       return '<div class="mt-2">' + escaped + '</div>';
