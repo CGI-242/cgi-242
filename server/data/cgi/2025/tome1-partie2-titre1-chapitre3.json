@@ -15,6 +15,7 @@
   "articles": [
     {
       "article": "Art. 365",
+      "titre": null,
       "texte": [
         "Sans objet"
       ],
@@ -25,6 +26,7 @@
     },
     {
       "article": "Art. 366",
+      "titre": null,
       "texte": [
         "Sans objet"
       ],
@@ -35,6 +37,7 @@
     },
     {
       "article": "Art. 367",
+      "titre": null,
       "texte": [
         "Sans objet"
       ],

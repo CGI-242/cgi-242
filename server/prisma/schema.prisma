@@ -58,6 +58,7 @@ model User {
 
   isEmailVerified      Boolean   @default(false)
   emailVerifyToken     String?
+  emailVerifyExpires   DateTime?
   resetPasswordToken   String?
   resetPasswordExpires DateTime?
 
@@ -456,6 +457,10 @@ model SearchHistory {
 
   createdAt DateTime @default(now())
 
+  // Index pour améliorer les performances des requêtes analytics
+  @@index([userId])
+  @@index([createdAt])
+  @@index([userId, createdAt])
   @@map("search_history")
 }
 

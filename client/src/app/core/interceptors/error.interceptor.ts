@@ -22,7 +22,8 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
       }
 
       // Don't redirect for CSRF errors (handled by csrf interceptor)
-      if (error.status === 403 && error.error?.code !== 'CSRF_INVALID') {
+      // Don't redirect for auth routes (login handles its own errors like email not verified)
+      if (error.status === 403 && error.error?.code !== 'CSRF_INVALID' && !isAuthRoute) {
         router.navigate(['/forbidden']);
       }
 

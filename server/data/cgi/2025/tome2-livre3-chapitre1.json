@@ -14,9 +14,6 @@
   },
   "articles": [
     {
-      "intertitre": "I. Valeurs soumises à la taxe"
-    },
-    {
       "article": "Art. 1",
       "titre": "Champ d'application de l'IRVM",
       "texte": [
@@ -138,9 +135,6 @@
       "statut": "en vigueur"
     },
     {
-      "intertitre": "II. Tarif de l'impôt"
-    },
-    {
       "article": "Art. 3",
       "titre": "Tarif de l'IRVM",
       "texte": [
@@ -166,9 +160,6 @@
         "conventions pétrolières"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous_intertitre": "3) Remboursements et amortissements dans les sociétés"
     },
     {
       "article": "Art. 6",
@@ -231,9 +222,6 @@
       "statut": "en vigueur"
     },
     {
-      "sous_intertitre": "4) Lieu de paiement de l'impôt"
-    },
-    {
       "article": "Art. 7",
       "titre": "Lieu de paiement",
       "texte": [
@@ -256,9 +244,6 @@
         "siège social"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous_intertitre": "5) Mode de paiement de l'impôt"
     },
     {
       "article": "Art. 8",
@@ -402,9 +387,6 @@
         "résidence"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous_intertitre": "6) Pénalités"
     },
     {
       "article": "Art. 12",

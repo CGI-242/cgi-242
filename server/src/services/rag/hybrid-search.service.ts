@@ -1,25 +1,11 @@
 // server/src/services/rag/hybrid-search.service.ts
+// Service de recherche hybride: keyword + vectorielle
+
 import { QdrantClient } from '@qdrant/js-client-rest';
 import { generateEmbedding } from './embeddings.service.js';
-import { findArticlesForQuery } from '../../config/keyword-mappings.js';
-import { getArticleMetadata } from '../../config/article-metadata.js';
-import { KEYWORD_ARTICLE_MAP_IS, SYNONYMS_IS } from '../../config/keyword-mappings-is.js';
-import { ARTICLE_METADATA_IS, ArticleMetadataIS } from '../../config/article-metadata-is.js';
-import { KEYWORD_ARTICLE_MAP_2026, SYNONYMS_2026 } from '../../config/keyword-mappings-2026.js';
-import { ARTICLE_METADATA_2026, ArticleMetadata2026 } from '../../config/article-metadata-2026.js';
-import { KEYWORD_ARTICLE_MAP_IBA_2026, SYNONYMS_IBA_2026 } from '../../config/keyword-mappings-iba-2026.js';
-import { ARTICLE_METADATA_IBA_2026, ArticleMetadataIBA2026 } from '../../config/article-metadata-iba-2026.js';
-import { KEYWORD_ARTICLE_MAP_DC, SYNONYMS_DC } from '../../config/keyword-mappings-dc.js';
-import { ARTICLE_METADATA_DC, ArticleMetadataDC } from '../../config/article-metadata-dc.js';
-import { KEYWORD_ARTICLE_MAP_TD, SYNONYMS_TD } from '../../config/keyword-mappings-td.js';
-import { ARTICLE_METADATA_TD, ArticleMetadataTD } from '../../config/article-metadata-td.js';
-import { KEYWORD_ARTICLE_MAP_DD, SYNONYMS_DD } from '../../config/keyword-mappings-dd.js';
-import { ARTICLE_METADATA_DD, ArticleMetadataDD } from '../../config/article-metadata-dd.js';
-import { KEYWORD_ARTICLE_MAP_PV, SYNONYMS_PV } from '../../config/keyword-mappings-pv.js';
-import { ARTICLE_METADATA_PV, ArticleMetadataPV } from '../../config/article-metadata-pv.js';
-import { KEYWORD_ARTICLE_MAP_IL, SYNONYMS_IL } from '../../config/keyword-mappings-il.js';
-import { ARTICLE_METADATA_IL, ArticleMetadataIL } from '../../config/article-metadata-il.js';
 import { createLogger } from '../../utils/logger.js';
+import { checkDirectMappings, applyRoutingRules } from './hybrid-search.routing.js';
+import { extractKeywordMatches, getMetadataForArticle } from './hybrid-search.chapters.js';
 
 const logger = createLogger('HybridSearch');
 
@@ -27,243 +13,16 @@ const client = new QdrantClient({
   url: process.env.QDRANT_URL || 'http://localhost:6333',
 });
 
-// ============================================================
-// ROUTAGE DIRECT PAR MOTS-CLÉS (EXACT MATCH → ARTICLE)
-// ============================================================
-
-/**
- * Mappings directs: mot-clé exact → article à forcer en position 1
- */
-const DIRECT_KEYWORD_MAPPINGS: Record<string, string> = {
-  // Art. 92A - Base forfaitaire étrangers
-  '22%': 'Art. 92A',
-  'vingt-deux pour cent': 'Art. 92A',
-  'base forfaitaire': 'Art. 92A',
-  'forfaitaire étrangers': 'Art. 92A',
-  'forfaitaire pm': 'Art. 92A',
-  'assiette forfaitaire': 'Art. 92A',
-  'mobilisation': 'Art. 92A',
-  'démobilisation': 'Art. 92A',
-  'demobilisation': 'Art. 92A',
-  'mob demob': 'Art. 92A',
-  // 'mob' et 'demob' supprimés - causent faux positifs (ex: "immobilières" contient "mob")
-
-  // Art. 92J - Régime dérogatoire pétrolier
-  '70%': 'Art. 92J',
-  'soixante-dix': 'Art. 92J',
-  'seuil pétrolier': 'Art. 92J',
-  'seuil ca pétrolier': 'Art. 92J',
-  'régime dérogatoire': 'Art. 92J',
-  'regime derogatoire': 'Art. 92J',
-  'dérogatoire pétrolier': 'Art. 92J',
-  'catering': 'Art. 92J',
-  'restauration pétrolier': 'Art. 92J',
-  'restauration sites': 'Art. 92J',
-  'cantine pétrolier': 'Art. 92J',
-  'charte investissements': 'Art. 92J',
-  'charte des investissements': 'Art. 92J',
-  'éligible charte': 'Art. 92J',
-  'eligible charte': 'Art. 92J',
-  'non éligible charte': 'Art. 92J',
-  'non eligible charte': 'Art. 92J',
-
-  // Art. 26 - Plafond espèces
-  '200.000 fcfa': 'Art. 26',
-  '200000': 'Art. 26',
-  'espèces': 'Art. 26',
-  'especes': 'Art. 26',
-  'paiement cash': 'Art. 26',
-  'numéraire': 'Art. 26',
-  'numeraire': 'Art. 26',
-
-  // ========== IRF - IMPOT SUR LE REVENU FONCIER ==========
-  // Art. 113 - Taux IRF
-  'taux irf': 'Art. 113',
-  'taux de l\'irf': 'Art. 113',
-  '9% loyers': 'Art. 113',
-  '15% plus-values': 'Art. 113',
-  'taux loyers': 'Art. 113',
-  'taux revenus fonciers': 'Art. 113',
-  'taux plus-values immobilières': 'Art. 113',
-  'taux plus-values immobilieres': 'Art. 113',
-
-  // Art. 113A - Retenue IRF
-  'retenue irf': 'Art. 113A',
-  'retenue loyers': 'Art. 113A',
-  'retenue libératoire irf': 'Art. 113A',
-  'retenue liberatoire irf': 'Art. 113A',
-  'date limite retenue': 'Art. 113A',
-  '15 mars irf': 'Art. 113A',
-  'nouveau bail': 'Art. 113A',
-
-  // Art. 111C - Exonérations IRF
-  'exonération irf': 'Art. 111C',
-  'exoneration irf': 'Art. 111C',
-  'résidence principale': 'Art. 111C',
-  'residence principale': 'Art. 111C',
-  'irf famille': 'Art. 111C',
-  'exonération famille': 'Art. 111C',
-  'exoneration famille': 'Art. 111C',
-};
-
-/**
- * Règles de routage avec contexte
- */
-interface RoutingRule {
-  id: string;
-  keywordsRequired: string[];  // Au moins un doit être présent
-  keywordsContext?: string[];  // Optionnel: contexte qui renforce
-  routeTo: string;
-  boost: number;
-}
-
-const ROUTING_RULES: RoutingRule[] = [
-  {
-    id: 'R1_forfaitaire_etrangers',
-    keywordsRequired: ['base forfaitaire', '22%', 'forfaitaire', 'assiette forfaitaire'],
-    keywordsContext: ['étrang', 'pm', 'personne morale', 'calcul', 'comment'],
-    routeTo: 'Art. 92A',
-    boost: 3.0,
-  },
-  {
-    id: 'R2_mobilisation',
-    keywordsRequired: ['mobilisation', 'démobilisation', 'demobilisation', 'mob', 'demob', 'installation chantier', 'repli'],
-    routeTo: 'Art. 92A',
-    boost: 3.0,
-  },
-  {
-    id: 'R3_seuil_petrolier',
-    keywordsRequired: ['70%', 'seuil', 'soixante-dix'],
-    keywordsContext: ['pétrol', 'petrol', 'dérogatoire', 'derogatoire', 'ca'],
-    routeTo: 'Art. 92J',
-    boost: 3.0,
-  },
-  {
-    id: 'R4_catering',
-    keywordsRequired: ['catering', 'restauration', 'cantine'],
-    keywordsContext: ['pétrol', 'petrol', 'site', 'dérogatoire', 'derogatoire', 'sous-traitant'],
-    routeTo: 'Art. 92J',
-    boost: 3.0,
-  },
-  {
-    id: 'R5_charte',
-    keywordsRequired: ['charte', 'investissement'],
-    keywordsContext: ['pétrol', 'petrol', 'dérogatoire', 'derogatoire', 'éligible', 'eligible', 'sous-traitant'],
-    routeTo: 'Art. 92J',
-    boost: 3.0,
-  },
-  {
-    id: 'R6_especes',
-    keywordsRequired: ['espèces', 'especes', 'cash', 'liquide', 'numéraire', 'numeraire'],
-    keywordsContext: ['plafond', 'maximum', 'déductible', 'deductible', '200', 'charge'],
-    routeTo: 'Art. 26',
-    boost: 3.0,
-  },
-  // ========== IRF - IMPOT SUR LE REVENU FONCIER ==========
-  {
-    id: 'R7_irf_taux_plus_values',
-    keywordsRequired: ['taux', 'plus-value', 'plus-values'],
-    keywordsContext: ['irf', 'immobilier', 'immobilière', 'immobilieres', 'foncier', '15%'],
-    routeTo: 'Art. 113',
-    boost: 3.0,
-  },
-  {
-    id: 'R8_irf_retenue',
-    keywordsRequired: ['retenue', 'source'],
-    keywordsContext: ['irf', 'loyer', 'foncier', 'locataire', 'libératoire', 'liberatoire', 'date', '15 mars'],
-    routeTo: 'Art. 113A',
-    boost: 3.0,
-  },
-  {
-    id: 'R9_irf_exoneration',
-    keywordsRequired: ['exonér', 'exoner', 'dispense'],
-    keywordsContext: ['irf', 'foncier', 'résidence', 'residence', 'famille', 'enfant', 'principal'],
-    routeTo: 'Art. 111C',
-    boost: 3.0,
-  },
-  {
-    id: 'R10_irf_nouveau_bail',
-    keywordsRequired: ['nouveau bail', 'bail'],
-    keywordsContext: ['retenue', 'irf', 'délai', 'delai', '3 mois'],
-    routeTo: 'Art. 113A',
-    boost: 3.0,
-  },
-  {
-    id: 'R11_irf_liberatoire',
-    keywordsRequired: ['libératoire', 'liberatoire'],
-    keywordsContext: ['irf', 'retenue', 'foncier', 'loyer'],
-    routeTo: 'Art. 113A',
-    boost: 3.0,
-  },
-  {
-    id: 'R12_logement_gratuit_famille',
-    keywordsRequired: ['gratuitement', 'gratuit'],
-    keywordsContext: ['enfant', 'famille', 'logement', 'loyer', 'imposable'],
-    routeTo: 'Art. 111C',
-    boost: 3.0,
-  },
-];
-
-/**
- * Vérifie les mappings directs et retourne l'article à forcer
- */
-function checkDirectMappings(query: string): string | null {
-  const queryLower = query.toLowerCase();
-
-  for (const [keyword, article] of Object.entries(DIRECT_KEYWORD_MAPPINGS)) {
-    if (queryLower.includes(keyword.toLowerCase())) {
-      logger.info(`[HybridSearch] DIRECT MAPPING: "${keyword}" → ${article}`);
-      return article;
-    }
-  }
-  return null;
-}
-
-/**
- * Applique les règles de routage et retourne l'article à forcer avec boost
- */
-function applyRoutingRules(query: string): { article: string; boost: number; ruleId: string } | null {
-  const queryLower = query.toLowerCase();
-
-  for (const rule of ROUTING_RULES) {
-    // Vérifier si au moins un mot-clé requis est présent
-    const hasRequiredKeyword = rule.keywordsRequired.some(kw =>
-      queryLower.includes(kw.toLowerCase())
-    );
-
-    if (!hasRequiredKeyword) continue;
-
-    // Si contexte défini, vérifier qu'au moins un mot de contexte est présent
-    if (rule.keywordsContext && rule.keywordsContext.length > 0) {
-      const hasContext = rule.keywordsContext.some(kw =>
-        queryLower.includes(kw.toLowerCase())
-      );
-      // Contexte optionnel mais renforce la confiance
-      if (hasContext) {
-        logger.info(`[HybridSearch] ROUTING RULE ${rule.id}: matched with context → ${rule.routeTo}`);
-        return { article: rule.routeTo, boost: rule.boost, ruleId: rule.id };
-      }
-    } else {
-      // Pas de contexte requis
-      logger.info(`[HybridSearch] ROUTING RULE ${rule.id}: matched → ${rule.routeTo}`);
-      return { article: rule.routeTo, boost: rule.boost, ruleId: rule.id };
-    }
-  }
-
-  return null;
-}
-
 // Collection CGI unique (version en vigueur)
 export const CGI_COLLECTION = 'cgi_2026';
 
-// Pour compatibilité descendante
 export const CGI_COLLECTIONS = {
   '2025': 'cgi_2025',
   '2026': 'cgi_2026',
   'current': 'cgi_2026',
 } as const;
 
-type CGIVersion = keyof typeof CGI_COLLECTIONS;
+export type CGIVersion = keyof typeof CGI_COLLECTIONS;
 
 const DEFAULT_COLLECTION = CGI_COLLECTION;
 
@@ -286,401 +45,9 @@ export interface SearchResult {
 }
 
 /**
- * Recherche d'articles par mots-cles pour CGI 2026
- */
-function findArticlesForQuery2026(query: string): string[] {
-  const normalizedQuery = query.toLowerCase();
-  const matchedArticles: string[] = [];
-  const seen = new Set<string>();
-
-  // Expansion de la requete avec synonymes
-  let expandedQuery = normalizedQuery;
-  for (const [term, synonyms] of Object.entries(SYNONYMS_2026)) {
-    for (const synonym of synonyms) {
-      if (normalizedQuery.includes(synonym.toLowerCase())) {
-        expandedQuery += ` ${term}`;
-      }
-    }
-  }
-
-  // Recherche dans le mapping 2026
-  for (const [keyword, articles] of Object.entries(KEYWORD_ARTICLE_MAP_2026)) {
-    if (expandedQuery.includes(keyword.toLowerCase())) {
-      for (const article of articles) {
-        if (!seen.has(article)) {
-          seen.add(article);
-          matchedArticles.push(article);
-        }
-      }
-    }
-  }
-
-  return matchedArticles;
-}
-
-/**
- * Obtient les metadonnees d'un article pour CGI 2026
- */
-function getArticleMetadata2026(numero: string): ArticleMetadata2026 | undefined {
-  // Normaliser le numero
-  const normalized = numero.replace(/^Art\.\s*/i, 'Art. ');
-  return ARTICLE_METADATA_2026[normalized] || ARTICLE_METADATA_2026[numero];
-}
-
-/**
- * Recherche d'articles par mots-cles pour CGI 2025 IS (chapitre 3)
- */
-function findArticlesForQueryIS(query: string): string[] {
-  const normalizedQuery = query.toLowerCase();
-  const matchedArticles: string[] = [];
-  const seen = new Set<string>();
-
-  // Expansion de la requete avec synonymes IS
-  let expandedQuery = normalizedQuery;
-  for (const [term, synonyms] of Object.entries(SYNONYMS_IS)) {
-    for (const synonym of synonyms) {
-      if (normalizedQuery.includes(synonym.toLowerCase())) {
-        expandedQuery += ` ${term}`;
-      }
-    }
-  }
-
-  // Recherche dans le mapping IS 2025
-  for (const [keyword, articles] of Object.entries(KEYWORD_ARTICLE_MAP_IS)) {
-    if (expandedQuery.includes(keyword.toLowerCase())) {
-      for (const article of articles) {
-        if (!seen.has(article)) {
-          seen.add(article);
-          matchedArticles.push(article);
-        }
-      }
-    }
-  }
-
-  return matchedArticles;
-}
-
-/**
- * Obtient les metadonnees d'un article pour CGI 2025 IS
- */
-function getArticleMetadataIS(numero: string): ArticleMetadataIS | undefined {
-  // Normaliser le numero
-  const normalized = numero.replace(/^Art\.\s*/i, 'Art. ');
-  return ARTICLE_METADATA_IS[normalized] || ARTICLE_METADATA_IS[numero];
-}
-
-/**
- * Recherche d'articles par mots-cles pour CGI 2026 IBA (chapitre 2)
- */
-function findArticlesForQueryIBA2026(query: string): string[] {
-  const normalizedQuery = query.toLowerCase();
-  const matchedArticles: string[] = [];
-  const seen = new Set<string>();
-
-  // Expansion de la requete avec synonymes IBA
-  let expandedQuery = normalizedQuery;
-  for (const [term, synonyms] of Object.entries(SYNONYMS_IBA_2026)) {
-    for (const synonym of synonyms) {
-      if (normalizedQuery.includes(synonym.toLowerCase())) {
-        expandedQuery += ` ${term}`;
-      }
-    }
-  }
-
-  // Recherche dans le mapping IBA 2026
-  for (const [keyword, articles] of Object.entries(KEYWORD_ARTICLE_MAP_IBA_2026)) {
-    if (expandedQuery.includes(keyword.toLowerCase())) {
-      for (const article of articles) {
-        if (!seen.has(article)) {
-          seen.add(article);
-          matchedArticles.push(article);
-        }
-      }
-    }
-  }
-
-  return matchedArticles;
-}
-
-/**
- * Obtient les metadonnees d'un article pour CGI 2026 IBA
- */
-function getArticleMetadataIBA2026(numero: string): ArticleMetadataIBA2026 | undefined {
-  // Normaliser le numero
-  const normalized = numero.replace(/^Art\.\s*/i, 'Art. ');
-  return ARTICLE_METADATA_IBA_2026[normalized] || ARTICLE_METADATA_IBA_2026[numero];
-}
-
-/**
- * Recherche d'articles par mots-cles pour CGI 2025 DC (chapitre 4 - Dispositions Communes)
- */
-function findArticlesForQueryDC(query: string): string[] {
-  const normalizedQuery = query.toLowerCase();
-  const matchedArticles: string[] = [];
-  const seen = new Set<string>();
-
-  // Expansion de la requete avec synonymes DC
-  let expandedQuery = normalizedQuery;
-  for (const [term, synonyms] of Object.entries(SYNONYMS_DC)) {
-    for (const synonym of synonyms) {
-      if (normalizedQuery.includes(synonym.toLowerCase())) {
-        expandedQuery += ` ${term}`;
-      }
-    }
-  }
-
-  // Recherche dans le mapping DC 2025
-  for (const [keyword, articles] of Object.entries(KEYWORD_ARTICLE_MAP_DC)) {
-    if (expandedQuery.includes(keyword.toLowerCase())) {
-      for (const article of articles) {
-        if (!seen.has(article)) {
-          seen.add(article);
-          matchedArticles.push(article);
-        }
-      }
-    }
-  }
-
-  return matchedArticles;
-}
-
-/**
- * Obtient les metadonnees d'un article pour CGI 2025 DC (Dispositions Communes)
- */
-function getArticleMetadataDC(numero: string): ArticleMetadataDC | undefined {
-  // Normaliser le numero
-  const normalized = numero.replace(/^Art\.\s*/i, 'Art. ');
-  return ARTICLE_METADATA_DC[normalized] || ARTICLE_METADATA_DC[numero];
-}
-
-/**
- * Recherche d'articles par mots-cles pour CGI 2025 TD (chapitre 5 - Taxes Diverses)
- */
-function findArticlesForQueryTD(query: string): string[] {
-  const normalizedQuery = query.toLowerCase();
-  const matchedArticles: string[] = [];
-  const seen = new Set<string>();
-
-  // Expansion de la requete avec synonymes TD
-  let expandedQuery = normalizedQuery;
-  for (const [term, synonyms] of Object.entries(SYNONYMS_TD)) {
-    for (const synonym of synonyms) {
-      if (normalizedQuery.includes(synonym.toLowerCase())) {
-        expandedQuery += ` ${term}`;
-      }
-    }
-  }
-
-  // Recherche dans le mapping TD 2025
-  for (const [keyword, articles] of Object.entries(KEYWORD_ARTICLE_MAP_TD)) {
-    if (expandedQuery.includes(keyword.toLowerCase())) {
-      for (const article of articles) {
-        if (!seen.has(article)) {
-          seen.add(article);
-          matchedArticles.push(article);
-        }
-      }
-    }
-  }
-
-  return matchedArticles;
-}
-
-/**
- * Obtient les metadonnees d'un article pour CGI 2025 TD (Taxes Diverses)
- */
-function getArticleMetadataTD(numero: string): ArticleMetadataTD | undefined {
-  // Normaliser le numero
-  const normalized = numero.replace(/^Art\.\s*/i, 'Art. ');
-  return ARTICLE_METADATA_TD[normalized] || ARTICLE_METADATA_TD[numero];
-}
-
-/**
- * Recherche d'articles par mots-cles pour CGI 2025 DD (chapitre 6 - Dispositions Diverses)
- */
-function findArticlesForQueryDD(query: string): string[] {
-  const normalizedQuery = query.toLowerCase();
-  const matchedArticles: string[] = [];
-  const seen = new Set<string>();
-
-  // Expansion de la requete avec synonymes DD
-  let expandedQuery = normalizedQuery;
-  for (const [term, synonyms] of Object.entries(SYNONYMS_DD)) {
-    for (const synonym of synonyms) {
-      if (normalizedQuery.includes(synonym.toLowerCase())) {
-        expandedQuery += ` ${term}`;
-      }
-    }
-  }
-
-  // Recherche dans le mapping DD 2025
-  for (const [keyword, articles] of Object.entries(KEYWORD_ARTICLE_MAP_DD)) {
-    if (expandedQuery.includes(keyword.toLowerCase())) {
-      for (const articleEntry of articles) {
-        const article = articleEntry.article;
-        if (!seen.has(article)) {
-          seen.add(article);
-          matchedArticles.push(article);
-        }
-      }
-    }
-  }
-
-  return matchedArticles;
-}
-
-/**
- * Obtient les metadonnees d'un article pour CGI 2025 DD (Dispositions Diverses)
- */
-function getArticleMetadataDD(numero: string): ArticleMetadataDD | undefined {
-  // Normaliser le numero
-  const normalized = numero.replace(/^Art\.\s*/i, 'Art. ');
-  return ARTICLE_METADATA_DD.find(
-    a => a.numero === normalized || a.numero === numero || a.numero === `Art. ${normalized.replace('Art. ', '')}`
-  );
-}
-
-/**
- * Recherche d'articles par mots-cles pour CGI 2025 PV (chapitre 7 - Plus-values, BTP, Reassurance)
- */
-function findArticlesForQueryPV(query: string): string[] {
-  const normalizedQuery = query.toLowerCase();
-  const matchedArticles: string[] = [];
-  const seen = new Set<string>();
-
-  // Expansion de la requete avec synonymes PV
-  let expandedQuery = normalizedQuery;
-  for (const [term, synonyms] of Object.entries(SYNONYMS_PV)) {
-    for (const synonym of synonyms) {
-      if (normalizedQuery.includes(synonym.toLowerCase())) {
-        expandedQuery += ` ${term}`;
-      }
-    }
-  }
-
-  // Recherche dans le mapping PV 2025
-  for (const [keyword, articles] of Object.entries(KEYWORD_ARTICLE_MAP_PV)) {
-    if (expandedQuery.includes(keyword.toLowerCase())) {
-      for (const articleEntry of articles) {
-        const article = articleEntry.article;
-        if (!seen.has(article)) {
-          seen.add(article);
-          matchedArticles.push(article);
-        }
-      }
-    }
-  }
-
-  return matchedArticles;
-}
-
-/**
- * Obtient les metadonnees d'un article pour CGI 2025 PV (Plus-values, BTP, Reassurance)
- */
-function getArticleMetadataPV(numero: string): ArticleMetadataPV | undefined {
-  // Normaliser le numero
-  const normalized = numero.replace(/^Art\.\s*/i, 'Art. ');
-  return ARTICLE_METADATA_PV.find(
-    a => a.numero === normalized || a.numero === numero || a.numero === `Art. ${normalized.replace('Art. ', '')}`
-  );
-}
-
-/**
- * Recherche d'articles par mots-cles pour CGI 2025 IL (Partie 2 - Impots Locaux)
- */
-function findArticlesForQueryIL(query: string): string[] {
-  const normalizedQuery = query.toLowerCase();
-  const matchedArticles: string[] = [];
-  const seen = new Set<string>();
-
-  // Expansion de la requete avec synonymes IL
-  let expandedQuery = normalizedQuery;
-  for (const [term, synonyms] of Object.entries(SYNONYMS_IL)) {
-    for (const synonym of synonyms) {
-      if (normalizedQuery.includes(synonym.toLowerCase())) {
-        expandedQuery += ` ${term}`;
-      }
-    }
-  }
-
-  // Recherche dans le mapping IL 2025
-  for (const [keyword, articles] of Object.entries(KEYWORD_ARTICLE_MAP_IL)) {
-    if (expandedQuery.includes(keyword.toLowerCase())) {
-      for (const articleEntry of articles) {
-        const article = articleEntry.article;
-        if (!seen.has(article)) {
-          seen.add(article);
-          matchedArticles.push(article);
-        }
-      }
-    }
-  }
-
-  return matchedArticles;
-}
-
-/**
- * Obtient les metadonnees d'un article pour CGI 2025 IL (Impots Locaux)
- */
-function getArticleMetadataIL(numero: string): ArticleMetadataIL | undefined {
-  // Normaliser le numero
-  const normalized = numero.replace(/^Art\.\s*/i, 'Art. ');
-  return ARTICLE_METADATA_IL.find(
-    a => a.numero === normalized || a.numero === numero || a.numero === `Art. ${normalized.replace('Art. ', '')}`
-  );
-}
-
-/**
- * Extrait les articles correspondants via keyword matching
- * Utilise le mapping selon la version du CGI
- * Pour 2025, recherche dans IRPP (chap. 1), IS (chap. 3), DC (chap. 4), TD (chap. 5), DD (chap. 6), PV (chap. 7) et IL (Partie 2)
- * Pour 2026, recherche dans IS (chapitre 1) ET IBA/IRCM/IRF/ITS (chapitre 2)
- */
-function extractKeywordMatches(query: string, version: CGIVersion = '2025'): string[] {
-  let articles: string[];
-  const seen = new Set<string>();
-
-  if (version === '2026') {
-    // Pour 2026, combiner IS (chapitre 1) et IBA/IRCM/IRF/ITS (chapitre 2)
-    const isArticles = findArticlesForQuery2026(query);
-    const ibaArticles = findArticlesForQueryIBA2026(query);
-    articles = [];
-    for (const art of [...isArticles, ...ibaArticles]) {
-      if (!seen.has(art)) {
-        seen.add(art);
-        articles.push(art);
-      }
-    }
-  } else {
-    // Pour 2025, combiner IRPP (chap. 1), IS (chap. 3), DC (chap. 4), TD (chap. 5), DD (chap. 6), PV (chap. 7) et IL (Partie 2)
-    const irppArticles = findArticlesForQuery(query);
-    const isArticles = findArticlesForQueryIS(query);
-    const dcArticles = findArticlesForQueryDC(query);
-    const tdArticles = findArticlesForQueryTD(query);
-    const ddArticles = findArticlesForQueryDD(query);
-    const pvArticles = findArticlesForQueryPV(query);
-    const ilArticles = findArticlesForQueryIL(query);
-    articles = [];
-    for (const art of [...irppArticles, ...isArticles, ...dcArticles, ...tdArticles, ...ddArticles, ...pvArticles, ...ilArticles]) {
-      if (!seen.has(art)) {
-        seen.add(art);
-        articles.push(art);
-      }
-    }
-  }
-
-  if (articles.length > 0) {
-    logger.debug(`[HybridSearch] Keyword matches (${version}): ${articles.slice(0, 5).join(', ')}`);
-  }
-
-  return articles;
-}
-
-/**
- * Normalise le numéro d'article pour la recherche dans Qdrant
+ * Normalise le numéro d'article pour la recherche
  */
 function normalizeArticleNumber(numero: string): string {
-  // Retire "Art. " si présent
   return numero.replace(/^Art\.\s*/i, '');
 }
 
@@ -689,15 +56,14 @@ function normalizeArticleNumber(numero: string): string {
  */
 async function searchByArticleNumbers(
   articleNumbers: string[],
-  collectionName: string = DEFAULT_COLLECTION,
-  version: CGIVersion = '2025'
+  collectionName: string,
+  version: CGIVersion
 ): Promise<SearchResult[]> {
   if (articleNumbers.length === 0) return [];
 
   const results: SearchResult[] = [];
   const seenNumeros = new Set<string>();
 
-  // Limiter à 5 premiers articles keyword (les plus pertinents)
   for (const numero of articleNumbers.slice(0, 5)) {
     const normalizedNum = normalizeArticleNumber(numero);
 
@@ -728,43 +94,19 @@ async function searchByArticleNumbers(
           tome: rawPayload.tome ? String(rawPayload.tome) : undefined,
           chapitre: rawPayload.chapitre ? String(rawPayload.chapitre) : undefined,
         };
-        const payloadNumero = payload.numero;
 
-        // Utiliser les metadonnees selon la version
-        let articleType: string | undefined;
-        let priority = 2;
-
-        if (version === '2026') {
-          // Pour 2026, chercher dans IS puis IBA
-          const metadataIS = getArticleMetadata2026(`Art. ${payloadNumero}`) || getArticleMetadata2026(payloadNumero);
-          const metadataIBA = getArticleMetadataIBA2026(`Art. ${payloadNumero}`) || getArticleMetadataIBA2026(payloadNumero);
-          const metadata = metadataIS || metadataIBA;
-          priority = metadata?.priority || 2;
-          articleType = metadata?.themes?.[0];
-        } else {
-          // Pour 2025, chercher dans IRPP, IS, DC, TD, DD, PV puis IL
-          const metadataIRPP = getArticleMetadata(`Art. ${payloadNumero}`) || getArticleMetadata(payloadNumero);
-          const metadataIS = getArticleMetadataIS(`Art. ${payloadNumero}`) || getArticleMetadataIS(payloadNumero);
-          const metadataDC = getArticleMetadataDC(`Art. ${payloadNumero}`) || getArticleMetadataDC(payloadNumero);
-          const metadataTD = getArticleMetadataTD(`Art. ${payloadNumero}`) || getArticleMetadataTD(payloadNumero);
-          const metadataDD = getArticleMetadataDD(`Art. ${payloadNumero}`) || getArticleMetadataDD(payloadNumero);
-          const metadataPV = getArticleMetadataPV(`Art. ${payloadNumero}`) || getArticleMetadataPV(payloadNumero);
-          const metadataIL = getArticleMetadataIL(`Art. ${payloadNumero}`) || getArticleMetadataIL(payloadNumero);
-          const metadata = metadataIRPP || metadataIS || metadataDC || metadataTD || metadataDD || metadataPV || metadataIL;
-          priority = metadata?.priority || 2;
-          articleType = metadataIRPP?.type || metadataIS?.themes?.[0] || metadataDC?.themes?.[0] || metadataTD?.themes?.[0] || metadataDD?.themes?.[0] || metadataPV?.themes?.[0] || metadataIL?.themes?.[0];
-        }
+        const metadata = getMetadataForArticle(payload.numero, version);
 
         results.push({
           id: point.id,
-          score: 1.0, // Score maximum pour keyword match
+          score: 1.0,
           payload,
           matchType: 'keyword',
-          priority,
-          articleType,
+          priority: metadata.priority,
+          articleType: metadata.articleType,
         });
 
-        logger.debug(`[HybridSearch] Art. ${payloadNumero} trouvé (P${priority})`);
+        logger.debug(`[HybridSearch] Art. ${payload.numero} trouvé (P${metadata.priority})`);
       }
     } catch (error) {
       logger.error(`[HybridSearch] Erreur recherche article ${numero}:`, error);
@@ -780,8 +122,8 @@ async function searchByArticleNumbers(
 async function searchByVector(
   query: string,
   limit: number,
-  collectionName: string = DEFAULT_COLLECTION,
-  version: CGIVersion = '2025'
+  collectionName: string,
+  version: CGIVersion
 ): Promise<SearchResult[]> {
   try {
     const { embedding } = await generateEmbedding(query);
@@ -802,40 +144,16 @@ async function searchByVector(
         tome: rawPayload.tome ? String(rawPayload.tome) : undefined,
         chapitre: rawPayload.chapitre ? String(rawPayload.chapitre) : undefined,
       };
-      const payloadNumero = payload.numero;
 
-      // Utiliser les metadonnees selon la version
-      let articleType: string | undefined;
-      let priority = 2;
-
-      if (version === '2026') {
-        // Pour 2026, chercher dans IS puis IBA
-        const metadataIS = getArticleMetadata2026(`Art. ${payloadNumero}`) || getArticleMetadata2026(payloadNumero);
-        const metadataIBA = getArticleMetadataIBA2026(`Art. ${payloadNumero}`) || getArticleMetadataIBA2026(payloadNumero);
-        const metadata = metadataIS || metadataIBA;
-        priority = metadata?.priority || 2;
-        articleType = metadata?.themes?.[0];
-      } else {
-        // Pour 2025, chercher dans IRPP, IS, DC, TD, DD, PV puis IL
-        const metadataIRPP = getArticleMetadata(`Art. ${payloadNumero}`) || getArticleMetadata(payloadNumero);
-        const metadataIS = getArticleMetadataIS(`Art. ${payloadNumero}`) || getArticleMetadataIS(payloadNumero);
-        const metadataDC = getArticleMetadataDC(`Art. ${payloadNumero}`) || getArticleMetadataDC(payloadNumero);
-        const metadataTD = getArticleMetadataTD(`Art. ${payloadNumero}`) || getArticleMetadataTD(payloadNumero);
-        const metadataDD = getArticleMetadataDD(`Art. ${payloadNumero}`) || getArticleMetadataDD(payloadNumero);
-        const metadataPV = getArticleMetadataPV(`Art. ${payloadNumero}`) || getArticleMetadataPV(payloadNumero);
-        const metadataIL = getArticleMetadataIL(`Art. ${payloadNumero}`) || getArticleMetadataIL(payloadNumero);
-        const metadata = metadataIRPP || metadataIS || metadataDC || metadataTD || metadataDD || metadataPV || metadataIL;
-        priority = metadata?.priority || 2;
-        articleType = metadataIRPP?.type || metadataIS?.themes?.[0] || metadataDC?.themes?.[0] || metadataTD?.themes?.[0] || metadataDD?.themes?.[0] || metadataPV?.themes?.[0] || metadataIL?.themes?.[0];
-      }
+      const metadata = getMetadataForArticle(payload.numero, version);
 
       return {
         id: result.id,
         score: result.score,
         payload,
         matchType: 'vector' as const,
-        priority,
-        articleType,
+        priority: metadata.priority,
+        articleType: metadata.articleType,
       };
     });
   } catch (error) {
@@ -846,11 +164,6 @@ async function searchByVector(
 
 /**
  * Fusionne les résultats avec priorisation intelligente
- *
- * RÈGLES DE PRIORISATION :
- * 1. Priority 1 avant 2 avant 3
- * 2. Type 'définition' avant 'application'
- * 3. Keyword matches avant vector matches (à priorité égale)
  */
 function mergeResults(
   keywordResults: SearchResult[],
@@ -860,7 +173,7 @@ function mergeResults(
   const seen = new Set<string>();
   const merged: SearchResult[] = [];
 
-  // 1. Ajouter les résultats keyword (déjà triés par pertinence)
+  // Ajouter les résultats keyword
   for (const result of keywordResults) {
     const key = result.payload.numero;
     if (!seen.has(key)) {
@@ -869,14 +182,13 @@ function mergeResults(
     }
   }
 
-  // 2. Ajouter les résultats vectoriels non dupliqués
+  // Ajouter les résultats vectoriels non dupliqués
   for (const result of vectorResults) {
     const key = result.payload.numero;
     if (!seen.has(key)) {
       seen.add(key);
       merged.push(result);
     } else {
-      // Marquer comme match hybride si trouvé par les deux méthodes
       const existing = merged.find((r) => r.payload.numero === key);
       if (existing && existing.matchType === 'keyword') {
         existing.matchType = 'both';
@@ -885,30 +197,22 @@ function mergeResults(
     }
   }
 
-  // 3. Trier par priorité et type
-  merged.sort((a, b) => {
-    // D'abord par priorité (1 avant 2 avant 3)
-    if (a.priority !== b.priority) {
-      return a.priority - b.priority;
-    }
+  // Trier par priorité et type
+  const typeOrder: Record<string, number> = {
+    'définition': 0,
+    'calcul': 1,
+    'exonération': 1,
+    'procédure': 2,
+    'application': 3,
+    'sanction': 4
+  };
+  const matchOrder: Record<string, number> = { 'keyword': 0, 'both': 0, 'vector': 1 };
 
-    // Ensuite : définition avant application
-    const typeOrder: Record<string, number> = {
-      'définition': 0,
-      'calcul': 1,
-      'exonération': 1,
-      'procédure': 2,
-      'application': 3,
-      'sanction': 4
-    };
+  merged.sort((a, b) => {
+    if (a.priority !== b.priority) return a.priority - b.priority;
     const typeA = typeOrder[a.articleType || ''] ?? 5;
     const typeB = typeOrder[b.articleType || ''] ?? 5;
-    if (typeA !== typeB) {
-      return typeA - typeB;
-    }
-
-    // Enfin : keyword/both avant vector seul
-    const matchOrder: Record<string, number> = { 'keyword': 0, 'both': 0, 'vector': 1 };
+    if (typeA !== typeB) return typeA - typeB;
     return (matchOrder[a.matchType] ?? 1) - (matchOrder[b.matchType] ?? 1);
   });
 
@@ -916,76 +220,48 @@ function mergeResults(
 }
 
 /**
- * Règles de priorité spéciales pour certaines combinaisons de mots-clés
- * Ces règles forcent certains articles en première position
+ * Règles de priorité spéciales
  */
 function applyPriorityRules(query: string, results: SearchResult[]): SearchResult[] {
   const queryLower = query.toLowerCase();
 
-  // RÈGLE 1: Bons de caisse + précompte/déclarer → Art. 61 PRIORITAIRE
-  const isBonsCaisseQuery =
-    (queryLower.includes('bons') && queryLower.includes('caisse')) ||
-    queryLower.includes('bons de caisse');
-  const isPrecompteOrDeclarer =
-    queryLower.includes('précompte') ||
-    queryLower.includes('precompte') ||
-    queryLower.includes('déclarer') ||
-    queryLower.includes('declarer') ||
-    queryLower.includes('déclaration') ||
-    queryLower.includes('declaration') ||
-    queryLower.includes('irpp') ||
-    queryLower.includes('libératoire') ||
-    queryLower.includes('liberatoire') ||
-    queryLower.includes('15%');
+  // Bons de caisse + précompte → Art. 61 PRIORITAIRE
+  const isBonsCaisse = queryLower.includes('bons') && queryLower.includes('caisse');
+  const isPrecompte = ['précompte', 'precompte', 'déclarer', 'declarer', 'irpp', 'libératoire', '15%']
+    .some(kw => queryLower.includes(kw));
 
-  if (isBonsCaisseQuery && isPrecompteOrDeclarer) {
-    logger.info('[HybridSearch] PRIORITY RULE: Bons de caisse + précompte → Art. 61 prioritaire');
-
-    // Trouver Art. 61 dans les résultats
-    const art61Index = results.findIndex(r => r.payload.numero === '61');
-    if (art61Index > 0) {
-      // Déplacer Art. 61 en première position
-      const art61 = results[art61Index];
-      art61.priority = 0; // Priorité maximale
-      results.splice(art61Index, 1);
+  if (isBonsCaisse && isPrecompte) {
+    logger.info('[HybridSearch] PRIORITY: Bons de caisse + précompte → Art. 61');
+    const art61Idx = results.findIndex(r => r.payload.numero === '61');
+    if (art61Idx > 0) {
+      const art61 = results[art61Idx];
+      art61.priority = 0;
+      results.splice(art61Idx, 1);
       results.unshift(art61);
-      logger.info('[HybridSearch] Art. 61 moved to first position');
-    } else if (art61Index === -1) {
-      logger.warn('[HybridSearch] Art. 61 not found in results - should be added');
     }
 
-    // Rétrograder Art. 76 s'il est présent (il ne s'applique pas aux précomptes libératoires)
-    const art76Index = results.findIndex(r => r.payload.numero === '76');
-    if (art76Index !== -1 && art76Index < 3) {
-      const art76 = results[art76Index];
-      art76.priority = 5; // Basse priorité
-      // Le déplacer vers la fin
-      results.splice(art76Index, 1);
+    const art76Idx = results.findIndex(r => r.payload.numero === '76');
+    if (art76Idx !== -1 && art76Idx < 3) {
+      const art76 = results[art76Idx];
+      art76.priority = 5;
+      results.splice(art76Idx, 1);
       results.push(art76);
-      logger.info('[HybridSearch] Art. 76 demoted (précompte libératoire exception)');
     }
   }
 
-  // RÈGLE 2: Artiste étranger + concert/spectacle → Art. 49 PRIORITAIRE
-  const isArtisteQuery =
-    queryLower.includes('artiste') &&
-    (queryLower.includes('étranger') || queryLower.includes('etranger') ||
-     queryLower.includes('non résident') || queryLower.includes('non resident'));
-  const isConcertSpectacle =
-    queryLower.includes('concert') ||
-    queryLower.includes('spectacle') ||
-    queryLower.includes('brazzaville');
+  // Artiste étranger → Art. 49 PRIORITAIRE
+  const isArtiste = queryLower.includes('artiste') &&
+    (queryLower.includes('étranger') || queryLower.includes('etranger'));
+  const isConcert = ['concert', 'spectacle', 'brazzaville'].some(kw => queryLower.includes(kw));
 
-  if (isArtisteQuery && isConcertSpectacle) {
-    logger.info('[HybridSearch] PRIORITY RULE: Artiste étranger → Art. 49 prioritaire');
-
-    const art49Index = results.findIndex(r => r.payload.numero === '49');
-    if (art49Index > 0) {
-      const art49 = results[art49Index];
+  if (isArtiste && isConcert) {
+    logger.info('[HybridSearch] PRIORITY: Artiste étranger → Art. 49');
+    const art49Idx = results.findIndex(r => r.payload.numero === '49');
+    if (art49Idx > 0) {
+      const art49 = results[art49Idx];
       art49.priority = 0;
-      results.splice(art49Index, 1);
+      results.splice(art49Idx, 1);
       results.unshift(art49);
-      logger.info('[HybridSearch] Art. 49 moved to first position');
     }
   }
 
@@ -1002,26 +278,22 @@ async function forceArticleFirst(
   version: CGIVersion,
   boost: number
 ): Promise<SearchResult[]> {
-  // Normaliser le numéro
   const normalizedNum = articleNumber.replace(/^Art\.\s*/i, '');
 
-  // Chercher si l'article est déjà dans les résultats
-  const existingIndex = results.findIndex(r => {
+  const existingIdx = results.findIndex(r => {
     const resultNum = r.payload.numero.replace(/^Art\.\s*/i, '');
     return resultNum === normalizedNum;
   });
 
-  if (existingIndex >= 0) {
-    // L'article existe, le déplacer en position 1 avec boost
-    const article = results[existingIndex];
-    article.priority = 0; // Priorité maximale
+  if (existingIdx >= 0) {
+    const article = results[existingIdx];
+    article.priority = 0;
     article.score = article.score * boost;
     article.matchType = 'keyword';
-    results.splice(existingIndex, 1);
+    results.splice(existingIdx, 1);
     results.unshift(article);
     logger.info(`[HybridSearch] FORCED: ${articleNumber} moved to position 1 (boost ${boost}x)`);
   } else {
-    // L'article n'existe pas, le chercher dans Qdrant
     try {
       const searchResults = await searchByArticleNumbers([articleNumber], collectionName, version);
       if (searchResults.length > 0) {
@@ -1042,9 +314,6 @@ async function forceArticleFirst(
 
 /**
  * Recherche hybride : keyword + vectorielle avec priorisation intelligente
- * @param query - La requête utilisateur
- * @param limit - Nombre maximum de résultats
- * @param version - Version du CGI ('2025', '2026', ou 'legacy')
  */
 export async function hybridSearch(
   query: string,
@@ -1052,18 +321,14 @@ export async function hybridSearch(
   version: CGIVersion = '2025'
 ): Promise<SearchResult[]> {
   const collectionName = CGI_COLLECTIONS[version];
-  logger.info(`[HybridSearch] Query: "${query.substring(0, 50)}..." (collection: ${collectionName}, version: ${version})`);
+  logger.info(`[HybridSearch] Query: "${query.substring(0, 50)}..." (collection: ${collectionName})`);
 
-  // ============================================================
-  // ÉTAPE 0: ROUTAGE DIRECT (AVANT TOUTE RECHERCHE)
-  // ============================================================
+  // ÉTAPE 0: ROUTAGE DIRECT
   let forcedArticle: string | null = null;
   let forcedBoost = 3.0;
 
-  // 0a. Vérifier mappings directs
   forcedArticle = checkDirectMappings(query);
 
-  // 0b. Si pas de mapping direct, vérifier règles de routage
   if (!forcedArticle) {
     const routingResult = applyRoutingRules(query);
     if (routingResult) {
@@ -1072,37 +337,27 @@ export async function hybridSearch(
     }
   }
 
-  // ============================================================
   // ÉTAPE 1: RECHERCHE PAR KEYWORDS
-  // ============================================================
   const keywordArticles = extractKeywordMatches(query, version);
   logger.info(`[HybridSearch] Keywords matched: ${keywordArticles.length > 0 ? keywordArticles.slice(0, 5).join(', ') : 'aucun'}`);
 
   const keywordResults = await searchByArticleNumbers(keywordArticles, collectionName, version);
   logger.info(`[HybridSearch] Keyword results: ${keywordResults.length}`);
 
-  // ============================================================
   // ÉTAPE 2: RECHERCHE VECTORIELLE
-  // ============================================================
   const vectorLimit = Math.max(limit, limit - keywordResults.length + 3);
   const vectorResults = await searchByVector(query, vectorLimit, collectionName, version);
   logger.info(`[HybridSearch] Vector results: ${vectorResults.length}`);
 
-  // ============================================================
-  // ÉTAPE 3: FUSION AVEC PRIORISATION
-  // ============================================================
+  // ÉTAPE 3: FUSION
   let merged = mergeResults(keywordResults, vectorResults, limit);
 
-  // ============================================================
-  // ÉTAPE 4: APPLIQUER ROUTAGE FORCÉ (SI DÉFINI)
-  // ============================================================
+  // ÉTAPE 4: ROUTAGE FORCÉ
   if (forcedArticle) {
     merged = await forceArticleFirst(forcedArticle, merged, collectionName, version, forcedBoost);
   }
 
-  // ============================================================
-  // ÉTAPE 5: RÈGLES DE PRIORITÉ LEGACY
-  // ============================================================
+  // ÉTAPE 5: RÈGLES DE PRIORITÉ
   merged = applyPriorityRules(query, merged);
 
   logger.info(

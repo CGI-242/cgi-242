@@ -17,12 +17,15 @@ import bcrypt from 'bcryptjs';
 import { prisma } from '../config/database.js';
 import { createLogger } from '../utils/logger.js';
 import { encryptionService } from './encryption.service.js';
-import crypto from 'crypto';
+import {
+  generateBackupCodes,
+  hashBackupCodes,
+  verifyAndConsumeBackupCode,
+} from './mfa.backup.service.js';
 
 const logger = createLogger('MFAService');
 
 const APP_NAME = 'CGI 242';
-const BACKUP_CODES_COUNT = 10;
 
 interface MFASetupResult {
   secret: string;
@@ -82,7 +85,7 @@ class MFAService {
     });
 
     // Générer les codes de backup
-    const backupCodes = this.generateBackupCodes();
+    const backupCodes = generateBackupCodes();
 
     logger.info(`MFA setup généré pour l'utilisateur ${userId}`);
 
@@ -125,9 +128,7 @@ class MFAService {
     const encryptedSecret = encryptionService.encrypt(secret);
 
     // Hasher les codes de backup
-    const hashedBackupCodes = await Promise.all(
-      backupCodes.map(c => bcrypt.hash(c, 10))
-    );
+    const hashedBackupCodes = await hashBackupCodes(backupCodes);
 
     // Mettre à jour l'utilisateur
     await prisma.user.update({
@@ -175,7 +176,7 @@ class MFAService {
     }
 
     // 2. Essayer avec les codes de backup
-    const backupResult = await this.verifyBackupCode(userId, code, user.mfaBackupCodes);
+    const backupResult = await verifyAndConsumeBackupCode(userId, code, user.mfaBackupCodes);
 
     if (backupResult) {
       logger.info(`MFA vérifié (backup code) pour userId: ${userId}`);
@@ -184,38 +185,6 @@ class MFAService {
 
     logger.warn(`MFA échoué pour userId: ${userId}`);
     return { success: false };
-  }
-
-  /**
-   * Vérifier et consommer un code de backup
-   */
-  private async verifyBackupCode(
-    userId: string,
-    code: string,
-    hashedCodes: string[]
-  ): Promise<boolean> {
-    // Normaliser le code (enlever espaces et tirets)
-    const normalizedCode = code.replace(/[\s-]/g, '').toUpperCase();
-
-    for (let i = 0; i < hashedCodes.length; i++) {
-      const isMatch = await bcrypt.compare(normalizedCode, hashedCodes[i]);
-
-      if (isMatch) {
-        // Retirer le code utilisé
-        const updatedCodes = [...hashedCodes];
-        updatedCodes.splice(i, 1);
-
-        await prisma.user.update({
-          where: { id: userId },
-          data: { mfaBackupCodes: updatedCodes },
-        });
-
-        logger.info(`Backup code utilisé pour userId: ${userId}. Codes restants: ${updatedCodes.length}`);
-        return true;
-      }
-    }
-
-    return false;
   }
 
   /**
@@ -266,12 +235,10 @@ class MFAService {
     }
 
     // Générer nouveaux codes
-    const newBackupCodes = this.generateBackupCodes();
+    const newBackupCodes = generateBackupCodes();
 
     // Hasher et sauvegarder
-    const hashedCodes = await Promise.all(
-      newBackupCodes.map(c => bcrypt.hash(c, 10))
-    );
+    const hashedCodes = await hashBackupCodes(newBackupCodes);
 
     await prisma.user.update({
       where: { id: userId },
@@ -318,21 +285,6 @@ class MFAService {
     };
   }
 
-  /**
-   * Générer des codes de backup aléatoires
-   */
-  private generateBackupCodes(): string[] {
-    const codes: string[] = [];
-
-    for (let i = 0; i < BACKUP_CODES_COUNT; i++) {
-      // Format: XXXX-XXXX (8 caractères alphanumériques)
-      const part1 = crypto.randomBytes(2).toString('hex').toUpperCase();
-      const part2 = crypto.randomBytes(2).toString('hex').toUpperCase();
-      codes.push(`${part1}-${part2}`);
-    }
-
-    return codes;
-  }
 }
 
 export const mfaService = new MFAService();

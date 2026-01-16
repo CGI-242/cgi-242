@@ -1,8 +1,15 @@
+export interface Paragraphe {
+  numero: number;
+  titre: string;
+  articles: string;
+}
+
 export interface SousSectionSommaire {
   sous_section: number | string;
   titre: string;
   articles?: string;
   statut?: string;
+  paragraphes?: Paragraphe[];
 }
 
 export interface Section {

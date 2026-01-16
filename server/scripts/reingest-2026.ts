@@ -1,24 +1,26 @@
-// Script pour réingérer les articles CGI 2026
+// Script pour réingérer les articles CGI (2025 ou 2026)
 import * as fs from 'fs';
 import * as path from 'path';
 import { prisma } from '../src/config/database.js';
 import { ingestFromSource } from '../src/services/rag/ingestion.service.js';
 
-async function main() {
-  console.log('Suppression des articles 2026 existants...');
+// Paramètre: version à ingérer (2025 par défaut)
+const VERSION = process.argv[2] || '2025';
 
-  // Supprimer les articles 2026 existants
+async function main() {
+  console.log(`Suppression des articles ${VERSION} existants...`);
+
+  // Supprimer les articles existants
   const deleted = await prisma.article.deleteMany({
-    where: { version: '2026' }
+    where: { version: VERSION }
   });
   console.log(`${deleted.count} articles supprimés`);
 
-  // Charger les fichiers JSON 2026
-  const dataDir = './data/cgi/2026';
-  // Note: Les fichiers sont maintenant nommés tome1-livre1-chapitreX.json
-  const files = fs.readdirSync(dataDir).filter(f => f.endsWith('.json'));
+  // Charger les fichiers JSON
+  const dataDir = `./data/cgi/${VERSION}`;
+  const files = fs.readdirSync(dataDir).filter(f => f.endsWith('.json') && !f.includes('corrections'));
 
-  console.log(`\nIngestion de ${files.length} fichiers...`);
+  console.log(`\nIngestion de ${files.length} fichiers CGI ${VERSION}...`);
 
   for (const file of files) {
     const filePath = path.join(dataDir, file);
@@ -31,8 +33,8 @@ async function main() {
   }
 
   // Vérifier le résultat
-  const count = await prisma.article.count({ where: { version: '2026' } });
-  console.log(`\nTotal articles 2026 en base: ${count}`);
+  const count = await prisma.article.count({ where: { version: VERSION } });
+  console.log(`\nTotal articles ${VERSION} en base: ${count}`);
 
   await prisma.$disconnect();
 }

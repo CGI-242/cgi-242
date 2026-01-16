@@ -24,45 +24,63 @@ const LATIN_SUFFIX_ORDER: Record<string, number> = {
 };
 
 /**
- * Calcule l'ordre d'un suffixe (latin ou lettre)
+ * Parse un suffixe composé (ex: "A bis", "B ter") et retourne un tuple [lettre, latin]
+ * - lettre: 0 si pas de lettre, sinon A=1, B=2, etc.
+ * - latin: 0 si pas de suffixe latin, sinon bis=1, ter=2, etc.
  */
-function getSuffixOrder(suffixStr: string): number {
-  const suffix = suffixStr.toLowerCase().trim().replace(/^-/, '');
+function parseSuffix(suffixStr: string): { letter: number; latin: number } {
+  // Retirer les annotations comme "(L.F. 2025)" avant de traiter le suffixe
+  const cleanedSuffix = suffixStr.replace(/\s*\([^)]*\)\s*/g, '');
+  const suffix = cleanedSuffix.toLowerCase().trim().replace(/^-/, '');
 
-  // Vérifier si c'est un suffixe latin
-  if (LATIN_SUFFIX_ORDER[suffix] !== undefined) {
-    return LATIN_SUFFIX_ORDER[suffix];
+  if (!suffix) {
+    return { letter: 0, latin: 0 };
   }
 
-  // Vérifier si c'est une lettre seule (A, B, C...) - ordre alphabétique après les suffixes latins
-  if (/^[a-z]$/.test(suffix)) {
-    return 100 + suffix.charCodeAt(0) - 97; // A=100, B=101, etc.
+  // Regex pour parser "A", "A bis", "bis", etc.
+  const match = suffix.match(/^([a-z])?\s*(bis|ter|quater|quinquies|sexies|septies|octies|nonies|decies|undecies|duodecies)?$/);
+
+  if (!match) {
+    // Suffixe non reconnu, le mettre à la fin
+    return { letter: 999, latin: 999 };
   }
 
-  return 999;
+  const letterPart = match[1];
+  const latinPart = match[2];
+
+  const letter = letterPart ? (letterPart.charCodeAt(0) - 96) : 0; // a=1, b=2, etc.
+  const latin = latinPart ? (LATIN_SUFFIX_ORDER[latinPart] ?? 0) : 0;
+
+  return { letter, latin };
 }
 
 /**
  * Trie les articles par numéro avec gestion des suffixes latins et lettres
- * Ex: 31, 31 bis, 31 ter, ... 31 nonies, 36-A, 36-B
+ * Ordre: 111, 111 bis, 111 ter, 111-A, 111-A bis, 111-A ter, 111-B, 111-B bis, etc.
  */
 function sortArticlesByNumero<T extends { numero: string }>(articles: T[]): T[] {
   return articles.sort((a, b) => {
     const parseNumero = (num: string) => {
       const match = num.match(/^(\d+)\s*[-]?\s*(.*)$/);
-      if (!match) return { base: 0, suffix: 0 };
+      if (!match) return { base: 0, letter: 0, latin: 0 };
       const base = parseInt(match[1], 10);
-      const suffix = getSuffixOrder(match[2]);
-      return { base, suffix };
+      const { letter, latin } = parseSuffix(match[2]);
+      return { base, letter, latin };
     };
 
     const numA = parseNumero(a.numero);
     const numB = parseNumero(b.numero);
 
+    // Comparer d'abord le numéro de base
     if (numA.base !== numB.base) {
       return numA.base - numB.base;
     }
-    return numA.suffix - numB.suffix;
+    // Puis la lettre (A, B, C...)
+    if (numA.letter !== numB.letter) {
+      return numA.letter - numB.letter;
+    }
+    // Enfin le suffixe latin (bis, ter...)
+    return numA.latin - numB.latin;
   });
 }
 

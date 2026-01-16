@@ -140,9 +140,14 @@ export class AuthService {
   }
 
   /**
-   * Renvoyer l'email de vérification
+   * Renvoyer l'email de vérification (authentifié)
    */
-  resendVerificationEmail(): Observable<ApiResponse<null>> {
+  resendVerificationEmail(email?: string): Observable<ApiResponse<null>> {
+    // Si email fourni, utiliser la route publique
+    if (email) {
+      return this.api.post<null>('/auth/resend-verification-public', { email });
+    }
+    // Sinon, utiliser la route authentifiée
     return this.api.post<null>('/auth/resend-verification', {});
   }
 

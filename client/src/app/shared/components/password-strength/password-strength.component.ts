@@ -53,7 +53,7 @@ export interface PasswordStrength {
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
               }
             </svg>
-            <span>Au moins 8 caractères</span>
+            <span>Au moins 12 caractères</span>
           </div>
 
           <div class="flex items-center gap-2 text-xs" [class.text-green-600]="strength().checks.uppercase" [class.text-gray-400]="!strength().checks.uppercase">
@@ -112,14 +112,15 @@ export class PasswordStrengthComponent {
     const pwd = this.password();
 
     const checks = {
-      length: pwd.length >= 8,
+      length: pwd.length >= 12,
       uppercase: /[A-Z]/.test(pwd),
       lowercase: /[a-z]/.test(pwd),
       number: /[0-9]/.test(pwd),
       special: /[!@#$%^&*(),.?":{}|<>]/.test(pwd),
     };
 
-    const score = Object.values(checks).filter(Boolean).length;
+    // Cap score at 4 (max level)
+    const score = Math.min(Object.values(checks).filter(Boolean).length, 4);
 
     const levels: Record<number, { label: string; color: string }> = {
       0: { label: 'Très faible', color: '#ef4444' },

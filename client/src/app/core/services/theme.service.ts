@@ -27,7 +27,7 @@ export class ThemeService {
       effect(() => {
         const pref = this.themePreference();
         this.applyTheme(pref);
-      });
+      }, { allowSignalWrites: true });
     }
   }
 
