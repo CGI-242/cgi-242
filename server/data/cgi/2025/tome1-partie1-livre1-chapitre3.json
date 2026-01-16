@@ -1199,10 +1199,9 @@
     },
     {
       "article": "Art. 117",
-      "titre": "Évaluation des stocks",
+      "titre": "Sous-section 6. Règles d'évaluation des stocks et des travaux : Évaluation des stocks",
       "texte": [
-        "Les stocks et les productions en cours sont évalués unité par unité ou catégorie par catégorie.",
-        "L'unité d'inventaire est la plus petite partie qui peut être inventoriée sous chaque article.",
+        "1) Les stocks et les productions en cours sont évalués unité par unité ou catégorie par catégorie. L'unité d'inventaire est la plus petite partie qui peut être inventoriée sous chaque article.",
         "2) À la sortie du stock ou à l'inventaire :",
         "• les biens matériellement identifiés et individualisés ainsi que ceux qui ne sont pas interchangeables, sont évalués article par article à leur coût d'entrée ;",
         "• les biens interchangeables non identifiables après leur entrée en stock sont évalués soit en considérant que le premier bien entré est le premier bien sorti (PEPS), soit à leur coût moyen pondéré d'achat ou de production.",
@@ -1239,14 +1238,13 @@
     },
     {
       "article": "Art. 118",
-      "titre": "Plus-values à réinvestir",
+      "titre": "Sous-section 7. Régime des plus-values ou moins-values : Plus-values à réinvestir",
       "texte": [
         "Par dérogation aux dispositions du premier alinéa de l'article 109-A ci-dessus, les plus-values provenant de la cession en cours d'exploitation des éléments de l'actif immobilisé ne sont pas comprises dans le bénéfice imposable de l'exercice au cours duquel elles ont été réalisées, si le contribuable les porte à un compte spécial « plus-values à réinvestir » et prend l'engagement de réinvestir en immobilisations nouvelles dans son entreprise, avant l'expiration d'un délai de 3 ans à partir de la clôture de cet exercice, une somme égale au montant de ces plus-values ajoutées au prix de revient des éléments cédés.",
         "Cet engagement doit être annexé à la déclaration des résultats de l'exercice au cours duquel les plus-values ont été réalisées.",
         "Toutefois, le remploi ainsi prévu ne peut pas être effectué en l'achat ou la souscription d'actions de sociétés ou de titres de participation.",
         "Pour l'application de l'alinéa 1 ci-dessus, les valeurs constituant le portefeuille ne sont considérées comme faisant partie de l'actif immobilisé que si elles sont entrées dans le patrimoine de l'entreprise trois ans au moins avant la date de cession.",
-        "Si le remploi est effectué dans le délai prévu, les plus-values distraites du bénéfice imposable sont affectées à l'amortissement des nouvelles immobilisations et viennent en déduction du prix de revient pour le calcul des amortissements et des plus-values réalisées ultérieurement.",
-        "Dans le cas contraire, elles sont rapportées au bénéfice imposable de l'exercice de cession ou de cessation d'activité."
+        "Si le remploi est effectué dans le délai prévu, les plus-values distraites du bénéfice imposable sont affectées à l'amortissement des nouvelles immobilisations et viennent en déduction du prix de revient pour le calcul des amortissements et des plus-values réalisées ultérieurement. Dans le cas contraire, elles sont rapportées au bénéfice imposable de l'exercice de cession ou de cessation d'activité."
       ],
       "mots_cles": [
         "plus-values",
@@ -1361,8 +1359,7 @@
       "article": "Art. 118-F",
       "titre": "Sociétés pétrolières - cession de droits",
       "texte": [
-        "En ce qui concerne les sociétés pétrolières, tout membre du contracteur qui cède tout ou partie de ses droits et obligations découlant d'un contrat de partage de production fait assujetti au paiement d'une taxe forfaitaire égale à 10 % en cas de plus-value réalisée à cette cession.",
-        "La plus-value est la différence entre le prix de cession obtenu par le cédant et le montant total des coûts restant à récupérer par le membre du contracteur cessionnaire."
+        "En ce qui concerne les sociétés pétrolières, tout membre du contracteur qui cède tout ou partie de ses droits et obligations découlant d'un contrat de partage de production fait assujetti au paiement d'une taxe forfaitaire égale à 10 % en cas de plus-value réalisée à cette cession. La plus-value est la différence entre le prix de cession obtenu par le cédant et le montant total des coûts restant à récupérer par le membre du contracteur cessionnaire."
       ],
       "mots_cles": [
         "sociétés pétrolières",
@@ -1391,7 +1388,7 @@
       "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 10 : Report déficitaire"
     },
     {
-      "article": "Art. 120",
+      "article": "Art. 120 (L.F. 2023)",
       "titre": "Prix de transfert",
       "texte": [
         "Pour l'établissement de l'impôt sur les sociétés dû par les entreprises qui sont sous la dépendance ou qui possèdent le contrôle d'entreprises situées hors du Congo, les bénéfices indirectement transférés à ces dernières soit par voie de majoration ou de minoration des prix d'achat ou de vente, soit par tout autre moyen, sont incorporés aux résultats accusés par les comptabilités.",
@@ -1421,8 +1418,7 @@
       "titre": "Vérification de la comptabilité",
       "texte": [
         "Les agents de l'administration des impôts vérifient sur place, en suivant les règles prévues par le présent Code, la comptabilité des contribuables astreints à tenir et à présenter des documents comptables.",
-        "Lorsque la comptabilité est tenue au moyen de systèmes informatisés, le contrôle porte sur l'ensemble des informations, données et traitements informatiques qui concourent directement ou indirectement à la formation des résultats comptables ou fiscaux et à l'élaboration des déclarations rendues obligatoires par le Code général des impôts.",
-        "Ce contrôle porte également sur la documentation relative aux analyses, à la programmation et à l'exécution des traitements."
+        "Lorsque la comptabilité est tenue au moyen de systèmes informatisés, le contrôle porte sur l'ensemble des informations, données et traitements informatiques qui concourent directement ou indirectement à la formation des résultats comptables ou fiscaux et à l'élaboration des déclarations rendues obligatoires par le Code général des impôts. Ce contrôle porte également sur la documentation relative aux analyses, à la programmation et à l'exécution des traitements."
       ],
       "mots_cles": [
         "vérification",
@@ -1438,8 +1434,7 @@
       "article": "Art. 120-B",
       "titre": "Informations sur prestations confidentielles",
       "texte": [
-        "Les agents de l'administration des impôts peuvent demander toutes les informations relatives au montant, à la date et à la forme des versements afférents aux recettes de toute nature perçues par les personnes dépositaires du secret professionnel.",
-        "Ils peuvent demander des renseignements sur la nature des prestations fournies par ces personnes."
+        "Les agents de l'administration des impôts peuvent demander toutes les informations relatives au montant, à la date et à la forme des versements afférents aux recettes de toute nature perçues par les personnes dépositaires du secret professionnel. Ils peuvent demander des renseignements sur la nature des prestations fournies par ces personnes."
       ],
       "mots_cles": [
         "secret professionnel",
