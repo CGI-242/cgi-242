@@ -24,8 +24,6 @@ export const CGI_COLLECTIONS = {
 
 export type CGIVersion = keyof typeof CGI_COLLECTIONS;
 
-const DEFAULT_COLLECTION = CGI_COLLECTION;
-
 export interface ArticlePayload {
   numero: string;
   titre: string;

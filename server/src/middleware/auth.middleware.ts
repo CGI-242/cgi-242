@@ -7,10 +7,7 @@ import { ERROR_MESSAGES } from '../utils/constants.js';
 import { AuthUser } from '../types/express.js';
 import { createLogger } from '../utils/logger.js';
 import { tokenBlacklistService } from '../services/tokenBlacklist.service.js';
-import {
-  extractToken,
-  ACCESS_TOKEN_COOKIE,
-} from './auth.tokens.js';
+import { extractToken } from './auth.tokens.js';
 
 // Ré-exporter les fonctions de tokens depuis le module dédié
 export {

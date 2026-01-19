@@ -14,7 +14,7 @@ const logger = createLogger('AuthEmailService');
 /**
  * Vérifier l'email d'un utilisateur
  */
-export async function verifyEmail(token: string, emailService: EmailService): Promise<void> {
+export async function verifyEmail(token: string, _emailService: EmailService): Promise<void> {
   const user = await prisma.user.findFirst({
     where: { emailVerifyToken: token },
   });

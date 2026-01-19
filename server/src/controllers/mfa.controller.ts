@@ -9,7 +9,8 @@ import { prisma } from '../config/database.js';
 import { AuditAction } from '@prisma/client';
 
 // Ré-exporter verifyMFA depuis le module dédié
-export { verifyMFA } from './mfa.verify.controller.js';
+import { verifyMFA } from './mfa.verify.controller.js';
+export { verifyMFA };
 
 const logger = createLogger('MFAController');
 
@@ -156,4 +157,4 @@ export const regenerateBackupCodes = async (req: Request, res: Response): Promis
   }
 };
 
-export default { getMFAStatus, setupMFA, enableMFA, verifyMFA: () => {}, disableMFA, regenerateBackupCodes };
+export default { getMFAStatus, setupMFA, enableMFA, verifyMFA, disableMFA, regenerateBackupCodes };

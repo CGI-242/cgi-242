@@ -90,6 +90,11 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session): Promis
     return;
   }
 
+  if (!stripe) {
+    logger.error('Stripe non configuré dans handleCheckoutCompleted');
+    return;
+  }
+
   const stripeSubscription = await stripe.subscriptions.retrieve(
     session.subscription as string
   );
