@@ -77,7 +77,7 @@ export const CGI_TOME_1: Tome = {
                     { sous_section: 6, titre: 'Évaluation stocks et travaux', articles: '117-117-A' },
                     { sous_section: 7, titre: 'Plus-values et moins-values', articles: '118-118-F' },
                     { sous_section: 8, titre: 'Report déficitaire', articles: '119' },
-                    { sous_section: 9, titre: 'Prix de transfert', articles: '120-120-I' },
+                    { sous_section: 9, titre: 'Prix de transferts', articles: '120-120-I' },
                   ]
                 },
                 {
@@ -86,10 +86,10 @@ export const CGI_TOME_1: Tome = {
                   page: 58,
                   articles: '121-124-C',
                   sous_sections: [
-                    { sous_section: 1, titre: 'Taux de l\'impôt', articles: '121-122-B' },
+                    { sous_section: 1, titre: 'Période de l\'imposition', articles: '121-122-B' },
                     { sous_section: 2, titre: 'Calcul de l\'impôt', articles: '122' },
                     { sous_section: 3, titre: 'Établissement de l\'impôt', articles: '123-123-A' },
-                    { sous_section: 4, titre: 'Obligations déclaratives', articles: '124-124-C' },
+                    { sous_section: 4, titre: 'Obligations des personnes morales', articles: '124-124-C' },
                   ]
                 },
                 {

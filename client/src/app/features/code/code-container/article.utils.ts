@@ -135,7 +135,8 @@ export function getSousSectionHeader(
     const ssMatch = ss.articles.match(/^(\d+)/);
     if (ssMatch) {
       const ssStart = ssMatch[1];
-      if (normalizedNumero === ssStart) {
+      // Match exact ou avec suffixe (L.F. xxxx)
+      if (normalizedNumero === ssStart || normalizedNumero.startsWith(ssStart + '(')) {
         return ss.titre;
       }
     }
