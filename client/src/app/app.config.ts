@@ -9,6 +9,9 @@ import { tenantInterceptor } from './core/interceptors/tenant.interceptor';
 import { errorInterceptor } from './core/interceptors/error.interceptor';
 import { csrfInterceptor } from './core/interceptors/csrf.interceptor';
 import { AuthService } from './core/services/auth.service';
+// Chart.js registration - ng2-charts handles this internally via NgChartsModule
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 
 /**
  * Valide la session utilisateur au démarrage de l'application

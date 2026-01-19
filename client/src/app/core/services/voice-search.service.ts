@@ -1,98 +1,46 @@
 import { inject, Injectable, NgZone } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { LoggerService } from './logger.service';
+import {
+  VoiceState,
+  VoiceResult,
+  VoiceError,
+  IWebSpeechRecognition,
+  SpeechRecognitionEventResult,
+  SpeechRecognitionErrorResult,
+  SpeakOptions,
+  SPEECH_RECOGNITION_ERROR_MESSAGES,
+  DEFAULT_VOICE_STATE,
+} from './voice-search.types';
+import {
+  getSpeechRecognitionAPI,
+  checkRecognitionSupport,
+  checkSynthesisSupport,
+  findFrenchVoice,
+  findVoiceByName,
+  requestMicPermission,
+} from './voice-search.utils';
 
-// ============================================
-// INTERFACES
-// ============================================
-
-export interface VoiceState {
-  isListening: boolean;
-  isSpeaking: boolean;
-  isProcessing: boolean;
-  isSupported: boolean;
-}
-
-export interface VoiceResult {
-  transcript: string;
-  isFinal: boolean;
-  confidence: number;
-}
-
-export interface VoiceError {
-  code: string;
-  message: string;
-}
-
-// Types pour Web Speech API (non inclus dans TypeScript par défaut)
-interface SpeechRecognitionResult {
-  readonly isFinal: boolean;
-  readonly length: number;
-  item(index: number): SpeechRecognitionAlternative;
-  [index: number]: SpeechRecognitionAlternative;
-}
-
-interface SpeechRecognitionAlternative {
-  readonly transcript: string;
-  readonly confidence: number;
-}
-
-interface SpeechRecognitionResultList {
-  readonly length: number;
-  item(index: number): SpeechRecognitionResult;
-  [index: number]: SpeechRecognitionResult;
-}
-
-interface SpeechRecognitionEventResult {
-  readonly resultIndex: number;
-  readonly results: SpeechRecognitionResultList;
-}
-
-interface SpeechRecognitionErrorResult {
-  readonly error: string;
-  readonly message: string;
-}
-
-interface IWebSpeechRecognition {
-  continuous: boolean;
-  interimResults: boolean;
-  lang: string;
-  maxAlternatives: number;
-  onstart: (() => void) | null;
-  onend: (() => void) | null;
-  onresult: ((event: SpeechRecognitionEventResult) => void) | null;
-  onerror: ((event: SpeechRecognitionErrorResult) => void) | null;
-  start(): void;
-  stop(): void;
-  abort(): void;
-}
-
-// ============================================
-// SERVICE
-// ============================================
+// Re-export types for consumers
+export { VoiceState, VoiceResult, VoiceError, SpeakOptions } from './voice-search.types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class VoiceSearchService {
-  // États observables
-  private stateSubject = new BehaviorSubject<VoiceState>({
-    isListening: false,
-    isSpeaking: false,
-    isProcessing: false,
-    isSupported: true,
-  });
-
+  // Observable states
+  private stateSubject = new BehaviorSubject<VoiceState>(DEFAULT_VOICE_STATE);
   private transcriptSubject = new BehaviorSubject<string>('');
   private resultSubject = new Subject<VoiceResult>();
   private errorSubject = new Subject<VoiceError>();
 
-  // Observables publics
+  // Public observables
   public state$: Observable<VoiceState> = this.stateSubject.asObservable();
   public transcript$: Observable<string> = this.transcriptSubject.asObservable();
   public result$: Observable<VoiceResult> = this.resultSubject.asObservable();
   public error$: Observable<VoiceError> = this.errorSubject.asObservable();
 
-  // Instances Web Speech API
+  // Web Speech API instances
   private recognition: IWebSpeechRecognition | null = null;
   private synthesis: SpeechSynthesis | null = null;
   private utterance: SpeechSynthesisUtterance | null = null;
@@ -101,6 +49,7 @@ export class VoiceSearchService {
   private language = 'fr-FR';
   private voiceName = '';
   private ngZone = inject(NgZone);
+  private logger = inject(LoggerService);
 
   constructor() {
     this.initializeSpeechRecognition();
@@ -108,17 +57,15 @@ export class VoiceSearchService {
   }
 
   // ============================================
-  // INITIALISATION
+  // INITIALIZATION
   // ============================================
 
   private initializeSpeechRecognition(): void {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const windowWithSpeech = window as any;
-    const SpeechRecognitionAPI = windowWithSpeech.SpeechRecognition || windowWithSpeech.webkitSpeechRecognition;
+    const SpeechRecognitionAPI = getSpeechRecognitionAPI();
 
     if (!SpeechRecognitionAPI) {
       this.updateState({ isSupported: false });
-      console.warn('Web Speech API non supportée');
+      this.logger.warn('Web Speech API non supportee', 'VoiceSearchService');
       return;
     }
 
@@ -128,7 +75,12 @@ export class VoiceSearchService {
     this.recognition.lang = this.language;
     this.recognition.maxAlternatives = 1;
 
-    // Événements
+    this.setupRecognitionEventHandlers();
+  }
+
+  private setupRecognitionEventHandlers(): void {
+    if (!this.recognition) return;
+
     this.recognition.onstart = () => {
       this.ngZone.run(() => {
         this.updateState({ isListening: true });
@@ -150,41 +102,25 @@ export class VoiceSearchService {
         const confidence = result[0].confidence;
 
         this.transcriptSubject.next(transcript);
-
-        this.resultSubject.next({
-          transcript,
-          isFinal: result.isFinal,
-          confidence,
-        });
+        this.resultSubject.next({ transcript, isFinal: result.isFinal, confidence });
       });
     };
 
     this.recognition.onerror = (event: SpeechRecognitionErrorResult) => {
       this.ngZone.run(() => {
         this.updateState({ isListening: false });
-
-        const errorMessages: Record<string, string> = {
-          'no-speech': 'Aucune voix détectée. Veuillez réessayer.',
-          'audio-capture': 'Microphone non disponible. Vérifiez vos permissions.',
-          'not-allowed': "Accès au microphone refusé. Autorisez l'accès dans les paramètres.",
-          network: 'Erreur réseau. Vérifiez votre connexion.',
-          aborted: 'Reconnaissance annulée.',
-          'language-not-supported': 'Langue non supportée.',
-        };
-
         this.errorSubject.next({
           code: event.error,
-          message: errorMessages[event.error] || `Erreur: ${event.error}`,
+          message: SPEECH_RECOGNITION_ERROR_MESSAGES[event.error] || `Erreur: ${event.error}`,
         });
       });
     };
   }
 
   private initializeSpeechSynthesis(): void {
-    if ('speechSynthesis' in window) {
+    if (checkSynthesisSupport()) {
       this.synthesis = window.speechSynthesis;
 
-      // Charger les voix (peut être asynchrone)
       if (this.synthesis.onvoiceschanged !== undefined) {
         this.synthesis.onvoiceschanged = () => this.loadVoices();
       }
@@ -196,9 +132,7 @@ export class VoiceSearchService {
     if (!this.synthesis) return;
 
     const voices = this.synthesis.getVoices();
-    // Chercher une voix française
-    const frenchVoice =
-      voices.find((v) => v.lang.startsWith('fr') && v.localService) || voices.find((v) => v.lang.startsWith('fr'));
+    const frenchVoice = findFrenchVoice(voices);
 
     if (frenchVoice) {
       this.voiceName = frenchVoice.name;
@@ -211,44 +145,36 @@ export class VoiceSearchService {
   }
 
   // ============================================
-  // MÉTHODES PUBLIQUES - RECONNAISSANCE
+  // PUBLIC METHODS - RECOGNITION
   // ============================================
 
-  /**
-   * Démarre l'écoute vocale
-   */
+  /** Starts voice listening */
   startListening(): void {
     if (!this.recognition) {
       this.errorSubject.next({
         code: 'not-supported',
-        message: "La reconnaissance vocale n'est pas supportée par votre navigateur.",
+        message: "La reconnaissance vocale n'est pas supportee par votre navigateur.",
       });
       return;
     }
 
-    // Arrêter la synthèse si en cours
     this.stopSpeaking();
 
     try {
       this.recognition.start();
     } catch {
-      // Déjà en cours d'écoute
-      console.warn('Recognition already started');
+      this.logger.debug('Recognition already started', 'VoiceSearchService');
     }
   }
 
-  /**
-   * Arrête l'écoute vocale
-   */
+  /** Stops voice listening */
   stopListening(): void {
     if (this.recognition) {
       this.recognition.stop();
     }
   }
 
-  /**
-   * Bascule l'état d'écoute
-   */
+  /** Toggles listening state */
   toggleListening(): void {
     if (this.stateSubject.value.isListening) {
       this.stopListening();
@@ -258,20 +184,17 @@ export class VoiceSearchService {
   }
 
   // ============================================
-  // MÉTHODES PUBLIQUES - SYNTHÈSE VOCALE
+  // PUBLIC METHODS - SPEECH SYNTHESIS
   // ============================================
 
-  /**
-   * Lit un texte à voix haute
-   */
-  speak(text: string, options?: { rate?: number; pitch?: number; volume?: number }): Promise<void> {
+  /** Speaks text aloud */
+  speak(text: string, options?: SpeakOptions): Promise<void> {
     return new Promise((resolve, reject) => {
       if (!this.synthesis) {
-        reject(new Error('Synthèse vocale non supportée'));
+        reject(new Error('Synthese vocale non supportee'));
         return;
       }
 
-      // Arrêter toute lecture en cours
       this.stopSpeaking();
 
       this.utterance = new SpeechSynthesisUtterance(text);
@@ -280,40 +203,46 @@ export class VoiceSearchService {
       this.utterance.pitch = options?.pitch ?? 1.0;
       this.utterance.volume = options?.volume ?? 1.0;
 
-      // Appliquer la voix française si disponible
-      const voices = this.synthesis.getVoices();
-      const selectedVoice = voices.find((v) => v.name === this.voiceName);
-      if (selectedVoice) {
-        this.utterance.voice = selectedVoice;
-      }
-
-      this.utterance.onstart = () => {
-        this.ngZone.run(() => {
-          this.updateState({ isSpeaking: true });
-        });
-      };
-
-      this.utterance.onend = () => {
-        this.ngZone.run(() => {
-          this.updateState({ isSpeaking: false });
-          resolve();
-        });
-      };
-
-      this.utterance.onerror = (event) => {
-        this.ngZone.run(() => {
-          this.updateState({ isSpeaking: false });
-          reject(new Error(event.error));
-        });
-      };
+      this.applyVoiceToUtterance();
+      this.setupUtteranceEventHandlers(resolve, reject);
 
       this.synthesis.speak(this.utterance);
     });
   }
 
-  /**
-   * Arrête la lecture vocale
-   */
+  private applyVoiceToUtterance(): void {
+    if (!this.synthesis || !this.utterance) return;
+
+    const voices = this.synthesis.getVoices();
+    const selectedVoice = findVoiceByName(voices, this.voiceName);
+    if (selectedVoice) {
+      this.utterance.voice = selectedVoice;
+    }
+  }
+
+  private setupUtteranceEventHandlers(resolve: () => void, reject: (error: Error) => void): void {
+    if (!this.utterance) return;
+
+    this.utterance.onstart = () => {
+      this.ngZone.run(() => this.updateState({ isSpeaking: true }));
+    };
+
+    this.utterance.onend = () => {
+      this.ngZone.run(() => {
+        this.updateState({ isSpeaking: false });
+        resolve();
+      });
+    };
+
+    this.utterance.onerror = (event) => {
+      this.ngZone.run(() => {
+        this.updateState({ isSpeaking: false });
+        reject(new Error(event.error));
+      });
+    };
+  }
+
+  /** Stops speech synthesis */
   stopSpeaking(): void {
     if (this.synthesis) {
       this.synthesis.cancel();
@@ -321,31 +250,21 @@ export class VoiceSearchService {
     }
   }
 
-  /**
-   * Met en pause la lecture
-   */
+  /** Pauses speech synthesis */
   pauseSpeaking(): void {
-    if (this.synthesis) {
-      this.synthesis.pause();
-    }
+    this.synthesis?.pause();
   }
 
-  /**
-   * Reprend la lecture
-   */
+  /** Resumes speech synthesis */
   resumeSpeaking(): void {
-    if (this.synthesis) {
-      this.synthesis.resume();
-    }
+    this.synthesis?.resume();
   }
 
   // ============================================
-  // MÉTHODES UTILITAIRES
+  // UTILITY METHODS
   // ============================================
 
-  /**
-   * Définit la langue
-   */
+  /** Sets the language for recognition and synthesis */
   setLanguage(lang: string): void {
     this.language = lang;
     if (this.recognition) {
@@ -353,66 +272,42 @@ export class VoiceSearchService {
     }
   }
 
-  /**
-   * Vérifie si la reconnaissance vocale est supportée
-   */
+  /** Checks if speech recognition is supported */
   isRecognitionSupported(): boolean {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const windowWithSpeech = window as any;
-    return !!(windowWithSpeech.SpeechRecognition || windowWithSpeech.webkitSpeechRecognition);
+    return checkRecognitionSupport();
   }
 
-  /**
-   * Vérifie si la synthèse vocale est supportée
-   */
+  /** Checks if speech synthesis is supported */
   isSynthesisSupported(): boolean {
-    return 'speechSynthesis' in window;
+    return checkSynthesisSupport();
   }
 
-  /**
-   * Demande la permission du microphone
-   */
+  /** Requests microphone permission */
   async requestMicrophonePermission(): Promise<boolean> {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      stream.getTracks().forEach((track) => track.stop());
-      return true;
-    } catch {
-      return false;
-    }
+    return requestMicPermission();
   }
 
-  /**
-   * Obtient la liste des voix disponibles
-   */
+  /** Gets available voices for synthesis */
   getAvailableVoices(): SpeechSynthesisVoice[] {
     return this.synthesis?.getVoices() || [];
   }
 
-  /**
-   * Définit la voix à utiliser
-   */
+  /** Sets the voice to use for synthesis */
   setVoice(voiceName: string): void {
     this.voiceName = voiceName;
   }
 
-  /**
-   * Retourne l'état actuel
-   */
+  /** Gets the current state */
   getState(): VoiceState {
     return this.stateSubject.value;
   }
 
-  /**
-   * Retourne si l'écoute est en cours
-   */
+  /** Returns whether listening is active */
   isListening(): boolean {
     return this.stateSubject.value.isListening;
   }
 
-  /**
-   * Retourne si la lecture est en cours
-   */
+  /** Returns whether speaking is active */
   isSpeaking(): boolean {
     return this.stateSubject.value.isSpeaking;
   }

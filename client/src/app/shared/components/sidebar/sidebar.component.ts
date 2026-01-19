@@ -1,4 +1,4 @@
-import { Component, inject, Input, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, model, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -25,23 +25,23 @@ interface NavItem {
   imports: [CommonModule, RouterLink, RouterLinkActive],
   template: `
     <aside
-      class="fixed left-0 top-20 h-[calc(100vh-5rem)] bg-white border-r border-secondary-200 transition-all duration-300"
-      [class.w-64]="!collapsed"
-      [class.w-14]="collapsed">
-      <nav class="space-y-1" [class.p-4]="!collapsed" [class.p-2]="collapsed">
+      class="fixed left-0 top-20 h-[calc(100vh-5rem)] bg-white dark:bg-secondary-800 border-r border-secondary-200 dark:border-secondary-700 transition-all duration-300"
+      [class.w-64]="!collapsed()"
+      [class.w-14]="collapsed()">
+      <nav class="space-y-1" [class.p-4]="!collapsed()" [class.p-2]="collapsed()">
         @for (item of visibleItems; track item.label) {
           @if (item.route) {
             <a
               [routerLink]="item.route"
-              routerLinkActive="bg-primary-50 text-primary-700"
-              class="flex items-center rounded-lg text-secondary-600 hover:bg-secondary-50 transition"
-              [class.gap-3]="!collapsed"
-              [class.px-3]="!collapsed"
-              [class.py-2]="!collapsed"
-              [class.justify-center]="collapsed"
-              [class.p-2]="collapsed">
+              routerLinkActive="bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400"
+              class="flex items-center rounded-lg text-secondary-600 dark:text-secondary-400 hover:bg-secondary-50 dark:hover:bg-secondary-700 transition"
+              [class.gap-3]="!collapsed()"
+              [class.px-3]="!collapsed()"
+              [class.py-2]="!collapsed()"
+              [class.justify-center]="collapsed()"
+              [class.p-2]="collapsed()">
               <span [innerHTML]="getSafeIcon(item.icon)" class="w-6 h-6 flex-shrink-0"></span>
-              @if (!collapsed) {
+              @if (!collapsed()) {
                 <span class="text-base font-medium">{{ item.label }}</span>
               }
             </a>
@@ -50,14 +50,14 @@ interface NavItem {
             <div>
               <button
                 (click)="toggleMenu(item.label)"
-                class="w-full flex items-center rounded-lg text-secondary-600 hover:bg-secondary-50 transition"
-                [class.gap-3]="!collapsed"
-                [class.px-3]="!collapsed"
-                [class.py-2]="!collapsed"
-                [class.justify-center]="collapsed"
-                [class.p-2]="collapsed">
+                class="w-full flex items-center rounded-lg text-secondary-600 dark:text-secondary-400 hover:bg-secondary-50 dark:hover:bg-secondary-700 transition"
+                [class.gap-3]="!collapsed()"
+                [class.px-3]="!collapsed()"
+                [class.py-2]="!collapsed()"
+                [class.justify-center]="collapsed()"
+                [class.p-2]="collapsed()">
                 <span [innerHTML]="getSafeIcon(item.icon)" class="w-6 h-6 flex-shrink-0"></span>
-                @if (!collapsed) {
+                @if (!collapsed()) {
                   <span class="text-base font-medium flex-1 text-left">{{ item.label }}</span>
                   <svg
                     class="w-4 h-4 transition-transform"
@@ -67,13 +67,13 @@ interface NavItem {
                   </svg>
                 }
               </button>
-              @if (!collapsed && isMenuOpen(item.label)) {
+              @if (!collapsed() && isMenuOpen(item.label)) {
                 <div class="ml-8 mt-1 space-y-1">
                   @for (child of item.children; track child.route) {
                     <a
                       [routerLink]="child.route"
-                      routerLinkActive="text-primary-700 font-medium"
-                      class="block px-3 py-1.5 text-base text-secondary-500 hover:text-secondary-900 transition">
+                      routerLinkActive="text-primary-700 dark:text-primary-400 font-medium"
+                      class="block px-3 py-1.5 text-base text-secondary-500 dark:text-secondary-400 hover:text-secondary-900 dark:hover:text-secondary-200 transition">
                       {{ child.label }}
                     </a>
                   }
@@ -86,9 +86,9 @@ interface NavItem {
 
       <!-- Toggle button -->
       <button
-        (click)="collapsed = !collapsed"
-        class="absolute bottom-4 right-0 translate-x-1/2 w-6 h-6 bg-white border border-secondary-200 rounded-full flex items-center justify-center hover:bg-secondary-50">
-        <svg class="w-4 h-4 text-secondary-400" [class.rotate-180]="collapsed" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        (click)="collapsed.set(!collapsed())"
+        class="absolute bottom-4 right-0 translate-x-1/2 w-6 h-6 bg-white dark:bg-secondary-700 border border-secondary-200 dark:border-secondary-600 rounded-full flex items-center justify-center hover:bg-secondary-50 dark:hover:bg-secondary-600">
+        <svg class="w-4 h-4 text-secondary-400" [class.rotate-180]="collapsed()" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
         </svg>
       </button>
@@ -96,7 +96,7 @@ interface NavItem {
   `,
 })
 export class SidebarComponent {
-  @Input() collapsed = false;
+  collapsed = model(false);
 
   private tenantService = inject(TenantService);
   private sanitizer = inject(DomSanitizer);
@@ -114,7 +114,7 @@ export class SidebarComponent {
       icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>',
       children: [
         { label: 'CGI 2025', route: '/code/2025' },
-        { label: 'CGI 2026', route: '/code/2026' },
+        { label: 'CGI 2026 (provisoire)', route: '/code/2026' },
       ],
     },
     {

@@ -1,5 +1,6 @@
-import { Component, Input, OnDestroy, OnInit, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, OnDestroy, OnInit, signal, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LoggerService } from '@core/services/logger.service';
 
 type ButtonSize = 'small' | 'default' | 'large';
 
@@ -61,8 +62,10 @@ type ButtonSize = 'small' | 'default' | 'large';
   `]
 })
 export class AudioButtonComponent implements OnInit, OnDestroy {
-  @Input({ required: true }) text!: string;
-  @Input() size: ButtonSize = 'default';
+  private logger = inject(LoggerService);
+
+  text = input.required<string>();
+  size = input<ButtonSize>('default');
 
   isPlaying = signal(false);
   isLoading = signal(false);
@@ -104,7 +107,7 @@ export class AudioButtonComponent implements OnInit, OnDestroy {
       default: 'px-3 py-1.5 text-sm',
       large: 'px-4 py-2 text-base font-medium'
     };
-    return sizeClasses[this.size];
+    return sizeClasses[this.size()];
   }
 
   getIconSize(): string {
@@ -113,7 +116,7 @@ export class AudioButtonComponent implements OnInit, OnDestroy {
       default: 'w-4 h-4',
       large: 'w-5 h-5'
     };
-    return iconSizes[this.size];
+    return iconSizes[this.size()];
   }
 
   handleSpeak(): void {
@@ -142,7 +145,7 @@ export class AudioButtonComponent implements OnInit, OnDestroy {
     // Workaround Chrome: cancel() puis speak() peut bloquer
     // On utilise un petit délai
     setTimeout(() => {
-      const cleanedText = this.cleanTextForSpeech(this.text);
+      const cleanedText = this.cleanTextForSpeech(this.text());
 
       if (!cleanedText || cleanedText.length < 2) {
         this.hasError.set(true);
@@ -177,7 +180,7 @@ export class AudioButtonComponent implements OnInit, OnDestroy {
       };
 
       this.utterance.onerror = (event) => {
-        console.error('Speech synthesis error:', event.error);
+        this.logger.error('Speech synthesis error', 'AudioButton', { error: event.error });
         this.isLoading.set(false);
         this.isPlaying.set(false);
         if (event.error !== 'canceled') {

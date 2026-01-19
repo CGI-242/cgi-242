@@ -1,3 +1,14 @@
+# =============================================================================
+# CGI 242 - Pipeline d'Integration Continue (CI)
+# =============================================================================
+# Ce workflow applique les 5 etapes de l'integration continue:
+# 1. Planification: Declenchement sur push/PR vers main
+# 2. Gestion du code: Checkout, installation des dependances, compilation
+# 3. Tests: Tests unitaires, integration, e2e
+# 4. Qualite du code: Linting, couverture de code
+# 5. Livrables: Generation et stockage des artifacts
+# =============================================================================
+
 name: CI Pipeline
 
 on:
@@ -7,118 +18,112 @@ on:
     branches: [main, develop]
 
 env:
-  NODE_VERSION: '20.x'
+  NODE_VERSION: '20'
 
 jobs:
-  # ============================================
-  # Frontend Tests (Angular)
-  # ============================================
-  frontend-tests:
-    name: Frontend Tests
+  # ===========================================================================
+  # ETAPE 2: GESTION DU CODE - Compilation et verification
+  # ===========================================================================
+  build:
+    name: Build & Compile
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./client
 
     steps:
-      - name: Checkout code
+      - name: Checkout du code source
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Configuration Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            client/package-lock.json
+            server/package-lock.json
+
+      # --- Client Angular ---
+      - name: Installation dependances client
+        working-directory: ./client
+        run: npm ci
+
+      - name: Compilation client (build)
+        working-directory: ./client
+        run: npm run build
+
+      # --- Server Express ---
+      - name: Installation dependances server
+        working-directory: ./server
+        run: npm ci
+
+      - name: Generation Prisma Client
+        working-directory: ./server
+        run: npx prisma generate
+
+      - name: Compilation server (build)
+        working-directory: ./server
+        run: npm run build
+
+      # --- Stockage des artifacts de build ---
+      - name: Upload artifact client
+        uses: actions/upload-artifact@v4
+        with:
+          name: client-build
+          path: client/dist/
+          retention-days: 7
+
+      - name: Upload artifact server
+        uses: actions/upload-artifact@v4
+        with:
+          name: server-build
+          path: server/dist/
+          retention-days: 7
+
+  # ===========================================================================
+  # ETAPE 3: TESTS AUTOMATISES
+  # ===========================================================================
+  test-client:
+    name: Tests Client (Angular)
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout du code source
+        uses: actions/checkout@v4
+
+      - name: Configuration Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
           cache-dependency-path: client/package-lock.json
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run linter
-        run: npm run lint
-
-      - name: Run unit tests
-        run: npm test -- --no-watch --no-progress --browsers=ChromeHeadless
-
-      - name: Build application
-        run: npm run build
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: frontend-build
-          path: client/dist/
-          retention-days: 7
-
-  # ============================================
-  # Backend Tests (Node.js/Express)
-  # ============================================
-  backend-tests:
-    name: Backend Tests
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./server
-
-    env:
-      NODE_ENV: test
-      JWT_SECRET: test-jwt-secret-for-ci-pipeline-only-32chars
-      JWT_REFRESH_SECRET: test-refresh-secret-for-ci-only
-      COOKIE_SECRET: test-cookie-secret-for-ci-pipeline
-      FRONTEND_URL: http://localhost:4200
-      DATABASE_URL: postgresql://test:test@localhost:5432/test
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-          cache-dependency-path: server/package-lock.json
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Generate Prisma client
-        run: npx prisma generate
-
-      - name: Run linter
-        run: npm run lint
-
-      - name: Run unit tests
-        run: npm test
-
-      - name: Build application
-        run: npm run build
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: backend-build
-          path: server/dist/
-          retention-days: 7
-
-  # ============================================
-  # E2E Tests (Playwright)
-  # ============================================
-  e2e-tests:
-    name: E2E Tests
-    runs-on: ubuntu-latest
-    needs: [frontend-tests, backend-tests]
-    defaults:
-      run:
+      - name: Installation dependances
         working-directory: ./client
+        run: npm ci
+
+      - name: Execution tests unitaires
+        working-directory: ./client
+        run: npm run test:coverage
+
+      - name: Upload rapport couverture client
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-client
+          path: client/coverage/
+          retention-days: 7
+
+  test-server:
+    name: Tests Server (Express)
+    runs-on: ubuntu-latest
+    needs: build
 
     services:
       postgres:
-        image: postgres:16-alpine
+        image: postgres:15
         env:
-          POSTGRES_USER: cgiengine
-          POSTGRES_PASSWORD: test_password
-          POSTGRES_DB: cgiengine_test
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: test
+          POSTGRES_DB: cgi_test
         ports:
           - 5432:5432
         options: >-
@@ -128,7 +133,7 @@ jobs:
           --health-retries 5
 
       redis:
-        image: redis:7-alpine
+        image: redis:7
         ports:
           - 6379:6379
         options: >-
@@ -137,110 +142,172 @@ jobs:
           --health-timeout 5s
           --health-retries 5
 
-    env:
-      NODE_ENV: test
-      JWT_SECRET: test-jwt-secret-for-e2e-pipeline-only-32chars
-      JWT_REFRESH_SECRET: test-refresh-secret-for-e2e-only
-      COOKIE_SECRET: test-cookie-secret-for-e2e-pipeline
-      FRONTEND_URL: http://localhost:4200
-      DATABASE_URL: postgresql://cgiengine:test_password@localhost:5432/cgiengine_test
-      REDIS_URL: redis://localhost:6379
-
     steps:
-      - name: Checkout code
+      - name: Checkout du code source
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Configuration Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: server/package-lock.json
+
+      - name: Installation dependances
+        working-directory: ./server
+        run: npm ci
+
+      - name: Generation Prisma Client
+        working-directory: ./server
+        run: npx prisma generate
+
+      - name: Migration base de donnees test
+        working-directory: ./server
+        env:
+          DATABASE_URL: postgresql://test:test@localhost:5432/cgi_test
+        run: npx prisma migrate deploy
+
+      - name: Execution tests unitaires et integration
+        working-directory: ./server
+        env:
+          DATABASE_URL: postgresql://test:test@localhost:5432/cgi_test
+          REDIS_URL: redis://localhost:6379
+          JWT_SECRET: test-secret-for-ci
+          NODE_ENV: test
+        run: npm run test:coverage
+
+      - name: Upload rapport couverture server
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-server
+          path: server/coverage/
+          retention-days: 7
+
+  # ===========================================================================
+  # ETAPE 4: QUALITE DU CODE - Linting et analyse statique
+  # ===========================================================================
+  lint:
+    name: Qualite du Code (Linting)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout du code source
+        uses: actions/checkout@v4
+
+      - name: Configuration Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            client/package-lock.json
+            server/package-lock.json
+
+      - name: Installation dependances client
+        working-directory: ./client
+        run: npm ci
+
+      - name: Installation dependances server
+        working-directory: ./server
+        run: npm ci
+
+      - name: Lint client
+        working-directory: ./client
+        run: npm run lint
+
+      - name: Lint server
+        working-directory: ./server
+        run: npm run lint
+
+  security-audit:
+    name: Audit de Securite
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout du code source
+        uses: actions/checkout@v4
+
+      - name: Configuration Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Install frontend dependencies
-        run: npm ci
-
-      - name: Install backend dependencies
-        working-directory: ./server
-        run: npm ci
-
-      - name: Generate Prisma client
-        working-directory: ./server
-        run: npx prisma generate
-
-      - name: Run database migrations
-        working-directory: ./server
-        run: npx prisma migrate deploy
+      - name: Audit securite client
+        working-directory: ./client
+        run: npm audit --audit-level=high
         continue-on-error: true
 
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
-
-      - name: Build frontend
-        run: npm run build
-
-      - name: Build backend
+      - name: Audit securite server
         working-directory: ./server
-        run: npm run build
+        run: npm audit --audit-level=high
+        continue-on-error: true
 
-      - name: Run E2E tests
+  # ===========================================================================
+  # ETAPE 5: GESTION DES LIVRABLES - Tests E2E et artifacts finaux
+  # ===========================================================================
+  e2e:
+    name: Tests End-to-End (E2E)
+    runs-on: ubuntu-latest
+    needs: [test-client, test-server]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout du code source
+        uses: actions/checkout@v4
+
+      - name: Configuration Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: client/package-lock.json
+
+      - name: Installation dependances
+        working-directory: ./client
+        run: npm ci
+
+      - name: Installation Playwright
+        working-directory: ./client
+        run: npx playwright install --with-deps
+
+      - name: Execution tests E2E
+        working-directory: ./client
         run: npm run e2e
-        continue-on-error: true
 
-      - name: Upload Playwright report
+      - name: Upload rapport E2E
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
           path: client/playwright-report/
-          retention-days: 30
-
-      - name: Upload test screenshots
-        uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: playwright-screenshots
-          path: client/test-results/
           retention-days: 7
 
-  # ============================================
-  # Security Audit
-  # ============================================
-  security-audit:
-    name: Security Audit
+  # ===========================================================================
+  # RESUME CI - Verification finale avant merge
+  # ===========================================================================
+  ci-success:
+    name: CI Success
     runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Audit frontend dependencies
-        working-directory: ./client
-        run: npm audit --audit-level=high
-        continue-on-error: true
-
-      - name: Audit backend dependencies
-        working-directory: ./server
-        run: npm audit --audit-level=high
-        continue-on-error: true
-
-  # ============================================
-  # Code Quality Summary
-  # ============================================
-  quality-gate:
-    name: Quality Gate
-    runs-on: ubuntu-latest
-    needs: [frontend-tests, backend-tests]
+    needs: [build, test-client, test-server, lint, security-audit]
     if: always()
 
     steps:
-      - name: Check test results
+      - name: Verification du succes de la CI
         run: |
-          if [ "${{ needs.frontend-tests.result }}" == "failure" ] || [ "${{ needs.backend-tests.result }}" == "failure" ]; then
-            echo "::error::Tests failed - quality gate not passed"
+          if [[ "${{ needs.build.result }}" != "success" ]]; then
+            echo "Build failed"
             exit 1
           fi
-          echo "::notice::All tests passed - quality gate passed"
+          if [[ "${{ needs.test-client.result }}" != "success" ]]; then
+            echo "Client tests failed"
+            exit 1
+          fi
+          if [[ "${{ needs.test-server.result }}" != "success" ]]; then
+            echo "Server tests failed"
+            exit 1
+          fi
+          if [[ "${{ needs.lint.result }}" != "success" ]]; then
+            echo "Linting failed"
+            exit 1
+          fi
+          echo "All CI checks passed!"

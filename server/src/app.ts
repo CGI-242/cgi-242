@@ -26,32 +26,32 @@ export function createApp(): Express {
   // Métriques Prometheus (avant tout autre middleware)
   app.use(metricsMiddleware);
 
+  // Sécurité - Helmet avec CSP stricte (AVANT les routes pour protéger tout)
+  // Utilise des nonces cryptographiques pour les scripts inline autorisés
+  // Voir middleware/csp.middleware.ts pour la configuration détaillée
+  app.use(secureCSPMiddleware());
+
+  // Initialiser Sentry pour le tracking des erreurs
+  initSentry(app);
+
   // Endpoint /metrics pour Prometheus (protégé par IP whitelist)
   // Autorise: localhost, réseaux privés (10.x, 172.16-31.x, 192.168.x)
   // Configurable via METRICS_WHITELIST_IPS="ip1,ip2,ip3"
   app.use('/metrics', metricsIPWhitelist, metricsRoutes);
 
-  // Endpoint /health pour les health checks (sans auth)
+  // Endpoint /health pour les health checks (sans auth, avec headers sécurité)
   app.use('/health', healthRoutes);
 
   // Documentation API Swagger (sans auth)
   app.use('/api-docs', swaggerRoutes);
 
-  // Fichiers statiques (test-agent.html, etc.) - AVANT Helmet pour éviter CSP
+  // Fichiers statiques (test-agent.html, etc.) - désactiver CSP pour tests
   const publicPath = path.join(process.cwd(), 'public');
   app.use('/public', (req, res, next) => {
     // Désactiver CSP pour les fichiers statiques de test
     res.removeHeader('Content-Security-Policy');
     next();
   }, express.static(publicPath));
-
-  // Initialiser Sentry pour le tracking des erreurs
-  initSentry(app);
-
-  // Sécurité - Helmet avec CSP stricte (sans 'unsafe-inline' ni 'unsafe-eval')
-  // Utilise des nonces cryptographiques pour les scripts inline autorisés
-  // Voir middleware/csp.middleware.ts pour la configuration détaillée
-  app.use(secureCSPMiddleware());
   app.use(
     cors({
       origin: config.frontendUrl,

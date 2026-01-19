@@ -38,9 +38,6 @@
       "statut": "en vigueur"
     },
     {
-      "intertitre": "Baux et locations"
-    },
-    {
       "article": "Art. 18",
       "titre": "Baux et locations - Assiette",
       "texte": [
@@ -138,9 +135,6 @@
       "statut": "en vigueur"
     },
     {
-      "intertitre": "Contrats de mariage"
-    },
-    {
       "article": "Art. 21",
       "titre": "Contrats de mariage - Assiette",
       "texte": [
@@ -154,9 +148,6 @@
         "liquidation du droit"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "intertitre": "Échanges d'immeubles"
     },
     {
       "article": "Art. 22",
@@ -179,9 +170,6 @@
       "statut": "en vigueur"
     },
     {
-      "intertitre": "Jugements"
-    },
-    {
       "article": "Art. 23",
       "titre": "Jugements - Assiette",
       "texte": [
@@ -199,9 +187,6 @@
       "statut": "en vigueur"
     },
     {
-      "intertitre": "Marchés"
-    },
-    {
       "article": "Art. 24",
       "titre": "Marchés - Assiette",
       "texte": [
@@ -215,9 +200,6 @@
         "objets"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "intertitre": "Partages"
     },
     {
       "article": "Art. 25",
@@ -235,9 +217,6 @@
         "actif net partagé"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "intertitre": "Rentes"
     },
     {
       "article": "Art. 26",
@@ -300,9 +279,6 @@
       "statut": "en vigueur"
     },
     {
-      "intertitre": "Sociétés"
-    },
-    {
       "article": "Art. 29",
       "titre": "Actes de société - Assiette",
       "texte": [
@@ -319,9 +295,6 @@
         "associés"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "intertitre": "Transmissions à titre onéreux et à titre gratuit"
     },
     {
       "article": "Art. 30",
@@ -518,12 +491,6 @@
       "statut": "en vigueur"
     },
     {
-      "intertitre": "Mutations par décès"
-    },
-    {
-      "sous_intertitre": "I. Règles générales"
-    },
-    {
       "article": "Art. 38",
       "titre": "Valeur des biens meubles - Mutation par décès",
       "texte": [
@@ -625,9 +592,6 @@
         "imputation des droits"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous_intertitre": "II. Déduction des dettes et charges"
     },
     {
       "article": "Art. 42",
@@ -845,9 +809,6 @@
       "statut": "en vigueur"
     },
     {
-      "sous_intertitre": "III. Dispositions spéciales"
-    },
-    {
       "article": "Art. 51",
       "titre": "Assurances - Droits de mutation par décès",
       "texte": [
@@ -924,9 +885,6 @@
       "statut": "en vigueur"
     },
     {
-      "sous_intertitre": "IV. Nue-propriété et usufruit"
-    },
-    {
       "article": "Art. 54",
       "titre": "Valeur de la nue-propriété et de l'usufruit",
       "texte": [
@@ -992,9 +950,6 @@
         "acte de naissance"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous_intertitre": "V. Dispositions communes"
     },
     {
       "article": "Art. 56",

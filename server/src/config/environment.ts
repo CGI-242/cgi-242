@@ -38,6 +38,11 @@ export const config = {
   // Cryptage
   bcryptRounds: parseInt(process.env.BCRYPT_ROUNDS || '12', 10),
 
+  // Chiffrement AES-256
+  encryption: {
+    key: process.env.ENCRYPTION_KEY || '',
+  },
+
   // OpenAI
   openai: {
     apiKey: process.env.OPENAI_API_KEY || '',
@@ -120,6 +125,15 @@ export function validateEnvironment(): void {
     }
     if (jwtSecret.includes('default') || jwtSecret.includes('secret') || jwtSecret.includes('change')) {
       throw new Error('JWT_SECRET semble être une valeur par défaut. Utilisez une clé forte en production.');
+    }
+
+    // Validation de la force de ENCRYPTION_KEY en production
+    const encryptionKey = process.env.ENCRYPTION_KEY || '';
+    if (!encryptionKey || encryptionKey.length < 32) {
+      throw new Error('ENCRYPTION_KEY doit faire au moins 32 caractères en production. Générez avec: openssl rand -hex 32');
+    }
+    if (encryptionKey.includes('default') || encryptionKey.includes('change') || encryptionKey.includes('your-')) {
+      throw new Error('ENCRYPTION_KEY semble être une valeur par défaut. Utilisez une clé forte en production.');
     }
   }
 

@@ -58,8 +58,15 @@ model User {
 
   isEmailVerified      Boolean   @default(false)
   emailVerifyToken     String?
+  emailVerifyExpires   DateTime?
   resetPasswordToken   String?
   resetPasswordExpires DateTime?
+
+  // MFA/2FA
+  mfaEnabled           Boolean   @default(false)
+  mfaSecret            String?   // Encrypted TOTP secret
+  mfaBackupCodes       String[]  @default([]) // Hashed backup codes
+  mfaVerifiedAt        DateTime?
 
   // Abonnement personnel (si pas dans une orga)
   personalSubscription Subscription? @relation("PersonalSubscription")
@@ -224,9 +231,69 @@ model Payment {
   stripePaymentId String?
   metadata        Json?   // Données CinetPay ou Stripe
 
+  // Facture associée
+  invoice Invoice?
+
   createdAt DateTime @default(now())
 
   @@map("payments")
+}
+
+// ==================== INVOICES (FACTURES) ====================
+
+model Invoice {
+  id        String @id @default(uuid())
+  paymentId String @unique
+  payment   Payment @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+
+  // Numéro de facture séquentiel (FAC-YYYY-NNNNNN)
+  invoiceNumber String @unique
+
+  // Client
+  customerName    String
+  customerEmail   String
+  customerAddress String?
+  customerPhone   String?
+
+  // Détails de la facture
+  description String
+  plan        String // Plan acheté
+
+  // Montants
+  amountHT  Decimal @db.Decimal(10, 2) // Hors Taxe
+  tvaRate   Decimal @db.Decimal(5, 2)  // Taux TVA (18%)
+  tvaAmount Decimal @db.Decimal(10, 2) // Montant TVA
+  amountTTC Decimal @db.Decimal(10, 2) // Toutes Taxes Comprises
+
+  currency String @default("XAF")
+
+  // Fichier PDF
+  pdfPath String? // Chemin vers le fichier PDF stocké
+  pdfUrl  String? // URL publique du PDF
+
+  // Statut
+  status    InvoiceStatus @default(GENERATED)
+  sentAt    DateTime?     // Date d'envoi par email
+  paidAt    DateTime?     // Date de paiement (= date création pour paiement immédiat)
+
+  // Période de facturation
+  periodStart DateTime?
+  periodEnd   DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([customerEmail])
+  @@index([createdAt])
+  @@map("invoices")
+}
+
+enum InvoiceStatus {
+  DRAFT     // Brouillon
+  GENERATED // Générée
+  SENT      // Envoyée par email
+  PAID      // Payée
+  CANCELLED // Annulée
 }
 
 // ==================== CONVERSATIONS ====================
@@ -390,6 +457,10 @@ model SearchHistory {
 
   createdAt DateTime @default(now())
 
+  // Index pour améliorer les performances des requêtes analytics
+  @@index([userId])
+  @@index([createdAt])
+  @@index([userId, createdAt])
   @@map("search_history")
 }
 
@@ -450,11 +521,25 @@ enum AuditAction {
   CONVERSATION_DELETED
   DATA_EXPORTED
 
+  // User
+  USER_UPDATED
+  SETTINGS_CHANGED
+
   // Security
   LOGIN_SUCCESS
   LOGIN_FAILED
   PASSWORD_CHANGED
   EMAIL_VERIFIED
+  MFA_ENABLED
+  MFA_DISABLED
+  MFA_VERIFIED
+  MFA_FAILED
+
+  // Permissions
+  PERMISSION_GRANTED
+  PERMISSION_REVOKED
+  PERMISSIONS_RESET
+  MEMBER_PERMISSIONS_UPDATED
 }
 
 model AuditLog {

@@ -133,8 +133,6 @@ services:
       SMTP_USER: ${SMTP_USER:-}
       SMTP_PASSWORD: ${SMTP_PASSWORD:-}
       STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
-      CINETPAY_API_KEY: ${CINETPAY_API_KEY:-}
-      CINETPAY_SITE_ID: ${CINETPAY_SITE_ID:-}
     depends_on:
       postgres-master:
         condition: service_healthy
@@ -172,8 +170,6 @@ services:
       SMTP_USER: ${SMTP_USER:-}
       SMTP_PASSWORD: ${SMTP_PASSWORD:-}
       STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
-      CINETPAY_API_KEY: ${CINETPAY_API_KEY:-}
-      CINETPAY_SITE_ID: ${CINETPAY_SITE_ID:-}
     depends_on:
       postgres-master:
         condition: service_healthy

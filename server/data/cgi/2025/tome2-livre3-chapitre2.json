@@ -14,9 +14,6 @@
   },
   "articles": [
     {
-      "sous_intertitre": "1) Procédure"
-    },
-    {
       "article": "Art. 13",
       "titre": "Compétence administrative",
       "texte": [
@@ -44,9 +41,6 @@
         "enregistrement"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous_intertitre": "2) Prescriptions"
     },
     {
       "article": "Art. 15",
@@ -102,9 +96,6 @@
         "article 1"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous_intertitre": "3) Droit de communication"
     },
     {
       "article": "Art. 17",

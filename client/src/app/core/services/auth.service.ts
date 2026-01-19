@@ -2,6 +2,7 @@ import { Injectable, inject, signal, computed } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService, ApiResponse } from './api.service';
 import { Observable, tap, catchError, of, firstValueFrom } from 'rxjs';
+import { LoggerService } from './logger.service';
 
 export interface User {
   id: string;
@@ -38,6 +39,7 @@ const USER_KEY = 'cgi_user';
 export class AuthService {
   private api = inject(ApiService);
   private router = inject(Router);
+  private logger = inject(LoggerService);
 
   private userSignal = signal<User | null>(this.loadUser());
 
@@ -79,7 +81,7 @@ export class AuthService {
       await firstValueFrom(this.api.post<null>('/auth/logout', {}));
     } catch {
       // En cas d'erreur réseau, on continue la déconnexion locale
-      console.warn('Logout API call failed, proceeding with local cleanup');
+      this.logger.warn('Logout API call failed, proceeding with local cleanup', 'AuthService');
     }
 
     // Nettoyer l'état local
@@ -96,7 +98,7 @@ export class AuthService {
     try {
       await firstValueFrom(this.api.post<null>('/auth/logout-all', {}));
     } catch {
-      console.warn('Logout all API call failed');
+      this.logger.warn('Logout all API call failed', 'AuthService');
     }
 
     localStorage.removeItem(USER_KEY);
@@ -114,6 +116,39 @@ export class AuthService {
 
   verifyEmail(token: string): Observable<ApiResponse<null>> {
     return this.api.get<null>('/auth/verify-email', { token });
+  }
+
+  /**
+   * Mettre à jour le profil utilisateur
+   */
+  updateProfile(data: Partial<Pick<User, 'firstName' | 'lastName' | 'profession'>>): Observable<ApiResponse<{ user: User }>> {
+    return this.api.patch<{ user: User }>('/auth/profile', data).pipe(
+      tap((res) => {
+        if (res.success && res.data?.user) {
+          this.userSignal.set(res.data.user);
+          localStorage.setItem(USER_KEY, JSON.stringify(res.data.user));
+        }
+      })
+    );
+  }
+
+  /**
+   * Changer le mot de passe (utilisateur connecté)
+   */
+  changePassword(currentPassword: string, newPassword: string): Observable<ApiResponse<null>> {
+    return this.api.post<null>('/auth/change-password', { currentPassword, newPassword });
+  }
+
+  /**
+   * Renvoyer l'email de vérification (authentifié)
+   */
+  resendVerificationEmail(email?: string): Observable<ApiResponse<null>> {
+    // Si email fourni, utiliser la route publique
+    if (email) {
+      return this.api.post<null>('/auth/resend-verification-public', { email });
+    }
+    // Sinon, utiliser la route authentifiée
+    return this.api.post<null>('/auth/resend-verification', {});
   }
 
   /**

@@ -14,12 +14,6 @@
   },
   "articles": [
     {
-      "texte_introductif": "Les droits à percevoir pour l'enregistrement des actes et mutations sont fixés aux taux et quotités tarifés par les articles ci-après."
-    },
-    {
-      "intertitre": "Actes sujets au droit fixe de 10.000 F"
-    },
-    {
       "article": "Art. 209",
       "titre": "Droit fixe de 10.000 FCFA",
       "texte": [
@@ -37,12 +31,8 @@
       "statut": "en vigueur"
     },
     {
-      "intertitre": "Actes sujets au droit fixe de 15.000 F"
-    },
-    {
       "article": "Art. 210",
       "titre": "Droit fixe de 15.000 FCFA",
-      "reference_loi": "L.F.2025",
       "texte": [
         "Sont enregistrés au droit fixe de 15.000 FCFA :",
         "les jugements et autres décisions judiciaires des tribunaux contenant des dispositions définitives, qui ne donnent pas ouverture au droit proportionnel ou pour lesquels le droit proportionnel n'atteint pas 15.000 FCFA ;",
@@ -82,9 +72,6 @@
       "statut": "en vigueur"
     },
     {
-      "intertitre": "Actes sujets au droit fixe de 20.000 F"
-    },
-    {
       "article": "Art. 211",
       "titre": "Droit fixe de 20.000 FCFA",
       "texte": [
@@ -107,9 +94,6 @@
       "statut": "en vigueur"
     },
     {
-      "intertitre": "Droits proportionnels et progressifs"
-    },
-    {
       "article": "Art. 212",
       "titre": "Renvoi aux quotités fixées",
       "texte": [
@@ -124,9 +108,6 @@
         "quotités"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous-intertitre": "Abandonnements (faits d'assurance ou grosse aventure)"
     },
     {
       "article": "Art. 213",
@@ -146,9 +127,6 @@
         "demi-droit"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous-intertitre": "Actions, obligations et parts d'intérêts, cessions"
     },
     {
       "article": "Art. 214",
@@ -223,9 +201,6 @@
       "statut": "en vigueur"
     },
     {
-      "sous-intertitre": "Créances"
-    },
-    {
       "article": "Art. 215 bis",
       "titre": "Cession de créances",
       "texte": [
@@ -248,12 +223,8 @@
       "statut": "en vigueur"
     },
     {
-      "sous-intertitre": "Baux"
-    },
-    {
       "article": "Art. 216",
       "titre": "Baux de biens meubles et immeubles",
-      "reference_loi": "L.F.2025",
       "texte": [
         "Les baux et sous-baux de biens meubles et immeubles à usage commercial, d'habitation ou mixte sont soumis à un droit d'enregistrement de 3 %."
       ],
@@ -394,9 +365,6 @@
       "statut": "en vigueur"
     },
     {
-      "sous-intertitre": "Command (élections ou déclarations de)"
-    },
-    {
       "article": "Art. 220",
       "titre": "Déclaration de command - Biens meubles",
       "texte": [
@@ -452,9 +420,6 @@
       "statut": "en vigueur"
     },
     {
-      "sous-intertitre": "Contrats de mariage"
-    },
-    {
       "article": "Art. 223",
       "titre": "Contrats de mariage",
       "texte": [
@@ -480,9 +445,6 @@
       "statut": "en vigueur"
     },
     {
-      "sous-intertitre": "Échanges d'immeubles"
-    },
-    {
       "article": "Art. 224",
       "titre": "Échanges de biens immeubles",
       "texte": [
@@ -496,9 +458,6 @@
         "part la plus élevée"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous-intertitre": "Fonds de commerce et clientèle - Mutations à titre onéreux"
     },
     {
       "article": "Art. 225",
@@ -525,12 +484,8 @@
       "statut": "en vigueur"
     },
     {
-      "sous-intertitre": "Cautionnement, garanties et sûretés"
-    },
-    {
       "article": "Art. 226",
       "titre": "Cautionnement et sûretés",
-      "reference_loi": "L.F.2024",
       "texte": [
         "Les conventions de cautionnement, de garantie et contre-garantie autonome, les lettres de droit de rétention, les contrats de gage, les actes de nantissement quel que soit leur forme (authentique ou seing privé) et leur objet ainsi que les actes constatant les privilèges et hypothèques prévues par l'Acte Uniforme portant organisation des sûretés, d'une part, et toutes les sûretés non prévues par le droit OHADA et admises en République du Congo, d'autre part, sont assujetties à un droit de 1 %.",
         "Tous les contrats de prêt qui visent l'investissement sont enregistrés gratis, sous réserve de la présentation du plan d'investissement y relatif et du Procès-verbal de l'Assemblée générale ou tout autre organe compétent ayant décidé du prêt.",
@@ -559,9 +514,6 @@
         "article 237"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous-intertitre": "Jugements et arrêts"
     },
     {
       "article": "Art. 227",
@@ -656,9 +608,6 @@
       "statut": "en vigueur"
     },
     {
-      "sous-intertitre": "Droit de titre"
-    },
-    {
       "article": "Art. 231",
       "titre": "Condamnation sans titre enregistré",
       "texte": [
@@ -702,9 +651,6 @@
       "statut": "en vigueur"
     },
     {
-      "sous-intertitre": "Licitations"
-    },
-    {
       "article": "Art. 233",
       "titre": "Licitation de biens meubles indivis",
       "texte": [
@@ -738,9 +684,6 @@
       "statut": "en vigueur"
     },
     {
-      "sous-intertitre": "Marchés"
-    },
-    {
       "article": "Art. 235",
       "titre": "Marchés publics",
       "texte": [
@@ -766,7 +709,6 @@
     {
       "article": "Art. 236",
       "titre": "Marchés entre particuliers",
-      "reference_loi": "L.F.2024",
       "texte": [
         "Sont assujettis à un droit de 1 % les adjudications au rabais et marchés pour construction, réparation et entretien et tout autre objet mobilier susceptibles d'estimation faits entre particuliers, qui ne contiennent ni vente, ni promesse de livrer les marchandises, denrées et autres objets mobiliers."
       ],
@@ -789,7 +731,6 @@
     {
       "article": "Art. 237",
       "titre": "Marchés commerciaux",
-      "reference_loi": "L.F.2024",
       "texte": [
         "Les marchés et traités réputés de commerce par l'article 3 et 4 de l'Acte uniforme relatif au droit commercial général, faits ou passés sous signature privée, sont enregistrés au taux de 1 % de l'estimation du marché faite par les parties."
       ],
@@ -872,7 +813,6 @@
     {
       "article": "Art. 237 quinquies",
       "titre": "Conventions de trésorerie intra-groupe",
-      "reference_loi": "L.F.2024, L.F.2025",
       "texte": [
         "Par dérogation aux dispositions des articles 226 et 237 ci-dessus, les conventions de trésorerie conclues entre les sociétés de groupe sont soumises à la formalité d'enregistrement au droit fixe de 100.000 FCFA. Le délai d'enregistrement de la convention est de trois mois à compter de la date de signature.",
         "Toute convention de trésorerie présentée à la formalité de l'enregistrement doit revêtir les informations obligatoires concernant :",
@@ -907,18 +847,11 @@
     {
       "article": "Art. 237 sexies",
       "titre": "Article abrogé",
-      "reference_loi": "L.F.2025",
       "texte": [
         "Abrogé"
       ],
       "mots_cles": [],
       "statut": "abrogé"
-    },
-    {
-      "sous-intertitre": "Mutations à titre gratuit"
-    },
-    {
-      "sous-sous-intertitre": "1) Dispositions concernant les mutations entre vifs"
     },
     {
       "article": "Art. 238",
@@ -1027,9 +960,6 @@
         "annexé"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous-sous-intertitre": "2) Dispositions concernant les mutations par décès"
     },
     {
       "article": "Art. 243",
@@ -1310,9 +1240,6 @@
       "statut": "en vigueur"
     },
     {
-      "sous-intertitre": "Obligations hypothécaires"
-    },
-    {
       "article": "Art. 253",
       "titre": "Titres de sociétés avec hypothèque",
       "texte": [
@@ -1348,9 +1275,6 @@
         "différence des droits"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous-intertitre": "Partages"
     },
     {
       "article": "Art. 255",
@@ -1408,9 +1332,6 @@
       "statut": "en vigueur"
     },
     {
-      "sous-intertitre": "Rentes et pensions"
-    },
-    {
       "article": "Art. 258",
       "titre": "Constitution de rentes et pensions",
       "texte": [
@@ -1434,9 +1355,6 @@
         "chapitre 13"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous-intertitre": "Sociétés"
     },
     {
       "article": "Art. 259",
@@ -1566,9 +1484,6 @@
       "statut": "en vigueur"
     },
     {
-      "sous-intertitre": "Mutations immobilières à titre onéreux"
-    },
-    {
       "article": "Art. 263",
       "titre": "Ventes et cessions immobilières",
       "texte": [
@@ -1681,9 +1596,6 @@
         "précédente adjudication"
       ],
       "statut": "en vigueur"
-    },
-    {
-      "sous-intertitre": "Mutations mobilières à titre onéreux"
     },
     {
       "article": "Art. 265",
