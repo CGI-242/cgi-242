@@ -1615,8 +1615,7 @@
       "titre": "Période d'imposition",
       "texte": [
         "L'impôt sur le bénéfice est assis sur les résultats obtenus sur une période de douze mois correspondant à l'exercice comptable tel que défini à l'article 31 du présent Code.",
-        "Toutefois, les entreprises qui commencent leurs activités au cours des 6 mois précédant la date de clôture obligatoire peuvent arrêter leur premier bilan à la fin de l'exercice comptable suivant celui au cours duquel commence leurs activités.",
-        "Dans ce cas, elles doivent notifier leur option à l'inspecteur divisionnaire compétent avant le 31 décembre de l'année de début d'activités."
+        "Toutefois, les entreprises qui commencent leurs activités au cours des 6 mois précédant la date de clôture obligatoire peuvent arrêter leur premier bilan à la fin de l'exercice comptable suivant celui au cours duquel commence leurs activités. Dans ce cas, elles doivent notifier leur option à l'inspecteur divisionnaire compétent avant le 31 décembre de l'année de début d'activités."
       ],
       "mots_cles": [
         "période d'imposition",
@@ -1629,7 +1628,7 @@
       "section": "Section 4 : Modalités d'imposition - Sous-section 1 : Période d'imposition"
     },
     {
-      "article": "Art. 122",
+      "article": "Art. 122 (L.F. 2025)",
       "titre": "Taux de l'IS",
       "texte": [
         "Le taux de l'impôt sur les sociétés est fixé à 30 %.",
@@ -1644,7 +1643,7 @@
       "section": "Section 4 : Modalités d'imposition - Sous-section 2 : Calcul de l'impôt"
     },
     {
-      "article": "Art. 122-A",
+      "article": "Art. 122-A (L.F. 2025)",
       "titre": "Taux réduits et majorés",
       "texte": [
         "Par dérogation aux dispositions de l'article 122, le taux de l'impôt sur les sociétés est fixé à :",
@@ -1771,22 +1770,18 @@
       "article": "Art. 124-B",
       "titre": "Versement de l'IS et acomptes",
       "texte": [
-        "1) Toutes les sociétés ou personnes morales soumises à l'impôt sur les sociétés sont assujetties au versement de cet impôt sans émission préalable d'un rôle.",
-        "Les redevables de l'impôt sur les sociétés sont tenus d'effectuer de leur propre initiative :",
+        "1) Toutes les sociétés ou personnes morales soumises à l'impôt sur les sociétés sont assujetties au versement de cet impôt sans émission préalable d'un rôle. Les redevables de l'impôt sur les sociétés sont tenus d'effectuer de leur propre initiative :",
         "• au cours de chaque période d'imposition, le versement d'acomptes ;",
         "• dès la remise de la déclaration des bénéfices prévue à l'article 124 A, le paiement du solde de l'impôt liquidé à raison des résultats de la période visée par cette déclaration.",
         "2) Les acomptes sont calculés par la société et versés par elle, sans avertissement de l'inspection divisionnaire des contributions directes et indirectes, à la caisse du Trésor public dans les quinze premiers jours des mois de février, mai, août et novembre.",
         "En cas d'exercice d'une durée inférieure ou supérieure à un an, les acomptes sont calculés sur la base des bénéfices rapportés à une période de douze mois.",
         "Le premier acompte est celui dont l'échéance consécutive au commencement de la période d'imposition, en est la plus rapprochée.",
-        "3) Chaque acompte est égal au quart de l'impôt calculé sur les 4/5 du bénéfice imposable ou déclaré du plus récent exercice clos à la date de l'échéance, ou lorsqu'aucun exercice n'a été clos au cours de l'année du dernier bénéfice déclaré ou réalisé.",
+        "3) Chaque acompte est égal au quart de l'impôt calculé sur les 4/5e du bénéfice imposable ou déclaré du plus récent exercice clos à la date de l'échéance, ou lorsqu'aucun exercice n'a été clos au cours de l'année du dernier bénéfice déclaré ou réalisé.",
         "Pour les sociétés nouvelles, les acomptes sont fixés au quart de l'impôt calculé sur le produit évalué à 5 % du capital appelé.",
         "Pour les succursales des sociétés étrangères, les acomptes sont fixés au quart de l'impôt calculé sur le produit évalué à 5 % du capital social minimum d'une société anonyme de droit OHADA ne faisant pas appel public à l'épargne.",
         "Le montant du premier acompte d'un exercice est égal aux acomptes échus au cours de l'exercice précédent. Il est régularisé sur la base du dernier exercice ou de la dernière période d'imposition lors du versement du deuxième acompte.",
         "Pour les sociétés ayant bénéficié d'une convention d'établissement venue à expiration, l'acompte de la première année doit être calculé sur la base du bénéfice réalisé, mais non imposé du dernier exercice clos de la période sous convention.",
-        "4) La liquidation de l'impôt afférent aux bénéfices réalisés pendant la période servant de base à l'imposition est faite par la société.",
-        "Le résultat est arrondi à la dizaine de francs la plus proche.",
-        "Après déduction des acomptes déjà réglés, le solde de liquidation est versé sans avertissement à la Caisse du receveur principal des impôts au plus tard le jour de l'expiration du délai fixé par le régime de déclaration prévu à l'article 124-A du Code.",
-        "Si lors de la liquidation l'impôt effectivement dû est inférieur au montant des acomptes déjà réglés, l'excédent est imputé sur l'impôt relatif à l'exercice suivant et, le cas échéant, aux exercices ultérieurs. Il est remboursé à la société lorsque celle-ci est arrivée à son terme.",
+        "4) La liquidation de l'impôt afférent aux bénéfices réalisés pendant la période servant de base à l'imposition est faite par la société. Le résultat est arrondi à la dizaine de francs la plus proche. Après déduction des acomptes déjà réglés, le solde de liquidation est versé sans avertissement à la Caisse du receveur principal des impôts au plus tard le jour de l'expiration du délai fixé par le régime de déclaration prévu à l'article 124-A du Code. Si lors de la liquidation l'impôt effectivement dû est inférieur au montant des acomptes déjà réglés, l'excédent est imputé sur l'impôt relatif à l'exercice suivant et, le cas échéant, aux exercices ultérieurs. Il est remboursé à la société lorsque celle-ci est arrivée à son terme.",
         "En cas de dissolution, de transformation entraînant la création d'une entité morale nouvelle, d'apport en société, de fusion, de transfert de siège ou d'un établissement à l'étranger, la déclaration des bénéfices non encore imposés est souscrite dans un délai spécial de 15 jours, dont le point de départ est fixé par l'article 98 du Code. Le solde de liquidation est alors exigible à l'expiration de ce délai."
       ],
       "mots_cles": [
