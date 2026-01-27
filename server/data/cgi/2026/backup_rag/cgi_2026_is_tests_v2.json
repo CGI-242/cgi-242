@@ -428,7 +428,7 @@
       "categorie": "assurance",
       "question": "Les captives d'assurance sont-elles déductibles ?",
       "reponse_attendue": "Non, les primes aux captives ne sont pas déductibles",
-      "articles_attendus": ["Art. 44 A"],
+      "articles_attendus": ["Art. 44"],
       "mots_cles": ["captive", "assurance", "non déductible"]
     },
     {

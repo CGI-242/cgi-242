@@ -124,7 +124,7 @@ export const KEYWORD_ARTICLE_MAP_2026: Record<string, string[]> = {
   // ========== ART. 44 - ASSURANCES ==========
   'assurances deductibles': ['Art. 44'],
   'primes assurance': ['Art. 44'],
-  'captives assurance': ['Art. 44 A'],
+  'captives assurance': ['Art. 44'],
 
   // ========== ART. 45-46 - DONS LIBERALITES ==========
   'dons': ['Art. 45'],
