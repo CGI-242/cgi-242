@@ -60,6 +60,7 @@ export class CodeContainerComponent implements OnInit {
   selectedChapitre = signal<string | null>(null);
   selectedSection = signal<string | null>(null);
   sousSections = signal<{ titre: string; articles: string }[]>([]);
+  paragraphes = signal<{ numero: number | string; titre: string; articles: string; sousSectionTitre?: string; sousSectionNumero?: number | string }[]>([]);
 
   // Computed
   selectedArticle = computed(() => this.articlesService.selectedArticle());
@@ -179,12 +180,14 @@ export class CodeContainerComponent implements OnInit {
       this.selectedChapitre.set(selection.chapitreTitre ?? null);
       this.selectedSection.set(selection.sectionTitre ?? null);
       this.sousSections.set(selection.sousSections ?? []);
+      this.paragraphes.set(selection.paragraphes ?? []);
     } else {
       this.articleRange.set(null);
       this.selectedTome.set(null);
       this.selectedChapitre.set(null);
       this.selectedSection.set(null);
       this.sousSections.set([]);
+      this.paragraphes.set([]);
       this.searchQuery = selection.titre;
     }
     this.activeTab.set('articles');
@@ -193,6 +196,32 @@ export class CodeContainerComponent implements OnInit {
   // Header detection methods
   getSousSectionHeader(articleNumero: string): string | null {
     return getSousSectionHeaderUtil(articleNumero, this.sousSections());
+  }
+
+  /**
+   * Retourne le header du paragraphe si l'article est le premier du paragraphe
+   * Format: "Sous-section X. Titre : Paragraphe Y: Titre paragraphe"
+   */
+  getParagrapheHeader(articleNumero: string): string | null {
+    const paragraphes = this.paragraphes();
+    if (!paragraphes.length) return null;
+
+    // Extraire le numéro de l'article (ex: "Art. 37" -> 37)
+    const match = articleNumero.match(/(\d+)/);
+    if (!match) return null;
+    const articleNum = parseInt(match[1], 10);
+
+    for (const para of paragraphes) {
+      // Extraire le premier numéro d'article du paragraphe
+      const paraMatch = para.articles.match(/^(\d+)/);
+      if (!paraMatch) continue;
+      const paraStart = parseInt(paraMatch[1], 10);
+
+      if (articleNum === paraStart) {
+        return `Paragraphe ${para.numero}: ${para.titre}`;
+      }
+    }
+    return null;
   }
 
   getRomanHeader(article: Article, index: number): string | null {
@@ -239,6 +268,10 @@ export class CodeContainerComponent implements OnInit {
 
   isFirstOfParagraph(article: Article, index: number): boolean {
     const paragraphPrefix = getParagraphPrefix(article.titre);
+    // DEBUG
+    if (article.numero.startsWith('126-D')) {
+      console.log(`🔍 isFirstOfParagraph [${article.numero}]:`, { titre: article.titre, prefix: paragraphPrefix });
+    }
     if (!paragraphPrefix) return false;
 
     if (index === 0) return true;
@@ -256,6 +289,45 @@ export class CodeContainerComponent implements OnInit {
 
   getParagraphHeader(article: Article): string | null {
     return getParagraphHeaderUtil(article.titre);
+  }
+
+  /**
+   * Retourne les headers au début du contenu de l'article
+   * Ex: ["2- Le calcul du résultat intégré", "a) La qualité de redevable unique"]
+   * Patterns détectés: "X- Titre" et "a) Titre"
+   */
+  getPointHeaders(article: Article): string[] {
+    if (!article.contenu) return [];
+
+    const headers: string[] = [];
+    const lines = article.contenu.split('\n');
+
+    for (const line of lines) {
+      const trimmed = line.trim();
+      // Pattern "X- Titre" (ex: "1- Conditions", "2- Imposition")
+      if (/^\d+-\s*.+$/.test(trimmed)) {
+        headers.push(trimmed);
+      }
+      // Pattern "a) Titre" (ex: "a) La qualité de redevable unique")
+      else if (/^[a-z]\)\s*.+$/.test(trimmed)) {
+        headers.push(trimmed);
+      }
+      // Arrêter dès qu'on trouve une ligne qui n'est pas un header
+      else if (trimmed.length > 0) {
+        break;
+      }
+    }
+
+    return headers;
+  }
+
+  /**
+   * Retourne le premier header "X- Titre" (pour compatibilité)
+   */
+  getPointHeader(article: Article): string | null {
+    const headers = this.getPointHeaders(article);
+    const xHeader = headers.find(h => /^\d+-/.test(h));
+    return xHeader || null;
   }
 
   isFirstOfLetter(article: Article, index: number): boolean {

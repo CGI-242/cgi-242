@@ -21,7 +21,19 @@ export class ArticleFormatPipe implements PipeTransform {
     if (!contenu) return '';
 
     // Diviser le contenu en lignes pour traiter chaque ligne
-    const lines = contenu.split('\n');
+    let lines = contenu.split('\n');
+
+    // Retirer les headers du début car ils sont affichés comme headers séparés
+    // Patterns: "X- Titre" (ex: "1- Conditions") et "a) Titre" (ex: "a) La qualité")
+    while (lines.length > 0) {
+      const firstLine = lines[0].trim();
+      if (/^\d+-\s/.test(firstLine) || /^[a-z]\)\s/.test(firstLine)) {
+        lines = lines.slice(1);
+      } else {
+        break;
+      }
+    }
+
     let formattedLines = lines.map(line => this.formatLine(line));
 
     // Appliquer l'italique aux blocs entre crochets [...]
@@ -59,16 +71,34 @@ export class ArticleFormatPipe implements PipeTransform {
         '<div class="mt-6 mb-2 flex items-start gap-2"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm flex-shrink-0">$1</span></div><div class="ml-10 mt-2 mb-1 flex items-start gap-2"><span class="font-semibold text-primary-600 flex-shrink-0">$2)</span><span>$3</span></div>');
     }
 
+    // Formater les points "X- Titre" (2- Imposition, 3- Autres, etc.) - style bleu comme sous-section
+    if (/^(\d+)-[ \t]*/.test(escaped)) {
+      return escaped.replace(/^(\d+)-[ \t]*(.*)$/,
+        '<div class="mt-6 mb-3 py-2 px-3 bg-primary-50 border-l-4 border-primary-400 rounded-r"><span class="font-bold text-primary-700">$1- $2</span></div>');
+    }
+
     // Formater les numéros seuls (1), 2), etc.)
     if (/^(\d+)\)[ \t]*/.test(escaped)) {
       return escaped.replace(/^(\d+)\)[ \t]*(.*)$/,
         '<div class="mt-6 mb-2 flex items-start gap-2"><span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-100 text-primary-700 font-semibold text-sm flex-shrink-0">$1</span><span>$2</span></div>');
     }
 
+    // Formater les numéros avec point (1., 2., etc.) - style différent
+    if (/^(\d+)\.[ \t]*/.test(escaped)) {
+      return escaped.replace(/^(\d+)\.[ \t]*(.*)$/,
+        '<div class="mt-4 mb-2 flex items-start gap-2"><span class="font-bold text-primary-700 flex-shrink-0">$1.</span><span>$2</span></div>');
+    }
+
     // Formater les lettres a), b), etc.
     if (/^([a-z])\)[ \t]*/.test(escaped)) {
       return escaped.replace(/^([a-z])\)[ \t]*(.*)$/,
         '<div class="ml-10 mt-2 mb-1 flex items-start gap-2"><span class="font-semibold text-primary-600 flex-shrink-0">$1)</span><span>$2</span></div>');
+    }
+
+    // Formater les lettres avec point a., b., etc.
+    if (/^([a-z])\.[ \t]*/.test(escaped)) {
+      return escaped.replace(/^([a-z])\.[ \t]*(.*)$/,
+        '<div class="ml-8 mt-2 mb-1 flex items-start gap-2"><span class="font-semibold text-primary-600 flex-shrink-0">$1.</span><span>$2</span></div>');
     }
 
     // Formater les sous-numéros 1°, 2°, etc.
@@ -89,10 +119,10 @@ export class ArticleFormatPipe implements PipeTransform {
         '<div class="ml-12 mt-1 flex items-start gap-2"><span class="text-secondary-400 flex-shrink-0">○</span><span>$1</span></div>');
     }
 
-    // Formater les bullets sans indentation
+    // Formater les bullets sans indentation (sous-éléments des tirets - plus indentés)
     if (/^[•·][ \t]*/.test(escaped)) {
       return escaped.replace(/^[•·][ \t]*(.*)$/,
-        '<div class="ml-6 mt-1 flex items-start gap-2"><span class="text-primary-500 flex-shrink-0">•</span><span>$1</span></div>');
+        '<div class="ml-12 mt-1 flex items-start gap-2"><span class="text-secondary-500 flex-shrink-0">○</span><span>$1</span></div>');
     }
 
     // Ligne vide = espacement

@@ -65,15 +65,28 @@ export const CGI_TOME_1_2026: Tome = {
                     { sous_section: 5, titre: 'Prix de transferts', articles: '77-85' },
                   ]
                 },
-{
+                {
                   section: 4,
                   titre: 'Modalités d\'imposition',
-                  articles: '86-87',
+                  articles: '86-86G',
                   sous_sections: [
-                    { sous_section: 1, titre: 'Période d\'imposition', articles: '86-87' },
+                    { sous_section: 1, titre: 'Période d\'imposition', articles: '86' },
+                    { sous_section: 2, titre: 'Calcul de l\'impôt', articles: '86A-86D' },
+                    { sous_section: 3, titre: 'Obligations des personnes morales', articles: '86E-86G' },
                   ]
                 },
-                { section: 5, titre: 'Paiement de l\'impôt', articles: '88-93' },
+                {
+                  section: 5,
+                  titre: 'Régimes particuliers',
+                  articles: '87-93',
+                  sous_sections: [
+                    { sous_section: 1, titre: 'Régimes des sociétés mère et filiales', articles: '87-87A' },
+                    { sous_section: 2, titre: 'Régimes des succursales', articles: '88' },
+                    { sous_section: 3, titre: 'Régime fiscal des quartiers généraux des sociétés', articles: '89-89C' },
+                    { sous_section: 4, titre: 'Régime fiscal des holdings', articles: '90-90E' },
+                    { sous_section: 5, titre: 'Régime d\'intégration fiscale des groupes de sociétés', articles: '91-93' },
+                  ]
+                },
               ],
             },
             {

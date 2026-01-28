@@ -10,11 +10,11 @@
       [class.ml-14]="sidebarCollapsed">
       <div class="flex h-[calc(100vh-5rem)]">
         <!-- Sidebar navigation -->
-        <div class="w-[640px] border-r border-secondary-200 bg-white flex flex-col">
+        <div class="w-[620px] border-r border-secondary-200 bg-white flex flex-col">
           <!-- Header avec version -->
-          <div class="p-4 border-b border-secondary-200 bg-primary-50">
-            <h2 class="font-semibold text-primary-900">CGI {{ articlesService.currentVersion() }}</h2>
-            <p class="text-xs text-primary-600 mt-1">Code Général des Impôts</p>
+          <div class="px-3 py-2 border-b border-secondary-200 bg-primary-50">
+            <h2 class="text-lg font-semibold text-primary-900">CGI {{ articlesService.currentVersion() }}</h2>
+            <p class="text-xs text-primary-600">Code Général des Impôts</p>
           </div>
 
           <!-- Tabs Sommaire / Articles -->
@@ -49,7 +49,7 @@
             </div>
           } @else {
             <!-- Search -->
-            <div class="p-4 border-b border-secondary-200">
+            <div class="p-2 border-b border-secondary-200">
               <div class="relative">
                 <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -89,6 +89,12 @@
                         <span class="text-sm font-semibold text-primary-800">Sous-section {{ ssHeader }}</span>
                       </div>
                     }
+                    <!-- Headers point (1- Conditions, 2- Imposition, a) Qualité...) depuis le contenu -->
+                    @for (pointHeader of getPointHeaders(article); track pointHeader) {
+                      <div class="px-3 py-2 bg-primary-50 border-l-4 border-primary-400 ml-2">
+                        <span class="text-sm font-semibold text-primary-700">{{ pointHeader }}</span>
+                      </div>
+                    }
                     <!-- Header point romain (I. Personnes imposables, II. Lieu d'imposition) -->
                     @if (getRomanHeader(article, i); as romanHeader) {
                       <div class="px-3 py-2 bg-primary-50 border-l-4 border-primary-400">
@@ -101,8 +107,14 @@
                         <span class="text-sm font-semibold text-primary-600">{{ getUpperLetterHeader(article) }}</span>
                       </div>
                     }
-                    <!-- Sous-header de paragraphe (1) Définition, 2) Exemptions...) -->
-                    @if (isFirstOfParagraph(article, i)) {
+                    <!-- Header de paragraphe depuis le sommaire (Sous-section X. Titre : Paragraphe Y: Titre) -->
+                    @if (getParagrapheHeader(article.numero)) {
+                      <div class="px-3 py-2 bg-primary-50 border-l-3 border-primary-400 ml-2">
+                        <span class="text-sm font-semibold text-amber-700">{{ getParagrapheHeader(article.numero) }}</span>
+                      </div>
+                    }
+                    <!-- Sous-header de paragraphe depuis le titre de l'article -->
+                    @if (isFirstOfParagraph(article, i) && !getParagrapheHeader(article.numero)) {
                       <div class="px-3 py-2 bg-primary-50 border-l-3 border-primary-400 ml-4">
                         <span class="text-sm font-semibold text-primary-700">{{ getParagraphHeader(article) }}</span>
                       </div>
@@ -130,7 +142,7 @@
             }
 
             <!-- Total count -->
-            <div class="p-3 border-t border-secondary-200 bg-secondary-50">
+            <div class="p-2 border-t border-secondary-200 bg-secondary-50">
               <p class="text-sm text-secondary-500 text-center">
                 {{ filteredArticles().length }} article(s) sur {{ articlesService.total() }}
               </p>
@@ -182,7 +194,7 @@
 
             <!-- Article content -->
             <div class="flex-1 overflow-y-auto p-6 bg-secondary-50/50">
-              <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-sm border border-secondary-100 p-8">
+              <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-sm border border-secondary-100 p-8">
                 @if (article.chapeau) {
                   <div class="chapeau text-secondary-700 font-medium italic mb-4 pb-4 border-b border-secondary-200">
                     {{ article.chapeau }}
@@ -211,12 +223,18 @@
           } @else if (filteredArticles().length > 0) {
             <!-- Vue multi-articles (lecture continue) -->
             <div class="flex-1 overflow-y-auto p-6 bg-secondary-50/50">
-              <div class="max-w-4xl mx-auto space-y-6">
+              <div class="max-w-5xl mx-auto space-y-6">
                 @for (article of filteredArticles(); track article.id; let i = $index) {
                   <!-- Séparateur sous-section -->
                   @if (getSousSectionHeader(article.numero); as ssHeader) {
                     <div class="py-4 px-6 bg-primary-100 border-l-4 border-primary-500 rounded-r-lg">
                       <h2 class="text-lg font-bold text-primary-800">Sous-section {{ ssHeader }}</h2>
+                    </div>
+                  }
+                  <!-- Headers point (1- Conditions, 2- Imposition, a) Qualité...) depuis le contenu -->
+                  @for (pointHeader of getPointHeaders(article); track pointHeader) {
+                    <div class="py-3 px-6 bg-primary-50 border-l-4 border-primary-400 rounded-r-lg ml-3">
+                      <h2 class="text-lg font-semibold text-primary-700">{{ pointHeader }}</h2>
                     </div>
                   }
                   <!-- Header point romain (I. Personnes imposables, II. Lieu d'imposition) -->
@@ -231,8 +249,14 @@
                       <h3 class="text-lg font-semibold text-primary-600">{{ getUpperLetterHeader(article) }}</h3>
                     </div>
                   }
-                  <!-- Sous-header de paragraphe (1) Définition, 2) Exemptions...) -->
-                  @if (isFirstOfParagraph(article, i)) {
+                  <!-- Header de paragraphe depuis le sommaire (Sous-section X. Titre : Paragraphe Y: Titre) -->
+                  @if (getParagrapheHeader(article.numero)) {
+                    <div class="py-3 px-5 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg ml-2">
+                      <h3 class="text-lg font-semibold text-amber-700">{{ getParagrapheHeader(article.numero) }}</h3>
+                    </div>
+                  }
+                  <!-- Sous-header de paragraphe depuis le titre de l'article -->
+                  @if (isFirstOfParagraph(article, i) && !getParagrapheHeader(article.numero)) {
                     <div class="py-3 px-5 bg-primary-50 border-l-4 border-primary-400 rounded-r-lg ml-6">
                       <h3 class="text-lg font-semibold text-primary-700">{{ getParagraphHeader(article) }}</h3>
                     </div>
