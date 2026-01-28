@@ -78,13 +78,14 @@ export const CGI_TOME_1_2026: Tome = {
                 {
                   section: 5,
                   titre: 'Régimes particuliers',
-                  articles: '87-93',
+                  articles: '87-92K',
                   sous_sections: [
                     { sous_section: 1, titre: 'Régimes des sociétés mère et filiales', articles: '87-87A' },
                     { sous_section: 2, titre: 'Régimes des succursales', articles: '88' },
                     { sous_section: 3, titre: 'Régime fiscal des quartiers généraux des sociétés', articles: '89-89C' },
                     { sous_section: 4, titre: 'Régime fiscal des holdings', articles: '90-90E' },
-                    { sous_section: 5, titre: 'Régime d\'intégration fiscale des groupes de sociétés', articles: '91-93' },
+                    { sous_section: 5, titre: 'Régime d\'intégration fiscale des groupes de sociétés', articles: '91-91I' },
+                    { sous_section: 6, titre: 'Régime des personnes morales étrangères', articles: '92-92K' },
                   ]
                 },
               ],

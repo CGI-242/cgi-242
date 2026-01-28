@@ -2372,8 +2372,7 @@
       "titre": "Solidarité de paiement et obligations déclaratives",
       "texte": [
         "Chaque société intégrée du groupe est tenue solidairement au paiement de l'impôt sur les sociétés, le cas échéant, des pénalités de retard, majorations et amendes fiscales correspondantes, dont la société mère est redevable, à hauteur de l'impôt et des pénalités qui seraient dus par la société si celle-ci n'était pas membre du groupe.",
-        "Les membres du groupe conservent leur personnalité juridique et leur personnalité fiscale. Elles doivent dès lors établir leurs propres déclarations de résultats.",
-        "L'administration pourra ainsi contrôler à la fois les déclarations de la société mère et celles des membres du groupe.",
+        "Les membres du groupe conservent leur personnalité juridique et leur personnalité fiscale. Elles doivent dès lors établir leurs propres déclarations de résultats. L'administration pourra ainsi contrôler à la fois les déclarations de la société mère et celles des membres du groupe.",
         "Les conventions d'intégration conclues entre les différentes sociétés du groupe prévoient la façon dont cette charge sera répartie entre elles."
       ],
       "mots_cles": [
@@ -2389,6 +2388,7 @@
       "article": "Art. 91C",
       "titre": "Détermination du résultat d'ensemble et retraitements",
       "texte": [
+        "b) Retraitements à opérer",
         "Pour déterminer le résultat, chaque société du groupe y compris la société mère établit la déclaration de ses propres résultats dans les conditions de droit commun.",
         "La société-mère calcule le résultat d'ensemble du groupe. Elle procède aux retraitements afin d'éliminer les doubles impositions et les doubles déductions.",
         "Si le résultat du groupe est positif, elle paie l'impôt correspondant. S'il est négatif, le déficit est reportable sur les résultats des exercices ultérieurs conformément au droit commun.",
@@ -2513,20 +2513,20 @@
       "article": "Art. 92",
       "titre": "Impôt forfaitaire sur le revenu des personnes morales étrangères",
       "texte": [
-        "1. Les personnes morales étrangères se livrant sur le territoire de la République du Congo (y compris dans ses eaux territoriales et leurs prolongements tels que définis par le droit international) à des activités visées à l'article 2 du présent Code dans des conditions d'intermittence et de précarité qui ne permettent pas l'application des articles 86C à 86F du présent Code, sont assujetties à un impôt forfaitaire sur le revenu.",
-        "2. Les entreprises visées ci-dessus sont tenues de leur propre initiative de :",
-        "a) déposer une déclaration d'existence au moyen d'un formulaire commun aux directions générales des Impôts, des Douanes, du Trésor et des Mines, contenant notamment une estimation des honoraires, redevances et autres rémunérations attendues ;",
+        "1. Les personnes morales étrangères se livrant sur le territoire de la République du Congo (y compris dans ses eaux territoriales et leurs prolongements tels que définis par le droit international) à des activités visées à l'article 2 du présent Code dans des conditions d'intermittence et de précarité qui ne permettent pas l'application des articles 86 C à 86 F du présent Code, sont assujetties à un impôt forfaitaire sur le revenu.",
+        "2. Les entreprises visées au paragraphe qui précède sont tenues de leur propre initiative de :",
+        "a) déposer une déclaration d'existence au moyen d'un formulaire commun aux directions Générales des Impôts, des Douanes, du Trésor et des Mines. Cette déclaration contiendra notamment une estimation des honoraires, redevances et autres rémunérations que ces personnes sont appelées à recevoir au titre de leur activité au Congo ;",
         "b) déposer en début d'activité l'autorisation temporaire d'exercer délivrée par le Ministère du commerce ;",
-        "c) déposer une déclaration modificative dès que le contenu de la déclaration d'existence devient périmé ;",
-        "d) déposer au plus tard le vingt (20) du deuxième mois suivant celui de l'exécution des prestations une déclaration mensuelle indiquant les montants, la nature des prestations et le bénéfice forfaitaire, facturées ou non ;",
-        "e) payer concomitamment et sans émission préalable de rôle l'IS sur les bénéfices ainsi déclarés ;",
-        "f) déposer une déclaration de liquidation et payer le solde d'impôt au plus tard au jour de cessation d'activité et, en tout état de cause, avant le départ du matériel et/ou du personnel mobiles ;",
-        "g) déposer au terme de chaque contrat une déclaration de cessation d'activités accompagnée d'un rapport de fin de contrat détaillant les activités, conjointement signé par les parties.",
-        "3. À titre exceptionnel, toute société fournissant au Trésor public un cautionnement bancaire ou un chèque de banque émis par un établissement de crédit installé au Congo ou en zone CEMAC peut surseoir au paiement du solde de l'impôt pour la part du bénéfice correspondant aux montants non encore réglés au jour du dépôt de la déclaration de liquidation.",
-        "4. Outre le cautionnement, la société remet au directeur général des impôts une lettre du bénéficiaire des activités au Congo s'engageant à communiquer la date exacte et le montant des paiements différés afin de calculer le bénéfice et l'impôt restant dû.",
-        "5. Si l'impôt est payé par le bénéficiaire des activités, le cautionnement bancaire est retourné à la banque émettrice. Le cautionnement n'est pas exigé si le bénéficiaire s'engage à payer directement l'impôt pour le compte de la société étrangère.",
-        "6. La mise en œuvre du cautionnement bancaire se fait par simple envoi, par courrier recommandé du directeur général des impôts à la banque émettrice, de la copie de l'avis de mise en recouvrement avec instructions de paiement.",
-        "7. Pour toute société étrangère ne procédant pas, soit selon les articles 86C à 86F, soit conformément aux alinéas précédents alors qu'elle se livre au Congo à des activités visées à l'article 2, l'IS est immédiatement exigible dès le commencement des activités et calculé d'office conformément au deuxième alinéa de l'article 86C."
+        "c) déposer une déclaration modificative, chaque fois que sera périmé le contenu de leur déclaration d'existence ;",
+        "d) déposer au plus tard le quinze (15) du deuxième mois suivant celui de l'exécution des prestations, une déclaration faisant apparaître les montants et la nature des prestations rendues au mois au cours du mois précédent au titre des activités déployées au Congo ainsi que le bénéfice forfaitaire que ces prestations aient fait l'objet de facturation ou non ;",
+        "e) payer concomitamment et sans émission préalable d'un rôle, l'impôt sur les sociétés sur les bénéfices ainsi déclarés ;",
+        "f) déposer une déclaration de liquidation faisant apparaître le montant total des honoraires, le bénéfice éventuellement dégagé sur ces honoraires à payer, sans émission préalable de rôle, le solde de l'impôt, au plus tard au jour de cessation d'activité et en tout état de cause avant le départ du matériel ou du personnel mobilisés ;",
+        "g) déposer au terme de chaque contrat, une déclaration de cessation d'activités accompagnée d'un rapport de fin de contrat détaillant les activités ayant fait l'objet dudit contrat conjointement signé par les parties.",
+        "3. À titre exceptionnel, toute société qui fournira au Trésor public un cautionnement bancaire ou un chèque de banque émis par un établissement de crédit installé au Congo ou en zone CEMAC, pourra surseoir au paiement du solde de l'impôt pour la part du bénéfice correspondant aux montants non encore réglés au jour du dépôt de la déclaration de liquidation par le bénéficiaire des activités conduites au Congo.",
+        "4. Outre le cautionnement susvisé, la société qui demande à bénéficier de ce régime devra remettre au directeur général des impôts une lettre du bénéficiaire des activités au Congo aux termes de laquelle ce bénéficiaire s'engage à faire connaître au Service la date exacte du paiement des sommes afférentes et le montant desdites sommes de façon à ce que le service puisse procéder au calcul du bénéfice dégagé et du montant d'impôt restant dû.",
+        "5. Dans le cas où l'impôt est directement payé par le bénéficiaire des activités, le cautionnement bancaire sera retourné par le Service à la banque émettrice. En tout état de cause, le cautionnement bancaire ne sera pas exigé si le bénéficiaire des activités s'engage, dans la lettre visée ci-dessus, à payer directement l'impôt pour le compte de la société étrangère.",
+        "6. La mise en œuvre du cautionnement bancaire se fera par le simple envoi, par courrier recommandé du directeur général des impôts à la banque émettrice dudit cautionnement, de la copie de l'avis de mise en recouvrement avec les instructions pour procéder au paiement de l'impôt.",
+        "7. Pour toute société étrangère ne procédant pas, soit selon les articles 86C à 86F, soit conformément aux alinéas précédents alors qu'elle se livre au Congo à des activités visées à l'article 2 du présent code, l'impôt sur les sociétés est immédiatement exigible dès le commencement des activités. Il est calculé d'office conformément aux dispositions du deuxième alinéa de l'article 86C."
       ],
       "mots_cles": [
         "personnes morales étrangères",
@@ -2543,25 +2543,27 @@
       "article": "Art. 92A",
       "titre": "Assiette forfaitaire et exclusions de la base",
       "texte": [
-        "1. L'impôt sur les sociétés des personnes morales étrangères définies à l'article 92 est assis sur la base d'un pourcentage forfaitaire du chiffre d'affaires hors taxes réalisé dans la République du Congo. Ce pourcentage forfaitaire est fixé à 22 % et constitue la base imposable.",
+        "1. L'impôt sur les sociétés des personnes morales étrangères définies à l'article 92 est assis sur la base d'un pourcentage forfaitaire du chiffre d'affaires hors taxes réalisé dans la République du Congo.",
+        "Ce pourcentage forfaitaire est fixé à 22 % et constitue la base imposable.",
         "2. Le taux de change applicable est le taux de change en République du Congo à la date d'émission des factures.",
-        "3. Pour les sociétés étrangères exerçant une partie seulement de leurs activités en République du Congo, l'assiette est déterminée sur la base d'un pourcentage forfaitaire du chiffre d'affaires réalisé en République du Congo. Il est retenu comme marge bénéficiaire nette imposable une marge au taux fixé à l'alinéa 1.",
-        "La base de calcul comprend la rémunération brute totale perçue, à l'exclusion :",
-        "a) des sommes de mobilisation/démobilisation du matériel et du personnel, si :",
-        "• elles impliquent un transfert vers/depuis le territoire congolais ;",
-        "• elles sont raisonnables et conformes aux usages du secteur ;",
-        "• elles sont facturées séparément avant l'arrivée ou après le départ ;",
-        "• elles sont identifiées sur le relevé annuel des sociétés pétrolières débitrices ;",
-        "• elles sont déclarées selon la réglementation en vigueur ;",
-        "b) des remboursements de dépenses et fournitures accessoires si :",
-        "• ils découlent d'une obligation contractuelle ;",
-        "• ils font l'objet d'une facturation séparée (dépense/prix + frais de prise en charge/manutention) ;",
-        "• ils sont identifiés sur le relevé annuel des sociétés pétrolières débitrices ;",
-        "• ils sont déclarés selon les règles fixées ;",
-        "c) des refacturations de sous-traitants et/ou co-contractants, pour contrats/marchés à la chaîne, sous conditions :",
-        "1° contrats nécessitant plusieurs intervenants avec étapes et contrats secondaires ;",
-        "2° entrepreneur principal et sous-traitant tous deux assujettis à l'IS (articles 92 et suivants applicables à tous) ;",
-        "3° la location de biens et services (équipements, matériels) n'entre pas dans la chaîne et ne peut bénéficier de ce régime."
+        "3. Dans le cas de sociétés étrangères exerçant une partie seulement de leurs activités en République du Congo, l'assiette de l'impôt est déterminée sur la base d'un pourcentage forfaitaire du chiffre d'affaires réalisé en République du Congo.",
+        "En conséquence, il est retenu comme marge bénéficiaire nette imposable une marge dont le taux est fixé au paragraphe 1, alinéa 2 du présent code aux fins de l'imposition en République du Congo des sociétés.",
+        "La base de calcul de ce pourcentage forfaitaire du chiffre d'affaires comprend la rémunération brute totale perçue par les sociétés de services à l'exclusion des éléments suivants :",
+        "a) Les sommes perçues à titre de mobilisation et de démobilisation du matériel et du personnel dans la mesure où :",
+        "1° la mobilisation ou la démobilisation aboutit à un transfert du matériel et du personnel vers le territoire de la République du Congo et hors de ce territoire ;",
+        "2° leurs montants sont raisonnables, c'est-à-dire qu'ils n'aboutissent pas à un transfert de rémunération au détriment de celle servant de base au calcul de la marge forfaitaire. Pour cela, ces montants ne doivent pas être exagérés, c'est-à-dire qu'ils doivent être conformes aux usages établis dans le secteur concerné ;",
+        "3° elles ont l'objet de facturation séparée avant l'arrivée ou après le départ du matériel et du personnel y afférent hors du territoire de la République ;",
+        "4° elles sont spécifiquement identifiées sur le relevé annuel remis aux autorités fiscales congolaises par les sociétés pétrolières débitrices ;",
+        "5° elles sont déclarées par les sociétés de services selon la réglementation en vigueur.",
+        "b) Les remboursements de dépenses et fournitures accessoires dans la mesure où :",
+        "1° ils découlent d'une obligation contractuelle ;",
+        "2° ils font l'objet de facturation séparée faisant apparaître une ventilation entre le montant de la dépense ou du prix de la fourniture et les frais de prise en charge et de manutention ;",
+        "3° ils sont spécifiquement identifiés sur le relevé annuel remis aux autorités fiscales congolaises par les sociétés pétrolières débitrices ;",
+        "4° ils sont déclarés par les sociétés de service selon les règles fixées.",
+        "c) Les restaurations des sous-traitants et/ou co-contractant de l'adjudicataire principal, dans le cadre des contrats ou marchés à la chaîne, dont l'exécution nécessite l'intervention de plusieurs intervenants, sous les conditions ci-après :",
+        "1° il doit s'agir des contrats dont l'exécution nécessite l'intervention de plusieurs intervenants à la chaîne, prévoyant déjà des étapes d'exécution ainsi que les contrats secondaires ;",
+        "2° l'entrepreneur principal et la société étrangère sous-traitante doivent être tous les deux assujettis à l'IS, c'est-à-dire que les dispositions des articles 92 et suivants s'appliquent à tous ;",
+        "3° pour l'appréciation du caractère du « marché ou contrat à la chaîne », la location des biens et services (équipement et autres matériels) ou de tout autre moyen d'exécution du contrat, n'entre pas dans la chaîne. Par conséquent, les frais y relatifs ne peuvent pas faire l'objet de l'application des dispositions de ce paragraphe."
       ],
       "mots_cles": [
         "assiette forfaitaire",
@@ -2589,18 +2591,19 @@
       "article": "Art. 92B",
       "titre": "Paiement, retenue à la source et ATE",
       "texte": [
-        "1. L'IS est payé spontanément et sans émission préalable de rôle sur les bénéfices ou la base imposable définie ci-dessus par la société sous-traitante pétrolière.",
-        "2. La retenue à la source est instituée pour les sociétés étrangères dont :",
+        "1) L'impôt sur les sociétés (IS) est payé spontanément et sans émission préalable de rôle sur les bénéfices ou la base imposable telle que définie ci-dessus par la société sous-traitante pétrolière.",
+        "2) La retenue à la source est instituée pour les sociétés étrangères dont :",
         "- la durée des travaux n'excède pas six mois ;",
         "- la durée des travaux excède six mois et qui ne justifient pas d'une installation professionnelle permanente en République du Congo.",
-        "3. Pour ces sociétés :",
-        "- les travaux/prestations d'un mois doivent être facturés dans les 30 jours du 2ème mois suivant celui de l'exécution ;",
-        "- le non-respect du délai entraîne le paiement spontané de l'impôt par la société sous-traitante ;",
-        "- l'IS forfaitaire retenu à la source est exigible au plus tard le 15 du mois suivant celui de la date de paiement prévue sur la facture ou dans le contrat.",
-        "4. À défaut de justification d'une autorisation temporaire d'exercer (ATE) par une société étrangère exerçant au Congo dans des conditions d'intermittence et de précarité, le taux applicable est le taux général de 20% prévu à l'article 185 ter C, sans préjudice des autres impôts et taxes. En dépit de l'ATE, les sociétés étrangères n'ayant ni domicile ni résidence fiscale au Congo restent soumises à l'article 185 ter A.",
-        "5. Le taux de la retenue à la source est fixé à 5,75% pour les personnes physiques ou morales de nationalité congolaise ou étrangère ayant des revenus provenant des contrats liés à la zone d'unification pétrolière avec l'Angola.",
-        "Les recettes fiscales issues de l'activité de sous-traitance de premier rang inférieur sont déclarées à l'Administration Fiscale (Unité des Sous-Traitants Pétroliers et Gaziers) respectivement par l'opérateur de la Zone d'Unitization et par les entreprises principales.",
-        "6. Les sociétés visées à l'article 92E, paragraphe 2 doivent justifier d'une représentation légale au Congo. Un arrêté du Ministre des Finances détermine les modalités d'organisation de la représentation légale."
+        "3) Pour ces sociétés :",
+        "- les travaux ou prestations exécutés au cours d'un mois doivent être facturés dans les 30 jours du 2ème mois suivant celui de l'exécution des prestations ou livraison des biens ;",
+        "- le non-respect du délai de facturation prévu ci-dessus entraîne à l'encontre de la société sous-traitante, le paiement spontané de l'impôt ;",
+        "- l'impôt forfaitaire sur les sociétés retenu à la source est exigible au plus tard le 15 du mois qui suit celui de la date de paiement prévue sur la facture ou dans le contrat.",
+        "4) À défaut de justification d'une autorisation temporaire d'exercer (ATE), par une société étrangère exerçant au Congo dans les conditions d'intermittence et de précarité, le taux de l'impôt applicable est le taux général de 20% prévu à l'article 185 ter C du présent code, sans préjudice des autres impôts et taxes dont elle est redevable dans le cadre de son activité sur le territoire congolais.",
+        "En dépit de justification de l'ATE par les sociétés étrangères n'ayant ni domicile, ni résidence fiscale au Congo, elles restent soumises aux dispositions de l'article 185 ter A du présent Code.",
+        "5) Le taux de la retenue à la source est fixé à 5,75% pour les personnes physiques ou morales de nationalité Congolaise ou étrangère, ayant des revenus provenant des contrats liés à la zone d'unitisation pétrolière avec l'Angola.",
+        "Les recettes fiscales issues de l'activité de sous-traitance de premier rang et de l'activité de sous-traitance de rang inférieur, par les entreprises principales et les sous-traitants résidant au Congo, à l'Administration Fiscale (Unité des Sous-Traitants Pétroliers et Gaziers) respectivement par l'opérateur de la Zone d'Unitisation et par les entreprises principales.",
+        "6) Les sociétés visées à l'article 92 B, paragraphe 2 doivent justifier d'une représentation légale au Congo. Un arrêté du Ministre des Finances détermine les modalités d'organisation de la représentation légale."
       ],
       "mots_cles": [
         "retenue à la source",
@@ -2617,11 +2620,11 @@
       "article": "Art. 92C",
       "titre": "Taux de l'IS personnes morales étrangères",
       "texte": [
-        "Le taux de l'impôt sur les sociétés est fixé à l'article 86A du présent code."
+        "Le taux de l'impôt sur les sociétés est fixé à l'article 86 A du présent code."
       ],
       "mots_cles": [
         "taux IS",
-        "art. 86A"
+        "art. 86 A"
       ],
       "statut": "en vigueur",
       "section": "Section 5 : Régimes particuliers - Sous-section 6 : Régime des personnes morales étrangères"
@@ -2630,7 +2633,7 @@
       "article": "Art. 92D",
       "titre": "Modalités déclaratives de paiement",
       "texte": [
-        "Le paiement s'effectue par liasse unique reprenant par fournisseur les données ci-après :",
+        "1) Le paiement s'effectue par liasse unique reprenant par fournisseur les données ci-après :",
         "- dénomination ou raison sociale ;",
         "- adresse ;",
         "- numéro du contrat ;",
@@ -2649,12 +2652,12 @@
       "article": "Art. 92E",
       "titre": "Sanctions personnes morales étrangères",
       "texte": [
-        "Le défaut de déclaration des factures émises ainsi que l'inexactitude ou l'insuffisance de déclaration sont sanctionnés par une amende fiscale de 100.000 francs par élément omis ou incomplet.",
-        "Le non-paiement de l'impôt ou son paiement partiel après mise en demeure de 8 jours est sanctionné par une pénalité de 100 % du montant des droits éludés.",
-        "Le paiement tardif avant mise en demeure est sanctionné par un intérêt de retard de 1 % par jour ouvrable calculé sur le principal, sans excéder 50%.",
-        "Toutefois, le report du paiement de l'impôt forfaitaire entre le délai légal et la fin du mois en cours est sanctionné par une amende de 500.000 FCFA. Dans ce cas, l'intérêt de retard n'est pas dû.",
-        "Au-delà, toute déclaration ou paiement tardif est sanctionné comme indiqué ci-dessus, sans préjudice de l'intérêt de retard.",
-        "Le complément d'impôt constaté à la suite du réajustement prévu à l'article 126 ter 3 alinéa 2 n'est assorti d'aucune sanction s'il est payé avec la déclaration des factures définitives. En cas de retard, le paiement est majoré de l'intérêt de retard."
+        "Le défaut de déclaration par un contribuable des factures émises, ainsi que l'inexactitude ou l'insuffisance de déclaration sont sanctionnés par une amende fiscale de 100.000 francs par élément omis ou incomplet.",
+        "Le non-paiement de l'impôt ou son paiement partiel après une mise en demeure de 8 jours est sanctionné par une pénalité de 100 % du montant des droits éludés.",
+        "Le paiement tardif de l'impôt avant mise en demeure est sanctionné par un intérêt de retard de 1 % par jour ouvrable calculé sur le principal des droits sans excéder 50 %.",
+        "Toutefois, le report du paiement de l'impôt forfaitaire sur les sociétés entre le délai légal et la fin du mois en cours est sanctionné par une amende de 500.000 FCFA. Dans ce cas, l'intérêt de retard n'est pas dû.",
+        "Au-delà, toute déclaration ou paiement tardif est sanctionné comme indiqué à l'alinéa 2, sans préjudice de l'intérêt de retard prévu ci-dessus.",
+        "Le complément d'impôt constaté à la suite du réajustement prévu à l'article 92.3 du présent code n'est assorti d'aucune sanction fiscale s'il est payé en même temps que la déclaration des factures définitives. En cas de retard entre la déclaration des factures définitives et le règlement dudit complément, le paiement est majoré de l'intérêt de retard prévu à l'alinéa 3 ci-dessus."
       ],
       "mots_cles": [
         "sanctions",
@@ -2670,11 +2673,11 @@
       "article": "Art. 92F",
       "titre": "Mentions obligatoires sur factures",
       "texte": [
-        "Pour les prestations imposables, la personne morale étrangère passible de l'impôt doit porter obligatoirement sur ses factures les mentions :",
-        "1) « Prestation rendue au Congo. Montant imposable à l'impôt sur les sociétés. Retenue à la source de l'impôt et paiement à faire par client, destinataire de la facture » ;",
-        "2) Pour les prestations non imposables : « prestation rendue au Congo. Montant non imposable » ;",
-        "3) À défaut de mention 1) ou 2), le client est autorisé à différer le paiement (et la retenue à la source) jusqu'à apposition de la mention requise ;",
-        "4) En l'absence des mentions, les sociétés clientes ne pourront déduire les factures correspondantes des charges concourant à la détermination du résultat imposable."
+        "Pour les prestations imposables, la personne morale étrangère passible de l'impôt, devra porter obligatoirement sur ses factures les mentions :",
+        "1) Prestation rendue au Congo. Montant imposable à l'impôt sur les sociétés. Retenue à la source de l'impôt et paiement à faire par client, destinataire de la facture ;",
+        "2) Pour les prestations non imposables, elle devra porter sur ses factures la mention « Prestation rendue au Congo. Montant non imposable » ;",
+        "3) À défaut par la personne morale étrangère, passible de l'impôt, d'avoir apposé sur ses factures l'une des mentions visées aux alinéas 1 et 2 ci-dessus, son client est autorisé à en différer le paiement et par voie de conséquence, la retenue à la source de l'impôt sur les sociétés jusqu'à l'apposition de l'une des mentions prescrites.",
+        "4) En l'absence des mentions susvisées, les sociétés clientes ne pourront déduire les factures correspondantes aux charges concourant à la détermination du résultat imposable."
       ],
       "mots_cles": [
         "mentions obligatoires",
@@ -2691,7 +2694,7 @@
       "texte": [
         "L'autorisation de quitter le territoire congolais, pour les personnes morales étrangères, est subordonnée à la présentation d'un quitus fiscal délivré par :",
         "- le directeur général des impôts et des domaines, lorsque le chiffre d'affaires global du requérant ne dépasse pas 100.000.000.000 de francs CFA ;",
-        "- le ministre des finances lorsque le chiffre d'affaires global du requérant est supérieur à 100 milliards de francs CFA, après avis du Directeur Général des Impôts et des Domaines.",
+        "- le ministre des finances lorsque le chiffre d'affaires global du requérant est supérieur à 100.000.000.000 de francs CFA, après avis du directeur général des impôts et des domaines.",
         "Pour les personnes physiques et morales continuant leur séjour et leurs activités au Congo, le document à établir est un certificat d'imposition délivré par le chef de l'Unité du requérant."
       ],
       "mots_cles": [
@@ -2724,21 +2727,32 @@
       "article": "Art. 92I",
       "titre": "Enregistrement des contrats pétroliers et obligations déclaratives",
       "texte": [
-        "1) Les contrats des sociétés pétrolières avec les personnes morales étrangères (contracteurs) et avec les sous-traitants pétroliers doivent être enregistrés moyennant un droit fixe de 1.000.000 FCFA avant leur exécution.",
-        "Les bons de commandes passés dans cadre d'un contrat pétrolier de base sont enregistrés au droit proportionnel de 1%.",
-        "Le défaut d'enregistrement ou l'enregistrement hors délai des contrats pétroliers ou des bons de commandes passés en l'absence d'un contrat pétrolier de base est sanctionné par une amende égale au montant des droits d'enregistrement.",
-        "Le défaut d'enregistrement ou enregistrement hors délai des bons de commandes passés dans le cadre d'un contrat pétrolier de base est sanctionné par une amende de 1.000.000 FCFA par bon de commande.",
-        "Tout contrat ou bon de commande soumis à enregistrement et rédigé en langue étrangère doit être traduit sous peine d'une amende de 2.000.000 FCFA.",
-        "2) Les opérateurs pétroliers déclarent, en fin de trimestre et au plus tard le 20 du mois suivant, la liste exhaustive des sous-traitants en relation d'affaires : raison sociale, adresse/localisation, NIU, date/numéro/objet du contrat ou BC, durée (début/fin), montant total (monnaie), factures du trimestre, références permis/champs pétroliers.",
-        "3) Les sociétés sous-traitantes pétrolières doivent faire apparaître expressément la valeur prévisionnelle/administrative dans les contrats ou bons de commande.",
-        "4) Par exception, pour contrats à exécution successive, les contrats de base et avenants sont enregistrés au plus tard le 15 du mois suivant la signature, sous peine d'amende.",
-        "5) Les contrats/BC de travaux ponctuels ou urgents sont enregistrés en cours d'exécution.",
-        "6) Le défaut d'enregistrement dans les délais est sanctionné par une amende de 5.000.000 FCFA, solidairement due.",
-        "7) Le défaut de déclaration trimestrielle de la liste des sous-traitants : amende de 3.000.000 FCFA.",
-        "8) Le défaut de déclaration mensuelle des rémunérations versées et des retenues à la source : amende de 3.000.000 FCFA.",
-        "9) Toute omission/inexactitude dans les déclarations : amende de 10.000 FCFA par omission/inexactitude.",
-        "10) Défaut de valeur prévisionnelle/administrative : amende de 3.000.000 FCFA.",
-        "11) Le bordereau de déclaration doit être accompagné des factures reçues ; défaut sanctionné selon l'article 92E."
+        "1. Les contrats des sociétés pétrolières avec les personnes morales étrangères (contracteurs) et avec les sous-traitants pétroliers doivent être enregistrés moyennant un droit fixe de 1.000.000 FCFA avant leur exécution.",
+        "Les bons de commandes passés dans le cadre d'un contrat pétrolier de base sont enregistrés gratis dans le délai de trois mois à compter de la date de la commande.",
+        "Toutefois, les bons de commandes passés en l'absence d'un contrat pétrolier de base sont enregistrés au droit proportionnel de 1%.",
+        "Le défaut d'enregistrement ou l'enregistrement hors délai des contrats pétroliers ou des bons de commandes passés en l'absence d'un contrat pétrolier de base est sanctionné par le paiement d'une amende de 1.000.000 FCFA par bon de commande.",
+        "Le défaut d'enregistrement ou enregistrement hors délai des bons de commandes passés dans le cadre d'un contrat pétrolier de base est sanctionné par le paiement d'une amende de 1.000.000 FCFA par bon de commande.",
+        "Tout contrat ou bon de commande soumis à la formalité d'enregistrement ou déposé auprès de l'administration fiscale et rédigé en langue étrangère doit faire l'objet d'une traduction sous peine d'une amende de 2.000.000 FCFA.",
+        "2. Il est fait obligation aux opérateurs pétroliers de déclarer au service compétent de la direction générale des impôts, en fin de trimestre, au plus tard le 15 du mois suivant la fin du trimestre la liste exhaustive des sous-traitants pétroliers en relation d'affaires avec eux.",
+        "Cette liste doit comporter les renseignements suivants :",
+        "- la raison sociale ou la dénomination du sous-traitant ;",
+        "- l'adresse complète, localisation ;",
+        "- le numéro d'identification unique (NIU) ;",
+        "- la date, le numéro et l'objet du contrat ou du bon de commande ;",
+        "- la durée du contrat ou du bon de commande en indiquant les dates du début et de fin du contrat ou du bon de commande ;",
+        "- le montant total du contrat ou du bon de commande en précisant la monnaie de la facturation ;",
+        "- les numéros, dates et montants des factures reçues au cours du trimestre ;",
+        "- les références aux permis et des champs pétroliers correspondant à chaque contrat ou à chaque bon de commande.",
+        "3. Il est fait obligation aux opérateurs pétroliers de déclarer à la fin de chaque mois les rémunérations versées aux sous-traitants pétroliers ainsi que le montant de la retenue à la source opérée sur lesdites rémunérations ;",
+        "4. Il est également fait obligation aux sociétés sous-traitantes pétrolières de faire apparaître dans leurs contrats ou dans leurs bons de commandes de façon expresse la valeur prévisionnelle ou administrative desdits contrats ou bons de commandes.",
+        "5. Par exception au délai prévu à l'article 59 paragraphe 1 du CGI tome 2, livre 1er, pour les contrats à exécution successive, les contrats de base et leurs avenants sont enregistrés au plus tard le 15 du mois qui suit leur signature, sous peine de l'amende prévue à l'alinéa 6 du présent article.",
+        "6. Les contrats ou les bons de commandes d'exécution des travaux ponctuels ou urgents seront enregistrés en cours d'exécution des travaux.",
+        "7. Le défaut d'enregistrement des contrats ou des bons de commandes visés au présent article dans les délais fixés ci-dessus est sanctionné par une amende de 5.000.000 FCFA. Les parties contractantes sont solidairement responsables du paiement de cette amende.",
+        "8. Le défaut de déclaration trimestrielle de la liste des sous-traitants est sanctionné par une amende de trois millions (3 000 000) de FCFA.",
+        "9. Le défaut de déclaration mensuelle des rémunérations versées et des retenues à la source effectuées sur les sommes payées aux sous-traitants est sanctionné par une amende de trois millions (3 000 000) de FCFA.",
+        "10. Toute omission ou inexactitude relevée dans les déclarations visées aux alinéas 7 et 8 ci-dessus est sanctionnée par une amende fiscale de 10.000 FCFA encourue autant de fois qu'il est constaté d'omission ou d'inexactitude dans les renseignements fournis.",
+        "11. Le défaut de faire apparaître dans les contrats ou dans les bons de commandes de façon expresse la valeur prévisionnelle ou administrative est sanctionné par une amende de 3.000.000 FCFA.",
+        "12. Le bordereau de déclaration doit obligatoirement être accompagné des factures reçues par les opérateurs pétroliers. Le défaut de production des factures reçues est sanctionné conformément aux dispositions de l'article 92 E du présent Code."
       ],
       "mots_cles": [
         "contrats pétroliers",
@@ -2755,14 +2769,17 @@
       "article": "Art. 92J",
       "titre": "Régime dérogatoire lié à l'activité pétrolière",
       "texte": [
-        "1) Toutes les personnes morales ayant leur siège social au Congo, ou celles qui exercent au Congo une activité industrielle, commerciale, artisanale, agricole ou prestations de service, par dérogation de l'article 4 du CGI tome 1 et qui sont liées aux sociétés de recherche, de production et d'exploitation pétrolières installées ou opérant au Congo, sont imposées selon les articles 92, 92A et 92-I quel que soit le lieu d'exécution du contrat.",
-        "2) Celles dont l'activité exclusive est de fournir des biens/services ou d'exécuter des travaux directement liés à l'activité hydrocarbures sont de plein droit soumises au régime dérogatoire.",
-        "3) Celles à activité non exclusive sont soumises au régime dérogatoire si le chiffre d'affaires pétrolier est ≥ 70% du chiffre d'affaires global.",
-        "4) Le retour au droit commun s'effectue dès la deuxième année suivant l'abaissement sous 70%, sur demande motivée au DGID entre le 10 et le 20 octobre ; décision au plus tard le 15 décembre.",
-        "5) Le chiffre d'affaires pétrolier comprend : CA avec sociétés pétrolières au Congo ; CA avec sociétés pétrolières et sous-traitantes hors Congo ; CA avec co-contractants pour le compte d'une société pétrolière.",
-        "Le fait générateur est la réalisation d'au moins 70% du CA avec les sociétés pétrolières dans une ou plusieurs activités (géophysique, géochimie, forage, exploration, développement, stockage, production, transport).",
-        "Le CA « catering » sur sites pétroliers est soumis au régime dérogatoire dans la limite du seuil ci-dessus.",
-        "Les personnes morales concernées doivent déclarer les états financiers (article 104) et ne sont pas éligibles à la charte des investissements."
+        "1) Toutes les personnes morales ayant leur siège social au Congo, ou celles qui exercent au Congo une activité industrielle, commerciale, artisanale, agricole ou prestations de service, par dérogation de l'article 4 du CGI tome 1 et qui sont liées aux sociétés de recherche, de production et d'exploitation pétrolières installées ou opérant au Congo, sont imposées au Congo selon les dispositions des articles 92A à 92I du présent code quel que soit le lieu d'exécution du contrat.",
+        "2) Les personnes morales visées à l'alinéa 1 ci-dessus dont l'activité exclusive est de fournir des biens, services ou d'exécuter des travaux directement liés par nature à l'activité de recherche, de production et d'exploitation des hydrocarbures bruts sont de plein droit soumises au régime dérogatoire visé ci-dessus.",
+        "3) Les personnes morales visées à l'alinéa 1 ci-dessus ayant une activité non exclusive avec les sociétés pétrolières installées ou opérant au Congo sont soumises au régime dérogatoire lorsque le chiffre d'affaires résultant de l'activité pétrolière est supérieur ou égal à 70% du chiffre d'affaires global.",
+        "4) Toutefois, le retour au régime de droit commun des personnes morales visées au paragraphe 3 ci-dessus s'effectue dès la deuxième année qui suit celle de la constatation de l'abaissement consécutif du chiffre d'affaires en dessous de 70%. À cet effet, une demande motivée est adressée au directeur général des impôts au plus tard le 15 octobre de la deuxième année. Celui-ci se prononce au plus tard le 15 décembre de la même année.",
+        "5) Par chiffre d'affaires résultant de l'activité pétrolière, il faut entendre :",
+        "- le chiffre d'affaires réalisé avec les sociétés pétrolières installées ou opérant au Congo ;",
+        "- le chiffre d'affaires réalisé avec les sociétés pétrolières et les sociétés sous-traitantes installées ou opérant hors du Congo ;",
+        "- le chiffre d'affaires réalisé avec les contractants dans le cadre de l'exécution d'un contrat pour le compte d'une société pétrolière.",
+        "Dans tous les cas, le fait générateur est la réalisation d'au moins 70% du chiffre d'affaires avec les sociétés pétrolières dans l'une ou plusieurs des activités telles que définies dans le code des hydrocarbures, notamment la géophysique, la géochimie, le forage, l'exploration, le développement, le stockage, la production et le transport des hydrocarbures.",
+        "Toutefois, le chiffre d'affaires réalisé par l'activité de « catering » effectuée ou livrée sur les sites pétroliers constitue un chiffre d'affaires soumis au régime dérogatoire de l'IS forfaitaire dans la limite prévue au paragraphe précédent.",
+        "Les personnes morales visées à l'alinéa 1 ci-dessus sont astreintes aux obligations prévues à l'article 131 du présent code. À ce titre, elles sont tenues de déclarer les investissements au titre du régime fiscal classé conformément à la réglementation en vigueur. Elles ne sont pas éligibles à la charte des investissements dudit régime fiscal."
       ],
       "mots_cles": [
         "régime dérogatoire",
@@ -2791,7 +2808,7 @@
       "article": "Art. 92K",
       "titre": "Revenus accessoires des sous-traitants pétroliers",
       "texte": [
-        "Les revenus accessoires à l'activité principale des sociétés sous-traitantes pétrolières, réalisés à l'occasion de la gestion commerciale desdites sociétés, par livraison de biens et/ou de prestation de services, relèvent de la taxation spécifique édictée par les articles 92 et suivants du Code Général des impôts."
+        "Les revenus accessoires à l'activité principale des sociétés sous-traitantes pétrolières, réalisés à l'occasion de la gestion commerciale desdits sociétés, par livraison de biens et/ou de prestation de services, relèvent de la taxation spécifique édictée par les articles 92 et suivants du Code Général des Impôts."
       ],
       "mots_cles": [
         "revenus accessoires",
