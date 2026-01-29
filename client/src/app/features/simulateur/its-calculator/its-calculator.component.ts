@@ -36,7 +36,7 @@ export class ItsCalculatorComponent {
     periode: 'mensuel',
     situationFamiliale: 'celibataire',
     nombreEnfants: null,
-    appliquerChargeFamille: false, // Par defaut, ITS ne tient pas compte des charges
+    appliquerChargeFamille: true, // Art. 116 A - quotient familial appliqué
   };
 
   result = signal<ItsResult | null>(null);
