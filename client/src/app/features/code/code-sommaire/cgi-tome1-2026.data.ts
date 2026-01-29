@@ -93,7 +93,7 @@ export const CGI_TOME_1_2026: Tome = {
             {
               chapitre: 2,
               titre: 'Impôts sur les revenus',
-              articles: '93-126',
+              articles: '93-116I',
               sections: [
                 {
                   section: 1,
@@ -143,7 +143,7 @@ export const CGI_TOME_1_2026: Tome = {
                   section: 4,
                   display: '2.4',
                   titre: 'Impôt sur les traitements et salaires (ITS)',
-                  articles: '114-126',
+                  articles: '114-116I',
                   sous_sections: [
                     { sous_section: 1, display: 'Sec. 1', titre: 'Champ d\'application', articles: '114-114E' },
                     { sous_section: 2, display: '§1', titre: 'Revenus imposables', articles: '114-114' },
