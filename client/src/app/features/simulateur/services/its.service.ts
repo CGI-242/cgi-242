@@ -18,8 +18,7 @@ export interface ItsInput {
   situationFamiliale: SituationFamiliale;
   nombreEnfants: number | null;
 
-  // Exception 2026: appliquer les charges de famille
-  // Note: Par défaut ITS n'applique pas les charges, mais exception autorisée par DGI en 2026
+  // Art. 116 A: appliquer le quotient familial
   appliquerChargeFamille: boolean;
 
   // Avantages (optionnels)
@@ -46,7 +45,7 @@ export interface ItsResult {
   // Étape 5: Revenu net imposable
   revenuNetImposable: number;
 
-  // Étape 6: Quotient familial (exception 2026)
+  // Étape 6: Quotient familial (Art. 116 A)
   nombreParts: number;
   revenuParPart: number;
   chargeFamilleAppliquee: boolean;
