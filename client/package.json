@@ -61,7 +61,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^21.1.0",
     "@angular/cli": "^21.1.0",
-    "@angular/compiler-cli": "^21.1.0",
+    "@angular/compiler-cli": "^21.1.2",
     "@playwright/test": "^1.40.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^20.11.0",
