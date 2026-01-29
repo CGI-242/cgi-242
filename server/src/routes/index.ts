@@ -11,6 +11,7 @@ import permissionRoutes from './permission.routes.js';
 import analyticsRoutes from './analytics.routes.js';
 import invoiceRoutes from './invoice.routes.js';
 import stripeRoutes from './stripe.routes.js';
+import alertesFiscalesRoutes from './alertes-fiscales.routes.js';
 
 const router = Router();
 
@@ -35,6 +36,7 @@ router.use('/permissions', permissionRoutes);
 router.use('/analytics', analyticsRoutes);
 router.use('/invoices', invoiceRoutes);
 router.use('/stripe', stripeRoutes);
+router.use('/alertes-fiscales', alertesFiscalesRoutes);
 
 // Routes d'audit (montées à la racine car incluent /organizations/:orgId/audit et /audit/*)
 router.use(auditRoutes);

@@ -1,11 +1,12 @@
 export interface Paragraphe {
-  numero: number;
+  numero: number | string;
   titre: string;
   articles: string;
 }
 
 export interface SousSectionSommaire {
   sous_section: number | string;
+  display?: string; // Affichage alternatif (ex: '3 bis' pour sous_section: 3.5)
   titre: string;
   articles?: string;
   statut?: string;
@@ -15,6 +16,7 @@ export interface SousSectionSommaire {
 export interface Section {
   section: number;
   titre: string;
+  display?: string; // Affichage alternatif (ex: '2.1' au lieu de 'Sec. 1')
   page?: number;
   statut?: string;
   articles?: string; // Plage d'articles ex: "1-65 bis"
@@ -55,7 +57,7 @@ export interface Partie {
 
 export interface Annexe {
   titre: string;
-  page: number;
+  page?: number;
 }
 
 export interface SousSection {

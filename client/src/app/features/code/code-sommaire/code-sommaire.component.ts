@@ -1,16 +1,19 @@
 import { Component, ChangeDetectionStrategy, input, output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CGI_SOMMAIRE_2025, CGI_SOMMAIRE_2026, CGI_CONVENTIONS, Tome, Chapitre, Section, Partie, Annexe, Livre, SousSection, SousSectionSommaire, Convention, ConventionChapitre } from './cgi-structure.data';
+import { CGI_SOMMAIRE_2025, CGI_SOMMAIRE_2026, CGI_CONVENTIONS, Tome, Chapitre, Section, Partie, Annexe, Livre, SousSection, SousSectionSommaire, Convention, ConventionChapitre, Paragraphe } from './cgi-structure.data';
 
 export interface SommaireSelection {
-  type: 'tome' | 'partie' | 'livre' | 'chapitre' | 'section' | 'sous_section' | 'texte' | 'convention';
+  type: 'tome' | 'partie' | 'livre' | 'chapitre' | 'section' | 'sous_section' | 'paragraphe' | 'texte' | 'convention';
   path: string;
   titre: string;
   articles?: string; // Plage d'articles ex: "1-65 bis"
   tome?: number; // Numéro du tome pour filtrer correctement
   chapitreTitre?: string; // Titre du chapitre pour filtrer (ex: "Impôt sur le revenu des personnes physiques (IRPP)")
   sectionTitre?: string; // Titre de la section pour filtrer
+  sousSectionTitre?: string; // Titre de la sous-section pour les headers de paragraphes
+  sousSectionNumero?: number | string; // Numéro de la sous-section
   sousSections?: { titre: string; articles: string }[]; // Pour afficher les sous-sections comme séparateurs
+  paragraphes?: { numero: number | string; titre: string; articles: string; sousSectionTitre?: string; sousSectionNumero?: number | string }[]; // Pour afficher les paragraphes comme séparateurs
 }
 
 @Component({
@@ -65,9 +68,27 @@ export class CodeSommaireComponent {
   onSectionClick(chapitre: Chapitre, section: Section, tomeNum?: number): void {
     // Préparer les sous-sections pour les afficher comme séparateurs
     const sousSections = section.sous_sections?.map(ss => ({
-      titre: `${ss.sous_section}. ${ss.titre}`,
+      titre: `${ss.display || ss.sous_section}. ${ss.titre}`,
       articles: ss.articles || ''
     }));
+
+    // Collecter les paragraphes de toutes les sous-sections avec leur contexte
+    const paragraphes: { numero: number | string; titre: string; articles: string; sousSectionTitre?: string; sousSectionNumero?: number | string }[] = [];
+    if (section.sous_sections) {
+      for (const ss of section.sous_sections) {
+        if (ss.paragraphes) {
+          for (const p of ss.paragraphes) {
+            paragraphes.push({
+              numero: p.numero,
+              titre: p.titre,
+              articles: p.articles || '',
+              sousSectionTitre: ss.titre,
+              sousSectionNumero: ss.display || ss.sous_section
+            });
+          }
+        }
+      }
+    }
 
     this.selection.emit({
       type: 'section',
@@ -78,6 +99,7 @@ export class CodeSommaireComponent {
       chapitreTitre: chapitre.titre, // Pour filtrer par chapitre dans la DB
       sectionTitre: section.titre, // Pour filtrer par section dans la DB
       sousSections,
+      paragraphes: paragraphes.length > 0 ? paragraphes : undefined,
     });
   }
 
@@ -106,11 +128,33 @@ export class CodeSommaireComponent {
   }
 
   onSousSectionClick(chapitre: Chapitre, section: Section, sousSection: SousSectionSommaire, tomeNum?: number): void {
+    // Préparer les paragraphes s'ils existent avec le contexte de la sous-section
+    const paragraphes = sousSection.paragraphes?.map(p => ({
+      numero: p.numero,
+      titre: p.titre,
+      articles: p.articles || '',
+      sousSectionTitre: sousSection.titre,
+      sousSectionNumero: sousSection.display || sousSection.sous_section
+    }));
+
     this.selection.emit({
       type: 'sous_section',
-      path: `Chapitre ${chapitre.chapitre}, Section ${section.section}, §${sousSection.sous_section}`,
+      path: `Chapitre ${chapitre.chapitre}, Section ${section.section}, §${sousSection.display || sousSection.sous_section}`,
       titre: sousSection.titre,
       articles: sousSection.articles,
+      tome: tomeNum,
+      sousSectionTitre: sousSection.titre,
+      sousSectionNumero: sousSection.display || sousSection.sous_section,
+      paragraphes,
+    });
+  }
+
+  onParagrapheClick(chapitre: Chapitre, section: Section, sousSection: SousSectionSommaire, paragraphe: Paragraphe, tomeNum?: number): void {
+    this.selection.emit({
+      type: 'paragraphe',
+      path: `Chapitre ${chapitre.chapitre}, Section ${section.section}, §${sousSection.display || sousSection.sous_section}, Paragraphe ${paragraphe.numero}`,
+      titre: paragraphe.titre,
+      articles: paragraphe.articles,
       tome: tomeNum,
     });
   }

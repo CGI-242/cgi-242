@@ -51,6 +51,12 @@ export const routes: Routes = [
       import('./features/analytics/analytics-dashboard.component').then((m) => m.AnalyticsDashboardComponent),
     canActivate: [authGuard],
   },
+  {
+    path: 'alertes-fiscales',
+    loadChildren: () =>
+      import('./features/alertes-fiscales/alertes-fiscales.routes').then((m) => m.ALERTES_FISCALES_ROUTES),
+    canActivate: [authGuard],
+  },
   // Profil utilisateur
   {
     path: 'profile',

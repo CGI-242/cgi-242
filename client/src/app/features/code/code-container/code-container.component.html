@@ -6,11 +6,11 @@
 
     <main
       class="flex-1 transition-all duration-300"
-      [class.ml-64]="!sidebarCollapsed"
+      [class.ml-52]="!sidebarCollapsed"
       [class.ml-14]="sidebarCollapsed">
       <div class="flex h-[calc(100vh-5rem)]">
         <!-- Sidebar navigation -->
-        <div class="w-[620px] border-r border-secondary-200 bg-white flex flex-col">
+        <div class="w-[640px] border-r border-secondary-200 bg-white flex flex-col">
           <!-- Header avec version -->
           <div class="px-3 py-2 border-b border-secondary-200 bg-primary-50">
             <h2 class="text-lg font-semibold text-primary-900">CGI {{ articlesService.currentVersion() }}</h2>
@@ -86,7 +86,7 @@
                     <!-- Séparateur sous-section si c'est le premier article de la sous-section -->
                     @if (getSousSectionHeader(article.numero); as ssHeader) {
                       <div class="px-3 py-2 bg-primary-100 border-l-4 border-primary-500">
-                        <span class="text-sm font-semibold text-primary-800">Sous-section {{ ssHeader }}</span>
+                        <span class="text-sm font-semibold text-primary-800">{{ ssHeader.startsWith('Sec.') ? ssHeader : 'Sous-section ' + ssHeader }}</span>
                       </div>
                     }
                     <!-- Headers point (1- Conditions, 2- Imposition, a) Qualité...) depuis le contenu -->
@@ -194,7 +194,7 @@
 
             <!-- Article content -->
             <div class="flex-1 overflow-y-auto p-6 bg-secondary-50/50">
-              <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-sm border border-secondary-100 p-8">
+              <div class="max-w-7xl mx-auto bg-white rounded-xl shadow-sm border border-secondary-100 p-8">
                 @if (article.chapeau) {
                   <div class="chapeau text-secondary-700 font-medium italic mb-4 pb-4 border-b border-secondary-200">
                     {{ article.chapeau }}
@@ -223,12 +223,12 @@
           } @else if (filteredArticles().length > 0) {
             <!-- Vue multi-articles (lecture continue) -->
             <div class="flex-1 overflow-y-auto p-6 bg-secondary-50/50">
-              <div class="max-w-5xl mx-auto space-y-6">
+              <div class="max-w-7xl mx-auto space-y-6">
                 @for (article of filteredArticles(); track article.id; let i = $index) {
                   <!-- Séparateur sous-section -->
                   @if (getSousSectionHeader(article.numero); as ssHeader) {
                     <div class="py-4 px-6 bg-primary-100 border-l-4 border-primary-500 rounded-r-lg">
-                      <h2 class="text-lg font-bold text-primary-800">Sous-section {{ ssHeader }}</h2>
+                      <h2 class="text-lg font-bold text-primary-800">{{ ssHeader.startsWith('Sec.') ? ssHeader : 'Sous-section ' + ssHeader }}</h2>
                     </div>
                   }
                   <!-- Headers point (1- Conditions, 2- Imposition, a) Qualité...) depuis le contenu -->

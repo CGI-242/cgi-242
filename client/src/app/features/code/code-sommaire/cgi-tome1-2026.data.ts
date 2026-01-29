@@ -92,12 +92,20 @@ export const CGI_TOME_1_2026: Tome = {
             },
             {
               chapitre: 2,
-              titre: 'Impôt sur les bénéfices d\'affaires (IBA)',
+              titre: 'Impôts sur les revenus',
               articles: '93-126',
               sections: [
-                { section: 1, titre: 'Champ d\'application', articles: '93-100' },
-                { section: 2, titre: 'Détermination du bénéfice imposable', articles: '101-115' },
-                { section: 3, titre: 'Calcul et paiement', articles: '116-126' },
+                {
+                  section: 1,
+                  display: '2.1',
+                  titre: 'Impôt sur les bénéfices d\'affaires (IBA)',
+                  articles: '93-126',
+                  sous_sections: [
+                    { sous_section: 1, display: 'Sec. 1', titre: 'Champ d\'application', articles: '93-93C' },
+                    { sous_section: 2, display: 'Sec. 2', titre: 'Bénéfice imposable', articles: '94-115' },
+                    { sous_section: 3, display: 'Sec. 3', titre: 'Calcul et paiement', articles: '116-126' },
+                  ]
+                },
               ],
             },
             {

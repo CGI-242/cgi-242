@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '@shared/components/header/header.component';
 import { SidebarComponent } from '@shared/components/sidebar/sidebar.component';
 import { BreadcrumbComponent } from '@shared/components/breadcrumb/breadcrumb.component';
@@ -9,7 +9,7 @@ import { BreadcrumbComponent } from '@shared/components/breadcrumb/breadcrumb.co
   selector: 'app-simulateur-container',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderComponent, SidebarComponent, BreadcrumbComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, SidebarComponent, BreadcrumbComponent],
   template: `
     <div class="min-h-screen bg-secondary-50 dark:bg-secondary-900 transition-colors duration-300">
       <app-header />
@@ -19,7 +19,7 @@ import { BreadcrumbComponent } from '@shared/components/breadcrumb/breadcrumb.co
 
         <main
           class="flex-1 transition-all duration-300"
-          [class.ml-64]="!sidebarCollapsed"
+          [class.ml-52]="!sidebarCollapsed"
           [class.ml-14]="sidebarCollapsed">
           <div class="p-4 md:p-6 lg:px-8">
             <!-- Breadcrumb -->

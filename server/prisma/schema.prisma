@@ -421,6 +421,7 @@ model Article {
   references    ArticleReference[] @relation("ArticleFrom")
   referencedBy  ArticleReference[] @relation("ArticleTo")
   searchHistory SearchHistory[]
+  alertes       AlerteFiscale[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -491,6 +492,59 @@ model SystemConfig {
   updatedAt DateTime @updatedAt
 
   @@map("system_config")
+}
+
+// ==================== ALERTES FISCALES ====================
+
+enum AlerteType {
+  ECHEANCE      // Délais/dates limites
+  SEUIL         // Montants déclencheurs
+  TAUX          // Taux applicables
+  SANCTION      // Amendes/pénalités
+  OBLIGATION    // Obligations déclaratives
+}
+
+enum AlerteCategorie {
+  IS            // Impôt sur les sociétés
+  PM_ETRANGERES // Personnes morales étrangères
+  MINIMUM_PERCEPTION
+  PRIX_TRANSFERT
+  DECLARATIONS
+}
+
+model AlerteFiscale {
+  id            String   @id @default(uuid())
+
+  // Contenu
+  type          AlerteType
+  categorie     AlerteCategorie
+  titre         String
+  description   String   @db.Text
+
+  // Valeurs extraites
+  valeur        String?           // "15" (jour), "100.000.000", "28%"
+  valeurNumerique Decimal?        // Pour tri/comparaison
+  unite         String?           // "jour", "FCFA", "%", "mois"
+  periodicite   String?           // "mensuel", "trimestriel", "annuel"
+
+  // Référence article source
+  articleId     String?
+  article       Article? @relation(fields: [articleId], references: [id], onDelete: SetNull)
+  articleNumero String            // "86A", "92B" - copie pour affichage
+
+  // Métadonnées
+  version       String   @default("2026")
+  actif         Boolean  @default(true)
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@unique([articleNumero, type, valeur, version])
+  @@index([type])
+  @@index([categorie])
+  @@index([version])
+  @@index([actif])
+  @@map("alertes_fiscales")
 }
 
 // ==================== AUDIT TRAIL ====================

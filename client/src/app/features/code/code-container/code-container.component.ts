@@ -70,7 +70,6 @@ export class CodeContainerComponent implements OnInit {
     const query = this.searchQuery.toLowerCase().trim();
     const range = this.articleRange();
     const tome = this.selectedTome();
-    const chapitre = this.selectedChapitre();
 
     let result: Article[];
 
@@ -79,17 +78,10 @@ export class CodeContainerComponent implements OnInit {
         const inRange = isArticleInRange(a.numero, range);
         if (!inRange) return false;
 
+        // Filtrer par tome si spécifié
         if (tome) {
           const selectedTomeStr = String(tome);
           if (!a.tome || a.tome !== selectedTomeStr) {
-            return false;
-          }
-        }
-
-        if (chapitre && a.chapitre) {
-          const chapLower = chapitre.toLowerCase();
-          const articleChapLower = a.chapitre.toLowerCase();
-          if (!articleChapLower.includes(chapLower) && !chapLower.includes(articleChapLower)) {
             return false;
           }
         }

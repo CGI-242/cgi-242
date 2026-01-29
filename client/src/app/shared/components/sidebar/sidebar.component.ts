@@ -26,9 +26,9 @@ interface NavItem {
   template: `
     <aside
       class="fixed left-0 top-20 h-[calc(100vh-5rem)] bg-white dark:bg-secondary-800 border-r border-secondary-200 dark:border-secondary-700 transition-all duration-300"
-      [class.w-64]="!collapsed()"
+      [class.w-52]="!collapsed()"
       [class.w-14]="collapsed()">
-      <nav class="space-y-1" [class.p-4]="!collapsed()" [class.p-2]="collapsed()">
+      <nav class="space-y-1" [class.p-3]="!collapsed()" [class.p-2]="collapsed()">
         @for (item of visibleItems; track item.label) {
           @if (item.route) {
             <a
@@ -40,7 +40,7 @@ interface NavItem {
               [class.py-2]="!collapsed()"
               [class.justify-center]="collapsed()"
               [class.p-2]="collapsed()">
-              <span [innerHTML]="getSafeIcon(item.icon)" class="w-6 h-6 flex-shrink-0"></span>
+              <span [innerHTML]="getSafeIcon(item.icon)" class="w-5 h-5 flex-shrink-0"></span>
               @if (!collapsed()) {
                 <span class="text-base font-medium">{{ item.label }}</span>
               }
@@ -56,7 +56,7 @@ interface NavItem {
                 [class.py-2]="!collapsed()"
                 [class.justify-center]="collapsed()"
                 [class.p-2]="collapsed()">
-                <span [innerHTML]="getSafeIcon(item.icon)" class="w-6 h-6 flex-shrink-0"></span>
+                <span [innerHTML]="getSafeIcon(item.icon)" class="w-5 h-5 flex-shrink-0"></span>
                 @if (!collapsed()) {
                   <span class="text-base font-medium flex-1 text-left">{{ item.label }}</span>
                   <svg
@@ -114,7 +114,7 @@ export class SidebarComponent {
       icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>',
       children: [
         { label: 'CGI 2025', route: '/code/2025' },
-        { label: 'CGI 2026 (provisoire)', route: '/code/2026' },
+        { label: 'CGI 2026', route: '/code/2026' },
       ],
     },
     {
@@ -133,6 +133,11 @@ export class SidebarComponent {
       label: 'Chat IA',
       icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>',
       route: '/chat',
+    },
+    {
+      label: 'Alertes',
+      icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>',
+      route: '/alertes-fiscales',
     },
     {
       label: 'Organisation',

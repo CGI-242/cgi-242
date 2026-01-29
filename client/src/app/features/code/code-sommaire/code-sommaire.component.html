@@ -3,13 +3,13 @@
     <div>
       <button
         (click)="toggle('tome-' + tome.tome)"
-        class="w-full text-left p-3 hover:bg-secondary-50 flex items-center gap-2">
+        class="w-full text-left p-2 hover:bg-secondary-50 flex items-center gap-2">
         <svg class="w-5 h-5 text-secondary-400 transition-transform flex-shrink-0"
           [class.rotate-90]="isOpen('tome-' + tome.tome)"
           fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
         </svg>
-        <span class="font-semibold text-base text-secondary-900">Tome {{ tome.tome }}:</span>
+        <span class="font-semibold text-sm text-secondary-900">Tome {{ tome.tome }}:</span>
         <span class="text-sm text-secondary-600">{{ tome.titre }}</span>
       </button>
 
@@ -22,7 +22,7 @@
                 @if (partie.simple) {
                   <button
                     (click)="onPartieClick(partie)"
-                    class="w-full text-left p-2 pl-4 hover:bg-secondary-50 flex items-center gap-2">
+                    class="w-full text-left py-1 pl-4 hover:bg-secondary-50 flex items-center gap-2">
                     <span class="w-4 h-4 flex-shrink-0"></span>
                     <span class="text-sm font-medium text-secondary-700">Partie {{ partie.partie }}:</span>
                     <span class="text-sm text-secondary-600">{{ partie.titre }}</span>
@@ -30,7 +30,7 @@
                 } @else {
                   <button
                     (click)="toggle('partie-' + tome.tome + '-' + partie.partie)"
-                    class="w-full text-left p-2 pl-4 hover:bg-secondary-50 flex items-center gap-2">
+                    class="w-full text-left py-1 pl-4 hover:bg-secondary-50 flex items-center gap-2">
                     <svg class="w-4 h-4 text-secondary-400 transition-transform flex-shrink-0"
                       [class.rotate-90]="isOpen('partie-' + tome.tome + '-' + partie.partie)"
                       fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,7 +55,7 @@
                         <div>
                           <button
                             (click)="toggle('titre-' + tome.tome + '-' + partie.partie + '-' + titreItem.titre)"
-                            class="w-full text-left p-2 pl-4 hover:bg-secondary-50 flex items-center gap-2">
+                            class="w-full text-left py-1 pl-4 hover:bg-secondary-50 flex items-center gap-2">
                             <svg class="w-4 h-4 text-secondary-400 transition-transform"
                               [class.rotate-90]="isOpen('titre-' + tome.tome + '-' + partie.partie + '-' + titreItem.titre)"
                               fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@
                 <div>
                   <button
                     (click)="toggle('sectionNC-' + tome.tome + '-' + sectionNC.section)"
-                    class="w-full text-left p-2 pl-4 hover:bg-secondary-50 flex items-center gap-2">
+                    class="w-full text-left py-1 pl-4 hover:bg-secondary-50 flex items-center gap-2">
                     <svg class="w-4 h-4 text-secondary-400 transition-transform"
                       [class.rotate-90]="isOpen('sectionNC-' + tome.tome + '-' + sectionNC.section)"
                       fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -120,7 +120,7 @@
                                 @for (detail of item.details; track detail.code) {
                                   <button
                                     (click)="onTexteClick(detail)"
-                                    class="w-full text-left p-1.5 pl-3 hover:bg-primary-50 text-sm text-secondary-500">
+                                    class="w-full text-left py-0.5 pl-3 hover:bg-primary-50 text-sm text-secondary-500">
                                     {{ detail.code }} {{ detail.titre }}
                                   </button>
                                 }
@@ -147,7 +147,7 @@
             <div>
               <button
                 (click)="onAnnexeClick(tome.annexes)"
-                class="w-full text-left p-2 pl-4 hover:bg-secondary-50 flex items-center gap-2">
+                class="w-full text-left py-1 pl-4 hover:bg-secondary-50 flex items-center gap-2">
                 <span class="w-4 h-4"></span>
                 <span class="text-sm font-medium text-secondary-700">{{ tome.annexes.titre }}</span>
               </button>
@@ -162,13 +162,13 @@
   @if (version() === '2025' && conventions.length > 0) {
     <div class="mt-4 pt-4 border-t-2 border-primary-200">
       <div class="px-3 py-2 bg-primary-50">
-        <span class="text-base font-semibold text-primary-800">Conventions fiscales internationales</span>
+        <span class="text-sm font-semibold text-primary-800">Conventions fiscales internationales</span>
       </div>
       @for (conv of conventions; track conv.code) {
         <div>
           <button
             (click)="toggle('conv-' + conv.code)"
-            class="w-full text-left p-3 hover:bg-secondary-50 flex items-center gap-2">
+            class="w-full text-left p-2 hover:bg-secondary-50 flex items-center gap-2">
             <svg class="w-5 h-5 text-secondary-400 transition-transform flex-shrink-0"
               [class.rotate-90]="isOpen('conv-' + conv.code)"
               fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -185,11 +185,11 @@
                 @for (chap of conv.chapitres; track chap.chapitre) {
                   <button
                     (click)="onConventionChapitreClick(conv, chap)"
-                    class="w-full text-left p-2 pl-4 hover:bg-primary-50 text-sm">
-                    <span class="font-medium text-primary-700">Chap. {{ chap.chapitre }}</span>
-                    <span class="text-secondary-600 ml-1">{{ chap.titre }}</span>
+                    class="w-full text-left py-1 pl-4 hover:bg-primary-50 text-sm">
+                    <span class="font-medium text-primary-700 text-sm">Chap. {{ chap.chapitre }}</span>
+                    <span class="text-secondary-600 ml-1 text-sm">{{ chap.titre }}</span>
                     @if (chap.articles) {
-                      <span class="text-secondary-400 text-xs ml-1">({{ chap.articles }})</span>
+                      <span class="text-secondary-400 text-sm ml-1">({{ chap.articles }})</span>
                     }
                   </button>
                 }
@@ -251,30 +251,116 @@
       <div>
         <button
           (click)="onChapitreClick(chapitre, tomeNum)"
-          class="w-full text-left p-2 pl-4 hover:bg-primary-50 text-sm"
+          class="w-full text-left py-1 pl-4 hover:bg-primary-50 text-sm"
           [class.opacity-50]="chapitre.statut === 'abrogé'">
-          <span class="font-medium text-primary-700">Chap. {{ chapitre.chapitre }}</span>
-          <span class="text-secondary-600 ml-1">{{ capitalizeFirst(chapitre.titre) }}</span>
+          <span class="font-medium text-primary-700 text-sm">Chap. {{ chapitre.chapitre }}</span>
+          <span class="text-secondary-600 ml-1 text-sm">{{ capitalizeFirst(chapitre.titre) }}</span>
           @if (chapitre.statut === 'abrogé') {
-            <span class="ml-1 text-red-500">(abrogé)</span>
+            <span class="ml-1 text-red-500 text-sm">(abrogé)</span>
           }
         </button>
         @if (chapitre.sections && chapitre.sections.length > 0) {
           <div class="ml-6 border-l border-secondary-100">
             @for (section of chapitre.sections; track section.section) {
               <div>
-                <button
-                  (click)="onSectionClick(chapitre, section, tomeNum)"
-                  class="w-full text-left p-2 pl-3 hover:bg-primary-50 text-sm text-secondary-500"
-                  [class.opacity-50]="section.statut === 'abrogé'">
-                  Sec. {{ section.section }}: {{ capitalizeFirst(section.titre) }}
-                  @if (section.articles) {
-                    <span class="text-secondary-400 text-xs ml-1">(Art. {{ section.articles }})</span>
+                @if (section.sous_sections && section.sous_sections.length > 0) {
+                  <div class="flex items-center">
+                    <button
+                      (click)="toggle('section-' + chapitre.chapitre + '-' + section.section); $event.stopPropagation()"
+                      class="p-2 hover:bg-secondary-100 rounded">
+                      <svg class="w-3 h-3 text-secondary-400 transition-transform"
+                        [class.rotate-90]="isOpen('section-' + chapitre.chapitre + '-' + section.section)"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                      </svg>
+                    </button>
+                    <button
+                      (click)="onSectionClick(chapitre, section, tomeNum)"
+                      class="flex-1 text-left py-0.5 pl-1 hover:bg-primary-50 text-sm text-secondary-500"
+                      [class.opacity-50]="section.statut === 'abrogé'">
+                      {{ section.display || 'Sec. ' + section.section }}: {{ capitalizeFirst(section.titre) }}
+                      @if (section.articles) {
+                        <span class="text-secondary-400 text-sm ml-1">(Art. {{ section.articles }})</span>
+                      }
+                      @if (section.statut === 'abrogé') {
+                        <span class="text-red-500 text-sm">(abrogé)</span>
+                      }
+                    </button>
+                  </div>
+                  @if (isOpen('section-' + chapitre.chapitre + '-' + section.section)) {
+                    <div class="ml-6 border-l border-secondary-100">
+                      @for (sousSection of section.sous_sections; track $index) {
+                        <div>
+                          @if (sousSection.paragraphes && sousSection.paragraphes.length > 0) {
+                            <div class="flex items-center">
+                              <button
+                                (click)="toggle('ss-' + chapitre.chapitre + '-' + section.section + '-' + sousSection.sous_section); $event.stopPropagation()"
+                                class="p-1.5 hover:bg-secondary-100 rounded">
+                                <svg class="w-3 h-3 text-secondary-400 transition-transform"
+                                  [class.rotate-90]="isOpen('ss-' + chapitre.chapitre + '-' + section.section + '-' + sousSection.sous_section)"
+                                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                              </button>
+                              <button
+                                (click)="onSousSectionClick(chapitre, section, sousSection, tomeNum)"
+                                class="flex-1 text-left p-1.5 pl-1 hover:bg-primary-50 text-sm text-secondary-500"
+                                [class.opacity-50]="sousSection.statut === 'abrogé'">
+                                {{ sousSection.display ? sousSection.display : '§' + sousSection.sous_section }}: {{ capitalizeFirst(sousSection.titre) }}
+                                @if (sousSection.articles) {
+                                  <span class="text-secondary-400 text-sm ml-1">(Art. {{ sousSection.articles }})</span>
+                                }
+                                @if (sousSection.statut === 'abrogé') {
+                                  <span class="text-red-500 text-sm">(abrogé)</span>
+                                }
+                              </button>
+                            </div>
+                            @if (isOpen('ss-' + chapitre.chapitre + '-' + section.section + '-' + sousSection.sous_section)) {
+                              <div class="ml-6 border-l border-secondary-100">
+                                @for (paragraphe of sousSection.paragraphes; track paragraphe.numero) {
+                                  <button
+                                    (click)="onParagrapheClick(chapitre, section, sousSection, paragraphe, tomeNum)"
+                                    class="w-full text-left p-1.5 pl-3 hover:bg-primary-50 text-sm text-secondary-400">
+                                    Paragraphe {{ paragraphe.numero }}: {{ capitalizeFirst(paragraphe.titre) }}
+                                    @if (paragraphe.articles) {
+                                      <span class="text-secondary-300 text-sm ml-1">(Art. {{ paragraphe.articles }})</span>
+                                    }
+                                  </button>
+                                }
+                              </div>
+                            }
+                          } @else {
+                            <button
+                              (click)="onSousSectionClick(chapitre, section, sousSection, tomeNum)"
+                              class="w-full text-left py-0.5 pl-3 hover:bg-primary-50 text-sm text-secondary-500"
+                              [class.opacity-50]="sousSection.statut === 'abrogé'">
+                              {{ sousSection.display ? sousSection.display : '§' + sousSection.sous_section }}: {{ capitalizeFirst(sousSection.titre) }}
+                              @if (sousSection.articles) {
+                                <span class="text-secondary-400 text-sm ml-1">(Art. {{ sousSection.articles }})</span>
+                              }
+                              @if (sousSection.statut === 'abrogé') {
+                                <span class="text-red-500 text-sm">(abrogé)</span>
+                              }
+                            </button>
+                          }
+                        </div>
+                      }
+                    </div>
                   }
-                  @if (section.statut === 'abrogé') {
-                    <span class="text-red-500">(abrogé)</span>
-                  }
-                </button>
+                } @else {
+                  <button
+                    (click)="onSectionClick(chapitre, section, tomeNum)"
+                    class="w-full text-left py-0.5 pl-3 hover:bg-primary-50 text-sm text-secondary-500"
+                    [class.opacity-50]="section.statut === 'abrogé'">
+                    {{ section.display || 'Sec. ' + section.section }}: {{ capitalizeFirst(section.titre) }}
+                    @if (section.articles) {
+                      <span class="text-secondary-400 text-sm ml-1">(Art. {{ section.articles }})</span>
+                    }
+                    @if (section.statut === 'abrogé') {
+                      <span class="text-red-500 text-sm">(abrogé)</span>
+                    }
+                  </button>
+                }
               </div>
             }
           </div>

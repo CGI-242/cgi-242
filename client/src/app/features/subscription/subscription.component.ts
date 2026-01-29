@@ -34,7 +34,7 @@ interface Plan {
 
         <main
           class="flex-1 transition-all duration-300 p-6"
-          [class.ml-64]="!sidebarCollapsed"
+          [class.ml-52]="!sidebarCollapsed"
           [class.ml-14]="sidebarCollapsed">
 
           <div class="max-w-6xl mx-auto">

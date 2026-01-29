@@ -52,29 +52,31 @@
       "annee_application": 2026
     },
     {
-      "article": "Art. 93B",
+      "article": "Art. 93 B",
       "titre": "Personnes imposables",
       "texte": [
         "Sous réserve des dispositions des conventions internationales, sont imposables :",
-        "1-a) Les personnes physiques de nationalité congolaise ou étrangère ayant leur domicile fiscal au Congo ou y résidant habituellement.",
+        "1) a) Les personnes physiques de nationalité congolaise ou étrangère ayant leur domicile fiscal au Congo ou y résidant habituellement ;",
         "Sont considérées comme ayant au Congo une résidence habituelle :",
-        "1° Les personnes qui y possèdent une habitation à leur disposition à titre de propriétaire, d'usufruitier ou de locataire, lorsque la location est conclue pour une période continue d'au moins une année ;",
-        "2° Les personnes qui y ont le lieu de leur séjour principal ;",
-        "3° Les personnes se trouvant hors du Congo au 1er janvier de l'année d'imposition et continuant à être rétribuées par des administrations ou entreprises congolaises ;",
-        "4° Les fonctionnaires congolais ou étrangers affectés au Congo et rémunérés par un budget autre que celui du Congo ;",
-        "5° Les personnes ayant quitté le Congo avant le 31 décembre de l'année d'imposition mais y conservant des intérêts sans avoir déclaré un départ définitif.",
-        "Dans tous les cas, une absence continue de plus de vingt-quatre mois entraîne la perte de la résidence fiscale au Congo.",
-        "b) Les personnes physiques n'ayant ni domicile ni résidence au Congo, mais percevant des revenus réalisés au Congo ou provenant du Congo.",
-        "2- Les fonctionnaires ou agents de l'État exerçant leurs fonctions à l'étranger sont imposables au Congo sur leurs revenus de source congolaise.",
-        "3- Les personnes percevant des droits d'auteur, redevances ou revenus non commerciaux de source congolaise.",
-        "4- Les personnes physiques dont l'imposition est attribuée au Congo par une convention internationale.",
-        "5- Les directeurs, représentants, fondés de pouvoir ou gérants des succursales de sociétés étrangères immatriculées au Congo sont présumés y avoir leur résidence fiscale."
-      ],
+        "1° Les personnes qui y possèdent une habitation à leur disposition à titre de propriétaire, d'usufruitier ou de locataire lorsque, dans ce dernier cas, la location est conclue, soit par convention unique, soit par conventions successives pour une période continue d'au moins une année ;",
+        "2° Les personnes qui, sans disposer d'une habitation dans les conditions définies à l'alinéa précédent, y ont néanmoins le lieu de leur séjour principal ;",
+        "3° Les personnes se trouvant hors du Congo au 1er janvier de l'année d'imposition qui, à cette date, continuent à être rétribuées par les administrations ou les entreprises auxquelles elles appartenaient avant leur départ du Congo ;",
+        "4° Les fonctionnaires congolais ou étrangers payés par un budget autre que l'un des budgets du Congo pendant toute la durée de la période au cours de laquelle ils restent affectés au Congo. Cette période qui n'est pas interrompue par les congés des fonctionnaires en cause, commence le jour de l'affectation au Congo et se termine le veille du jour où les intéressés reçoivent une affectation hors du Congo ;",
+        "5° Les personnes ayant quitté le Congo avant le 31 décembre de l'année d'imposition, qui y conservent des intérêts et n'ont pas fait connaître que leur départ était définitif.",
+        "Dans tous les cas, une absence continue d'une durée supérieure à vingt-quatre mois entraîne la perte de la résidence du contribuable au Congo.",
+        "b) Les personnes physiques de nationalité congolaise ou étrangère n'ayant ni domicile, ni résidence au Congo, pour autant qu'elles ont des revenus réalisés dans l'État du Congo ou en provenant, et à raison desdits revenus.",
+        "2) Les fonctionnaires ou agents de l'État exerçant leurs fonctions ou chargés de mission dans un pays étranger sont passibles de l'impôt sur le revenu des personnes physiques au Congo à raison de leurs revenus de source congolaise.",
+        "S'ils sont exonérés, dans le pays considéré, de l'impôt personnel sur l'ensemble des revenus, ils sont redevables au Congo de l'impôt sur le revenu des personnes physiques, sur l'ensemble de leurs revenus même en l'absence de résidence habituelle sur le territoire congolais.",
+        "3) Les personnes visées au paragraphe 1-b) du présent article, percevant, des entreprises installées au Congo, des droits d'auteur ou des produits de titres, soit de la concession de licences d'exploitation de brevets, soit de la cession ou de la concession des marques de fabrique, procédés ou formules de fabrication, que le bénéficiaire de ces droits ou produits soit l'écrivain, le compositeur ou l'inventeur lui-même ou qu'il les ait acquis à titre gratuit ou onéreux ainsi que les revenus des professions non commerciales.",
+        "La présente disposition s'applique également lorsque le bénéficiaire des droits ou produits est une société quelle qu'en soit la forme.",
+        "4) Les personnes physiques de nationalité congolaise ou étrangère disposant ou non d'une résidence habituelle au Congo, qui recueillent des bénéfices ou revenus dont l'imposition est attribuée au Congo par une convention internationale relative aux doubles impositions.",
+        "5) Les personnes physiques qui sont désignées comme occupant les fonctions de directeurs, représentants, fondés de pouvoir, gérants de succursales de sociétés étrangères, immatriculées en République du Congo, sont présumées avoir leur résidence fiscale au Congo quand bien même elles habiteraient hors du Congo."      ],
       "mots_cles": [
         "résidence fiscale",
         "domicile fiscal",
         "revenus de source congolaise",
-        "conventions fiscales"
+        "conventions fiscales",
+        "personnes imposables"
       ],
       "statut": "en vigueur",
       "section": "Section 1 : Champ d'application",
@@ -119,15 +121,15 @@
       "annee_application": 2026
     },
     {
-      "article": "Art. 94A",
+      "article": "Art. 94 A",
       "titre": "Charges non déductibles",
       "texte": [
         "Ne sont pas déductibles :",
-        "- les prélèvements que les exploitants individuels effectuent sur leurs recettes professionnelles à titre de rémunération de leur travail personnel ;",
+        "- les prélèvements que l'exploitant individuel effectue sur ses recettes professionnelles à titre de rémunération de leur travail personnel ;",
         "- les dépenses exposées dans l'intérêt personnel de l'exploitant ;",
         "- les intérêts des capitaux engagés par l'exploitant et les sommes de toute nature versées à titre de rémunération des fonds propres de l'entreprise, qu'ils soient capitalisés ou mis en réserve ;",
         "- les loyers versés par l'exploitant à lui-même pour l'occupation à titre professionnel de locaux dont il est propriétaire.",
-        "Les dépenses mixtes sont ventilées afin de déterminer la part déductible se rapportant à l'exercice de la profession.",
+        "Les dépenses mixtes sont ventilées afin de déterminer la part déductible de ces dépenses se rapportant à l'exercice de la profession.",
         "Les frais de représentation ne sont déductibles qu'à hauteur de 50% de leur montant."
       ],
       "mots_cles": [
