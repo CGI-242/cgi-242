@@ -65,14 +65,14 @@ jobs:
 
       # --- Stockage des artifacts de build ---
       - name: Upload artifact client
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: client-build
           path: client/dist/
           retention-days: 7
 
       - name: Upload artifact server
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: server-build
           path: server/dist/
@@ -106,7 +106,7 @@ jobs:
         run: npm run test:coverage
 
       - name: Upload rapport couverture client
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: coverage-client
           path: client/coverage/
@@ -177,7 +177,7 @@ jobs:
         run: npm run test:coverage
 
       - name: Upload rapport couverture server
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: coverage-server
           path: server/coverage/
@@ -275,7 +275,7 @@ jobs:
         run: npm run e2e
 
       - name: Upload rapport E2E
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: always()
         with:
           name: playwright-report
