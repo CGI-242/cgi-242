@@ -158,6 +158,10 @@ export const CGI_TOME_1_2026: Tome = {
             },
             {
               chapitre: 3,
+              titre: 'Sans objet',
+            },
+            {
+              chapitre: 4,
               titre: 'Dispositions communes à l\'IS et aux impôts sur les revenus',
               articles: '127-140-I',
               sections: [
@@ -167,7 +171,7 @@ export const CGI_TOME_1_2026: Tome = {
               ],
             },
             {
-              chapitre: 4,
+              chapitre: 5,
               titre: 'Taxes diverses',
               articles: '141-171 undecies',
               sections: [
@@ -179,7 +183,7 @@ export const CGI_TOME_1_2026: Tome = {
               ],
             },
             {
-              chapitre: 5,
+              chapitre: 6,
               titre: 'Dispositions diverses',
               articles: '172-185 ter-F',
               sections: [
@@ -190,7 +194,7 @@ export const CGI_TOME_1_2026: Tome = {
               ],
             },
             {
-              chapitre: 6,
+              chapitre: 7,
               titre: 'Plus-values sur titres réalisées par des personnes non-résidentes',
               articles: '185 quater-A-185 sexies',
             },
