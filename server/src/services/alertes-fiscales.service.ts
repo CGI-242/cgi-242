@@ -552,7 +552,7 @@ export class AlertesFiscalesService {
             } else {
               updated++;
             }
-          } catch (err) {
+          } catch {
             // Ignorer les erreurs de contrainte unique (déjà traitée par les alertes prédéfinies)
             logger.debug(`Alerte déjà existante pour ${article.numero}`, { type: alerteData.type, valeur: alerteData.valeur });
           }

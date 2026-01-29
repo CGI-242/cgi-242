@@ -99,12 +99,19 @@ export const CGI_TOME_1_2026: Tome = {
                   section: 1,
                   display: '2.1',
                   titre: 'Impôt sur les bénéfices d\'affaires (IBA)',
-                  articles: '93-126',
+                  articles: '93-102',
                   sous_sections: [
                     { sous_section: 1, display: 'Sec. 1', titre: 'Champ d\'application', articles: '93-93C' },
-                    { sous_section: 2, display: 'Sec. 2', titre: 'Bénéfice imposable', articles: '94-115' },
-                    { sous_section: 3, display: 'Sec. 3', titre: 'Calcul et paiement', articles: '116-126' },
+                    { sous_section: 2, display: 'Sec. 2', titre: 'Bénéfice imposable', articles: '94-94' },
+                    { sous_section: 3, display: 'Sec. 3', titre: 'Modalités d\'imposition', articles: '95-95' },
+                    { sous_section: 4, display: 'Sec. 4', titre: 'Régimes des petites et très petites entreprises', articles: '96-102' },
                   ]
+                },
+                {
+                  section: 2,
+                  display: '2.2',
+                  titre: 'Impôt sur le revenu des capitaux mobiliers (IRCM)',
+                  articles: '103-126',
                 },
               ],
             },
