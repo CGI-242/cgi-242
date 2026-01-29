@@ -66,40 +66,16 @@ export class CodeSommaireComponent {
   }
 
   onSectionClick(chapitre: Chapitre, section: Section, tomeNum?: number): void {
-    // Préparer les sous-sections pour les afficher comme séparateurs
-    const sousSections = section.sous_sections?.map(ss => ({
-      titre: `${ss.display || ss.sous_section}. ${ss.titre}`,
-      articles: ss.articles || ''
-    }));
-
-    // Collecter les paragraphes de toutes les sous-sections avec leur contexte
-    const paragraphes: { numero: number | string; titre: string; articles: string; sousSectionTitre?: string; sousSectionNumero?: number | string }[] = [];
-    if (section.sous_sections) {
-      for (const ss of section.sous_sections) {
-        if (ss.paragraphes) {
-          for (const p of ss.paragraphes) {
-            paragraphes.push({
-              numero: p.numero,
-              titre: p.titre,
-              articles: p.articles || '',
-              sousSectionTitre: ss.titre,
-              sousSectionNumero: ss.display || ss.sous_section
-            });
-          }
-        }
-      }
-    }
-
+    // Ne pas passer les sous-sections comme séparateurs quand on clique sur la section principale
+    // car elles sont déjà visibles dans le sommaire
     this.selection.emit({
       type: 'section',
       path: `Chapitre ${chapitre.chapitre}, Section ${section.section}`,
       titre: section.titre,
       articles: section.articles,
       tome: tomeNum,
-      chapitreTitre: chapitre.titre, // Pour filtrer par chapitre dans la DB
-      sectionTitre: section.titre, // Pour filtrer par section dans la DB
-      sousSections,
-      paragraphes: paragraphes.length > 0 ? paragraphes : undefined,
+      chapitreTitre: chapitre.titre,
+      sectionTitre: section.titre,
     });
   }
 
