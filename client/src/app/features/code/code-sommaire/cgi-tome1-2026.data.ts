@@ -131,19 +131,12 @@ export const CGI_TOME_1_2026: Tome = {
                   titre: 'Impôt sur les revenus fonciers (IRF)',
                   articles: '111-113A',
                   sous_sections: [
-                    {
-                      sous_section: 1,
-                      display: 'Sec. 1',
-                      titre: 'Champ d\'application',
-                      articles: '111-111E',
-                      paragraphes: [
-                        { numero: '§1', titre: 'Revenus imposables', articles: '111-111B' },
-                        { numero: '§2', titre: 'Exonération', articles: '111C-111D' },
-                        { numero: '§3', titre: 'Fait générateur et exigibilité', articles: '111E' },
-                      ]
-                    },
-                    { sous_section: 2, display: 'Sec. 2', titre: 'Base d\'imposition', articles: '112-112B' },
-                    { sous_section: 3, display: 'Sec. 3', titre: 'Modalités d\'imposition', articles: '113-113A' },
+                    { sous_section: 1, display: 'Sec. 1', titre: 'Champ d\'application', articles: '111-111E' },
+                    { sous_section: 2, display: '§1', titre: 'Revenus imposables', articles: '111-111B' },
+                    { sous_section: 3, display: '§2', titre: 'Exonération', articles: '111C-111D' },
+                    { sous_section: 4, display: '§3', titre: 'Fait générateur et exigibilité', articles: '111E' },
+                    { sous_section: 5, display: 'Sec. 2', titre: 'Base d\'imposition', articles: '112-112B' },
+                    { sous_section: 6, display: 'Sec. 3', titre: 'Modalités d\'imposition', articles: '113-113A' },
                   ]
                 },
                 {
@@ -152,20 +145,13 @@ export const CGI_TOME_1_2026: Tome = {
                   titre: 'Impôt sur les traitements et salaires (ITS)',
                   articles: '114-116I',
                   sous_sections: [
-                    {
-                      sous_section: 1,
-                      display: 'Sec. 1',
-                      titre: 'Champ d\'application',
-                      articles: '114-114E',
-                      paragraphes: [
-                        { numero: '§1', titre: 'Revenus imposables', articles: '114' },
-                        { numero: '§2', titre: 'Exonérations', articles: '114A-114C' },
-                        { numero: '§3', titre: 'Territorialité', articles: '114D' },
-                        { numero: '§4', titre: 'Fait générateur et exigibilité', articles: '114E' },
-                      ]
-                    },
-                    { sous_section: 2, display: 'Sec. 2', titre: 'Base d\'imposition', articles: '115-115' },
-                    { sous_section: 3, display: 'Sec. 3', titre: 'Modalités d\'imposition', articles: '116-116I' },
+                    { sous_section: 1, display: 'Sec. 1', titre: 'Champ d\'application', articles: '114-114E' },
+                    { sous_section: 2, display: '§1', titre: 'Revenus imposables', articles: '114' },
+                    { sous_section: 3, display: '§2', titre: 'Exonérations', articles: '114A-114C' },
+                    { sous_section: 4, display: '§3', titre: 'Territorialité', articles: '114D' },
+                    { sous_section: 5, display: '§4', titre: 'Fait générateur et exigibilité', articles: '114E' },
+                    { sous_section: 6, display: 'Sec. 2', titre: 'Base d\'imposition', articles: '115-115' },
+                    { sous_section: 7, display: 'Sec. 3', titre: 'Modalités d\'imposition', articles: '116-116I' },
                   ]
                 },
               ],
