@@ -45,6 +45,25 @@ export const routes: Routes = [
       import('./features/subscription/subscription.routes').then((m) => m.SUBSCRIPTION_ROUTES),
     canActivate: [authGuard],
   },
+  {
+    path: 'analytics',
+    loadComponent: () =>
+      import('./features/analytics/analytics-dashboard.component').then((m) => m.AnalyticsDashboardComponent),
+    canActivate: [authGuard],
+  },
+  {
+    path: 'alertes-fiscales',
+    loadChildren: () =>
+      import('./features/alertes-fiscales/alertes-fiscales.routes').then((m) => m.ALERTES_FISCALES_ROUTES),
+    canActivate: [authGuard],
+  },
+  // Profil utilisateur
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./features/profile/profile.routes').then((m) => m.PROFILE_ROUTES),
+    canActivate: [authGuard],
+  },
   // Pages spéciales
   {
     path: 'forbidden',
@@ -84,15 +103,37 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/landing/cgi242-landing.component').then((m) => m.Cgi242LandingComponent),
   },
+  // Pages légales
+  {
+    path: 'cgv',
+    loadComponent: () =>
+      import('./features/landing/cgv.component').then((m) => m.CgvComponent),
+  },
+  {
+    path: 'cgu',
+    loadComponent: () =>
+      import('./features/landing/cgu.component').then((m) => m.CguComponent),
+  },
+  {
+    path: 'confidentialite',
+    loadComponent: () =>
+      import('./features/landing/confidentialite.component').then((m) => m.ConfidentialiteComponent),
+  },
+  {
+    path: 'mentions-legales',
+    loadComponent: () =>
+      import('./features/landing/mentions-legales.component').then((m) => m.MentionsLegalesComponent),
+  },
   // Landing page NORMX AI (page d'accueil pour normx-ai.com)
   {
     path: '',
     loadComponent: () =>
       import('./features/landing/landing.component').then((m) => m.LandingComponent),
   },
-  // Redirect pour routes inconnues
+  // Page 404 pour routes inconnues
   {
     path: '**',
-    redirectTo: '',
+    loadComponent: () =>
+      import('./features/landing/not-found.component').then((m) => m.NotFoundComponent),
   },
 ];

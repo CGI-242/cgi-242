@@ -2,6 +2,7 @@ import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@env/environment';
 import { firstValueFrom } from 'rxjs';
+import { LoggerService } from './logger.service';
 
 interface CsrfResponse {
   success: boolean;
@@ -11,6 +12,7 @@ interface CsrfResponse {
 @Injectable({ providedIn: 'root' })
 export class CsrfService {
   private http = inject(HttpClient);
+  private logger = inject(LoggerService);
   private tokenSignal = signal<string | null>(null);
   private fetchPromise: Promise<string | null> | null = null;
 
@@ -40,8 +42,8 @@ export class CsrfService {
         this.tokenSignal.set(response.data.csrfToken);
         return response.data.csrfToken;
       }
-    } catch (error) {
-      console.error('[CsrfService] Failed to fetch CSRF token:', error);
+    } catch {
+      this.logger.error('Failed to fetch CSRF token', 'CsrfService');
     }
 
     return null;

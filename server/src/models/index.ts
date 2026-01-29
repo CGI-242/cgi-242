@@ -21,6 +21,9 @@ export {
   SearchHistory,
   UsageStats,
   SystemConfig,
+  AlerteFiscale,
+  AlerteType,
+  AlerteCategorie,
 } from '@prisma/client';
 
 // Re-export du client Prisma

@@ -1,14 +1,26 @@
+// server/src/services/auth.service.ts
+// Service d'authentification principal
+
 import bcrypt from 'bcryptjs';
 import { v4 as uuidv4 } from 'uuid';
-import { addHours } from 'date-fns';
 import { prisma } from '../config/database.js';
 import { config } from '../config/environment.js';
 import { generateToken, generateRefreshToken } from '../middleware/auth.middleware.js';
 import { createLogger } from '../utils/logger.js';
-import { ERROR_MESSAGES, PASSWORD_RESET_EXPIRY_HOURS } from '../utils/constants.js';
+import { ERROR_MESSAGES } from '../utils/constants.js';
 import { AppError } from '../middleware/error.middleware.js';
 import { EmailService } from './email.service.js';
 import { AuditService } from './audit.service.js';
+import {
+  verifyEmail,
+  resendVerificationEmail,
+  resendVerificationEmailByEmail,
+} from './auth.email.service.js';
+import {
+  forgotPassword,
+  resetPassword,
+  changePassword,
+} from './auth.password.service.js';
 
 const logger = createLogger('AuthService');
 
@@ -33,9 +45,11 @@ export interface AuthResponse {
     lastName: string | null;
     profession: string | null;
     isEmailVerified: boolean;
-  };
+  } | null;
   accessToken: string;
   refreshToken: string;
+  mfaRequired?: boolean;
+  mfaToken?: string;
 }
 
 export class AuthService {
@@ -45,11 +59,7 @@ export class AuthService {
     this.emailService = new EmailService();
   }
 
-  /**
-   * Inscription d'un nouvel utilisateur
-   */
   async register(data: RegisterData): Promise<AuthResponse> {
-    // Vérifier si l'email existe déjà
     const existingUser = await prisma.user.findUnique({
       where: { email: data.email.toLowerCase() },
     });
@@ -58,13 +68,10 @@ export class AuthService {
       throw new AppError(ERROR_MESSAGES.EMAIL_ALREADY_EXISTS, 409);
     }
 
-    // Hasher le mot de passe
     const hashedPassword = await bcrypt.hash(data.password, config.bcryptRounds);
-
-    // Générer le token de vérification email
     const emailVerifyToken = uuidv4();
+    const emailVerifyExpires = new Date(Date.now() + 30 * 60 * 1000);
 
-    // Créer l'utilisateur avec un abonnement FREE
     const user = await prisma.user.create({
       data: {
         email: data.email.toLowerCase(),
@@ -73,6 +80,7 @@ export class AuthService {
         lastName: data.lastName,
         profession: data.profession,
         emailVerifyToken,
+        emailVerifyExpires,
         personalSubscription: {
           create: {
             type: 'PERSONAL',
@@ -92,7 +100,6 @@ export class AuthService {
       },
     });
 
-    // Envoyer l'email de vérification
     try {
       await this.emailService.sendVerificationEmail({
         email: user.email,
@@ -103,22 +110,14 @@ export class AuthService {
       logger.error("Erreur d'envoi de l'email de vérification:", error);
     }
 
-    // Générer les tokens
     const accessToken = generateToken(user.id, user.email);
     const refreshToken = generateRefreshToken(user.id);
 
     logger.info(`Nouvel utilisateur inscrit: ${user.email}`);
 
-    return {
-      user,
-      accessToken,
-      refreshToken,
-    };
+    return { user, accessToken, refreshToken };
   }
 
-  /**
-   * Connexion d'un utilisateur
-   */
   async login(data: LoginData): Promise<AuthResponse> {
     const user = await prisma.user.findUnique({
       where: { email: data.email.toLowerCase() },
@@ -130,6 +129,7 @@ export class AuthService {
         lastName: true,
         profession: true,
         isEmailVerified: true,
+        mfaEnabled: true,
       },
     });
 
@@ -137,26 +137,37 @@ export class AuthService {
       throw new AppError(ERROR_MESSAGES.INVALID_CREDENTIALS, 401);
     }
 
-    // Vérifier le mot de passe
     const isPasswordValid = await bcrypt.compare(data.password, user.password);
 
     if (!isPasswordValid) {
       throw new AppError(ERROR_MESSAGES.INVALID_CREDENTIALS, 401);
     }
 
-    // Mettre à jour la date de dernière connexion
+    if (!user.isEmailVerified) {
+      throw new AppError('Veuillez valider votre email avant de vous connecter', 403);
+    }
+
+    if (user.mfaEnabled) {
+      const mfaToken = generateToken(user.id, user.email, '5m');
+      return {
+        user: null as unknown as AuthResponse['user'],
+        accessToken: '',
+        refreshToken: '',
+        mfaRequired: true,
+        mfaToken,
+      };
+    }
+
     await prisma.user.update({
       where: { id: user.id },
       data: { lastLoginAt: new Date() },
     });
 
-    // Générer les tokens
     const accessToken = generateToken(user.id, user.email);
     const refreshToken = generateRefreshToken(user.id);
 
     logger.info(`Utilisateur connecté: ${user.email}`);
 
-    // Audit log - Connexion réussie
     await AuditService.log({
       actorId: user.id,
       action: 'LOGIN_SUCCESS',
@@ -182,195 +193,29 @@ export class AuthService {
     };
   }
 
-  /**
-   * Demander la réinitialisation du mot de passe
-   */
+  // Délégation aux services spécialisés
   async forgotPassword(email: string): Promise<void> {
-    const user = await prisma.user.findUnique({
-      where: { email: email.toLowerCase() },
-    });
-
-    // Ne pas révéler si l'email existe ou non
-    if (!user) {
-      return;
-    }
-
-    const resetToken = uuidv4();
-    const resetExpires = addHours(new Date(), PASSWORD_RESET_EXPIRY_HOURS);
-
-    await prisma.user.update({
-      where: { id: user.id },
-      data: {
-        resetPasswordToken: resetToken,
-        resetPasswordExpires: resetExpires,
-      },
-    });
-
-    try {
-      await this.emailService.sendPasswordReset({
-        email: user.email,
-        token: resetToken,
-        firstName: user.firstName,
-      });
-    } catch (error) {
-      logger.error("Erreur d'envoi de l'email de réinitialisation:", error);
-    }
-
-    logger.info(`Demande de réinitialisation de mot de passe: ${email}`);
+    return forgotPassword(email, this.emailService);
   }
 
-  /**
-   * Réinitialiser le mot de passe
-   */
   async resetPassword(token: string, newPassword: string): Promise<void> {
-    const user = await prisma.user.findFirst({
-      where: {
-        resetPasswordToken: token,
-        resetPasswordExpires: {
-          gt: new Date(),
-        },
-      },
-    });
-
-    if (!user) {
-      throw new AppError(ERROR_MESSAGES.TOKEN_INVALID, 400);
-    }
-
-    const hashedPassword = await bcrypt.hash(newPassword, config.bcryptRounds);
-
-    await prisma.user.update({
-      where: { id: user.id },
-      data: {
-        password: hashedPassword,
-        resetPasswordToken: null,
-        resetPasswordExpires: null,
-      },
-    });
-
-    logger.info(`Mot de passe réinitialisé: ${user.email}`);
-
-    // Audit log - Mot de passe changé
-    await AuditService.log({
-      actorId: user.id,
-      action: 'PASSWORD_CHANGED',
-      entityType: 'User',
-      entityId: user.id,
-      changes: {
-        before: { hasPassword: true },
-        after: { hasPassword: true, resetAt: new Date().toISOString() },
-      },
-      metadata: {
-        method: 'password_reset_token',
-      },
-    });
+    return resetPassword(token, newPassword);
   }
 
-  /**
-   * Vérifier l'email
-   */
   async verifyEmail(token: string): Promise<void> {
-    const user = await prisma.user.findFirst({
-      where: { emailVerifyToken: token },
-    });
-
-    if (!user) {
-      throw new AppError(ERROR_MESSAGES.TOKEN_INVALID, 400);
-    }
-
-    if (user.isEmailVerified) {
-      return; // Déjà vérifié
-    }
-
-    await prisma.user.update({
-      where: { id: user.id },
-      data: {
-        isEmailVerified: true,
-        emailVerifyToken: null,
-      },
-    });
-
-    logger.info(`Email vérifié: ${user.email}`);
-
-    // Audit log - Email vérifié
-    await AuditService.log({
-      actorId: user.id,
-      action: 'EMAIL_VERIFIED',
-      entityType: 'User',
-      entityId: user.id,
-      changes: {
-        before: { isEmailVerified: false },
-        after: { isEmailVerified: true },
-      },
-    });
+    return verifyEmail(token, this.emailService);
   }
 
-  /**
-   * Renvoyer l'email de vérification
-   */
   async resendVerificationEmail(userId: string): Promise<void> {
-    const user = await prisma.user.findUnique({
-      where: { id: userId },
-    });
-
-    if (!user) {
-      throw new AppError(ERROR_MESSAGES.USER_NOT_FOUND, 404);
-    }
-
-    if (user.isEmailVerified) {
-      throw new AppError('Email déjà vérifié', 400);
-    }
-
-    const emailVerifyToken = uuidv4();
-
-    await prisma.user.update({
-      where: { id: user.id },
-      data: { emailVerifyToken },
-    });
-
-    try {
-      await this.emailService.sendVerificationEmail({
-        email: user.email,
-        token: emailVerifyToken,
-        firstName: user.firstName,
-      });
-    } catch (error) {
-      logger.error("Erreur d'envoi de l'email de vérification:", error);
-      throw new AppError("Erreur lors de l'envoi de l'email", 500);
-    }
-
-    logger.info(`Email de vérification renvoyé: ${user.email}`);
+    return resendVerificationEmail(userId, this.emailService);
   }
 
-  /**
-   * Changer le mot de passe (utilisateur connecté)
-   */
-  async changePassword(
-    userId: string,
-    currentPassword: string,
-    newPassword: string
-  ): Promise<void> {
-    const user = await prisma.user.findUnique({
-      where: { id: userId },
-    });
+  async resendVerificationEmailByEmail(email: string): Promise<void> {
+    return resendVerificationEmailByEmail(email, this.emailService);
+  }
 
-    if (!user) {
-      throw new AppError(ERROR_MESSAGES.USER_NOT_FOUND, 404);
-    }
-
-    const isPasswordValid = await bcrypt.compare(currentPassword, user.password);
-
-    if (!isPasswordValid) {
-      throw new AppError('Mot de passe actuel incorrect', 400);
-    }
-
-    const hashedPassword = await bcrypt.hash(newPassword, config.bcryptRounds);
-
-    await prisma.user.update({
-      where: { id: user.id },
-      data: { password: hashedPassword },
-    });
-
-    logger.info(`Mot de passe changé: ${user.email}`);
+  async changePassword(userId: string, currentPassword: string, newPassword: string): Promise<void> {
+    return changePassword(userId, currentPassword, newPassword);
   }
 }
 

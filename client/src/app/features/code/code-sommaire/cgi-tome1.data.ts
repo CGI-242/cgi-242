@@ -25,7 +25,17 @@ export const CGI_TOME_1: Tome = {
                   articles: '10-75',
                   sous_sections: [
                     { sous_section: 1, titre: 'Détermination des bénéfices ou revenus catégoriels', articles: '12-65 bis' },
-                    { sous_section: 2, titre: 'Revenu global', articles: '66-75' },
+                    {
+                      sous_section: 2,
+                      titre: 'Revenu global',
+                      articles: '66-75',
+                      paragraphes: [
+                        { numero: 1, titre: 'Revenu imposable', articles: '66-71' },
+                        { numero: 2, titre: 'Revenu imposable des étrangers et des personnes non domiciliées au Congo', articles: '72-73' },
+                        { numero: 3, titre: 'Revenus de l\'année d\'acquisition d\'un domicile ou d\'une résidence au Congo', articles: '74' },
+                        { numero: 4, titre: 'Revenus de l\'année du transfert du domicile hors du Congo ou de l\'abandon de toute résidence au Congo', articles: '75' },
+                      ]
+                    },
                   ]
                 },
                 { section: 3, titre: 'Déclaration des contribuables', page: 31, articles: '76-80' },
@@ -35,31 +45,39 @@ export const CGI_TOME_1: Tome = {
                 { section: 7, titre: 'Cession, cessation ou décès', page: 37, articles: '98-101' },
               ],
             },
-            { chapitre: 2, titre: 'Impôt complémentaire', statut: 'abrogé', page: 39 },
+            { chapitre: 2, titre: 'Impôt complémentaire', statut: 'abrogé', page: 39, articles: '102-105' },
             {
               chapitre: 3,
-              titre: 'Impôt sur les sociétés',
+              titre: 'Impôt sur les bénéfices des sociétés',
               articles: '106-126 septies',
               sections: [
                 { section: 1, titre: 'Généralités', page: 40, articles: '106' },
-                { section: 2, titre: 'Champ d\'application', page: 40, articles: '107-108' },
+                {
+                  section: 2,
+                  titre: 'Champ d\'application',
+                  page: 40,
+                  articles: '107-108',
+                  sous_sections: [
+                    { sous_section: 1, titre: 'Personnes imposables', articles: '107' },
+                    { sous_section: 2, titre: 'Exonération', articles: '107-A' },
+                    { sous_section: 3, titre: 'Territorialité', articles: '108' },
+                  ]
+                },
                 {
                   section: 3,
                   titre: 'Détermination du bénéfice imposable',
                   page: 41,
                   articles: '109-120-I',
                   sous_sections: [
-                    { sous_section: 1, titre: 'Principe de détermination', articles: '109-109-B' },
-                    { sous_section: 2, titre: 'Produits imposables', articles: '110-110-A' },
-                    { sous_section: 3, titre: 'Stock et travaux en cours', articles: '111' },
-                    { sous_section: 4, titre: 'Charges déductibles', articles: '112-114-G' },
-                    { sous_section: 5, titre: 'Amortissements', articles: '114-H à 114-J bis' },
-                    { sous_section: 6, titre: 'Provisions', articles: '115-115-F' },
-                    { sous_section: 7, titre: 'Produits taxables', articles: '116-116-C' },
-                    { sous_section: 8, titre: 'Évaluation stocks et travaux', articles: '117-117-A' },
-                    { sous_section: 9, titre: 'Plus-values et moins-values', articles: '118-118-F' },
-                    { sous_section: 10, titre: 'Report déficitaire', articles: '119' },
-                    { sous_section: 11, titre: 'Prix de transfert', articles: '120-120-I' },
+                    { sous_section: 1, titre: 'Définition', articles: '109-109-B' },
+                    { sous_section: 2, titre: 'Frais généraux', articles: '110-113-C' },
+                    { sous_section: 3, titre: 'Les amortissements', articles: '114-114-T' },
+                    { sous_section: 4, titre: 'Provisions', articles: '115-115-F' },
+                    { sous_section: 5, titre: 'Produits taxables', articles: '116-116-C' },
+                    { sous_section: 6, titre: 'Évaluation stocks et travaux', articles: '117-117-A' },
+                    { sous_section: 7, titre: 'Plus-values et moins-values', articles: '118-118-F' },
+                    { sous_section: 8, titre: 'Report déficitaire', articles: '119' },
+                    { sous_section: 9, titre: 'Prix de transferts', articles: '120-120-I' },
                   ]
                 },
                 {
@@ -68,10 +86,10 @@ export const CGI_TOME_1: Tome = {
                   page: 58,
                   articles: '121-124-C',
                   sous_sections: [
-                    { sous_section: 1, titre: 'Taux de l\'impôt', articles: '121-122-B' },
+                    { sous_section: 1, titre: 'Période de l\'imposition', articles: '121-122-B' },
                     { sous_section: 2, titre: 'Calcul de l\'impôt', articles: '122' },
                     { sous_section: 3, titre: 'Établissement de l\'impôt', articles: '123-123-A' },
-                    { sous_section: 4, titre: 'Obligations déclaratives', articles: '124-124-C' },
+                    { sous_section: 4, titre: 'Obligations des personnes morales', articles: '124-124-C' },
                   ]
                 },
                 {
@@ -80,13 +98,22 @@ export const CGI_TOME_1: Tome = {
                   page: 61,
                   articles: '125-126 septies',
                   sous_sections: [
-                    { sous_section: 1, titre: 'Sociétés nouvelles', articles: '125', statut: 'abrogé' },
-                    { sous_section: 2, titre: 'Régime mère-fille', articles: '126-126-A' },
-                    { sous_section: 3, titre: 'Succursales', articles: '126-B' },
-                    { sous_section: '3 bis', titre: 'Quartiers généraux', articles: '126-C-1 à 126-C-4' },
-                    { sous_section: 4, titre: 'Holdings', articles: '126-D à 126-D-6' },
-                    { sous_section: 5, titre: 'Intégration fiscale', articles: '126-E à 126-E-9' },
-                    { sous_section: 6, titre: 'Personnes morales étrangères', articles: '126 bis à 126 septies' },
+                    { sous_section: 1, titre: 'Régime des sociétés nouvelles', articles: '125', statut: 'abrogé' },
+                    { sous_section: 2, titre: 'Régime des sociétés mères et filiales', articles: '126-126-A', paragraphes: [
+                        { numero: 'A', titre: 'Régime mère-fille', articles: '126' },
+                        { numero: 'B', titre: 'Subventions et remises de dettes', articles: '126-A' },
+                      ]
+                    },
+                    { sous_section: 3, titre: 'Régime des succursales', articles: '126-B' },
+                    { sous_section: 3.5, display: '3 bis', titre: 'Régime fiscal des quartiers généraux des sociétés', articles: '126-C-1 à 126-C-4' },
+                    { sous_section: 4, titre: 'Régime fiscal des holdings', articles: '126-D à 126-D-6', paragraphes: [
+                        { numero: 1, titre: 'Conditions d\'éligibilité', articles: '126-D' },
+                        { numero: 2, titre: 'Imposition des plus-values des titres', articles: '126-D-1 à 126-D-3' },
+                        { numero: 3, titre: 'Autres avantages fiscaux', articles: '126-D-4 à 126-D-6' },
+                      ]
+                    },
+                    { sous_section: 5, titre: 'Régime d\'intégration fiscale', articles: '126-E à 126-E-9' },
+                    { sous_section: 6, titre: 'Régime des personnes morales étrangères', articles: '126 bis à 126 septies' },
                   ]
                 },
               ],

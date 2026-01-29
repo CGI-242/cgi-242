@@ -1,0 +1,310 @@
+<div class="min-h-screen bg-secondary-50">
+  <app-header />
+
+  <div class="flex">
+    <app-sidebar [collapsed]="sidebarCollapsed" />
+
+    <main
+      class="flex-1 transition-all duration-300"
+      [class.ml-52]="!sidebarCollapsed"
+      [class.ml-14]="sidebarCollapsed">
+      <div class="flex h-[calc(100vh-5rem)]">
+        <!-- Sidebar navigation -->
+        <div class="w-[640px] border-r border-secondary-200 bg-white flex flex-col">
+          <!-- Header avec version -->
+          <div class="px-3 py-2 border-b border-secondary-200 bg-primary-50">
+            <h2 class="text-lg font-semibold text-primary-900">CGI {{ articlesService.currentVersion() }}</h2>
+            <p class="text-xs text-primary-600">Code Général des Impôts</p>
+          </div>
+
+          <!-- Tabs Sommaire / Articles -->
+          <div class="flex border-b border-secondary-200">
+            <button
+              (click)="activeTab.set('sommaire')"
+              class="flex-1 py-2.5 text-sm font-medium transition-colors"
+              [class.text-primary-600]="activeTab() === 'sommaire'"
+              [class.border-b-2]="activeTab() === 'sommaire'"
+              [class.border-primary-600]="activeTab() === 'sommaire'"
+              [class.text-secondary-500]="activeTab() !== 'sommaire'">
+              Sommaire
+            </button>
+            <button
+              (click)="activeTab.set('articles')"
+              class="flex-1 py-2.5 text-sm font-medium transition-colors"
+              [class.text-primary-600]="activeTab() === 'articles'"
+              [class.border-b-2]="activeTab() === 'articles'"
+              [class.border-primary-600]="activeTab() === 'articles'"
+              [class.text-secondary-500]="activeTab() !== 'articles'">
+              Articles
+            </button>
+          </div>
+
+          <!-- Tab content -->
+          @if (activeTab() === 'sommaire') {
+            <!-- Sommaire officiel -->
+            <div class="flex-1 overflow-y-auto">
+              <app-code-sommaire
+                [version]="articlesService.currentVersion()"
+                (selection)="onSommaireSelect($event)" />
+            </div>
+          } @else {
+            <!-- Search -->
+            <div class="p-2 border-b border-secondary-200">
+              <div class="relative">
+                <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <input
+                  type="text"
+                  [(ngModel)]="searchQuery"
+                  (input)="onSearch()"
+                  placeholder="Rechercher un article..."
+                  class="w-full pl-10 pr-4 py-2 border border-secondary-200 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+              </div>
+            </div>
+
+            <!-- Articles list with virtual scrolling for performance -->
+            @if (articlesService.isLoading()) {
+              <div class="flex-1 flex items-center justify-center">
+                <div class="w-6 h-6 border-2 border-primary-600 border-t-transparent rounded-full animate-spin"></div>
+              </div>
+            } @else if (filteredArticles().length === 0) {
+              <div class="flex-1 flex items-center justify-center">
+                <div class="p-3 text-center text-secondary-500 text-base">
+                  Aucun article trouvé
+                </div>
+              </div>
+            } @else {
+              <cdk-virtual-scroll-viewport
+                itemSize="36"
+                class="flex-1"
+                [style.height.px]="getViewportHeight()">
+                <div class="divide-y divide-secondary-100">
+                  <div
+                    *cdkVirtualFor="let article of filteredArticles(); let i = index; trackBy: trackByArticleId"
+                    class="article-list-item">
+                    <!-- Séparateur sous-section si c'est le premier article de la sous-section -->
+                    @if (getSousSectionHeader(article.numero); as ssHeader) {
+                      <div class="px-3 py-2 bg-primary-100 border-l-4 border-primary-500">
+                        <span class="text-sm font-semibold text-primary-800">{{ ssHeader.startsWith('Sec.') ? ssHeader : 'Sous-section ' + ssHeader }}</span>
+                      </div>
+                    }
+                    <!-- Headers point (1- Conditions, 2- Imposition, a) Qualité...) depuis le contenu -->
+                    @for (pointHeader of getPointHeaders(article); track pointHeader) {
+                      <div class="px-3 py-2 bg-primary-50 border-l-4 border-primary-400 ml-2">
+                        <span class="text-sm font-semibold text-primary-700">{{ pointHeader }}</span>
+                      </div>
+                    }
+                    <!-- Header point romain (I. Personnes imposables, II. Lieu d'imposition) -->
+                    @if (getRomanHeader(article, i); as romanHeader) {
+                      <div class="px-3 py-2 bg-primary-50 border-l-4 border-primary-400">
+                        <span class="text-sm font-semibold text-primary-700">{{ romanHeader }}</span>
+                      </div>
+                    }
+                    <!-- Header lettre majuscule (A. Contribuables..., B. Contribuables...) -->
+                    @if (isFirstOfUpperLetter(article, i)) {
+                      <div class="px-3 py-2 bg-primary-50 border-l-3 border-primary-300 ml-2">
+                        <span class="text-sm font-semibold text-primary-600">{{ getUpperLetterHeader(article) }}</span>
+                      </div>
+                    }
+                    <!-- Header de paragraphe depuis le sommaire (Sous-section X. Titre : Paragraphe Y: Titre) -->
+                    @if (getParagrapheHeader(article.numero)) {
+                      <div class="px-3 py-2 bg-primary-50 border-l-3 border-primary-400 ml-2">
+                        <span class="text-sm font-semibold text-amber-700">{{ getParagrapheHeader(article.numero) }}</span>
+                      </div>
+                    }
+                    <!-- Sous-header de paragraphe depuis le titre de l'article -->
+                    @if (isFirstOfParagraph(article, i) && !getParagrapheHeader(article.numero)) {
+                      <div class="px-3 py-2 bg-primary-50 border-l-3 border-primary-400 ml-4">
+                        <span class="text-sm font-semibold text-primary-700">{{ getParagraphHeader(article) }}</span>
+                      </div>
+                    }
+                    <!-- Sous-header de lettre (a) Régime du forfait, b) Régime du réel...) -->
+                    @if (isFirstOfLetter(article, i)) {
+                      <div class="px-3 py-2 bg-secondary-50 border-l-2 border-secondary-400 ml-4">
+                        <span class="text-sm font-semibold text-secondary-700">{{ getLetterHeader(article) }}</span>
+                      </div>
+                    }
+                    <button
+                      (click)="selectArticle(article)"
+                      class="w-full text-left px-3 py-1.5 hover:bg-secondary-50 transition-colors flex items-center gap-2"
+                      [class.bg-primary-50]="selectedArticle()?.id === article.id"
+                      [class.border-l-2]="selectedArticle()?.id === article.id"
+                      [class.border-l-primary-600]="selectedArticle()?.id === article.id">
+                      <span class="font-medium text-primary-700 text-base whitespace-nowrap">Art. {{ article.numero }}</span>
+                      @if (article.titre) {
+                        <span class="text-sm text-secondary-500 truncate">{{ getCleanTitle(article.titre) }}</span>
+                      }
+                    </button>
+                  </div>
+                </div>
+              </cdk-virtual-scroll-viewport>
+            }
+
+            <!-- Total count -->
+            <div class="p-2 border-t border-secondary-200 bg-secondary-50">
+              <p class="text-sm text-secondary-500 text-center">
+                {{ filteredArticles().length }} article(s) sur {{ articlesService.total() }}
+              </p>
+            </div>
+          }
+        </div>
+
+        <!-- Article content -->
+        <div class="flex-1 flex flex-col bg-white">
+          @if (selectedArticle(); as article) {
+            <!-- Article header -->
+            <div class="p-6 border-b border-secondary-200">
+              <div class="flex items-start justify-between">
+                <div class="flex items-baseline gap-3">
+                  <h1 class="text-2xl font-bold text-secondary-900">Art. {{ article.numero }}</h1>
+                  @if (article.titre) {
+                    <p class="text-lg text-secondary-600">{{ getCleanTitle(article.titre) }}</p>
+                  }
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 bg-primary-100 text-primary-700 text-sm font-medium rounded-full">
+                    CGI {{ articlesService.currentVersion() }}
+                  </span>
+                  <!-- Audio button -->
+                  <app-audio-button
+                    [text]="getArticleTextForSpeech(article)"
+                    size="small" />
+                  <button
+                    (click)="copyArticle(article)"
+                    class="p-2 hover:bg-secondary-100 rounded-lg transition-colors"
+                    title="Copier l'article">
+                    <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              @if (article.tome || article.chapitre) {
+                <div class="flex items-center gap-2 mt-3">
+                  @if (article.tome) {
+                    <span class="px-2 py-1 bg-secondary-100 text-secondary-600 text-sm rounded">Tome {{ article.tome }}</span>
+                  }
+                  @if (article.chapitre) {
+                    <span class="px-2 py-1 bg-secondary-100 text-secondary-600 text-sm rounded">{{ article.chapitre }}</span>
+                  }
+                </div>
+              }
+            </div>
+
+            <!-- Article content -->
+            <div class="flex-1 overflow-y-auto p-6 bg-secondary-50/50">
+              <div class="max-w-7xl mx-auto bg-white rounded-xl shadow-sm border border-secondary-100 p-8">
+                @if (article.chapeau) {
+                  <div class="chapeau text-secondary-700 font-medium italic mb-4 pb-4 border-b border-secondary-200">
+                    {{ article.chapeau }}
+                  </div>
+                }
+                <div class="article-content text-secondary-800 leading-loose text-base text-justify" [innerHTML]="article.contenu | articleFormat">
+                </div>
+
+                <!-- Audio button at bottom for long articles -->
+                @if (article.contenu.length > 500) {
+                  <div class="mt-6 pt-4 border-t border-secondary-200 flex justify-center">
+                    <app-audio-button
+                      [text]="getArticleTextForSpeech(article)"
+                      size="default" />
+                  </div>
+                }
+              </div>
+            </div>
+
+            <!-- Copy confirmation -->
+            @if (copied()) {
+              <div class="absolute bottom-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg text-sm">
+                Article copié !
+              </div>
+            }
+          } @else if (filteredArticles().length > 0) {
+            <!-- Vue multi-articles (lecture continue) -->
+            <div class="flex-1 overflow-y-auto p-6 bg-secondary-50/50">
+              <div class="max-w-7xl mx-auto space-y-6">
+                @for (article of filteredArticles(); track article.id; let i = $index) {
+                  <!-- Séparateur sous-section -->
+                  @if (getSousSectionHeader(article.numero); as ssHeader) {
+                    <div class="py-4 px-6 bg-primary-100 border-l-4 border-primary-500 rounded-r-lg">
+                      <h2 class="text-lg font-bold text-primary-800">{{ ssHeader.startsWith('Sec.') ? ssHeader : 'Sous-section ' + ssHeader }}</h2>
+                    </div>
+                  }
+                  <!-- Headers point (1- Conditions, 2- Imposition, a) Qualité...) depuis le contenu -->
+                  @for (pointHeader of getPointHeaders(article); track pointHeader) {
+                    <div class="py-3 px-6 bg-primary-50 border-l-4 border-primary-400 rounded-r-lg ml-3">
+                      <h2 class="text-lg font-semibold text-primary-700">{{ pointHeader }}</h2>
+                    </div>
+                  }
+                  <!-- Header point romain (I. Personnes imposables, II. Lieu d'imposition) -->
+                  @if (getRomanHeader(article, i); as romanHeader) {
+                    <div class="py-3 px-6 bg-primary-50 border-l-4 border-primary-400 rounded-r-lg">
+                      <h2 class="text-lg font-semibold text-primary-700">{{ romanHeader }}</h2>
+                    </div>
+                  }
+                  <!-- Header lettre majuscule (A. Contribuables..., B. Contribuables...) -->
+                  @if (isFirstOfUpperLetter(article, i)) {
+                    <div class="py-3 px-5 bg-primary-50 border-l-3 border-primary-300 rounded-r-lg ml-2">
+                      <h3 class="text-lg font-semibold text-primary-600">{{ getUpperLetterHeader(article) }}</h3>
+                    </div>
+                  }
+                  <!-- Header de paragraphe depuis le sommaire (Sous-section X. Titre : Paragraphe Y: Titre) -->
+                  @if (getParagrapheHeader(article.numero)) {
+                    <div class="py-3 px-5 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg ml-2">
+                      <h3 class="text-lg font-semibold text-amber-700">{{ getParagrapheHeader(article.numero) }}</h3>
+                    </div>
+                  }
+                  <!-- Sous-header de paragraphe depuis le titre de l'article -->
+                  @if (isFirstOfParagraph(article, i) && !getParagrapheHeader(article.numero)) {
+                    <div class="py-3 px-5 bg-primary-50 border-l-4 border-primary-400 rounded-r-lg ml-6">
+                      <h3 class="text-lg font-semibold text-primary-700">{{ getParagraphHeader(article) }}</h3>
+                    </div>
+                  }
+                  <!-- Article -->
+                  <div [id]="'article-' + article.numero.replace(' ', '-')" class="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-secondary-200">
+                      <div class="flex items-baseline gap-3">
+                        <h3 class="text-xl font-bold text-secondary-900">Art. {{ article.numero }}</h3>
+                        @if (article.titre) {
+                          <span class="text-base text-secondary-600">{{ getCleanTitle(article.titre) }}</span>
+                        }
+                      </div>
+                      <app-audio-button
+                        [text]="getArticleTextForSpeech(article)"
+                        size="small" />
+                    </div>
+                    @if (article.chapeau) {
+                      <div class="text-secondary-700 font-medium italic mb-4 pb-4 border-b border-secondary-200">
+                        {{ article.chapeau }}
+                      </div>
+                    }
+                    <div class="article-content text-secondary-800 leading-loose text-base text-justify" [innerHTML]="article.contenu | articleFormat">
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+          } @else {
+            <!-- Empty state -->
+            <div class="flex-1 flex items-center justify-center">
+              <div class="text-center max-w-md">
+                <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-secondary-900 mb-2">
+                  Code Général des Impôts
+                </h3>
+                <p class="text-secondary-600 text-sm">
+                  Sélectionnez une section dans le sommaire pour consulter les articles.
+                </p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "description": "Table de correspondance IRPP → Impôts cédulaires 2026",
+    "base_legale": "Loi de Finances 2026 - République du Congo",
+    "date_application": "2026-01-01",
+    "note": "Articles non explicitement modifiés mais devant être interprétés suite à la suppression de l'IRPP"
+  },
+  "impots_cedulaires": {
+    "IBA": {
+      "nom_complet": "Impôt sur les Bénéfices d'Affaires",
+      "articles": "Art. 93 à Art. 94B",
+      "champ": "Bénéfices industriels, commerciaux, artisanaux, agricoles, professions libérales",
+      "ancien_irpp": "IRPP sur revenus d'activité"
+    },
+    "ITS": {
+      "nom_complet": "Impôt sur les Traitements et Salaires",
+      "articles": "Art. 114 à Art. 116A",
+      "champ": "Traitements, salaires, pensions, rentes viagères, avantages en nature",
+      "ancien_irpp": "IRPP sur salaires"
+    },
+    "IRCM": {
+      "nom_complet": "Impôt sur le Revenu des Capitaux Mobiliers",
+      "articles": "Art. 126 et suivants",
+      "champ": "Dividendes, intérêts, revenus de valeurs mobilières",
+      "ancien_irpp": "IRPP sur capitaux"
+    },
+    "IRF": {
+      "nom_complet": "Impôt sur les Revenus Fonciers",
+      "articles": "Art. 84 et suivants",
+      "champ": "Revenus de propriétés bâties et non bâties",
+      "ancien_irpp": "IRPP sur revenus fonciers"
+    }
+  },
+  "articles_non_modifies": [
+    {
+      "article": "Art. 172",
+      "titre": "Obligations des employeurs - Retenue à la source",
+      "chapitre": 6,
+      "fichier_source": "tome1-partie1-livre1-chapitre6.json",
+      "mention_irpp": true,
+      "texte_original_extrait": "est tenue d'en effectuer pour le compte du Trésor la retenue de l'IRPP",
+      "contexte": "Retenue à la source sur salaires par employeurs",
+      "interpretation_2026": "ITS",
+      "confiance": "haute",
+      "statut_lf2026": "non modifié",
+      "justification": "L'article traite des obligations de l'employeur en matière de retenue sur salaires, donc relève de l'ITS"
+    },
+    {
+      "article": "Art. 174",
+      "titre": "Modalités de versement",
+      "chapitre": 6,
+      "fichier_source": "tome1-partie1-livre1-chapitre6.json",
+      "mention_irpp": true,
+      "texte_original_extrait": "tant pour l'IRPP, pour la taxe forfaitaire",
+      "contexte": "Versement des retenues à l'administration fiscale",
+      "interpretation_2026": ["IBA", "ITS", "IRCM", "IRF"],
+      "confiance": "moyenne",
+      "statut_lf2026": "non modifié",
+      "justification": "Article générique sur les modalités de versement, applicable à tous les impôts cédulaires selon le type de revenu"
+    },
+    {
+      "article": "Art. 176",
+      "titre": "État annuel des salaires",
+      "chapitre": 6,
+      "fichier_source": "tome1-partie1-livre1-chapitre6.json",
+      "mention_irpp": true,
+      "texte_original_extrait": "servant de base à l'IRPP",
+      "contexte": "Déclaration annuelle des salaires par l'employeur",
+      "interpretation_2026": "ITS",
+      "confiance": "haute",
+      "statut_lf2026": "non modifié",
+      "justification": "Obligation déclarative employeur sur salaires, relève de l'ITS"
+    },
+    {
+      "article": "Art. 182",
+      "titre": "Régularisation de l'IRPP",
+      "chapitre": 6,
+      "fichier_source": "tome1-partie1-livre1-chapitre6.json",
+      "mention_irpp": true,
+      "texte_original_extrait": "En vue de la régularisation de l'IRPP",
+      "contexte": "Régularisation annuelle de l'impôt sur les revenus",
+      "interpretation_2026": ["IBA", "ITS", "IRCM", "IRF"],
+      "confiance": "haute",
+      "statut_lf2026": "non modifié",
+      "justification": "Article sur la régularisation de l'impôt sur les revenus, applicable à tous les impôts cédulaires selon la catégorie de revenu"
+    },
+    {
+      "article": "Art. 183",
+      "titre": "Retenue à la source sur commissions, courtages, honoraires",
+      "chapitre": 6,
+      "fichier_source": "tome1-partie1-livre1-chapitre6.json",
+      "mention_irpp": true,
+      "texte_original_extrait": "Ils constituent des acomptes du montant de l'IRPP",
+      "contexte": "Versement des impôts sur revenus d'activité et prestations",
+      "interpretation_2026": ["IBA", "ITS"],
+      "confiance": "moyenne",
+      "statut_lf2026": "partiellement modifié",
+      "justification": "Article sur versements de retenues, concerne IBA (prestations) et ITS (salaires) selon le type de revenu",
+      "modification_lf2026": {
+        "alineas_1_8": "sans changement",
+        "alinea_9": {
+          "statut": "nouveau",
+          "texte": "Les revenus (émoluments, primes, gratifications, indemnités, etc.) des membres et du personnel contractuel des institutions de la République et des établissements publics administratifs (EPA) et assimilés, sont automatiquement liquidés et bancarisés."
+        }
+      }
+    },
+    {
+      "article": "Art. 185",
+      "titre": "Renseignements sur revenus de source étrangère",
+      "chapitre": 6,
+      "fichier_source": "tome1-partie1-livre1-chapitre6.json",
+      "mention_irpp": false,
+      "contexte": "Déclaration des revenus de source étrangère",
+      "interpretation_2026": ["IBA", "ITS", "IRCM", "IRF"],
+      "confiance": "moyenne",
+      "statut_lf2026": "non modifié",
+      "justification": "Article générique sur les revenus de source étrangère, applicable selon la nature du revenu"
+    },
+    {
+      "article": "Art. 185 bis",
+      "titre": "Obligations des sociétés étrangères",
+      "chapitre": 6,
+      "fichier_source": "tome1-partie1-livre1-chapitre6.json",
+      "mention_irpp": true,
+      "texte_original_extrait": "passible de l'impôt sur le revenu",
+      "contexte": "Retenue à la source par sociétés étrangères",
+      "interpretation_2026": "ITS",
+      "confiance": "haute",
+      "statut_lf2026": "non modifié",
+      "justification": "Article sur les retenues des sociétés étrangères sur leur personnel, relève de l'ITS"
+    }
+  ],
+  "regles_interpretation": {
+    "principe": "En cas de mention de 'IRPP' dans un article non modifié par la LF 2026, l'interprétation dépend du contexte",
+    "regles": [
+      {
+        "contexte": "Salaires, traitements, pensions, rentes viagères",
+        "interpretation": "ITS",
+        "confiance": "haute"
+      },
+      {
+        "contexte": "Bénéfices commerciaux, industriels, artisanaux, agricoles, professions libérales",
+        "interpretation": "IBA",
+        "confiance": "haute"
+      },
+      {
+        "contexte": "Dividendes, intérêts, revenus de valeurs mobilières",
+        "interpretation": "IRCM",
+        "confiance": "haute"
+      },
+      {
+        "contexte": "Revenus locatifs, revenus fonciers",
+        "interpretation": "IRF",
+        "confiance": "haute"
+      },
+      {
+        "contexte": "Dispositions générales applicables à tous types de revenus",
+        "interpretation": ["IBA", "ITS", "IRCM", "IRF"],
+        "confiance": "moyenne"
+      }
+    ]
+  },
+  "avertissement_utilisateur": {
+    "message_standard": "Cet article mentionne 'IRPP' qui a été supprimé par la Loi de Finances 2026 et remplacé par les impôts cédulaires (IBA, ITS, IRCM, IRF). L'interprétation fournie par CGI242 est basée sur le contexte de l'article.",
+    "message_confiance_moyenne": "L'interprétation proposée est indicative. En cas de doute, consultez un professionnel du droit fiscal.",
+    "message_modification": "Cet article a été partiellement modifié par la LF 2026."
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "document": "Code général des impôts",
+    "pays": "République du Congo",
+    "edition": "2026",
+    "tome": 1,
+    "partie": 3,
+    "livre": null,
+    "chapitre": 2,
+    "chapitre_titre": "Paiement différé ou échelonné et frais de poursuite",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
+  },
+  "articles": [
+    {
+      "article": "Art. 518 quater A",
+      "titre": null,
+      "texte": [
+        "La demande du paiement différé ou échelonné est reçue par l'autorité compétente avant le 1er mars de chaque année.",
+        "2) Pour les impôts, droits et taxes recouvrés sur titre, l'autorisation de paiement différé ou échelonné est accordée au contribuable requérant par le receveur quel que soit le montant, suivant un échéancier qui ne peut excéder douze mois."
+      ],
+      "mots_cles": [
+        "paiement différé",
+        "paiement échelonné",
+        "1er mars",
+        "impôts sur titre",
+        "receveur",
+        "échéancier",
+        "douze mois"
+      ],
+      "statut": "en vigueur",
+      "section": "Paiement différé ou échelonné"
+    },
+    {
+      "article": "Art. 518 quater B",
+      "titre": null,
+      "texte": [
+        "L'échéancier ci-dessus ne peut excéder six mois et ne peut s'étaler au-delà de l'année fiscale de l'émission de ladite fiscale.",
+        "Il ne peut être accordé deux échéanciers simultanés."
+      ],
+      "mots_cles": [
+        "échéancier",
+        "six mois",
+        "année fiscale",
+        "échéanciers simultanés"
+      ],
+      "statut": "en vigueur",
+      "section": "Paiement différé ou échelonné"
+    },
+    {
+      "article": "Art. 518 quater C",
+      "titre": null,
+      "texte": [
+        "Le non-respect de l'échéancier est sanctionné par les dispositions de droit commun du présent Code."
+      ],
+      "mots_cles": [
+        "non-respect",
+        "échéancier",
+        "sanctions",
+        "droit commun"
+      ],
+      "statut": "en vigueur",
+      "section": "Paiement différé ou échelonné"
+    },
+    {
+      "article": "Art. 519",
+      "titre": "Tarif des actes de poursuite",
+      "texte": [
+        "Le tarif des frais de poursuite est fixé comme suit :"
+      ],
+      "mots_cles": [
+        "tarif",
+        "frais de poursuite",
+        "actes de poursuite",
+        "sommation",
+        "saisie-arrêt",
+        "commandement",
+        "procès-verbal de saisie",
+        "procès-verbal d'interruption",
+        "procès-verbal de carence",
+        "procès-verbal de perquisition",
+        "témoin",
+        "gardien",
+        "vente",
+        "commissaire-priseur",
+        "porteur de contrainte",
+        "FCFA"
+      ],
+      "statut": "en vigueur",
+      "section": "Tarif des frais de poursuite"
+    },
+    {
+      "article": "Art. 520",
+      "titre": "Recouvrement de la taxe sur les spectacles, jeux et divertissements",
+      "texte": [
+        "Les contribuables visés aux articles 336 et 338 du présent Code, doivent verser au Receveur Municipal, Comptable du Trésor (trésor-payeur, percepteur ou préposé) le montant des droits dus dans le délai fixé par l'article 340-2 du CGI.",
+        "Le versement sera effectué à la régularisation selon les règles fixées par les articles 206 et 207 du présent Code.",
+        "Les cotisations dues par des contribuables visés au paragraphe b de l'article 333 seront établies chaque trimestre par voie de rôles nominatifs à la diligence du Président du Comité Exécutif Communal ; ces rôles seront adressés à la Direction des contributions directes et indirectes pour approbation par le Directeur Général des Impôts et recouvrés selon les règles du Titre 4 de la Partie 3 du présent Code.",
+        "Les sanctions prévues par l'article 516 ci-dessus sont applicables aux contribuables visés au premier alinéa du présent article.",
+        "Les pénalités sont établies dans les conditions fixées par l'article 517 du présent Code.",
+        "Les dirigeants ou gérants des cercles et maisons de jeux sont personnellement responsables du recouvrement de la taxe et, le cas échéant, des pénalités."
+      ],
+      "mots_cles": [
+        "recouvrement",
+        "taxe spectacles",
+        "taxe jeux",
+        "taxe divertissements",
+        "Receveur Municipal",
+        "Comptable du Trésor",
+        "rôles nominatifs",
+        "Président Comité Exécutif Communal",
+        "Direction contributions directes",
+        "Directeur Général des Impôts",
+        "sanctions",
+        "pénalités",
+        "dirigeants",
+        "gérants",
+        "cercles",
+        "maisons de jeux",
+        "responsabilité personnelle"
+      ],
+      "statut": "en vigueur",
+      "section": "Recouvrement de la taxe sur les spectacles, jeux et divertissements"
+    }
+  ]
+}

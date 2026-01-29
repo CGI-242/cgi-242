@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "document": "Code général des impôts",
+    "pays": "République du Congo",
+    "edition": "2026",
+    "tome": 2,
+    "partie": null,
+    "livre": 1,
+    "chapitre": 9,
+    "chapitre_titre": "Droits acquis et prescriptions, restitutions ou remboursements",
+    "section": null,
+    "section_titre": null,
+    "page_source": null
+  },
+  "articles": [
+    {
+      "article": "Art. 188",
+      "titre": "Non-restitution des droits en cas de révocation ou résolution",
+      "texte": [
+        "Ne sont pas sujets à restitution les droits régulièrement perçus sur les actes ou contrats ultérieurement révoqués ou résolus par application des articles 954 à 958, 1183, 1184, 1654 et 1659 du Code civil.",
+        "En cas de réscision d'un contrat pour cause de lésion, ou d'annulation d'une vente pour cause de vices cachés et, au surplus, dans tous les cas où il y a lieu à annulation, les droits perçus sur l'acte annulé, résolu ou rescindé, ne sont restituables que si l'annulation, la résolution ou la rescision a été prononcée par un jugement ou un arrêt passé en force de chose jugée.",
+        "L'annulation, la révocation, la résolution ou la rescision prononcée, pour quelque cause que ce soit, par jugement ou arrêt, ne donne pas lieu à la perception du droit proportionnel de mutation."
+      ],
+      "mots_cles": [
+        "restitution",
+        "droits",
+        "actes",
+        "contrats",
+        "révoqués",
+        "résolus",
+        "articles 954 à 958 Code civil",
+        "articles 1183 1184 Code civil",
+        "articles 1654 1659 Code civil",
+        "rescision",
+        "lésion",
+        "annulation",
+        "vices cachés",
+        "jugement",
+        "arrêt",
+        "force de chose jugée",
+        "droit proportionnel de mutation"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 189",
+      "titre": "Restitution en cas de retour de l'absent",
+      "texte": [
+        "En cas de retour de l'absent, les droits payés conformément à l'article 77 ci-dessus seront restitués sans seule déduction de celui auquel aura donné lieu la jouissance des héritiers."
+      ],
+      "mots_cles": [
+        "retour de l'absent",
+        "droits",
+        "article 77",
+        "restitution",
+        "déduction",
+        "jouissance",
+        "héritiers"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 190",
+      "titre": "Restitution pour dettes insuffisamment justifiées",
+      "texte": [
+        "1) Toute dette au sujet de laquelle l'agent de l'administration aura jugé les justifications insuffisantes ne sera pas retranchée de l'actif pour la perception du droit sauf aux parties à se pourvoir en restitution, s'il y a lieu, dans les deux années à compter du jour de la déclaration.",
+        "2) Les héritiers ou légataires seront admis dans le délai de deux ans, à compter du jour de la déclaration, à réclamer, sous les justifications prescrites à l'article 45, la déduction des dettes établies par les opérations de la faillite ou de la liquidation judiciaire ou par le règlement définitif de la distribution par contribution postérieure à la déclaration et à obtenir le remboursement des droits qu'ils auraient payés en trop."
+      ],
+      "mots_cles": [
+        "dette",
+        "justifications insuffisantes",
+        "actif",
+        "perception",
+        "restitution",
+        "deux années",
+        "déclaration",
+        "héritiers",
+        "légataires",
+        "article 45",
+        "faillite",
+        "liquidation judiciaire",
+        "distribution par contribution",
+        "remboursement"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 191",
+      "titre": "Restitution en cas d'usufruit successif",
+      "texte": [
+        "Dans le cas d'usufruit successif l'usufruit éventuel venant à s'ouvrir, le nu-propriétaire aura droit à la restitution d'une somme égale à ce qu'il aurait payé en moins si le droit acquitté par lui avait été calculé d'après l'âge de l'usufruitier éventuel."
+      ],
+      "mots_cles": [
+        "usufruit successif",
+        "usufruit éventuel",
+        "nu-propriétaire",
+        "restitution",
+        "âge",
+        "usufruitier éventuel"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 192",
+      "titre": "Restitution pour indication de naissance hors du Territoire",
+      "texte": [
+        "À défaut des indications ou justifications prescrites par l'article 55, les droits les plus élevés seront perçus, conformément au même article, sauf restitution du trop-perçu dans le délai de deux ans sur la représentation de l'acte de naissance, dans le cas où la naissance aurait eu lieu hors du Territoire.",
+        "Dans le cas d'indication inexacte du lieu de naissance de l'usufruitier, le droit le plus élevé deviendra exigible, comme il est dit à l'article 115, sauf restitution si la date de naissance est reconnue exacte."
+      ],
+      "mots_cles": [
+        "article 55",
+        "indications",
+        "justifications",
+        "droits les plus élevés",
+        "restitution",
+        "trop-perçu",
+        "deux ans",
+        "acte de naissance",
+        "hors du Territoire",
+        "lieu de naissance",
+        "usufruitier",
+        "article 115"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 193 (L.F. 2026)",
+      "titre": "Prescription pour la demande des droits",
+      "texte": [
+        "(L.F. 2026 - modifié) Il y a prescription pour la demande des droits :",
+        "1° après un délai de dix ans, à compter du jour de l'enregistrement d'un acte ou autre document ou d'une déclaration qui révélerait suffisamment l'exigibilité de ces droits, sans qu'il soit nécessaire de recourir à des recherches ultérieures ;",
+        "2° après trente ans, à compter du jour de l'enregistrement s'il s'agit d'une omission de biens dans une déclaration de succession ;",
+        "3° après trente ans, à compter du jour du décès, pour les successions non déclarées.",
+        "Toutefois, et sans qu'il puisse en résulter une prolongation des délais, les prescriptions prévues, tant par les numéros 2 et 3 qui précèdent, que par l'article 196, seront réduites à 5 ans, à compter du jour de l'enregistrement d'un écrit ou d'une déclaration mentionnant exactement la date et le lieu du décès du défunt, ainsi que le nom et l'adresse de l'un au moins des ayants droit.",
+        "La prescription ne courra qu'en ce qui concerne les droits dont l'exigibilité est révélée sur les biens, sommes ou valeurs expressément énoncés dans l'écrit ou la déclaration comme dépendant de l'hérédité.",
+        "Les prescriptions seront interrompues par les demandes signifiées, par le versement d'un acompte ou par le dépôt d'une pétition en remise des pénalités."
+      ],
+      "mots_cles": [
+        "prescription",
+        "droits",
+        "dix ans",
+        "enregistrement",
+        "acte",
+        "document",
+        "déclaration",
+        "exigibilité",
+        "trente ans",
+        "omission de biens",
+        "succession",
+        "décès",
+        "successions non déclarées",
+        "article 196",
+        "ayants droit",
+        "hérédité",
+        "interruption",
+        "demandes signifiées",
+        "acompte",
+        "pétition"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 194",
+      "titre": "Prescription des amendes",
+      "texte": [
+        "La prescription de cinq ans établie par le premier paragraphe de l'article 193 ci-dessus s'appliquera, tant aux amendes pour contravention aux dispositions du présent règlement qu'aux amendes pour contravention aux prescriptions ci-dessus sur les ventes de meubles."
+      ],
+      "mots_cles": [
+        "prescription",
+        "cinq ans",
+        "article 193",
+        "amendes",
+        "contravention",
+        "ventes de meubles"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 200",
+      "titre": "Prescription de l'action en restitution",
+      "texte": [
+        "L'action en restitution des sommes indûment ou irrégulièrement perçues par suite d'une erreur des parties ou de l'administration est prescrite après un délai de deux ans à partir du paiement.",
+        "En ce qui concerne les droits devenus restituables par suite d'un événement postérieur, l'action en remboursement sera prescrite après deux années à compter du jour où les droits sont devenus restituables ou, au plus tard, en tout état de cause, cinq ans à compter de la perception.",
+        "Les prescriptions seront interrompues par des demandes signifiées après ouverture du droit au remboursement.",
+        "L'action en restitution ouverte au profit du nu-propriétaire, dans les conditions déterminées à l'article 54, se prescrit par deux ans, à compter du jour du décès du précédent usufruitier."
+      ],
+      "mots_cles": [
+        "action en restitution",
+        "sommes indûment perçues",
+        "erreur",
+        "parties",
+        "administration",
+        "prescription",
+        "deux ans",
+        "paiement",
+        "droits restituables",
+        "événement postérieur",
+        "remboursement",
+        "cinq ans",
+        "perception",
+        "demandes signifiées",
+        "nu-propriétaire",
+        "article 54",
+        "décès",
+        "usufruitier"
+      ],
+      "statut": "en vigueur"
+    }
+  ]
+}

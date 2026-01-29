@@ -1,4 +1,4 @@
-import { Component, inject, Input, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, model, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -25,23 +25,23 @@ interface NavItem {
   imports: [CommonModule, RouterLink, RouterLinkActive],
   template: `
     <aside
-      class="fixed left-0 top-20 h-[calc(100vh-5rem)] bg-white border-r border-secondary-200 transition-all duration-300"
-      [class.w-64]="!collapsed"
-      [class.w-14]="collapsed">
-      <nav class="space-y-1" [class.p-4]="!collapsed" [class.p-2]="collapsed">
+      class="fixed left-0 top-20 h-[calc(100vh-5rem)] bg-white dark:bg-secondary-800 border-r border-secondary-200 dark:border-secondary-700 transition-all duration-300"
+      [class.w-52]="!collapsed()"
+      [class.w-14]="collapsed()">
+      <nav class="space-y-1" [class.p-3]="!collapsed()" [class.p-2]="collapsed()">
         @for (item of visibleItems; track item.label) {
           @if (item.route) {
             <a
               [routerLink]="item.route"
-              routerLinkActive="bg-primary-50 text-primary-700"
-              class="flex items-center rounded-lg text-secondary-600 hover:bg-secondary-50 transition"
-              [class.gap-3]="!collapsed"
-              [class.px-3]="!collapsed"
-              [class.py-2]="!collapsed"
-              [class.justify-center]="collapsed"
-              [class.p-2]="collapsed">
-              <span [innerHTML]="getSafeIcon(item.icon)" class="w-6 h-6 flex-shrink-0"></span>
-              @if (!collapsed) {
+              routerLinkActive="bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400"
+              class="flex items-center rounded-lg text-secondary-600 dark:text-secondary-400 hover:bg-secondary-50 dark:hover:bg-secondary-700 transition"
+              [class.gap-3]="!collapsed()"
+              [class.px-3]="!collapsed()"
+              [class.py-2]="!collapsed()"
+              [class.justify-center]="collapsed()"
+              [class.p-2]="collapsed()">
+              <span [innerHTML]="getSafeIcon(item.icon)" class="w-5 h-5 flex-shrink-0"></span>
+              @if (!collapsed()) {
                 <span class="text-base font-medium">{{ item.label }}</span>
               }
             </a>
@@ -50,14 +50,14 @@ interface NavItem {
             <div>
               <button
                 (click)="toggleMenu(item.label)"
-                class="w-full flex items-center rounded-lg text-secondary-600 hover:bg-secondary-50 transition"
-                [class.gap-3]="!collapsed"
-                [class.px-3]="!collapsed"
-                [class.py-2]="!collapsed"
-                [class.justify-center]="collapsed"
-                [class.p-2]="collapsed">
-                <span [innerHTML]="getSafeIcon(item.icon)" class="w-6 h-6 flex-shrink-0"></span>
-                @if (!collapsed) {
+                class="w-full flex items-center rounded-lg text-secondary-600 dark:text-secondary-400 hover:bg-secondary-50 dark:hover:bg-secondary-700 transition"
+                [class.gap-3]="!collapsed()"
+                [class.px-3]="!collapsed()"
+                [class.py-2]="!collapsed()"
+                [class.justify-center]="collapsed()"
+                [class.p-2]="collapsed()">
+                <span [innerHTML]="getSafeIcon(item.icon)" class="w-5 h-5 flex-shrink-0"></span>
+                @if (!collapsed()) {
                   <span class="text-base font-medium flex-1 text-left">{{ item.label }}</span>
                   <svg
                     class="w-4 h-4 transition-transform"
@@ -67,13 +67,13 @@ interface NavItem {
                   </svg>
                 }
               </button>
-              @if (!collapsed && isMenuOpen(item.label)) {
+              @if (!collapsed() && isMenuOpen(item.label)) {
                 <div class="ml-8 mt-1 space-y-1">
                   @for (child of item.children; track child.route) {
                     <a
                       [routerLink]="child.route"
-                      routerLinkActive="text-primary-700 font-medium"
-                      class="block px-3 py-1.5 text-base text-secondary-500 hover:text-secondary-900 transition">
+                      routerLinkActive="text-primary-700 dark:text-primary-400 font-medium"
+                      class="block px-3 py-1.5 text-base text-secondary-500 dark:text-secondary-400 hover:text-secondary-900 dark:hover:text-secondary-200 transition">
                       {{ child.label }}
                     </a>
                   }
@@ -86,9 +86,9 @@ interface NavItem {
 
       <!-- Toggle button -->
       <button
-        (click)="collapsed = !collapsed"
-        class="absolute bottom-4 right-0 translate-x-1/2 w-6 h-6 bg-white border border-secondary-200 rounded-full flex items-center justify-center hover:bg-secondary-50">
-        <svg class="w-4 h-4 text-secondary-400" [class.rotate-180]="collapsed" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        (click)="collapsed.set(!collapsed())"
+        class="absolute bottom-4 right-0 translate-x-1/2 w-6 h-6 bg-white dark:bg-secondary-700 border border-secondary-200 dark:border-secondary-600 rounded-full flex items-center justify-center hover:bg-secondary-50 dark:hover:bg-secondary-600">
+        <svg class="w-4 h-4 text-secondary-400" [class.rotate-180]="collapsed()" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
         </svg>
       </button>
@@ -96,7 +96,7 @@ interface NavItem {
   `,
 })
 export class SidebarComponent {
-  @Input() collapsed = false;
+  collapsed = model(false);
 
   private tenantService = inject(TenantService);
   private sanitizer = inject(DomSanitizer);
@@ -133,6 +133,11 @@ export class SidebarComponent {
       label: 'Chat IA',
       icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>',
       route: '/chat',
+    },
+    {
+      label: 'Alertes',
+      icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>',
+      route: '/alertes-fiscales',
     },
     {
       label: 'Organisation',

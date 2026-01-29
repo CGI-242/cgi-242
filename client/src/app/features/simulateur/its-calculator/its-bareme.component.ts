@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ItsResult, TrancheDetail } from '../services/its.service';
 
@@ -28,8 +28,8 @@ import { ItsResult, TrancheDetail } from '../services/its.service';
             </tr>
           </thead>
           <tbody class="divide-y divide-secondary-200">
-            @if (result && result.detailTranches.length > 0) {
-              @for (tranche of result.detailTranches; track tranche.tranche; let i = $index) {
+            @if (result() && result()!.detailTranches.length > 0) {
+              @for (tranche of result()!.detailTranches; track tranche.tranche; let i = $index) {
                 <tr [class.bg-primary-50]="tranche.baseImposable > 0" [class.bg-white]="tranche.baseImposable === 0">
                   <td class="px-4 py-3 text-secondary-700">
                     <div class="text-sm">
@@ -111,7 +111,7 @@ import { ItsResult, TrancheDetail } from '../services/its.service';
               <td colspan="2" class="px-4 py-4 font-semibold text-red-800">SOMME DES TRANCHES</td>
               <td class="px-4 py-4 text-right"></td>
               <td class="px-4 py-4 text-right font-mono font-bold text-lg text-red-700">
-                {{ result?.itsParPart ?? 0 | number:'1.0-0' }}
+                {{ result()?.itsParPart ?? 0 | number:'1.0-0' }}
               </td>
             </tr>
           </tfoot>
@@ -119,26 +119,26 @@ import { ItsResult, TrancheDetail } from '../services/its.service';
       </div>
 
       <!-- Calcul final -->
-      @if (result) {
+      @if (result(); as r) {
         <div class="mt-6 p-5 bg-primary-50 rounded-lg border border-primary-200">
           <div class="flex items-center justify-between mb-3">
             <span class="text-sm text-primary-700">Somme des tranches</span>
-            <span class="font-mono font-medium text-primary-800">{{ result.itsParPart | number:'1.0-0' }}</span>
+            <span class="font-mono font-medium text-primary-800">{{ r.itsParPart | number:'1.0-0' }}</span>
           </div>
-          @if (result.chargeFamilleAppliquee) {
+          @if (r.chargeFamilleAppliquee) {
             <div class="flex items-center justify-between mb-3">
               <span class="text-sm text-primary-700">x Nombre de parts</span>
-              <span class="font-mono font-medium text-primary-800">{{ result.nombreParts }}</span>
+              <span class="font-mono font-medium text-primary-800">{{ r.nombreParts }}</span>
             </div>
           }
           <div class="border-t border-primary-300 pt-3 mt-3">
             <div class="flex items-center justify-between mb-2">
               <span class="font-semibold text-primary-800">ITS ANNUEL</span>
-              <span class="font-mono font-bold text-xl text-primary-900">{{ result.itsAnnuel | number:'1.0-0' }}</span>
+              <span class="font-mono font-bold text-xl text-primary-900">{{ r.itsAnnuel | number:'1.0-0' }}</span>
             </div>
             <div class="flex items-center justify-between">
               <span class="text-sm text-primary-700">ITS MENSUEL (/ 12)</span>
-              <span class="font-mono font-medium text-primary-800">{{ result.itsMensuel | number:'1.0-0' }}</span>
+              <span class="font-mono font-medium text-primary-800">{{ r.itsMensuel | number:'1.0-0' }}</span>
             </div>
           </div>
         </div>
@@ -146,13 +146,13 @@ import { ItsResult, TrancheDetail } from '../services/its.service';
         <!-- Taux effectif -->
         <div class="mt-4 flex items-center justify-between px-4 py-3 bg-secondary-100 rounded-lg">
           <span class="text-sm text-secondary-600">Taux effectif d'imposition</span>
-          <span class="font-semibold text-lg text-secondary-800">{{ result.tauxEffectif | number:'1.2-2' }}%</span>
+          <span class="font-semibold text-lg text-secondary-800">{{ r.tauxEffectif | number:'1.2-2' }}%</span>
         </div>
 
         <!-- Indicateurs speciaux -->
-        @if (result.minimumApplique || result.plafondCnssApplique || result.chargeFamilleAppliquee) {
+        @if (r.minimumApplique || r.plafondCnssApplique || r.chargeFamilleAppliquee) {
           <div class="mt-4 space-y-2">
-            @if (result.minimumApplique) {
+            @if (r.minimumApplique) {
               <div class="flex items-center gap-2 text-xs text-amber-600">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -160,7 +160,7 @@ import { ItsResult, TrancheDetail } from '../services/its.service';
                 Minimum ITS de 1 200 FCFA applique
               </div>
             }
-            @if (result.plafondCnssApplique) {
+            @if (r.plafondCnssApplique) {
               <div class="flex items-center gap-2 text-xs text-blue-600">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -168,12 +168,12 @@ import { ItsResult, TrancheDetail } from '../services/its.service';
                 Plafond CNSS de 1 200 000 FCFA/mois applique
               </div>
             }
-            @if (result.chargeFamilleAppliquee) {
+            @if (r.chargeFamilleAppliquee) {
               <div class="flex items-center gap-2 text-xs text-green-600">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                Exception 2026 : charges de famille appliquees ({{ result.nombreParts }} parts)
+                Exception 2026 : charges de famille appliquees ({{ r.nombreParts }} parts)
               </div>
             }
           </div>
@@ -183,7 +183,7 @@ import { ItsResult, TrancheDetail } from '../services/its.service';
       <!-- Info -->
       <div class="mt-4 text-xs text-secondary-400">
         Le bareme s'applique au quotient familial (revenu / parts).
-        @if (!result?.chargeFamilleAppliquee) {
+        @if (!result()?.chargeFamilleAppliquee) {
           <br>ITS standard : 1 part (sans charges de famille).
         }
       </div>
@@ -191,12 +191,13 @@ import { ItsResult, TrancheDetail } from '../services/its.service';
   `,
 })
 export class ItsBaremeComponent {
-  @Input() result: ItsResult | null = null;
+  result = input<ItsResult | null>(null);
 
   getBorneSup(tranche: TrancheDetail): number {
-    if (!this.result) return tranche.max || 0;
+    const result = this.result();
+    if (!result) return tranche.max || 0;
 
-    const quotient = this.result.revenuParPart;
+    const quotient = result.revenuParPart;
 
     // Si le quotient familial est dans cette tranche, afficher le quotient comme borne sup
     if (quotient >= tranche.min && (tranche.max === null || quotient <= tranche.max)) {

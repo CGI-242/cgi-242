@@ -49,6 +49,14 @@ router.post(
 
 router.get('/verify-email', authController.verifyEmail);
 
+// Route publique pour renvoyer l'email de vérification (pas besoin d'auth)
+router.post(
+  '/resend-verification-public',
+  authRateLimiter,
+  csrfProtection,
+  authController.resendVerificationPublic
+);
+
 // Route de déconnexion
 router.post('/logout', authMiddleware, authController.logout);
 
@@ -60,6 +68,13 @@ router.post('/refresh-token', authController.refreshToken);
 
 // Routes authentifiées avec protection CSRF
 router.get('/me', authMiddleware, authController.me);
+
+router.patch(
+  '/profile',
+  authMiddleware,
+  csrfProtection,
+  authController.updateProfile
+);
 
 router.post(
   '/resend-verification',

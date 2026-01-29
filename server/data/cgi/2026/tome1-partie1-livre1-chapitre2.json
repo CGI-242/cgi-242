@@ -25,8 +25,8 @@
         "activité lucrative"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 1 : Champ d'application"
+      "section": "Section 1 : Champ d'application",
+      "annee_application": 2026
     },
     {
       "article": "Art. 93A",
@@ -48,37 +48,39 @@
         "propriété intellectuelle"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 1 : Champ d'application"
+      "section": "Section 1 : Champ d'application",
+      "annee_application": 2026
     },
     {
-      "article": "Art. 93B",
+      "article": "Art. 93 B",
       "titre": "Personnes imposables",
       "texte": [
         "Sous réserve des dispositions des conventions internationales, sont imposables :",
-        "1-a) Les personnes physiques de nationalité congolaise ou étrangère ayant leur domicile fiscal au Congo ou y résidant habituellement.",
+        "1) a) Les personnes physiques de nationalité congolaise ou étrangère ayant leur domicile fiscal au Congo ou y résidant habituellement ;",
         "Sont considérées comme ayant au Congo une résidence habituelle :",
-        "1° Les personnes qui y possèdent une habitation à leur disposition à titre de propriétaire, d'usufruitier ou de locataire, lorsque la location est conclue pour une période continue d'au moins une année ;",
-        "2° Les personnes qui y ont le lieu de leur séjour principal ;",
-        "3° Les personnes se trouvant hors du Congo au 1er janvier de l'année d'imposition et continuant à être rétribuées par des administrations ou entreprises congolaises ;",
-        "4° Les fonctionnaires congolais ou étrangers affectés au Congo et rémunérés par un budget autre que celui du Congo ;",
-        "5° Les personnes ayant quitté le Congo avant le 31 décembre de l'année d'imposition mais y conservant des intérêts sans avoir déclaré un départ définitif.",
-        "Dans tous les cas, une absence continue de plus de vingt-quatre mois entraîne la perte de la résidence fiscale au Congo.",
-        "b) Les personnes physiques n'ayant ni domicile ni résidence au Congo, mais percevant des revenus réalisés au Congo ou provenant du Congo.",
-        "2- Les fonctionnaires ou agents de l'État exerçant leurs fonctions à l'étranger sont imposables au Congo sur leurs revenus de source congolaise.",
-        "3- Les personnes percevant des droits d'auteur, redevances ou revenus non commerciaux de source congolaise.",
-        "4- Les personnes physiques dont l'imposition est attribuée au Congo par une convention internationale.",
-        "5- Les directeurs, représentants, fondés de pouvoir ou gérants des succursales de sociétés étrangères immatriculées au Congo sont présumés y avoir leur résidence fiscale."
-      ],
+        "1° Les personnes qui y possèdent une habitation à leur disposition à titre de propriétaire, d'usufruitier ou de locataire lorsque, dans ce dernier cas, la location est conclue, soit par convention unique, soit par conventions successives pour une période continue d'au moins une année ;",
+        "2° Les personnes qui, sans disposer d'une habitation dans les conditions définies à l'alinéa précédent, y ont néanmoins le lieu de leur séjour principal ;",
+        "3° Les personnes se trouvant hors du Congo au 1er janvier de l'année d'imposition qui, à cette date, continuent à être rétribuées par les administrations ou les entreprises auxquelles elles appartenaient avant leur départ du Congo ;",
+        "4° Les fonctionnaires congolais ou étrangers payés par un budget autre que l'un des budgets du Congo pendant toute la durée de la période au cours de laquelle ils restent affectés au Congo. Cette période qui n'est pas interrompue par les congés des fonctionnaires en cause, commence le jour de l'affectation au Congo et se termine le veille du jour où les intéressés reçoivent une affectation hors du Congo ;",
+        "5° Les personnes ayant quitté le Congo avant le 31 décembre de l'année d'imposition, qui y conservent des intérêts et n'ont pas fait connaître que leur départ était définitif.",
+        "Dans tous les cas, une absence continue d'une durée supérieure à vingt-quatre mois entraîne la perte de la résidence du contribuable au Congo.",
+        "b) Les personnes physiques de nationalité congolaise ou étrangère n'ayant ni domicile, ni résidence au Congo, pour autant qu'elles ont des revenus réalisés dans l'État du Congo ou en provenant, et à raison desdits revenus.",
+        "2) Les fonctionnaires ou agents de l'État exerçant leurs fonctions ou chargés de mission dans un pays étranger sont passibles de l'impôt sur le revenu des personnes physiques au Congo à raison de leurs revenus de source congolaise.",
+        "S'ils sont exonérés, dans le pays considéré, de l'impôt personnel sur l'ensemble des revenus, ils sont redevables au Congo de l'impôt sur le revenu des personnes physiques, sur l'ensemble de leurs revenus même en l'absence de résidence habituelle sur le territoire congolais.",
+        "3) Les personnes visées au paragraphe 1-b) du présent article, percevant, des entreprises installées au Congo, des droits d'auteur ou des produits de titres, soit de la concession de licences d'exploitation de brevets, soit de la cession ou de la concession des marques de fabrique, procédés ou formules de fabrication, que le bénéficiaire de ces droits ou produits soit l'écrivain, le compositeur ou l'inventeur lui-même ou qu'il les ait acquis à titre gratuit ou onéreux ainsi que les revenus des professions non commerciales.",
+        "La présente disposition s'applique également lorsque le bénéficiaire des droits ou produits est une société quelle qu'en soit la forme.",
+        "4) Les personnes physiques de nationalité congolaise ou étrangère disposant ou non d'une résidence habituelle au Congo, qui recueillent des bénéfices ou revenus dont l'imposition est attribuée au Congo par une convention internationale relative aux doubles impositions.",
+        "5) Les personnes physiques qui sont désignées comme occupant les fonctions de directeurs, représentants, fondés de pouvoir, gérants de succursales de sociétés étrangères, immatriculées en République du Congo, sont présumées avoir leur résidence fiscale au Congo quand bien même elles habiteraient hors du Congo."      ],
       "mots_cles": [
         "résidence fiscale",
         "domicile fiscal",
         "revenus de source congolaise",
-        "conventions fiscales"
+        "conventions fiscales",
+        "personnes imposables"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 1 : Champ d'application"
+      "section": "Section 1 : Champ d'application",
+      "annee_application": 2026
     },
     {
       "article": "Art. 93C",
@@ -92,8 +94,8 @@
         "exploitation au Congo"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 1 : Champ d'application"
+      "section": "Section 1 : Champ d'application",
+      "annee_application": 2026
     },
     {
       "article": "Art. 94",
@@ -115,19 +117,19 @@
         "report déficitaire"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 2 : Bénéfice imposable"
+      "section": "Section 2 : Bénéfice imposable",
+      "annee_application": 2026
     },
     {
-      "article": "Art. 94A",
+      "article": "Art. 94 A",
       "titre": "Charges non déductibles",
       "texte": [
         "Ne sont pas déductibles :",
-        "- les prélèvements que les exploitants individuels effectuent sur leurs recettes professionnelles à titre de rémunération de leur travail personnel ;",
+        "- les prélèvements que l'exploitant individuel effectue sur ses recettes professionnelles à titre de rémunération de leur travail personnel ;",
         "- les dépenses exposées dans l'intérêt personnel de l'exploitant ;",
         "- les intérêts des capitaux engagés par l'exploitant et les sommes de toute nature versées à titre de rémunération des fonds propres de l'entreprise, qu'ils soient capitalisés ou mis en réserve ;",
         "- les loyers versés par l'exploitant à lui-même pour l'occupation à titre professionnel de locaux dont il est propriétaire.",
-        "Les dépenses mixtes sont ventilées afin de déterminer la part déductible se rapportant à l'exercice de la profession.",
+        "Les dépenses mixtes sont ventilées afin de déterminer la part déductible de ces dépenses se rapportant à l'exercice de la profession.",
         "Les frais de représentation ne sont déductibles qu'à hauteur de 50% de leur montant."
       ],
       "mots_cles": [
@@ -137,8 +139,8 @@
         "frais de représentation"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 2 : Bénéfice imposable"
+      "section": "Section 2 : Bénéfice imposable",
+      "annee_application": 2026
     },
     {
       "article": "Art. 94B",
@@ -154,46 +156,49 @@
         "professions libérales"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 2 : Bénéfice imposable"
+      "section": "Section 2 : Bénéfice imposable",
+      "annee_application": 2026
     },
     {
       "article": "Art. 95",
       "titre": "Calcul et taux de l'impôt",
       "texte": [
-        "Pour le calcul de l'impôt, toute fraction du bénéfice imposable inférieure à mille (1 000) francs CFA est négligée.",
-        "Le taux de l'impôt sur le bénéfice des affaires est fixé à 30%.",
-        "Le montant de l'impôt ne peut être inférieur à un minimum de perception.",
-        "Pour assurer l'équité de la charge fiscale et favoriser la formalisation de l'économie des entreprises individuelles, le minimum de perception est fixé à 1,5% du montant total des produits d'exploitation, des produits financiers et des produits hors activité ordinaire du contribuable.",
-        "En aucun cas les taux applicables à l'IBA ne peuvent être inférieurs à ceux applicables en matière d'impôt sur les sociétés."
+        "Pour le calcul de l'impôt, toute fraction du bénéfice imposable inférieure à mille francs, est négligée.",
+        "Le taux de l'impôt sur les bénéfices d'affaires est fixé à 30%.",
+        "Le montant de l'impôt sur les bénéfices d'affaires ne peut être inférieur à un minimum de perception.",
+        "Pour assurer l'équité de la charge fiscale finale sur les bénéfices et favoriser la formalisation de l'économie par les entreprises individuelles soumises à l'impôt sur les bénéfices d'affaires, le minimum de perception est fixé à 1,5% sur le montant total des produits d'exploitation, des produits financiers et des produits hors activité ordinaire du contribuable.",
+        "En aucun cas les taux ci-dessus ne peuvent être inférieurs à ceux applicables en matière d'impôt sur les sociétés.",
+        "L'impôt minimum forfaitaire dû pour l'impôt sur le bénéfice d'affaires est régi par les mêmes dispositions que celles de l'impôt sur les sociétés."
       ],
       "mots_cles": [
         "taux IBA",
         "30%",
         "minimum de perception",
-        "1,5%"
+        "1,5%",
+        "impôt minimum forfaitaire"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 3 : Modalités d'imposition"
+      "section": "Section 3 : Modalités d'imposition",
+      "annee_application": 2026
     },
     {
-      "article": "Art. 95A",
+      "article": "Art. 95 A",
       "titre": "Report de taxation en cas de décès de l'exploitant",
       "texte": [
-        "En cas de décès de l'exploitant, la taxation de la plus-value de fonds de commerce est reportée au moment de la cession ou de la cessation de l'exploitation lorsque celle-ci est poursuivie par les héritiers en ligne directe ou par le conjoint.",
-        "Ce report est subordonné à l'absence de toute augmentation des évaluations des éléments de l'actif figurant au dernier bilan dressé par le défunt.",
-        "La disposition s'applique également en cas de poursuite de l'exploitation par le ou les héritiers attributaires du fonds ou en cas de transformation en société entre héritiers en ligne directe et conjoint, sous réserve du maintien des évaluations initiales."
+        "Dans le cas de décès de l'exploitant, la taxation de la plus-value de fonds de commerce (éléments corporels et incorporels) est, lorsque l'exploitation est continuée par les héritiers en ligne directe ou par le conjoint, reportée au moment de la cession ou de la cessation de l'exploitation par ces derniers, à condition qu'aucune augmentation ne soit apportée aux évaluations des éléments de l'actif figurant au dernier bilan dressé par le défunt.",
+        "Cette disposition reste applicable lorsque, à la suite du partage de la succession, l'exploitation est poursuivie par le ou les héritiers en ligne directe ou par le conjoint attributaire du fonds, de même que dans le cas où les héritiers en ligne directe et le conjoint constituent exclusivement entre eux une société en nom collectif ou en commandite simple ou à responsabilité limitée, à condition que les évaluations des éléments d'actif existant au décès ne soient pas augmentées à l'occasion du partage ou de la transformation de l'entreprise en société."
       ],
       "mots_cles": [
         "décès exploitant",
         "plus-value fonds de commerce",
         "report d'imposition",
-        "héritiers"
+        "héritiers",
+        "société en nom collectif",
+        "SARL"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 3 : Modalités d'imposition"
+      "section": "Section 3 : Modalités d'imposition",
+      "annee_application": 2026
     },
     {
       "article": "Art. 95B",
@@ -207,16 +212,16 @@
         "article 183 CGI"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 3 : Modalités d'imposition"
+      "section": "Section 3 : Modalités d'imposition",
+      "annee_application": 2026
     },
     {
       "article": "Art. 96",
       "titre": "Champ d'application du régime du forfait",
       "texte": [
-        "Les contribuables dont le chiffre d'affaires n'excède pas le seuil d'assujettissement à la taxe sur la valeur ajoutée sont imposés selon le régime du forfait.",
-        "Toutefois :",
-        "a) les contribuables dont le chiffre d'affaires n'excède pas le seuil précité, mais qui optent pour l'assujettissement à la TVA, cessent immédiatement d'être soumis au régime du forfait et sont soumis à l'impôt sur les bénéfices d'affaires selon le régime général ;",
+        "1. Les contribuables dont le chiffre d'affaires n'excède pas le seuil d'assujettissement à la taxe sur la valeur ajoutée, sont imposés selon le régime du forfait.",
+        "2. Toutefois :",
+        "a) les contribuables dont le chiffre d'affaires n'excède pas le seuil fixé à l'alinéa précédent, mais qui optent pour l'assujettissement à la TVA, cessent immédiatement d'être soumis au régime forfaitaire et sont soumis à l'impôt sur les bénéfices d'affaires selon le régime général prévu ci-dessus ;",
         "b) sont exclus du régime du forfait :",
         "(i) les personnes exerçant des professions réglementées ;",
         "(ii) les boulangers ;",
@@ -224,19 +229,30 @@
         "(iv) les exploitants de quincaillerie ;",
         "(v) les grossistes ;",
         "(vi) les importateurs.",
-        "Les contribuables imposés selon le régime du réel dont le chiffre d'affaires baisse au-dessous du seuil d'assujettissement à la TVA ne sont soumis au régime du forfait que lorsque ce chiffre est resté inférieur à cette limite pendant deux exercices successifs.",
-        "L'impôt global forfaitaire cesse d'être appliqué dès le premier exercice qui suit celui au cours duquel les limites du chiffre d'affaires sont dépassées.",
-        "Par dérogation, les contribuables pouvant satisfaire aux prescriptions de l'article 104 peuvent opter pour le régime réel sous réserve de notification à l'administration fiscale avant le 1er février de l'année suivant celle de l'imposition. L'option est valable pour trois années et est irrévocable."
+        "3. Les contribuables imposés selon le régime du réel, dont le chiffre d'affaires baisse pour se situer au-dessous du seuil d'assujettissement à la TVA ne sont soumis au régime du forfait que lorsque leur chiffre d'affaires est resté inférieur à cette limite pendant deux exercices successifs.",
+        "4. L'impôt global forfaitaire cesse d'être appliqué dès le premier exercice qui suit celui au cours duquel les limites du chiffre d'affaires fixé au paragraphe 1 sont dépassées.",
+        "5. Par dérogation aux dispositions du paragraphe 1 ci-dessus, les contribuables qui sont en mesure de satisfaire aux prescriptions de l'article 104 ci-après, ont la faculté d'être soumis au régime réel. A cet effet, ils doivent notifier leur option à l'administration fiscale avant le 1er février de l'année suivant celle au titre de laquelle l'imposition est établie. L'option est valable pour ladite année et les deux années suivantes. Pendant cette période, elle est irrévocable.",
+        "6. Les contribuables relevant du régime du forfait doivent :",
+        "a) tenir une comptabilité selon le système minimal de trésorerie défini par le droit comptable OHADA ;",
+        "b) tenir un registre chronologique de toutes les factures d'achats et de dépenses ;",
+        "c) tenir un registre chronologique de toutes les factures de ventes ou de prestations ;",
+        "d) souscrire chaque mois la déclaration visée à l'article 176 du CGI, tome 1 ;",
+        "e) effectuer, le cas échéant, pour le compte du Trésor, les retenues à la source prévues par la loi ;",
+        "f) produire (i) le bilan, (ii) le compte de résultat et (iii) les notes annexes.",
+        "Les notes annexes sont composées de : (i) tableau du système minimal de trésorerie (SMT) de suivi du matériel, du mobilier et des cautions, (ii) état des stocks, (iii) état des créances et des dettes non échues et (iv) le journal de trésorerie SMT.",
+        "7. Les deux registres comptables visés aux alinéas b) et c) ci-dessus doivent être conservés dans les conditions prévues à l'article 104 du CGI, tome 1 et présentés à toute réquisition de l'administration fiscale, en particulier à des fins de contrôle pour la détermination du chiffre d'affaires annuel. Lesdits registres doivent être présentés chaque trimestre auprès de l'administration fiscale pour paraphe."
       ],
       "mots_cles": [
         "régime du forfait",
         "petites entreprises",
         "TVA",
-        "option régime réel"
+        "option régime réel",
+        "SMT",
+        "obligations comptables"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 4 : Régime des petites et très petites entreprises"
+      "section": "Section 4 : Régime des petites et très petites entreprises",
+      "annee_application": 2026
     },
     {
       "article": "Art. 96A",
@@ -258,105 +274,121 @@
         "régime forfaitaire"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 4 : Régime des petites et très petites entreprises"
+      "section": "Section 4 : Régime des petites et très petites entreprises",
+      "annee_application": 2026
     },
     {
       "article": "Art. 97",
       "titre": "Évaluation du chiffre d'affaires et du bénéfice",
       "texte": [
-        "Les montants du chiffre d'affaires et du bénéfice sont évalués par l'administration d'après les résultats obtenus par le contribuable au cours de l'année d'imposition.",
-        "Cette évaluation est notifiée au contribuable qui dispose d'un délai de trente jours pour formuler ses observations.",
-        "À défaut d'accord, l'évaluation est effectuée par la commission des impôts prévue à l'article 400 du présent code.",
-        "Le contribuable conserve le droit de recours contentieux sous réserve de prouver que la base retenue est supérieure au bénéfice réel."
+        "Les montants du chiffre d'affaires et du bénéfice sont évalués par l'administration d'après les résultats obtenus par le contribuable au cours de l'année d'imposition. Ils doivent correspondre au bénéfice que l'entreprise peut produire normalement.",
+        "L'évaluation est notifiée au contribuable qui dispose d'un délai de 30 jours à partir de la réception de cette notification pour faire parvenir son acceptation ou formuler ses observations en indiquant le chiffre qu'il serait disposé à accepter ; le défaut de réponse dans le délai prévu est considéré comme une acceptation.",
+        "Si le contribuable n'accepte pas le chiffre qui lui a été notifié et si, de son côté, le chef de l'unité dont dépend la résidence fiscale du contribuable n'admet pas celui qu'il est proposé par l'intéressé, l'évaluation du bénéfice forfaitaire est faite par la commission des impôts prévue à l'article 400 du présent code. Le chiffre arrêté par cette commission sert de base à l'imposition. Toutefois, le contribuable peut demander par voie contentieuse après mise en recouvrement du rôle et dans les délais, formes et conditions prévus par les articles 423 et suivants du présent code, une réduction de la base qui lui a été assignée, à condition de prouver que celle-ci est supérieure au bénéfice réalisé dans son entreprise au cours de l'année d'imposition."
       ],
       "mots_cles": [
         "évaluation forfaitaire",
         "commission des impôts",
-        "procédure contradictoire"
+        "procédure contradictoire",
+        "délai 30 jours",
+        "recours contentieux"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 4 : Régime des petites et très petites entreprises"
+      "section": "Section 4 : Régime des petites et très petites entreprises",
+      "annee_application": 2026
     },
     {
       "article": "Art. 98",
       "titre": "Base de calcul de l'impôt global forfaitaire",
       "texte": [
-        "La base de calcul de l'impôt global forfaitaire est fixée pour une année civile.",
-        "Elle est déterminée au plus tard le 15 février après le dépôt de la déclaration n°294 accompagnée des états financiers requis.",
-        "Cette base est redressée d'office en cas de manœuvre frauduleuse ou de dissimulation.",
-        "En première année d'exploitation, l'impôt est fixé sur la base du chiffre d'affaires prévisionnel déclaré.",
-        "Le défaut de tenue ou de présentation des registres est sanctionné par une taxation d'office et une amende de 100 000 FCFA."
+        "1. La base de calcul de l'impôt global forfaitaire est fixée pour une année civile.",
+        "2. Cette base de calcul est connue chaque année au plus tard le 15 février après le dépôt de la déclaration n° 294 accompagnée obligatoirement des états financiers visés aux articles 96 et 97 du présent code.",
+        "3. Le montant qui sert de base de calcul de l'impôt global forfaitaire est redressé unilatéralement, sans préavis, par l'administration, en cas de manœuvre frauduleuse ou de dissimulation.",
+        "4. Au cours de la première année d'exploitation, l'impôt global forfaitaire est fixé à partir d'un chiffre d'affaires estimé selon la procédure contradictoire, déterminé sur la base du chiffre d'affaires prévisionnel fixé au moment de la déclaration fiscale d'existence, à condition de justifier d'une déclaration d'existence et de faire parapher par le service compétent de l'administration fiscale les registres comptables visés ci-dessus, dans les 15 jours du début d'activités et à la fin de chaque trimestre de l'année.",
+        "5. Le défaut de la déclaration du paraphe et de la tenue des registres, des factures et des documents comptables ou leur non production, est sanctionné par une taxation d'office et une amende de 100 000 FCFA."
       ],
       "mots_cles": [
         "impôt global forfaitaire",
         "déclaration 294",
-        "taxation d'office"
+        "taxation d'office",
+        "amende 100 000 FCFA",
+        "première année"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 4 : Régime des petites et très petites entreprises"
+      "section": "Section 4 : Régime des petites et très petites entreprises",
+      "annee_application": 2026
     },
     {
       "article": "Art. 99",
       "titre": "Déclaration trimestrielle des fournisseurs",
       "texte": [
-        "Les contribuables soumis au régime du forfait doivent déclarer chaque trimestre la liste de leurs fournisseurs ou sources d'approvisionnement.",
-        "Le défaut de déclaration est sanctionné par une amende de 500 000 FCFA."
+        "Le contribuable soumis au régime du forfait est tenu de déclarer au plus tard le 15 du mois suivant la fin de chaque trimestre, la liste de ses fournisseurs ou de ses sources d'approvisionnement des marchandises auprès de sa résidence fiscale selon le modèle prescrit par l'administration fiscale.",
+        "L'inobservation de cette obligation est sanctionnée par une amende de 500 000 FCFA."
       ],
       "mots_cles": [
         "déclaration fournisseurs",
-        "amende fiscale"
+        "amende 500 000 FCFA",
+        "déclaration trimestrielle"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 4 : Régime des petites et très petites entreprises"
+      "section": "Section 4 : Régime des petites et très petites entreprises",
+      "annee_application": 2026
     },
     {
       "article": "Art. 100",
       "titre": "Fixation d'office des bases d'imposition",
       "texte": [
-        "Le défaut de production de la déclaration spéciale et des documents exigés entraîne la fixation d'office des bases d'imposition par l'administration fiscale."
+        "Le défaut de production de la déclaration spéciale visée à l'article 98 ainsi que la non-présentation des documents dont la production est exigée par ledit article et l'article 96 du CGI entraînent la fixation d'office, par l'administration fiscale des bases d'imposition."
       ],
       "mots_cles": [
         "fixation d'office",
+        "article 96",
+        "article 98",
         "défaut de déclaration"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 4 : Régime des petites et très petites entreprises"
+      "section": "Section 4 : Régime des petites et très petites entreprises",
+      "annee_application": 2026
     },
     {
       "article": "Art. 101",
       "titre": "Fixation d'office en cas de non-présentation des documents",
       "texte": [
-        "Le défaut de présentation des documents comptables requis entraîne la fixation d'office des bases d'imposition."
+        "Le défaut de production de la déclaration spéciale visée à l'article 100 ainsi que la non-présentation des documents dont la production est exigée par ledit article et l'article 99 du présent code entraînent la fixation d'office, par l'administration fiscale des bases d'imposition."
       ],
       "mots_cles": [
         "documents comptables",
-        "taxation d'office"
+        "taxation d'office",
+        "article 99",
+        "article 100"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 4 : Régime des petites et très petites entreprises"
+      "section": "Section 4 : Régime des petites et très petites entreprises",
+      "annee_application": 2026
     },
     {
       "article": "Art. 102",
       "titre": "Assujettissement au régime réel",
       "texte": [
-        "Les contribuables dont le chiffre d'affaires est supérieur ou égal au seuil d'assujettissement à la TVA sont soumis au régime du bénéfice réel.",
-        "Ils déposent leur déclaration selon leur catégorie auprès de l'unité fiscale compétente.",
-        "La déclaration doit détailler le chiffre d'affaires global et par nature d'activité."
+        "Les contribuables dont le chiffre d'affaires est supérieur ou égal au seuil d'assujettissement à la TVA sont assujettis au régime de l'imposition assis sur le bénéfice réel.",
+        "Ces contribuables sont tenus de remettre une déclaration du montant de leur résultat à l'unité des moyennes entreprises de la circonscription dans laquelle est situé le siège de l'entreprise ou son principal établissement, dans les conditions et détails prévus par les articles 78 à 80 du CGI, si leur chiffre d'affaires dépasse 2.000.000.000 de francs CFA.",
+        "En l'absence d'une unité des moyennes entreprises dans le département, l'unité territorialement compétente est l'unité chargée de la gestion des petites entreprises.",
+        "Pour les contribuables dont le chiffre d'affaires est supérieur ou égal à 2.000.000.000 de francs, la déclaration susvisée est déposée à l'unité des grandes entreprises de la circonscription dans laquelle est situé le siège de l'entreprise ou son principal établissement.",
+        "Les dispositions des alinéas 2, 3 et 4 du présent article ne s'appliquent pas aux sous-traitants pétroliers.",
+        "À l'appui de la déclaration du bénéfice ou déficit, les contribuables sont tenus de faire connaître leur chiffre d'affaires, c'est-à-dire le montant brut total des ventes, des travaux effectivement et définitivement réalisés, des avantages, commissions, remises, prix de location, intérêts, escomptes, agios encaissés et, d'une façon générale, tous les produits définitivement acquis dans l'exercice de la profession.",
+        "Lorsque la profession comporte plusieurs activités distinctes, la déclaration doit faire état du chiffre d'affaires par nature d'activité."
       ],
       "mots_cles": [
         "régime réel",
         "chiffre d'affaires",
-        "déclaration fiscale"
+        "déclaration fiscale",
+        "2 milliards FCFA",
+        "grandes entreprises",
+        "moyennes entreprises",
+        "sous-traitants pétroliers"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 4 : Régime des petites et très petites entreprises"
+      "section": "Section 4 : Régime des petites et très petites entreprises",
+      "annee_application": 2026
     },
     {
       "article": "Art. 103",
@@ -373,8 +405,8 @@
         "BEAC"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 4 : Régime des petites et très petites entreprises"
+      "section": "Section 4 : Régime des petites et très petites entreprises",
+      "annee_application": 2026
     },
     {
       "article": "Art. 104",
@@ -403,8 +435,8 @@
         "taxation d'office"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 4 : Régime des petites et très petites entreprises"
+      "section": "Section 4 : Régime des petites et très petites entreprises",
+      "annee_application": 2026
     },
     {
       "article": "Art. 105",
@@ -421,8 +453,8 @@
         "plus-values mobilières"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)"
+      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 105A",
@@ -437,8 +469,8 @@
         "conseil d'administration"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)"
+      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 105B",
@@ -454,8 +486,8 @@
         "liquidation"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)"
+      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 105C",
@@ -470,8 +502,8 @@
         "primes de remboursement"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)"
+      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 105D",
@@ -487,8 +519,8 @@
         "bons de caisse"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)"
+      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 105E",
@@ -504,8 +536,8 @@
         "parts sociales"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)"
+      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 106",
@@ -520,8 +552,8 @@
         "apport partiel d'actif"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)"
+      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 107",
@@ -536,8 +568,8 @@
         "cession de titres"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)"
+      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 108",
@@ -553,8 +585,8 @@
         "intérêts"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)"
+      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 109",
@@ -570,8 +602,8 @@
         "plus-values"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)"
+      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 110",
@@ -585,8 +617,8 @@
         "revenus occultes"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)"
+      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 110A",
@@ -601,8 +633,8 @@
         "plus-values"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)"
+      "section": "Section 5 : Impôt sur le revenu des capitaux mobiliers (IRCM)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 111",
@@ -624,8 +656,8 @@
         "plus-values immobilières"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)"
+      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 111A",
@@ -641,8 +673,8 @@
         "sociétés non soumises à l'IS"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)"
+      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 111B",
@@ -667,8 +699,8 @@
         "société à prépondérance immobilière"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)"
+      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 111C",
@@ -688,8 +720,8 @@
         "collectivités"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)"
+      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 111D",
@@ -706,8 +738,8 @@
         "cession"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)"
+      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 111E",
@@ -724,8 +756,8 @@
         "cession"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)"
+      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 112",
@@ -739,8 +771,8 @@
         "propriétaire"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)"
+      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 112A",
@@ -758,8 +790,8 @@
         "travaux"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)"
+      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 112B",
@@ -773,8 +805,8 @@
         "double imposition"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)"
+      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 113",
@@ -798,8 +830,8 @@
         "moins-values"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)"
+      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 113A",
@@ -821,8 +853,8 @@
         "charge déductible"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)"
+      "section": "Section 6 : Impôt sur les revenus fonciers (IRF)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 114",
@@ -840,8 +872,8 @@
         "dirigeants"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)"
+      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 114A",
@@ -872,8 +904,8 @@
         "prime d'intéressement"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)"
+      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 114B",
@@ -892,8 +924,8 @@
         "réciprocité"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)"
+      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 114C",
@@ -907,8 +939,8 @@
         "incitation à l'embauche"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)"
+      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 114D",
@@ -934,8 +966,8 @@
         "rentes viagères"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)"
+      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 114E",
@@ -951,8 +983,8 @@
         "acomptes"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)"
+      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 115",
@@ -982,8 +1014,8 @@
         "revenus de source étrangère"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)"
+      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 116",
@@ -1008,8 +1040,8 @@
         "déclaration annuelle"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)"
+      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)",
+      "annee_application": 2026
     },
     {
       "article": "Art. 116A",
@@ -1023,8 +1055,8 @@
         "article 183"
       ],
       "statut": "en vigueur",
-      "annee_application": 2026,
-      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)"
+      "section": "Section 7 : Impôt sur les traitements et salaires (ITS)",
+      "annee_application": 2026
     }
   ]
 }

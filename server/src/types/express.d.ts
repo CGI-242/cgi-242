@@ -17,6 +17,8 @@ export interface AuthUser {
   email: string;
   firstName?: string | null;
   lastName?: string | null;
+  profession?: string | null;
+  isEmailVerified?: boolean;
 }
 
 declare global {

@@ -32,20 +32,21 @@
     {
       "article": "Art. 107",
       "titre": "Personnes imposables à l'IS",
-      "chapeau": "Sous réserve des dispositions de l'article 108 ci-après et des régimes fiscaux particuliers.",
       "texte": [
+        "Sous réserve des dispositions de l'article 108 ci-après et des régimes fiscaux particuliers.",
         "1) Sont imposables à l'impôt sur les sociétés en raison de leur forme :",
         "a) les sociétés de capitaux ou assimilées quel que soit leur objet : les sociétés anonymes et les sociétés à responsabilité limitée ;",
         "b) les sociétés coopératives et leurs unions ;",
         "c) les sociétés unipersonnelles.",
         "",
         "2) Sont imposables en raison de leur activité :",
-        "a) les établissements publics, les organismes d'État jouissant de l'autonomie financière, et toutes autres personnes morales, se livrant à une exploitation ou à des opérations de caractère lucratif ;",
-        "b) les sociétés civiles qui se livrent à une exploitation ou à des opérations de nature commerciale, industrielle, artisanale ou agricole, comprenant parmi leurs membres une ou plusieurs sociétés de capitaux ou qui ont opté pour ce régime d'imposition ;",
+        "a) les établissements publics, les organismes d'État jouissant de l'autonomie financière, et toutes autres personnes morales se livrant à une exploitation ou à des opérations de caractère lucratif ;",
+        "b) les sociétés civiles qui :",
+        "   - se livrent à une exploitation ou à des opérations de nature commerciale, industrielle, artisanale ou agricole ;",
+        "   - comprennent parmi leurs membres une ou plusieurs sociétés de capitaux ou qui ont opté pour ce régime d'imposition ;",
         "c) les sociétés de fait ;",
-        "d) sous réserve des exonérations prévues à l'article 107-A du présent Code ;",
-        "e) les établissements publics, autres que les établissements scientifiques, d'enseignement et d'assistance, ainsi que les associations et collectivités sans but lucratif non soumis à l'impôt sur les sociétés en vertu d'une autre disposition, à raison de la location ou de l'occupation de leurs immeubles ainsi que des revenus de capitaux mobiliers dont ils disposent ;",
-        "f) les sociétés unipersonnelles.",
+        "d) sous réserve des conventions prévues à l'article 107-4 du présent Code, les établissements publics, autres que les établissements scientifiques, d'enseignement et d'assistance, ainsi que les associations et collectivités sans but lucratif non soumises à l'impôt sur les sociétés en vertu d'une autre disposition, en raison de la location ou de l'occupation de leurs immeubles ainsi que des revenus de capitaux mobiliers dont ils disposent ;",
+        "e) les sociétés unipersonnelles.",
         "",
         "3) Sont imposables sur option :",
         "a) les sociétés de personnes : sociétés en nom collectif et sociétés en commandite simple ;",
@@ -146,8 +147,7 @@
       "article": "Art. 109",
       "titre": "Définition du bénéfice imposable",
       "texte": [
-        "Le bénéfice passible de l'impôt sur les sociétés est déterminé en tenant compte des bénéfices obtenus dans les entreprises exploitées ou sur les opérations réalisées au Congo sous réserve de l'application des dispositions des conventions internationales.",
-        "Le bénéfice imposable est le bénéfice net déterminé d'après les résultats d'ensemble des opérations de toute nature effectuées par les entreprises au cours de la période servant de base à l'impôt, y compris notamment les cessions d'éléments quelconques de l'actif, soit en cours, soit en fin d'exploitation."
+        "Le bénéfice passible de l'impôt sur les sociétés est déterminé en tenant compte des bénéfices obtenus dans les entreprises exploitées ou sur les opérations réalisées au Congo sous réserve de l'application des dispositions des conventions internationales. Le bénéfice imposable est le bénéfice net déterminé d'après les résultats d'ensemble des opérations de toute nature effectuées par les entreprises au cours de la période servant de base à l'impôt, y compris notamment les cessions d'éléments quelconques de l'actif, soit en cours, soit en fin d'exploitation."
       ],
       "mots_cles": [
         "bénéfice imposable",
@@ -179,30 +179,23 @@
     },
     {
       "article": "Art. 109-B",
-      "titre": "Charges déductibles et acte anormal de gestion",
+      "titre": "Frais généraux",
       "texte": [
-        "Le bénéfice net imposable est établi sous déduction de toutes les charges nécessitées directement par l'exercice de l'activité imposable, notamment les frais généraux, les frais financiers, les pertes proprement dites, les amortissements et les provisions.",
-        "",
-        "Conditions de déductibilité des charges :",
-        "- être exposées dans l'intérêt direct de l'exploitation ou se rattacher à la gestion normale de l'entreprise ;",
-        "- correspondre à une charge effective ;",
-        "- être appuyées des pièces justificatives ;",
-        "- se traduire par une diminution de l'actif net de l'entreprise ;",
-        "- être comprises dans les charges de l'exercice au cours duquel ils sont engagés ;",
-        "- ne pas être exclues des charges déductibles par la loi ;",
-        "- ne pas être considérées comme acte anormal de gestion.",
-        "",
-        "Est réputé acte anormal de gestion, tout acte qui met une dépense ou une perte à la charge de l'entreprise ou qui la prive d'une recette sans être justifié par l'intérêt de l'exploitation.",
-        "Il s'agit d'un acte accompli dans l'intérêt d'un tiers par rapport à l'entreprise ou qui n'apporte à cette dernière qu'un intérêt minime hors de proportion avec l'avantage que le tiers peut en tirer.",
-        "",
-        "Exemples d'actes anormaux de gestion :",
-        "- les versements sous forme de majoration ou minoration d'achats ou de ventes ;",
-        "- les paiements des redevances excessives ou sans contrepartie ;",
-        "- les renonciations des recettes ;",
-        "- les abandons de créances ou de commissions ;",
-        "- les remises de dettes ;",
-        "- de manière générale, les avantages hors de proportion avec le service rendu ou sans contrepartie.",
-        "",
+        "1) L'article 109-B. – (L.F. 2023) Le bénéfice net imposable est établi sous déduction de toutes les charges nécessitées directement par l'exercice de l'activité imposable, notamment les amortissements, les frais généraux, les frais financiers et les provisions.",
+        "Ces charges doivent satisfaire au préalable aux conditions générales suivantes :",
+        "• être exposées dans l'intérêt direct de l'exploitation ou se rattacher à la gestion normale de l'entreprise ;",
+        "• correspondre à une charge effective et être appuyées de pièces justificatives ;",
+        "• se traduire par une diminution de l'actif et le redresse ;",
+        "• être comprises dans les charges de l'exercice au cours duquel ils sont engagés ;",
+        "• ne pas être exclus des charges déductibles par la loi ;",
+        "• ne pas être considérées comme acte anormal de gestion.",
+        "Est réputé acte anormal de gestion, tout acte qui met une dépense ou une perte à la charge de l'entreprise ou la prive de recettes sans être justifiée par l'intérêt de l'exploitation. Il s'agit d'un acte accompli dans l'intérêt d'un rapport à l'entreprise ou qui n'apporte à cette dernière aucun avantage minime hors de proportion avec l'avantage que le tiers peut en tirer notamment :",
+        "• les commissions sous forme de majoration des ventes ;",
+        "• les paiements des redevances excessives ou sans contrepartie ;",
+        "• les renonciations de recettes ;",
+        "• les abandons de créances ou de commissions ;",
+        "• les remises de dettes ;",
+        "• de manière générale, les avantages hors de proportion avec le service rendu sans contrepartie.",
         "La déduction est opérée sous les conditions et limites définies dans la présente section."
       ],
       "mots_cles": [
@@ -217,7 +210,7 @@
         "abandon de créances"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 1 : Définition"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux"
     },
     {
       "article": "Art. 109-C",
@@ -240,12 +233,9 @@
     },
     {
       "article": "Art. 110",
-      "titre": "Rémunérations des salariés",
+      "titre": "A. Charges de personnel : Rémunérations des salariés",
       "texte": [
-        "Les rémunérations allouées à un salarié ne sont admises en déduction des résultats que dans la mesure où elles correspondent à un travail effectif et ne sont pas exagérées.",
-        "Cette disposition s'applique à toutes les rémunérations directes ou indirectes y compris les indemnités, allocations, avantages en nature et remboursements de frais.",
-        "En cas d'exagération de rémunérations fictives, la fraction excédant l'ensemble des rémunérations effectives, selon le cas, est rapportée au résultat et considérée comme bénéfice distribué.",
-        "Ces dispositions s'appliquent également aux rétributions versées aux associés des sociétés constituées en vue de l'exercice d'une activité libérale et dont plus de la moitié du capital est détenue par les professionnels."
+        "Les rémunérations allouées à un salarié ne sont admises en déduction des résultats que dans la mesure où elles correspondent à un travail effectif et ne sont pas exagérées. Cette disposition s'applique à toutes les rémunérations directes ou indirectes y compris les indemnités, allocations, avantages en nature et remboursements de frais."
       ],
       "mots_cles": [
         "rémunérations",
@@ -255,13 +245,15 @@
         "bénéfice distribué"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Les frais généraux - PA : Charges de personnel"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - A. Charges de personnel"
     },
     {
       "article": "Art. 110-A",
       "titre": "Rémunérations des associés dirigeants",
       "texte": [
-        "Les rétributions de toute nature versées aux associés dirigeants des sociétés de capitaux ou à leurs conjoints sont admises en déduction à condition qu'elles correspondent à un emploi effectif exercé dans l'entreprise et qu'elles ne soient pas exagérées par rapport aux rémunérations des emplois de même nature exercés dans l'entreprise ou dans les sociétés similaires."
+        "Les rétributions de toute nature versées aux associés dirigeants des sociétés de capitaux ou à leurs conjoints sont admises en déduction à condition qu'elles correspondent à un emploi effectif exercé dans l'entreprise et qu'elles ne soient pas exagérées par rapport aux rémunérations des emplois de même nature exercés dans l'entreprise ou dans les sociétés similaires.",
+        "En cas d'exagération de rémunérations fictives, la fraction excédant l'ensemble des rémunérations effectives, selon le cas, est rapportée au résultat et considérée comme bénéfice distribué.",
+        "Ces dispositions s'appliquent également aux rétributions versées aux associés des sociétés constituées en vue de l'exercice d'une activité libérale et dont plus de la moitié du capital est détenue par les professionnels."
       ],
       "mots_cles": [
         "associés dirigeants",
@@ -270,7 +262,7 @@
         "emploi effectif"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Les frais généraux - PA : Charges de personnel"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - A. Charges de personnel"
     },
     {
       "article": "Art. 110-B",
@@ -292,7 +284,7 @@
         "SCS"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Les frais généraux - PA : Charges de personnel"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - A. Charges de personnel"
     },
     {
       "article": "Art. 110-C",
@@ -306,7 +298,7 @@
         "zone de salaire"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Les frais généraux - PA : Charges de personnel"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - A. Charges de personnel"
     },
     {
       "article": "Art. 110-D",
@@ -321,7 +313,7 @@
         "salaire brut"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Les frais généraux - PA : Charges de personnel"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - A. Charges de personnel"
     },
     {
       "article": "Art. 110-E",
@@ -338,7 +330,7 @@
         "jetons de présence"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Les frais généraux - PA : Charges de personnel"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - A. Charges de personnel"
     },
     {
       "article": "Art. 110-F",
@@ -352,14 +344,13 @@
         "avantages"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Les frais généraux - PA : Charges de personnel"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - A. Charges de personnel"
     },
     {
       "article": "Art. 110-G",
       "titre": "Frais de transport pour congés",
       "texte": [
-        "Les frais de transport pour congés du personnel et des associés réalisant un travail effectif de leurs épouses et de leurs enfants à charge, sont déductibles du bénéfice imposable à condition que le voyage ait été effectué à raison d'un voyage par an.",
-        "Les frais déductibles à ce titre s'entendent des frais de transport du lieu de travail au lieu d'embauche et retour.",
+        "Les frais de transport pour congés du personnel et des associés réalisant un travail effectif de leurs épouses et de leurs enfants à charge, sont déductibles du bénéfice imposable à condition que le voyage ait été effectué à raison d'un voyage par an. Les frais déductibles à ce titre s'entendent des frais de transport du lieu de travail au lieu d'embauche et retour.",
         "En aucun cas, ces charges ne peuvent donner lieu à des dotations à un compte de provisions."
       ],
       "mots_cles": [
@@ -369,19 +360,17 @@
         "lieu d'embauche"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Les frais généraux - PA : Charges de personnel"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - A. Charges de personnel"
     },
     {
-      "article": "Art. 111",
-      "titre": "Rémunérations versées à l'étranger",
+      "article": "Art. 111 (L.F. 2023)",
+      "titre": "B. Rémunérations versées à l'étranger : Rémunérations versées à l'étranger",
       "texte": [
-        "Sont également admises comme charges déductibles, les sommes versées à une personne physique ou morale hors du Congo en rémunération :",
+        "1) Sont également admises comme charges déductibles, les sommes versées à une personne physique ou morale hors du Congo en rémunération :",
         "• d'une part, des services effectifs, notamment les frais généraux de siège pour la part incombant aux opérations faites au profit d'une entreprise installée au Congo ; les frais d'études, d'assistance technique, financière ou comptable ; les commissions et honoraires ; les intérêts, arrérages et autres produits des obligations, créances, dépôts et cautionnements ;",
         "• d'autre part, de l'utilisation des brevets, licences, marques, dessins, procédés de fabrication, modèles et autres droits analogues, à la condition que le débiteur apporte la preuve qu'elles correspondent à des opérations réelles, qu'elles ne présentent pas un caractère anormal et qu'elles ne sont pas exagérées.",
         "",
-        "2) Dans tous les cas, il ne sera pas admis en déduction une somme supérieure à 20 % du bénéfice imposable déterminé par l'entité fiscale avant déduction des frais en cause.",
-        "En cas de déficit, le taux s'applique sur les résultats du dernier exercice bénéficiaire non prescrit.",
-        "Dans l'absence de résultat bénéficiaire sur la période non prescrite, les sommes versées ne sont pas déductibles pour la détermination du bénéfice imposable.",
+        "2) Dans tous les cas, il ne sera pas admis en déduction une somme supérieure à 20 % du bénéfice imposable déterminé par l'entité fiscale avant déduction des frais en cause. En cas de déficit, le taux s'applique sur les résultats du dernier exercice bénéficiaire non prescrit. Dans l'absence de résultat bénéficiaire sur la période non prescrite, les sommes versées ne sont pas déductibles pour la détermination du bénéfice imposable.",
         "Par dérogation aux dispositions ci-dessus, la déduction des rémunérations versées à l'étranger est limitée à 2 % du chiffre d'affaires hors taxes pour les secteurs des bâtiments et travaux publics, les cabinets d'expertise et les bureaux d'études.",
         "",
         "3) Lorsque ces sommes ne sont pas admises, en tout ou partie, dans les charges déductibles, elles sont considérées comme bénéfices distribués.",
@@ -407,7 +396,7 @@
         "transparence"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Les frais généraux - PB : Rémunérations versées à l'étranger"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - B. Rémunérations versées à l'étranger"
     },
     {
       "article": "Art. 111-A",
@@ -425,13 +414,13 @@
         "bénéfices distribués"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Les frais généraux - PB : Rémunérations versées à l'étranger"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - B. Rémunérations versées à l'étranger"
     },
     {
       "article": "Art. 111-A bis",
       "titre": "Définition des redevances",
       "texte": [
-        "Sont réputées redevances :",
+        "1) Sont réputées redevances :",
         "a) toute somme due au détenteur d'une création ou d'un titre de propriété intellectuelle afin de pouvoir bénéficier d'un droit d'exploitation sur cette création ;",
         "b) les rémunérations de toute nature, versées à toute personne pour l'usage ou la concession de l'usage, d'un bien incorporel, d'un droit d'auteur sur une œuvre littéraire, artistique ou scientifique, y compris les films cinématographiques, les éditions de chaînes de télévision, les offres de programme de télévision et de radio ou la fourniture de sacres aux prestations audiovisuelles à contenu numérique, d'un brevet, d'une marque de fabrique ou de commerce, d'un dessin ou d'un modèle, d'un plan, d'une formule ou d'un procédé secret et pour des informations ayant trait à une expérience acquise dans le domaine industriel, commercial ou scientifique."
       ],
@@ -446,14 +435,13 @@
         "procédé secret"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Les frais généraux - PB : Rémunérations versées à l'étranger"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - B. Rémunérations versées à l'étranger"
     },
     {
       "article": "Art. 111-B",
       "titre": "Commissions et courtages sur achats",
       "texte": [
-        "Les commissions ou courtages portant sur les marchandises achetées pour le compte des entreprises situées au Congo sont admises en déduction du bénéfice imposable dans la limite de 5 % du montant des achats effectués par les centrales d'achat, le siège ou les intermédiaires, étant entendu que les remises profiteront aux entreprises installées au Congo.",
-        "Ces commissions doivent faire l'objet d'une facture régulière jointe à celle des fournisseurs.",
+        "Les commissions ou courtages portant sur les marchandises achetées pour le compte des entreprises situées au Congo sont admises en déduction du bénéfice imposable dans la limite de 5 % du montant des achats effectués par les centrales d'achat, le siège ou les intermédiaires, étant entendu que les remises profiteront aux entreprises installées au Congo. Ces commissions doivent faire l'objet d'une facture régulière jointe à celle des fournisseurs.",
         "Le débiteur doit apporter la preuve que les achats ont nécessité l'intervention d'un courtier ou d'un intermédiaire, que les commissions ont permis de s'approvisionner dans de meilleures conditions par rapport aux conditions réelles sur le marché, et qu'elles ne sont pas exagérées par rapport à la nature des prestations."
       ],
       "mots_cles": [
@@ -464,15 +452,14 @@
         "intermédiaires"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Les frais généraux - PB : Rémunérations versées à l'étranger"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - B. Rémunérations versées à l'étranger"
     },
     {
       "article": "Art. 112",
-      "titre": "Locations",
+      "titre": "C. Autres frais et charges : Locations",
       "texte": [
         "Le montant des locations concédées à une société est admis dans les charges à la seule condition qu'il ne présente aucune exagération par rapport aux locations habituellement pratiquées pour les immeubles ou installations similaires et les autres matériels d'exploitation.",
-        "Pour l'associé dirigeant qui détient au moins 10 % des parts ou actions d'une société et pour l'exploitant individuel, le produit des sous-locations – autres que celles des immeubles – consenties à cette société ne peut être admis dans les charges de l'entreprise.",
-        "Pour l'application de cette disposition, les parts ou actions détenues en toute propriété ou en usufruit par le conjoint, les ascendants ou descendants de l'associé, sont réputées appartenir à ce dernier."
+        "Pour l'associé dirigeant qui détient au moins 10 % des parts ou actions d'une société et pour l'exploitant individuel, le produit des sous-locations – autres que celles des immeubles – consenties à cette société ne peut être admis dans les charges de l'entreprise. Pour l'application de cette disposition, les parts ou actions détenues en toute propriété ou en usufruit par le conjoint, les ascendants ou descendants de l'associé, sont réputées appartenir à ce dernier."
       ],
       "mots_cles": [
         "locations",
@@ -482,7 +469,7 @@
         "10%"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 3 : Autres frais et charges"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - C. Autres frais et charges"
     },
     {
       "article": "Art. 112-A",
@@ -496,7 +483,7 @@
         "charges déductibles"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 3 : Autres frais et charges"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - C. Autres frais et charges"
     },
     {
       "article": "Art. 112-B",
@@ -512,33 +499,25 @@
         "TSS non déductible"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 3 : Autres frais et charges"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - C. Autres frais et charges"
     },
     {
       "article": "Art. 112-C",
-      "titre": "Primes d'assurance",
+      "titre": null,
       "texte": [
         "Sont déductibles des bénéfices imposables :",
         "a) Les primes d'assurances contractées au profit de l'entreprise, si la réalisation du risque couvert entraîne directement par elle-même une diminution de l'actif net.",
         "b) Les primes d'assurances constituant par elles-mêmes une charge d'activité ordinaire.",
-        "c) Les primes d'assurance-maladie versées aux compagnies d'assurances locales, au profit du personnel, lorsque ne figurent pas dans les charges déductibles, les remboursements de frais similaires au profit des mêmes personnes.",
-        "d) Les sommes payées au titre des quotes-parts d'employeurs des primes d'assurance-vie et des cotisations du régime de retraite complémentaire des employés.",
-        "",
+        "c) Les primes d'assurance-maladie versées aux compagnies d'assurances locales, au profit du personnel, lorsque figurent pas dans les charges déductibles, les remboursements de frais similaires au profit des mêmes personnes.",
         "Les sommes constituées par l'entreprise en vue de sa propre assurance ne sont pas déductibles.",
-        "La prime versée à une captive d'assurance appartenant à un groupe ou à une filiale d'une entreprise ne peut être admise en déduction que dans la mesure où celle-ci (captive) dispose d'un établissement stable au Congo ou constitue une entreprise exploitée au Congo.",
-        "Il en est de même des primes versées à une captive d'assurance appartenant à des sociétés de groupe lorsque la captive ne dispose pas d'un établissement stable au Congo."
+        "Les captives d'assurance ayant un caractère d'« auto-assurance » ou propre assurance, la prime versée à une captive d'assurance appartenant à un groupe ou à une filiale d'une entreprise admise en déduction que dans la mesure où celle-ci (captive) dispose d'un établissement stable au Congo ou constitue une entreprise exploitée au Congo.",
+        "Il en est de même des primes versées à une captive d'assurance appartenant à des sociétés de groupe lorsque la captive ne dispose pas d'un établissement stable au Congo.",
+        "d) Les sommes payées au titre des quotes-parts d'employeurs des primes d'assurance-vie et des cotisations du régime de retraite complémentaire des employés.",
+        "Art. 112-D. - Les agios, intérêts, commissions et autres frais financiers, sont déductibles dès lors qu'ils correspondent à des charges effectives et sont appuyés des pièces justificatives."
       ],
-      "mots_cles": [
-        "primes d'assurance",
-        "assurance-maladie",
-        "assurance-vie",
-        "retraite complémentaire",
-        "auto-assurance",
-        "captives",
-        "établissement stable"
-      ],
+      "mots_cles": [],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 3 : Autres frais et charges"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - C. Autres frais et charges"
     },
     {
       "article": "Art. 112-D",
@@ -553,10 +532,10 @@
         "frais financiers"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 3 : Autres frais et charges"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - C. Autres frais et charges"
     },
     {
-      "article": "Art. 112-E",
+      "article": "Art. 112-E (L.F. 2023)",
       "titre": "Intérêts versés aux associés et groupe",
       "texte": [
         "Les intérêts versés par une société, soit à ses associés ou actionnaires soit à des sociétés ou établissements financiers, membres d'un même groupe, ne sont déductibles que dans la limite de ceux calculés au taux d'intérêt des appels d'offre de la Banque Centrale, majoré de trois points et à la condition que le capital social ait été entièrement libéré.",
@@ -570,7 +549,7 @@
         "groupe"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 3 : Autres frais et charges"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - C. Autres frais et charges"
     },
     {
       "article": "Art. 112-F",
@@ -585,7 +564,7 @@
         "certificat d'expertise"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 3 : Autres frais et charges"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - C. Autres frais et charges"
     },
     {
       "article": "Art. 112-G",
@@ -599,11 +578,11 @@
         "actif réalisable"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 3 : Autres frais et charges"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - C. Autres frais et charges"
     },
     {
       "article": "Art. 113",
-      "titre": "Libéralités, dons et subventions",
+      "titre": "D. Charges non déductibles : Libéralités, dons et subventions",
       "texte": [
         "Les libéralités, dons et subventions accordées ne constituent pas des charges déductibles du bénéfice imposable.",
         "Cependant, les versements aux organismes de recherche et de développement reconnus par l'État, à des œuvres ou organismes d'intérêt général, à caractère philanthropique, caritatif ou social et aux syndicats professionnels, à condition que les bénéficiaires soient situés au Congo, sont admis en déduction dans la limite de 0,5 pour mille (0,5 ‰) du chiffre d'affaires hors taxes, dès lors qu'ils sont justifiés.",
@@ -625,10 +604,10 @@
         "espèces"
       ],
       "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 4 : Charges non déductibles"
+      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 2 : Frais généraux - D. Charges non déductibles"
     },
     {
-      "article": "Art. 113-A",
+      "article": "Art. 113-A (L.F. 2023, L.F. 2025)",
       "titre": "Charges exclues de la déduction",
       "texte": [
         "Sont exclues des charges déductibles :",
@@ -640,7 +619,7 @@
         "f) les sommes payées à partir d'un compte en devise situé hors de la CEMAC, sous réserve d'une autorisation expresse de la BEAC ;",
         "g) les charges comptabilisées non justifiées par une facture issue du système de facturation électronique certifié (SFEC).",
         "",
-        "Pour l'application de ces dispositions, les dirigeants s'entendent :",
+        "Les dirigeants s'entendent :",
         "- les gérants, dans les sociétés à responsabilité limitée et les sociétés en commandite par actions ;",
         "- du Président, du conseil d'administration, du directeur général, de l'administrateur provisoire délégué et de tout administrateur chargé de fonctions."
       ],
@@ -705,7 +684,7 @@
     },
     {
       "article": "Art. 114",
-      "titre": "Principe des amortissements",
+      "titre": "Sous-section 3. Les amortissements : Amortissements déductibles",
       "texte": [
         "Sont déductibles, les amortissements régulièrement comptabilisés sur la base de la durée probable d'usage telle qu'elle ressort des normes accusées par chaque nature d'exploitation y compris ceux qui auraient été régulièrement comptabilisés mais réputés différés en période déficitaire.",
         "Sont par ailleurs soumis à des régimes particuliers d'amortissement :",
@@ -874,10 +853,8 @@
       "article": "Art. 114-B",
       "titre": "Amortissement minimum obligatoire",
       "texte": [
-        "À la clôture de chaque exercice, la somme des amortissements effectivement pratiqués depuis l'acquisition ou la création d'un élément donné, ne peut être inférieure au montant cumulé des amortissements calculés suivant le mode linéaire et répartis sur la durée normale d'utilisation.",
-        "À défaut de se conformer à cette obligation, l'entreprise perd définitivement le droit de déduire la fraction des amortissements qui a été ainsi différée.",
-        "Les amortissements régulièrement comptabilisés et réputés différés en période déficitaire sont déductibles sans limitation de durée.",
-        "Ils doivent être déclarés dans le tableau des amortissements sous peine de non-déductibilité."
+        "À la clôture de chaque exercice, la somme des amortissements effectivement pratiqués depuis l'acquisition ou la création d'un élément donné, ne peut être inférieure au montant cumulé des amortissements calculés suivant le mode linéaire et répartis sur la durée normale d'utilisation. À défaut de se conformer à cette obligation, l'entreprise perd définitivement le droit de déduire la fraction des amortissements qui a été ainsi différée.",
+        "Les amortissements régulièrement comptabilisés et réputés différés en période déficitaire sont déductibles sans limitation de durée. Ils doivent être déclarés dans le tableau des amortissements sous peine de non-déductibilité."
       ],
       "mots_cles": [
         "amortissement minimum",
@@ -913,10 +890,8 @@
       "article": "Art. 114-D",
       "titre": "Constructions sur sol d'autrui",
       "texte": [
-        "Les constructions et aménagements sur sol d'autrui ou sur immeubles pris à bail, constituent des suppléments d'actif amortissables.",
-        "Les travaux effectués doivent s'amortir sur la durée normale d'utilisation de chaque élément, même si cette durée excède la durée du bail.",
-        "L'amortissement cesse au moment où les constructions ou aménagements sortent de l'actif.",
-        "En fin de bail, le locataire peut déduire de son résultat la valeur résiduelle de l'élément."
+        "Les constructions et aménagements sur sol d'autrui ou sur immeubles pris à bail, constituent des suppléments d'actif amortissables. Les travaux effectués doivent s'amortir sur la durée normale d'utilisation de chaque élément, même si cette durée excède la durée du bail.",
+        "L'amortissement cesse au moment où les constructions ou aménagements sortent de l'actif. En fin de bail, le locataire peut déduire de son résultat la valeur résiduelle de l'élément."
       ],
       "mots_cles": [
         "constructions sol d'autrui",
@@ -931,8 +906,7 @@
       "article": "Art. 114-E",
       "titre": "Crédit-bail",
       "texte": [
-        "Les sociétés de crédit-bail peuvent amortir les biens meubles qu'elles donnent en location sur la durée du contrat de leasing.",
-        "Les biens immeubles par contre s'amortissent sur la durée normale de leur utilisation.",
+        "Les sociétés de crédit-bail peuvent amortir les biens meubles qu'elles donnent en location sur la durée du contrat de leasing. Les biens immeubles par contre s'amortissent sur la durée normale de leur utilisation.",
         "Pour les biens immeubles, à l'expiration du contrat de crédit-bail, l'utilisateur est autorisé à amortir la fraction des loyers intégrés à l'exercice au cours duquel est levée l'option d'achat et les exercices suivants, de manière à ce que l'immeuble soit totalement amorti sur une durée globale incluant le crédit-bail.",
         "Par contre, au cas où l'option d'achat ne serait pas levée en fin de bail, l'utilisateur est autorisé à déduire du bénéfice fiscal de l'exercice pendant lequel prend fin le contrat de crédit-bail, la totalité des sommes réintégrées pendant la durée du contrat."
       ],
@@ -950,9 +924,7 @@
       "article": "Art. 114-F",
       "titre": "Emballages récupérables",
       "texte": [
-        "Les emballages récupérables identifiables présentent le caractère d'immobilisation.",
-        "Ils sont comptabilisés dans un compte de valeurs immobilisées lors de leur acquisition.",
-        "Ces emballages sont considérés comme consignés lorsque le fournisseur entend se comporter comme l'unique propriétaire des emballages."
+        "Les emballages récupérables identifiables présentent le caractère d'immobilisation. Ils sont comptabilisés dans un compte de valeurs immobilisées lors de leur acquisition. Ces emballages sont considérés comme consignés lorsque le fournisseur entend se comporter comme l'unique propriétaire des emballages."
       ],
       "mots_cles": [
         "emballages récupérables",
@@ -971,9 +943,10 @@
         "• être utilisés pendant une durée supérieure à trois ans ;",
         "• être destinés aux opérations industrielles de fabrication, transformation, transport et manutention ;",
         "• être soumis à une utilisation intensive.",
-        "L'option doit faire l'objet d'une demande adressée au Directeur Général des Impôts dans les trois mois qui suivent l'acquisition de l'élément amortissable.",
-        "Elle est accordée sur autorisation du Ministre des finances.",
-        "Le taux de l'amortissement accéléré est fixé à 40 %."
+        "L'option doit faire l'objet d'une demande adressée au Directeur Général des Impôts dans les trois mois qui suivent l'acquisition de l'élément amortissable. Elle est accordée sur autorisation du Ministre des finances.",
+        "Le taux de l'amortissement accéléré est fixé à 40 %.",
+        "L'annuité normale d'amortissement est calculée sur la valeur résiduelle des immobilisations en cause.",
+        "Pour les activités relevant des Codes minier, forestier et des hydrocarbures, la liste des immobilisations éligibles aux amortissements accélérés et les taux correspondants sont fixés par arrêté conjoint du Ministre des finances et du Ministre chargé du secteur d'activité concerné."
       ],
       "mots_cles": [
         "amortissement accéléré",
@@ -988,28 +961,9 @@
     },
     {
       "article": "Art. 114-H",
-      "titre": "Amortissement accéléré - calcul et secteurs spécifiques",
-      "texte": [
-        "L'annuité normale d'amortissement est calculée sur la valeur résiduelle des immobilisations en cause.",
-        "Pour les activités relevant des Codes minier, forestier et des hydrocarbures, la liste des immobilisations éligibles aux amortissements accélérés et les taux correspondants sont fixés par arrêté conjoint du Ministre des finances et du Ministre chargé du secteur d'activité concerné."
-      ],
-      "mots_cles": [
-        "amortissement accéléré",
-        "valeur résiduelle",
-        "code minier",
-        "code forestier",
-        "hydrocarbures",
-        "arrêté"
-      ],
-      "statut": "en vigueur",
-      "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 5 : Les amortissements"
-    },
-    {
-      "article": "Art. 114-I",
       "titre": "Véhicules de tourisme - plafond d'amortissement",
       "texte": [
-        "En aucun cas, il ne peut être admis en déduction l'amortissement des véhicules de tourisme possédés par l'entreprise, pour la fraction de leur prix d'acquisition supérieure à 40.000.000 FCFA.",
-        "La fraction de l'amortissement ainsi exclue des charges déductibles est néanmoins retenue pour la détermination de la plus-value résultant de la vente ultérieure de ces véhicules."
+        "En aucun cas, il ne peut être admis en déduction l'amortissement des véhicules de tourisme possédés par l'entreprise, pour la fraction de leur prix d'acquisition supérieure à 40.000.000 FCFA. La fraction de l'amortissement ainsi exclue des charges déductibles est néanmoins retenue pour la détermination de la plus-value résultant de la vente ultérieure de ces véhicules."
       ],
       "mots_cles": [
         "véhicules de tourisme",
@@ -1021,7 +975,7 @@
       "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 5 : Les amortissements"
     },
     {
-      "article": "Art. 114-J",
+      "article": "Art. 114-I",
       "titre": "Amortissement intégral des petits biens",
       "texte": [
         "Les biens visés à l'article 114-A dont la valeur unitaire est inférieure à 500.000 FCFA hors taxes sont amortissables à 100 % au cours de l'année d'acquisition, quelle que soit leur durée d'utilisation."
@@ -1036,7 +990,7 @@
       "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 5 : Les amortissements"
     },
     {
-      "article": "Art. 114-J bis",
+      "article": "Art. 114-J",
       "titre": "Amortissement matériel SFEC",
       "texte": [
         "Par dérogation à l'article 114-A, le matériel acquis dans le cadre d'utilisation du système de facturation électronique certifié (SFEC) est amortissable, dès l'année d'acquisition à 100 %, quelle que soit la durée d'utilisation dudit matériel."
@@ -1051,7 +1005,7 @@
     },
     {
       "article": "Art. 115",
-      "titre": "Provisions déductibles",
+      "titre": "Sous-section 4. Les provisions : Provisions déductibles",
       "texte": [
         "Sont déductibles les provisions constituées en vue de faire face à des pertes ou charges nettement précisées et que les événements en cours rendent probables, à condition qu'elles aient été effectivement constatées dans les écritures de l'exercice et qu'elles soient inscrites au relevé des provisions prévu par l'article 31 du présent Code."
       ],
@@ -1086,8 +1040,7 @@
       "article": "Art. 115-B",
       "titre": "Provisions sur portefeuille de titres",
       "texte": [
-        "Les valeurs qui composent le portefeuille des titres doivent figurer obligatoirement au bilan pour leur valeur d'origine.",
-        "À la fin de chaque exercice, les titres doivent être évalués par groupe de même nature.",
+        "Les valeurs qui composent le portefeuille des titres doivent figurer obligatoirement au bilan pour leur valeur d'origine. éÀ la fin de chaque exercice, les titres doivent être évalués par groupe de même nature.",
         "La dépréciation des titres de participation doit être justifiée par rapport à leur valeur d'acquisition ; celle des titres de placement cotés en bourse par rapport au cours moyen du dernier mois de l'exercice et celle des titres de placement non cotés en bourse par rapport à la valeur probable de négociation."
       ],
       "mots_cles": [
@@ -1117,7 +1070,7 @@
       "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 6 : Les provisions"
     },
     {
-      "article": "Art. 115-D",
+      "article": "Art. 115-D (L.F. 2024)",
       "titre": "Provisions établissements de crédit - COBAC",
       "texte": [
         "Les provisions constituées par les établissements de crédits et autres entités juridiques du même secteur d'activité, conformément à la réglementation COBAC R n°2018-01 relatif à la classification, à la comptabilisation et au provisionnement des créances des établissements de crédit du 18 janvier 2018, sont déductibles du bénéfice imposable."
@@ -1202,10 +1155,8 @@
       "article": "Art. 116-A",
       "titre": "Cessions d'éléments d'actif",
       "texte": [
-        "Les cessions d'éléments d'actif constituent des produits.",
-        "Est assimilé à une cession, le retrait par un contribuable d'un élément faisant partie de l'actif de son entreprise ou de celle dans laquelle il est associé.",
-        "Pour le calcul du prix de cession, il est fait état de la valeur réelle de l'élément à la date du retrait.",
-        "Toutefois, au cas où ledit élément viendrait à être cédé ou apporté dans une entreprise, dans un délai de trois ans à compter de la date du retrait, la valeur définitive à retenir est celle attribuée à l'occasion de cette dernière cession ou de ce dernier apport."
+        "Les cessions d'éléments d'actif constituent des produits. Est assimilé à une cession, le retrait par un contribuable d'un élément faisant partie de l'actif de son entreprise ou de celle dans laquelle il est associé.",
+        "Pour le calcul du prix de cession, il est fait état de la valeur réelle de l'élément à la date du retrait. Toutefois, au cas où ledit élément viendrait à être cédé ou apporté dans une entreprise, dans un délai de trois ans à compter de la date du retrait, la valeur définitive à retenir est celle attribuée à l'occasion de cette dernière cession ou de ce dernier apport."
       ],
       "mots_cles": [
         "cessions d'actif",
@@ -1248,10 +1199,9 @@
     },
     {
       "article": "Art. 117",
-      "titre": "Évaluation des stocks",
+      "titre": "Sous-section 6. Règles d'évaluation des stocks et des travaux : Évaluation des stocks",
       "texte": [
-        "Les stocks et les productions en cours sont évalués unité par unité ou catégorie par catégorie.",
-        "L'unité d'inventaire est la plus petite partie qui peut être inventoriée sous chaque article.",
+        "1) Les stocks et les productions en cours sont évalués unité par unité ou catégorie par catégorie. L'unité d'inventaire est la plus petite partie qui peut être inventoriée sous chaque article.",
         "2) À la sortie du stock ou à l'inventaire :",
         "• les biens matériellement identifiés et individualisés ainsi que ceux qui ne sont pas interchangeables, sont évalués article par article à leur coût d'entrée ;",
         "• les biens interchangeables non identifiables après leur entrée en stock sont évalués soit en considérant que le premier bien entré est le premier bien sorti (PEPS), soit à leur coût moyen pondéré d'achat ou de production.",
@@ -1288,14 +1238,13 @@
     },
     {
       "article": "Art. 118",
-      "titre": "Plus-values à réinvestir",
+      "titre": "Sous-section 7. Régime des plus-values ou moins-values : Plus-values à réinvestir",
       "texte": [
         "Par dérogation aux dispositions du premier alinéa de l'article 109-A ci-dessus, les plus-values provenant de la cession en cours d'exploitation des éléments de l'actif immobilisé ne sont pas comprises dans le bénéfice imposable de l'exercice au cours duquel elles ont été réalisées, si le contribuable les porte à un compte spécial « plus-values à réinvestir » et prend l'engagement de réinvestir en immobilisations nouvelles dans son entreprise, avant l'expiration d'un délai de 3 ans à partir de la clôture de cet exercice, une somme égale au montant de ces plus-values ajoutées au prix de revient des éléments cédés.",
         "Cet engagement doit être annexé à la déclaration des résultats de l'exercice au cours duquel les plus-values ont été réalisées.",
         "Toutefois, le remploi ainsi prévu ne peut pas être effectué en l'achat ou la souscription d'actions de sociétés ou de titres de participation.",
         "Pour l'application de l'alinéa 1 ci-dessus, les valeurs constituant le portefeuille ne sont considérées comme faisant partie de l'actif immobilisé que si elles sont entrées dans le patrimoine de l'entreprise trois ans au moins avant la date de cession.",
-        "Si le remploi est effectué dans le délai prévu, les plus-values distraites du bénéfice imposable sont affectées à l'amortissement des nouvelles immobilisations et viennent en déduction du prix de revient pour le calcul des amortissements et des plus-values réalisées ultérieurement.",
-        "Dans le cas contraire, elles sont rapportées au bénéfice imposable de l'exercice de cession ou de cessation d'activité."
+        "Si le remploi est effectué dans le délai prévu, les plus-values distraites du bénéfice imposable sont affectées à l'amortissement des nouvelles immobilisations et viennent en déduction du prix de revient pour le calcul des amortissements et des plus-values réalisées ultérieurement. Dans le cas contraire, elles sont rapportées au bénéfice imposable de l'exercice de cession ou de cessation d'activité."
       ],
       "mots_cles": [
         "plus-values",
@@ -1410,8 +1359,7 @@
       "article": "Art. 118-F",
       "titre": "Sociétés pétrolières - cession de droits",
       "texte": [
-        "En ce qui concerne les sociétés pétrolières, tout membre du contracteur qui cède tout ou partie de ses droits et obligations découlant d'un contrat de partage de production fait assujetti au paiement d'une taxe forfaitaire égale à 10 % en cas de plus-value réalisée à cette cession.",
-        "La plus-value est la différence entre le prix de cession obtenu par le cédant et le montant total des coûts restant à récupérer par le membre du contracteur cessionnaire."
+        "En ce qui concerne les sociétés pétrolières, tout membre du contracteur qui cède tout ou partie de ses droits et obligations découlant d'un contrat de partage de production fait assujetti au paiement d'une taxe forfaitaire égale à 10 % en cas de plus-value réalisée à cette cession. La plus-value est la différence entre le prix de cession obtenu par le cédant et le montant total des coûts restant à récupérer par le membre du contracteur cessionnaire."
       ],
       "mots_cles": [
         "sociétés pétrolières",
@@ -1440,8 +1388,8 @@
       "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 10 : Report déficitaire"
     },
     {
-      "article": "Art. 120",
-      "titre": "Prix de transfert",
+      "article": "Art. 120 (L.F. 2023)",
+      "titre": "Prix de transferts",
       "texte": [
         "Pour l'établissement de l'impôt sur les sociétés dû par les entreprises qui sont sous la dépendance ou qui possèdent le contrôle d'entreprises situées hors du Congo, les bénéfices indirectement transférés à ces dernières soit par voie de majoration ou de minoration des prix d'achat ou de vente, soit par tout autre moyen, sont incorporés aux résultats accusés par les comptabilités.",
         "Il est procédé de même à l'égard des entreprises qui sont sous la dépendance d'une entreprise ou d'un groupe possédant également le contrôle d'entreprises situées hors du Congo.",
@@ -1470,8 +1418,7 @@
       "titre": "Vérification de la comptabilité",
       "texte": [
         "Les agents de l'administration des impôts vérifient sur place, en suivant les règles prévues par le présent Code, la comptabilité des contribuables astreints à tenir et à présenter des documents comptables.",
-        "Lorsque la comptabilité est tenue au moyen de systèmes informatisés, le contrôle porte sur l'ensemble des informations, données et traitements informatiques qui concourent directement ou indirectement à la formation des résultats comptables ou fiscaux et à l'élaboration des déclarations rendues obligatoires par le Code général des impôts.",
-        "Ce contrôle porte également sur la documentation relative aux analyses, à la programmation et à l'exécution des traitements."
+        "Lorsque la comptabilité est tenue au moyen de systèmes informatisés, le contrôle porte sur l'ensemble des informations, données et traitements informatiques qui concourent directement ou indirectement à la formation des résultats comptables ou fiscaux et à l'élaboration des déclarations rendues obligatoires par le Code général des impôts. Ce contrôle porte également sur la documentation relative aux analyses, à la programmation et à l'exécution des traitements."
       ],
       "mots_cles": [
         "vérification",
@@ -1487,8 +1434,7 @@
       "article": "Art. 120-B",
       "titre": "Informations sur prestations confidentielles",
       "texte": [
-        "Les agents de l'administration des impôts peuvent demander toutes les informations relatives au montant, à la date et à la forme des versements afférents aux recettes de toute nature perçues par les personnes dépositaires du secret professionnel.",
-        "Ils peuvent demander des renseignements sur la nature des prestations fournies par ces personnes."
+        "Les agents de l'administration des impôts peuvent demander toutes les informations relatives au montant, à la date et à la forme des versements afférents aux recettes de toute nature perçues par les personnes dépositaires du secret professionnel. Ils peuvent demander des renseignements sur la nature des prestations fournies par ces personnes."
       ],
       "mots_cles": [
         "secret professionnel",
@@ -1503,8 +1449,7 @@
       "article": "Art. 120-C",
       "titre": "Défaut de présentation de la comptabilité",
       "texte": [
-        "Le défaut de présentation de la comptabilité est constaté par procès-verbal que le contribuable est invité à contresigner.",
-        "Mention est faite de son refus éventuel."
+        "Le défaut de présentation de la comptabilité est constaté par procès-verbal que le contribuable est invité à contresigner. Mention est faite de son refus éventuel."
       ],
       "mots_cles": [
         "défaut comptabilité",
@@ -1515,10 +1460,10 @@
       "section": "Section 3 : Détermination du bénéfice imposable - Sous-section 11 : Prix de transferts"
     },
     {
-      "article": "Art. 120-D",
+      "article": "Art. 120-D (L.F. 2023)",
       "titre": "Obligation documentaire prix de transfert",
       "texte": [
-        "Les personnes morales établies au Congo, dont le chiffre d'affaires annuel hors taxes ou l'actif brut figurant au bilan est supérieur ou égal à 500.000.000 FCFA, doivent tenir à la disposition de l'administration une documentation permettant de justifier la politique de prix de transfert pratiquée dans le cadre des transactions de toute nature réalisées avec des entités juridiques liées, établies ou constituées hors du Congo.",
+        "I. Les personnes morales établies au Congo, dont le chiffre d'affaires annuel hors taxes ou l'actif brut figurant au bilan est supérieur ou égal à 500.000.000 FCFA, doivent tenir à la disposition de l'administration une documentation permettant de justifier la politique de prix de transfert pratiquée dans le cadre des transactions de toute nature réalisées avec des entités juridiques liées, établies ou constituées hors du Congo.",
         "II. La documentation mentionnée au paragraphe I ci-dessus comprend les éléments suivants :",
         "1) Des informations générales sur le groupe d'entreprises associées :",
         "• une description générale de l'activité déployée, incluant les changements intervenus au cours de l'exercice ;",
@@ -1575,9 +1520,7 @@
         "• la méthode de détermination des prix des opérations de nature industrielle, commerciale ou financière qu'elle effectue avec des entreprises, sociétés ou groupements visés au 1 et les éléments qui la justifient ainsi que, le cas échéant, les contreparties consenties ;",
         "• les activités exercées par les entreprises, sociétés ou groupements visés au 1, liées aux opérations visées au 2 ;",
         "• le traitement fiscal réservé aux opérations visées au 2 et réalisées par les entreprises qu'elle exploite hors du Congo ou par les sociétés ou groupements visés au 1 dont elle détient, directement ou indirectement, la majorité du capital ou des droits de vote. Les données visées au premier alinéa doivent être précisées et indiquer explicitement par nature d'activité ou par produit, le pays ou le territoire concerné, l'entreprise, la société ou le groupement visé ainsi que, le cas échéant, les montants en cause.",
-        "L'administration doit, en outre, préciser à l'entreprise vérifiée le délai de réponse qui lui est ouvert. Ce délai, qui ne peut être inférieur à un mois, peut être prorogé sur demande motivée sans pouvoir excéder au total une durée de trois mois.",
-        "Lorsque l'entreprise a répondu de façon insuffisante, l'administration lui adresse une mise en demeure d'avoir à compléter sa réponse dans un délai de trente jours en précisant les compléments de réponse qu'elle souhaite.",
-        "Cette mise en demeure doit rappeler les sanctions applicables en cas de défaut de réponse."
+        "L'administration doit, en outre, préciser à l'entreprise vérifiée le délai de réponse qui lui est ouvert. Ce délai, qui ne peut être inférieur à un mois, peut être prorogé sur demande motivée sans pouvoir excéder au total une durée de trois mois. Lorsque l'entreprise a répondu de façon insuffisante, l'administration lui adresse une mise en demeure d'avoir à compléter sa réponse dans un délai de trente jours en précisant les compléments de réponse qu'elle souhaite. Cette mise en demeure doit rappeler les sanctions applicables en cas de défaut de réponse."
       ],
       "mots_cles": [
         "transfert indirect",
@@ -1672,8 +1615,7 @@
       "titre": "Période d'imposition",
       "texte": [
         "L'impôt sur le bénéfice est assis sur les résultats obtenus sur une période de douze mois correspondant à l'exercice comptable tel que défini à l'article 31 du présent Code.",
-        "Toutefois, les entreprises qui commencent leurs activités au cours des 6 mois précédant la date de clôture obligatoire peuvent arrêter leur premier bilan à la fin de l'exercice comptable suivant celui au cours duquel commence leurs activités.",
-        "Dans ce cas, elles doivent notifier leur option à l'inspecteur divisionnaire compétent avant le 31 décembre de l'année de début d'activités."
+        "Toutefois, les entreprises qui commencent leurs activités au cours des 6 mois précédant la date de clôture obligatoire peuvent arrêter leur premier bilan à la fin de l'exercice comptable suivant celui au cours duquel commence leurs activités. Dans ce cas, elles doivent notifier leur option à l'inspecteur divisionnaire compétent avant le 31 décembre de l'année de début d'activités."
       ],
       "mots_cles": [
         "période d'imposition",
@@ -1686,7 +1628,7 @@
       "section": "Section 4 : Modalités d'imposition - Sous-section 1 : Période d'imposition"
     },
     {
-      "article": "Art. 122",
+      "article": "Art. 122 (L.F. 2025)",
       "titre": "Taux de l'IS",
       "texte": [
         "Le taux de l'impôt sur les sociétés est fixé à 30 %.",
@@ -1701,7 +1643,7 @@
       "section": "Section 4 : Modalités d'imposition - Sous-section 2 : Calcul de l'impôt"
     },
     {
-      "article": "Art. 122-A",
+      "article": "Art. 122-A (L.F. 2025)",
       "titre": "Taux réduits et majorés",
       "texte": [
         "Par dérogation aux dispositions de l'article 122, le taux de l'impôt sur les sociétés est fixé à :",
@@ -1828,22 +1770,18 @@
       "article": "Art. 124-B",
       "titre": "Versement de l'IS et acomptes",
       "texte": [
-        "1) Toutes les sociétés ou personnes morales soumises à l'impôt sur les sociétés sont assujetties au versement de cet impôt sans émission préalable d'un rôle.",
-        "Les redevables de l'impôt sur les sociétés sont tenus d'effectuer de leur propre initiative :",
+        "1) Toutes les sociétés ou personnes morales soumises à l'impôt sur les sociétés sont assujetties au versement de cet impôt sans émission préalable d'un rôle. Les redevables de l'impôt sur les sociétés sont tenus d'effectuer de leur propre initiative :",
         "• au cours de chaque période d'imposition, le versement d'acomptes ;",
         "• dès la remise de la déclaration des bénéfices prévue à l'article 124 A, le paiement du solde de l'impôt liquidé à raison des résultats de la période visée par cette déclaration.",
         "2) Les acomptes sont calculés par la société et versés par elle, sans avertissement de l'inspection divisionnaire des contributions directes et indirectes, à la caisse du Trésor public dans les quinze premiers jours des mois de février, mai, août et novembre.",
         "En cas d'exercice d'une durée inférieure ou supérieure à un an, les acomptes sont calculés sur la base des bénéfices rapportés à une période de douze mois.",
         "Le premier acompte est celui dont l'échéance consécutive au commencement de la période d'imposition, en est la plus rapprochée.",
-        "3) Chaque acompte est égal au quart de l'impôt calculé sur les 4/5 du bénéfice imposable ou déclaré du plus récent exercice clos à la date de l'échéance, ou lorsqu'aucun exercice n'a été clos au cours de l'année du dernier bénéfice déclaré ou réalisé.",
+        "3) Chaque acompte est égal au quart de l'impôt calculé sur les 4/5e du bénéfice imposable ou déclaré du plus récent exercice clos à la date de l'échéance, ou lorsqu'aucun exercice n'a été clos au cours de l'année du dernier bénéfice déclaré ou réalisé.",
         "Pour les sociétés nouvelles, les acomptes sont fixés au quart de l'impôt calculé sur le produit évalué à 5 % du capital appelé.",
         "Pour les succursales des sociétés étrangères, les acomptes sont fixés au quart de l'impôt calculé sur le produit évalué à 5 % du capital social minimum d'une société anonyme de droit OHADA ne faisant pas appel public à l'épargne.",
         "Le montant du premier acompte d'un exercice est égal aux acomptes échus au cours de l'exercice précédent. Il est régularisé sur la base du dernier exercice ou de la dernière période d'imposition lors du versement du deuxième acompte.",
         "Pour les sociétés ayant bénéficié d'une convention d'établissement venue à expiration, l'acompte de la première année doit être calculé sur la base du bénéfice réalisé, mais non imposé du dernier exercice clos de la période sous convention.",
-        "4) La liquidation de l'impôt afférent aux bénéfices réalisés pendant la période servant de base à l'imposition est faite par la société.",
-        "Le résultat est arrondi à la dizaine de francs la plus proche.",
-        "Après déduction des acomptes déjà réglés, le solde de liquidation est versé sans avertissement à la Caisse du receveur principal des impôts au plus tard le jour de l'expiration du délai fixé par le régime de déclaration prévu à l'article 124-A du Code.",
-        "Si lors de la liquidation l'impôt effectivement dû est inférieur au montant des acomptes déjà réglés, l'excédent est imputé sur l'impôt relatif à l'exercice suivant et, le cas échéant, aux exercices ultérieurs. Il est remboursé à la société lorsque celle-ci est arrivée à son terme.",
+        "4) La liquidation de l'impôt afférent aux bénéfices réalisés pendant la période servant de base à l'imposition est faite par la société. Le résultat est arrondi à la dizaine de francs la plus proche. Après déduction des acomptes déjà réglés, le solde de liquidation est versé sans avertissement à la Caisse du receveur principal des impôts au plus tard le jour de l'expiration du délai fixé par le régime de déclaration prévu à l'article 124-A du Code. Si lors de la liquidation l'impôt effectivement dû est inférieur au montant des acomptes déjà réglés, l'excédent est imputé sur l'impôt relatif à l'exercice suivant et, le cas échéant, aux exercices ultérieurs. Il est remboursé à la société lorsque celle-ci est arrivée à son terme.",
         "En cas de dissolution, de transformation entraînant la création d'une entité morale nouvelle, d'apport en société, de fusion, de transfert de siège ou d'un établissement à l'étranger, la déclaration des bénéfices non encore imposés est souscrite dans un délai spécial de 15 jours, dont le point de départ est fixé par l'article 98 du Code. Le solde de liquidation est alors exigible à l'expiration de ce délai."
       ],
       "mots_cles": [
@@ -1899,7 +1837,7 @@
     },
     {
       "article": "Art. 126",
-      "titre": "Régime mère-fille",
+      "titre": "Sous-section 2 - Régime des sociétés mères et filiales : A) Régime mère-fille",
       "texte": [
         "Lorsqu'une société par actions ou à responsabilité limitée possède soit des actions nominatives d'une société par actions, soit des parts d'intérêts d'une société à responsabilité limitée, les produits distribués par la seconde société sous forme de nets des actions ou des parts d'intérêts de la seconde société, perçus par la première au cours de l'exercice, sont retranchés du bénéfice net total de celle-ci, déduction faite d'une quote-part de frais et charges.",
         "Cette quote-part est fixée à 10 % du montant desdits produits.",
@@ -1925,7 +1863,7 @@
     },
     {
       "article": "Art. 126-A",
-      "titre": "Subventions et remises de dettes mère-fille",
+      "titre": "Sous-section 2 - Régime des sociétés mères et filiales : B) Subventions et remises de dettes mère-fille",
       "texte": [
         "Les subventions et remises de dettes entre sociétés mères et filiales sont soumises au régime particulier suivant :",
         "a) La perte résultant d'une subvention ou d'un abandon de créance est déductible du bénéfice imposable de la société qui consent cette aide. Corrélativement, le profit est imposable chez la société bénéficiaire de l'aide.",
@@ -1973,25 +1911,15 @@
     },
     {
       "article": "Art. 126-C-1",
-      "titre": "Définition des quartiers généraux",
+      "titre": "Sociétés imposables au régime des quartiers généraux",
       "texte": [
-        "Au sens du présent article, un « quartier général » désigne une société par actions ou une succursale d'une société étrangère dont le siège social se situe hors de la CEMAC, dont le rôle exclusif consiste à rendre des prestations administratives de tout ordre ou de gestion à un ensemble de sociétés, d'établissements ou de succursales implantés dans un ou plusieurs États membres de la CEMAC, ou dans un État situé hors de la CEMAC.",
-        "Les prestations administratives et de gestion comprennent notamment :",
-        "• les fonctions de direction et de coordination stratégique ;",
-        "• les services de gestion des ressources humaines ;",
-        "• la gestion administrative et financière ;",
-        "• les services informatiques centralisés ;",
-        "• les services de recherche et développement ;",
-        "• la gestion de la propriété intellectuelle."
+        "Sont imposables au régime des bénéfices des quartiers généraux, en raison de leur forme, les sociétés à statut particulier appartenant à l'un des États de la CEMAC."
       ],
       "mots_cles": [
         "quartier général",
-        "siège régional",
+        "régime des bénéfices",
         "CEMAC",
-        "prestations administratives",
-        "gestion",
-        "coordination stratégique",
-        "ressources humaines"
+        "sociétés à statut particulier"
       ],
       "statut": "en vigueur",
       "section": "Section 5 : Régimes particuliers - Sous-section 3 bis : Régime fiscal des quartiers généraux de sociétés"
@@ -2038,8 +1966,7 @@
       "article": "Art. 126-C-4",
       "titre": "Autorisation préalable",
       "texte": [
-        "Le bénéfice du régime fiscal des quartiers généraux est subordonné à une autorisation préalable de l'administration fiscale.",
-        "Un arrêté du Ministre chargé des finances fixe les modalités d'application dudit régime."
+        "Le bénéfice du régime fiscal des quartiers généraux est subordonné à une autorisation préalable de l'administration fiscale. Un arrêté du Ministre chargé des finances fixe les modalités d'application dudit régime."
       ],
       "mots_cles": [
         "autorisation préalable",
@@ -2053,7 +1980,7 @@
     },
     {
       "article": "Art. 126-D",
-      "titre": "Conditions d'éligibilité au régime holding",
+      "titre": "Sous-section 4. Régime fiscal des holdings : 1) Conditions d'éligibilité",
       "texte": [
         "Les sociétés anonymes ou à responsabilité limitée de droit congolais peuvent bénéficier du régime des sociétés holding dès lors qu'elles remplissent les conditions suivantes :",
         "• 1° détenir un portefeuille d'actions ou de parts sociales dans d'autres sociétés, congolaises ou étrangères, constituées sous forme de sociétés de capitaux. La valeur de ce portefeuille doit être au moins égale aux deux tiers de l'actif immobilisé de la holding ;",
@@ -2078,11 +2005,11 @@
         "trésorerie groupe"
       ],
       "statut": "en vigueur",
-      "section": "Section 5 : Régimes particuliers - Sous-section 4 : Régime fiscal des holdings"
+      "section": "Section 5 : Régimes particuliers - Sous-section 4 : Régime fiscal des holdings - 1) Conditions d'éligibilité"
     },
     {
       "article": "Art. 126-D-1",
-      "titre": "Imposition des plus-values de cession de titres",
+      "titre": "Sous-section 4. Régime fiscal des holdings : 2) Imposition des plus-values des titres",
       "texte": [
         "1) Les plus-values provenant de la cession par les sociétés holdings de leurs titres de participation sont imposables à l'impôt sur les sociétés, à un taux égal au quart du taux de droit commun de l'impôt sur les sociétés, si les titres cédés ont été acquis ou souscrits depuis plus de deux ans.",
         "2) Les plus-values de cession des titres de participation détenus depuis moins de deux ans sont taxées dans les conditions de droit commun, sauf si les titres ont été acquis à la suite d'une fusion ou d'un apport et qu'ils figuraient dans le portefeuille d'une société répondant aux conditions exigées par les présentes dispositions.",
@@ -2101,7 +2028,7 @@
         "apport"
       ],
       "statut": "en vigueur",
-      "section": "Section 5 : Régimes particuliers - Sous-section 4 : Régime fiscal des holdings"
+      "section": "Section 5 : Régimes particuliers - Sous-section 4 : Régime fiscal des holdings - 2) Imposition des plus-values des titres"
     },
     {
       "article": "Art. 126-D-2",
@@ -2109,9 +2036,7 @@
       "texte": [
         "Pour l'application du régime, la cession de titres compris dans le portefeuille est réputée porter, par priorité, sur les titres de même nature acquis ou souscrits à la date la plus ancienne.",
         "Les plus-values ou moins-values résultant d'une cession sont déterminées en fonction des prix d'acquisition et de vente des titres.",
-        "Il est fait compensation entre les plus-values et les moins-values de même nature.",
-        "La plus-value nette peut être utilisée à compenser le déficit de l'exercice, les déficits reportables au titre des exercices antérieurs, les amortissements réputés différés.",
-        "La moins-value nette d'un exercice est déductible uniquement des plus-values de même nature réalisées au cours des trois exercices suivants.",
+        "Il est fait compensation entre les plus-values et les moins-values de même nature. La plus-value nette peut être utilisée à compenser le déficit de l'exercice, les déficits reportables au titre des exercices antérieurs, les amortissements réputés différés. La moins-value nette d'un exercice est déductible uniquement des plus-values de même nature réalisées au cours des trois exercices suivants.",
         "La base imposable est constituée par les plus-values nettes dégagées au titre d'un exercice, déduction faite des moins-values reportables au titre des exercices précédents et des frais strictement nécessaires à la réalisation de la cession."
       ],
       "mots_cles": [
@@ -2145,7 +2070,7 @@
     },
     {
       "article": "Art. 126-D-4",
-      "titre": "Exonération des intérêts d'emprunts",
+      "titre": "Sous-section 4. Régime fiscal des holdings : 3) Autres avantages fiscaux",
       "texte": [
         "Les intérêts des emprunts contractés par les sociétés holdings, auprès des établissements financiers installés à l'étranger, ou auprès des actionnaires et associés desdites sociétés et destinés au financement de l'acquisition ou de la souscription de titres de participation, sont exonérés de la retenue à la source visée à l'article 185 ter du présent Code."
       ],
@@ -2158,7 +2083,7 @@
         "art. 185 ter"
       ],
       "statut": "en vigueur",
-      "section": "Section 5 : Régimes particuliers - Sous-section 4 : Régime fiscal des holdings"
+      "section": "Section 5 : Régimes particuliers - Sous-section 4 : Régime fiscal des holdings - 3) Autres avantages fiscaux"
     },
     {
       "article": "Art. 126-D-5",
@@ -2192,15 +2117,16 @@
     },
     {
       "article": "Art. 126-E",
-      "titre": "Dispositions générales de l'intégration fiscale",
+      "titre": "Sous-section 5. Régime d'intégration fiscale : 1) Dispositions générales",
       "texte": [
-        "Une société dont le capital n'est détenu à 95 % au moins, directement ou indirectement, par une autre personne morale assujettie à l'impôt sur les sociétés, peut se constituer seule redevable de l'impôt sur les sociétés du sur l'ensemble des résultats du groupe formé par elle-même et les sociétés dont elle détient 95 % au moins du capital, de manière continue au cours de l'exercice, directement ou par l'intermédiaire des sociétés du groupe.",
+        "Une société dont le capital n'est pas détenu à 95 % au moins, directement ou indirectement, par une autre personne morale assujettie à l'impôt sur les sociétés, peut se constituer seule redevable de l'impôt sur les sociétés du résultat d'ensemble du groupe formé par elle-même et les sociétés dont elle détient 95 % au moins du capital, de manière continue au cours de l'exercice, directement ou par l'intermédiaire des sociétés du groupe.",
         "La société-mère d'un groupe doit être une société imposable à l'impôt sur les sociétés au Congo.",
-        "Les sociétés du groupe restent soumises à l'obligation de déclarer leurs résultats qui peuvent être vérifiés dans les conditions du droit commun prévues par le présent Code.",
-        "Peuvent être membres du groupe, les sociétés qui ont donné leur accord express d'intégration et qui sont assujetties à l'impôt sur les sociétés dans les conditions de droit commun.",
-        "L'option d'intégration est exercée par la société-mère d'un groupe, avant la date d'ouverture de l'exercice au titre duquel le régime s'applique. Elle est valable pour une période de cinq exercices. Elle est renouvelable par tacite reconduction, sauf dénonciation trois mois avant l'expiration de chaque période.",
-        "L'option est notifiée au service des impôts dont relève la société-mère. C'est après ce service qu'est souscrite la déclaration du résultat d'ensemble. Elle est accompagnée de la liste des sociétés membres du groupe. Cette liste indique, pour chaque société, sa désignation, l'adresse de son siège social et la répartition de son capital ;",
-        "des attestations par lesquelles les sociétés font connaître leur accord d'intégration conférant pour que la société-mère retienne leur résultat pour la détermination du résultat d'ensemble.",
+        "Les sociétés du groupe restent soumises à l'obligation de déclarer leurs résultats qui peuvent être vérifiés dans les conditions de droit commun prévues par le présent Code.",
+        "Peuvent être membres du groupe, les sociétés qui ont donné leur accord exprès d'intégration et qui sont assujetties à l'impôt sur les sociétés dans les conditions de droit commun.",
+        "L'option d'intégration est exercée par la société-mère du groupe, avant la date d'ouverture de l'exercice au titre duquel le régime s'applique. Elle est valable pour une période de cinq exercices. Elle est renouvelée par tacite reconduction, sauf dénonciation trois mois avant l'expiration de chaque période.",
+        "L'option est notifiée au service des impôts dont relève la société-mère. Cette option de service qui souscrit la déclaration du résultat d'ensemble. Elle est accompagnée :",
+        "• de la liste des sociétés membres du groupe. Cette liste indique, pour chaque société, sa désignation, l'adresse de son siège social et la répartition de son capital ;",
+        "• des attestations par lesquelles ces sociétés confirment leur accord d'intégration pour que la société-mère retienne leur résultat pour la détermination du résultat d'ensemble.",
         "Avant la clôture de chaque exercice de la période de validité de l'option, la société-mère notifie au service des impôts la liste des sociétés membres du groupe et l'identité des sociétés qui cessent d'être membres de ce groupe. À défaut, le résultat d'ensemble est déterminé à partir du résultat des sociétés mentionnées sur la dernière liste notifiée au service des impôts."
       ],
       "mots_cles": [
@@ -2215,7 +2141,7 @@
         "notification"
       ],
       "statut": "en vigueur",
-      "section": "Section 5 : Régimes particuliers - Sous-section 5 : Régime d'intégration fiscale des groupes de sociétés"
+      "section": "Section 5 : Régimes particuliers - Sous-section 5 : Régime d'intégration fiscale - 1) Dispositions générales"
     },
     {
       "article": "Art. 126-E-1",

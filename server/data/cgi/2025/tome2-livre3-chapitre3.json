@@ -310,10 +310,6 @@
       "statut": "en vigueur"
     },
     {
-      "intertitre": "Exonération des bons de caisse",
-      "reference_loi": "Ordonnance n°17/87/PR/SGG du 6 août 1987"
-    },
-    {
       "article": "Art. 7 (Ord. 17/87)",
       "titre": "Bons de caisse",
       "texte": [
@@ -326,7 +322,6 @@
         "impôts",
         "valeurs mobilières"
       ],
-      "reference_loi": "Ordonnance n°17/87/PR/SGG du 6 août 1987",
       "statut": "en vigueur"
     }
   ]

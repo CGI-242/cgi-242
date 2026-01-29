@@ -255,8 +255,8 @@
                 "paragraphe": 5,
                 "titre": "Primes d'assurances",
                 "articles": [
-                  "Art. 44",
-                  "Art. 44 A"
+                  "Art. 43",
+                  "Art. 44"
                 ],
                 "themes": [
                   "assurances déductibles",
@@ -1407,8 +1407,8 @@
         {
           "groupe": "assurances",
           "articles": [
-            "Art. 44",
-            "Art. 44 A"
+            "Art. 43",
+            "Art. 44"
           ],
           "raison": "Primes d'assurances déductibles et non déductibles"
         },
@@ -2872,7 +2872,7 @@
         "question": "Les captives d'assurance sont-elles déductibles ?",
         "reponse_attendue": "Non, les primes aux captives ne sont pas déductibles",
         "articles_attendus": [
-          "Art. 44 A"
+          "Art. 44"
         ],
         "mots_cles": [
           "captive",

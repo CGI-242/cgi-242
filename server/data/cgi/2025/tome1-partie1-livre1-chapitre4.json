@@ -16,7 +16,6 @@
     {
       "article": "Art. 127",
       "titre": "Révision des bilans",
-      "section": "Section 1 : Révision des bilans",
       "texte": [
         "Les conséquences fiscales de cette réévaluation sont soumises aux prescriptions fixées par les délibérations précitées.",
         "Toutefois, les entreprises qui procéderont à la révision de leur bilan clos après le 31 décembre 1964, ne pourront bénéficier des avantages prévus par les délibérations et loi ci-dessus indiquées et les plus-values qui pourraient être dégagées seront taxées selon le régime du droit commun."
@@ -27,28 +26,28 @@
         "plus-values",
         "droit commun"
       ],
-      "statut": "en vigueur"
+      "statut": "en vigueur",
+      "section": "Section 1 : Révision des bilans"
     },
     {
       "article": "Art. 127 bis",
       "titre": "Révision des bilans (abrogé)",
-      "section": "Section 1 : Révision des bilans",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé"
+      "statut": "abrogé",
+      "section": "Section 1 : Révision des bilans"
     },
     {
       "article": "Art. 127 quater",
       "titre": "Révision des bilans (abrogé)",
-      "section": "Section 1 : Révision des bilans",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé"
+      "statut": "abrogé",
+      "section": "Section 1 : Révision des bilans"
     },
     {
       "article": "Art. 127 quinquies",
       "titre": "Exclusion des régimes dérogatoires multiples",
-      "section": "Section 1 : Révision des bilans",
       "texte": [
         "À compter du 1er janvier 2021, toute société ou entreprise admise à l'un des régimes dérogatoires autorisés, à savoir, le régime de contrat de partage de production ou le régime des conventions d'établissement, ne peut plus bénéficier d'un autre régime privilégié."
       ],
@@ -58,52 +57,52 @@
         "conventions d'établissement",
         "régime privilégié"
       ],
-      "statut": "en vigueur"
+      "statut": "en vigueur",
+      "section": "Section 1 : Révision des bilans"
     },
     {
       "article": "Art. 128",
       "titre": "Réductions pour investissement (abrogé)",
-      "section": "Section 2 : Réductions pour investissement",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé"
+      "statut": "abrogé",
+      "section": "Section 2 : Réductions pour investissement"
     },
     {
       "article": "Art. 129",
       "titre": "Réductions pour investissement (abrogé)",
-      "section": "Section 2 : Réductions pour investissement",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé"
+      "statut": "abrogé",
+      "section": "Section 2 : Réductions pour investissement"
     },
     {
       "article": "Art. 130",
       "titre": "Réductions pour investissement (abrogé)",
-      "section": "Section 2 : Réductions pour investissement",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé"
+      "statut": "abrogé",
+      "section": "Section 2 : Réductions pour investissement"
     },
     {
       "article": "Art. 131",
       "titre": "Réductions pour investissement (abrogé)",
-      "section": "Section 2 : Réductions pour investissement",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé"
+      "statut": "abrogé",
+      "section": "Section 2 : Réductions pour investissement"
     },
     {
       "article": "Art. 132",
       "titre": "Réductions pour investissement (abrogé)",
-      "section": "Section 2 : Réductions pour investissement",
       "texte": [],
       "mots_cles": [],
-      "statut": "abrogé"
+      "statut": "abrogé",
+      "section": "Section 2 : Réductions pour investissement"
     },
     {
       "article": "Art. 133",
       "titre": "Provisions pour reconstitution des gisements",
-      "section": "Section 3 : Régime spécial des exploitations minières",
       "texte": [
         "Les entreprises, sociétés et organismes de toute nature qui effectuent la recherche et l'exploitation des substances minérales concessibles au Congo sont autorisés à constituer des provisions pour reconstitution des gisements, dans les conditions fixées aux articles suivants.",
         "Ces provisions spéciales sont admises en franchise d'impôt."
@@ -115,13 +114,12 @@
         "substances minérales",
         "franchise d'impôt"
       ],
-      "statut": "en vigueur"
+      "statut": "en vigueur",
+      "section": "Section 3 : Régime spécial des exploitations minières"
     },
     {
       "article": "Art. 134",
       "titre": "Provision pour gisements d'hydrocarbures",
-      "section": "Section 3 : Régime spécial des exploitations minières",
-      "sous_section": "Sous-section 1 : Hydrocarbures liquides ou gazeux",
       "texte": [
         "Le montant de la provision pour reconstitution des gisements d'hydrocarbures liquides ou gazeux ne peut excéder pour chaque exercice :",
         "1° ni 27,50 % du montant des ventes des produits marchands extraits des gisements d'hydrocarbures liquides ou gazeux exploités par l'entreprise et dont les résultats entrent dans le champ d'application de la réglementation de l'IRPP ou de l'impôt sur les sociétés ;",
@@ -149,13 +147,12 @@
         "déficits d'exploitation",
         "report de déficit"
       ],
-      "statut": "en vigueur"
+      "statut": "en vigueur",
+      "section": "Section 3 : Régime spécial des exploitations minières"
     },
     {
       "article": "Art. 135",
       "titre": "Inscription de la provision au bilan",
-      "section": "Section 3 : Régime spécial des exploitations minières",
-      "sous_section": "Sous-section 1 : Hydrocarbures liquides ou gazeux",
       "texte": [
         "La provision pour reconstitution des gisements est inscrite au passif du bilan de l'entreprise sous une rubrique spéciale faisant ressortir le montant des dotations de chaque exercice."
       ],
@@ -165,13 +162,12 @@
         "passif",
         "dotations"
       ],
-      "statut": "en vigueur"
+      "statut": "en vigueur",
+      "section": "Section 3 : Régime spécial des exploitations minières"
     },
     {
       "article": "Art. 136",
       "titre": "Utilisation de la provision",
-      "section": "Section 3 : Régime spécial des exploitations minières",
-      "sous_section": "Sous-section 1 : Hydrocarbures liquides ou gazeux",
       "texte": [
         "La provision constituée à la clôture d'un exercice doit, avant l'expiration d'un délai de 5 ans à partir de la clôture de cet exercice, être utilisée :",
         "a) soit à tous travaux ou immobilisations nécessaires aux recherches d'hydrocarbures entreprises au Congo à l'exclusion des travaux ou immobilisations portant sur un gisement reconnu, ayant donné lieu à attribution d'un titre d'exploitation ;",
@@ -189,13 +185,12 @@
         "actions",
         "parts d'intérêts"
       ],
-      "statut": "en vigueur"
+      "statut": "en vigueur",
+      "section": "Section 3 : Régime spécial des exploitations minières"
     },
     {
       "article": "Art. 137",
       "titre": "Exonération définitive et imposition complémentaire",
-      "section": "Section 3 : Régime spécial des exploitations minières",
-      "sous_section": "Sous-section 1 : Hydrocarbures liquides ou gazeux",
       "texte": [
         "Si la provision est utilisée dans les délais et conditions prévus à l'article 136 précédent, l'exonération accordée est définitivement acquise à l'entreprise et la provision peut être virée à un compte de réserve quelconque au passif du bilan.",
         "Les sommes ainsi utilisées aux travaux de recherches ou en participations peuvent, dans les conditions fixées par le présent Code, être comptabilisées en dépenses annuelles dans le cas où elles ont pour objet d'amortissement ou d'exploitation.",
@@ -208,13 +203,12 @@
         "remploi",
         "imposition complémentaire"
       ],
-      "statut": "en vigueur"
+      "statut": "en vigueur",
+      "section": "Section 3 : Régime spécial des exploitations minières"
     },
     {
       "article": "Art. 138",
       "titre": "Cession, cessation ou décès",
-      "section": "Section 3 : Régime spécial des exploitations minières",
-      "sous_section": "Sous-section 1 : Hydrocarbures liquides ou gazeux",
       "texte": [
         "En cas de cession ou de cessation d'entreprise ou de décès de l'exploitant, la provision pour reconstitution de gisement figurant au dernier bilan est considérée comme immédiatement imposable dans les conditions fixées par les articles 98 et 101 du présent Code.",
         "Toutefois, l'exonération ne fait l'objet d'aucune reprise lorsque l'exploitation du fonds d'industrie est continuée dans les conditions prévues par les articles 22 et 111 du présent Code.",
@@ -230,13 +224,12 @@
         "fusion",
         "apport"
       ],
-      "statut": "en vigueur"
+      "statut": "en vigueur",
+      "section": "Section 3 : Régime spécial des exploitations minières"
     },
     {
       "article": "Art. 139",
       "titre": "Obligations déclaratives",
-      "section": "Section 3 : Régime spécial des exploitations minières",
-      "sous_section": "Sous-section 1 : Hydrocarbures liquides ou gazeux",
       "texte": [
         "Les entreprises doivent fournir au service d'assiette, à l'appui de la déclaration des résultats de chaque exercice, des renseignements utiles sur les éléments de calcul de la provision pour reconstitution des gisements ainsi que sur les conditions de son utilisation.",
         "Elles doivent indiquer notamment, pour l'exercice considéré :",
@@ -252,13 +245,12 @@
         "ventes",
         "bénéfice net"
       ],
-      "statut": "en vigueur"
+      "statut": "en vigueur",
+      "section": "Section 3 : Régime spécial des exploitations minières"
     },
     {
       "article": "Art. 140",
       "titre": "Substances minérales autres que les hydrocarbures",
-      "section": "Section 3 : Régime spécial des exploitations minières",
-      "sous_section": "Sous-section 2 : Substances minérales concessibles autres que les hydrocarbures liquides ou gazeux",
       "texte": [
         "Les dispositions des articles 133 et suivants sont également applicables, sous les réserves ci-après, aux substances minérales concessibles autres que les hydrocarbures liquides ou gazeux :",
         "1° le montant de la provision pour reconstitution de gisements de substances minérales concessibles autres que les hydrocarbures liquides ou gazeux ne peut excéder 15 % au lieu de 27,50 % (limite fixée par l'article 134, paragraphe 1-a) ;",
@@ -275,13 +267,12 @@
         "métaux",
         "alliages"
       ],
-      "statut": "en vigueur"
+      "statut": "en vigueur",
+      "section": "Section 3 : Régime spécial des exploitations minières"
     },
     {
       "article": "Art. 140 bis",
       "titre": "Non-cumul des avantages",
-      "section": "Section 3 : Régime spécial des exploitations minières",
-      "sous_section": "Sous-section 2 : Substances minérales concessibles autres que les hydrocarbures liquides ou gazeux",
       "texte": [
         "Le bénéfice des dispositions de la présente section ne peut en aucun cas se cumuler, pour un même objet, avec les avantages prévus à la section 2 du présent chapitre."
       ],
@@ -289,7 +280,8 @@
         "non-cumul",
         "avantages fiscaux"
       ],
-      "statut": "en vigueur"
+      "statut": "en vigueur",
+      "section": "Section 3 : Régime spécial des exploitations minières"
     }
   ]
 }

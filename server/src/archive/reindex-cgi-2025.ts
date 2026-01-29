@@ -76,8 +76,12 @@ function loadCGIFiles(): CGIFile[] {
     const filePath = path.join(DATA_DIR, file);
     const content = fs.readFileSync(filePath, 'utf-8');
     const data = JSON.parse(content) as CGIFile;
-    files.push(data);
-    console.log(`  📄 ${file} - ${data.articles.length} articles`);
+    if (data.articles && Array.isArray(data.articles)) {
+      files.push(data);
+      console.log(`  📄 ${file} - ${data.articles.length} articles`);
+    } else {
+      console.log(`  ⚠️  ${file} - pas de champ articles, ignoré`);
+    }
   }
 
   return files;
@@ -93,6 +97,7 @@ async function indexArticles(files: CGIFile[]): Promise<void> {
 
   for (const file of files) {
     const { meta, articles } = file;
+    if (!meta || !articles) continue;
 
     for (const article of articles) {
       // Éviter les doublons (même numéro d'article)
@@ -133,9 +138,9 @@ async function indexArticles(files: CGIFile[]): Promise<void> {
                 titre: article.titre || '',
                 contenu: contenuComplet,
                 version: '2025',
-                tome: meta.tome.toString(),
-                livre: meta.livre.toString(),
-                chapitre: meta.chapitre_titre,
+                tome: (meta.tome ?? 1).toString(),
+                livre: (meta.livre ?? 1).toString(),
+                chapitre: meta.chapitre_titre || '',
                 mots_cles: article.mots_cles || [],
                 statut: article.statut || 'en vigueur',
               },
