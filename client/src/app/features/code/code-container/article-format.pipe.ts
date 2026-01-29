@@ -107,6 +107,12 @@ export class ArticleFormatPipe implements PipeTransform {
         '<div class="ml-14 mt-2 pl-4 border-l-2 border-secondary-200 flex items-start gap-2"><span class="font-medium text-secondary-700 flex-shrink-0">$1°</span><span>$2</span></div>');
     }
 
+    // Formater les sous-items (i), (ii), (iii), etc. - indentés sous les lettres
+    if (/^\(([ivxlcdm]+)\)[ \t]*/i.test(escaped)) {
+      return escaped.replace(/^\(([ivxlcdm]+)\)[ \t]*(.*)/i,
+        '<div class="ml-16 mt-1 pl-4 border-l-2 border-primary-200 flex items-start gap-2"><span class="font-medium text-primary-500 flex-shrink-0">($1)</span><span>$2</span></div>');
+    }
+
     // Formater les tirets en liste
     if (/^[-–—][ \t]*/.test(escaped)) {
       return escaped.replace(/^[-–—][ \t]*(.*)$/,
