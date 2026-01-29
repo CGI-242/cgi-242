@@ -143,6 +143,7 @@ export class CodeSommaireComponent {
       titre: sousSection.titre,
       articles: sousSection.articles,
       tome: tomeNum,
+      chapitreTitre: chapitre.titre, // Pour filtrer par chapitre dans la DB
       sousSectionTitre: sousSection.titre,
       sousSectionNumero: sousSection.display || sousSection.sous_section,
       paragraphes,
@@ -156,6 +157,7 @@ export class CodeSommaireComponent {
       titre: paragraphe.titre,
       articles: paragraphe.articles,
       tome: tomeNum,
+      chapitreTitre: chapitre.titre, // Pour filtrer par chapitre dans la DB
     });
   }
 
