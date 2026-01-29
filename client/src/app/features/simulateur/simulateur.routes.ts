@@ -10,16 +10,8 @@ export const SIMULATEUR_ROUTES: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'irpp',
+        redirectTo: 'its',
         pathMatch: 'full',
-      },
-      {
-        path: 'irpp',
-        loadComponent: () =>
-          import('./irpp-calculator/irpp-calculator.component').then(
-            (m) => m.IrppCalculatorComponent
-          ),
-        data: { title: 'IRPP - Impôt sur le Revenu des Personnes Physiques (CGI 2025)' },
       },
       {
         path: 'its',
