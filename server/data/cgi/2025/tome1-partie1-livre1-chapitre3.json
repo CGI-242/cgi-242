@@ -1837,7 +1837,7 @@
     },
     {
       "article": "Art. 126",
-      "titre": "Régime mère-fille",
+      "titre": "Sous-section 2 - Régime des sociétés mères et filiales : A) Régime mère-fille",
       "texte": [
         "Lorsqu'une société par actions ou à responsabilité limitée possède soit des actions nominatives d'une société par actions, soit des parts d'intérêts d'une société à responsabilité limitée, les produits distribués par la seconde société sous forme de nets des actions ou des parts d'intérêts de la seconde société, perçus par la première au cours de l'exercice, sont retranchés du bénéfice net total de celle-ci, déduction faite d'une quote-part de frais et charges.",
         "Cette quote-part est fixée à 10 % du montant desdits produits.",
@@ -1863,7 +1863,7 @@
     },
     {
       "article": "Art. 126-A",
-      "titre": "Subventions et remises de dettes mère-fille",
+      "titre": "Sous-section 2 - Régime des sociétés mères et filiales : B) Subventions et remises de dettes mère-fille",
       "texte": [
         "Les subventions et remises de dettes entre sociétés mères et filiales sont soumises au régime particulier suivant :",
         "a) La perte résultant d'une subvention ou d'un abandon de créance est déductible du bénéfice imposable de la société qui consent cette aide. Corrélativement, le profit est imposable chez la société bénéficiaire de l'aide.",
@@ -1911,25 +1911,15 @@
     },
     {
       "article": "Art. 126-C-1",
-      "titre": "Définition des quartiers généraux",
+      "titre": "Sociétés imposables au régime des quartiers généraux",
       "texte": [
-        "Au sens du présent article, un « quartier général » désigne une société par actions ou une succursale d'une société étrangère dont le siège social se situe hors de la CEMAC, dont le rôle exclusif consiste à rendre des prestations administratives de tout ordre ou de gestion à un ensemble de sociétés, d'établissements ou de succursales implantés dans un ou plusieurs États membres de la CEMAC, ou dans un État situé hors de la CEMAC.",
-        "Les prestations administratives et de gestion comprennent notamment :",
-        "• les fonctions de direction et de coordination stratégique ;",
-        "• les services de gestion des ressources humaines ;",
-        "• la gestion administrative et financière ;",
-        "• les services informatiques centralisés ;",
-        "• les services de recherche et développement ;",
-        "• la gestion de la propriété intellectuelle."
+        "Sont imposables au régime des bénéfices des quartiers généraux, en raison de leur forme, les sociétés à statut particulier appartenant à l'un des États de la CEMAC."
       ],
       "mots_cles": [
         "quartier général",
-        "siège régional",
+        "régime des bénéfices",
         "CEMAC",
-        "prestations administratives",
-        "gestion",
-        "coordination stratégique",
-        "ressources humaines"
+        "sociétés à statut particulier"
       ],
       "statut": "en vigueur",
       "section": "Section 5 : Régimes particuliers - Sous-section 3 bis : Régime fiscal des quartiers généraux de sociétés"
@@ -1976,8 +1966,7 @@
       "article": "Art. 126-C-4",
       "titre": "Autorisation préalable",
       "texte": [
-        "Le bénéfice du régime fiscal des quartiers généraux est subordonné à une autorisation préalable de l'administration fiscale.",
-        "Un arrêté du Ministre chargé des finances fixe les modalités d'application dudit régime."
+        "Le bénéfice du régime fiscal des quartiers généraux est subordonné à une autorisation préalable de l'administration fiscale. Un arrêté du Ministre chargé des finances fixe les modalités d'application dudit régime."
       ],
       "mots_cles": [
         "autorisation préalable",
@@ -1991,7 +1980,7 @@
     },
     {
       "article": "Art. 126-D",
-      "titre": "Conditions d'éligibilité au régime holding",
+      "titre": "Sous-section 4. Régime fiscal des holdings : 1) Conditions d'éligibilité",
       "texte": [
         "Les sociétés anonymes ou à responsabilité limitée de droit congolais peuvent bénéficier du régime des sociétés holding dès lors qu'elles remplissent les conditions suivantes :",
         "• 1° détenir un portefeuille d'actions ou de parts sociales dans d'autres sociétés, congolaises ou étrangères, constituées sous forme de sociétés de capitaux. La valeur de ce portefeuille doit être au moins égale aux deux tiers de l'actif immobilisé de la holding ;",
@@ -2016,11 +2005,11 @@
         "trésorerie groupe"
       ],
       "statut": "en vigueur",
-      "section": "Section 5 : Régimes particuliers - Sous-section 4 : Régime fiscal des holdings"
+      "section": "Section 5 : Régimes particuliers - Sous-section 4 : Régime fiscal des holdings - 1) Conditions d'éligibilité"
     },
     {
       "article": "Art. 126-D-1",
-      "titre": "Imposition des plus-values de cession de titres",
+      "titre": "Sous-section 4. Régime fiscal des holdings : 2) Imposition des plus-values des titres",
       "texte": [
         "1) Les plus-values provenant de la cession par les sociétés holdings de leurs titres de participation sont imposables à l'impôt sur les sociétés, à un taux égal au quart du taux de droit commun de l'impôt sur les sociétés, si les titres cédés ont été acquis ou souscrits depuis plus de deux ans.",
         "2) Les plus-values de cession des titres de participation détenus depuis moins de deux ans sont taxées dans les conditions de droit commun, sauf si les titres ont été acquis à la suite d'une fusion ou d'un apport et qu'ils figuraient dans le portefeuille d'une société répondant aux conditions exigées par les présentes dispositions.",
@@ -2039,7 +2028,7 @@
         "apport"
       ],
       "statut": "en vigueur",
-      "section": "Section 5 : Régimes particuliers - Sous-section 4 : Régime fiscal des holdings"
+      "section": "Section 5 : Régimes particuliers - Sous-section 4 : Régime fiscal des holdings - 2) Imposition des plus-values des titres"
     },
     {
       "article": "Art. 126-D-2",
@@ -2047,9 +2036,7 @@
       "texte": [
         "Pour l'application du régime, la cession de titres compris dans le portefeuille est réputée porter, par priorité, sur les titres de même nature acquis ou souscrits à la date la plus ancienne.",
         "Les plus-values ou moins-values résultant d'une cession sont déterminées en fonction des prix d'acquisition et de vente des titres.",
-        "Il est fait compensation entre les plus-values et les moins-values de même nature.",
-        "La plus-value nette peut être utilisée à compenser le déficit de l'exercice, les déficits reportables au titre des exercices antérieurs, les amortissements réputés différés.",
-        "La moins-value nette d'un exercice est déductible uniquement des plus-values de même nature réalisées au cours des trois exercices suivants.",
+        "Il est fait compensation entre les plus-values et les moins-values de même nature. La plus-value nette peut être utilisée à compenser le déficit de l'exercice, les déficits reportables au titre des exercices antérieurs, les amortissements réputés différés. La moins-value nette d'un exercice est déductible uniquement des plus-values de même nature réalisées au cours des trois exercices suivants.",
         "La base imposable est constituée par les plus-values nettes dégagées au titre d'un exercice, déduction faite des moins-values reportables au titre des exercices précédents et des frais strictement nécessaires à la réalisation de la cession."
       ],
       "mots_cles": [
@@ -2083,7 +2070,7 @@
     },
     {
       "article": "Art. 126-D-4",
-      "titre": "Exonération des intérêts d'emprunts",
+      "titre": "Sous-section 4. Régime fiscal des holdings : 3) Autres avantages fiscaux",
       "texte": [
         "Les intérêts des emprunts contractés par les sociétés holdings, auprès des établissements financiers installés à l'étranger, ou auprès des actionnaires et associés desdites sociétés et destinés au financement de l'acquisition ou de la souscription de titres de participation, sont exonérés de la retenue à la source visée à l'article 185 ter du présent Code."
       ],
@@ -2096,7 +2083,7 @@
         "art. 185 ter"
       ],
       "statut": "en vigueur",
-      "section": "Section 5 : Régimes particuliers - Sous-section 4 : Régime fiscal des holdings"
+      "section": "Section 5 : Régimes particuliers - Sous-section 4 : Régime fiscal des holdings - 3) Autres avantages fiscaux"
     },
     {
       "article": "Art. 126-D-5",
@@ -2130,15 +2117,16 @@
     },
     {
       "article": "Art. 126-E",
-      "titre": "Dispositions générales de l'intégration fiscale",
+      "titre": "Sous-section 5. Régime d'intégration fiscale : 1) Dispositions générales",
       "texte": [
-        "Une société dont le capital n'est détenu à 95 % au moins, directement ou indirectement, par une autre personne morale assujettie à l'impôt sur les sociétés, peut se constituer seule redevable de l'impôt sur les sociétés du sur l'ensemble des résultats du groupe formé par elle-même et les sociétés dont elle détient 95 % au moins du capital, de manière continue au cours de l'exercice, directement ou par l'intermédiaire des sociétés du groupe.",
+        "Une société dont le capital n'est pas détenu à 95 % au moins, directement ou indirectement, par une autre personne morale assujettie à l'impôt sur les sociétés, peut se constituer seule redevable de l'impôt sur les sociétés du résultat d'ensemble du groupe formé par elle-même et les sociétés dont elle détient 95 % au moins du capital, de manière continue au cours de l'exercice, directement ou par l'intermédiaire des sociétés du groupe.",
         "La société-mère d'un groupe doit être une société imposable à l'impôt sur les sociétés au Congo.",
-        "Les sociétés du groupe restent soumises à l'obligation de déclarer leurs résultats qui peuvent être vérifiés dans les conditions du droit commun prévues par le présent Code.",
-        "Peuvent être membres du groupe, les sociétés qui ont donné leur accord express d'intégration et qui sont assujetties à l'impôt sur les sociétés dans les conditions de droit commun.",
-        "L'option d'intégration est exercée par la société-mère d'un groupe, avant la date d'ouverture de l'exercice au titre duquel le régime s'applique. Elle est valable pour une période de cinq exercices. Elle est renouvelable par tacite reconduction, sauf dénonciation trois mois avant l'expiration de chaque période.",
-        "L'option est notifiée au service des impôts dont relève la société-mère. C'est après ce service qu'est souscrite la déclaration du résultat d'ensemble. Elle est accompagnée de la liste des sociétés membres du groupe. Cette liste indique, pour chaque société, sa désignation, l'adresse de son siège social et la répartition de son capital ;",
-        "des attestations par lesquelles les sociétés font connaître leur accord d'intégration conférant pour que la société-mère retienne leur résultat pour la détermination du résultat d'ensemble.",
+        "Les sociétés du groupe restent soumises à l'obligation de déclarer leurs résultats qui peuvent être vérifiés dans les conditions de droit commun prévues par le présent Code.",
+        "Peuvent être membres du groupe, les sociétés qui ont donné leur accord exprès d'intégration et qui sont assujetties à l'impôt sur les sociétés dans les conditions de droit commun.",
+        "L'option d'intégration est exercée par la société-mère du groupe, avant la date d'ouverture de l'exercice au titre duquel le régime s'applique. Elle est valable pour une période de cinq exercices. Elle est renouvelée par tacite reconduction, sauf dénonciation trois mois avant l'expiration de chaque période.",
+        "L'option est notifiée au service des impôts dont relève la société-mère. Cette option de service qui souscrit la déclaration du résultat d'ensemble. Elle est accompagnée :",
+        "• de la liste des sociétés membres du groupe. Cette liste indique, pour chaque société, sa désignation, l'adresse de son siège social et la répartition de son capital ;",
+        "• des attestations par lesquelles ces sociétés confirment leur accord d'intégration pour que la société-mère retienne leur résultat pour la détermination du résultat d'ensemble.",
         "Avant la clôture de chaque exercice de la période de validité de l'option, la société-mère notifie au service des impôts la liste des sociétés membres du groupe et l'identité des sociétés qui cessent d'être membres de ce groupe. À défaut, le résultat d'ensemble est déterminé à partir du résultat des sociétés mentionnées sur la dernière liste notifiée au service des impôts."
       ],
       "mots_cles": [
@@ -2153,7 +2141,7 @@
         "notification"
       ],
       "statut": "en vigueur",
-      "section": "Section 5 : Régimes particuliers - Sous-section 5 : Régime d'intégration fiscale des groupes de sociétés"
+      "section": "Section 5 : Régimes particuliers - Sous-section 5 : Régime d'intégration fiscale - 1) Dispositions générales"
     },
     {
       "article": "Art. 126-E-1",

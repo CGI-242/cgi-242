@@ -47,7 +47,7 @@ export class Cgi242LandingComponent implements OnInit {
     {
       icon: 'ph-book-open',
       title: 'Navigateur CGI',
-      description: 'Parcourez l\'integralite du Code General des Impots 2026 (provisoire) avec une navigation intuitive.',
+      description: 'Parcourez l\'integralite du Code General des Impots 2026 avec une navigation intuitive.',
       badge: null
     },
     {

@@ -98,13 +98,22 @@ export const CGI_TOME_1: Tome = {
                   page: 61,
                   articles: '125-126 septies',
                   sous_sections: [
-                    { sous_section: 1, titre: 'Sociétés nouvelles', articles: '125', statut: 'abrogé' },
-                    { sous_section: 2, titre: 'Régime mère-fille', articles: '126-126-A' },
-                    { sous_section: 3, titre: 'Succursales', articles: '126-B' },
-                    { sous_section: '3 bis', titre: 'Quartiers généraux', articles: '126-C-1 à 126-C-4' },
-                    { sous_section: 4, titre: 'Holdings', articles: '126-D à 126-D-6' },
-                    { sous_section: 5, titre: 'Intégration fiscale', articles: '126-E à 126-E-9' },
-                    { sous_section: 6, titre: 'Personnes morales étrangères', articles: '126 bis à 126 septies' },
+                    { sous_section: 1, titre: 'Régime des sociétés nouvelles', articles: '125', statut: 'abrogé' },
+                    { sous_section: 2, titre: 'Régime des sociétés mères et filiales', articles: '126-126-A', paragraphes: [
+                        { numero: 'A', titre: 'Régime mère-fille', articles: '126' },
+                        { numero: 'B', titre: 'Subventions et remises de dettes', articles: '126-A' },
+                      ]
+                    },
+                    { sous_section: 3, titre: 'Régime des succursales', articles: '126-B' },
+                    { sous_section: 3.5, display: '3 bis', titre: 'Régime fiscal des quartiers généraux des sociétés', articles: '126-C-1 à 126-C-4' },
+                    { sous_section: 4, titre: 'Régime fiscal des holdings', articles: '126-D à 126-D-6', paragraphes: [
+                        { numero: 1, titre: 'Conditions d\'éligibilité', articles: '126-D' },
+                        { numero: 2, titre: 'Imposition des plus-values des titres', articles: '126-D-1 à 126-D-3' },
+                        { numero: 3, titre: 'Autres avantages fiscaux', articles: '126-D-4 à 126-D-6' },
+                      ]
+                    },
+                    { sous_section: 5, titre: 'Régime d\'intégration fiscale', articles: '126-E à 126-E-9' },
+                    { sous_section: 6, titre: 'Régime des personnes morales étrangères', articles: '126 bis à 126 septies' },
                   ]
                 },
               ],
