@@ -66,8 +66,12 @@ export class CodeSommaireComponent {
   }
 
   onSectionClick(chapitre: Chapitre, section: Section, tomeNum?: number): void {
-    // Ne pas passer les sous-sections comme séparateurs quand on clique sur la section principale
-    // car elles sont déjà visibles dans le sommaire
+    // Préparer les sous-sections pour les afficher comme séparateurs dans la liste d'articles
+    const sousSections = section.sous_sections?.map(ss => ({
+      titre: `${ss.display || ss.sous_section}. ${ss.titre}`,
+      articles: ss.articles || ''
+    }));
+
     this.selection.emit({
       type: 'section',
       path: `Chapitre ${chapitre.chapitre}, Section ${section.section}`,
@@ -76,6 +80,7 @@ export class CodeSommaireComponent {
       tome: tomeNum,
       chapitreTitre: chapitre.titre,
       sectionTitre: section.titre,
+      sousSections,
     });
   }
 
