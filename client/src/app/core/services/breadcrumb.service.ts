@@ -23,7 +23,6 @@ export class BreadcrumbService {
     '2025': 'CGI 2025',
     '2026': 'CGI 2026',
     'simulateur': 'Simulateurs',
-    'irpp': 'IRPP',
     'its': 'ITS',
     'is': 'IS',
     'patente': 'Patente',
