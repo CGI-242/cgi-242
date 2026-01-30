@@ -158,16 +158,31 @@ export const CGI_TOME_1_2026: Tome = {
             },
             {
               chapitre: 3,
-              titre: 'Dispositions communes à l\'IS et aux impôts sur les revenus',
-              articles: '127-140-I',
-              sections: [
-                { section: 1, titre: 'Révision des bilans', articles: '127-130' },
-                { section: 2, titre: 'Réductions pour investissement', articles: '131-135' },
-                { section: 3, titre: 'Régime des exploitations minières', articles: '136-140-I' },
-              ],
+              titre: 'Sans objet',
             },
             {
               chapitre: 4,
+              titre: 'Dispositions communes à l\'IS et aux impôts sur les revenus',
+              articles: '127-140K',
+              sections: [
+                { section: 1, titre: 'Révision des bilans', articles: '127-127 quinquies' },
+                { section: 2, titre: 'Déclaration des contribuables', articles: '128-132' },
+                {
+                  section: 3,
+                  titre: 'Régime spécial des exploitations minières',
+                  articles: '133-140 bis',
+                  paragraphes: [
+                    { numero: 1, titre: 'Hydrocarbures liquides ou gazeux', articles: '133-139' },
+                    { numero: 2, titre: 'Substances minérales concessibles autres que les hydrocarbures liquides ou gazeux', articles: '140-140 bis' },
+                  ]
+                },
+                { section: 4, titre: 'Vérification des déclarations', articles: '140A-140E' },
+                { section: 5, titre: 'Taxation d\'office', articles: '140F-140G' },
+                { section: 6, titre: 'Cession, cessation ou décès', articles: '140H-140K' },
+              ],
+            },
+            {
+              chapitre: 5,
               titre: 'Taxes diverses',
               articles: '141-171 undecies',
               sections: [
@@ -179,7 +194,7 @@ export const CGI_TOME_1_2026: Tome = {
               ],
             },
             {
-              chapitre: 5,
+              chapitre: 6,
               titre: 'Dispositions diverses',
               articles: '172-185 ter-F',
               sections: [
@@ -190,7 +205,7 @@ export const CGI_TOME_1_2026: Tome = {
               ],
             },
             {
-              chapitre: 6,
+              chapitre: 7,
               titre: 'Plus-values sur titres réalisées par des personnes non-résidentes',
               articles: '185 quater-A-185 sexies',
             },

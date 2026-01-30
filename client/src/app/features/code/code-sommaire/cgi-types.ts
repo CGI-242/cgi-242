@@ -21,6 +21,7 @@ export interface Section {
   statut?: string;
   articles?: string; // Plage d'articles ex: "1-65 bis"
   sous_sections?: SousSectionSommaire[];
+  paragraphes?: Paragraphe[];
 }
 
 export interface Chapitre {
