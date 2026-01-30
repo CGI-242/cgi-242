@@ -72,6 +72,15 @@ export class CodeSommaireComponent {
       articles: ss.articles || ''
     }));
 
+    // Préparer les paragraphes de la section (si pas de sous-sections)
+    const paragraphes = section.paragraphes?.map(p => ({
+      numero: p.numero,
+      titre: p.titre,
+      articles: p.articles || '',
+      sousSectionTitre: section.titre,
+      sousSectionNumero: section.section
+    }));
+
     this.selection.emit({
       type: 'section',
       path: `Chapitre ${chapitre.chapitre}, Section ${section.section}`,
@@ -81,6 +90,7 @@ export class CodeSommaireComponent {
       chapitreTitre: chapitre.titre,
       sectionTitre: section.titre,
       sousSections,
+      paragraphes,
     });
   }
 
@@ -139,6 +149,28 @@ export class CodeSommaireComponent {
       articles: paragraphe.articles,
       tome: tomeNum,
       chapitreTitre: chapitre.titre, // Pour filtrer par chapitre dans la DB
+    });
+  }
+
+  onSectionParagrapheClick(chapitre: Chapitre, section: Section, paragraphe: Paragraphe, tomeNum?: number): void {
+    // Préparer le paragraphe pour l'affichage du header
+    const paragraphes = [{
+      numero: paragraphe.numero,
+      titre: paragraphe.titre,
+      articles: paragraphe.articles || '',
+      sousSectionTitre: section.titre,
+      sousSectionNumero: section.section
+    }];
+
+    this.selection.emit({
+      type: 'paragraphe',
+      path: `Chapitre ${chapitre.chapitre}, Section ${section.section}, §${paragraphe.numero}`,
+      titre: paragraphe.titre,
+      articles: paragraphe.articles,
+      tome: tomeNum,
+      chapitreTitre: chapitre.titre,
+      sectionTitre: section.titre,
+      paragraphes,
     });
   }
 
