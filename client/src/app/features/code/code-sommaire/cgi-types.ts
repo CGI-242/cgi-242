@@ -38,6 +38,7 @@ export interface Livre {
   titre: string;
   page?: number;
   statut?: string;
+  note?: string;
   chapitres?: Chapitre[];
 }
 

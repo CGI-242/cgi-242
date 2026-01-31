@@ -83,6 +83,12 @@
                   <div
                     *cdkVirtualFor="let article of filteredArticles(); let i = index; trackBy: trackByArticleId"
                     class="article-list-item">
+                    <!-- Séparateur section si c'est le premier article de la section -->
+                    @if (getSectionHeader(article.numero); as sectionHeader) {
+                      <div class="px-3 py-2 bg-primary-200 border-l-4 border-primary-600">
+                        <span class="text-sm font-bold text-primary-900">{{ sectionHeader }}</span>
+                      </div>
+                    }
                     <!-- Séparateur sous-section si c'est le premier article de la sous-section -->
                     @if (getSousSectionHeader(article.numero); as ssHeader) {
                       <div class="px-3 py-2 bg-primary-100 border-l-4 border-primary-500">
@@ -225,6 +231,12 @@
             <div class="flex-1 overflow-y-auto p-6 bg-secondary-50/50">
               <div class="max-w-7xl mx-auto space-y-6">
                 @for (article of filteredArticles(); track article.id; let i = $index) {
+                  <!-- Séparateur section -->
+                  @if (getSectionHeader(article.numero); as sectionHeader) {
+                    <div class="py-4 px-6 bg-primary-200 border-l-4 border-primary-600 rounded-r-lg">
+                      <h2 class="text-lg font-bold text-primary-900">{{ sectionHeader }}</h2>
+                    </div>
+                  }
                   <!-- Séparateur sous-section -->
                   @if (getSousSectionHeader(article.numero); as ssHeader) {
                     <div class="py-4 px-6 bg-primary-100 border-l-4 border-primary-500 rounded-r-lg">

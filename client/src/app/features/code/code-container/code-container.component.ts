@@ -59,6 +59,7 @@ export class CodeContainerComponent implements OnInit {
   selectedTome = signal<number | null>(null);
   selectedChapitre = signal<string | null>(null);
   selectedSection = signal<string | null>(null);
+  sections = signal<{ titre: string; articles: string }[]>([]);
   sousSections = signal<{ titre: string; articles: string }[]>([]);
   paragraphes = signal<{ numero: number | string; titre: string; articles: string; sousSectionTitre?: string; sousSectionNumero?: number | string }[]>([]);
 
@@ -172,6 +173,7 @@ export class CodeContainerComponent implements OnInit {
       this.selectedTome.set(selection.tome ?? null);
       this.selectedChapitre.set(selection.chapitreTitre ?? null);
       this.selectedSection.set(selection.sectionTitre ?? null);
+      this.sections.set(selection.sections ?? []);
       this.sousSections.set(selection.sousSections ?? []);
       this.paragraphes.set(selection.paragraphes ?? []);
     } else {
@@ -179,6 +181,7 @@ export class CodeContainerComponent implements OnInit {
       this.selectedTome.set(null);
       this.selectedChapitre.set(null);
       this.selectedSection.set(null);
+      this.sections.set([]);
       this.sousSections.set([]);
       this.paragraphes.set([]);
       this.searchQuery = selection.titre;
@@ -187,31 +190,41 @@ export class CodeContainerComponent implements OnInit {
   }
 
   // Header detection methods
+  getSectionHeader(articleNumero: string): string | null {
+    const sections = this.sections();
+    if (!sections.length) return null;
+
+    for (const section of sections) {
+      // Extraire le premier article de la section (ex: "140A-140E" -> "140A", "127-127 quinquies" -> "127")
+      const sectionFirstArticle = section.articles.split('-')[0].trim();
+
+      // Comparer avec le numéro exact de l'article
+      if (articleNumero === sectionFirstArticle) {
+        return section.titre;
+      }
+    }
+    return null;
+  }
+
   getSousSectionHeader(articleNumero: string): string | null {
     return getSousSectionHeaderUtil(articleNumero, this.sousSections());
   }
 
   /**
    * Retourne le header du paragraphe si l'article est le premier du paragraphe
-   * Format: "Sous-section X. Titre : Paragraphe Y: Titre paragraphe"
+   * Format: "Paragraphe Y: Titre paragraphe"
    */
   getParagrapheHeader(articleNumero: string): string | null {
     const paragraphes = this.paragraphes();
     if (!paragraphes.length) return null;
 
-    // Extraire le numéro de l'article (ex: "Art. 37" -> 37)
-    const match = articleNumero.match(/(\d+)/);
-    if (!match) return null;
-    const articleNum = parseInt(match[1], 10);
-
     for (const para of paragraphes) {
-      // Extraire le premier numéro d'article du paragraphe
-      const paraMatch = para.articles.match(/^(\d+)/);
-      if (!paraMatch) continue;
-      const paraStart = parseInt(paraMatch[1], 10);
+      // Extraire le premier article du paragraphe (ex: "133-139" -> "133", "140-140 bis" -> "140")
+      const paraFirstArticle = para.articles.split('-')[0].trim();
 
-      if (articleNum === paraStart) {
-        return `Paragraphe ${para.numero}: ${para.titre}`;
+      // Comparer avec le numéro exact de l'article
+      if (articleNumero === paraFirstArticle) {
+        return `§${para.numero}) ${para.titre}`;
       }
     }
     return null;

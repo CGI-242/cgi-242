@@ -12,6 +12,7 @@ export interface SommaireSelection {
   sectionTitre?: string; // Titre de la section pour filtrer
   sousSectionTitre?: string; // Titre de la sous-section pour les headers de paragraphes
   sousSectionNumero?: number | string; // Numéro de la sous-section
+  sections?: { titre: string; articles: string }[]; // Pour afficher les sections comme séparateurs
   sousSections?: { titre: string; articles: string }[]; // Pour afficher les sous-sections comme séparateurs
   paragraphes?: { numero: number | string; titre: string; articles: string; sousSectionTitre?: string; sousSectionNumero?: number | string }[]; // Pour afficher les paragraphes comme séparateurs
 }
@@ -55,13 +56,20 @@ export class CodeSommaireComponent {
   }
 
   onChapitreClick(chapitre: Chapitre, tomeNum?: number): void {
+    // Préparer les sections pour les afficher comme séparateurs
+    const sections = chapitre.sections?.map(s => ({
+      titre: `Section ${s.section}: ${s.titre}`,
+      articles: s.articles || ''
+    }));
+
     this.selection.emit({
       type: 'chapitre',
       path: `Chapitre ${chapitre.chapitre}`,
       titre: chapitre.titre,
       articles: chapitre.articles,
       tome: tomeNum,
-      chapitreTitre: chapitre.titre, // Pour filtrer par chapitre dans la DB
+      chapitreTitre: chapitre.titre,
+      sections,
     });
   }
 

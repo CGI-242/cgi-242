@@ -373,19 +373,20 @@
     },
     {
       "article": "Art. 140 bis",
-      "titre": "Non-cumul des avantages",
+      "titre": "Non-cumul des avantages fiscaux entre sections",
       "texte": [
-        "Le bénéfice des dispositions de la présente section ne peut en aucun cas se cumuler, pour un même objet, avec les avantages prévues à la section 2 du présent chapitre."
+        "Le bénéfice des dispositions de la présente section ne peut en aucun cas se cumuler, pour un même objet, avec les avantages prévus à la section 2 du présent chapitre."
       ],
       "mots_cles": [
         "non-cumul",
-        "avantages fiscaux"
+        "avantages fiscaux",
+        "sections"
       ],
       "statut": "en vigueur",
       "section": "Section 3 : Régime spécial des exploitations minières - §2) Substances minérales concessibles autres que les hydrocarbures liquides ou gazeux"
     },
     {
-      "article": "Art. 140 A (L.F. 2026)",
+      "article": "Art. 140 A",
       "titre": "Déclaration des biens mobiliers hors du Congo",
       "texte": [
         "Toutes personnes domiciliées ou résidant habituellement au Congo, conservant hors du Congo des biens mobiliers, doivent fournir obligatoirement dans le délai prévu à l'Article 80, à l'Inspection Divisionnaire des Contributions Directes et Indirectes, une déclaration détaillée indiquant la nature, la valeur de ces biens et le revenu y attaché.",
@@ -402,16 +403,14 @@
       "section": "Section 4 : Vérification des déclarations"
     },
     {
-      "article": "Art. 140 B (L.F. 2026)",
-      "titre": "Vérification et demande d'éclaircissements",
+      "article": "Art. 140 B",
+      "titre": "Vérification des déclarations et demandes de justifications",
       "texte": [
-        "L'administration fiscale vérifie les déclarations. Elle peut demander au contribuable des éclaircissements.",
-        "Elle peut, en outre, lui demander des justifications :",
-        "a) Au sujet de sa situation et de ses charges de famille ;",
-        "b) Au sujet des charges retranchées du revenu global par application de l'Article 66 ci-dessus.",
-        "Il peut également lui demander des justifications lorsqu'il a réuni des éléments permettant d'établir que le contribuable peut avoir des revenus plus importants que ceux qui font l'objet de sa déclaration.",
-        "En particulier, si le contribuable allègue la possession de bons ou de titres dont les intérêts ou arrérages sont exclus du décompte des revenus imposables en vertu de l'Article 62 ci-dessus.",
-        "L'Inspection Divisionnaire des Contributions Directes et Indirectes peut exiger la preuve de la possession de ces bons ou titres et celle de la date à laquelle ils sont entrés dans le patrimoine de l'intéressé."
+        "L'administration fiscale vérifie les déclarations. Elle peut demander au contribuable :",
+        "1) des éclaircissements ;",
+        "2) des justifications au sujet de sa situation et de ses charges de famille ainsi qu'au sujet des charges retranchées du revenu ;",
+        "3) des justifications lorsqu'à réunir des éléments permettant d'établir que le contribuable peut avoir des revenus plus importants que ceux qui font l'objet de sa déclaration, en particulier, si le contribuable allègue la possession de bons ou de titres dont les intérêts ou arrérages sont exclus du décompte des revenus imposables.",
+        "Elle peut exiger la preuve de la possession des ces bons ou titres et celle de la date à laquelle ils sont entrés dans le patrimoine de l'intéressé."
       ],
       "mots_cles": [
         "vérification",
@@ -427,28 +426,28 @@
       "section": "Section 4 : Vérification des déclarations"
     },
     {
-      "article": "Art. 140 C (L.F. 2026)",
-      "titre": "Modalités des demandes d'éclaircissements",
+      "article": "Art. 140 C",
+      "titre": "Modalités des éclaircissements et justifications",
       "texte": [
         "Les éclaircissements et justifications visés à l'Article précédent peuvent être demandés verbalement ou par écrit.",
-        "Lorsque le contribuable a refusé de répondre à une demande verbale ou lorsque la réponse faite à cette demande est considérée par l'Inspection Divisionnaire des Contributions Directes et Indirectes comme équivalente à un refus de réponse sur tout ou partie des points à éclaircir, elle doit être renouvelée par écrit.",
-        "Toutes les demandes écrites doivent indiquer explicitement les points sur lesquels l'Inspection Divisionnaire des Contributions Directes et Indirectes juge nécessaire d'obtenir des éclaircissements ou des justifications ainsi que le délai assigné au contribuable pour fournir sa réponse."
+        "Lorsque le contribuable refuse de répondre à une demande verbale ou lorsque la réponse faite à cette demande est considérée par l'agent taxateur comme équivalente à un refus de réponse sur tout ou partie des points à éclaircir, elle doit être renouvelée par écrit.",
+        "Toutes les demandes écrites doivent indiquer explicitement les points sur lesquels l'agent taxateur juge nécessaire d'obtenir des éclaircissements ou des justifications ainsi que le délai assigné au contribuable pour fournir sa réponse."
       ],
       "mots_cles": [
         "demande verbale",
         "demande écrite",
         "refus de réponse",
         "délai",
-        "Inspection Divisionnaire"
+        "agent taxateur"
       ],
       "statut": "en vigueur",
       "section": "Section 4 : Vérification des déclarations"
     },
     {
-      "article": "Art. 140 D (L.F. 2026)",
-      "titre": "Droit de rectification",
+      "article": "Art. 140 D",
+      "titre": "Droit de rectification des déclarations",
       "texte": [
-        "L'Inspection Divisionnaire des Contributions Directes et Indirectes a le droit de rectifier les déclarations, mais elle doit au préalable adresser au contribuable l'indication des éléments qu'elle se propose de retenir comme base d'imposition et fixer le délai maximum qui lui est accordé pour se faire entendre ou faire parvenir son acceptation ou ses observations."
+        "L'administration a le droit de rectifier les déclarations, mais doit au préalable adresser au contribuable l'indication des éléments qu'elle se propose de retenir comme base d'imposition et fixer le délai maximum qui lui est accordé pour se faire entendre ou faire parvenir son acceptation ou ses observations."
       ],
       "mots_cles": [
         "droit de rectification",
@@ -461,31 +460,29 @@
       "section": "Section 4 : Vérification des déclarations"
     },
     {
-      "article": "Art. 140 E (L.F. 2026)",
-      "titre": "Vérification des déclarations BIC et BNC",
+      "article": "Art. 140 E",
+      "titre": "Vérification des bénéfices d'affaires",
       "texte": [
-        "Les déclarations spéciales aux bénéfices industriels et commerciaux et aux bénéfices des professions non commerciales sont vérifiées dans les conditions prévues par les Articles 32 et 47 du présent code."
+        "Les déclarations spéciales aux bénéfices d'affaires sont vérifiées dans les conditions prévues pour l'impôt sur les sociétés."
       ],
       "mots_cles": [
-        "BIC",
-        "BNC",
+        "bénéfices d'affaires",
         "vérification",
-        "bénéfices industriels et commerciaux",
-        "professions non commerciales"
+        "impôt sur les sociétés"
       ],
       "statut": "en vigueur",
       "section": "Section 4 : Vérification des déclarations"
     },
     {
-      "article": "Art. 140 F (L.F. 2026)",
-      "titre": "Cas de taxation d'office",
+      "article": "Art. 140 F",
+      "titre": "Taxation d'office",
       "texte": [
         "Est taxé d'office, tout contribuable :",
-        "1° qui n'a pas souscrit sa déclaration après mise en demeure d'un délai de huit jours ou qui s'est opposé au contrôle fiscal ;",
+        "1° qui n'a pas souscrit sa déclaration après mise en demeure, d'un délai de huit jours ou qui s'est opposé au contrôle fiscal ;",
         "2° qui s'est abstenu de répondre aux demandes d'éclaircissements ou de justifications de l'administration fiscale ;",
         "3° dont le revenu déclaré, défalcation faite des charges déductibles, est inférieur au total des dépenses personnelles, ostensibles et notoires, augmentées de ses revenus en nature.",
-        "En ce qui concerne ces contribuables, la base d'imposition est, à défaut d'éléments certains permettant de leur attribuer un revenu supérieur, fixée à une somme égale au montant des dépenses et des revenus en nature, diminuée du montant des revenus affranchis de l'impôt que le contribuable puisse faire échec à cette évaluation en faisant valoir qu'il aurait utilisé des capitaux ou réalisé des gains en capital ou qu'il recevrait périodiquement ou non des libéralités d'un tiers ou que certains de ces revenus devraient normalement faire l'objet d'une évaluation forfaitaire.",
-        "Le contribuable qui ne fournit pas, à l'appui de ses déclarations, les documents exigés, peut faire l'objet de rectification d'office. Il en est de même lorsque l'intéressé ne peut produire, sur réquisition de l'Administration, les livres, pièces et documents complets permettant de déterminer avec précision les résultats de l'entreprise ou de la profession.",
+        "En ce qui concerne ces contribuables, la base d'imposition est, à défaut d'éléments certains permettant de leur attribuer un revenu supérieur, fixée à une somme égale au montant des dépenses et des revenus en nature, diminués du montant des revenus affranchis de l'impôt que le contribuable puisse faire échec à cette évaluation en faisant valoir qu'il aurait utilisé des capitaux ou réalisé des gains en capital ou qu'il recevait périodiquement ou non des libéralités d'un tiers ou que certains de ses revenus devaient normalement faire l'objet d'une évaluation forfaitaire.",
+        "Le contribuable qui ne fournit pas, à l'appui de ses déclarations, les documents exigés, peut faire l'objet de rectification d'office. Il en est de même lorsque l'intéressé ne peut produire, sur réquisition de l'Administration, les livres, pièces, et documents complets permettant de déterminer avec précision les résultats de l'entreprise ou de la profession.",
         "Lorsque la déclaration a été rectifiée dans les conditions prévues à l'alinéa précédent, le contribuable ne peut obtenir une réduction par voie contentieuse qu'en apportant la preuve du chiffre exact de ses bénéfices.",
         "L'agent taxateur notifie, préalablement à l'établissement du titre de perception, la base de taxation au contribuable dans les conditions fixées par le présent code."
       ],
@@ -506,8 +503,8 @@
       "section": "Section 5 : Taxation d'office"
     },
     {
-      "article": "Art. 140 G (L.F. 2026)",
-      "titre": "Recours contentieux et charge de la preuve",
+      "article": "Art. 140 G",
+      "titre": "Recours du contribuable taxé d'office",
       "texte": [
         "Le contribuable taxé d'office ne peut obtenir, par la voie contentieuse, la décharge ou la réduction de la cotisation qui lui a été assignée qu'en apportant toutes justifications de nature à faire la preuve du chiffre exact de son revenu. Il supporte les frais de l'expertise, s'il y a lieu.",
         "De même, le montant d'un impôt payé à la suite d'une taxation d'office ne peut être considéré comme charge déductible du bénéfice imposable de l'exercice en cause."
@@ -525,34 +522,30 @@
       "section": "Section 5 : Taxation d'office"
     },
     {
-      "article": "Art. 140 H (L.F. 2026)",
-      "titre": "Cession, cessation ou décès - Entreprises industrielles, commerciales et assimilées",
+      "article": "Art. 140 H",
+      "titre": "Cession, cessation ou décès – Imposition immédiate des bénéfices",
       "texte": [
-        "1) Dans le cas de cession, de cessation ou décès, en totalité ou en partie, d'une entreprise industrielle, commerciale, artisanale, minière ou agricole et assimilée, l'impôt sur le revenu des personnes physiques dû à raison des bénéfices réalisés dans cette entreprise et qui n'ont pas encore été imposés est immédiatement établi.",
-        "Les contribuables doivent, dans un délai de quinze jours déterminés comme il est indiqué ci-après, aviser l'inspecteur Divisionnaire de la cession ou de la cessation et lui faire connaître la date à laquelle elle a été ou sera effective ainsi que, s'il y a lieu, les noms, prénoms et adresse du cessionnaire.",
+        "1) Dans le cas de cession, de cessation ou décès, en totalité ou en partie, dû à raison des bénéfices réalisés dans cette entreprise et qui n'ont pas encore été imposés est immédiatement établi.",
+        "Les contribuables doivent, dans un délai de quinze jours déterminés comme il est indiqué ci-après, aviser l'Inspecteur Divisionnaire de la cession ou de la cessation et lui faire connaître la date à laquelle elle a été ou sera effective ainsi que, s'il y a lieu, les noms, prénoms et adresse du cessionnaire.",
         "Le délai de quinze jours commence à courir :",
-        "• lorsqu'il s'agit de la vente ou de la cession d'un fonds de commerce, du jour où la vente ou la cession a été publiée dans un journal d'annonces légales ;",
-        "• lorsqu'il s'agit de la vente ou de la cession d'autres entreprises, du jour où l'acquéreur ou le cessionnaire a pris effectivement la direction des exploitations ;",
-        "• lorsqu'il s'agit de la cessation d'entreprises, du jour de la fermeture définitive des établissements.",
-        "2) Pour les contribuables soumis au régime du forfait, le bénéfice imposable de l'année en cours est fixé au montant du bénéfice forfaitaire retenu pour l'année précédente et ajusté au prorata du temps écoulé du 1er janvier jusqu'au jour où la cession ou la cessation est devenue effective, tout mois commencé étant compté pour un mois entier. Toutefois, s'il n'a pas encore été fixé de forfait, le bénéfice imposable est évalué suivant la procédure instituée par l'Article 27 du présent code d'après les résultats obtenus depuis le 1er janvier.",
-        "En cas de cession ou de cessation d'entreprise dans un délai de cinq ans après la création ou l'achat de celle-ci, le bénéfice imposable est augmenté du montant des plus-values provenant de la cession des stocks et des éléments de l'actif immobilisé, dans les conditions prévues au premier alinéa du paragraphe a) de l'Article 63.",
+        "- lorsqu'il s'agit de la vente ou de la cession d'un fonds de commerce, du jour où la vente a été publiée dans un journal d'annonces légales ;",
+        "- lorsqu'il s'agit de la vente ou de la cession d'autres entreprises, du jour où l'acquéreur ou le cessionnaire a pris effectivement la direction des exploitations ;",
+        "- lorsqu'il s'agit de la cessation d'entreprise, du jour de la fermeture définitive des établissements.",
+        "2) Pour les contribuables soumis au régime du forfait, le bénéfice imposable de l'année en cours est fixé au montant du bénéfice forfaitaire retenu pour l'année précédente et ajusté au prorata du temps écoulé du 1er janvier jusqu'au jour où la cession ou la cessation est devenue effective, tout mois commencé étant compté pour un mois entier. Toutefois, s'il n'a pas encore été fixé de forfait, le bénéfice imposable est évalué suivant la procédure instituée par l'article 97 du présent code d'après les résultats obtenus depuis le 1er janvier.",
+        "En cas de cession ou de cessation d'entreprise dans un délai de cinq ans après la création ou l'achat de celle-ci, le bénéfice imposable est augmenté du montant des plus-values provenant de la cession des stocks et des éléments de l'actif immobilisé, dans les conditions prévues de l'article 16 du présent code.",
         "Pour l'application de cette disposition, les redevables de cette catégorie sont tenus de faire parvenir à l'Inspecteur Divisionnaire des Contributions Directes et Indirectes, dans le délai de quinze jours prévus au paragraphe 1, outre les renseignements visés audit paragraphe, une déclaration indiquant le montant net des plus-values visées à l'alinéa précédent et de produire à l'appui de cette déclaration, toutes justifications utiles. Ils peuvent, dans le même délai, opter pour l'imposition d'après le bénéfice réel en ce qui concerne la période écoulée entre le 1er janvier et la date de la cession ou de la cessation de l'entreprise.",
-        "Dans tous les cas, les contribuables assujettis au forfait peuvent, dans le délai prévu au paragraphe 1 ci-dessus, dénoncer en vue de l'imposition des bénéfices réalisés au cours de l'année de la cession ou de la cessation, le bénéfice forfaitaire retenu pour l'année précédente et reconduit en conformité du deuxième alinéa du présent paragraphe. Le même droit de dénonciation peut être exercé par l'inspecteur divisionnaire des contributions directes et indirectes jusqu'à la fin du mois suivant l'expiration dudit délai.",
-        "3) Les contribuables non assujettis au forfait sont tenus de faire parvenir à l'inspecteur divisionnaire des contributions directes et indirectes, dans le délai de quinze jours prévus au paragraphe 1, outre les renseignements visés audit paragraphe, la déclaration de leur bénéfice réel accompagnée de leur compte de résultat.",
-        "Pour la détermination du bénéfice, il est fait application des dispositions des articles 30 à 34.",
-        "Si les contribuables imposés d'après leur bénéfice réel normal ou leur bénéfice réel simplifié ne produisent pas les déclarations ou renseignements visés au paragraphe 1 du présent Article et au premier alinéa du présent paragraphe ou si, invités à fournir à l'appui de la déclaration de leur bénéfice réel les justifications nécessaires, ils s'abstiennent de les donner dans les quinze jours suivant la réception de l'avis qui leur est adressé à cet effet, les bases d'imposition sont arrêtées d'office et il est fait application de la majoration des droits prévue à l'Article 372.",
-        "4) À l'exception des deuxième et troisième alinéa du paragraphe 2, les dispositions du présent Article sont applicables dans le cas du décès de l'exploitant. Dans ce cas les ayants droits du défunt doivent produire les renseignements nécessaires pour l'établissement de l'impôt dans les six mois de la date du décès."
+        "Dans tous les cas, les contribuables assujettis au forfait peuvent, dans le délai prévu au paragraphe 1 ci-dessus, dénoncer en ce qui concerne l'imposition des bénéfices réalisés au cours de l'année de la cession ou de la cessation, le bénéfice forfaitaire retenu pour l'année précédente, et recourir au conformément du deuxième alinéa du présent paragraphe. Le même droit de dénonciation peut être exercé par l'Inspecteur divisionnaire des contributions directes et indirectes jusqu'à la fin du mois suivant l'expiration dudit délai.",
+        "3) Les contribuables non assujettis au forfait sont tenus de faire parvenir à l'Inspecteur divisionnaire des contributions directes et indirectes, dans le délai de quinze jours prévu au paragraphe 1, outre les renseignements visés audit paragraphe, la déclaration de leur bénéfice réel accompagnée de leur compte de résultat.",
+        "Pour la détermination du bénéfice, il est fait application des dispositions des articles 8 et suivants comme en matière d'IS.",
+        "Si les contribuables imposés d'après leur bénéfice réel ne produisent pas les déclarations ou renseignements visés au paragraphe 1 du présent Article et au premier alinéa du présent paragraphe ou si, invités à fournir à l'appui de la déclaration de leur bénéfice réel les justifications nécessaires, ils s'abstiennent de les donner dans les quinze jours suivant la réception de l'avis qui leur est adressé à cet effet, les bases d'imposition sont arrêtées d'office et il est fait application de la majoration des droits prévue à l'Article 372.",
+        "3) À l'exception des deuxièmes et troisièmes alinéas du paragraphe 2, les dispositions du présent Article sont applicables dans le cas de décès de l'exploitant. Dans ce cas les ayants droit du défunt doivent fournir les renseignements nécessaires pour l'établissement de l'impôt dans les six mois de la date du décès."
       ],
       "mots_cles": [
         "cession",
         "cessation",
         "décès",
-        "entreprise industrielle",
-        "entreprise commerciale",
-        "entreprise artisanale",
-        "entreprise minière",
-        "entreprise agricole",
-        "IRPP",
+        "imposition immédiate",
+        "bénéfices",
         "délai quinze jours",
         "fonds de commerce",
         "journal d'annonces légales",
@@ -564,42 +557,39 @@
         "bénéfice réel",
         "compte de résultat",
         "taxation d'office",
-        "ayants droits"
+        "ayants droit"
       ],
       "statut": "en vigueur",
       "section": "Section 6 : Cession, cessation ou décès"
     },
     {
-      "article": "Art. 140-I (L.F. 2026)",
-      "titre": "Cessation d'une profession non commerciale",
+      "article": "Art. 140 I",
+      "titre": "Cessation d'exercice d'une profession non commerciale",
       "texte": [
-        "Dans le cas de cessation de l'exercice d'une profession non commerciale, l'impôt sur le revenu des personnes physiques dû en raison des bénéfices provenant de l'exercice de cette profession, y compris ceux qui proviennent des créances acquises et non encore recouvrées, et qui n'ont pas encore été imposés, est immédiatement établi.",
-        "Les contribuables doivent, dans un délai de 15 jours de la cessation effective, aviser l'inspecteur divisionnaire territorialement compétent, de la cessation et de leur faire connaître la date à laquelle elle a été effective ainsi que, s'il y a lieu, les nom, prénoms et adresse du successeur.",
-        "Ils doivent également, dans ce même délai, satisfaire aux obligations prévues par l'article 46 ci-dessus. En cas de non-production ou production tardive de la déclaration prévue au présent Article, les bases d'imposition sont arrêtées d'office, et il est fait application des sanctions prévues par l'article 372 ci-après.",
-        "En cas de décès du contribuable, les renseignements nécessaires pour l'établissement de l'impôt sont produits par les ayants droits du défunt dans les six mois de la date du décès."
+        "Dans le cas de cessation de l'exercice d'une profession non commerciale, l'impôt sur les bénéfices d'affaires dû en raison des bénéfices provenant de l'exercice de cette profession, y compris ceux qui proviennent de créances acquises et non encore recouvrées, et qui n'ont pas encore été imposés, est immédiatement établi.",
+        "Les contribuables doivent, dans un délai de 15 jours de la cessation effective, aviser l'inspecteur divisionnaire territorialement compétent, de la cessation et de leur faire connaître la date à laquelle elle a été effective ainsi que, s'il y a lieu, les nom, prénoms ou adresse de leur successeur.",
+        "En cas de décès du contribuable, les renseignements nécessaires pour l'établissement de l'impôt sont produits par les ayants droit du défunt dans les six mois de la date du décès."
       ],
       "mots_cles": [
         "cessation",
         "profession non commerciale",
-        "IRPP",
+        "bénéfices d'affaires",
         "créances acquises",
         "créances non recouvrées",
         "délai 15 jours",
         "inspecteur divisionnaire",
         "successeur",
-        "taxation d'office",
-        "sanctions",
         "décès",
-        "ayants droits"
+        "ayants droit"
       ],
       "statut": "en vigueur",
       "section": "Section 6 : Cession, cessation ou décès"
     },
     {
-      "article": "Art. 140 J (L.F. 2026)",
-      "titre": "Déduction des impositions antérieures",
+      "article": "Art. 140 J",
+      "titre": "Impositions mises à charge en cas de cession, cessation ou décès",
       "texte": [
-        "Les impositions mises à la charge d'un contribuable en cas de cession, de cessation ou décès, par application des dispositions des articles 98 et 99 ci-dessus, viennent, le cas échéant, en déduction du montant de l'impôt sur le revenu des personnes physiques ultérieurement établi, conformément aux dispositions des articles 66 à 75 ci-dessus, à raison de l'ensemble des bénéfices et revenus visés aux dits articles et réalisés ou perçus par ce contribuable au cours de l'année de la cession, de la cessation ou du décès."
+        "Les impositions mises à la charge d'un contribuable en cas de cession, de cessation ou décès, viennent, le cas échéant, en déduction du montant des acomptes de l'impôt sur les bénéfices d'affaires ultérieurement établi. Au cours de l'année de la cession, de la cessation ou du décès."
       ],
       "mots_cles": [
         "déduction",
@@ -615,24 +605,24 @@
       "section": "Section 6 : Cession, cessation ou décès"
     },
     {
-      "article": "Art. 140 K (L.F. 2026)",
-      "titre": "Décès du contribuable - Imposition des revenus",
+      "article": "Art. 140 K",
+      "titre": "Imposition en cas de décès du contribuable",
       "texte": [
-        "1) Dans le cas du décès du contribuable, l'impôt sur le revenu des personnes physiques est établi à raison des revenus dont ce dernier a disposé pendant l'année de son décès et des bénéfices industriels et commerciaux qu'il a réalisés depuis la fin du dernier exercice taxé. Il porte également sur les revenus dont la distribution ou le versement résulte du décès du contribuable s'ils n'ont pas été précédemment imposés et sur ceux qu'il a acquis sans en avoir la disposition antérieurement à son décès. En ce qui concerne les revenus évalués forfaitairement, il est fait état, s'il y a lieu, du montant du forfait fixé pour l'année précédente, ajusté à la durée de la période écoulée entre le 1er janvier et la date du décès.",
+        "1) Dans le cas du décès du contribuable, l'impôt sur les bénéfices d'affaires est établi à raison des revenus dont ce dernier a disposé pendant l'année de son décès et des bénéfices qu'il a réalisés depuis la fin du dernier exercice taxé.",
+        "Dans le cas des revenus des capitaux mobiliers, l'imposition porte sur les revenus dont la distribution ou le versement résulte du décès du contribuable s'ils n'ont pas été précédemment imposés et sur ceux qu'il a acquis sans en avoir la disposition antérieurement à son décès.",
         "Toutefois, les revenus dont la disposition résulte du décès du contribuable ou que ce dernier a acquis sans en avoir la disposition avant son décès, font l'objet d'une imposition distincte lorsqu'ils ne devaient échoir normalement qu'au cours d'une année postérieure à celle du décès.",
-        "Pour l'établissement de l'impôt sur le revenu des personnes physiques dû en vertu des dispositions qui précèdent, sont admis en déduction, les impôts visés à l'Article 66 du présent code qui ont été acquittés au cours de l'année de l'imposition ou qui se rapportent à des déclarations souscrites, soit par le défunt dans les délais légaux, soit par les héritiers du chef du défunt à l'occasion du décès.",
-        "2) La déclaration des revenus imposables en vertu du présent article est produite par les ayants droits du défunt dans les six mois de la date du décès. Elle est soumise aux règles et sanctions prévues à l'égard des déclarations annuelles. Les demandes d'éclaircissements ou de justifications ainsi que les notifications prévues aux Articles 32, 47, 83 et 84 ci-dessus peuvent être valablement adressées à l'un quelconque des ayants droits ou des signataires de la déclaration de succession."
+        "Pour l'établissement de l'impôt sur le revenu dû en vertu des dispositions qui précèdent, sont admis en déduction, les impôts visés au présent code qui ont été acquittés au cours de l'année de l'imposition ou qui se rapportent à des déclarations souscrites, par le défunt dans les délais légaux, soit par les héritiers du chef du défunt à l'occasion du décès.",
+        "2) La déclaration des revenus imposables en vertu du présent article est produite par les ayants droit du défunt dans les six mois de la date du décès. Elle est soumise aux règles et sanctions prévues à l'égard des déclarations annuelles. Les demandes d'éclaircissements ou de justifications ainsi que les notifications peuvent être valablement adressées à l'un quelconque des ayants droit ou des signataires de la déclaration de succession."
       ],
       "mots_cles": [
         "décès",
         "contribuable",
-        "IRPP",
+        "bénéfices d'affaires",
         "revenus",
-        "bénéfices industriels et commerciaux",
-        "forfait",
+        "capitaux mobiliers",
         "imposition distincte",
         "déduction impôts",
-        "ayants droits",
+        "ayants droit",
         "six mois",
         "déclaration de succession",
         "héritiers"

@@ -93,16 +93,55 @@ export function getArticleSortOrder(numero: string): number {
 
 /**
  * Vérifie si un numéro d'article est dans une plage
- * Exemples: "1-65 bis", "107-A", "4-4A-7"
+ * Exemples: "1-65 bis", "107-A", "4-4A-7", "140A-140E"
  */
 export function isArticleInRange(numero: string, range: string): boolean {
-  // Normaliser pour la comparaison (ex: "107-A" -> "107-a")
+  // Normaliser pour la comparaison (ex: "107-A" -> "107-a", "140 A" -> "140a")
   const normalizedNumero = numero.toLowerCase().replace(/\s+/g, '');
   const normalizedRange = range.toLowerCase().replace(/\s+/g, '');
 
   // Cas spécial: article unique avec suffixe lettre (ex: "107-A", "126-B")
   if (/^\d+-[a-z]+$/.test(normalizedRange)) {
     return normalizedNumero === normalizedRange;
+  }
+
+  // Cas spécial: plage avec suffixe lettre (ex: "140A-140E", "140 A-140 K")
+  // Format: nombreLettre-nombreLettre
+  const letterRangeMatch = normalizedRange.match(/^(\d+)([a-z])-(\d+)([a-z])$/);
+  if (letterRangeMatch) {
+    const startNum = parseInt(letterRangeMatch[1], 10);
+    const startLetter = letterRangeMatch[2];
+    const endNum = parseInt(letterRangeMatch[3], 10);
+    const endLetter = letterRangeMatch[4];
+
+    // Cas 1: Article simple avec suffixe lettre (ex: "171 A", "140B")
+    const articleMatch = normalizedNumero.match(/^(\d+)([a-z])$/);
+    if (articleMatch) {
+      const articleNum = parseInt(articleMatch[1], 10);
+      const articleLetter = articleMatch[2];
+
+      // Vérifier que l'article est dans la plage
+      if (articleNum < startNum || articleNum > endNum) return false;
+      if (articleNum === startNum && articleLetter < startLetter) return false;
+      if (articleNum === endNum && articleLetter > endLetter) return false;
+
+      return true;
+    }
+
+    // Cas 2: Article groupé avec lettres (ex: "171 M à 171 N" -> "171mà171n")
+    // Format: nombreLettre + "à" ou "a" + nombreLettre
+    const groupedMatch = normalizedNumero.match(/^(\d+)([a-z])(?:à|a)(\d+)([a-z])$/);
+    if (groupedMatch) {
+      const artStartNum = parseInt(groupedMatch[1], 10);
+      const artStartLetter = groupedMatch[2];
+      // Vérifier que le début de l'article groupé est dans la plage
+      if (artStartNum === startNum && artStartLetter >= startLetter) {
+        return true;
+      }
+    }
+
+    // L'article n'a pas le bon format -> pas dans la plage
+    return false;
   }
 
   // Extraire le numéro de l'article (partie numérique)
