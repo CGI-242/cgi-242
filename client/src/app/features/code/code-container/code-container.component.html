@@ -137,9 +137,17 @@
                       [class.bg-primary-50]="selectedArticle()?.id === article.id"
                       [class.border-l-2]="selectedArticle()?.id === article.id"
                       [class.border-l-primary-600]="selectedArticle()?.id === article.id">
-                      <span class="font-medium text-primary-700 text-base whitespace-nowrap">Art. {{ article.numero }}</span>
-                      @if (article.titre) {
-                        <span class="text-sm text-secondary-500 truncate">{{ getCleanTitle(article.titre) }}</span>
+                      @if (isSubdivisionHeader(article.numero)) {
+                        <!-- En-tête de subdivision (a), b), etc.) - afficher juste le titre -->
+                        <span class="font-medium text-primary-700 text-base">{{ article.titre }}</span>
+                      } @else {
+                        <span class="font-medium text-primary-700 text-base whitespace-nowrap">{{ formatArticleNumero(article.numero) }}</span>
+                        @if (article.titre) {
+                          <span class="text-sm text-secondary-500 truncate">{{ getCleanTitle(article.titre) }}</span>
+                        }
+                      }
+                      @if (article.numero.startsWith('Annexe') && article.contenu.startsWith('[Articles')) {
+                        <span class="text-xs text-secondary-400">{{ article.contenu }}</span>
                       }
                     </button>
                   </div>
@@ -163,9 +171,13 @@
             <div class="p-6 border-b border-secondary-200">
               <div class="flex items-start justify-between">
                 <div class="flex items-baseline gap-3">
-                  <h1 class="text-2xl font-bold text-secondary-900">Art. {{ article.numero }}</h1>
-                  @if (article.titre) {
-                    <p class="text-lg text-secondary-600">{{ getCleanTitle(article.titre) }}</p>
+                  @if (isSubdivisionHeader(article.numero)) {
+                    <h1 class="text-2xl font-bold text-secondary-900">{{ article.titre }}</h1>
+                  } @else {
+                    <h1 class="text-2xl font-bold text-secondary-900">{{ formatArticleNumero(article.numero) }}</h1>
+                    @if (article.titre) {
+                      <p class="text-lg text-secondary-600">{{ getCleanTitle(article.titre) }}</p>
+                    }
                   }
                 </div>
                 <div class="flex items-center gap-2">
@@ -277,9 +289,13 @@
                   <div [id]="'article-' + article.numero.replace(' ', '-')" class="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
                     <div class="flex items-center justify-between mb-4 pb-3 border-b border-secondary-200">
                       <div class="flex items-baseline gap-3">
-                        <h3 class="text-xl font-bold text-secondary-900">Art. {{ article.numero }}</h3>
-                        @if (article.titre) {
-                          <span class="text-base text-secondary-600">{{ getCleanTitle(article.titre) }}</span>
+                        @if (isSubdivisionHeader(article.numero)) {
+                          <h3 class="text-xl font-bold text-secondary-900">{{ article.titre }}</h3>
+                        } @else {
+                          <h3 class="text-xl font-bold text-secondary-900">{{ formatArticleNumero(article.numero) }}</h3>
+                          @if (article.titre) {
+                            <span class="text-base text-secondary-600">{{ getCleanTitle(article.titre) }}</span>
+                          }
                         }
                       </div>
                       <app-audio-button

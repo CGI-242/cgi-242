@@ -14,7 +14,7 @@ export interface SousSectionSommaire {
 }
 
 export interface Section {
-  section: number;
+  section: number | string; // Peut être '2 bis', '2 ter', '2 quater', etc.
   titre: string;
   display?: string; // Affichage alternatif (ex: '2.1' au lieu de 'Sec. 1')
   page?: number;
@@ -39,6 +39,7 @@ export interface Livre {
   page?: number;
   statut?: string;
   note?: string;
+  articles?: string; // Plage d'articles pour livres sans chapitres
   chapitres?: Chapitre[];
 }
 
@@ -60,6 +61,7 @@ export interface Partie {
 export interface Annexe {
   titre: string;
   page?: number;
+  tomeId?: string; // Ex: "ANNEXES-1" pour filtrer les articles des annexes
 }
 
 export interface SousSection {

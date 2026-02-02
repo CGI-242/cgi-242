@@ -53,7 +53,19 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art. 114",
+      "article": "Annexe 3 bis",
+      "titre": "Certificat de moralité fiscale",
+      "texte": [
+        "[Articles A3bis-14 à A3bis-17]"
+      ],
+      "mots_cles": [
+        "certificat de moralité fiscale",
+        "annexe 3 bis"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "A3bis-14",
       "titre": "Institution du certificat de moralité fiscale",
       "texte": [
         "Il est institué un certificat de moralité fiscale valable un an, délivré à toutes les personnes physiques et morales domiciliées ou résidant habituellement en République du Congo."
@@ -70,7 +82,7 @@
       "section": "Annexe 3 bis - Certificat de moralité fiscale"
     },
     {
-      "article": "Art. 115",
+      "article": "A3bis-15",
       "titre": "Délivrance du certificat de moralité fiscale",
       "texte": [
         "Le certificat de moralité fiscale est délivré moyennant une somme de 10.000 FCFA, par l'autorité compétente de l'administration fiscale de la circonscription dans laquelle est situé le siège de l'entreprise, de son principal établissement ou du domicile du contribuable, sur présentation :",
@@ -104,7 +116,7 @@
       "section": "Annexe 3 bis - Certificat de moralité fiscale"
     },
     {
-      "article": "Art. 116",
+      "article": "A3bis-16",
       "titre": "Droits conférés par le certificat de moralité fiscale",
       "texte": [
         "Le certificat de moralité fiscale confère à son titulaire le droit :",
@@ -114,7 +126,7 @@
         "• de bénéficier des crédits bancaires ;",
         "• d'obtenir la qualité d'importateur ou d'exportateur.",
         "b) pour les autres personnes :",
-        "• de se présenter à tout scrutin prévu par la loi ;",
+        "• de se présenter à tout concours prévu par la loi ;",
         "• d'exciper de sa qualité de contribuable."
       ],
       "mots_cles": [
@@ -134,7 +146,7 @@
       "section": "Annexe 3 bis - Certificat de moralité fiscale"
     },
     {
-      "article": "Art. 117",
+      "article": "A3bis-17",
       "titre": "Interdiction d'exercer sans certificat",
       "texte": [
         "À partir du 1er avril 1980, il est interdit à toute personne physique ou morale d'exercer sur le territoire congolais une profession commerciale, industrielle, artisanale ou non commerciale sans justifier de la possession du certificat de moralité fiscale.",
@@ -174,10 +186,24 @@
       "statut": "en vigueur"
     },
     {
+      "article": "Annexe 5",
+      "titre": "Règles de procédure spéciale en matière d'impôts directs et taxes assimilées devant les tribunaux",
+      "texte": [
+        "[Articles 8 à 22]"
+      ],
+      "mots_cles": [
+        "procédure spéciale",
+        "impôts directs",
+        "taxes assimilées",
+        "tribunaux"
+      ],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 8",
       "titre": "Compétence de la Cour d'Appel",
       "texte": [
-        "Sous réserve des dispositions prévues au deuxième alinéa de l'article 1 de la présente loi, la Cour d'Appel est compétente pour connaître de tous les litiges relatifs à l'assiette, aux taux et au recouvrement des impositions de toute nature et particulièrement les demandes en décharge ou réduction formulées par les contribuables ainsi que les demandes en annulation des actes de saisies ou de poursuites administratives."
+        "Sous réserve des dispositions prévues au deuxièmement de l'article 1 de la présente loi, la Cour d'Appel est compétente pour connaître de tous les litiges relatifs à l'assiette, aux taux et au recouvrement des impositions de toute nature et particulièrement les demandes en décharge ou réduction formulées par les contribuables ainsi que les demandes en annulation des actes de saisies ou de poursuites administratives."
       ],
       "mots_cles": [
         "Cour d'Appel",
@@ -199,7 +225,7 @@
       "titre": "Litiges relatifs aux contributions directes",
       "texte": [
         "Les litiges relatifs à l'assiette et aux taux des contributions directes et taxes assimilées ou autres impôts de toute nature perçus comme en matière de contributions directes sont soumis aux articles ci-après.",
-        "Toutefois, il n'est rien dérogé par la présente loi à la procédure relative aux impôts et taxes recouvrables par la Direction de l'enregistrement, des domaines et du timbre."
+        "Toutefois, il n'est en rien dérogé par la présente loi à la procédure relative aux impôts et taxes recouvrables par la Direction des douanes et par la Direction de l'enregistrement, des domaines et du timbre."
       ],
       "mots_cles": [
         "litiges",
@@ -219,9 +245,9 @@
       "titre": "Requête du redevable ou de l'administration",
       "texte": [
         "La requête du redevable ou de l'administration compétente est signée du demandeur ou de son avocat défenseur. Le ministère d'avocat défenseur est facultatif.",
-        "La requête indiquera :",
+        "La requête indique :",
         "• les nom, prénoms ou raison sociale du demandeur, ainsi que la désignation de son domicile ;",
-        "• s'il y a lieu, la constitution de l'avocat défenseur qui occupera pour lui et chez lequel l'élection de domicile sera de droit, à moins d'une élection contraire dans la requête ;",
+        "• s'il y a lieu, la contribution de l'avocat défenseur qui occupe pour lui et chez lequel l'élection de domicile sera de droit, à moins d'une élection contraire dans la requête ;",
         "• l'objet de la requête et l'exposé des moyens.",
         "Lorsque la dite requête fait suite à une décision explicite de rejet, elle sera obligatoirement accompagnée de l'avis portant notification de la décision contestée."
       ],
@@ -260,10 +286,10 @@
       "article": "Art. 14",
       "titre": "Instruction de l'affaire",
       "texte": [
-        "Dans les cinq jours du dépôt au greffe, le Président de la Cour délègue un conseiller pour suivre la procédure. Dans le même délai, la requête ainsi que les pièces y annexées sont, par ordonnance du Président de la Cour, communiquées pour avis au Directeur Général des Impôts qui fait procéder à l'instruction de l'affaire et, dans un délai maximum de trois mois, dépose au greffe ses conclusions en deux exemplaires avec les dossiers des réclamations primitives.",
-        "Toutefois, s'il s'agit d'une demande entachée de déchéance ou vice de forme, l'irrecevabilité pourra être portée devant la cour avant toute instruction.",
-        "Le Conseiller délégué fait notifier les conclusions du Directeur Général des Impôts par lettre recommandée au demandeur et l'informe qu'il dispose d'un mois pour tout délai, pour prendre communication au greffe des dossiers déposés et pour produire de nouvelles observations, ou à faire connaître s'il entend recourir à la vérification par voie d'expert.",
-        "Le réclamant ne peut contester devant la cour d'appel des cotisations différentes de celles qu'il a visées dans sa réclamation au Directeur Général des Impôts, mais dans la limite du dégrèvement primitivement sollicité, il peut faire valoir toutes conclusions nouvelles à condition de les formuler explicitement dans sa demande introductive d'instance."
+        "Dans les cinq jours du dépôt au greffe, le Président de la Cour délègue un conseiller pour suivre la procédure. Dans le même délai, copie de la requête ainsi que des pièces annexées est, par ordonnance du Président de la Cour, communiquée pour avis au Directeur Général des Impôts qui fait procéder à l'instruction de l'affaire et, dans un délai maximum de trois mois, dépose au greffe ses conclusions en deux exemplaires avec les dossiers des réclamations primitives.",
+        "Toutefois, s'il s'agit d'une demande entachée de déchéance ou de vice de forme, l'irrecevabilité pourra être portée devant la cour toute instruction.",
+        "Le Conseiller délégué fait notifier les conclusions du Directeur Général des Impôts par lettre recommandée au demandeur et l'informe qu'il dispose d'un mois pour tout délai, pour prendre communication au greffe des dossiers déposés et pour produire de nouvelles observations, ou faire connaître s'il entend recourir à la vérification par voie d'expert.",
+        "Le réclamant ne peut contester devant la cour d'appel des cotisations différentes de celles qu'il a visées dans sa réclamation au Directeur Général des Impôts, mais dans la limite du dégrèvement primitivement sollicité, il peut faire valoir toutes conclusions nouvelles à condition de les formuler explicitement dans une demande introductive d'instance."
       ],
       "mots_cles": [
         "instruction",
@@ -288,12 +314,12 @@
       "article": "Art. 15",
       "titre": "Expertise",
       "texte": [
-        "Toute expertise demandée par les parties en réclamation ou ordonnée d'office par le Conseiller délégué ou ultérieurement par la Cour sera faite par trois experts à moins que les parties ne consentent qu'il y soit procédé par un seul.",
+        "Toute expertise demandée par les parties en réclamation ou ordonnée d'office par le Conseiller délégué ou ultérieurement par la Cour est faite par trois experts à moins que les parties ne consentent qu'il y soit procédé par un seul.",
         "Il appartient, en outre, au Conseiller délégué ou à la Cour de décider qu'il sera procédé par un seul expert en raison de la nature ou du peu d'importance du litige. Toutefois, si les parties s'accordent pour réclamer la nomination de trois experts il sera fait droit à la demande.",
         "La procédure relative à l'expertise ordonnée par la Cour est suivie par le Conseiller délégué.",
-        "Dans le cas où il n'y a qu'un seul expert, celui-ci est nommé par la Cour à défaut par le Conseiller délégué à moins que les parties ne s'accordent pour le désigner.",
-        "Si l'expertise est confiée à trois experts, l'un d'eux est nommé par le Conseiller et chacune des parties nomme le sien.",
-        "Ne peuvent être désignées comme experts les fonctionnaires qui ont pris part à l'établissement de l'impôt contesté, ni les personnes qui ont été constituées mandataires par l'une des parties au cours de l'instruction."
+        "Dans le cas où il n'y a qu'un seul expert, celui-ci est nommé par la Cour à défaut par le Conseiller délégué à moins que les parties s'accordent pour le désigner.",
+        "Si l'expertise est confiée à trois experts, l'un d'eux est nommé par le Conseiller chacune des parties nomme le sien.",
+        "Ne peuvent être désignée comme experts les fonctionnaires qui ont pris part à l'établissement de l'impôt contesté, et les personnes qui ont été constituées mandataires par l'une des parties au cours de l'instruction."
       ],
       "mots_cles": [
         "expertise",
@@ -312,15 +338,14 @@
     },
     {
       "article": "Art. 16",
-      "titre": "Déroulement de l'expertise",
+      "titre": "Demande de vérification par le Conseiller délégué",
       "texte": [
-        "À la demande du Conseiller délégué, le Directeur Général des Impôts désigne un fonctionnaire chargé de diriger l'expertise. Cet agent de l'administration fixe le jour et l'heure du début des opérations et les experts ainsi que le réclamant en sont prévenus dix jours au moins à l'avance. Dans le même délai, sauf lorsque le litige porte sur les impôts sur les revenus et taxes accessoires à ces impôts l'agent de l'administration prévient le maire ou, à défaut, le chef de la circonscription administrative du jour et de l'heure de l'expertise.",
-        "Les experts se rendent sur les lieux avec l'agent de l'administration et, en présence du réclamant ou de son fondé de pouvoir et, le cas échéant, du maire ou du chef de la circonscription administrative vérifient les faits, évaluations ou revenus sur lesquels porte le litige.",
-        "En cas d'absence de l'un ou de plusieurs experts il ne sera pas sursis aux opérations à moins qu'il n'ait été justifié d'une excuse jugée valable par le fonctionnaire chargé de diriger l'expertise. L'agent de l'administration rédige en procès-verbal les dires des experts et y joint son avis.",
-        "Si les experts demandent à fournir des rapports séparés, un délai de dix jours est accordé pour le dépôt des rapports. Le procès-verbal d'expertise et le cas échéant les rapports des experts sont déposés au greffe.",
-        "Le Conseiller délégué notifie au demandeur et lui impartit un délai pour conclure.",
-        "À l'expiration de ce délai les dossiers des réclamations primitives, auxquels ont été jointes, s'il y a lieu, copies des dernières conclusions du réclamant, sont transmis au Directeur Général des Impôts qui fait son rapport et formule ses conclusions tant sur le fond du litige que sur la liquidation et l'attribution des frais de l'expertise.",
-        "La liquidation et la taxe des frais d'expertise sont faites par le jugement qui statue sur le fond, ou à défaut, par le Conseiller délégué."
+        "A la demande du Conseiller délégué, le Directeur Général des Impôts désigne un fonctionnaire chargé de diriger l'expertise. Cet agent de l'administration fixe le jour et l'heure du début des opérations et les experts ainsi que le réclamant en sont prévenus dix jours au moins à l'avance. Dans le même délai, sauf lorsque le litige porte sur les impôts sur les revenus et taxes accessoires à ces impôts l'agent de l'administration prévient le maire ou, à défaut, le chef de la circonscription administrative du jour et de l'heure de l'expertise.",
+        "Les experts se rendent sur les lieux avec l'agent de l'administration et, en présence du réclamant ou de son fondé de pouvoir et, le cas échéant, du maire ou chef de la circonscription administrative vérifient les faits, évaluations ou revenus sur lesquels porte le litige.",
+        "En cas d'absence de l'un ou plusieurs des experts il ne sera pas sursis aux opérations à moins qu'il n'ait été justifié d'une excuse jugée valable par le fonctionnaire chargé de diriger l'expertise. L'agent de l'administration rédige en procès-verbal les dires des experts et y joint son avis.",
+        "Si les experts demandent à fournir des rapports séparés, un délai de dix jours est accordé pour le dépôt de ces rapports. Le procès-verbal d'expertise et le cas échéant les rapports des experts sont déposés au greffe.",
+        "Le Conseiller délégué les notifie au demandeur et lui impartit un délai pour conclure.",
+        "A l'expiration, de ce délai les dossiers des réclamations primitives, auxquels ont été jointes, s'il y a lieu, copies des Dernières conclusions du réclamant, sont transmis au Directeur Général des Impôts qui fait rapport et formule ses conclusions sur le fond du litige que sur la liquidation et l'attribution des frais de l'expertise, la liquidation et la taxe des frais d'expertise sont faites par le jugement qui statue sur le fond, ou à défaut, par le Conseiller délégué."
       ],
       "mots_cles": [
         "expertise",
@@ -348,7 +373,7 @@
       "article": "Art. 17",
       "titre": "Contre-vérification",
       "texte": [
-        "Dans le cas où une contre vérification est jugée nécessaire, celle-ci est faite par un fonctionnaire des Services fiscaux autre que celui qui a procédé à la première instruction, en présence du réclamant ou de son fondé de pouvoir et, suivant le cas, à moins qu'il ne s'agisse des impôts sur les revenus ou taxes accessoires à ces impôts, en présence soit du maire, soit du chef de la circonscription administrative.",
+        "Dans le cas où une contre vérification est jugée nécessaire, celle-ci est faite par un fonctionnaire des Services Fiscaux autre que celui qui a procédé à la première instruction, en présence du réclamant ou de son fondé de pouvoir et, suivant le cas, à moins qu'il ne s'agisse des impôts sur les revenus ou taxes accessoires à ces impôts, en présence soit du maire, soit du chef de la circonscription administrative.",
         "Le fonctionnaire chargé de la contre vérification dresse un procès-verbal, mentionne les observations du réclamant ainsi que, le cas échéant, celles des personnes appelées à assister à l'opération et donne son avis. Le Directeur Général des Impôts fait son rapport et la Cour statue."
       ],
       "mots_cles": [
@@ -369,9 +394,9 @@
     },
     {
       "article": "Art. 18",
-      "titre": "Notification et désistement",
+      "titre": "Notification des rapports du Directeur Général des Impôts",
       "texte": [
-        "Le conseiller délégué notifie les rapports du Directeur Général des Impôts prévus aux articles 14 et 16 ci-dessus au réclamant qui fixe un délai de quinze jours pour déposer de nouvelles observations.",
+        "Le conseiller délégué notifie les rapports du Directeur Général des Impôts visés aux articles 14 et 16 ci-dessus au réclamant avec un délai de quinze jours pour déposer de nouvelles observations.",
         "Le réclamant peut se désister à tout moment de la procédure. Si l'instance est liée, le désistement doit être notifié à la partie adverse."
       ],
       "mots_cles": [
@@ -388,7 +413,7 @@
     },
     {
       "article": "Art. 19",
-      "titre": "Dépôt des documents",
+      "titre": "Dépôt des observations et rapports",
       "texte": [
         "La requête, les observations, conclusions et rapports des parties et des experts signés de leurs auteurs sont toujours déposés en autant d'exemplaires qu'il y a de parties en cause."
       ],
@@ -406,14 +431,14 @@
     },
     {
       "article": "Art. 20",
-      "titre": "Audience et jugement",
+      "titre": "Enrôlement de l'affaire",
       "texte": [
         "L'instruction terminée l'affaire est enrôlée à la première audience utile.",
         "Le réclamant et le Directeur Général des Impôts doivent être avertis par lettre d'avis du greffier huit jours francs avant l'audience, du jour de celle-ci.",
         "Les parties peuvent présenter des observations orales limitées aux faits et moyens de la procédure écrite. Elles ne peuvent déposer de nouvelles conclusions.",
         "La Cour statue, le Ministère Public entendu.",
         "Les réclamations relatives aux impôts et taxes accessoires ainsi qu'aux amendes sont instruites et jugées à huis clos.",
-        "La décision est contradictoire à l'égard des parties qui ont conclu par écrit, même si elles n'ont pas usé de la faculté de présenter des observations orales. Dans les quinze jours de son prononcé, elle sera notifiée aux parties par lettre recommandée du greffier avec accusé de réception."
+        "La décision est contradictoire à l'égard des parties qui ont conclu par écrit, même si elles n'ont pas usé de la faculté de présenter des observations orales. Dans les quinze jours de son prononcé, elle sera notifiée aux parties par lettre recommandée au greffier avec accusé de réception."
       ],
       "mots_cles": [
         "audience",
@@ -433,7 +458,7 @@
     },
     {
       "article": "Art. 21",
-      "titre": "Registre des affaires",
+      "titre": "Registre des affaires portées devant la Cour",
       "texte": [
         "Il sera tenu au greffe de chaque Cour, un registre sur lequel seront inscrites dans l'ordre de leur présentation toutes les affaires portées devant la Cour, chaque inscription contiendra les noms des parties, ceux des avocats défenseurs et le jour où l'affaire sera appelée."
       ],
@@ -450,9 +475,9 @@
     },
     {
       "article": "Art. 22",
-      "titre": "Dossier d'affaire",
+      "titre": "Dossier par affaire au Greffe de la Cour",
       "texte": [
-        "Il sera établi au Greffe de la Cour un dossier par affaire qui portera les noms et domicile des parties, les noms de leurs avocats défenseurs, le numéro et la date de leur mise au rôle, le nom du conseiller délégué et seront classés les originaux des actes de procédure, ainsi que les dossiers déposés par la DGID."
+        "Il sera établi au Greffe de la Cour un dossier par affaire qui portera les noms et domicile des parties, les noms de leurs avocats défenseurs, le numéro et la date de leur mise au rôle, le nom du conseiller délégué et où seront classés les originaux des actes de procédure, ainsi que les dossiers déposés par la DGID."
       ],
       "mots_cles": [
         "greffe",
@@ -469,10 +494,37 @@
       "section": "Annexe 5 - Règles de procédure spéciale en matière d'impôts directs et taxes assimilées devant les tribunaux"
     },
     {
-      "article": "Art. 26",
-      "titre": "Assujettissement fiscal des entreprises d'État",
+      "article": "Annexe 6",
+      "titre": "Obligations fiscales des entreprises d'État",
       "texte": [
-        "L'Entreprise d'État est assujettie aux lois et règlements fiscaux sauf dispenses expresses. Elle est tenue d'honorer correctement ses obligations fiscales et les redevances vis-à-vis de l'État et Collectivités Publiques auxquelles de telles redevances seraient légalement dues."
+        "[Articles A6-26, A6-18, A6-19]"
+      ],
+      "mots_cles": [
+        "entreprises d'État",
+        "obligations fiscales"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "A6-1a",
+      "titre": "a) Ordonnance n°25/73 du 10 juillet 1973",
+      "texte": [
+        "Ordonnance n°25/73 du 10 juillet 1973 portant statut général des Entreprises d'État"
+      ],
+      "mots_cles": [
+        "ordonnance n°25/73",
+        "10 juillet 1973",
+        "statut général",
+        "entreprises d'État"
+      ],
+      "statut": "en vigueur",
+      "section": "Annexe 6 - a) Ordonnance n°25/73"
+    },
+    {
+      "article": "A6-2-26",
+      "titre": "Assujettissement de l'Entreprise d'État aux lois et règlements fiscaux",
+      "texte": [
+        "L'Entreprise d'État est assujettie aux lois et règlements fiscaux sauf dispense expresse. Elle est tenue d'honorer correctement ses obligations fiscales et les redevances vis-à-vis de l'État et Collectivités Publiques auxquelles de telles redevances seraient légalement dues."
       ],
       "mots_cles": [
         "entreprise d'État",
@@ -482,13 +534,27 @@
         "Collectivités Publiques"
       ],
       "statut": "en vigueur",
-      "section": "Annexe 6 - Obligations fiscales des entreprises d'État"
+      "section": "Annexe 6 - a) Ordonnance n°25/73"
     },
     {
-      "article": "Art. 18",
-      "titre": "Extension aux entreprises et organismes paraétatiques",
+      "article": "A6-3b",
+      "titre": "b) Loi n°04/76 fixant les obligations fiscales des entreprises d'État",
       "texte": [
-        "Les dispositions de l'article 26 de l'ordonnance n°25/73 du 10 juillet 1973 portant statut général des entreprises d'État sont confirmées et étendues à toute entreprise et organisme étatique ou paraétatique à caractère industriel et commercial qui doivent par conséquent se soumettre à la législation fiscale et douanière s'ils n'en sont pas expressément exemptés."
+        "Loi n°04/76 fixant les obligations fiscales des entreprises d'État"
+      ],
+      "mots_cles": [
+        "loi n°04/76",
+        "obligations fiscales",
+        "entreprises d'État"
+      ],
+      "statut": "en vigueur",
+      "section": "Annexe 6 - b) Loi n°04/76"
+    },
+    {
+      "article": "A6-4-18",
+      "titre": "Confirmation et extension des dispositions de l'ordonnance n°25/73",
+      "texte": [
+        "Les dispositions de l'article 26 de l'ordonnance n°25/73 du 10 juillet 1973 portant statut général des Entreprises d'État sont confirmées et étendues à toute entreprise et organisme étatique ou paraétatique à caractère industriel et commercial qui doivent par conséquent se soumettre à la législation fiscale et douanière commune s'ils n'en sont pas expressément exemptés."
       ],
       "mots_cles": [
         "entreprise d'État",
@@ -500,11 +566,11 @@
         "ordonnance n°25/73"
       ],
       "statut": "en vigueur",
-      "section": "Annexe 6 - Obligations fiscales des entreprises d'État"
+      "section": "Annexe 6 - b) Loi n°04/76"
     },
     {
-      "article": "Art. 19",
-      "titre": "Sanctions",
+      "article": "A6-5-19",
+      "titre": "Sanctions fiscales de droit commun",
       "texte": [
         "Toute violation de l'article 18 ci-dessus fera l'objet des sanctions fiscales de droit commun sans préjudice des sanctions administratives qui pourront être infligées au directeur général de l'entreprise et à ses principaux collaborateurs, y compris la suspension de leur rémunération."
       ],
@@ -515,7 +581,7 @@
         "suspension rémunération"
       ],
       "statut": "en vigueur",
-      "section": "Annexe 6 - Obligations fiscales des entreprises d'État"
+      "section": "Annexe 6 - b) Loi n°04/76"
     },
     {
       "article": "Annexe 7",
@@ -550,14 +616,27 @@
       "statut": "en vigueur"
     },
     {
+      "article": "Annexe 9",
+      "titre": "Frais professionnels déductibles des recettes des contribuables exerçant une profession libérale et soumis au régime du forfait",
+      "texte": [
+        "[Article 2]"
+      ],
+      "mots_cles": [
+        "frais professionnels",
+        "profession libérale",
+        "forfait"
+      ],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 2",
-      "titre": "Taux de déduction des frais professionnels",
+      "titre": "Montant des frais professionnels admis en déduction",
       "texte": [
         "Le montant des frais professionnels admis en déduction des recettes brutes et remboursements de frais perçus par les contribuables exerçant une profession libérale et soumis au régime du forfait, est fixé comme suit :",
         "• médecins : 40 % et 20 %",
         "• kinésithérapeutes : 20 %",
         "• dentistes : 45 %",
-        "• sage-femmes : 20 %",
+        "• vétérinaires : 20 %",
         "• comptables : 45 %",
         "• géomètres-métreurs : 55 %",
         "• architectes : 55 %",
@@ -620,8 +699,21 @@
       "statut": "en vigueur"
     },
     {
+      "article": "Annexe 13",
+      "titre": "Immunités et privilèges diplomatiques et consulaires",
+      "texte": [
+        "[Articles 10 à 41]"
+      ],
+      "mots_cles": [
+        "immunités diplomatiques",
+        "privilèges consulaires",
+        "agents diplomatiques"
+      ],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 10",
-      "titre": "Exemptions fiscales des agents diplomatiques",
+      "titre": "Exemption des impôts à caractères personnel",
       "texte": [
         "Les agents diplomatiques sont exemptés de tous les impôts à caractères personnel : IRPP et taxes annexes, impôts complémentaires, taxe régionale."
       ],
@@ -639,10 +731,10 @@
     },
     {
       "article": "Art. 11",
-      "titre": "Exonérations immobilières et successions",
+      "titre": "Exonérations d'impôts pour les acquisitions d'immeubles",
       "texte": [
         "Des exonérations d'impôts peuvent être accordées pour les acquisitions d'immeubles à usage d'Ambassade, de légation ou de Consulat ainsi que pour les locations de bureaux ou d'appartements consenties aux bénéficiaires des privilèges et immunités diplomatiques.",
-        "En matière de succession, les droits de mutation par décès ne sont perçus sur les objets mobiliers se trouvant dans l'hôtel de la mission ou dans la demeure de l'agent diplomatique."
+        "En matière de succession, les droits de mutation par décès ne sont pas perçus sur les objets mobiliers se trouvant dans l'hôtel de la mission ou dans la demeure de l'agent diplomatique."
       ],
       "mots_cles": [
         "exonérations",
@@ -660,10 +752,10 @@
     },
     {
       "article": "Art. 12",
-      "titre": "Taxes et impôts dus par les missions diplomatiques",
+      "titre": "Taxes acquittées par les missions diplomatiques",
       "texte": [
         "Les missions diplomatiques, les membres du personnel des missions diplomatiques acquittent les taxes perçues en rémunération de services rendus : taxes municipales, taxes sur la consommation de l'essence.",
-        "Les membres du personnel des missions diplomatiques acquittent les impôts dus au titre des bénéfices qu'ils peuvent retirer de l'exercice au Congo d'activités lucratives étrangères à leurs fonctions officielles ou sur leurs propriétés qu'ils possèdent au Congo. Ils sont soumis à l'acquittement des taxes indirectes et de consommation, aux droits et impôts frappant les valeurs mobilières. Toutefois, les chefs de missions diplomatiques sont exonérés de la taxe sur la consommation des boissons alcoolisées. (…)"
+        "Les membres du personnel des missions diplomatiques acquittent les impôts dus au titre des bénéfices qu'ils peuvent retirer de l'exercice au Congo d'activités lucratives étrangères à leurs fonctions officielles ou pour leurs propriétés qu'ils possèdent au Congo. Ils sont soumis à l'acquittement des taxes indirectes et de consommation, aux droits et impôts frappant les valeurs mobilières. Toutefois, les chefs de mission diplomatique sont exonérés de la taxe sur la consommation des boissons alcoolisées. (...)"
       ],
       "mots_cles": [
         "missions diplomatiques",
@@ -681,7 +773,7 @@
     },
     {
       "article": "Art. 16",
-      "titre": "Relations officielles",
+      "titre": "Relations officielles et rapports de tous ordres avec les départements ministériels",
       "texte": [
         "Les relations officielles et rapports de tous ordres avec les différents départements ministériels et les administrations publiques ne doivent être entretenus que par l'intermédiaire du Ministère des affaires étrangères. (…)"
       ],
@@ -696,26 +788,71 @@
     },
     {
       "article": "Art. 18",
-      "titre": "Transactions immobilières",
+      "titre": "Acquisition et location d'immeubles par les missions diplomatiques",
       "texte": [
-        "Les missions diplomatiques, légations ne peuvent acquérir, vendre ou mettre en location, ni plus généralement réaliser des transactions immobilières soit pour leurs besoins officiels, soit pour le logement de leur personnel, s'ils n'ont au préalable demandé et obtenu l'autorisation du Ministère des affaires étrangères."
+        "Les missions diplomatiques, légations ne peuvent acquérir, vendre ou mettre en location, ni plus généralement réaliser de transactions immobilières soit pour leurs besoins officiels, soit pour le logement de leurs personnels, qu'il en ait au préalable demandé et obtenu l'autorisation du Ministère des affaires étrangères.",
+        "Une copie de titre de propriété, du contrat de vente ou de bail doit être adressée au Ministère des affaires étrangères."
       ],
       "mots_cles": [
         "transactions immobilières",
         "missions diplomatiques",
         "légations",
         "autorisation",
-        "Ministère des affaires étrangères"
+        "Ministère des affaires étrangères",
+        "titre de propriété",
+        "contrat de vente",
+        "bail"
+      ],
+      "statut": "en vigueur",
+      "section": "Annexe 13 - Immunités et privilèges diplomatiques et consulaires"
+    },
+    {
+      "article": "Art. 19",
+      "titre": "Transaction immobilière à usage professionnel ou d'habitation",
+      "texte": [
+        "Tout immeuble à usage professionnel ou d'habitation dont la transaction immobilière, quelle que soit sa destination et sa nature a été réalisée en l'absence de toute autorisation du Ministère des affaires étrangères ne saurait prétendre au bénéfice des exemptions et privilèges qui s'attachent aux locaux des membres des missions diplomatiques. (...)"
+      ],
+      "mots_cles": [
+        "immeuble",
+        "usage professionnel",
+        "habitation",
+        "transaction immobilière",
+        "autorisation",
+        "Ministère des affaires étrangères",
+        "exemptions",
+        "privilèges"
+      ],
+      "statut": "en vigueur",
+      "section": "Annexe 13 - Immunités et privilèges diplomatiques et consulaires"
+    },
+    {
+      "article": "Art. 39",
+      "titre": "Exemption des fonctionnaires consulaires et employés consulaires",
+      "texte": [
+        "Les Fonctionnaires consulaires, les Employés Consulaires, pourvu qu'ils ne soient pas ressortissants congolais ou n'aient pas au Congo leur résidence permanente, bénéficient de l'exemption de tous impôt et taxes sur les traitements, salaires, allocations ou émoluments perçus en rémunération de leurs fonctions.",
+        "Ils restent cependant soumis aux taxes indirectes et de consommation."
+      ],
+      "mots_cles": [
+        "fonctionnaires consulaires",
+        "employés consulaires",
+        "exemption",
+        "impôts",
+        "taxes",
+        "traitements",
+        "salaires",
+        "allocations",
+        "émoluments",
+        "taxes indirectes"
       ],
       "statut": "en vigueur",
       "section": "Annexe 13 - Immunités et privilèges diplomatiques et consulaires"
     },
     {
       "article": "Art. 40",
-      "titre": "Personnel de service des postes consulaires",
+      "titre": "Membres du personnel de service des postes consulaires",
       "texte": [
         "Les membres du personnel de service des postes consulaires ainsi que les membres de leur famille ne jouissent d'aucune immunité personnelle.",
-        "Toutefois, ils bénéficient pourvu qu'ils ne soient pas ressortissants congolais ou n'aient pas au Congo leur résidence permanente, des exemptions fiscales pour les salaires reçus à l'occasion de dispositions de sécurité sociale en vigueur en République du Congo."
+        "Toutefois, ils bénéficient, pourvu qu'ils ne soient pas ressortissants congolais ou n'aient pas au Congo leur résidence permanente, des exemptions fiscales pour les salaires reçus à l'occasion de dispositions de sécurité sociale en vigueur en République du Congo."
       ],
       "mots_cles": [
         "personnel de service",
@@ -732,7 +869,7 @@
     },
     {
       "article": "Art. 41",
-      "titre": "Exclusion des privilèges pour activité privée",
+      "titre": "Exclusion du bénéfice des privilèges et exemptions",
       "texte": [
         "Les membres de la famille des fonctionnaires consulaires, les employés consulaires et les membres du personnel de service des postes consulaires ainsi que les membres de leur famille qui exercent au Congo une activité professionnelle ou commerciale à titre privé ne peuvent prétendre à bénéficier des privilèges et exemptions prévus par la présente loi."
       ],

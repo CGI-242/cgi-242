@@ -5,6 +5,7 @@
     "edition": "2026",
     "tome": 1,
     "partie": 3,
+    "titre": 3,
     "livre": null,
     "chapitre": 4,
     "chapitre_titre": "Dispositions communes",
@@ -15,9 +16,9 @@
   "articles": [
     {
       "article": "Art. 458",
-      "titre": null,
+      "titre": "Application des dégrèvements accordés",
       "texte": [
-        "L'application des dégrèvements accordés et, s'il y a lieu, le remboursement d'imposition ayant fait l'objet d'une décision de décharge, réduction, remise ou modération, sont réglés conformément aux dispositions des articles 175 et 176 du présent Code."
+        "L'application des dégrèvements accordés et, s'il y a lieu, le remboursement d'imposition ayant fait l'objet d'une décision de décharge, réduction, remise ou modération, sont réglés conformément aux dispositions des articles 175 et 176 du décret du 30 décembre 1912 et des textes modificatifs subséquents."
       ],
       "mots_cles": [
         "dégrèvements",
@@ -31,17 +32,15 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art. 458 bis (L.F. 2026)",
-      "titre": null,
+      "article": "Art. 458 bis",
+      "titre": "Réclamation contentieuse ou demande de remise gracieuse de pénalités",
       "texte": [
         "(L.F.2024, L.F.2025, L.F.2026) Toute réclamation contentieuse ou toute demande de remise gracieuse des pénalités doit être accompagnée :",
         "• des quittances de dépôt de la caution ou de toute autre garantie visée à l'article 441 alinéa 2 et des frais de traitement pour la réclamation contentieuse ;",
         "• d'une quittance des frais de traitement pour la demande de remise gracieuse des pénalités.",
-        "(L.F. 2026 - Alinéa 4 supprimé)",
-        "En cas de cessation d'activités, il sera procédé au remboursement des sommes dues.",
-        "Les frais de traitement prévus à l'article 441 ci-dessus, sont payés en espèces au receveur de l'assiette fiscale en contrepartie de la quittance délivrée par ce dernier et qui est obligatoirement jointe à la requête.",
+        "Les frais de traitement prévus à l'article 441 ci-dessus, sont payés en espèces au receveur de la résidence fiscale en contrepartie de la quittance délivrée par ce dernier et qui est obligatoirement jointe à la requête.",
         "Ces frais sont déductibles du bénéfice imposable.",
-        "[NB - Règles de procédures spéciales en matière d'impôts directs : voir annexe 5]"
+        "[NB - Règles de procédures spéciales en matière d'Impôts directs : voir annexe 5]"
       ],
       "mots_cles": [
         "L.F.2024",

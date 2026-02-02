@@ -225,5 +225,5 @@ export const CGI_TOME_1: Tome = {
       articles: '521-526',
     },
   ],
-  annexes: { titre: 'Annexes au Tome 1', page: 142 },
+  annexes: { titre: 'Annexes au Tome 1', page: 142, tomeId: 'ANNEXES-1' },
 };

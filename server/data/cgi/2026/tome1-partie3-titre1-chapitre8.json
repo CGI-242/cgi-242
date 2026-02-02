@@ -15,7 +15,7 @@
   "articles": [
     {
       "article": "Art. 404",
-      "titre": null,
+      "titre": "Obligation du secret professionnel",
       "texte": [
         "Est tenu au secret professionnel dans les termes de l'article 378 du Code pénal, et passible des peines prévues audit article, toute personne appelée, à l'occasion de ses fonctions ou attributions, à intervenir dans l'établissement, la perception ou le contentieux des impôts et taxes visés aux articles 1 à 276, 321 à 340 et 360 à 367 du présent Code.",
         "Toutefois, lorsqu'une plainte régulière a été portée par l'administration contre le redevable et qu'une information a été ouverte, l'inspecteur divisionnaire des contributions directes et indirectes ne peut opposer le secret professionnel au juge d'instruction qui l'interroge sur les faits faisant l'objet de la plainte.",
@@ -38,7 +38,7 @@
     },
     {
       "article": "Art. 405",
-      "titre": null,
+      "titre": "Délivrance des extraits des rôles des impôts et taxes",
       "texte": [
         "Les contribuables ne sont autorisés à se faire délivrer des extraits des rôles des impôts et taxes visés par le présent Code suivant les dispositions législatives ou réglementaires applicables aux Contributions Directes et Indirectes, qu'en ce qui concerne leur propre cotisation."
       ],
@@ -51,10 +51,10 @@
     },
     {
       "article": "Art. 406",
-      "titre": null,
+      "titre": "Transmission des communications entre agents et contribuables",
       "texte": [
         "Tous avis et communications échangés entre les agents de l'administration ou adressés par eux aux contribuables et concernant les impôts et taxes visés au présent Code, doivent être transmis sous enveloppe fermée.",
-        "Les franchises postales et les taux spéciaux d'affranchissements reconnus nécessaires sont concédés et fixés par la loi."
+        "Les franchises postales et les taxes spéciales d'affranchissements reconnues nécessaires sont concédées et fixées par la loi."
       ],
       "mots_cles": [
         "avis",

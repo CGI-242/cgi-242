@@ -17,7 +17,7 @@ import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
           <!-- Logo -->
           <div class="flex items-center gap-8">
             <a routerLink="/" class="flex items-center gap-1">
-              <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" class="h-28 sm:h-36 w-auto" />
+              <img src="assets/images/logo_cgi_transp_sm.webp" alt="CGI 242" width="400" height="267" class="h-28 sm:h-36 w-auto" />
             </a>
 
             @if (authService.isAuthenticated()) {

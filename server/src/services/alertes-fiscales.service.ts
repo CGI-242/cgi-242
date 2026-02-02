@@ -119,27 +119,6 @@ const ALERTES_PREDEFINIES: Array<{
     unite: 'jour',
     periodicite: 'trimestriel',
   },
-  // Seuils régimes
-  {
-    articleNumero: '26',
-    type: 'SEUIL',
-    categorie: 'DECLARATIONS',
-    titre: 'Seuil régime forfait',
-    description: 'Seuil de chiffre d\'affaires pour le régime forfaitaire',
-    valeur: '100.000.000 FCFA',
-    valeurNumerique: 100000000,
-    unite: 'FCFA',
-  },
-  {
-    articleNumero: '30',
-    type: 'SEUIL',
-    categorie: 'DECLARATIONS',
-    titre: 'Seuil régime réel obligatoire',
-    description: 'Seuil de chiffre d\'affaires au-delà duquel le régime réel est obligatoire',
-    valeur: '100.000.000 FCFA',
-    valeurNumerique: 100000000,
-    unite: 'FCFA',
-  },
   // Prix de transfert
   {
     articleNumero: '81',
@@ -215,6 +194,154 @@ const ALERTES_PREDEFINIES: Array<{
     valeurNumerique: 70,
     unite: '%',
   },
+
+  // ========================================
+  // CHAPITRE 2: IMPÔTS SUR LES REVENUS
+  // ========================================
+
+  // IBA - Impôt sur les bénéfices d'affaires
+  {
+    articleNumero: '95',
+    type: 'TAUX',
+    categorie: 'IBA',
+    titre: 'Taux IBA régime réel',
+    description: 'Taux de l\'impôt sur les bénéfices d\'affaires en régime réel',
+    valeur: '28%',
+    valeurNumerique: 28,
+    unite: '%',
+  },
+  {
+    articleNumero: '96',
+    type: 'SEUIL',
+    categorie: 'IBA',
+    titre: 'Seuil TPE - Régime libératoire',
+    description: 'Chiffre d\'affaires maximum pour les très petites entreprises (régime libératoire)',
+    valeur: '30.000.000 FCFA',
+    valeurNumerique: 30000000,
+    unite: 'FCFA',
+  },
+  // NOTE: Les alertes IRCM et IRF ont été retirées car les numéros d'articles (106-113)
+  // ont des doublons dans différentes parties du code (timbre, impôts directs).
+  // Il faudrait ajouter un champ 'tome' ou 'partie' pour les distinguer.
+
+  // ITS - Impôt sur les traitements et salaires
+  // NOTE: Les alertes barème ITS ont été retirées car l'article 116 a des doublons.
+  {
+    articleNumero: '116A',
+    type: 'ECHEANCE',
+    categorie: 'ITS',
+    titre: 'Versement ITS retenu',
+    description: 'Date limite de versement de l\'ITS retenu par l\'employeur',
+    valeur: '15 du mois suivant',
+    valeurNumerique: 15,
+    unite: 'jour',
+    periodicite: 'mensuel',
+  },
+
+  // ========================================
+  // CHAPITRE 4: DISPOSITIONS COMMUNES
+  // ========================================
+  {
+    articleNumero: '128',
+    type: 'ECHEANCE',
+    categorie: 'DECLARATIONS',
+    titre: 'Déclaration d\'existence',
+    description: 'Délai pour souscrire une déclaration d\'existence auprès de l\'administration fiscale après le début des opérations',
+    valeur: '15 jours',
+    valeurNumerique: 15,
+    unite: 'jour',
+  },
+  {
+    articleNumero: '312',
+    type: 'ECHEANCE',
+    categorie: 'IBA',
+    titre: 'Déclaration CA régime forfait',
+    description: 'Date limite de dépôt de la déclaration de chiffre d\'affaires pour le régime du forfait',
+    valeur: '30 avril',
+    valeurNumerique: 30,
+    unite: 'jour',
+    periodicite: 'annuel',
+  },
+  // ========================================
+  // PARTIE 2 - IMPÔTS LOCAUX
+  // ========================================
+  // NOTE: La plupart des articles de cette partie (277, 287, 309, 321, 326, 333, 354)
+  // ont des doublons avec le timbre/enregistrement.
+  // Ces alertes ont été retirées pour éviter toute confusion.
+  // Pour les réactiver, il faudrait ajouter un champ 'tome' ou 'partie' au modèle.
+
+  // Centimes additionnels
+  {
+    articleNumero: '369',
+    type: 'TAUX',
+    categorie: 'PATENTE',
+    titre: 'Centimes additionnels patente - Maximum',
+    description: 'Taux maximum des centimes additionnels à la patente',
+    valeur: '7%',
+    valeurNumerique: 7,
+    unite: '%',
+  },
+  {
+    articleNumero: '369 bis',
+    type: 'TAUX',
+    categorie: 'PATENTE',
+    titre: 'Centimes additionnels patente - Taux fixé',
+    description: 'Taux des centimes additionnels à la patente (L.F.2025)',
+    valeur: '5%',
+    valeurNumerique: 5,
+    unite: '%',
+  },
+
+  // ========================================
+  // PARTIE 3 - SANCTIONS ET RECOUVREMENT
+  // ========================================
+
+  // Sanctions
+  {
+    articleNumero: '372',
+    type: 'SANCTION',
+    categorie: 'SANCTIONS',
+    titre: 'Taxation d\'office - Majoration',
+    description: 'Majoration pour les contribuables taxés d\'office',
+    valeur: '100%',
+    valeurNumerique: 100,
+    unite: '%',
+  },
+  {
+    articleNumero: '373',
+    type: 'SANCTION',
+    categorie: 'SANCTIONS',
+    titre: 'Déclaration inexacte - Majoration',
+    description: 'Majoration pour insuffisance de déclaration relevée lors du contrôle',
+    valeur: '50%',
+    valeurNumerique: 50,
+    unite: '%',
+  },
+  {
+    articleNumero: '374',
+    type: 'SANCTION',
+    categorie: 'SANCTIONS',
+    titre: 'Insuffisance déclaration - Majoration',
+    description: 'Majoration pour inexactitude, insuffisance ou omission dans les déclarations',
+    valeur: '50%',
+    valeurNumerique: 50,
+    unite: '%',
+  },
+  // NOTE: Articles 375, 381 retirés (contenu incorrect ou "Sans objet")
+
+  // Prescriptions
+  {
+    articleNumero: '382',
+    type: 'SEUIL',
+    categorie: 'RECOUVREMENT',
+    titre: 'Délai de prescription ordinaire',
+    description: 'Délai de prescription du droit de reprise de l\'administration (quatrième année suivante)',
+    valeur: '4 ans',
+    valeurNumerique: 4,
+    unite: 'an',
+  },
+  // NOTE: Article 383 retiré - dit 3 ans, pas 10 ans
+  // NOTE: Articles 427, 435, 459, 481 retirés - contenus ne correspondent pas aux alertes
 ];
 
 export interface AlerteFilters {
@@ -405,11 +532,83 @@ export class AlertesFiscalesService {
   }
 
   /**
-   * Déterminer la catégorie d'une alerte basée sur le contenu de l'article
+   * Déterminer la catégorie d'une alerte basée sur le contenu et le numéro de l'article
    */
   static determineCategorie(contenu: string, articleNumero: string): AlerteCategorie {
     const contenuLower = contenu.toLowerCase();
+    const numArticle = parseInt(articleNumero.replace(/[^\d]/g, ''), 10);
 
+    // Partie 3 - Sanctions et Recouvrement (Art. 372-520)
+    if (numArticle >= 372 && numArticle <= 406) {
+      if (contenuLower.includes('amende') || contenuLower.includes('pénalité') || contenuLower.includes('majoration')) {
+        return 'SANCTIONS';
+      }
+      return 'DECLARATIONS';
+    }
+    if (numArticle >= 407 && numArticle <= 458) {
+      if (contenuLower.includes('réclamation') || contenuLower.includes('contentieux')) {
+        return 'RECLAMATIONS';
+      }
+      return 'DECLARATIONS';
+    }
+    if (numArticle >= 459 && numArticle <= 520) {
+      return 'RECOUVREMENT';
+    }
+
+    // Partie 2 - Impôts locaux (Art. 250-371)
+    if (numArticle >= 250 && numArticle <= 262) {
+      return 'FONCIER_BATI';
+    }
+    if (numArticle >= 263 && numArticle <= 276) {
+      return 'FONCIER_NON_BATI';
+    }
+    if (numArticle >= 277 && numArticle <= 320) {
+      return 'PATENTE';
+    }
+    if (numArticle >= 321 && numArticle <= 327) {
+      return 'TAXE_REGIONALE';
+    }
+    if (numArticle >= 331 && numArticle <= 341) {
+      return 'TAXE_SPECTACLES';
+    }
+    if (numArticle >= 342 && numArticle <= 364) {
+      return 'TAXES_FACULTATIVES';
+    }
+    if (numArticle >= 365 && numArticle <= 371) {
+      return 'PATENTE'; // Centimes additionnels à la patente
+    }
+
+    // Chapitre 5 - Taxes diverses (Art. 141-171N)
+    if (numArticle >= 157 && numArticle <= 167) {
+      return 'TAXE_TERRAINS';
+    }
+    if (articleNumero.startsWith('171') && articleNumero.includes('A')) {
+      return 'TAXE_VEHICULES';
+    }
+
+    // Chapitre 4 - Dispositions communes (Art. 127-140K)
+    if (numArticle >= 127 && numArticle <= 140) {
+      if (contenuLower.includes('vérification') || contenuLower.includes('contrôle')) {
+        return 'VERIFICATION';
+      }
+      return 'DECLARATIONS';
+    }
+
+    // Chapitre 2 - Impôts sur les revenus (Art. 93-116I)
+    if (numArticle >= 93 && numArticle <= 102) {
+      return 'IBA';
+    }
+    if (numArticle >= 103 && numArticle <= 110) {
+      return 'IRCM';
+    }
+    if (numArticle >= 111 && numArticle <= 113) {
+      return 'IRF';
+    }
+    if (numArticle >= 114 && numArticle <= 126) {
+      return 'ITS';
+    }
+
+    // Chapitre 1 - IS (Art. 1-92K)
     if (articleNumero.startsWith('81') || contenuLower.includes('prix de transfert')) {
       return 'PRIX_TRANSFERT';
     }
@@ -428,7 +627,7 @@ export class AlertesFiscalesService {
   }
 
   /**
-   * Extraction et ingestion des alertes depuis les articles du Chapitre 1
+   * Extraction et ingestion des alertes depuis TOUS les articles du CGI
    */
   static async extractAndIngest(version: string = '2026'): Promise<ExtractResult> {
     let inserted = 0;
@@ -488,76 +687,9 @@ export class AlertesFiscalesService {
         }
       }
 
-      // 2. Extraire automatiquement depuis les articles du Chapitre 1 (numéros 1-93)
-      const articles = await prisma.article.findMany({
-        where: {
-          version,
-          OR: [
-            { chapitre: { contains: 'Chapitre 1' } },
-            { chapitre: { contains: 'CHAPITRE 1' } },
-            { chapitre: { contains: 'chapitre 1' } },
-          ],
-        },
-      });
-
-      logger.info(`${articles.length} articles du Chapitre 1 trouvés`);
-
-      for (const article of articles) {
-        const alertesExtraites = this.extractAlertesFromContent(article.contenu, article.numero);
-
-        for (const alerteData of alertesExtraites) {
-          const categorie = this.determineCategorie(article.contenu, article.numero);
-
-          // Générer un titre basé sur le type
-          const titreMap: Record<AlerteType, string> = {
-            ECHEANCE: `Échéance - Article ${article.numero}`,
-            SEUIL: `Seuil - Article ${article.numero}`,
-            TAUX: `Taux - Article ${article.numero}`,
-            SANCTION: `Sanction - Article ${article.numero}`,
-            OBLIGATION: `Obligation - Article ${article.numero}`,
-          };
-
-          try {
-            const result = await prisma.alerteFiscale.upsert({
-              where: {
-                articleNumero_type_valeur_version: {
-                  articleNumero: article.numero,
-                  type: alerteData.type,
-                  valeur: alerteData.valeur,
-                  version,
-                },
-              },
-              create: {
-                type: alerteData.type,
-                categorie,
-                titre: titreMap[alerteData.type],
-                description: `Extrait automatiquement de l'article ${article.numero}`,
-                valeur: alerteData.valeur,
-                valeurNumerique: alerteData.valeurNumerique ? new Prisma.Decimal(alerteData.valeurNumerique) : null,
-                unite: alerteData.unite,
-                articleId: article.id,
-                articleNumero: article.numero,
-                version,
-                actif: true,
-              },
-              update: {
-                valeurNumerique: alerteData.valeurNumerique ? new Prisma.Decimal(alerteData.valeurNumerique) : null,
-                unite: alerteData.unite,
-                actif: true,
-              },
-            });
-
-            if (result.createdAt.getTime() === result.updatedAt.getTime()) {
-              inserted++;
-            } else {
-              updated++;
-            }
-          } catch {
-            // Ignorer les erreurs de contrainte unique (déjà traitée par les alertes prédéfinies)
-            logger.debug(`Alerte déjà existante pour ${article.numero}`, { type: alerteData.type, valeur: alerteData.valeur });
-          }
-        }
-      }
+      // Note: L'extraction automatique a été désactivée car elle génère des alertes
+      // peu claires (ex: "Échéance - Article 10" avec valeur "30").
+      // Seules les alertes prédéfinies (manuellement curées) sont utilisées.
 
       const total = inserted + updated;
       logger.info(`Extraction terminée`, { total, inserted, updated });
@@ -615,11 +747,34 @@ export class AlertesFiscalesService {
     });
 
     const result: Record<AlerteCategorie, number> = {
+      // Partie 1 - Chapitre 1: IS
       IS: 0,
       PM_ETRANGERES: 0,
       MINIMUM_PERCEPTION: 0,
       PRIX_TRANSFERT: 0,
+      // Partie 1 - Chapitre 2: Impôts sur les revenus
+      IBA: 0,
+      IRCM: 0,
+      IRF: 0,
+      ITS: 0,
+      // Partie 1 - Chapitres 4-5
       DECLARATIONS: 0,
+      VERIFICATION: 0,
+      TAXE_TERRAINS: 0,
+      TAXE_VEHICULES: 0,
+      // Partie 2 - Impôts locaux
+      FONCIER_BATI: 0,
+      FONCIER_NON_BATI: 0,
+      PATENTE: 0,
+      TAXE_REGIONALE: 0,
+      TAXE_SPECTACLES: 0,
+      TAXES_FACULTATIVES: 0,
+      // Partie 3 - Dispositions communes
+      SANCTIONS: 0,
+      RECOUVREMENT: 0,
+      RECLAMATIONS: 0,
+      // Tome 2
+      TVA: 0,
     };
 
     for (const item of counts) {

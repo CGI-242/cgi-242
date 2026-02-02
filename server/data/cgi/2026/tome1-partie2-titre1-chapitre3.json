@@ -15,9 +15,9 @@
   "articles": [
     {
       "article": "Art. 365",
-      "titre": null,
+      "titre": "(Sans objet)",
       "texte": [
-        "Sans objet"
+        "Sans objet."
       ],
       "mots_cles": [
         "sans objet"
@@ -26,9 +26,9 @@
     },
     {
       "article": "Art. 366",
-      "titre": null,
+      "titre": "(Sans objet)",
       "texte": [
-        "Sans objet"
+        "Sans objet."
       ],
       "mots_cles": [
         "sans objet"
@@ -37,9 +37,9 @@
     },
     {
       "article": "Art. 367",
-      "titre": null,
+      "titre": "(Sans objet)",
       "texte": [
-        "Sans objet"
+        "Sans objet."
       ],
       "mots_cles": [
         "sans objet"
@@ -48,7 +48,7 @@
     },
     {
       "article": "Art. 368",
-      "titre": null,
+      "titre": "Centimes additionnels à la patente",
       "texte": [
         "(L.F.2025) Il est créé des centimes additionnels à la patente affectés aux collectivités locales aux fins de financer l'enlèvement des ordures ménagères et aux chambres de commerce pour leur fonctionnement."
       ],
@@ -62,9 +62,9 @@
     },
     {
       "article": "Art. 369",
-      "titre": null,
+      "titre": "Taux des centimes additionnels",
       "texte": [
-        "Le taux des centimes qui ne peut excéder les maxima ci-après : contribution des patentes et licences 7 % du principal, est fixé chaque année avant le 15 janvier par arrêté du Ministre des finances sur demande des Chambres de Commerce intéressées.",
+        "Le taux de ces centimes qui ne peut excéder les maxima ci-après : contribution des patentes et licences 7 % du principal, est fixé chaque année avant le 15 janvier par arrêté du Ministre des finances sur demande des Chambres de Commerce intéressées.",
         "Lorsqu'aucun arrêté n'intervient, les centimes à appliquer sont ceux fixés par le dernier arrêté."
       ],
       "mots_cles": [
@@ -77,26 +77,38 @@
     },
     {
       "article": "Art. 369 bis",
-      "titre": null,
+      "titre": "Taux et répartition des centimes additionnels à la patente",
       "texte": [
         "(L.F.2025) Le taux des centimes additionnels à la patente est fixé à 5 % du montant principal de la patente.",
         "Le produit des centimes additionnels à la patente est réparti ainsi qu'il suit :",
-        "20 % au profit des chambres de commerce ;",
-        "80 % au profit des collectivités locales."
+        "- 20 % au profit des chambres de commerce ;",
+        "- 80 % au profit des collectivités locales."
       ],
       "mots_cles": [
         "répartition",
         "centimes additionnels",
+        "5 %",
         "chambres de commerce",
         "collectivités locales"
       ],
       "statut": "en vigueur"
     },
     {
-      "article": "Art. 370 et 371",
-      "titre": null,
+      "article": "Art. 370",
+      "titre": "(Sans objet)",
       "texte": [
-        "Sans objet"
+        "Sans objet."
+      ],
+      "mots_cles": [
+        "sans objet"
+      ],
+      "statut": "sans objet"
+    },
+    {
+      "article": "Art. 371",
+      "titre": "(Sans objet)",
+      "texte": [
+        "Sans objet."
       ],
       "mots_cles": [
         "sans objet"

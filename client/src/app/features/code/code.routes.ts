@@ -10,7 +10,7 @@ export const CODE_ROUTES: Routes = [
   },
   {
     path: '',
-    redirectTo: '2025',
+    redirectTo: '2026',
     pathMatch: 'full',
   },
 ];

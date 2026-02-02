@@ -289,7 +289,7 @@ import {
               <!-- Actions -->
               <div class="flex gap-3">
                 <a
-                  [routerLink]="['/code']"
+                  [routerLink]="['/code/2026']"
                   [queryParams]="{ article: alerte.articleNumero }"
                   class="flex-1 btn-primary text-center">
                   Voir l'article {{ alerte.articleNumero }}
