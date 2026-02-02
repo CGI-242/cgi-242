@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { CGI_SOMMAIRE_2025, CGI_SOMMAIRE_2026, CGI_CONVENTIONS, Tome, Chapitre, Section, Partie, Annexe, Livre, SousSection, SousSectionSommaire, Convention, ConventionChapitre, Paragraphe } from './cgi-structure.data';
 
 export interface SommaireSelection {
-  type: 'tome' | 'partie' | 'livre' | 'chapitre' | 'section' | 'sous_section' | 'paragraphe' | 'texte' | 'convention';
+  type: 'tome' | 'partie' | 'livre' | 'chapitre' | 'section' | 'sous_section' | 'paragraphe' | 'texte' | 'convention' | 'annexe';
   path: string;
   titre: string;
   articles?: string; // Plage d'articles ex: "1-65 bis"
   tome?: number; // Numéro du tome pour filtrer correctement
+  livre?: number; // Numéro du livre pour filtrer correctement (Tome 2)
+  tomeId?: string; // ID du tome pour filtrer les annexes (ex: "ANNEXES-1")
   chapitreTitre?: string; // Titre du chapitre pour filtrer (ex: "Impôt sur le revenu des personnes physiques (IRPP)")
   sectionTitre?: string; // Titre de la section pour filtrer
   sousSectionTitre?: string; // Titre de la sous-section pour les headers de paragraphes
@@ -55,7 +57,7 @@ export class CodeSommaireComponent {
     });
   }
 
-  onChapitreClick(chapitre: Chapitre, tomeNum?: number): void {
+  onChapitreClick(chapitre: Chapitre, tomeNum?: number, livreNum?: number): void {
     // Préparer les sections pour les afficher comme séparateurs
     const sections = chapitre.sections?.map(s => ({
       titre: `Section ${s.section}: ${s.titre}`,
@@ -68,6 +70,7 @@ export class CodeSommaireComponent {
       titre: chapitre.titre,
       articles: chapitre.articles,
       tome: tomeNum,
+      livre: livreNum,
       chapitreTitre: chapitre.titre,
       sections,
     });
@@ -209,9 +212,10 @@ export class CodeSommaireComponent {
 
   onAnnexeClick(annexe: Annexe): void {
     this.selection.emit({
-      type: 'partie',
+      type: 'annexe',
       path: 'Annexes',
       titre: annexe.titre,
+      tomeId: annexe.tomeId,
     });
   }
 

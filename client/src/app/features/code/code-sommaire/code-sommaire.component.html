@@ -46,7 +46,7 @@
                     <!-- Livres dans Partie -->
                     @if (partie.livres) {
                       @for (livre of partie.livres; track livre.livre) {
-                        <ng-container *ngTemplateOutlet="livreTemplate; context: { livre: livre, prefix: 'partie-' + tome.tome + '-' + partie.partie, tomeNum: tome.tome }" />
+                        <ng-container *ngTemplateOutlet="livreTemplate; context: { livre: livre, prefix: 'partie-' + tome.tome + '-' + partie.partie, tomeNum: tome.tome, livreNum: livre.livre }" />
                       }
                     }
                     <!-- Titres (Partie 2, 3) -->
@@ -78,7 +78,7 @@
           <!-- Livres directs (Tome 2) -->
           @if (tome.livres) {
             @for (livre of tome.livres; track livre.livre) {
-              <ng-container *ngTemplateOutlet="livreTemplate; context: { livre: livre, prefix: 'tome-' + tome.tome, tomeNum: tome.tome }" />
+              <ng-container *ngTemplateOutlet="livreTemplate; context: { livre: livre, prefix: 'tome-' + tome.tome, tomeNum: tome.tome, livreNum: livre.livre }" />
             }
           }
 
@@ -209,7 +209,7 @@
 </div>
 
 <!-- Template réutilisable pour les livres -->
-<ng-template #livreTemplate let-livre="livre" let-prefix="prefix" let-tomeNum="tomeNum">
+<ng-template #livreTemplate let-livre="livre" let-prefix="prefix" let-tomeNum="tomeNum" let-livreNum="livreNum">
   <div>
     @if (livre.chapitres && livre.chapitres.length > 0) {
       <button
@@ -227,7 +227,7 @@
         }
       </button>
       @if (isOpen('livre-' + prefix + '-' + livre.livre)) {
-        <ng-container *ngTemplateOutlet="chapitresTemplate; context: { chapitres: livre.chapitres, tomeNum: tomeNum }" />
+        <ng-container *ngTemplateOutlet="chapitresTemplate; context: { chapitres: livre.chapitres, tomeNum: tomeNum, livreNum: livreNum }" />
       }
     } @else {
       <button
@@ -245,12 +245,12 @@
 </ng-template>
 
 <!-- Template réutilisable pour les chapitres -->
-<ng-template #chapitresTemplate let-chapitres="chapitres" let-tomeNum="tomeNum">
+<ng-template #chapitresTemplate let-chapitres="chapitres" let-tomeNum="tomeNum" let-livreNum="livreNum">
   <div class="ml-4">
     @for (chapitre of chapitres; track chapitre.chapitre) {
       <div>
         <button
-          (click)="onChapitreClick(chapitre, tomeNum)"
+          (click)="onChapitreClick(chapitre, tomeNum, livreNum)"
           class="w-full text-left py-1 pl-4 hover:bg-primary-50 text-sm"
           [class.opacity-50]="chapitre.statut === 'abrogé'">
           <span class="font-medium text-primary-700 text-sm">Chap. {{ chapitre.chapitre }}</span>

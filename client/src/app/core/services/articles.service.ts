@@ -9,7 +9,9 @@ export interface Article {
   chapeau?: string;
   contenu: string;
   tome?: string;
+  livre?: string; // Pour filtrer par livre (Tome 2)
   chapitre?: string;
+  section?: string; // Pour regrouper les articles par annexe
   version?: string; // "2025" ou "2026"
 }
 

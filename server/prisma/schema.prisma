@@ -388,6 +388,7 @@ enum ArticleStatut {
   EN_VIGUEUR
   ABROGE
   MODIFIE
+  SANS_OBJET
 }
 
 model Article {
@@ -426,8 +427,8 @@ model Article {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  // Contrainte unique sur numero + version + tome (permet même numéro dans différents tomes)
-  @@unique([numero, version, tome], name: "numero_version_tome")
+  // Contrainte unique sur numero + version + tome + livre (permet même numéro dans différents livres)
+  @@unique([numero, version, tome, livre], name: "numero_version_tome_livre")
   @@index([numero])
   @@index([tome, livre, chapitre])
   @@index([statut])
@@ -505,11 +506,41 @@ enum AlerteType {
 }
 
 enum AlerteCategorie {
-  IS            // Impôt sur les sociétés
-  PM_ETRANGERES // Personnes morales étrangères
-  MINIMUM_PERCEPTION
-  PRIX_TRANSFERT
-  DECLARATIONS
+  // Partie 1 - Livre 1 - Chapitre 1: IS
+  IS                  // Impôt sur les sociétés
+  PM_ETRANGERES       // Personnes morales étrangères
+  MINIMUM_PERCEPTION  // Minimum de perception
+  PRIX_TRANSFERT      // Prix de transfert
+
+  // Partie 1 - Livre 1 - Chapitre 2: Impôts sur les revenus
+  IBA                 // Impôt sur les bénéfices d'affaires
+  IRCM                // Impôt sur le revenu des capitaux mobiliers
+  IRF                 // Impôt sur les revenus fonciers
+  ITS                 // Impôt sur les traitements et salaires
+
+  // Partie 1 - Livre 1 - Chapitre 4: Dispositions communes
+  DECLARATIONS        // Obligations déclaratives
+  VERIFICATION        // Vérification et contrôle
+
+  // Partie 1 - Livre 1 - Chapitre 5: Taxes diverses
+  TAXE_TERRAINS       // Taxes sur les terrains
+  TAXE_VEHICULES      // Taxe sur les véhicules de tourisme
+
+  // Partie 2 - Impôts locaux
+  FONCIER_BATI        // Contribution foncière propriétés bâties
+  FONCIER_NON_BATI    // Contribution foncière propriétés non bâties
+  PATENTE             // Contribution des patentes
+  TAXE_REGIONALE      // Taxe régionale/départementale
+  TAXE_SPECTACLES     // Taxe sur les spectacles
+  TAXES_FACULTATIVES  // Taxes facultatives (ordures, véhicules)
+
+  // Partie 3 - Dispositions communes
+  SANCTIONS           // Sanctions fiscales
+  RECOUVREMENT        // Recouvrement
+  RECLAMATIONS        // Réclamations et contentieux
+
+  // Tome 2 - TVA
+  TVA                 // Taxe sur la valeur ajoutée
 }
 
 model AlerteFiscale {

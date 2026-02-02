@@ -38,6 +38,12 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C2-ST1",
+      "titre": "Baux et locations",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 18",
       "titre": "Baux et locations - Assiette",
       "texte": [
@@ -135,6 +141,12 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C2-ST2",
+      "titre": "Contrats de mariage",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 21",
       "titre": "Contrats de mariage - Assiette",
       "texte": [
@@ -147,6 +159,12 @@
         "montant net",
         "liquidation du droit"
       ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L1C2-ST3",
+      "titre": "Échanges d'immeubles",
+      "texte": [],
       "statut": "en vigueur"
     },
     {
@@ -170,6 +188,12 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C2-ST4",
+      "titre": "Jugements",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 23",
       "titre": "Jugements - Assiette",
       "texte": [
@@ -184,6 +208,12 @@
         "transmission",
         "montant en principal"
       ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L1C2-ST5",
+      "titre": "Marchés",
+      "texte": [],
       "statut": "en vigueur"
     },
     {
@@ -202,6 +232,12 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C2-ST6",
+      "titre": "Partages",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 25",
       "titre": "Partages - Assiette",
       "texte": [
@@ -216,6 +252,12 @@
         "associés",
         "actif net partagé"
       ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L1C2-ST7",
+      "titre": "Rentes",
+      "texte": [],
       "statut": "en vigueur"
     },
     {
@@ -279,6 +321,12 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C2-ST8",
+      "titre": "Sociétés",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 29",
       "titre": "Actes de société - Assiette",
       "texte": [
@@ -294,6 +342,12 @@
         "passif",
         "associés"
       ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L1C2-ST9",
+      "titre": "Transmission à titre onéreux et à titre gratuit",
+      "texte": [],
       "statut": "en vigueur"
     },
     {
@@ -491,6 +545,18 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C2-ST10",
+      "titre": "Mutations par décès",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L1C2-ST10a",
+      "titre": "1) Règles générales",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 38",
       "titre": "Valeur des biens meubles - Mutation par décès",
       "texte": [
@@ -591,6 +657,12 @@
         "succession",
         "imputation des droits"
       ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L1C2-ST10b",
+      "titre": "2) Déduction des dettes et charges",
+      "texte": [],
       "statut": "en vigueur"
     },
     {

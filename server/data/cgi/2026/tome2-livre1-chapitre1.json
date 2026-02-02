@@ -103,6 +103,12 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C1-ST1",
+      "titre": "Dispositions dépendantes et indépendantes",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 5",
       "titre": "Dispositions dépendantes",
       "texte": [
@@ -154,6 +160,12 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C1-ST2",
+      "titre": "Enregistrement sur minutes, brevets ou originaux",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 8",
       "titre": "Enregistrement sur minutes, brevets ou originaux",
       "texte": [
@@ -171,10 +183,10 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art. 8 bis (L.F. 2026)",
-      "titre": "Validité des actes numériques à l'enregistrement",
+      "article": "Art. 8 bis",
+      "titre": "Actes établis sur support numérique",
       "texte": [
-        "(L.F. 2026 - nouveau) 1. Les actes établis sur support numérique sont reconnus comme juridiquement valides, à condition qu'ils soient signés par une signature électronique qualifiée, conforme aux dispositions du Décret n°2014-596 du 3 novembre 2014.",
+        "1. Les actes établis sur support numérique sont reconnus comme juridiquement valides, à condition qu'ils soient signés par une signature électronique qualifiée, conforme aux dispositions du Décret n°2014-596 du 3 novembre 2014.",
         "2. La signature électronique est créée à l'aide d'un dispositif sécurisé et certifié.",
         "3. Les actes numériques sont accompagnés d'un certificat électronique qualifié, attestant de l'identité du signataire, de la période de validité, et de la conformité du processus de signature."
       ],
@@ -184,20 +196,18 @@
         "signature électronique qualifiée",
         "Décret n°2014-596",
         "dispositif sécurisé",
-        "certificat électronique",
-        "identité du signataire",
-        "L.F. 2026"
+        "certificat électronique"
       ],
       "statut": "en vigueur"
     },
     {
-      "article": "Art. 8 ter (L.F. 2026)",
-      "titre": "Traçabilité des actes numériques - QR code",
+      "article": "Art. 8 ter",
+      "titre": "Identifiant unique des actes enregistrés sur support numérique",
       "texte": [
-        "(L.F. 2026 - nouveau) 1. Tout acte enregistré sur support numérique comporte un identifiant unique, sous forme de QR code, code alphanumérique ou empreinte électronique, permettant :",
-        "• la vérification de l'authenticité de l'acte ;",
-        "• l'accès à son enregistrement dans la base de données de l'administration compétente ;",
-        "• la détection de toute tentative de falsification ou de duplication.",
+        "1. Tout acte enregistré sur support numérique comporte un identifiant unique, sous forme de QR code, code alphanumérique ou empreinte électronique, permettant :",
+        "○ la vérification de l'authenticité de l'acte ;",
+        "○ l'accès à son enregistrement dans la base de données de l'administration compétente ;",
+        "○ la détection de toute tentative de falsification ou de duplication.",
         "2. L'administration met à disposition une plateforme sécurisée de vérification, accessible aux juridictions, notaires, administrations et usagers, permettant de scanner le QR code ou de saisir l'identifiant pour consulter les informations de validation de l'acte.",
         "3. Le QR code ou identifiant est généré par un système fiable, conforme aux exigences de sécurité technique et cryptographique définies dans le décret n° 2014-596, notamment en matière de confidentialité, d'intégrité et de non-répudiation.",
         "4. Toute altération, reproduction frauduleuse ou usage abusif d'un identifiant numérique est passible des sanctions prévues par le Code pénal et le Code général des impôts."
@@ -206,17 +216,10 @@
         "actes numériques",
         "identifiant unique",
         "QR code",
-        "code alphanumérique",
         "empreinte électronique",
         "authenticité",
-        "falsification",
         "plateforme de vérification",
-        "Décret n°2014-596",
-        "confidentialité",
-        "intégrité",
-        "non-répudiation",
-        "sanctions",
-        "L.F. 2026"
+        "Décret n°2014-596"
       ],
       "statut": "en vigueur"
     },
@@ -292,6 +295,12 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C1-ST3",
+      "titre": "Minimum de perception",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 12",
       "titre": "Minimum de perception",
       "texte": [
@@ -309,6 +318,12 @@
         "article 210",
         "article 211"
       ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L1C1-ST4",
+      "titre": "Mutation simultanée de meubles et immeubles",
+      "texte": [],
       "statut": "en vigueur"
     },
     {
