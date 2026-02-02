@@ -163,6 +163,7 @@ export class CodeContainerComponent implements OnInit {
             8: 28.9,  // ST8 avant Art. 29 - Sociétés
             9: 29.9,  // ST9 avant Art. 30 - Transmission à titre onéreux et gratuit
             10: 37.9, // ST10 avant Art. 38 - Mutations par décès
+            11: 50.9, // ST11 avant Art. 51 - Dispositions spéciales
           },
         };
         // Mapping spécifique pour les sous-sections avec suffixes (ST10a, ST10b, etc.)
