@@ -94,6 +94,8 @@ export function createSecureHelmet() {
         connectSrc: [
           "'self'",
           config.frontendUrl,
+          'https://cgi242.normx-ai.com',
+          'https://api.normx-ai.com',
           'https://api.anthropic.com',
           'https://api.openai.com',
           // WebSocket pour dev hot-reload
