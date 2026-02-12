@@ -3,7 +3,7 @@ import * as authController from '../controllers/auth.controller.js';
 import { authMiddleware } from '../middleware/auth.middleware.js';
 import { validate } from '../middleware/validation.middleware.js';
 import { authValidators } from '../utils/validators.js';
-import { authRateLimiter } from '../middleware/rateLimit.middleware.js';
+import { authRateLimiter, sensitiveRateLimiter } from '../middleware/rateLimit.middleware.js';
 import { csrfProtection, getCsrfToken } from '../middleware/csrf.middleware.js';
 
 const router = Router();
@@ -41,6 +41,7 @@ router.post(
 
 router.post(
   '/reset-password',
+  authRateLimiter,
   csrfProtection,
   authValidators.resetPassword,
   validate,
@@ -57,14 +58,14 @@ router.post(
   authController.resendVerificationPublic
 );
 
-// Route de déconnexion
-router.post('/logout', authMiddleware, authController.logout);
+// Route de déconnexion (avec CSRF protection)
+router.post('/logout', authMiddleware, csrfProtection, authController.logout);
 
 // Route de déconnexion de toutes les sessions
 router.post('/logout-all', authMiddleware, csrfProtection, authController.logoutAll);
 
-// Refresh token
-router.post('/refresh-token', authController.refreshToken);
+// Refresh token (rate limited pour prévenir les abus)
+router.post('/refresh-token', sensitiveRateLimiter, authController.refreshToken);
 
 // Routes authentifiées avec protection CSRF
 router.get('/me', authMiddleware, authController.me);

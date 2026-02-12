@@ -47,7 +47,7 @@ export const logout = asyncHandler(async (req: Request, res: Response) => {
   if (req.user) {
     await AuditService.log({
       actorId: req.user.id,
-      action: 'LOGIN_SUCCESS',
+      action: 'LOGOUT',
       entityType: 'User',
       entityId: req.user.id,
       changes: { before: { loggedIn: true }, after: { loggedIn: false } },
@@ -110,10 +110,8 @@ export const refreshToken = asyncHandler(async (req: Request, res: Response) => 
   // Mettre à jour les cookies
   setAuthCookies(res, newAccessToken, newRefreshToken);
 
-  sendSuccess(res, {
-    accessToken: newAccessToken,
-    refreshToken: newRefreshToken,
-  }, 'Token rafraîchi');
+  // Tokens dans cookies HttpOnly uniquement, pas dans le body
+  sendSuccess(res, null, 'Token rafraîchi');
 });
 
 /**
@@ -140,7 +138,7 @@ export const logoutAll = asyncHandler(async (req: Request, res: Response) => {
   // Audit trail
   await AuditService.log({
     actorId: userId,
-    action: 'LOGIN_SUCCESS',
+    action: 'LOGOUT_ALL',
     entityType: 'User',
     entityId: userId,
     changes: { before: { sessions: 'active' }, after: { sessions: 'all_revoked' } },

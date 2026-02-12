@@ -2,21 +2,23 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <title>CGI 242 - Assistant Fiscal IA | NORMX AI</title>
+    <title>CGI 242 - Code des Impôts Intelligent | NORMX AI</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="CGI 242 - Assistant IA spécialisé dans le Code Général des Impôts du Congo-Brazzaville. Propulsé par NORMX AI." />
+    <meta name="description" content="CGI 242 - Code des Impôts Intelligent du Congo-Brazzaville. Propulsé par NORMX AI." />
     <meta name="author" content="NORMX AI" />
     <!-- Sécurité: Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
-      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com;
+      script-src 'self' https://unpkg.com;
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com;
       font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com https://unpkg.com data:;
       img-src 'self' data: https:;
-      connect-src 'self' http://localhost:3000 https://api.anthropic.com https://api.openai.com;
+      connect-src 'self' https://cgi242.normx-ai.com https://api.normx-ai.com http://localhost:3000;
       frame-src 'none';
       object-src 'none';
+      base-uri 'self';
+      form-action 'self';
     " />
     <!-- Sécurité: Autres headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />

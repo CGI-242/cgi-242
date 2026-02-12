@@ -31,12 +31,9 @@ export const register = asyncHandler(async (req: Request, res: Response) => {
   // Définir les tokens dans des cookies HttpOnly sécurisés
   setAuthCookies(res, result.accessToken, result.refreshToken);
 
-  // Retourner les données utilisateur (sans les tokens dans le body pour sécurité)
+  // Retourner les données utilisateur (tokens dans cookies HttpOnly uniquement)
   sendSuccess(res, {
     user: result.user,
-    // Tokens inclus pour compatibilité avec clients existants (à retirer après migration)
-    accessToken: result.accessToken,
-    refreshToken: result.refreshToken,
   }, SUCCESS_MESSAGES.REGISTER_SUCCESS, 201);
 });
 
@@ -92,13 +89,10 @@ export const login = asyncHandler(async (req: Request, res: Response) => {
     metadata: getAuditMetadata(req),
   });
 
-  // Retourner les données utilisateur
+  // Retourner les données utilisateur (tokens dans cookies HttpOnly uniquement)
   sendSuccess(res, {
     user,
     mfaRequired: false,
-    // Tokens inclus pour compatibilité avec clients existants (à retirer après migration)
-    accessToken: result.accessToken,
-    refreshToken: result.refreshToken,
   }, SUCCESS_MESSAGES.LOGIN_SUCCESS);
 });
 

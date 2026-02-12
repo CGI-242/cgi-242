@@ -1,6 +1,6 @@
 # CONDITIONS GÉNÉRALES D'UTILISATION (CGU)
 
-## CGI 242 - Assistant Fiscal Intelligent
+## CGI 242 - Code des Impôts Intelligent
 
 **ETS M ADVISE**
 

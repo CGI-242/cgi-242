@@ -1,6 +1,6 @@
 # MENTIONS LÉGALES
 
-## CGI 242 - Assistant Fiscal Intelligent
+## CGI 242 - Code des Impôts Intelligent
 
 *Dernière mise à jour : Janvier 2026*
 
