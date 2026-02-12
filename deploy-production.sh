@@ -24,7 +24,7 @@ cd "$PROJECT_DIR"
 
 echo -e "${YELLOW}1. Récupération des dernières modifications...${NC}"
 git fetch origin
-git pull origin feat/landing-refonte-hero-pricing
+git pull origin main
 
 echo -e "${YELLOW}2. Installation des dépendances serveur...${NC}"
 cd server

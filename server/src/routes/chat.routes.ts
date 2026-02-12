@@ -4,6 +4,7 @@ import { body } from 'express-validator';
 import { authMiddleware } from '../middleware/auth.middleware.js';
 import { tenantMiddleware, checkQuotaMiddleware } from '../middleware/tenant.middleware.js';
 import { validate } from '../middleware/validation.middleware.js';
+import { aiRateLimiter } from '../middleware/rateLimit.middleware.js';
 import * as chatController from '../controllers/chat.controller.js';
 
 const router = Router();
@@ -16,13 +17,17 @@ router.use(tenantMiddleware);
 // Analyse l'intention et route vers le bon agent CGI
 router.post(
   '/message',
+  aiRateLimiter,
   [
-    body('content').notEmpty().withMessage('Le contenu est requis'),
+    body('content')
+      .notEmpty().withMessage('Le contenu est requis')
+      .isLength({ max: 10000 }).withMessage('Le message ne peut pas dépasser 10 000 caractères')
+      .trim(),
     body('conversationId').optional().isUUID(),
     body('forceYear').optional().isIn([2025, 2026]).withMessage('forceYear doit être 2025 ou 2026'),
   ],
   validate,
-  checkQuotaMiddleware, // ✅ CORRECTION CRITIQUE: Vérifier quotas avant traitement
+  checkQuotaMiddleware,
   chatController.sendMessageOrchestrated
 );
 
@@ -30,8 +35,12 @@ router.post(
 // Retourne la réponse au fur et à mesure via Server-Sent Events
 router.post(
   '/message/stream',
+  aiRateLimiter,
   [
-    body('content').notEmpty().withMessage('Le contenu est requis'),
+    body('content')
+      .notEmpty().withMessage('Le contenu est requis')
+      .isLength({ max: 10000 }).withMessage('Le message ne peut pas dépasser 10 000 caractères')
+      .trim(),
     body('conversationId').optional().isUUID(),
   ],
   validate,
