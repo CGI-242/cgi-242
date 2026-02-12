@@ -15,9 +15,10 @@
   "articles": [
     {
       "article": "Art. 1",
-      "titre": "Principe de la contribution du timbre",
+      "titre": "Établissement de la contribution du timbre",
       "texte": [
-        "La contribution du timbre est établie sur tous les papiers destinés aux actes civils et judiciaires et aux écritures qui peuvent être produites en justice et faire foi ; elle est perçue d'après les bases et suivant les règles fixées par la présente réglementation."
+        "La contribution du timbre est établie sur tous les papiers destinés aux actes civils et judiciaires et aux écritures qui peuvent être produites en justice et y faire foi ; elle est perçue d'après les bases et suivant les règles fixées par la présente réglementation.",
+        "Il y a d'autres exceptions que celles nommément exprimées dans le présent règlement."
       ],
       "mots_cles": [
         "contribution du timbre",
@@ -33,7 +34,7 @@
     },
     {
       "article": "Art. 1 bis",
-      "titre": "Droit de timbre sur les transports aériens",
+      "titre": "Droit de timbre sur les titres de transports aériens",
       "texte": [
         "Il est institué un droit de timbre sur les titres des transports aériens des personnes physiques à l'exception des étrangers et nationaux bénéficiaires d'un passeport diplomatique."
       ],
@@ -50,10 +51,17 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L2C1-ST1",
+      "titre": "Débiteur des droits",
+      "texte": [],
+      "mots_cles": ["débiteur", "droits de timbre"],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 2",
-      "titre": "Solidarité pour le paiement des droits",
+      "titre": "Solidarité pour le paiement des droits de timbre",
       "texte": [
-        "Sans préjudice des dispositions particulières relatives au présent règlement, sont solidaires pour le paiement des droits de timbre et des amendes : tous les signataires, pour les actes synallagmatiques, les prêteurs et les emprunteurs pour les obligations, les officiers ministériels qui ont reçu ou rédigé des actes énonçant des actes ou livres non timbrés."
+        "Sans préjudice des dispositions particulières relatées dans le présent règlement, sont solidaires pour le paiement des droits de timbre et des amendes : tous les signataires, pour les actes synallagmatiques, les prêteurs et les emprunteurs, pour les obligations, les Officiers ministériels qui ont reçu ou rédigé des actes écrits sur des actes ou livres non timbrés."
       ],
       "mots_cles": [
         "solidarité",
@@ -71,7 +79,7 @@
     },
     {
       "article": "Art. 3",
-      "titre": "Timbre des actes avec l'État",
+      "titre": "Charge du timbre des actes entre l'État et les citoyens",
       "texte": [
         "Le timbre de tous les actes entre l'État français, le Groupe des Territoires, les Territoires et les citoyens est à la charge de ces derniers."
       ],
@@ -87,10 +95,17 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L2C1-ST2",
+      "titre": "Restrictions et prohibitions diverses",
+      "texte": [],
+      "mots_cles": ["restrictions", "prohibitions"],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 4",
-      "titre": "Distribution du papier timbré",
+      "titre": "Interdiction de vente non autorisée de papier timbré",
       "texte": [
-        "Aucune personne ne peut vendre ou distribuer du papier timbré qu'en vertu d'une commission de l'administration fiscale, à peine d'une amende fiscale de 1.000 FCFA pour la première fois, et de 10.000 FCFA, en cas de récidive.",
+        "Aucune personne ne peut vendre ou distribuer du papier timbré qu'en vertu d'une commission de l'administration Fiscale, à peine d'une amende fiscale de 1.000 FCFA, pour la première fois, et de 10.000 FCFA, en cas de récidive.",
         "La création de distributeurs auxiliaires pourra faire l'objet d'un règlement spécial, par décision ministérielle."
       ],
       "mots_cles": [
@@ -110,7 +125,7 @@
     },
     {
       "article": "Art. 5",
-      "titre": "Protection de l'empreinte du timbre",
+      "titre": "Interdiction d'altérer l'empreinte du timbre",
       "texte": [
         "L'empreinte du timbre ne peut être couverte d'écriture ni altérée."
       ],
@@ -125,7 +140,7 @@
     },
     {
       "article": "Art. 6",
-      "titre": "Usage unique du papier timbré",
+      "titre": "Interdiction de réutilisation du papier timbré",
       "texte": [
         "Le papier timbré qui a été employé à un acte quelconque ne peut servir pour un autre acte, quand même le premier n'aurait pas été achevé."
       ],
@@ -175,7 +190,7 @@
     },
     {
       "article": "Art. 8",
-      "titre": "Défense aux officiers publics",
+      "titre": "Défense d'utiliser des actes non timbrés",
       "texte": [
         "Il est fait défense aux notaires, agents d'exécution, greffiers, arbitres et experts d'agir, aux juges de prononcer aucun jugement, et aux administrations publiques de rendre aucun arrêté sur un acte, registre ou effet de commerce non écrit sur papier timbré du timbre prescrit, ou non visé pour timbre.",
         "Aucun juge ou officier public ne peut non plus coter et parapher un registre assujetti au timbre si les feuilles n'en sont pas timbrées."
@@ -204,7 +219,7 @@
     },
     {
       "article": "Art. 9",
-      "titre": "États de frais des officiers publics",
+      "titre": "Obligations des officiers publics en matière de timbre",
       "texte": [
         "Les états de frais dressés par les avocats défenseurs, agents d'exécution, greffiers, notaires, commis, doivent faire ressortir distinctement dans une colonne spéciale, et pour chaque débours le montant des droits payés au Trésor."
       ],
@@ -224,7 +239,7 @@
     },
     {
       "article": "Art. 10",
-      "titre": "Déclaration du timbre dans les actes",
+      "titre": "Mention du timbre sur les actes",
       "texte": [
         "Lorsqu'un effet, certificat d'action, titre, livre, bordereau, police d'assurance, ou tout autre acte sujet au timbre et non enregistré est mentionné dans un acte public, judiciaire ou extrajudiciaire et ne doit pas être représenté au Receveur lors de l'enregistrement de cet acte, l'Officier public ou l'Officier ministériel est tenu de déclarer expressément dans l'acte si le titre est revêtu du timbre prescrit, et d'énoncer le montant du droit de timbre payé.",
         "En cas d'omission, les notaires, avocats défenseurs, greffiers, agents d'exécution et autres officiers publics sont passibles d'une amende de 1.000 FCFA pour chaque contravention."
@@ -256,7 +271,7 @@
     },
     {
       "article": "Art. 11",
-      "titre": "Défense aux receveurs de l'enregistrement",
+      "titre": "Défense d'enregistrer des actes non timbrés",
       "texte": [
         "Il est également fait défense à tout receveur de l'enregistrement :",
         "1° d'enregistrer aucun acte qui ne serait pas sur papier timbré du timbre prescrit ou qui n'aurait pas été visé pour timbre ;",
@@ -279,7 +294,7 @@
     },
     {
       "article": "Art. 12",
-      "titre": "Amendes pour contraventions",
+      "titre": "Amendes pour contravention au timbre",
       "texte": [
         "Il est prononcé une amende de 1.000 FCFA, à savoir :",
         "1° pour contravention, par les particuliers et les officiers et fonctionnaires publics, aux dispositions de l'article 5 ci-dessus ;",
@@ -330,7 +345,7 @@
     },
     {
       "article": "Art. 14",
-      "titre": "Actes passés en pays étranger",
+      "titre": "Actes passés en pays étranger ou dans les Territoires français d'Outre-mer",
       "texte": [
         "Tout acte passé en pays étranger, ou dans les Territoires français d'Outre-mer ou le timbre n'aurait pas encore été établi, est soumis au timbre avant qu'il puisse en être fait aucun usage dans le Territoire, soit dans un acte public, soit dans une déclaration quelconque, soit devant une autorité judiciaire ou administrative."
       ],
@@ -349,8 +364,15 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L2C1-ST3",
+      "titre": "Poursuites et instances - Prescription",
+      "texte": [],
+      "mots_cles": ["poursuites", "instances", "prescription"],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 15",
-      "titre": "Rétention des actes en contravention",
+      "titre": "Pouvoirs des préposés de l'enregistrement en matière de timbre",
       "texte": [
         "Les préposés de l'enregistrement sont autorisés à retenir les actes, registres, effets ou pièces quelconques en contravention, pour les joindre aux procès-verbaux qu'ils en rapportent, à moins que les contrevenants ne consentent à signer les dits procès-verbaux ou acquitter sur-le-champ l'amende encourue et le droit de timbre."
       ],
@@ -372,7 +394,7 @@
     },
     {
       "article": "Art. 16",
-      "titre": "Attributions des préposés des Douanes, Impôts et Trésor",
+      "titre": "Pouvoirs des préposés des Douanes et du Trésor",
       "texte": [
         "Les préposés des Douanes, des Impôts et du Trésor, ont, pour constater les contraventions au timbre des actes ou écrits sous signature privée et pour saisir les pièces en contravention, les mêmes attributions que les préposés de l'enregistrement."
       ],
@@ -394,7 +416,7 @@
     },
     {
       "article": "Art. 17",
-      "titre": "Recouvrement des droits et amendes",
+      "titre": "Recouvrement des droits de timbre et amendes",
       "texte": [
         "Le recouvrement des droits de timbre et des amendes de contraventions y relatives est poursuivi par voie de titre de perception et, en cas d'opposition, les instances sont instruites et jugées selon les formes prescrites par la réglementation de l'enregistrement.",
         "Pour les droits de timbre perçus par le service de l'enregistrement qui ne sont pas majorés de pénalités de retard par les textes en vigueur, il est ajouté, à compter de la date du titre de perception, des intérêts moratoires calculés au taux de 6 % sur la somme reconnue exigible. Tout mois commencé est compté pour un mois entier."
@@ -417,7 +439,7 @@
     },
     {
       "article": "Art. 18",
-      "titre": "Prescription des amendes",
+      "titre": "Prescription des amendes pour contraventions au timbre",
       "texte": [
         "La prescription de cinq ans établie par l'article 193 de la réglementation de l'enregistrement, s'applique aux amendes pour contraventions à la réglementation du timbre.",
         "Cette prescription court du jour où les préposés ont été mis à portée de constater les contraventions au vu de chaque acte soumis à l'enregistrement."
@@ -438,7 +460,7 @@
     },
     {
       "article": "Art. 19",
-      "titre": "Privilège du Trésor",
+      "titre": "Privilège du Trésor sur les meubles et effets mobiliers",
       "texte": [
         "Pour les recouvrements des droits de timbre autres que les droits en sus, amendes et pénalités, le Trésor aura un privilège sur tous les meubles et effets mobiliers des redevables.",
         "Ce privilège s'exercera immédiatement après celui de l'impôt sur le chiffre d'affaires et des taxes instituées en remplacement de cet impôt."
@@ -460,8 +482,15 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L2C1-ST4",
+      "titre": "Droit de communication",
+      "texte": [],
+      "mots_cles": ["droit de communication"],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 20",
-      "titre": "Assujettissement aux vérifications",
+      "titre": "Droit de communication et vérification des sociétés",
       "texte": [
         "Toutes les sociétés françaises ou étrangères, de quelque nature qu'elles soient, toutes compagnies, tous entrepreneurs pour les entreprises de toute nature, toutes sociétés d'assurances ou assureurs français ou étrangers pour les opérations d'assurances de toute nature sont assujettis aux vérifications des agents de l'enregistrement et des inspecteurs vérificateurs et sont tenus de communiquer aux dits agents ayant au moins le grade d'inspecteur ou en tenant lieu, au siège social ou dans les succursales, leurs livres, registres, titres, polices, pièces de recettes et de dépenses et de comptabilité et tous autres documents tels que délibérations, comptes rendus d'assemblées, bordereaux de coupons, correspondances, etc., afin qu'ils s'assurent de l'exécution des règlements sur le timbre."
       ],
@@ -511,7 +540,7 @@
     },
     {
       "article": "Art. 22",
-      "titre": "Astreinte pour défaut de communication",
+      "titre": "Astreinte en cas de refus de communication",
       "texte": [
         "Indépendamment de l'amende édictée ci-dessus, les sociétés ou compagnies françaises ou étrangères et tous autres assujettis aux vérifications des agents de l'enregistrement et des inspecteurs vérificateurs doivent, en cas d'insistance, être condamnés à représenter les pièces ou documents non communiqués sous une astreinte de 500 FCFA au minimum par chaque jour de retard.",
         "Cette astreinte commence à courir de la date de la signature par les parties ou de la notification du procès-verbal dressé pour constater le refus d'exécuter le jugement régulièrement signifié; elle ne cesse que du jour où il est constaté au moyen d'une mention inscrite par un agent de contrôle sur un des principaux livres de la société ou de l'établissement, que l'administration a été mise à même d'obtenir la communication ordonnée.",
@@ -539,7 +568,7 @@
     },
     {
       "article": "Art. 23",
-      "titre": "Contrôle des établissements bancaires",
+      "titre": "Droit de vérification étendu aux entreprises et commerces",
       "texte": [
         "Les pouvoirs appartenant aux agents de l'enregistrement et des inspecteurs vérificateurs pour application de l'article 20 ci-dessus à l'égard des sociétés peuvent être exercés à l'égard de toutes personnes ou tous établissements exerçant le commerce de banque, en vue du contrôle du paiement des droits de timbre dus tant par ces derniers que par des tiers."
       ],
@@ -559,7 +588,7 @@
     },
     {
       "article": "Art. 24",
-      "titre": "Contrôle des officiers publics et commerçants",
+      "titre": "Vérification des officiers publics et commerçants",
       "texte": [
         "Il en est de même à l'égard de tous les officiers publics et ministériels et de tout commerçant faisant un chiffre d'affaires supérieur à 1.000.000 FCFA par an."
       ],
@@ -575,7 +604,7 @@
     },
     {
       "article": "Art. 25",
-      "titre": "Contrôle des administrations et entreprises publiques",
+      "titre": "Droit de communication des administrations et collectivités",
       "texte": [
         "En aucun cas, les administrations de l'État, du Groupe des Territoires, des Territoires et des communes ainsi que les entreprises concédées ou contrôlées par l'État, les Territoires et les communes, de même que tous établissements ou organismes quelconques soumis au contrôle de l'autorité administrative, ne peuvent opposer le secret professionnel aux agents de l'administration des finances ayant au moins le grade d'inspecteur qui, pour établir les impôts institués par les textes existants, leur demandent communication des documents de service qu'elles détiennent."
       ],

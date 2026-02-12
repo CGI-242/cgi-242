@@ -15,9 +15,9 @@
   "articles": [
     {
       "article": "Art. 51",
-      "titre": "Champ d'application",
+      "titre": "Actes soumis au visa spécial ou exempts de timbre",
       "texte": [
-        "En dehors de ceux qui pourraient l'être par des règlements spéciaux sont soumis à un visa spécial sur l'acte tenant lieu du timbre en débit, ou exempts de timbre, les actes énumérés aux articles 52 et 53."
+        "En dehors de ceux qui pourraient l'être par des règlements spéciaux sont soumis à un visa spécial sur l'acte tenant lieu du timbre en débet, visés pour timbre en débet, ou exempts de timbre, les actes énumérés aux articles 52 et 53."
       ],
       "mots_cles": [
         "règlements spéciaux",
@@ -29,8 +29,15 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L2C4-ST1",
+      "titre": "1) Actes soumis à un visa spécial sur l'acte tenant lieu du timbre en débet",
+      "texte": [],
+      "mots_cles": ["visa spécial", "timbre en débet"],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 52",
-      "titre": "Visa spécial tenant lieu du timbre en débit",
+      "titre": "Actes soumis au visa spécial tenant lieu du timbre en débet",
       "texte": [
         "Sont soumis à un visa spécial sur l'acte tenant lieu du timbre en débit, d'une façon générale, les actes qui sont soumis au visa spécial tenant lieu de l'enregistrement en débit et non exempts de timbre."
       ],
@@ -40,6 +47,13 @@
         "enregistrement en débit",
         "non exempts de timbre"
       ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L2C4-ST2",
+      "titre": "2) Actes visés pour timbre en débet",
+      "texte": [],
+      "mots_cles": ["visa pour timbre", "débet"],
       "statut": "en vigueur"
     },
     {
@@ -56,8 +70,15 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L2C4-ST3",
+      "titre": "3) Actes exempts de timbre",
+      "texte": [],
+      "mots_cles": ["exempts de timbre"],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 54",
-      "titre": "Principe des exemptions",
+      "titre": "Actes exempts de timbre",
       "texte": [
         "En dehors de ceux qui pourraient l'être par des règlements spéciaux, sont exempts de timbre, les actes énumérés aux articles ci-après.",
         "Dans tous les cas où le texte prévoit une exemption des droits de timbre cette exemption comporte également dispense de formalité."
@@ -73,7 +94,7 @@
     },
     {
       "article": "Art. 55",
-      "titre": "Accidents du travail",
+      "titre": "Actes en matière d'accidents du travail",
       "texte": [
         "Les actes faits en vertu et pour exécution de la réglementation sur les accidents du travail.",
         "Est affranchie du timbre l'expédition du procès-verbal d'enquête que les parties peuvent se faire délivrer."
@@ -89,7 +110,7 @@
     },
     {
       "article": "Art. 56",
-      "titre": "Actes des autorités administratives",
+      "titre": "Actes des autorités administratives exempts de timbre",
       "texte": [
         "Tous les actes, arrêtés et décisions des autorités administratives non dénommés dans l'article 34 n°7, sont exempts de timbre sur la minute.",
         "Toutefois, aucune expédition ne peut être délivrée aux parties que sur papier timbré, si ce n'est à des individus indigents et à la charge d'en faire mention dans l'expédition.",
@@ -119,7 +140,7 @@
     },
     {
       "article": "Art. 57",
-      "titre": "Avances sur titres d'État",
+      "titre": "Avances sur titres de fonds d'État français",
       "texte": [
         "Les actes d'avances sur titres de fonds d'État français ou valeurs émises par le Trésor français."
       ],
@@ -134,7 +155,7 @@
     },
     {
       "article": "Art. 58",
-      "titre": "Procédure du Ministère public",
+      "titre": "Actes de procédure à la requête du Ministère public en matière d'état civil",
       "texte": [
         "Les actes de procédure à la requête du Ministre public ayant pour objet :",
         "1° de réparer les omissions et faire les rectifications sur les registres de l'état civil d'actes qui intéressent les individus notoirement indigents ;",
@@ -155,7 +176,7 @@
     },
     {
       "article": "Art. 59",
-      "titre": "Commandements, saisies et ventes",
+      "titre": "Actes relatifs au recouvrement des impôts",
       "texte": [
         "Les actes et pièces relatifs aux commandements, saisies et ventes ayant pour objet le recouvrement des impôts, droits, taxes, amendes et condamnations pécuniaires dont le recouvrement incombe au Trésor et à ses agents."
       ],
@@ -177,7 +198,7 @@
     },
     {
       "article": "Art. 60",
-      "titre": "Législation du travail",
+      "titre": "Actes en matière de législation du travail",
       "texte": [
         "Tous actes, faits en exécution de la législation du travail.",
         "Il en est de même de tous les actes nécessaires par l'application des textes sur les procédures de conciliation et d'arbitrage."
@@ -192,7 +213,7 @@
     },
     {
       "article": "Art. 61",
-      "titre": "Gens de guerre",
+      "titre": "Actes militaires et de recrutement",
       "texte": [
         "Les engagements, enrôlements, congés, certificats, cartouches, passeports, billets d'étapes, de subsistance et de logements, quittances pour prêts et fournitures et autres pièces ou écritures concernant les gens de guerre, tant pour le service de terre, de l'air ou de mer.",
         "Les actes faits en exécution de la loi sur le recrutement de l'armée."
@@ -219,7 +240,7 @@
     },
     {
       "article": "Art. 62",
-      "titre": "Assistance aux familles nombreuses",
+      "titre": "Actes relatifs à l'assistance médicale gratuite",
       "texte": [
         "Les certificats, significations, jugements, contrats, quittances et autres actes faits en vertu de la loi et ayant exclusivement pour objet le service de l'assistance aux familles nombreuses et nécessiteuses."
       ],
@@ -237,7 +258,7 @@
     },
     {
       "article": "Art. 63",
-      "titre": "Assistance judiciaire",
+      "titre": "Demande d'assistance judiciaire",
       "texte": [
         "La demande d'une personne qui sollicite l'assistance judiciaire est écrite sur papier libre."
       ],
@@ -250,7 +271,7 @@
     },
     {
       "article": "Art. 64",
-      "titre": "Actes de procédure entre Avocats",
+      "titre": "Actes de procédure devant les Tribunaux Populaires",
       "texte": [
         "Les actes de procédure d'Avocat Défenseur à Avocat Défenseur devant les Tribunaux Populaires de District ou d'Arrondissement et les Tribunaux Populaires de Commune ou de Région ainsi que les exploits et significations des mêmes actes."
       ],
@@ -268,7 +289,7 @@
     },
     {
       "article": "Art. 65",
-      "titre": "Caisses d'épargne et chèques postaux",
+      "titre": "Actes pour le service des caisses d'épargne et chèques postaux",
       "texte": [
         "Les imprimés, écrits, actes de toutes espèces nécessaires pour le service des caisses d'épargne et des chèques postaux.",
         "Les certificats de propriété et actes de notoriété exigés par les caisses d'épargne ou les centres de chèques postaux pour effectuer le remboursement, le transfert ou le renouvellement des livrets ou des comptes appartenant aux titulaires décédés ou déclarés absents."
@@ -293,7 +314,7 @@
     },
     {
       "article": "Art. 65 bis",
-      "titre": "Caisses publiques de retraites",
+      "titre": "Certificats et actes relatifs aux pensions et retraites",
       "texte": [
         "Les certificats, actes de notoriété et autres actes y compris les quittances, relatifs à l'exécution des lois relatives aux caisses publiques de retraites et des pensions."
       ],
@@ -308,7 +329,7 @@
     },
     {
       "article": "Art. 66",
-      "titre": "Caisses d'assurances accidents du travail",
+      "titre": "Actes relatifs aux accidents du travail et décès",
       "texte": [
         "Les certificats, actes de notoriété et autres actes y compris les quittances relatifs à l'exécution des lois sur les caisses d'assurances en cas d'accident ou de décès du travail."
       ],
@@ -324,7 +345,7 @@
     },
     {
       "article": "Art. 67",
-      "titre": "Allocations familiales",
+      "titre": "Actes relatifs aux allocations familiales",
       "texte": [
         "Toutes pièces relatives à l'application de la réglementation sur les allocations familiales, ainsi que les jugements et arrêts, leurs extraits, copies, grosses ou expéditions et généralement, tous actes de procédure relatifs à cette même réglementation."
       ],
@@ -344,7 +365,7 @@
     },
     {
       "article": "Art. 68",
-      "titre": "Bulletin du casier judiciaire",
+      "titre": "Bulletin n°3 du casier judiciaire",
       "texte": [
         "La demande du bulletin n°3 du casier judiciaire délivré aux particuliers."
       ],
@@ -371,7 +392,7 @@
     },
     {
       "article": "Art. 70",
-      "titre": "Chèques et virements bancaires",
+      "titre": "Chèques et ordres de virement",
       "texte": [
         "Les chèques et ordres de virement en banque."
       ],
@@ -395,7 +416,7 @@
     },
     {
       "article": "Art. 72",
-      "titre": "Certificats d'origine",
+      "titre": "Certificats d'origine pour les produits congolais",
       "texte": [
         "Les certificats d'origine pour les produits congolais destinés à l'exportation qui sont délivrés par les autorités compétentes."
       ],
@@ -409,7 +430,7 @@
     },
     {
       "article": "Art. 73",
-      "titre": "Comptables publics",
+      "titre": "Comptes rendus des comptables publics",
       "texte": [
         "Les comptes rendus par des Comptables publics, les doubles, autres que celui du comptable, de chaque compte de recette ou gestion particulière et privée.",
         "Les registres des Receveurs des contributions publiques et autres préposés."
@@ -430,7 +451,7 @@
     },
     {
       "article": "Art. 74",
-      "titre": "Procuration conseil de famille",
+      "titre": "Procuration pour conseil de famille",
       "texte": [
         "La procuration visée par l'article 412 du Code civil (conseil de famille)."
       ],
@@ -444,7 +465,7 @@
     },
     {
       "article": "Art. 75",
-      "titre": "Copies pour juridiction administrative",
+      "titre": "Copies conformes de requêtes devant la juridiction administrative",
       "texte": [
         "Les copies certifiées conformes par le requérant, qui accompagnent les requêtes présentées, soit par les particuliers, soit par l'administration, sur la procédure à suivre devant la juridiction administrative et qui sont destinées à être notifiées aux parties en cause."
       ],
@@ -463,7 +484,7 @@
     },
     {
       "article": "Art. 76",
-      "titre": "Recours devant la Cour Suprême",
+      "titre": "Recours devant la Cour Suprême en matière administrative",
       "texte": [
         "Le recours devant la Cour Suprême contre les décisions des juridictions administratives peut avoir lieu sans frais et sans l'intervention d'un avocat, en matière :",
         "1° d'élections ;",
@@ -484,7 +505,7 @@
     },
     {
       "article": "Art. 77",
-      "titre": "Réclamations fiscales",
+      "titre": "Réclamations en matière fiscale",
       "texte": [
         "Les réclamations de toute nature présentées par les contribuables en matière fiscale."
       ],
@@ -497,7 +518,7 @@
     },
     {
       "article": "Art. 78",
-      "titre": "Actes visés à l'article 282",
+      "titre": "Actes visés à l'article 282 de la réglementation sur l'enregistrement",
       "texte": [
         "Les actes visés à l'article 282 de la réglementation sur l'enregistrement."
       ],
@@ -511,7 +532,7 @@
     },
     {
       "article": "Art. 79",
-      "titre": "Actes visés à l'article 283",
+      "titre": "Actes visés à l'article 283 de la réglementation sur l'enregistrement",
       "texte": [
         "Les actes visés à l'article 283 de la réglementation sur l'enregistrement."
       ],
@@ -525,7 +546,7 @@
     },
     {
       "article": "Art. 80",
-      "titre": "Dommages causés par travaux publics",
+      "titre": "Actes relatifs aux dommages causés par l'exécution des travaux publics",
       "texte": [
         "Les plans, procès-verbaux, significations, jugements, contrats, quittances et autres actes, faits en vertu de la loi sur les dommages causés à la propriété privée par l'exécution des travaux publics."
       ],
@@ -544,7 +565,7 @@
     },
     {
       "article": "Art. 81",
-      "titre": "Actes en matière électorale",
+      "titre": "Actes judiciaires en matière électorale",
       "texte": [
         "Tous les actes judiciaires en matière électorale.",
         "Les extraits des actes de naissance nécessaires pour établir l'âge des électeurs sont délivrés gratuitement, sur papier libre, à tout réclamant.",
@@ -564,7 +585,7 @@
     },
     {
       "article": "Art. 82",
-      "titre": "Acte de reconnaissance",
+      "titre": "Expédition de l'acte de reconnaissance antérieure à la naissance",
       "texte": [
         "L'expédition de l'acte de reconnaissance, antérieure à la naissance de l'enfant, délivrée en vue de l'établissement de l'acte de naissance."
       ],
@@ -579,7 +600,7 @@
     },
     {
       "article": "Art. 83",
-      "titre": "Récépissé de déclaration d'appel",
+      "titre": "Récépissé de la déclaration d'appel en procédure civile",
       "texte": [
         "Le récépissé de la déclaration d'appel visé à l'article 456 du Code de procédure civile est délivré sans frais à l'Avocat Défenseur."
       ],
@@ -595,7 +616,7 @@
     },
     {
       "article": "Art. 84",
-      "titre": "Pourvoi en matière électorale municipale",
+      "titre": "Recours en matière électorale devant la Cour Suprême",
       "texte": [
         "En cas de recours à la Cour Suprême contre la décision des juridictions administratives statuant sur une réclamation formulée contre les opérations électorales municipales ou contre les élections du Maire ou des adjoints, le pourvoi est dispensé du timbre."
       ],
@@ -615,7 +636,7 @@
     },
     {
       "article": "Art. 85",
-      "titre": "Conseil de famille - Engagement des mineurs",
+      "titre": "Délibérations des conseils de famille relatives aux mineurs dans l'armée",
       "texte": [
         "Les délibérations des conseils de famille exclusivement relatifs à l'engagement des mineurs dans l'armée."
       ],
@@ -630,7 +651,7 @@
     },
     {
       "article": "Art. 86",
-      "titre": "Titres des professionnels de santé",
+      "titre": "Enregistrement des titres des professions médicales",
       "texte": [
         "L'enregistrement des titres des docteurs en médecine, chirurgiens-dentistes et sages-femmes."
       ],
@@ -645,7 +666,7 @@
     },
     {
       "article": "Art. 87",
-      "titre": "Expropriation pour utilité publique",
+      "titre": "Actes relatifs à l'expropriation pour cause d'utilité publique",
       "texte": [
         "Les plans, procès-verbaux, certificats, significations, contrats et autres faits en vertu des textes sur l'expropriation pour cause d'utilité publique."
       ],
@@ -662,7 +683,7 @@
     },
     {
       "article": "Art. 88",
-      "titre": "Faillites et liquidations judiciaires",
+      "titre": "Actes relatifs aux faillites et liquidations judiciaires",
       "texte": [
         "Les actes rédigés en exécution des lois relatives aux faillites et liquidations judiciaires et dont l'énumération suit :",
         "Les déclarations de cessation de paiement,",
@@ -696,7 +717,7 @@
     },
     {
       "article": "Art. 89",
-      "titre": "Récépissés des Greffiers",
+      "titre": "Récépissés délivrés aux greffiers par les receveurs de l'enregistrement",
       "texte": [
         "Les récépissés délivrés aux Greffiers par les Receveurs de l'enregistrement, des extraits de jugements que lesdits greffiers doivent fournir en exécution des lois sur l'enregistrement."
       ],
@@ -711,7 +732,7 @@
     },
     {
       "article": "Art. 90",
-      "titre": "Conservation foncière",
+      "titre": "Actes affranchis du timbre",
       "texte": [
         "Sont affranchis du timbre :",
         "1° les registres de toute nature tenus dans les bureaux de la conservation foncière ;",
@@ -747,7 +768,7 @@
     },
     {
       "article": "Art. 91",
-      "titre": "Mariage des indigents",
+      "titre": "Actes relatifs au mariage des indigents et à la légitimation des enfants naturels",
       "texte": [
         "Les extraits de registres de l'état civil, les actes de notoriété, de consentement, de publication, les délibérations de conseil de famille, la notification, s'il y a lieu, les certificats de libération du service militaire, les dispenses pour cause de parenté, d'alliance ou d'âge, les actes de reconnaissance des enfants naturels, les certificats constatant la célébration du mariage, les actes de procédure, les ordonnances, jugements et arrêts dont la production est nécessaire, ayant pour objet de faciliter le mariage des indigents, la légitimation de leurs enfants naturels et le retrait de ces enfants déposés dans les hospices.",
         "Sont admises aux dispositions du présent article les personnes qui justifient d'un certificat d'indigence à elles délivré par le Commissaire de Police ou par le Maire dans les Communes où il n'existe pas de Commissaire de Police ou le vu d'un extrait du rôle des contributions constatant que les parties intéressées paient moins de 100 FCFA, ou d'un certificat du percepteur de leur Commune portant qu'elles ne sont pas imposées.",
@@ -801,7 +822,7 @@
     },
     {
       "article": "Art. 92",
-      "titre": "Mineurs indigents et tutelle",
+      "titre": "Actes relatifs aux mineurs indigents et à la tutelle des enfants",
       "texte": [
         "Les avis de parents de mineurs dont l'indigence est constatée conformément à l'article précédent. Les actes nécessaires pour la convocation et la constitution des conseils de famille et l'homologation des délibérations prises dans ces conseils dans le cas d'indigence des mineurs.",
         "Les personnes dont l'interdiction est demandée et les interdits sont, dans le même cas, assimilés aux mineurs.",
@@ -842,7 +863,7 @@
     },
     {
       "article": "Art. 93",
-      "titre": "Justice militaire",
+      "titre": "Assignations et citations militaires",
       "texte": [
         "Toutes assignations, citations et notifications aux témoins inculpés ou accusés visés par le Code de justice militaire faites par la police militaire ou par tous autres agents de la force publique."
       ],
@@ -872,7 +893,7 @@
     },
     {
       "article": "Art. 95",
-      "titre": "Manifestes et déclarations douanières",
+      "titre": "Manifestes de navires et déclarations de marchandises",
       "texte": [
         "Les manifestes de navires et les déclarations de marchandises qui doivent être fournies aux douanes."
       ],
@@ -887,7 +908,7 @@
     },
     {
       "article": "Art. 96",
-      "titre": "Certificats de contrats de mariage",
+      "titre": "Certificats de contrats de mariage remis par les notaires",
       "texte": [
         "Les certificats de contrats de mariage remis aux parties par les notaires, en exécution de l'article 1394 alinéa 3 du Code civil."
       ],
@@ -903,7 +924,7 @@
     },
     {
       "article": "Art. 97",
-      "titre": "Actes relatifs au mariage",
+      "titre": "Actes relatifs au Code civil du mariage",
       "texte": [
         "Les actes énumérés aux articles 154 et 155 du Code civil relatifs au mariage."
       ],
@@ -917,7 +938,7 @@
     },
     {
       "article": "Art. 98",
-      "titre": "Article abrogé",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé"
       ],
@@ -926,7 +947,7 @@
     },
     {
       "article": "Art. 99",
-      "titre": "Relevés de décès et successions",
+      "titre": "Relevés trimestriels d'actes de décès et récépissés d'enregistrement",
       "texte": [
         "Sont délivrés sur papier non timbré, les relevés trimestriels d'actes de décès que les Maires fournissent aux Receveurs de l'enregistrement en exécution de l'article 178 de la réglementation de l'enregistrement, ainsi que les récépissés de ces relevés ; les certificats visés par l'article 183 de la réglementation de l'enregistrement et destinés à constater l'acquittement ou la non exigibilité du droit de mutation par décès sont délivrés sans frais.",
         "Il en est de même de la liste établie en vertu de l'article 183 susvisé.",
@@ -954,7 +975,7 @@
     },
     {
       "article": "Art. 100",
-      "titre": "Fonds de commerce - Nantissement",
+      "titre": "Registre des inscriptions relatives aux fonds de commerce",
       "texte": [
         "Le registre des inscriptions tenu par le Greffier en exécution de la loi relative à la vente et au nantissement des fonds de commerce, les bordereaux d'inscription, les reconnaissances de dépôts, états, les certificats, extraits et copies dressés en exécution de ladite loi, ainsi que les pièces produites pour obtenir l'accomplissement d'une formalité et qui restent déposées au greffe, les copies qui en sont délivrées, à la condition que ces pièces mentionnent expressément leur destination."
       ],
@@ -978,7 +999,7 @@
     },
     {
       "article": "Art. 101",
-      "titre": "Pétitions et mémoires",
+      "titre": "Pétitions et mémoires aux autorités constituées",
       "texte": [
         "Les pétitions et mémoires présentés à toutes autorités constituées, administrations ainsi que les pétitions ayant pour objet des demandes de secours adressées aux autorités constituées, les demandes de renseignements ou correspondances courantes adressées aux administrations publiques.",
         "Restent toutefois soumises au droit de timbre, les demandes déposées dans le cadre de la réglementation déterminée en vue d'obtenir des concessions (terrains, forêts, mines, etc.), ou des permis (de chasse, de conduire, de construire, etc.) dès qu'elles comportent, même implicitement, engagement du demandeur de se conformer à ces réglementations."
@@ -1007,7 +1028,7 @@
     },
     {
       "article": "Art. 102",
-      "titre": "Exploitation forestière et minière",
+      "titre": "Permis d'exploitation forestière ou minière",
       "texte": [
         "Le permis d'exploitation et de circulation en matière forestière ou minière lorsque la redevance à percevoir est inférieure à 1.000 FCFA.",
         "Le bulletin de liquidation pour le recouvrement de la redevance quelle que soit la somme.",
@@ -1030,7 +1051,7 @@
     },
     {
       "article": "Art. 103",
-      "titre": "Police et procédure criminelle",
+      "titre": "Actes de police générale et de procédure criminelle",
       "texte": [
         "Les actes de police générale et de vindicte publique et les copies de pièces de procédure criminelle qui doivent être délivrés sans frais.",
         "Les actes de police en matière criminelle, ceux concernant la police générale et de sûreté et la vindicte publique, les actes de la procédure d'assises, à l'exception des actes soumis au visa pour timbre en débit par suite de l'existence d'une partie civile et des actes d'huissiers visés pour timbre et enregistrement en débit."
@@ -1065,7 +1086,7 @@
     },
     {
       "article": "Art. 105",
-      "titre": "Prestation de serment",
+      "titre": "Actes de prestation de serment",
       "texte": [
         "Les actes de prestation de serment des magistrats, fonctionnaires ou autres agents salariés par les administrations publiques."
       ],
@@ -1081,7 +1102,7 @@
     },
     {
       "article": "Art. 106",
-      "titre": "Protection obligatoire",
+      "titre": "Pouvoirs relatifs à la protection des obligataires",
       "texte": [
         "Les pouvoirs visés à l'avant-dernier alinéa de l'article 17 du décret du 13 janvier 1938, relatif à la protection obligatoire."
       ],
@@ -1095,7 +1116,7 @@
     },
     {
       "article": "Art. 107",
-      "titre": "Pupilles de la nation",
+      "titre": "Actes relatifs à la protection des pupilles de la nation",
       "texte": [
         "Tous les actes ou pièces ayant exclusivement pour objet la protection des pupilles de la nation."
       ],
@@ -1109,7 +1130,7 @@
     },
     {
       "article": "Art. 108",
-      "titre": "Quittances et reçus",
+      "titre": "Quittances et reçus de toute nature",
       "texte": [
         "Sont dispensés du droit de timbre les quittances et reçus de toute nature."
       ],
@@ -1123,7 +1144,7 @@
     },
     {
       "article": "Art. 109",
-      "titre": "Registre du commerce",
+      "titre": "Déclarations visées par la réglementation du registre du commerce",
       "texte": [
         "Les déclarations visées par la réglementation du registre du commerce.",
         "Sont également rédigées sur papier libre :",
@@ -1146,7 +1167,7 @@
     },
     {
       "article": "Art. 110",
-      "titre": "Registres de l'état civil",
+      "titre": "Registres de l'état civil et tables annuelles et décennales",
       "texte": [
         "Les registres de l'état civil et les tables annuelles et décennales de ces registres."
       ],
@@ -1160,7 +1181,7 @@
     },
     {
       "article": "Art. 111",
-      "titre": "Réhabilitation des faillis",
+      "titre": "Procédure de réhabilitation des faillis",
       "texte": [
         "La procédure de réhabilitation des faillis prévue par les articles 604 et 612 du Code de commerce."
       ],
@@ -1175,7 +1196,7 @@
     },
     {
       "article": "Art. 112",
-      "titre": "Répertoires des greffiers",
+      "titre": "Répertoires des greffiers en matière pénale",
       "texte": [
         "Les répertoires des greffiers sur lesquels sont inscrits les jugements de simple police, de police correctionnelle et les arrêts en matière criminelle."
       ],
@@ -1192,7 +1213,7 @@
     },
     {
       "article": "Art. 113",
-      "titre": "Réquisitions militaires",
+      "titre": "Actes relatifs aux réquisitions militaires",
       "texte": [
         "Les procès-verbaux, certificats, significations, contrats, quittances et autres actes faits en vertu des textes régissant les réquisitions militaires et exclusivement relatifs au règlement de l'indemnité.",
         "Tous actes et procès-verbaux dressés en vertu de la réglementation relative aux dégâts et dommages commis aux propriétés par les troupes logées et cantonnées à l'habitant et au règlement des indemnités de réquisition."
@@ -1217,7 +1238,7 @@
     },
     {
       "article": "Art. 114",
-      "titre": "Saisie-arrêt et cession des salaires",
+      "titre": "Registre tenu au greffe en matière de saisie-arrêt",
       "texte": [
         "Le registre tenu au greffe de chaque Tribunal Populaire de District ou d'Arrondissement sur lequel sont mentionnés tous les actes, d'une nature quelconque, décisions et formalités auxquels donne lieu l'exécution des dispositions du Code du travail relatives à la saisie-arrêt et à la cession des salaires et appointements.",
         "Tous les actes, décisions et formalités visés dans ce Code sont rédigés sur papier non timbré, ainsi que leurs copies, les lettres recommandées, les procurations du saisi et du tiers saisi."
@@ -1246,7 +1267,7 @@
     },
     {
       "article": "Art. 115",
-      "titre": "Saisie-arrêt des fonctionnaires",
+      "titre": "Saisie-arrêt et cession des salaires et soldes",
       "texte": [
         "Les dispositions de l'article précédent sont applicables en matière de saisie-arrêt et de cession :",
         "a) des salaires, appointements et traitements des Fonctionnaires civils et assimilés et des militaires à solde mensuelle en activité, en disponibilité, en non-activité, en réforme, et des Officiers généraux du cadre de réserve."
@@ -1272,7 +1293,7 @@
     },
     {
       "article": "Art. 116",
-      "titre": "Sociétés de secours mutuels",
+      "titre": "Actes relatifs aux sociétés de secours mutuels",
       "texte": [
         "Tous les actes intéressant les sociétés de secours mutuels approuvées, ainsi que les unions approuvées de sociétés de secours mutuels.",
         "Les certificats, actes de notoriété et autres pièces exclusivement relatifs à l'exécution de la loi sur les sociétés de secours mutuels sont délivrés gratuitement et exempts des droits de timbre.",
@@ -1306,7 +1327,7 @@
     },
     {
       "article": "Art. 117",
-      "titre": "Organisations professionnelles",
+      "titre": "Organisations professionnelles constituées légalement",
       "texte": [
         "Les organisations professionnelles constituées légalement, qui ont prévu dans leurs statuts les secours mutuels entre leurs membres adhérents, bénéficient des immunités de timbre accordées aux sociétés de secours mutuels."
       ],
@@ -1323,7 +1344,7 @@
     },
     {
       "article": "Art. 118",
-      "titre": "Contrat de travail",
+      "titre": "Contrat de travail entre chefs d'établissements et ouvriers",
       "texte": [
         "Le contrat de travail entre les chefs ou directeurs d'établissements industriels ou commerciaux et les salariés de ces établissements."
       ],
@@ -1339,7 +1360,7 @@
     },
     {
       "article": "Art. 119",
-      "titre": "Certificats de travail",
+      "titre": "Certificats de travail délivrés aux ouvriers",
       "texte": [
         "Les certificats de travail délivrés aux ouvriers, employés ou serviteurs par le chef d'industrie ou maître qui les employait."
       ],
@@ -1356,7 +1377,7 @@
     },
     {
       "article": "Art. 120",
-      "titre": "Déclarations de ventes publiques",
+      "titre": "Second exemplaire des déclarations de ventes publiques mobilières",
       "texte": [
         "Le second exemplaire conservé au bureau de l'enregistrement des déclarations de ventes publiques d'objets mobiliers dans les cas où lesdites déclarations doivent être enregistrées."
       ],
@@ -1372,7 +1393,7 @@
     },
     {
       "article": "Art. 121",
-      "titre": "Actes à charge de l'État",
+      "titre": "Actes à la charge de l'État et des collectivités",
       "texte": [
         "Les actes d'acquisition, d'échange ou de location à charge de l'État."
       ],
@@ -1399,7 +1420,7 @@
     },
     {
       "article": "Art. 123",
-      "titre": "Certificats de vie des pensionnés",
+      "titre": "Certificats de vie délivrés aux pensionnaires de l'État et des collectivités",
       "texte": [
         "Les certificats de vie délivrés aux pensionnés de l'État ou d'autres collectivités publiques."
       ],
@@ -1413,7 +1434,7 @@
     },
     {
       "article": "Art. 124",
-      "titre": "Justice de droit coutumier",
+      "titre": "Actes en matière de justice de droit coutumier",
       "texte": [
         "Tous actes et jugements relatifs à l'exécution des textes relatifs à la justice de droit coutumier.",
         "Ces extraits feront mention de leur destination et ne pourront servir à un autre usage."
@@ -1432,7 +1453,7 @@
     },
     {
       "article": "Art. 125",
-      "titre": "Factures et mémoires des dépenses publiques",
+      "titre": "Factures et mémoires pour dépenses publiques",
       "texte": [
         "Les factures, états, mémoires produits à l'appui des dépenses publiques n'excédant pas 5.000 FCFA."
       ],
@@ -1447,7 +1468,7 @@
     },
     {
       "article": "Art. 126",
-      "titre": "Assistance médicale gratuite",
+      "titre": "Mémoires pour l'assistance médicale gratuite",
       "texte": [
         "Les mémoires produits par les médecins et pharmaciens en vue du remboursement des soins donnés aux bénéficiaires de l'assistance médicale gratuite et les quittances données par les Médecins et les pharmaciens lors du règlement des sommes qui leur sont mandatées à ce titre."
       ],
@@ -1467,7 +1488,7 @@
     },
     {
       "article": "Art. 127",
-      "titre": "Acquits-à-caution et passavants",
+      "titre": "Acquits-à-caution et passavants des douanes",
       "texte": [
         "Les acquits-à-caution et passavants délivrés par l'administration des douanes."
       ],
@@ -1481,7 +1502,7 @@
     },
     {
       "article": "Art. 128",
-      "titre": "Déclarations douanières",
+      "titre": "Déclarations pour la liquidation des droits de douane",
       "texte": [
         "Les déclarations pour la liquidation des droits de douane."
       ],
@@ -1495,9 +1516,9 @@
     },
     {
       "article": "Art. 129",
-      "titre": "Carnets de pêche",
+      "titre": "Remboursements des carnets de pécule",
       "texte": [
-        "Les pièces de toute nature relatives aux remboursements des carnets de pêche visés par les textes réglementant le travail."
+        "Les pièces de toute nature relatives aux remboursements des carnets de pécule visés par les textes réglementant le travail."
       ],
       "mots_cles": [
         "pièces",
@@ -1509,7 +1530,7 @@
     },
     {
       "article": "Art. 130",
-      "titre": "Contrats de recrutement public",
+      "titre": "Contrats pour le recrutement des services administratifs",
       "texte": [
         "Tous contrats passés par l'État, le Groupe des États de l'ex-AEF, ou les Communes en vue du recrutement du personnel des services administratifs."
       ],
@@ -1527,7 +1548,7 @@
     },
     {
       "article": "Art. 131",
-      "titre": "Sociétés de prévoyance",
+      "titre": "Actes relatifs aux sociétés de prévoyance",
       "texte": [
         "Tous actes et transmissions passés par les sociétés de prévoyance et dont les droits seraient supportés par lesdites sociétés."
       ],
@@ -1541,7 +1562,7 @@
     },
     {
       "article": "Art. 132",
-      "titre": "Warrants agricoles",
+      "titre": "Actes relatifs aux warrants agricoles",
       "texte": [
         "Les lettres et accusés de réception, les renonciations, acceptations et consentements prévus par la réglementation sur les warrants agricoles, les registres sur lesquels les warrants agricoles sont inscrits, les copies des inscriptions d'emprunt, les certificats négatifs et les certificats de radiations mentionnés à cette réglementation."
       ],
@@ -1562,7 +1583,7 @@
     },
     {
       "article": "Art. 133",
-      "titre": "Article abrogé",
+      "titre": "Abrogé",
       "texte": [
         "Abrogé"
       ],
@@ -1571,7 +1592,7 @@
     },
     {
       "article": "Art. 134",
-      "titre": "Organismes humanitaires et internationaux",
+      "titre": "Actes relatifs aux organismes humanitaires internationaux",
       "texte": [
         "Tous actes et pièces intéressant le fonctionnement, l'œuvre de l'entraide française pour la Libération, l'Association de la Croix-Rouge française, l'OMS, le Fonds International de Secours à l'Enfance, et dont les droits seraient supportés légalement par ces organismes."
       ],
@@ -1591,7 +1612,7 @@
     },
     {
       "article": "Art. 135",
-      "titre": "Importation et exportation",
+      "titre": "Demandes d'autorisation d'importation et d'exportation",
       "texte": [
         "Les demandes d'autorisation d'importation et d'exportation de capitaux et marchandises."
       ],
@@ -1606,7 +1627,7 @@
     },
     {
       "article": "Art. 136",
-      "titre": "Affiches et contrats de transport",
+      "titre": "Affiches des contrats de transport",
       "texte": [
         "Les affiches et contrats de transport."
       ],
@@ -1618,7 +1639,7 @@
     },
     {
       "article": "Art. 137",
-      "titre": "Attestations relatives aux chèques",
+      "titre": "Attestations relatives aux comptes à chèques",
       "texte": [
         "Les attestations prévues à l'article 3 du décret n°55-584 du 20 mai 1955 relatif aux conditions de fonctionnement des comptes sur lesquels il peut être disposé par chèques."
       ],
@@ -1634,7 +1655,7 @@
     },
     {
       "article": "Art. 138",
-      "titre": "Procès-verbaux de douane",
+      "titre": "Procès-verbaux de douane et soumissions",
       "texte": [
         "Les procès-verbaux de douane ainsi que les soumissions et les transactions en tenant lieu."
       ],

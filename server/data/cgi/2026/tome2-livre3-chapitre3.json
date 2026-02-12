@@ -30,7 +30,7 @@
     },
     {
       "article": "Art. 18-1",
-      "titre": "Revenus de l'État et collectivités",
+      "titre": "Revenus des valeurs mobilières de l'État et des collectivités",
       "texte": [
         "Les revenus des valeurs mobilières appartenant à l'État, au Groupe des États de l'ex-AEF, aux communes."
       ],
@@ -46,7 +46,7 @@
     },
     {
       "article": "Art. 18-2",
-      "titre": "Crédit agricole mutuel",
+      "titre": "Revenus des parts d'intérêts des caisses locales de crédit agricole",
       "texte": [
         "Les revenus des parts d'intérêts ou des obligations des caisses locales de crédit agricole, associations agricoles et sociétés coopératives agricoles visées dans les textes portant organisation du crédit agricole mutuel en ex-AEF."
       ],
@@ -65,7 +65,7 @@
     },
     {
       "article": "Art. 18-3",
-      "titre": "Sociétés coopératives et mutuelles",
+      "titre": "Revenus des parts d'intérêts des sociétés coopératives",
       "texte": [
         "Les revenus des parts d'intérêts ou actions, emprunts ou obligations des sociétés de toute nature dites de coopération, ainsi que des sociétés coopératives de production, de consommation ou de crédit et des sociétés de secours mutuels."
       ],
@@ -86,7 +86,7 @@
     },
     {
       "article": "Art. 18-4",
-      "titre": "Établissements financiers publics",
+      "titre": "Intérêts et arrérages des emprunts représentés par des titres négociables",
       "texte": [
         "Les intérêts, arrérages et tous autres produits des emprunts représentés par des titres négociables, émis directement dans le public par la Caisse des Dépôts et Consignations, le Crédit Foncier ou une société de crédit foncier agréée conformément au décret du 22 avril 1937, le Crédit National et les Caisses d'Épargne."
       ],
@@ -107,7 +107,7 @@
     },
     {
       "article": "Art. 18-5",
-      "titre": "Non-application aux sociétés de personnes",
+      "titre": "Exclusions d'application de l'article 1 n°2",
       "texte": [
         "Les dispositions de l'article 1 n°2 ne sont pas applicables :",
         "• a) aux revenus des parts d'intérêts dans les sociétés commerciales en nom collectif ;",
@@ -139,7 +139,7 @@
     },
     {
       "article": "Art. 18-6",
-      "titre": "Sociétés en commandite",
+      "titre": "Sociétés en commandite dont le capital n'est pas divisé en actions",
       "texte": [
         "Les dispositions de l'article 1 n°2 ne s'appliquent, dans les sociétés en commandite dont le capital n'est pas divisé en actions, qu'au montant de la commandite, à la double condition :",
         "• a) que le ou les associés responsables soient des personnes physiques ;",
@@ -156,6 +156,27 @@
         "personnes physiques",
         "parts",
         "tiers du capital social"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 18-7",
+      "titre": "Plus-values résultant de fusions de sociétés",
+      "texte": [
+        "Les plus-values résultant de l'attribution gratuite d'actions, de parts bénéficiaires, de parts sociales ou d'obligations, à la suite de la fusion de sociétés anonymes, en commandite par actions ou à responsabilité limitée, réalisées à compter de l'entrée en vigueur du présent règlement, de l'impôt sur le revenu des capitaux mobiliers."
+      ],
+      "mots_cles": [
+        "plus-values",
+        "attribution gratuite",
+        "actions",
+        "parts bénéficiaires",
+        "parts sociales",
+        "obligations",
+        "fusion",
+        "sociétés anonymes",
+        "commandite par actions",
+        "responsabilité limitée",
+        "impôt sur le revenu des capitaux mobiliers"
       ],
       "statut": "en vigueur"
     },
@@ -203,7 +224,7 @@
     },
     {
       "article": "Art. 18-10",
-      "titre": "Distributions de réserves",
+      "titre": "Distributions de réserves sous forme d'augmentation de capital",
       "texte": [
         "Les distributions de réserves effectuées à compter de l'entrée en vigueur du présent règlement sous forme d'augmentation de capital sont exonérées de l'impôt sur le revenu des capitaux mobiliers.",
         "Toutefois, lorsque ces distributions sont consécutives à une réduction de capital non motivée par des pertes sociales, ou à une opération quelconque impliquant le remboursement direct ou indirect du capital en franchise d'impôt sur le revenu des capitaux mobiliers, réalisée antérieurement à l'entrée en vigueur du présent règlement et depuis moins de dix ans elles ne peuvent bénéficier de l'exemption édictée par l'alinéa précédent que si l'augmentation de capital en résultant excède le montant de la réduction de capital ou du remboursement effectué.",
@@ -235,8 +256,56 @@
       "statut": "en vigueur"
     },
     {
+      "article": "Art. 18-11",
+      "titre": "Réduction d'impôt pour les sociétés possédant des biens hors du Territoire",
+      "texte": [
+        "Lorsqu'une société, compagnie ou entreprise, ayant son siège social dans le Territoire, possède dans un autre Territoire de l'Union Française des biens pour lesquels elle justifie avoir acquitté un impôt analogue à celui qui est institué par le présent règlement, l'impôt exigible dans le Territoire est réduit, pour le même exercice social, dans la mesure de la quote-part des biens ayant servi de base à l'assiette de l'impôt hors du Territoire."
+      ],
+      "mots_cles": [
+        "réduction d'impôt",
+        "sociétés",
+        "siège social",
+        "Territoire",
+        "Union Française",
+        "impôt analogue",
+        "exercice social",
+        "quote-part"
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 18-12",
+      "titre": "Exonération des dividendes distribués par les sociétés mères",
+      "texte": [
+        "1) Lorsqu'une société par actions ou à responsabilité limitée, ayant son siège dans le Territoire, possède, soit des actions nominatives d'une société française par actions, soit des parts d'intérêts d'une société française à responsabilité limitée, les dividendes distribués par la première société sont, pour chaque exercice, exonérés de l'impôt sur le revenu des capitaux mobiliers dans la mesure du montant net, déduction faite de l'IRVM des produits, des actions ou parts d'intérêts de la seconde société touchés par elle au cours de l'exercice, à condition :",
+        "a) que les actions ou parts d'intérêts possédées par la première société représentent au moins 20 % du capital de la seconde société ;",
+        "b) qu'elles aient été souscrites ou attribuées à l'émission et soient toujours restées inscrites au nom de la société ou qu'elles soient détenues depuis deux années consécutives au moins sous la forme nominative.",
+        "Toutefois aucun pourcentage minimum ne sera exigé lorsque les actions ou parts d'intérêts possédées par la première société lui auront été remises en représentation d'apports faits dans le cadre et aux conditions prévues par l'article 261 de la codification de l'enregistrement.",
+        "2) En cas de fusion, le bénéfice des dispositions qui précèdent est transporté de plein droit de la société absorbée à la société absorbante ou nouvelle ; les mêmes dispositions sont également applicables aux sociétés françaises qui ont une participation dans la société absorbée pour les actions nominatives ou les parts d'intérêts de la société absorbante ou nouvelle qu'elles ont reçues sans les avoir souscrites à l'émission, en remplacement des actions ou parts d'intérêts de la société absorbée, à charge de en justifier que les actions ou parts d'intérêts ont été effectivement attribuées à l'émission et soient toujours restées inscrites au moins à la distribution des dividendes et autres produits susceptibles d'être exonérés.",
+        "3) La dispense prévue aux alinéas précédents est applicable, sous les conditions fixées aux mêmes alinéas, aux sociétés par actions ou à responsabilité limitée ayant leur siège au Congo, qui possèdent des actions nominatives ou des parts d'intérêts de sociétés de même forme ayant leur siège hors du Congo toutefois dans un autre Territoire de l'ex-Union Française."
+      ],
+      "mots_cles": [
+        "exonération",
+        "dividendes",
+        "sociétés mères",
+        "actions nominatives",
+        "parts d'intérêts",
+        "IRVM",
+        "20 %",
+        "capital",
+        "souscription",
+        "émission",
+        "fusion",
+        "société absorbée",
+        "société absorbante",
+        "Congo",
+        "ex-Union Française"
+      ],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 18-13",
-      "titre": "Avances par warrants",
+      "titre": "Avances faites aux sociétés au moyen de warrants",
       "texte": [
         "L'impôt sur le revenu des capitaux mobiliers n'est pas applicable aux avances faites aux sociétés, au moyen d'endossement de warrants."
       ],
@@ -252,14 +321,14 @@
     },
     {
       "article": "Art. 18-14",
-      "titre": "Amortissements et réalisation d'actif",
+      "titre": "Amortissements par réalisation d'actif",
       "texte": [
-        "La disposition de l'article 1 n°3 n'est pas applicable aux amortissements qui seraient faits par une réalisation d'actif au moyen de prélèvement sur les éléments autres que le compte « profits et pertes », les réserves ou provisions diverses du bilan.",
+        "1) La disposition de l'article 1 n°3 n'est pas applicable aux amortissements qui seraient faits par une réalisation d'actif au moyen de prélèvement sur les éléments autres que le compte « profits et pertes, les réserves ou provisions diverses du bilan.",
         "De même elle ne s'applique pas :",
-        "• a) aux sociétés dont les statuts ont prévu antérieurement à l'entrée en vigueur du présent règlement, l'amortissement obligatoire des actions ;",
-        "• b) aux sociétés concessionnaires de l'État, du Groupe des États de l'ex-AEF ou des communes qui établissent que l'amortissement par remboursement de tout ou partie de leur capital social, parts d'intérêts ou commandite, est justifié par la caducité de tout ou partie de leur actif social, notamment par dépérissement ou par obligation de remise en fin de concession à l'autorité concédante.",
-        "2) Sont fixées à l'article 16 les conditions dans lesquelles est constaté, dans chaque cas, que l'opération a bien le caractère d'amortissement et que l'exonération est légitime.",
-        "3) Lorsque les actions ont été remboursées par un des moyens prévus par le paragraphe 1 ci-dessus, la liquidation de la société, la répartition de l'actif entre les porteurs d'actions de jouissance et jusqu'à concurrence du pair des actions originaires, est considérée comme remboursement de capital non imposable à l'impôt."
+        "a) aux sociétés dont les statuts ont prévu antérieurement à l'entrée en vigueur du présent règlement, l'amortissement obligatoire des actions ;",
+        "b) aux sociétés concessionnaires de l'État, du Groupe des États de l'ex-AEF ou des communes qui établissent que l'amortissement par remboursement de toute partie de leur capital social, parts d'intérêts ou commandite, est justifié par la caducité de tout ou partie de leur actif social, notamment par déprécissement ou par obligation de remise en fin de concession à l'autorité concédante.",
+        "2) Sont fixées à l'article 6 les conditions dans lesquelles est constatée, dans chaque cas, que l'opération a bien le caractère d'amortissement et que l'exonération est légitime.",
+        "3) Lorsque les actions ont été remboursées par un des moyens prévus par le paragraphe 1 ci-dessus, à la liquidation de la société, la répartition de l'actif entre les porteurs d'actions de jouissance et jusqu'à concurrence du pair des actions originaires, est considérée comme remboursement de capital non imposable à l'impôt."
       ],
       "mots_cles": [
         "article 1 n°3",
@@ -296,7 +365,7 @@
     },
     {
       "article": "Art. 18-15",
-      "titre": "Réserve de réévaluation",
+      "titre": "Distribution de la réserve de réévaluation",
       "texte": [
         "La distribution de la réserve de réévaluation incorporée ou non au capital ayant donné lieu au paiement de la taxe forfaitaire de 10 %."
       ],
@@ -311,7 +380,7 @@
     },
     {
       "article": "Art. 7 (Ord. 17/87)",
-      "titre": "Bons de caisse",
+      "titre": "Exonération des bons de caisse",
       "texte": [
         "Les revenus des bons de caisse sont exonérés de tous impôts frappant les valeurs mobilières."
       ],

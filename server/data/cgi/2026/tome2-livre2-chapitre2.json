@@ -41,7 +41,7 @@
     },
     {
       "article": "Art. 27",
-      "titre": "Timbrage des papiers privés",
+      "titre": "Obligation de timbrage pour les papiers non fournis par l'administration",
       "texte": [
         "Les citoyens qui veulent se servir de papiers autres que ceux de l'administration fiscale ou de parchemins sont admis à les faire timbrer avant d'en faire usage."
       ],
@@ -57,7 +57,7 @@
     },
     {
       "article": "Art. 28",
-      "titre": "Timbres mobiles",
+      "titre": "Timbrage par apposition de timbres mobiles",
       "texte": [
         "Les receveurs de l'enregistrement peuvent suppléer à la formalité du visa, pour toute espèce de timbre de dimension au moyen de l'apposition de timbres mobiles.",
         "Peuvent également être timbrés au moyen de timbres mobiles, les papiers ou parchemins destinés à la rédaction des actes de toute nature et des expéditions délivrées par les Officiers ministériels pourvu que ces papiers et parchemins soient revêtus du timbre avant tout usage.",
@@ -98,7 +98,7 @@
     },
     {
       "article": "Art. 30",
-      "titre": "Modalités de l'oblitération",
+      "titre": "Modalités d'oblitération du timbre",
       "texte": [
         "L'oblitération consiste dans l'inscription, à l'encre noire usuelle et en travers des vignettes, de la date et du lieu d'apposition du timbre et de la signature de la personne qualifiée qui a procédé.",
         "L'oblitération peut également être donnée avec une griffe apposée à l'encre grasse et faisant connaître la résidence, le nom ou la raison sociale de la partie, ainsi que la date d'oblitération.",
@@ -124,7 +124,7 @@
     },
     {
       "article": "Art. 31",
-      "titre": "Tarifs du timbre de dimension",
+      "titre": "Prix des papiers timbrés et droits de timbre",
       "texte": [
         "Le prix des papiers timbrés fournis par les administrations fiscales et les droits de timbre des papiers que les redevables font timbrer sont fixés ainsi qu'il suit, en raison de la dimension du papier :",
         "• demi-feuille de papier normal : 1.000 FCFA",
@@ -150,7 +150,7 @@
     },
     {
       "article": "Art. 32",
-      "titre": "Limites du droit de timbre",
+      "titre": "Droit de timbre pour papier de dimension non standard",
       "texte": [
         "Il n'y a point de droit de timbre supérieur à 1.500 FCFA ni inférieur à 1.000 FCFA, quelle que soit la dimension du papier, soit au-dessus de sa grandeur registre, soit au-dessous de la demi-feuille de petit papier."
       ],
@@ -169,7 +169,7 @@
     },
     {
       "article": "Art. 33",
-      "titre": "Timbrage des papiers de dimensions non standard",
+      "titre": "Papier de dimension différente des formats de l'administration",
       "texte": [
         "Si les papiers ou le parchemin soumis au timbrage par l'article 28 ci-dessus se trouvent être de dimensions différentes de celles des papiers de l'administration fiscale, le timbre qui aura été établi en raison de la dimension, est payé au prix du format supérieur."
       ],
@@ -186,8 +186,22 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L2C2-ST1",
+      "titre": "A. Actes soumis au timbre de dimension",
+      "texte": [],
+      "mots_cles": ["actes", "timbre de dimension"],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L2C2-ST1a",
+      "titre": "I. Règles générales",
+      "texte": [],
+      "mots_cles": ["règles générales"],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 34",
-      "titre": "Actes et écrits assujettis au timbre de dimension",
+      "titre": "Actes assujettis au droit de timbre de dimension",
       "texte": [
         "Sont assujettis au droit de timbre établi en raison de la dimension, tous les papiers à employer pour les actes et écritures, soit publics, soit privés, à savoir :",
         "1° les actes de notaires et les extraits, copies ou expéditions qui en sont délivrés ;",
@@ -278,7 +292,7 @@
     },
     {
       "article": "Art. 34 bis",
-      "titre": "Prestations de services à l'État",
+      "titre": "Actes soumis au timbre pour prestations de services au profit de l'État",
       "texte": [
         "Sont également assujettis au timbre de dimension, les notes d'honoraires, factures, mémoires ou tout autre document en tenant lieu, établis pour les prestations de services au profit de l'État, à raison des prestations ou fournitures de services auxquelles leurs auteurs ont procédé."
       ],
@@ -295,7 +309,7 @@
     },
     {
       "article": "Art. 35",
-      "titre": "Répertoire sur papier timbré",
+      "titre": "Actes devant être répertoriés sur papier timbré",
       "texte": [
         "Les seuls actes dont il doit être tenu un répertoire sur papier timbré, dans les administrations locales et Mairies, sont ceux dénommés à l'article précédent n°8."
       ],
@@ -310,8 +324,15 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L2C2-ST1b",
+      "titre": "II. Applications particulières",
+      "texte": [],
+      "mots_cles": ["applications particulières"],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 36",
-      "titre": "Actes soumis au timbre de dimension",
+      "titre": "Actes soumis au timbre de dimension - Applications particulières",
       "texte": [
         "Sont notamment soumis au timbre de dimension :",
         "1° les expéditions destinées aux parties, des ordonnances de nomination des Notaires, Avocats Défenseurs, Greffiers, Huissiers, Courtiers et Commissaires-priseurs ;",
@@ -373,8 +394,15 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L2C2-ST2",
+      "titre": "B. Règles spéciales aux copies d'exploits",
+      "texte": [],
+      "mots_cles": ["copies d'exploits", "règles spéciales"],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 37",
-      "titre": "Timbre des copies d'exploits",
+      "titre": "Droit de timbre des copies d'exploits et significations",
       "texte": [
         "Le droit de timbre des copies des exploits et des significations de tous jugements, actes ou pièces, est acquitté au moyen de timbres mobiles lors de sa présentation à la formalité de l'enregistrement."
       ],
@@ -394,7 +422,7 @@
     },
     {
       "article": "Art. 38",
-      "titre": "Dimensions du papier pour copies d'exploits",
+      "titre": "Format du papier pour les copies d'exploits",
       "texte": [
         "Le papier à employer pour la rédaction des copies d'exploits doit être des mêmes dimensions que la demi-feuille de papier normal."
       ],
@@ -409,7 +437,7 @@
     },
     {
       "article": "Art. 39",
-      "titre": "Mentions obligatoires sur les exploits",
+      "titre": "Mentions prescrites sur les copies d'exploits",
       "texte": [
         "Indépendamment des mentions prescrites par le Code de procédure civile, les agents d'exécution sont tenus d'indiquer distinctement au bas de l'original et des copies de chaque exploit :",
         "1° le nombre de feuilles de papier employées tant pour les copies de l'original que pour les copies des pièces signifiées ;",
@@ -431,7 +459,7 @@
     },
     {
       "article": "Art. 40",
-      "titre": "Limitation des remboursements de droits de timbre",
+      "titre": "Interdiction de remboursement des droits de timbre des copies",
       "texte": [
         "Il ne peut être alloué en taxe, et les Officiers ministériels ne peuvent demander et se faire payer à titre de remboursement de droits de timbre des copies, aucune somme excédant la valeur des timbres mobiles apposés en exécution des dispositions qui précèdent."
       ],
@@ -448,7 +476,7 @@
     },
     {
       "article": "Art. 41",
-      "titre": "Qualité des copies d'exploits",
+      "titre": "Obligation de lisibilité des copies d'exploits",
       "texte": [
         "Les copies des exploits, celles des significations de tous jugements, actes ou pièces doivent être correctes, lisibles et sans abréviations."
       ],
@@ -467,9 +495,9 @@
     },
     {
       "article": "Art. 42",
-      "titre": "Amendes pour contraventions",
+      "titre": "Amende pour contravention aux règles sur les copies d'exploits",
       "texte": [
-        "Chaque contravention aux dispositions des articles 37 à 39 est punie d'une amende de 1.000 FCFA."
+        "Chaque contravention aux dispositions des articles 37 et 39 est punie d'une amende de 1.000 FCFA."
       ],
       "mots_cles": [
         "contravention",
@@ -480,26 +508,24 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art. 43",
-      "titre": "Article abrogé",
-      "texte": [
-        "Abrogé"
-      ],
-      "mots_cles": [],
-      "statut": "abrogé"
+      "article": "T2L2C2-ST3",
+      "titre": "C. Prescriptions et prohibitions diverses",
+      "texte": [],
+      "mots_cles": ["prescriptions", "prohibitions"],
+      "statut": "en vigueur"
     },
     {
-      "article": "Art. 44",
-      "titre": "Article abrogé",
+      "article": "Art. 43 et 44",
+      "titre": "Abrogés",
       "texte": [
-        "Abrogé"
+        "Abrogés."
       ],
       "mots_cles": [],
       "statut": "abrogé"
     },
     {
       "article": "Art. 45",
-      "titre": "Double des actes sous seing privé",
+      "titre": "Double sur papier timbré des actes sous seing privé",
       "texte": [
         "Les parties qui rédigent un acte sous seing privé, visé à l'article 147 de la réglementation de l'enregistrement, doivent en établir un double sur papier timbré, revêtu des mêmes signatures que l'acte lui-même et qui restera déposé au bureau de l'enregistrement lorsque la formalité est requise."
       ],
@@ -517,7 +543,7 @@
     },
     {
       "article": "Art. 46",
-      "titre": "Amendes pour actes non timbrés",
+      "titre": "Amende pour acte sur papier non timbré",
       "texte": [
         "Il est prononcé une amende de 1.000 FCFA :",
         "1° pour chaque acte public ou expédition écrit sur papier non timbré ;",

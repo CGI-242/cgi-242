@@ -15,11 +15,11 @@
   "articles": [
     {
       "article": "Art. 2",
-      "titre": "Curateur d'office",
+      "titre": "Fonctions de curateur d'office",
       "texte": [
         "Dans toute l'étendue du territoire de la République du Congo, les fonctions de Curateur d'office sont remplies par la DGID (Direction de l'enregistrement, des domaines et du timbre).",
-        "Dans chaque Région, le Curateur d'office est receveur de l'enregistrement du ressort territorial du lieu d'ouverture de la succession vacante ou en déshérence.",
-        "Toutefois, dans certains cas, pour faciliter la gestion des biens, le Directeur Général des Impôts peut désigner un autre agent, une personnalité ou un organisme spécialisé pour assurer ces fonctions. Cette nomination doit alors être homologuée dans le délai de trois mois par le Tribunal Populaire du District ou d'Arrondissement du lieu d'ouverture de la succession."
+        "Dans chaque Région, le Curateur d'office est le receveur de l'enregistrement du ressort territorial du lieu d'ouverture de la succession vacante ou en déshérence.",
+        "Toutefois, dans certains cas, pour faciliter la gestion des biens, le Directeur Général des Impôts peut désigner un autre agent, une personnalité ou un organisme spécialisé pour assurer ces fonctions. Cette nomination doit alors être homologuée par le Tribunal Populaire de District ou d'Arrondissement du lieu d'ouverture de la succession."
       ],
       "mots_cles": [
         "territoire",
@@ -68,9 +68,9 @@
     },
     {
       "article": "Art. 4",
-      "titre": "Fonctions de gestion",
+      "titre": "Fonctions de gestion et d'administration des successions vacantes",
       "texte": [
-        "Leurs fonctions sont de gérer et d'administrer toutes les successions vacantes ou en déshérence dans le Territoire de la République du Congo, soit celles ouvertes ou non liquidées, soit celles qui se trouvent abandonnées par l'absence de présomptifs héritiers ou par leur renonciation, et tous autres biens vacants de quelque manière que ce soit."
+        "Leurs fonctions sont de gérer et d'administrer toutes les successions vacantes ou en déshérence dans le Territoire de la République du Congo, soit celles ouvertes ou non liquidées, soit celles qui s'ouvrent et se trouvent abandonnées par l'absence de présomptifs héritiers ou par leur renonciation, et tous autres biens vacants de quelque manière que ce soit."
       ],
       "mots_cles": [
         "fonctions",
@@ -90,9 +90,9 @@
     },
     {
       "article": "Art. 5",
-      "titre": "Biens des absents",
+      "titre": "Administration et gestion des biens vacants",
       "texte": [
-        "L'administration et la gestion des biens de ceux qui, n'ayant point d'héritiers ou de mandat régulièrement établi en République du Congo, ont disparu ou sont déclarés absents, font partie de la curatelle générale aux biens vacants."
+        "L'administration et la gestion des biens de ceux qui, n'ayant point d'héritiers ou de mandat regulier, en République du Congo, ont disparu ou sont déclarés absents, font partie de la curatelle générale aux biens vacants."
       ],
       "mots_cles": [
         "administration",
@@ -110,7 +110,7 @@
     },
     {
       "article": "Art. 6",
-      "titre": "Mandataire disparu",
+      "titre": "Curatelle en cas de disparition d'une personne absente",
       "texte": [
         "Si l'individu qui a disparu est mandataire d'une personne absente, le Curateur donne avis au mandant de la disposition et pourvoit en attendant, comme dans les successions vacantes, à ce que les circonstances exigent pour son intérêt."
       ],
@@ -145,9 +145,9 @@
     },
     {
       "article": "Art. 8",
-      "titre": "Obligations de surveillance",
+      "titre": "Pouvoirs du curateur en matière de conservation des biens",
       "texte": [
-        "Il est expressément enjoint au Curateur de veiller sur les dépositaires, fermiers judiciaires et adjudicataires des biens vacants, de tenir la main à l'exécution entière des clauses des contrats, de faire conserver les bois, d'entretenir les terres, bâtiments, meubles, outils, de faire faire les détenteurs toutes les poursuites, contraintes et diligences nécessaires à peine d'en répondre sur son propre et privé nom, d'encaisser toutes sommes et valeurs dépendant de la succession."
+        "Il est expressément enjoint au Curateur de veiller sur les dépositaires, fermiers judiciaires et adjudicataires des biens vacants, de tenir la main à l'exécution entière des clauses des contrats, de faire conserver les bois, d'entretenir les terres, bâtiments, meubles, outils, de faire contre les détenteurs toutes les poursuites, contraintes et diligences nécessaires à peine d'en répondre en son propre et privé nom, d'encaisser toutes sommes et valeurs dépendant de la succession."
       ],
       "mots_cles": [
         "Curateur",

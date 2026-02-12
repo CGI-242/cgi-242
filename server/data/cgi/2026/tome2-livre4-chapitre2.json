@@ -15,10 +15,10 @@
   "articles": [
     {
       "article": "Art. 5",
-      "titre": "Paiement de la taxe sur les loyers",
+      "titre": "Paiement de la taxe par les locataires",
       "texte": [
         "La taxe sur les loyers est payée par les locataires pour le compte des propriétaires ou usufruitiers et les sous-locataires pour le compte des locataires qu'il s'agisse des personnes physiques ou morales au plus tard le 20 février de chaque année pour les anciens contribuables.",
-        "Pour les baux conclus ou renouvellements signés, la taxe est exigible dans les trois mois qui suivent la date d'entrée en jouissance, à raison des loyers à échoir le 31 décembre de ladite année."
+        "Pour les baux ou renouvellement signés, la taxe est exigible dans les trois mois qui suivent la date d'entrée en jouissance, à raison des loyers à échoir le 31 décembre de ladite année."
       ],
       "mots_cles": [
         "taxe sur les loyers",
@@ -40,7 +40,7 @@
     },
     {
       "article": "Art. 6",
-      "titre": "Déduction de la taxe",
+      "titre": "Déduction de la taxe par les locataires",
       "texte": [
         "Les locataires déduisent la taxe en une seule fois à l'occasion de leur règlement des loyers aux propriétaires, intervenant entre le 1er janvier et le 10 avril de la même année."
       ],
@@ -57,7 +57,7 @@
     },
     {
       "article": "Art. 7",
-      "titre": "Non-augmentation du loyer",
+      "titre": "Interdiction d'augmentation de loyer liée à la taxe",
       "texte": [
         "Le règlement de la taxe par les locataires ne peut entraîner d'augmentation de loyer."
       ],
@@ -72,7 +72,7 @@
     },
     {
       "article": "Art. 8",
-      "titre": "Bordereau de versement",
+      "titre": "Bordereau de versement de la taxe",
       "texte": [
         "Chaque versement de la taxe est accompagné d'un bordereau établi en trois exemplaires sur des imprimés fournis par l'administration.",
         "Un exemplaire du bordereau est rendu, accompagné d'une quittance à la partie versante, par l'agent chargé du recouvrement.",
@@ -96,9 +96,9 @@
     },
     {
       "article": "Art. 9",
-      "titre": "Majoration pour retard",
+      "titre": "Pénalités pour retard de paiement de la taxe immobilière",
       "texte": [
-        "Tout retard dans le paiement de la taxe immobilière sur les loyers donne lieu à l'application d'une majoration de 50 % du montant des cotisations ou fractions des cotisations qui n'auraient pas été acquittées dans les délais prévus à l'article 5 ci-dessus."
+        "Tout retard dans le paiement de la taxe immobilière sur les loyers donne lieu à l'application d'une majoration de 50 % du montant des cotisations ou fractions de cotisations qui n'auraient pas été acquittées dans les délais prévus à l'article 5 ci-dessus."
       ],
       "mots_cles": [
         "retard",
@@ -115,9 +115,9 @@
     },
     {
       "article": "Art. 10",
-      "titre": "État annuel des locataires",
+      "titre": "Obligation déclarative des personnes physiques et morales",
       "texte": [
-        "Toute personne physique ou morale redevable de la taxe est tenue de remettre chaque année avant le 31 janvier au bureau de l'enregistrement compétent, un état où figurent les noms, prénoms, domiciles des locataires, la période de location et le détail de la taxe versée sur la base des loyers (charges comprises) de l'année précédente.",
+        "Toute personne physique ou morale redevable de la taxe est tenue de remettre chaque année avant le 31 janvier, au bureau de l'enregistrement compétent, un état où figurent les noms, prénoms, domiciles de ses locataires, la période de location et le détail de la taxe versée sur la base des loyers (charges comprises) de l'année précédente.",
         "Cette obligation s'applique également aux sociétés pétrolières.",
         "Le défaut de production des renseignements demandés conduit à une taxation d'office."
       ],
@@ -144,7 +144,7 @@
     },
     {
       "article": "Art. 11",
-      "titre": "Duplicata de quittances et acompte IRPP",
+      "titre": "Duplicata des quittances délivrées",
       "texte": [
         "Un duplicata des quittances délivré par le receveur ou l'agent spécial ou le préposé du Trésor est obligatoirement annexé à la déclaration annuelle des revenus prévue aux articles 76 ou 126 du CGI Tome 1.",
         "La taxe immobilière constitue un acompte de l'IRPP.",

@@ -97,8 +97,23 @@ export function extractArticlesFromSource(source: SourceFile): ArticleSource[] {
   };
 
   // Articles directs à la racine
+  // Les entrées de type section (ex: T2L1C11-ST9) servent de sous-titres
+  // pour les articles qui les suivent
   if (source.articles) {
-    allArticles.push(...source.articles);
+    let currentSection: string | undefined;
+    for (const art of source.articles) {
+      // Détecter les entrées de sous-titre (numéro contenant -ST ou texte vide avec titre)
+      if (art.article && /^T\d+L\d+C\d+-ST/.test(art.article)) {
+        currentSection = art.titre;
+        allArticles.push(art);
+      } else {
+        if (!art.section && currentSection) {
+          allArticles.push({ ...art, section: currentSection });
+        } else {
+          allArticles.push(art);
+        }
+      }
+    }
   }
 
   // Articles dans les sections (format unifié 2025/2026)

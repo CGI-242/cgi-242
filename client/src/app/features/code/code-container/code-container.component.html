@@ -89,67 +89,66 @@
                         <span class="text-sm font-bold text-primary-900">{{ sectionHeader }}</span>
                       </div>
                     }
-                    <!-- Séparateur sous-section si c'est le premier article de la sous-section -->
-                    @if (getSousSectionHeader(article.numero); as ssHeader) {
-                      <div class="px-3 py-2 bg-primary-100 border-l-4 border-primary-500">
-                        <span class="text-sm font-semibold text-primary-800">{{ ssHeader.startsWith('Sec.') ? ssHeader : 'Sous-section ' + ssHeader }}</span>
-                      </div>
+                    <!-- Headers (pas pour les titres de section I, II, III, IV) -->
+                    @if (!isSubdivisionHeader(article.numero)) {
+                      <!-- Séparateur sous-section si c'est le premier article de la sous-section -->
+                      @if (getSousSectionHeader(article.numero); as ssHeader) {
+                        <div class="px-3 py-2 bg-primary-100 border-l-4 border-primary-500">
+                          <span class="text-sm font-semibold text-primary-800">{{ ssHeader.startsWith('Sec.') ? ssHeader : 'Sous-section ' + ssHeader }}</span>
+                        </div>
+                      }
+                      <!-- Headers point (1- Conditions, 2- Imposition, a) Qualité...) depuis le contenu -->
+                      @for (pointHeader of getPointHeaders(article); track pointHeader) {
+                        <div class="px-3 py-2 bg-primary-50 border-l-4 border-primary-400 ml-2">
+                          <span class="text-sm font-semibold text-primary-700">{{ pointHeader }}</span>
+                        </div>
+                      }
+                      <!-- Header lettre majuscule (A. Contribuables..., B. Contribuables...) -->
+                      @if (isFirstOfUpperLetter(article, i)) {
+                        <div class="px-3 py-2 bg-primary-50 border-l-3 border-primary-300 ml-2">
+                          <span class="text-sm font-semibold text-primary-600">{{ getUpperLetterHeader(article) }}</span>
+                        </div>
+                      }
+                      <!-- Header de paragraphe depuis le sommaire -->
+                      @if (getParagrapheHeader(article.numero)) {
+                        <div class="px-3 py-2 bg-primary-50 border-l-3 border-primary-400 ml-2">
+                          <span class="text-sm font-semibold text-amber-700">{{ getParagrapheHeader(article.numero) }}</span>
+                        </div>
+                      }
+                      <!-- Sous-header de paragraphe depuis le titre de l'article -->
+                      @if (isFirstOfParagraph(article, i) && !getParagrapheHeader(article.numero)) {
+                        <div class="px-3 py-2 bg-primary-50 border-l-3 border-primary-400 ml-4">
+                          <span class="text-sm font-semibold text-primary-700">{{ getParagraphHeader(article) }}</span>
+                        </div>
+                      }
+                      <!-- Sous-header de lettre (a) Régime du forfait, b) Régime du réel...) -->
+                      @if (isFirstOfLetter(article, i)) {
+                        <div class="px-3 py-2 bg-secondary-50 border-l-2 border-secondary-400 ml-4">
+                          <span class="text-sm font-semibold text-secondary-700">{{ getLetterHeader(article) }}</span>
+                        </div>
+                      }
                     }
-                    <!-- Headers point (1- Conditions, 2- Imposition, a) Qualité...) depuis le contenu -->
-                    @for (pointHeader of getPointHeaders(article); track pointHeader) {
-                      <div class="px-3 py-2 bg-primary-50 border-l-4 border-primary-400 ml-2">
-                        <span class="text-sm font-semibold text-primary-700">{{ pointHeader }}</span>
+                    @if (isSubdivisionHeader(article.numero)) {
+                      <!-- Titre de section (I., II., III., IV.) - fond bleu -->
+                      <div class="px-3 py-2 bg-primary-50 border-l-4 border-primary-500">
+                        <span class="font-bold text-primary-800 text-base">{{ article.titre }}</span>
                       </div>
-                    }
-                    <!-- Header point romain (I. Personnes imposables, II. Lieu d'imposition) -->
-                    @if (getRomanHeader(article, i); as romanHeader) {
-                      <div class="px-3 py-2 bg-primary-50 border-l-4 border-primary-400">
-                        <span class="text-sm font-semibold text-primary-700">{{ romanHeader }}</span>
-                      </div>
-                    }
-                    <!-- Header lettre majuscule (A. Contribuables..., B. Contribuables...) -->
-                    @if (isFirstOfUpperLetter(article, i)) {
-                      <div class="px-3 py-2 bg-primary-50 border-l-3 border-primary-300 ml-2">
-                        <span class="text-sm font-semibold text-primary-600">{{ getUpperLetterHeader(article) }}</span>
-                      </div>
-                    }
-                    <!-- Header de paragraphe depuis le sommaire (Sous-section X. Titre : Paragraphe Y: Titre) -->
-                    @if (getParagrapheHeader(article.numero)) {
-                      <div class="px-3 py-2 bg-primary-50 border-l-3 border-primary-400 ml-2">
-                        <span class="text-sm font-semibold text-amber-700">{{ getParagrapheHeader(article.numero) }}</span>
-                      </div>
-                    }
-                    <!-- Sous-header de paragraphe depuis le titre de l'article -->
-                    @if (isFirstOfParagraph(article, i) && !getParagrapheHeader(article.numero)) {
-                      <div class="px-3 py-2 bg-primary-50 border-l-3 border-primary-400 ml-4">
-                        <span class="text-sm font-semibold text-primary-700">{{ getParagraphHeader(article) }}</span>
-                      </div>
-                    }
-                    <!-- Sous-header de lettre (a) Régime du forfait, b) Régime du réel...) -->
-                    @if (isFirstOfLetter(article, i)) {
-                      <div class="px-3 py-2 bg-secondary-50 border-l-2 border-secondary-400 ml-4">
-                        <span class="text-sm font-semibold text-secondary-700">{{ getLetterHeader(article) }}</span>
-                      </div>
-                    }
-                    <button
-                      (click)="selectArticle(article)"
-                      class="w-full text-left px-3 py-1.5 hover:bg-secondary-50 transition-colors flex items-center gap-2"
-                      [class.bg-primary-50]="selectedArticle()?.id === article.id"
-                      [class.border-l-2]="selectedArticle()?.id === article.id"
-                      [class.border-l-primary-600]="selectedArticle()?.id === article.id">
-                      @if (isSubdivisionHeader(article.numero)) {
-                        <!-- En-tête de subdivision (a), b), etc.) - afficher juste le titre -->
-                        <span class="font-medium text-primary-700 text-base">{{ article.titre }}</span>
-                      } @else {
+                    } @else {
+                      <button
+                        (click)="selectArticle(article)"
+                        class="w-full text-left px-3 py-1.5 hover:bg-secondary-50 transition-colors flex items-center gap-2"
+                        [class.bg-primary-50]="selectedArticle()?.id === article.id"
+                        [class.border-l-2]="selectedArticle()?.id === article.id"
+                        [class.border-l-primary-600]="selectedArticle()?.id === article.id">
                         <span class="font-medium text-primary-700 text-base whitespace-nowrap">{{ formatArticleNumero(article.numero) }}</span>
                         @if (article.titre) {
                           <span class="text-sm text-secondary-500 truncate">{{ getCleanTitle(article.titre) }}</span>
                         }
-                      }
-                      @if (article.numero.startsWith('Annexe') && article.contenu.startsWith('[Articles')) {
-                        <span class="text-xs text-secondary-400">{{ article.contenu }}</span>
-                      }
-                    </button>
+                        @if (article.numero.startsWith('Annexe') && article.contenu.startsWith('[Articles')) {
+                          <span class="text-xs text-secondary-400">{{ article.contenu }}</span>
+                        }
+                      </button>
+                    }
                   </div>
                 </div>
               </cdk-virtual-scroll-viewport>
@@ -249,67 +248,66 @@
                       <h2 class="text-lg font-bold text-primary-900">{{ sectionHeader }}</h2>
                     </div>
                   }
-                  <!-- Séparateur sous-section -->
-                  @if (getSousSectionHeader(article.numero); as ssHeader) {
+                  <!-- Séparateur sous-section (pas pour les titres de section) -->
+                  @if (!isSubdivisionHeader(article.numero) && getSousSectionHeader(article.numero); as ssHeader) {
                     <div class="py-4 px-6 bg-primary-100 border-l-4 border-primary-500 rounded-r-lg">
                       <h2 class="text-lg font-bold text-primary-800">{{ ssHeader.startsWith('Sec.') ? ssHeader : 'Sous-section ' + ssHeader }}</h2>
                     </div>
                   }
-                  <!-- Headers point (1- Conditions, 2- Imposition, a) Qualité...) depuis le contenu -->
-                  @for (pointHeader of getPointHeaders(article); track pointHeader) {
-                    <div class="py-3 px-6 bg-primary-50 border-l-4 border-primary-400 rounded-r-lg ml-3">
-                      <h2 class="text-lg font-semibold text-primary-700">{{ pointHeader }}</h2>
-                    </div>
+                  <!-- Headers point (pas pour les titres de section) -->
+                  @if (!isSubdivisionHeader(article.numero)) {
+                    @for (pointHeader of getPointHeaders(article); track pointHeader) {
+                      <div class="py-3 px-6 bg-primary-50 border-l-4 border-primary-400 rounded-r-lg ml-3">
+                        <h2 class="text-lg font-semibold text-primary-700">{{ pointHeader }}</h2>
+                      </div>
+                    }
+                    <!-- Header lettre majuscule (A. Contribuables..., B. Contribuables...) -->
+                    @if (isFirstOfUpperLetter(article, i)) {
+                      <div class="py-3 px-5 bg-primary-50 border-l-3 border-primary-300 rounded-r-lg ml-2">
+                        <h3 class="text-lg font-semibold text-primary-600">{{ getUpperLetterHeader(article) }}</h3>
+                      </div>
+                    }
+                    <!-- Header de paragraphe depuis le sommaire -->
+                    @if (getParagrapheHeader(article.numero)) {
+                      <div class="py-3 px-5 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg ml-2">
+                        <h3 class="text-lg font-semibold text-amber-700">{{ getParagrapheHeader(article.numero) }}</h3>
+                      </div>
+                    }
+                    <!-- Sous-header de paragraphe depuis le titre de l'article -->
+                    @if (isFirstOfParagraph(article, i) && !getParagrapheHeader(article.numero)) {
+                      <div class="py-3 px-5 bg-primary-50 border-l-4 border-primary-400 rounded-r-lg ml-6">
+                        <h3 class="text-lg font-semibold text-primary-700">{{ getParagraphHeader(article) }}</h3>
+                      </div>
+                    }
                   }
-                  <!-- Header point romain (I. Personnes imposables, II. Lieu d'imposition) -->
-                  @if (getRomanHeader(article, i); as romanHeader) {
-                    <div class="py-3 px-6 bg-primary-50 border-l-4 border-primary-400 rounded-r-lg">
-                      <h2 class="text-lg font-semibold text-primary-700">{{ romanHeader }}</h2>
+                  @if (isSubdivisionHeader(article.numero)) {
+                    <!-- Titre de section (I., II., III., IV.) - fond bleu -->
+                    <div [id]="'article-' + article.numero.replace(' ', '-')" class="py-4 px-6 bg-primary-50 border-l-4 border-primary-500 rounded-r-lg">
+                      <h3 class="text-lg font-bold text-primary-800">{{ article.titre }}</h3>
                     </div>
-                  }
-                  <!-- Header lettre majuscule (A. Contribuables..., B. Contribuables...) -->
-                  @if (isFirstOfUpperLetter(article, i)) {
-                    <div class="py-3 px-5 bg-primary-50 border-l-3 border-primary-300 rounded-r-lg ml-2">
-                      <h3 class="text-lg font-semibold text-primary-600">{{ getUpperLetterHeader(article) }}</h3>
-                    </div>
-                  }
-                  <!-- Header de paragraphe depuis le sommaire (Sous-section X. Titre : Paragraphe Y: Titre) -->
-                  @if (getParagrapheHeader(article.numero)) {
-                    <div class="py-3 px-5 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg ml-2">
-                      <h3 class="text-lg font-semibold text-amber-700">{{ getParagrapheHeader(article.numero) }}</h3>
-                    </div>
-                  }
-                  <!-- Sous-header de paragraphe depuis le titre de l'article -->
-                  @if (isFirstOfParagraph(article, i) && !getParagrapheHeader(article.numero)) {
-                    <div class="py-3 px-5 bg-primary-50 border-l-4 border-primary-400 rounded-r-lg ml-6">
-                      <h3 class="text-lg font-semibold text-primary-700">{{ getParagraphHeader(article) }}</h3>
-                    </div>
-                  }
-                  <!-- Article -->
-                  <div [id]="'article-' + article.numero.replace(' ', '-')" class="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
-                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-secondary-200">
-                      <div class="flex items-baseline gap-3">
-                        @if (isSubdivisionHeader(article.numero)) {
-                          <h3 class="text-xl font-bold text-secondary-900">{{ article.titre }}</h3>
-                        } @else {
+                  } @else {
+                    <!-- Article normal -->
+                    <div [id]="'article-' + article.numero.replace(' ', '-')" class="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
+                      <div class="flex items-center justify-between mb-4 pb-3 border-b border-secondary-200">
+                        <div class="flex items-baseline gap-3">
                           <h3 class="text-xl font-bold text-secondary-900">{{ formatArticleNumero(article.numero) }}</h3>
                           @if (article.titre) {
                             <span class="text-base text-secondary-600">{{ getCleanTitle(article.titre) }}</span>
                           }
-                        }
+                        </div>
+                        <app-audio-button
+                          [text]="getArticleTextForSpeech(article)"
+                          size="small" />
                       </div>
-                      <app-audio-button
-                        [text]="getArticleTextForSpeech(article)"
-                        size="small" />
-                    </div>
-                    @if (article.chapeau) {
-                      <div class="text-secondary-700 font-medium italic mb-4 pb-4 border-b border-secondary-200">
-                        {{ article.chapeau }}
+                      @if (article.chapeau) {
+                        <div class="text-secondary-700 font-medium italic mb-4 pb-4 border-b border-secondary-200">
+                          {{ article.chapeau }}
+                        </div>
+                      }
+                      <div class="article-content text-secondary-800 leading-loose text-base text-justify" [innerHTML]="article.contenu | articleFormat">
                       </div>
-                    }
-                    <div class="article-content text-secondary-800 leading-loose text-base text-justify" [innerHTML]="article.contenu | articleFormat">
                     </div>
-                  </div>
+                  }
                 }
               </div>
             </div>

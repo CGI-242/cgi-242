@@ -46,7 +46,7 @@
     },
     {
       "article": "Art. 48",
-      "titre": "Visas de passeport et visas de séjour",
+      "titre": "Visa de passeport et visa de séjour",
       "texte": [
         "Chaque visa de passeport auquel il est procédé donne lieu à la perception d'un droit de 20.000 FCFA et d'un timbre fiscal de 5.500 FCFA.",
         "L'octroi d'un visa de séjour dans le territoire donne lieu à la perception d'un droit fixé comme suit :",
@@ -148,7 +148,7 @@
     },
     {
       "article": "Art. 50 bis",
-      "titre": "Droits de timbre sur les transports",
+      "titre": "Titres de transports aériens, fluviaux et connaissements",
       "texte": [
         "Les titres de transports aériens, fluviaux et les connaissements sont soumis aux droits de timbre suivants :",
         "• 4.000 FCFA pour un titre de transport aérien international ;",
@@ -176,7 +176,7 @@
     },
     {
       "article": "Art. 50 ter",
-      "titre": "Redevables de la collecte des droits de timbre",
+      "titre": "Collecte des droits de timbre sur les transports",
       "texte": [
         "Sont tenus de collecter les droits de timbre prévus à l'article 50 bis ci-dessus :",
         "1° les transporteurs aériens de voyageurs à destination et au départ des aéroports du Congo ;",
@@ -213,7 +213,7 @@
     },
     {
       "article": "Art. 50 quater",
-      "titre": "Délai d'exigibilité des droits de timbre",
+      "titre": "Délai d'exigibilité des droits de timbre sur les titres de transport",
       "texte": [
         "Le délai d'exigibilité des droits de timbre sur les titres de transport aérien est fixé au 15 du mois qui suit celui de la collecte ou l'émission d'un titre de transport.",
         "Tout retard dans le reversement de la taxe est puni d'une pénalité de retard de 100 % des droits collectés."
@@ -236,9 +236,9 @@
     },
     {
       "article": "Art. 50 quinquies",
-      "titre": "Article abrogé",
+      "titre": "Abrogé",
       "texte": [
-        "Abrogé"
+        "Abrogé."
       ],
       "mots_cles": [],
       "statut": "abrogé"

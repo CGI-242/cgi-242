@@ -15,7 +15,7 @@
   "articles": [
     {
       "article": "Art. 83",
-      "titre": "Bureaux compétents pour les actes publics",
+      "titre": "Bureaux compétents pour l'enregistrement",
       "texte": [
         "1) Les notaires ne pourront faire enregistrer leurs actes qu'aux bureaux dans le ressort desquels ils résident.",
         "2) Les agents d'exécution et tous autres, ayant pouvoir de faire des exploits, procès-verbaux ou rapports, feront enregistrer leurs actes, soit au bureau de leur résidence, soit au bureau du lieu où ils auront été faits.",
@@ -39,7 +39,7 @@
     },
     {
       "article": "Art. 84",
-      "titre": "Ventes publiques de meubles",
+      "titre": "Enregistrement des procès-verbaux de ventes publiques",
       "texte": [
         "Les procès-verbaux de ventes publiques et par enchères de meubles, effets, marchandises, bois, fruits, récoltes et tous autres objets mobiliers, ne pourront être enregistrés qu'aux bureaux où les déclarations prescrites à l'article 168 auront été faites."
       ],
@@ -60,7 +60,7 @@
     },
     {
       "article": "Art. 85",
-      "titre": "Actes sous seing privé obligatoires",
+      "titre": "Bureaux compétents pour l'enregistrement des actes sous seing privé",
       "texte": [
         "L'enregistrement des actes sous seing privé, soumis obligatoirement à cette formalité par les articles 65, 69 et suivants, aura lieu, pour les actes portant transmission de propriété, d'usufruit ou de jouissance de biens immeubles, de fonds de commerce ou de clientèle, ainsi que pour les actes de cession d'un droit au bail ou du bénéfice d'une promesse de bail portant sur tout ou partie d'un immeuble, au bureau de la situation des biens et, pour tous les autres actes, au bureau du domicile de l'une des parties contractantes."
       ],
@@ -101,7 +101,7 @@
     },
     {
       "article": "Art. 87",
-      "titre": "Autres actes sous signatures privées",
+      "titre": "Enregistrement des actes sous signatures privées et actes passés en pays étrangers",
       "texte": [
         "Les actes sous signatures privées, autres que ceux visés à l'article 85 et les actes passés en pays étranger, pourront être enregistrés dans tous les bureaux indistinctement."
       ],
@@ -114,8 +114,14 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C4-ST1",
+      "titre": "Mutations par décès",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 88",
-      "titre": "Bureau compétent pour mutations par décès",
+      "titre": "Enregistrement des mutations par décès",
       "texte": [
         "Les mutations par décès seront enregistrées au bureau du domicile du décédé, quelle que soit la situation des valeurs mobilières ou immobilières à déclarer.",
         "À défaut de domicile dans le Territoire, la déclaration sera passée au bureau du lieu du décès."

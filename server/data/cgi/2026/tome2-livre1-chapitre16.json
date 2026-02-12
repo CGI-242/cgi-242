@@ -35,7 +35,7 @@
     },
     {
       "article": "Art. 354",
-      "titre": "Conditions de la formalité unique",
+      "titre": "Conditions de soumission à la formalité unique",
       "texte": [
         "Un acte est soumis à la formalité unique à trois conditions simultanées :",
         "a) l'acte doit être soumis à l'enregistrement ;",
@@ -54,7 +54,7 @@
     },
     {
       "article": "Art. 355",
-      "titre": "Actes soumis obligatoirement à la formalité unique",
+      "titre": "Actes soumis à titre obligatoire à la formalité unique",
       "texte": [
         "Sont soumis à titre obligatoire à la formalité unique :",
         "1° tous les actes portant ou constatant la transmission à titre onéreux des droits réels immobiliers ; Ces droits peuvent porter sur la propriété, la nue-propriété, l'usufruit, l'usage, l'emphytéose et l'antichrèse ou les servitudes (ventes, adjudications, échanges, apports en sociétés, retraits, cessions et rétrocessions) ;",
@@ -65,7 +65,7 @@
         "6° actes interruptifs de la prescription acquisitive (citation en justice, commandement) et actes de renonciation à la prescription acquisitive ;",
         "7° actes constitutifs de biens de famille insaisissables ;",
         "8° cessions amiables en matière d'expropriation pour cause d'utilité publique quel que soit le montant de l'indemnité ;",
-        "9° procès-verbaux de réorganisation foncière et remembrement, actes d'échange d'immeubles ruraux ;",
+        "9° procès-verbaux de réorganisation foncière et de remembrement, actes d'échange d'immeubles ruraux ;",
         "10° règlements de copropriété des immeubles ou ensembles immobiliers."
       ],
       "mots_cles": [
@@ -112,9 +112,9 @@
       "titre": "Actes soumis facultativement à la formalité fusionnée",
       "texte": [
         "Les actes soumis facultativement à la formalité fusionnée sont :",
-        "• les promesses unilatérales de vente et promesses unilatérales de bail plus de douze ans ;",
-        "• conventions relatives à l'exercice des servitudes légales ;",
-        "• documents auxquels sont annexés ou dans lesquels sont littéralement reproduits des actes soumis ou admis à la formalité de publicité foncière."
+        "les promesses unilatérales de vente et promesses unilatérales de bail de plus de douze ans ;",
+        "conventions relatives à l'exercice des servitudes légales ;",
+        "les documents auxquels sont annexés ou dans lesquels sont littéralement reproduits des actes soumis ou admis à la formalité de publicité foncière."
       ],
       "mots_cles": [
         "actes",

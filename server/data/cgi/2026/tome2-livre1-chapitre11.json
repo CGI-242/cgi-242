@@ -14,10 +14,24 @@
   },
   "articles": [
     {
+      "article": "T2L1C11-INTRO",
+      "titre": "Introduction",
+      "texte": [
+        "Les droits à percevoir pour l'enregistrement des actes et mutations sont fixés aux taux et quotités tarifiés par les articles ci-après."
+      ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L1C11-ST1",
+      "titre": "1) Actes sujets au droit fixe de 10.000 F",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 209",
       "titre": "Droit fixe de 10.000 FCFA",
       "texte": [
-        "Sont enregistrés au droit fixe de 10.000 FCFA, tous les actes qui ne se trouvent ni tarifés ni exemptés par une autre disposition du présent règlement ou pour lesquels le montant du droit proportionnel serait inférieur à 10.000 FCFA comme il est dit à l'article 12 alinéa 1."
+        "Sont enregistrés au droit fixe de 10.000 FCFA, tous les actes qui ne sont ni tarifés ni exemptés par une autre disposition du présent règlement ou pour lesquels le montant du droit proportionnel serait inférieur à 10.000 FCFA, conformément à l'article 12 alinéa 1."
       ],
       "mots_cles": [
         "droit fixe",
@@ -31,17 +45,23 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST2",
+      "titre": "2) Actes sujets au droit fixe de 15.000 F",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 210",
       "titre": "Droit fixe de 15.000 FCFA",
       "texte": [
-        "Sont enregistrés au droit fixe de 15.000 FCFA :",
-        "les jugements et autres décisions judiciaires des tribunaux contenant des dispositions définitives, qui ne donnent pas ouverture au droit proportionnel ou pour lesquels le droit proportionnel n'atteint pas 15.000 FCFA ;",
-        "les contrats de mariage ne contenant que la déclaration du régime adopté par les futurs époux, sans constater de leur part aucun apport ou qui constatent des apports donnant ouverture à un droit proportionnel moins élevé ;",
-        "les actes de vente ou mutation à titre onéreux de propriété ou d'usufruit de navires ou bateaux servant soit à la navigation maritime, soit à la navigation intérieure ;",
-        "les actes de vente ou mutation à titre onéreux de propriété ou d'usufruit d'aéronefs ;",
-        "les actes sous seing privé rédigés en exécution de la loi du 29 décembre 1934 pour constater les ventes à crédit de véhicules automobiles ;",
-        "les contrats de crédit-bail ;",
-        "les contrats d'affacturage."
+        "(L.F.2025) Sont enregistrés au droit fixe de 15.000 FCFA :",
+        "• les jugements et autres décisions judiciaires dispositions définitives, qui ne donnent pas ouverture au droit proportionnel ou pour lesquels le droit proportionnel n'atteint pas 15.000 FCFA ;",
+        "• les contrats de mariage ne contenant que la déclaration du régime adopté par les futurs époux, sans constater de leur part aucun apport ou qui constatent des apports donnant ouverture à un droit proportionnel moins élevé ;",
+        "• les actes de vente ou mutation à titre onéreux de propriété ou d'usufruit de navires ou bateaux servant soit à la navigation maritime, soit à la navigation intérieure ;",
+        "• les actes de vente ou mutation à titre onéreux de propriété ou d'usufruit d'aéronefs ;",
+        "• les actes sous seing privé rédigés en exécution de la loi du 29 décembre 1934 pour constater les ventes à crédit de véhicules automobiles ;",
+        "• les contrats de crédit-bail ;",
+        "• les contrats d'affacturage."
       ],
       "mots_cles": [
         "droit fixe",
@@ -72,12 +92,18 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST3",
+      "titre": "3) Actes sujets au droit fixe de 20.000 F",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 211",
       "titre": "Droit fixe de 20.000 FCFA",
       "texte": [
         "Sont enregistrés au droit fixe de 20.000 FCFA :",
-        "les décisions définitives du tribunal de grande instance ou de la cour d'appel qui ne donnent pas ouverture au droit proportionnel ou dont le droit proportionnel est inférieur à 20.000 FCFA ;",
-        "les actes portant constitution de GIE lorsque le groupement est constitué sans capital."
+        "• les décisions définitives du tribunal de grande instance ou de la cour d'appel qui ne donnent pas ouverture au droit proportionnel ou dont le droit proportionnel est inférieur à 20.000 FCFA ;",
+        "• les actes portant constitution de GIE lorsque le groupement est constitué sans capital."
       ],
       "mots_cles": [
         "droit fixe",
@@ -94,8 +120,14 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST4",
+      "titre": "4) Droits proportionnels et progressifs",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 212",
-      "titre": "Renvoi aux quotités fixées",
+      "titre": "Droits proportionnels et progressifs",
       "texte": [
         "Les actes et mutations compris sous les articles 213 à 269 seront enregistrés et les droits payés suivant les quotités fixées dans lesdits articles."
       ],
@@ -110,8 +142,14 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST5",
+      "titre": "Abandonnements (faits d'assurance ou grosse aventure)",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 213",
-      "titre": "Droit sur les abandonnements",
+      "titre": "Abandonnements pour assurance ou grosse aventure",
       "texte": [
         "Les abandonnements pour faits d'assurance ou grosse aventure sont assujettis à un droit de 1 %. Le droit est perçu sur la valeur des objets abandonnés.",
         "En temps de guerre, il n'est dû qu'un demi-droit."
@@ -129,11 +167,17 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST6",
+      "titre": "Actions, obligations et parts d'intérêts, cessions",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 214",
-      "titre": "Cession d'actifs et droits sociaux",
+      "titre": "Cession d'actes et droits sociaux",
       "texte": [
-        "La cession directe ou indirecte des actifs et droits sociaux des sociétés de droit congolais est assujettie à un droit de 5 % de la valeur des actifs et droits cédés de la société évoluant au Congo.",
-        "Ce droit est également dû en cas de changement contrôlé de la société par une modification d'au moins 60 % de l'actionnariat."
+        "La cession directe ou indirecte des actes et droits sociaux des sociétés de droit congolais, est assujettie à un droit de 5 % de la valeur des actifs et droits cédés de la société évoluant au Congo.",
+        "Ce droit est également dû en cas de changement de contrôle de la société par une modification d'au moins 60 % de l'actionnariat."
       ],
       "mots_cles": [
         "cession",
@@ -150,9 +194,9 @@
     },
     {
       "article": "Art. 214 bis",
-      "titre": "Cession de participations et contrats pétroliers",
+      "titre": "Cessions de participations d'intérêts",
       "texte": [
-        "Les actes constatant ou matérialisant les cessions de participation d'intérêts, des droits ou obligations sont enregistrés au taux proportionnel de 5 %.",
+        "Les actes constatant ou matérialisant les cessions de participation d'intérêts, de droits ou obligations sont enregistrés au taux proportionnel de 5 %.",
         "Toutefois, en ce qui concerne les contrats pétroliers, un minimum de perception de 1.000.000 FCFA est dû."
       ],
       "mots_cles": [
@@ -169,14 +213,13 @@
     },
     {
       "article": "Art. 215",
-      "titre": "Cession d'actions d'apport",
+      "titre": "Cessions d'actions d'apport en période de non-négociabilité",
       "texte": [
         "Les cessions d'actions d'apport effectuées pendant la période de non-négociabilité sont considérées, au point de vue fiscal, comme ayant pour objet les biens en nature représentés par les titres cédés.",
-        "Pour la perception de l'impôt, chaque élément d'apport est évalué distinctement.",
-        "avec indication des numéros des actions attribuées en rémunération à chacun d'eux.",
-        "À défaut de ces évaluations et indications, les droits seront perçus au tarif immobilier.",
+        "Pour la perception de l'impôt, chaque élément d'apport est évalué distinctement, avec indication des numéros des actions attribuées en rémunération à chacun d'eux.",
+        "A défaut de ces évaluations et indications, les droits seront perçus au tarif immobilier.",
         "Les dispositions qui précèdent sont applicables aux cessions de parts d'intérêt dans les sociétés dont le capital n'est pas divisé en actions, quand ces cessions interviennent dans les deux ans de la constitution définitive de la société.",
-        "Dans tous les cas où une cession d'actions ou de parts aura donné lieu à la perception du droit de mutation en vertu du présent article, l'attribution pure et simple, à la dissolution de la société, de biens représentés par les titres cédés ne donnera ouverture au droit de mutation que si elle est faite à un autre que le cessionnaire."
+        "Dans tous les cas où une cession d'actions ou de parts aura donné lieu à la perception du droit de mutation en vertu du présent article, l'attribution pure et simple, à la dissolution de la société, des biens représentés par les titres cédés ne donnera ouverture au droit de mutation que si elle est faite à un autre que le cessionnaire."
       ],
       "mots_cles": [
         "cessions",
@@ -201,8 +244,14 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST7",
+      "titre": "Créances",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 215 bis",
-      "titre": "Cession de créances",
+      "titre": "Cessions de créances",
       "texte": [
         "Les cessions de créances sur l'État, à l'exclusion des titres publics à souscription libre émis dans la zone CEMAC, sont assujetties à un droit d'enregistrement de 15 % liquidé sur la valeur de la créance.",
         "Les titres portant les créances sur l'État sont enregistrés gratis.",
@@ -223,10 +272,16 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST8",
+      "titre": "Baux",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 216",
       "titre": "Baux de biens meubles et immeubles",
       "texte": [
-        "Les baux et sous-baux de biens meubles et immeubles à usage commercial, d'habitation ou mixte sont soumis à un droit d'enregistrement de 3 %."
+        "(L.F.2025) Les baux et sous-baux de biens meubles et immeubles à usage commercial, d'habitation ou mixte sont soumis à un droit d'enregistrement de 3 %."
       ],
       "mots_cles": [
         "baux",
@@ -242,9 +297,9 @@
     },
     {
       "article": "Art. 216 bis",
-      "titre": "Centimes additionnels sur baux et mutations",
+      "titre": "Centimes additionnels",
       "texte": [
-        "Le taux des centimes additionnels sur les baux et les mutations à titre onéreux est de 5 % des droits d'enregistrement dus."
+        "Le taux des centimes additionnels sur les mutations à titre onéreux est de 5 % des droits d'enregistrement dus."
       ],
       "mots_cles": [
         "centimes additionnels",
@@ -257,9 +312,9 @@
     },
     {
       "article": "Art. 216 ter",
-      "titre": "Baux à ferme et baux agricoles",
+      "titre": "Baux à ferme ou à loyer",
       "texte": [
-        "Les baux à ferme ou à loyer de biens meubles ou immeubles abritant les sociétés agricoles, les baux de pâturage et nourriture d'animaux, les baux à cheptel ou reconnaissance de bestiaux et les baux ou conventions pour nourriture de personne, lorsque la durée est illimitée, les sous-baux, subrogations, cessions, rétrocessions et prorogations conventionnelles ou légales de baux sont assujettis à un droit de 3 %."
+        "Les baux à ferme ou à loyer de biens meubles ou immeubles abritant les sociétés agricoles, les baux de pâturage et nourriture d'animaux, les baux à cheptel ou reconnaissance de bestiaux et les baux ou convention pour nourriture de personne, lorsque la durée est limitée, les sous baux, subrogations, cessions, rétrocessions et prorogations conventionnelles ou légales de baux sont assujettis à un droit de 3 %."
       ],
       "mots_cles": [
         "baux à ferme",
@@ -284,7 +339,7 @@
     },
     {
       "article": "Art. 217",
-      "titre": "Baux à durée illimitée et baux à vie",
+      "titre": "Baux de biens meubles à durée illimitée",
       "texte": [
         "Les baux de biens meubles faits pour un temps illimité sont assujettis à un droit de 4 %.",
         "Les baux à vie de biens immeubles et ceux dont la durée est illimitée, sont assujettis à un droit de 10 %."
@@ -324,10 +379,10 @@
     },
     {
       "article": "Art. 219",
-      "titre": "Baux emphytéotiques",
+      "titre": "Actes constitutifs d'emphytéose",
       "texte": [
-        "Les actes constitutifs d'emphytéose ne sont assujettis qu'aux droits d'enregistrement établis pour les baux à ferme ou à loyer d'une durée limitée.",
-        "Les mutations de toute nature, ayant pour objet en matière de bail emphytéotique soit le droit du bailleur, soit le droit du preneur, sont soumises aux dispositions du présent règlement concernant les transmissions de propriété d'immeubles.",
+        "Les actes constitutifs d'emphytéose ne sont assujettis qu'aux droits d'enregistrement établis pour les baux à ferme ou à loyer de durée limitée.",
+        "Les mutations de toute nature, ayant pour objet en matière de bail emphytéotique, soit le droit du bailleur, soit le droit du preneur, sont soumises aux dispositions du présent règlement concernant les transmissions de propriétés d'immeubles.",
         "Le droit est liquidé sur la valeur vénale déterminée par une déclaration estimative des parties."
       ],
       "mots_cles": [
@@ -349,10 +404,9 @@
     },
     {
       "article": "Art. 219 bis",
-      "titre": "Licences et brevets",
+      "titre": "Licences d'exploitation de brevets et marques",
       "texte": [
-        "L'enregistrement des concessions de licences d'exploitation de brevets et marques de fabrique se fait au taux 5 %.",
-        "Il en est de même des actes portant transmission à titre onéreux des brevets et marques de fabrique."
+        "L'enregistrement de concessions de licences d'exploitation de brevets et marques de fabrique se fait au taux de 5 %. Il en est de même des actes portant transmission à titre onéreux des brevets et marques de fabrique."
       ],
       "mots_cles": [
         "concessions de licences",
@@ -365,10 +419,16 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST9",
+      "titre": "Command (élections ou déclarations de)",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 220",
-      "titre": "Déclaration de command - Biens meubles",
+      "titre": "Élections ou déclarations de command",
       "texte": [
-        "Les élections ou déclarations de command ou d'ami, sans adjudication ou contrat de vente de biens meubles lorsque l'élection est faite après les vingt-quatre heures ou sans que la faculté d'élire ou de command ait été réservée dans l'acte d'adjudication ou du contrat de vente, sont assujetties au droit de 4 %."
+        "Les élections ou déclarations de command ou d'ami, sur adjudication ou contrat de vente de biens meubles lorsque l'élection est faite après les vingt-quatre heures ou sans que la faculté d'élire un command ait été réservée dans l'acte d'adjudication ou du contrat de vente, sont assujetties au droit de 4 %."
       ],
       "mots_cles": [
         "élections",
@@ -385,9 +445,9 @@
     },
     {
       "article": "Art. 221",
-      "titre": "Déclaration de command - Biens immeubles",
+      "titre": "Élections ou déclarations de command immobilier",
       "texte": [
-        "Les élections ou déclarations de command ou d'ami, par suite d'adjudications ou contrats de vente de biens immeubles, si la déclaration est faite après les vingt-quatre heures de l'adjudication ou du contrat ou lorsque la faculté d'élire ou de command n'y a pas été réservée, sont assujetties au droit de mutation immobilière à titre onéreux de 15 %."
+        "Les élections ou déclarations de command ou d'ami, par suite d'adjudications ou contrats de vente de biens immeubles, si la déclaration est faite après les vingt-quatre heures de l'adjudication ou du contrat ou lorsque la faculté d'élire un command n'a pas été réservée, sont assujetties au droit de mutation immobilière à titre onéreux de 15 %."
       ],
       "mots_cles": [
         "élections",
@@ -405,7 +465,7 @@
     },
     {
       "article": "Art. 222",
-      "titre": "Délai pour biens domaniaux",
+      "titre": "Délai porté à trois jours",
       "texte": [
         "Le délai de vingt-quatre heures dans les articles précédents est porté à trois jours en ce qui concerne les adjudications ou ventes de biens domaniaux."
       ],
@@ -420,13 +480,19 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST10",
+      "titre": "Contrats de mariage",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 223",
       "titre": "Contrats de mariage",
       "texte": [
-        "Les contrats de mariage, qui ne contiennent que des déclarations de la part des futurs époux de ce qu'ils apportent eux-mêmes en mariage et se constituent sans aucune stipulation avantageuse pour eux, sont assujettis à un droit de 1 %.",
-        "La reconnaissance y énoncée, de la part du futur époux d'avoir reçu la dite part apportée par la future épouse ne donne pas lieu à un droit particulier.",
+        "Les contrats de mariage, qui ne contiennent d'autres dispositions que des déclarations de la part des futurs époux de ce qu'ils apportent eux-mêmes en mariage et ne constituent aucune stipulation avantageuse pour eux, sont assujettis à un droit de 1 %.",
+        "La reconnaissance énoncée, de la part du futur époux d'avoir reçu la dot apportée par la future épouse ne donne pas lieu à un droit particulier.",
         "Si les futurs époux sont dotés par leurs ascendants ou s'il leur est fait des donations par des collatéraux ou autres personnes non parentes par leur contrat de mariage, les droits dans ce cas, sont perçus ainsi qu'ils sont réglés sous la rubrique des mutations entre vifs à titre gratuit.",
-        "Donnent ouverture au droit fixe par le premier alinéa ci-dessus tous actes ou écrits qui constatent la nature, la consistance ou la valeur des biens appartenant à chacun des époux lors de la célébration du mariage."
+        "Donnent ouverture au droit fixé par le premier alinéa ci-dessus tous actes ou écrits qui constatent la nature, la consistance ou la valeur des biens appartenant à chacun des époux lors de la célébration du mariage."
       ],
       "mots_cles": [
         "contrats de mariage",
@@ -445,6 +511,12 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST11",
+      "titre": "Échanges d'immeubles",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 224",
       "titre": "Échanges de biens immeubles",
       "texte": [
@@ -457,6 +529,12 @@
         "valeur",
         "part la plus élevée"
       ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L1C11-ST12",
+      "titre": "Fonds de commerce et clientèle - Mutations à titre onéreux",
+      "texte": [],
       "statut": "en vigueur"
     },
     {
@@ -484,17 +562,17 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art. 226 (L.F. 2026)",
-      "titre": "Cautionnement et sûretés",
+      "article": "Art. 226",
+      "titre": "Enregistrement gratis des avances de salaires et contrats de prêts",
       "texte": [
-        "Les conventions de cautionnement, de garantie et contre-garantie autonome, les lettres de droit de rétention, les contrats de gage, les actes de nantissement quel que soit leur forme (authentique ou seing privé) et leur objet ainsi que les actes constatant les privilèges et hypothèques prévues par l'Acte Uniforme portant organisation des sûretés, d'une part, et toutes les sûretés non prévues par le droit OHADA et admises en République du Congo, d'autre part, sont assujetties à un droit de 1 %.",
-        "(L.F. 2026 - modifié) Les avances de salaires ou contrats de prêts faits par les établissements financiers aux salariés et aux très petites entreprises, clients des banques ou sociétaires des établissements de microfinances, ainsi que les prêts qui visent la consommation, sur une durée d'amortissement ne dépassant pas trois (3) ans d'une part et les contrats de prêts qui visent l'investissement, sous réserve de la présentation du plan d'investissement y relatif et le procès-verbal de l'assemblée générale ou tout autre organe compétent ayant décidé du prêt d'autre part, sont enregistrés gratis.",
-        "À défaut d'enregistrer lesdits contrats dans les délais prévus par la loi ou de ne pas présenter les documents qui soutiennent le prêt lors de la formalité d'enregistrement, le droit de 1 % prévu à l'article 237 du présent Code s'applique."
+        "(L.F.2024) Les conventions de cautionnement, de garantie et contre-garantie autonome, les lettres de droit de rétention, les contrats de gage, les actes de nantissement quel que soit leur forme (authentique ou seing privé) et leur objet ainsi que les actes constatant les privilèges et hypothèques prévues par l'Acte Uniforme portant organisation des sûretés, d'une part, et toutes les sûretés non prévues par le droit OHADA et admises en République du Congo, d'autre part, sont assujetties à un droit de 1 %.",
+        "Les avances de salaires ou contrats de prêts faits par les établissements financiers aux salariés et aux très petites entreprises, clients des banques ou sociétaires des établissements de microfinances, ainsi que les prêts qui visent la consommation, sur une durée d'amortissement ne dépassant pas trois (3) ans d'une part et les contrats de prêts qui visent l'investissement, sous réserve de la présentation du plan d'investissement y relatif et le procès-verbal de l'assemblée générale ou tout autre organe compétent ayant décidé du prêt d'autre part, sont enregistrés gratis.",
+        "A défaut d'enregistrer lesdits contrats dans les délais prévus par la loi ou de ne pas présenter les documents qui soustendent le prêt de la formalité d'enregistrement, le droit de 1 % prévu à l'article 237 du présent Code s'applique."
       ],
       "mots_cles": [
         "cautionnement",
         "garantie",
-        "contre-garantie autonome",
+        "contre-garantie autonomes",
         "droit de rétention",
         "contrats de gage",
         "nantissement",
@@ -511,8 +589,15 @@
         "enregistrés gratis",
         "plan d'investissement",
         "Assemblée générale",
+        "Procès-Verbal",
         "article 237"
       ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L1C11-ST13",
+      "titre": "Jugements et arrêts",
+      "texte": [],
       "statut": "en vigueur"
     },
     {
@@ -608,6 +693,12 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST14",
+      "titre": "Droit de titre",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 231",
       "titre": "Condamnation sans titre enregistré",
       "texte": [
@@ -648,6 +739,12 @@
         "expéditions",
         "imputation"
       ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L1C11-ST15",
+      "titre": "Licitations",
+      "texte": [],
       "statut": "en vigueur"
     },
     {
@@ -820,7 +917,7 @@
         "• l'objet de la convention précisant clairement qu'elle est signée à l'effet d'assurer la gestion des besoins excédentaires de trésorerie des entités du groupe ;",
         "• l'indication des liens capitalistiques entre les entités du groupe, parties prenantes à la convention ;",
         "• le mécanisme interne de financement indiquant l'option de financement adoptée : flux directs entre entités ou l'option d'une société « pivot » ;",
-        "• les conditions de rémunérations interne, le rôle de la société « pivot » et la durée de la convention.",
+        "• les conditions de rémunérations internes, le rôle de la société « pivot » et la durée de la convention.",
         "Sont enregistrées au droit proportionnel de 1 % :",
         "• les conventions de trésorerie entre les sociétés n'appartenant pas à un même groupe ;",
         "• les conventions de trésorerie entre les sociétés de groupe qui ne sont pas présentées à la formalité d'enregistrement ou lorsqu'elles sont présentées après le délai prévu de 3 mois ;",
@@ -846,16 +943,22 @@
     },
     {
       "article": "Art. 237 sexies",
-      "titre": "Article abrogé",
+      "titre": "Abrogé",
       "texte": [
-        "Abrogé"
+        "(L.F.2025) Abrogé"
       ],
       "mots_cles": [],
       "statut": "abrogé"
     },
     {
+      "article": "T2L1C11-ST16",
+      "titre": "Mutations à titre gratuit - 1) Dispositions concernant les mutations entre vifs",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 238",
-      "titre": "Donations entre vifs",
+      "titre": "Droits sur donations entre vifs",
       "texte": [
         "Les droits d'enregistrement des donations entre vifs sont perçus selon les quotités et suivant les modalités fixées par les articles 243, 247, 250 et 252 pour la perception des droits de mutation par décès.",
         "Pour le calcul des réductions édictées par l'article 247, il est tenu compte, aussi bien en cas de donation que de succession, des réductions effectuées sur les donations antérieures consenties par la même personne.",
@@ -877,10 +980,10 @@
     },
     {
       "article": "Art. 239",
-      "titre": "Déclaration des donations antérieures",
+      "titre": "Tarif progressif pour les donations",
       "texte": [
-        "Pour permettre l'application du tarif progressif suivant les modalités fixées par les articles 243 et suivants, les parties sont tenues de faire connaître dans tout acte constatant une transmission entre vifs à titre gratuit, s'il existe ou non des donations antérieures consenties par le donateur à un titre et sous une forme quelconque et, dans l'affirmative, le montant de ces donations, les noms, qualités et résidences des officiers ministériels qui ont reçu les actes de donation et la date de l'enregistrement de ces actes.",
-        "La perception est effectuée en ajoutant à la valeur des biens compris dans la donation celle des biens qui ont fait l'objet de donation antérieure en considérant ceux des biens dont la transmission n'aura pas été encore assujettie au droit de mutation à titre gratuit entre vifs comme inclus dans les tranches plus élevées de l'actif imposable."
+        "Pour permettre l'application du tarif progressif suivant les modalités fixées par les articles 243 et suivants, les parties sont tenues de faire connaître dans tout acte constatant une transmission entre vifs à titre gratuit, s'il existe ou non des donations antérieures consenties par le donateur à un titre et sous une forme quelconque, et, dans l'affirmative, le montant de ces donations, les noms, qualités et résidences des officiers ministériels qui ont reçu les actes de donation et la date de l'enregistrement de ces actes.",
+        "La perception est effectuée en ajoutant à la valeur des biens compris dans la donation celle des biens qui ont fait l'objet de donation antérieure et en considérant ceux de ces biens dont la transmission n'aura pas encore assujettie au droit de mutation à titre gratuit entre vifs comme inclus dans les tranches plus élevées de l'actif imposable."
       ],
       "mots_cles": [
         "tarif progressif",
@@ -901,7 +1004,7 @@
     },
     {
       "article": "Art. 240",
-      "titre": "Déclaration des enfants du donateur",
+      "titre": "Déclarations obligatoires",
       "texte": [
         "Les parties sont tenues de déclarer dans tout acte constatant une transmission entre vifs, à titre gratuit, les noms et prénoms ainsi que la date et le lieu de naissance des enfants vivants du donateur et des représentants de ceux prédécédés.",
         "Les dispositions des articles 116 et 199 sont applicables à toute indication inexacte dans les mentions prévues au présent article."
@@ -924,7 +1027,7 @@
     },
     {
       "article": "Art. 241",
-      "titre": "Don manuel",
+      "titre": "Actes renfermant une reconnaissance de don manuel",
       "texte": [
         "Les actes renfermant, soit la déclaration par le donataire ou ses représentants, soit la reconnaissance judiciaire d'un don manuel, sont sujets au droit de donation."
       ],
@@ -943,8 +1046,8 @@
       "article": "Art. 242",
       "titre": "Certificat de vie",
       "texte": [
-        "Le bénéfice des dispositions des articles 245 et 247 alinéa 1er subordonné à la production d'un certificat de vie établi sur papier libre pour chacun des enfants vivants du donateur ou des donataires et des représentants de ceux prédécédés.",
-        "Le certificat ne pourra être antérieur de plus d'un mois à l'acte constatant la mutation auquel il devra être annexé."
+        "Le bénéfice des dispositions des articles 245 et 247 alinéa 1 est subordonné à la production d'un certificat de vie établi sur papier libre pour chacun des enfants vivants du donateur ou des donataires et des représentants de ceux prédécédés.",
+        "Le certificat ne pourra être antérieur de plus d'un mois à l'acte constatant la mutation auquel il devra rester annexé."
       ],
       "mots_cles": [
         "articles 245 et 247",
@@ -959,6 +1062,12 @@
         "mutation",
         "annexé"
       ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L1C11-ST17",
+      "titre": "Mutations à titre gratuit - 2) Dispositions concernant les mutations par décès",
+      "texte": [],
       "statut": "en vigueur"
     },
     {
@@ -1019,29 +1128,20 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art. 245",
-      "titre": "Article abrogé",
+      "article": "Art. 245 et 246",
+      "titre": "Abrogés",
       "texte": [
-        "Abrogé."
-      ],
-      "mots_cles": [],
-      "statut": "abrogé"
-    },
-    {
-      "article": "Art. 246",
-      "titre": "Article abrogé",
-      "texte": [
-        "Abrogé."
+        "Abrogés"
       ],
       "mots_cles": [],
       "statut": "abrogé"
     },
     {
       "article": "Art. 247",
-      "titre": "Réduction pour enfants à charge",
+      "titre": "Réduction pour enfants",
       "texte": [
-        "Lorsqu'un héritier, donataire ou légataire a trois enfants ou plus vivants, ou représentés, au moment de l'ouverture de ses droits à la succession, il bénéficie sur l'impôt à sa charge liquidé conformément aux dispositions de l'article 243 d'une réduction de 100 % qui ne peut, toutefois excéder 100.000 FCFA par enfant sus du deuxième.",
-        "Le bénéfice de cette disposition est subordonné à la production soit d'un certificat de vie établi sur papier libre pour chacun des enfants vivants des héritiers, donataires ou légataires et des représentants de ceux prédécédés soit d'une expédition de l'acte de décès de tout enfant décédé depuis l'ouverture de la succession."
+        "Lorsqu'un héritier, donataire ou légataire a trois enfants ou plus vivants, ou représentés, au moment de l'ouverture de ses droits à la succession, il bénéficie sur l'impôt à charge liquidé conformément aux dispositions de l'article 243 d'une réduction de 100 % qui ne peut, toutefois excéder 100.000 FCFA par enfant en sus du deuxième.",
+        "Le bénéfice de cette disposition est subordonné à la production soit d'un certificat de vie établi sur papier libre pour chacun des enfants vivants des héritiers, donataires ou légataires et de représentants de ceux prédécédés soit d'une expédition de l'acte de décès de tout enfant décédé depuis l'ouverture de la succession."
       ],
       "mots_cles": [
         "héritier",
@@ -1063,9 +1163,9 @@
     },
     {
       "article": "Art. 248",
-      "titre": "Exemptions pour faits de guerre",
+      "titre": "Exemptions de l'impôt de mutation par décès",
       "texte": [
-        "1) Sont exemptes de l'impôt de mutation par décès, les successions :",
+        "1) Sont exemptés de l'impôt de mutation par décès, les successions :",
         "• 1° des militaires des armées françaises et alliées morts sous les drapeaux pendant la durée de la guerre ;",
         "• 2° des militaires qui, soit sous les drapeaux, soit après renvoi dans leurs foyers, seront morts dans l'année à compter de la cessation des hostilités, de blessures reçues ou de maladies contractées pendant la guerre ;",
         "• 3° de toute personne ayant la nationalité française ou celle d'un pays allié, dont le décès aura été provoqué, soit au cours des hostilités, soit dans les trois mois à compter de la cessation des hostilités par faits de guerre suivant la définition qui en est donnée pour les réparations à accorder aux victimes civiles de guerre ;",
@@ -1074,8 +1174,8 @@
         "2) L'exemption ne profite, toutefois, qu'aux parts nettes recueillies par les ascendants, les descendants et par le conjoint du défunt.",
         "3) L'exemption de l'impôt n'entraîne pas la dispense de la déclaration des successions.",
         "Elle est subordonnée à la condition que cette déclaration soit accompagnée :",
-        "• 1° dans les cas visés aux numéros 1 et 2 du paragraphe 1 d'un certificat de l'autorité militaire, dispensé de timbre et constatant que la mort a été causée par une blessure reçue ou une maladie contractée pendant la guerre ;",
-        "• 2° dans les cas visés par les numéros 3, 4 et 5, paragraphe 1 d'un certificat de"
+        "• 1° dans le cas visé aux numéros 1 et 2 du paragraphe 1 d'un certificat de l'autorité militaire dispensé de timbre et constatant que la mort a été causée par une blessure reçue ou maladie contractée pendant la guerre ;",
+        "• 2° dans les cas visés par les numéros 3, 4 et 5, paragraphe 1 d'un certificat de l'autorité militaire ou civile compétente, dispensé du timbre et établissant les circonstances du décès."
       ],
       "mots_cles": [
         "exemption",
@@ -1105,10 +1205,10 @@
     },
     {
       "article": "Art. 249",
-      "titre": "Exemption pour objets trouvés sur militaires",
+      "titre": "Objets trouvés sur les militaires",
       "texte": [
-        "Les objets trouvés sur les militaires des armées françaises et alliées tués à l'ennemi ou décédés des suites de blessures reçues ou de maladies contractées sur le champ de bataille et les sommes dont ils sont porteurs ou qu'ils peuvent leur être dues par l'autorité militaire n'ont pas à être déclarées et sont exemptés de l'impôt de mutation par décès jusqu'à concurrence de 10.000 FCFA en ce qui concerne les fonds.",
-        "Cette exemption est accordée à tous les héritiers légataires ou donataires, sur la production d'un certificat de l'Autorité militaire, dispensé du timbre, attestant que le décès a eu lieu dans les conditions ci-dessus.",
+        "Les objets trouvés sur les militaires des armées françaises et alliées tués à l'ennemi ou décédés des suites de blessures reçues ou de maladies contractées sur le champ de bataille et les sommes dont ils sont porteurs ou qui peuvent leur être dues par l'autorité militaire n'ont pas à être déclarées et sont exemptés de l'impôt de mutation par décès jusqu'à concurrence de 10.000 FCFA en ce qui concerne les fonds.",
+        "Cette exemption est accordée à tous les héritiers légataires ou donataires, sur la production d'un certificat de l'autorité militaire, dispensé du timbre, attestant que le décès a eu lieu dans les conditions ci-dessus.",
         "Les droits déjà versés à l'occasion de la mutation de ces successions seront remboursés.",
         "Le point de départ du délai prévu pour la déclaration des successions visées à l'article 248 et au présent article et qui ne sont pas exemptées de droits est reporté à la date du décret de cessation des hostilités."
       ],
@@ -1138,12 +1238,12 @@
     },
     {
       "article": "Art. 250",
-      "titre": "Dons et legs aux établissements d'utilité publique",
+      "titre": "Dons et legs aux sociétés",
       "texte": [
         "Sont soumis à un droit de 4 % les dons et legs faits aux sociétés reconnues d'utilité publique dont les ressources sont affectées à des œuvres d'assistance.",
         "Il est statué sur le caractère de bienfaisance de la disposition par le texte (décret ou arrêté) qui en autorise l'acceptation.",
         "Sont également soumis au droit de 4 %, les dons et legs faits aux sociétés d'instruction et d'éducation populaire gratuites reconnues d'utilité publique et subventionnées par l'État, le Groupe de Territoires, le Territoire ou les communes.",
-        "Les legs faits aux établissements d'utilité publique et aux établissements publics autres que ceux visés à l'alinéa 1 du présent article et à l'article 307 sont assujettis à un droit proportionnel de 8 %."
+        "Les legs faits aux établissements d'utilité publique et aux établissements publics autres que ceux visés à l'alinéa 1 du présent article et l'article 307 sont assujettis à un droit proportionnel de 8 %."
       ],
       "mots_cles": [
         "dons",
@@ -1169,7 +1269,7 @@
     },
     {
       "article": "Art. 251",
-      "titre": "Adoption et lien de parenté",
+      "titre": "Perception sans lien de parenté",
       "texte": [
         "Pour la perception des droits de mutation, il n'est pas tenu compte du lien de parenté résultant de l'adoption.",
         "Cette disposition n'est pas applicable aux transmissions entrant dans les prévisions des alinéas 1, 3 et 4 de l'article 357 du Code civil ainsi qu'à celles faites en faveur :",
@@ -1208,7 +1308,7 @@
     },
     {
       "article": "Art. 252",
-      "titre": "Enfant vivant ou représenté - Définition",
+      "titre": "Enfant comptant pour l'application de l'article 247",
       "texte": [
         "Est compté comme enfant vivant ou représenté de l'héritier, donataire ou légataire pour l'application de l'article 247, l'enfant qui :",
         "1° est décédé après avoir atteint l'âge de seize ans révolus ;",
@@ -1240,10 +1340,16 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST18",
+      "titre": "Obligations hypothécaires négociables",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 253",
-      "titre": "Titres de sociétés avec hypothèque",
+      "titre": "Obligations hypothécaires",
       "texte": [
-        "Sont assujettis à un droit de 5 %, les titres de sociétés contenant constitution d'hypothèque, ainsi que tous autres titres d'obligations hypothécaires dont la cession, pour être parfaite, n'est pas soumise aux dispositions de l'article 1690 du Code civil.",
+        "Sont assujettis à un droit de 5 %, les billets à ordre notariés contenant constitution d'hypothèque, ainsi que tous autres titres d'obligations hypothécaires dont la cession, pour être parfaite, n'est pas soumise aux dispositions de l'article 1690 du Code civil.",
         "Le même tarif est également applicable aux actes d'obligations hypothécaires nominatives, lorsqu'ils constatent ou autorisent la création de billets à ordre en représentation desdites obligations."
       ],
       "mots_cles": [
@@ -1260,7 +1366,7 @@
     },
     {
       "article": "Art. 254",
-      "titre": "Obligations hypothécaires au porteur",
+      "titre": "Obligations hypothécaires au profit du porteur",
       "texte": [
         "Sont assujettis à un droit de 5 %, les actes portant obligations hypothécaires au profit du porteur de la grosse.",
         "En cas de conversion en obligations hypothécaires au porteur d'obligations hypothécaires nominatives, la différence des droits sera exigible."
@@ -1277,10 +1383,16 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST19",
+      "titre": "Partages",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 255",
       "titre": "Partages de biens meubles et immeubles",
       "texte": [
-        "Les partages de biens meubles et immeubles entre copropriétaires, cohéritiers et associés, à quelque titre que ce soit pourvu qu'il en soit justifié, sont assujettis à un droit de 1 %. S'il y a retour, le droit sur ce qui en sera l'objet sera perçu au taux réglé pour les ventes conformément à l'article ci-après."
+        "Les partages de biens meubles et immeubles entre copropriétaires, cohéritiers et coassociés, à quelque titre que ce soit pourvu qu'il en soit justifié, sont assujettis à un droit de 1 %. S'il y a retour, le droit sur ce qui en sera l'objet sera perçu au taux réglé pour les ventes conformément à l'article ci-après."
       ],
       "mots_cles": [
         "partages",
@@ -1297,7 +1409,7 @@
     },
     {
       "article": "Art. 256",
-      "titre": "Retours de partages",
+      "titre": "Retours de partages de biens meubles",
       "texte": [
         "Les retours de partages de biens meubles sont assujettis au droit de 4 %.",
         "Les retours de partages de biens immeubles sont assujettis au droit de mutation immobilière à titre onéreux."
@@ -1314,7 +1426,7 @@
     },
     {
       "article": "Art. 257",
-      "titre": "Donations-partages et partages testamentaires",
+      "titre": "Soultes de partage",
       "texte": [
         "Les règles de perception concernant les soultes de partage sont applicables aux donations portant partage, faites par actes entre vifs par les père et mère ou autres ascendants, ainsi qu'aux partages testamentaires également autorisés par l'article 1075 du Code civil."
       ],
@@ -1332,10 +1444,16 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST20",
+      "titre": "Rentes (Constitutions et délégations)",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 258",
-      "titre": "Constitution de rentes et pensions",
+      "titre": "Constitutions de rentes",
       "texte": [
-        "Les constitutions de rentes, soit perpétuelles, soit viagères, et de pensions, à titre onéreux, ainsi que les cessions, transports et délégations qui en sont faits au même titre, sont assujettis à un droit de 1 %.",
+        "Les constitutions de rentes, soit perpétuelles, soit viagères, et de pensions à titre onéreux, ainsi que les cessions, transports et délégations qui en sont faits au même titre, sont assujettis à un droit de 1 %.",
         "Les contrats de rente viagère passés par les sociétés, compagnies d'assurances et tous autres assureurs, ainsi que tous actes ayant exclusivement pour objet la formation, les modifications ou la réalisation amiable de ces contrats sont soumis aux dispositions du chapitre 13 du présent Livre."
       ],
       "mots_cles": [
@@ -1357,14 +1475,20 @@
       "statut": "en vigueur"
     },
     {
-      "article": "Art. 259 (L.F. 2026)",
-      "titre": "Augmentation de capital et prorogation",
+      "article": "T2L1C11-ST21",
+      "titre": "Sociétés",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "Art. 259",
+      "titre": "Droits sur les actes d'augmentation de capital et de prorogation des sociétés",
       "texte": [
-        "(L.F. 2026 - modifié) Les actes d'augmentation de capital et de prorogation des sociétés, qui ne contiennent ni obligation, ni libération, ni transmission de biens meubles ou immeubles entre les associés ou autres personnes, sont assujettis à un droit de trois pour cent (3 %), qui est liquidé sur le montant total des apports mobiliers, déduction faite du passif et de toute réduction consécutive du capital par absorption des pertes figurant au bilan.",
-        "Toutefois, pour les sociétés admises au bénéfice des dispositions de la Charte des investissements, et pour les sociétés agricoles, le tarif sera calculé comme suit :",
-        "a) valeur taxable de 1 à 2,5 milliards de FCFA : 1 %",
-        "b) de 2.500.000.001 à 5 milliards de FCFA : 0,50 %",
-        "c) au-dessus de 5 milliards de FCFA : 0,10 %."
+        "Les actes d'augmentation de capital et de prorogation des sociétés, qui ne contiennent ni obligation, ni libération, ni transmission de biens meubles ou immeubles entre les associés ou autres personnes, sont assujettis à un droit de trois pour cent (3%), qui est liquidé sur le montant total des apports mobiliers, déduction faite du passif et de toute réduction consécutive du capital par absorption des pertes figurant au bilan.",
+        "Toutefois, pour les sociétés admises au bénéfice des dispositions de la Charte des investissements, ainsi que pour les sociétés agricoles, le tarif est fixé comme suit :",
+        "De 1 à 2,5 milliards de francs CFA : 1% ;",
+        "De 2 500 000 001 à 5 milliards de francs CFA : 0,50% ;",
+        "Au-dessus de 5 milliards de francs CFA : 0,10%."
       ],
       "mots_cles": [
         "augmentation de capital",
@@ -1393,7 +1517,7 @@
     },
     {
       "article": "Art. 260",
-      "titre": "Fusion de sociétés",
+      "titre": "Actes de fusion de sociétés",
       "texte": [
         "Les actes de fusion des sociétés anonymes, en commandite par actions ou à responsabilité limitée sont assujettis à un droit de 5 % que la fusion ait lieu par voie d'absorption ou au moyen de la création d'une société nouvelle.",
         "Toutefois, pour les sociétés admises au bénéfice des dispositions du Code des investissements, le tarif sera calculé comme suit :",
@@ -1428,11 +1552,11 @@
     },
     {
       "article": "Art. 261",
-      "titre": "Apports assimilés à fusion",
+      "titre": "Fusion de sociétés - conditions",
       "texte": [
-        "Sont assimilés à une fusion de sociétés, pour l'application du deuxième alinéa de l'article précédent, les actes qui constatent l'apport par une société anonyme, en commandite par actions ou à responsabilité limitée à une autre société, constituée sous l'une des formes d'une partie de ses éléments d'actif à condition :",
-        "1° que la société bénéficiaire soit constituée dans les termes de la loi congolaise et ait son siège en République du Congo ;",
-        "2° que l'apport ait été préalablement agréé par le Ministre des finances."
+        "Sont assimilées à une fusion de sociétés, pour l'application du deuxième alinéa de l'article qui précède, les actes qui constatent l'apport par une société anonyme, en commandite par action ou à responsabilité limitée à une autre société, constituée sous l'une de ces formes d'une partie de ses éléments d'actif à condition :",
+        "• 1° que la société bénéficiaire soit constituée dans les termes de la loi Congolaise et ait son siège en République du Congo ;",
+        "• 2° que l'apport ait été préalablement agréé par le Ministre des finances."
       ],
       "mots_cles": [
         "fusion de sociétés",
@@ -1453,7 +1577,7 @@
     },
     {
       "article": "Art. 262",
-      "titre": "Taux de perception pour sociétés soumises à l'IRVM",
+      "titre": "Taux applicables aux fusions",
       "texte": [
         "Le droit établi par les articles 259 et 260 ci-dessus est perçu :",
         "1° au taux de 5 % lorsqu'il s'applique aux actes portant augmentation au moyen de l'incorporation de bénéfices, de réserves ou de provisions de toute nature du capital des sociétés dont les produits sont assujettis à l'IRVM ;",
@@ -1487,10 +1611,17 @@
       "statut": "en vigueur"
     },
     {
+      "article": "T2L1C11-ST22",
+      "titre": "Ventes et autres actes translatifs de propriété ou d'usufruit de biens immeubles à titre onéreux",
+      "texte": [],
+      "statut": "en vigueur"
+    },
+    {
       "article": "Art. 263",
-      "titre": "Ventes et cessions immobilières",
+      "titre": "Droit fixe sur les ventes d'immeubles de l'État dans les résidences Les Flamboyants et M'Pila",
       "texte": [
-        "Les adjudications, ventes, reventes, cessions, rétrocessions, les retraits exercés après l'expiration des délais convenus par les contrats de vente sous faculté de réméré, et tous autres actes civils et judiciaires translatifs de propriété ou d'usufruit de biens immeubles à titre onéreux, sont assujettis à un droit de 8 %."
+        "Les adjudications, ventes, reventes, cessions, rétrocessions, les retraits exercés après l'expiration des délais convenus par les contrats de vente sous faculté de réméré, et tous autres actes civils et judiciaires translatifs de propriété ou d'usufruit de biens immeubles à titre onéreux, sont assujettis à un droit de 8 %.",
+        "Par dérogation à l'alinéa 1 ci-dessus, les actes portant vente d'immeubles par l'État dans les résidences Les Flamboyants et M'Pila sont assujettis au droit fixe d'un million cinq cent mille (1 500 000) francs CFA pour la période allant du 1er janvier 2026 au 31 décembre 2028."
       ],
       "mots_cles": [
         "adjudications",

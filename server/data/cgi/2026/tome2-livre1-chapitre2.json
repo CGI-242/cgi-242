@@ -552,7 +552,7 @@
     },
     {
       "article": "T2L1C2-ST10a",
-      "titre": "1) Règles générales",
+      "titre": "I. Règles générales",
       "texte": [],
       "statut": "en vigueur"
     },
@@ -661,7 +661,7 @@
     },
     {
       "article": "T2L1C2-ST10b",
-      "titre": "2) Déduction des dettes et charges",
+      "titre": "II. Déduction des dettes et charges",
       "texte": [],
       "statut": "en vigueur"
     },
@@ -881,8 +881,8 @@
       "statut": "en vigueur"
     },
     {
-      "article": "T2L1C2-ST11",
-      "titre": "3) Dispositions spéciales",
+      "article": "T2L1C2-ST10c",
+      "titre": "III. Dispositions spéciales",
       "texte": [],
       "statut": "en vigueur"
     },
@@ -959,6 +959,12 @@
         "opérations",
         "un an"
       ],
+      "statut": "en vigueur"
+    },
+    {
+      "article": "T2L1C2-ST10d",
+      "titre": "IV. Nue-propriété et l'usufruit",
+      "texte": [],
       "statut": "en vigueur"
     },
     {
