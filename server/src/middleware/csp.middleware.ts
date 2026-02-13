@@ -52,12 +52,11 @@ export function createSecureHelmet() {
         // Source par défaut: uniquement le même domaine
         defaultSrc: ["'self'"],
 
-        // Scripts: self + nonce pour inline + CDNs autorisés
-        // PAS de 'unsafe-inline' ni 'unsafe-eval'
+        // Scripts: self + unsafe-inline (Angular event handlers) + CDNs
         scriptSrc: [
           "'self'",
-          // Les nonces seront ajoutés dynamiquement via le middleware
-          (req: IncomingMessage) => `'nonce-${(req as Request).cspNonce}'`,
+          "'unsafe-inline'",
+          'https://unpkg.com',
           // CDN Tailwind (si utilisé en dev)
           ...(config.isProduction ? [] : ['https://cdn.tailwindcss.com']),
         ],
@@ -69,16 +68,17 @@ export function createSecureHelmet() {
         // Note: Les styles inline sont moins risqués que les scripts
         styleSrc: [
           "'self'",
-          // Permettre les styles inline pour les frameworks CSS-in-JS
-          // C'est acceptable car les styles ne peuvent pas exécuter de code
           "'unsafe-inline'",
           'https://fonts.googleapis.com',
+          'https://unpkg.com',
         ],
 
         // Polices
         fontSrc: [
           "'self'",
           'https://fonts.gstatic.com',
+          'https://fonts.googleapis.com',
+          'https://unpkg.com',
           'data:',
         ],
 
