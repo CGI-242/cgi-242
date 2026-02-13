@@ -55,9 +55,12 @@ USER nodejs
 # Expose port
 EXPOSE 3000
 
+# Limite memoire Node.js pour eviter OOM sur VPS 3.7 GB
+ENV NODE_OPTIONS="--max-old-space-size=384"
+
 # Health check
-HEALTHCHECK --interval=30s --timeout=3s \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:3000/api/health || exit 1
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 --start-period=40s \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:3000/health || exit 1
 
 # Start server
 CMD ["node", "dist/server.js"]
