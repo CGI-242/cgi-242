@@ -23,8 +23,8 @@ services:
     environment:
       NODE_ENV: production
       PORT: "3000"
-      # URLs internes Docker (remplacent localhost)
-      DATABASE_URL: "${DATABASE_URL}"
+      # URLs internes Docker (remplacent localhost:port_hote)
+      DATABASE_URL: "postgresql://cgi_user:${DB_PASSWORD}@cgi-postgres:5432/cgi_engine?schema=public&connection_limit=20&pool_timeout=20&connect_timeout=10"
       REDIS_URL: "redis://cgi-redis:6379"
       QDRANT_URL: "http://cgi-qdrant:6333"
       FRONTEND_URL: "https://cgi242.normx-ai.com"
