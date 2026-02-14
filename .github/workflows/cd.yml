@@ -279,7 +279,7 @@ jobs:
             -d '{"text":"CGI 242 Deployment: ${{ steps.status.outputs.message }}"}'
 
       - name: Create GitHub deployment status
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const status = '${{ steps.status.outputs.status }}';
