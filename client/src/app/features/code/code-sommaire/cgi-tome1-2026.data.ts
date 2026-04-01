@@ -158,7 +158,9 @@ export const CGI_TOME_1_2026: Tome = {
             },
             {
               chapitre: 3,
-              titre: 'Sans objet',
+              titre: 'Sans objet (Articles 117 à 126 abrogés)',
+              articles: '117-126',
+              statut: 'abrogé',
             },
             {
               chapitre: 4,
